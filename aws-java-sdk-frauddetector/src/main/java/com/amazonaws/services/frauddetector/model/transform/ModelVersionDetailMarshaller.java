@@ -12,8 +12,6 @@
  */
 package com.amazonaws.services.frauddetector.model.transform;
 
-import java.util.Map;
-import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,24 +33,22 @@ public class ModelVersionDetailMarshaller {
             .marshallLocationName("modelType").build();
     private static final MarshallingInfo<String> MODELVERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelVersionNumber").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
-    private static final MarshallingInfo<StructuredPojo> TRAININGDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+    private static final MarshallingInfo<String> TRAININGDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingDataSource").build();
-    private static final MarshallingInfo<List> MODELVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelVariables").build();
-    private static final MarshallingInfo<StructuredPojo> LABELSCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("labelSchema").build();
-    private static final MarshallingInfo<Map> VALIDATIONMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("validationMetrics").build();
-    private static final MarshallingInfo<Map> TRAININGMETRICS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("trainingMetrics").build();
+    private static final MarshallingInfo<StructuredPojo> TRAININGDATASCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingDataSchema").build();
+    private static final MarshallingInfo<StructuredPojo> EXTERNALEVENTSDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalEventsDetail").build();
+    private static final MarshallingInfo<StructuredPojo> TRAININGRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingResult").build();
     private static final MarshallingInfo<String> LASTUPDATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").build();
     private static final MarshallingInfo<String> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final ModelVersionDetailMarshaller instance = new ModelVersionDetailMarshaller();
 
@@ -73,15 +69,14 @@ public class ModelVersionDetailMarshaller {
             protocolMarshaller.marshall(modelVersionDetail.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getModelType(), MODELTYPE_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getModelVersionNumber(), MODELVERSIONNUMBER_BINDING);
-            protocolMarshaller.marshall(modelVersionDetail.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getTrainingDataSource(), TRAININGDATASOURCE_BINDING);
-            protocolMarshaller.marshall(modelVersionDetail.getModelVariables(), MODELVARIABLES_BINDING);
-            protocolMarshaller.marshall(modelVersionDetail.getLabelSchema(), LABELSCHEMA_BINDING);
-            protocolMarshaller.marshall(modelVersionDetail.getValidationMetrics(), VALIDATIONMETRICS_BINDING);
-            protocolMarshaller.marshall(modelVersionDetail.getTrainingMetrics(), TRAININGMETRICS_BINDING);
+            protocolMarshaller.marshall(modelVersionDetail.getTrainingDataSchema(), TRAININGDATASCHEMA_BINDING);
+            protocolMarshaller.marshall(modelVersionDetail.getExternalEventsDetail(), EXTERNALEVENTSDETAIL_BINDING);
+            protocolMarshaller.marshall(modelVersionDetail.getTrainingResult(), TRAININGRESULT_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(modelVersionDetail.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(modelVersionDetail.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

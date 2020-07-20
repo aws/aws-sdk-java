@@ -41,7 +41,7 @@ public class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2019-03-26/origin-access-identity/cloudfront/{Id}/config";
+        String uriResourcePath = "/2020-05-31/origin-access-identity/cloudfront/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id",
                 getCloudFrontOriginAccessIdentityConfigRequest.getId());

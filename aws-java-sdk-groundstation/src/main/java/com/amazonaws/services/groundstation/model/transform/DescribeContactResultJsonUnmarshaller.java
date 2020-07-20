@@ -56,6 +56,12 @@ public class DescribeContactResultJsonUnmarshaller implements Unmarshaller<Descr
                     context.nextToken();
                     describeContactResult.setContactStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dataflowList", targetDepth)) {
+                    context.nextToken();
+                    describeContactResult.setDataflowList(new ListUnmarshaller<DataflowDetail>(DataflowDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("endTime", targetDepth)) {
                     context.nextToken();
                     describeContactResult.setEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

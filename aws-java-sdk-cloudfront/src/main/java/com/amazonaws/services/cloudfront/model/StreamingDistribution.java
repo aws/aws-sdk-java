@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * to track and manage content delivery.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/StreamingDistribution" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/StreamingDistribution" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

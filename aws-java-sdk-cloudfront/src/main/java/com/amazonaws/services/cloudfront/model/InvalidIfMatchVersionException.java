@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The <code>If-Match</code> version is missing or not valid for the distribution.
+ * The <code>If-Match</code> version is missing or not valid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -42,7 +42,7 @@ public class ListFieldLevelEncryptionProfilesRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2019-03-26/field-level-encryption-profile";
+        String uriResourcePath = "/2020-05-31/field-level-encryption-profile";
 
         request.setResourcePath(uriResourcePath);
 

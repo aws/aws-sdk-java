@@ -39,22 +39,22 @@ public class UpdateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
     private String modelType;
     /**
      * <p>
-     * The model version.
+     * The major version number.
      * </p>
      */
-    private String modelVersionNumber;
+    private String majorVersionNumber;
     /**
      * <p>
-     * The model description.
+     * The event details.
      * </p>
      */
-    private String description;
+    private ExternalEventsDetail externalEventsDetail;
     /**
      * <p>
-     * The new model status.
+     * A collection of key and value pairs.
      * </p>
      */
-    private String status;
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -157,140 +157,151 @@ public class UpdateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The model version.
+     * The major version number.
      * </p>
      * 
-     * @param modelVersionNumber
-     *        The model version.
+     * @param majorVersionNumber
+     *        The major version number.
      */
 
-    public void setModelVersionNumber(String modelVersionNumber) {
-        this.modelVersionNumber = modelVersionNumber;
+    public void setMajorVersionNumber(String majorVersionNumber) {
+        this.majorVersionNumber = majorVersionNumber;
     }
 
     /**
      * <p>
-     * The model version.
+     * The major version number.
      * </p>
      * 
-     * @return The model version.
+     * @return The major version number.
      */
 
-    public String getModelVersionNumber() {
-        return this.modelVersionNumber;
+    public String getMajorVersionNumber() {
+        return this.majorVersionNumber;
     }
 
     /**
      * <p>
-     * The model version.
+     * The major version number.
      * </p>
      * 
-     * @param modelVersionNumber
-     *        The model version.
+     * @param majorVersionNumber
+     *        The major version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateModelVersionRequest withModelVersionNumber(String modelVersionNumber) {
-        setModelVersionNumber(modelVersionNumber);
+    public UpdateModelVersionRequest withMajorVersionNumber(String majorVersionNumber) {
+        setMajorVersionNumber(majorVersionNumber);
         return this;
     }
 
     /**
      * <p>
-     * The model description.
+     * The event details.
      * </p>
      * 
-     * @param description
-     *        The model description.
+     * @param externalEventsDetail
+     *        The event details.
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        this.externalEventsDetail = externalEventsDetail;
     }
 
     /**
      * <p>
-     * The model description.
+     * The event details.
      * </p>
      * 
-     * @return The model description.
+     * @return The event details.
      */
 
-    public String getDescription() {
-        return this.description;
+    public ExternalEventsDetail getExternalEventsDetail() {
+        return this.externalEventsDetail;
     }
 
     /**
      * <p>
-     * The model description.
+     * The event details.
      * </p>
      * 
-     * @param description
-     *        The model description.
+     * @param externalEventsDetail
+     *        The event details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateModelVersionRequest withDescription(String description) {
-        setDescription(description);
+    public UpdateModelVersionRequest withExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        setExternalEventsDetail(externalEventsDetail);
         return this;
     }
 
     /**
      * <p>
-     * The new model status.
+     * A collection of key and value pairs.
      * </p>
      * 
-     * @param status
-     *        The new model status.
-     * @see ModelVersionStatus
+     * @return A collection of key and value pairs.
      */
 
-    public void setStatus(String status) {
-        this.status = status;
+    public java.util.List<Tag> getTags() {
+        return tags;
     }
 
     /**
      * <p>
-     * The new model status.
+     * A collection of key and value pairs.
      * </p>
      * 
-     * @return The new model status.
-     * @see ModelVersionStatus
+     * @param tags
+     *        A collection of key and value pairs.
      */
 
-    public String getStatus() {
-        return this.status;
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
     }
 
     /**
      * <p>
-     * The new model status.
+     * A collection of key and value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
      * </p>
      * 
-     * @param status
-     *        The new model status.
+     * @param tags
+     *        A collection of key and value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ModelVersionStatus
      */
 
-    public UpdateModelVersionRequest withStatus(String status) {
-        setStatus(status);
+    public UpdateModelVersionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The new model status.
+     * A collection of key and value pairs.
      * </p>
      * 
-     * @param status
-     *        The new model status.
+     * @param tags
+     *        A collection of key and value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ModelVersionStatus
      */
 
-    public UpdateModelVersionRequest withStatus(ModelVersionStatus status) {
-        this.status = status.toString();
+    public UpdateModelVersionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -310,12 +321,12 @@ public class UpdateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("ModelId: ").append(getModelId()).append(",");
         if (getModelType() != null)
             sb.append("ModelType: ").append(getModelType()).append(",");
-        if (getModelVersionNumber() != null)
-            sb.append("ModelVersionNumber: ").append(getModelVersionNumber()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
-        if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+        if (getMajorVersionNumber() != null)
+            sb.append("MajorVersionNumber: ").append(getMajorVersionNumber()).append(",");
+        if (getExternalEventsDetail() != null)
+            sb.append("ExternalEventsDetail: ").append(getExternalEventsDetail()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -338,17 +349,17 @@ public class UpdateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getModelType() != null && other.getModelType().equals(this.getModelType()) == false)
             return false;
-        if (other.getModelVersionNumber() == null ^ this.getModelVersionNumber() == null)
+        if (other.getMajorVersionNumber() == null ^ this.getMajorVersionNumber() == null)
             return false;
-        if (other.getModelVersionNumber() != null && other.getModelVersionNumber().equals(this.getModelVersionNumber()) == false)
+        if (other.getMajorVersionNumber() != null && other.getMajorVersionNumber().equals(this.getMajorVersionNumber()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getExternalEventsDetail() == null ^ this.getExternalEventsDetail() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getExternalEventsDetail() != null && other.getExternalEventsDetail().equals(this.getExternalEventsDetail()) == false)
             return false;
-        if (other.getStatus() == null ^ this.getStatus() == null)
+        if (other.getTags() == null ^ this.getTags() == null)
             return false;
-        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -360,9 +371,9 @@ public class UpdateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
-        hashCode = prime * hashCode + ((getModelVersionNumber() == null) ? 0 : getModelVersionNumber().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getMajorVersionNumber() == null) ? 0 : getMajorVersionNumber().hashCode());
+        hashCode = prime * hashCode + ((getExternalEventsDetail() == null) ? 0 : getExternalEventsDetail().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

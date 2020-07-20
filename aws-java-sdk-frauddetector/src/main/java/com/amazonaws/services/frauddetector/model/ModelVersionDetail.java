@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the model version details.
+ * The details of the model version.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelVersionDetail" target="_top">AWS
@@ -42,52 +42,40 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
     private String modelType;
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      */
     private String modelVersionNumber;
     /**
      * <p>
-     * The model description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The model status.
+     * The status of the model version.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The model training data source.
+     * The model version training data source.
      * </p>
      */
-    private TrainingDataSource trainingDataSource;
+    private String trainingDataSource;
     /**
      * <p>
-     * The model variables.
+     * The training data schema.
      * </p>
      */
-    private java.util.List<ModelVariable> modelVariables;
+    private TrainingDataSchema trainingDataSchema;
     /**
      * <p>
-     * The model label schema.
+     * The event details.
      * </p>
      */
-    private LabelSchema labelSchema;
+    private ExternalEventsDetail externalEventsDetail;
     /**
      * <p>
-     * The model validation metrics.
+     * The training results.
      * </p>
      */
-    private java.util.Map<String, String> validationMetrics;
-    /**
-     * <p>
-     * The model training metrics.
-     * </p>
-     */
-    private java.util.Map<String, String> trainingMetrics;
+    private TrainingResult trainingResult;
     /**
      * <p>
      * The timestamp when the model was last updated.
@@ -100,6 +88,12 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -202,11 +196,11 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      */
 
     public void setModelVersionNumber(String modelVersionNumber) {
@@ -215,10 +209,10 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
-     * @return The model version.
+     * @return The model version number.
      */
 
     public String getModelVersionNumber() {
@@ -227,11 +221,11 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,51 +236,11 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model description.
-     * </p>
-     * 
-     * @param description
-     *        The model description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The model description.
-     * </p>
-     * 
-     * @return The model description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The model description.
-     * </p>
-     * 
-     * @param description
-     *        The model description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The model status.
+     * The status of the model version.
      * </p>
      * 
      * @param status
-     *        The model status.
+     *        The status of the model version.
      */
 
     public void setStatus(String status) {
@@ -295,10 +249,10 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model status.
+     * The status of the model version.
      * </p>
      * 
-     * @return The model status.
+     * @return The status of the model version.
      */
 
     public String getStatus() {
@@ -307,11 +261,11 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model status.
+     * The status of the model version.
      * </p>
      * 
      * @param status
-     *        The model status.
+     *        The status of the model version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -322,287 +276,180 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The model training data source.
+     * The model version training data source.
      * </p>
      * 
      * @param trainingDataSource
-     *        The model training data source.
+     *        The model version training data source.
+     * @see TrainingDataSourceEnum
      */
 
-    public void setTrainingDataSource(TrainingDataSource trainingDataSource) {
+    public void setTrainingDataSource(String trainingDataSource) {
         this.trainingDataSource = trainingDataSource;
     }
 
     /**
      * <p>
-     * The model training data source.
+     * The model version training data source.
      * </p>
      * 
-     * @return The model training data source.
+     * @return The model version training data source.
+     * @see TrainingDataSourceEnum
      */
 
-    public TrainingDataSource getTrainingDataSource() {
+    public String getTrainingDataSource() {
         return this.trainingDataSource;
     }
 
     /**
      * <p>
-     * The model training data source.
+     * The model version training data source.
      * </p>
      * 
      * @param trainingDataSource
-     *        The model training data source.
+     *        The model version training data source.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingDataSourceEnum
      */
 
-    public ModelVersionDetail withTrainingDataSource(TrainingDataSource trainingDataSource) {
+    public ModelVersionDetail withTrainingDataSource(String trainingDataSource) {
         setTrainingDataSource(trainingDataSource);
         return this;
     }
 
     /**
      * <p>
-     * The model variables.
+     * The model version training data source.
      * </p>
      * 
-     * @return The model variables.
+     * @param trainingDataSource
+     *        The model version training data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingDataSourceEnum
      */
 
-    public java.util.List<ModelVariable> getModelVariables() {
-        return modelVariables;
+    public ModelVersionDetail withTrainingDataSource(TrainingDataSourceEnum trainingDataSource) {
+        this.trainingDataSource = trainingDataSource.toString();
+        return this;
     }
 
     /**
      * <p>
-     * The model variables.
+     * The training data schema.
      * </p>
      * 
-     * @param modelVariables
-     *        The model variables.
+     * @param trainingDataSchema
+     *        The training data schema.
      */
 
-    public void setModelVariables(java.util.Collection<ModelVariable> modelVariables) {
-        if (modelVariables == null) {
-            this.modelVariables = null;
-            return;
-        }
-
-        this.modelVariables = new java.util.ArrayList<ModelVariable>(modelVariables);
+    public void setTrainingDataSchema(TrainingDataSchema trainingDataSchema) {
+        this.trainingDataSchema = trainingDataSchema;
     }
 
     /**
      * <p>
-     * The model variables.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setModelVariables(java.util.Collection)} or {@link #withModelVariables(java.util.Collection)} if you want
-     * to override the existing values.
+     * The training data schema.
      * </p>
      * 
-     * @param modelVariables
-     *        The model variables.
+     * @return The training data schema.
+     */
+
+    public TrainingDataSchema getTrainingDataSchema() {
+        return this.trainingDataSchema;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @param trainingDataSchema
+     *        The training data schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModelVersionDetail withModelVariables(ModelVariable... modelVariables) {
-        if (this.modelVariables == null) {
-            setModelVariables(new java.util.ArrayList<ModelVariable>(modelVariables.length));
-        }
-        for (ModelVariable ele : modelVariables) {
-            this.modelVariables.add(ele);
-        }
+    public ModelVersionDetail withTrainingDataSchema(TrainingDataSchema trainingDataSchema) {
+        setTrainingDataSchema(trainingDataSchema);
         return this;
     }
 
     /**
      * <p>
-     * The model variables.
+     * The event details.
      * </p>
      * 
-     * @param modelVariables
-     *        The model variables.
+     * @param externalEventsDetail
+     *        The event details.
+     */
+
+    public void setExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        this.externalEventsDetail = externalEventsDetail;
+    }
+
+    /**
+     * <p>
+     * The event details.
+     * </p>
+     * 
+     * @return The event details.
+     */
+
+    public ExternalEventsDetail getExternalEventsDetail() {
+        return this.externalEventsDetail;
+    }
+
+    /**
+     * <p>
+     * The event details.
+     * </p>
+     * 
+     * @param externalEventsDetail
+     *        The event details.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModelVersionDetail withModelVariables(java.util.Collection<ModelVariable> modelVariables) {
-        setModelVariables(modelVariables);
+    public ModelVersionDetail withExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        setExternalEventsDetail(externalEventsDetail);
         return this;
     }
 
     /**
      * <p>
-     * The model label schema.
+     * The training results.
      * </p>
      * 
-     * @param labelSchema
-     *        The model label schema.
+     * @param trainingResult
+     *        The training results.
      */
 
-    public void setLabelSchema(LabelSchema labelSchema) {
-        this.labelSchema = labelSchema;
+    public void setTrainingResult(TrainingResult trainingResult) {
+        this.trainingResult = trainingResult;
     }
 
     /**
      * <p>
-     * The model label schema.
+     * The training results.
      * </p>
      * 
-     * @return The model label schema.
+     * @return The training results.
      */
 
-    public LabelSchema getLabelSchema() {
-        return this.labelSchema;
+    public TrainingResult getTrainingResult() {
+        return this.trainingResult;
     }
 
     /**
      * <p>
-     * The model label schema.
+     * The training results.
      * </p>
      * 
-     * @param labelSchema
-     *        The model label schema.
+     * @param trainingResult
+     *        The training results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModelVersionDetail withLabelSchema(LabelSchema labelSchema) {
-        setLabelSchema(labelSchema);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The model validation metrics.
-     * </p>
-     * 
-     * @return The model validation metrics.
-     */
-
-    public java.util.Map<String, String> getValidationMetrics() {
-        return validationMetrics;
-    }
-
-    /**
-     * <p>
-     * The model validation metrics.
-     * </p>
-     * 
-     * @param validationMetrics
-     *        The model validation metrics.
-     */
-
-    public void setValidationMetrics(java.util.Map<String, String> validationMetrics) {
-        this.validationMetrics = validationMetrics;
-    }
-
-    /**
-     * <p>
-     * The model validation metrics.
-     * </p>
-     * 
-     * @param validationMetrics
-     *        The model validation metrics.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail withValidationMetrics(java.util.Map<String, String> validationMetrics) {
-        setValidationMetrics(validationMetrics);
-        return this;
-    }
-
-    /**
-     * Add a single ValidationMetrics entry
-     *
-     * @see ModelVersionDetail#withValidationMetrics
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail addValidationMetricsEntry(String key, String value) {
-        if (null == this.validationMetrics) {
-            this.validationMetrics = new java.util.HashMap<String, String>();
-        }
-        if (this.validationMetrics.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.validationMetrics.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into ValidationMetrics.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail clearValidationMetricsEntries() {
-        this.validationMetrics = null;
-        return this;
-    }
-
-    /**
-     * <p>
-     * The model training metrics.
-     * </p>
-     * 
-     * @return The model training metrics.
-     */
-
-    public java.util.Map<String, String> getTrainingMetrics() {
-        return trainingMetrics;
-    }
-
-    /**
-     * <p>
-     * The model training metrics.
-     * </p>
-     * 
-     * @param trainingMetrics
-     *        The model training metrics.
-     */
-
-    public void setTrainingMetrics(java.util.Map<String, String> trainingMetrics) {
-        this.trainingMetrics = trainingMetrics;
-    }
-
-    /**
-     * <p>
-     * The model training metrics.
-     * </p>
-     * 
-     * @param trainingMetrics
-     *        The model training metrics.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail withTrainingMetrics(java.util.Map<String, String> trainingMetrics) {
-        setTrainingMetrics(trainingMetrics);
-        return this;
-    }
-
-    /**
-     * Add a single TrainingMetrics entry
-     *
-     * @see ModelVersionDetail#withTrainingMetrics
-     * @returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail addTrainingMetricsEntry(String key, String value) {
-        if (null == this.trainingMetrics) {
-            this.trainingMetrics = new java.util.HashMap<String, String>();
-        }
-        if (this.trainingMetrics.containsKey(key))
-            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
-        this.trainingMetrics.put(key, value);
-        return this;
-    }
-
-    /**
-     * Removes all the entries added into TrainingMetrics.
-     *
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ModelVersionDetail clearTrainingMetricsEntries() {
-        this.trainingMetrics = null;
+    public ModelVersionDetail withTrainingResult(TrainingResult trainingResult) {
+        setTrainingResult(trainingResult);
         return this;
     }
 
@@ -687,6 +534,46 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model version ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @return The model version ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model version ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelVersionDetail withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -704,24 +591,22 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
             sb.append("ModelType: ").append(getModelType()).append(",");
         if (getModelVersionNumber() != null)
             sb.append("ModelVersionNumber: ").append(getModelVersionNumber()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTrainingDataSource() != null)
             sb.append("TrainingDataSource: ").append(getTrainingDataSource()).append(",");
-        if (getModelVariables() != null)
-            sb.append("ModelVariables: ").append(getModelVariables()).append(",");
-        if (getLabelSchema() != null)
-            sb.append("LabelSchema: ").append(getLabelSchema()).append(",");
-        if (getValidationMetrics() != null)
-            sb.append("ValidationMetrics: ").append(getValidationMetrics()).append(",");
-        if (getTrainingMetrics() != null)
-            sb.append("TrainingMetrics: ").append(getTrainingMetrics()).append(",");
+        if (getTrainingDataSchema() != null)
+            sb.append("TrainingDataSchema: ").append(getTrainingDataSchema()).append(",");
+        if (getExternalEventsDetail() != null)
+            sb.append("ExternalEventsDetail: ").append(getExternalEventsDetail()).append(",");
+        if (getTrainingResult() != null)
+            sb.append("TrainingResult: ").append(getTrainingResult()).append(",");
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -748,10 +633,6 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getModelVersionNumber() != null && other.getModelVersionNumber().equals(this.getModelVersionNumber()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -760,21 +641,17 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getTrainingDataSource() != null && other.getTrainingDataSource().equals(this.getTrainingDataSource()) == false)
             return false;
-        if (other.getModelVariables() == null ^ this.getModelVariables() == null)
+        if (other.getTrainingDataSchema() == null ^ this.getTrainingDataSchema() == null)
             return false;
-        if (other.getModelVariables() != null && other.getModelVariables().equals(this.getModelVariables()) == false)
+        if (other.getTrainingDataSchema() != null && other.getTrainingDataSchema().equals(this.getTrainingDataSchema()) == false)
             return false;
-        if (other.getLabelSchema() == null ^ this.getLabelSchema() == null)
+        if (other.getExternalEventsDetail() == null ^ this.getExternalEventsDetail() == null)
             return false;
-        if (other.getLabelSchema() != null && other.getLabelSchema().equals(this.getLabelSchema()) == false)
+        if (other.getExternalEventsDetail() != null && other.getExternalEventsDetail().equals(this.getExternalEventsDetail()) == false)
             return false;
-        if (other.getValidationMetrics() == null ^ this.getValidationMetrics() == null)
+        if (other.getTrainingResult() == null ^ this.getTrainingResult() == null)
             return false;
-        if (other.getValidationMetrics() != null && other.getValidationMetrics().equals(this.getValidationMetrics()) == false)
-            return false;
-        if (other.getTrainingMetrics() == null ^ this.getTrainingMetrics() == null)
-            return false;
-        if (other.getTrainingMetrics() != null && other.getTrainingMetrics().equals(this.getTrainingMetrics()) == false)
+        if (other.getTrainingResult() != null && other.getTrainingResult().equals(this.getTrainingResult()) == false)
             return false;
         if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null)
             return false;
@@ -783,6 +660,10 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null)
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -795,15 +676,14 @@ public class ModelVersionDetail implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
         hashCode = prime * hashCode + ((getModelVersionNumber() == null) ? 0 : getModelVersionNumber().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTrainingDataSource() == null) ? 0 : getTrainingDataSource().hashCode());
-        hashCode = prime * hashCode + ((getModelVariables() == null) ? 0 : getModelVariables().hashCode());
-        hashCode = prime * hashCode + ((getLabelSchema() == null) ? 0 : getLabelSchema().hashCode());
-        hashCode = prime * hashCode + ((getValidationMetrics() == null) ? 0 : getValidationMetrics().hashCode());
-        hashCode = prime * hashCode + ((getTrainingMetrics() == null) ? 0 : getTrainingMetrics().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataSchema() == null) ? 0 : getTrainingDataSchema().hashCode());
+        hashCode = prime * hashCode + ((getExternalEventsDetail() == null) ? 0 : getExternalEventsDetail().hashCode());
+        hashCode = prime * hashCode + ((getTrainingResult() == null) ? 0 : getTrainingResult().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

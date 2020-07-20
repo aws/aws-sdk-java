@@ -43,6 +43,8 @@ public class VariableMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").build();
     private static final MarshallingInfo<String> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final VariableMarshaller instance = new VariableMarshaller();
 
@@ -68,6 +70,7 @@ public class VariableMarshaller {
             protocolMarshaller.marshall(variable.getVariableType(), VARIABLETYPE_BINDING);
             protocolMarshaller.marshall(variable.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(variable.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(variable.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -52,6 +52,12 @@ public class Outcome implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * The outcome ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class Outcome implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The outcome ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The outcome ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The outcome ARN.
+     * </p>
+     * 
+     * @return The outcome ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The outcome ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The outcome ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outcome withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class Outcome implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class Outcome implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class Outcome implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

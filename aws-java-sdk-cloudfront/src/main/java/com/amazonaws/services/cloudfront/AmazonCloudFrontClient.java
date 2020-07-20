@@ -276,8 +276,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new NoSuchInvalidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidWebACLIdExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionConfigExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OriginRequestPolicyAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyHeadersInForwardedValuesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginReadTimeoutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OriginRequestPolicyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidMinimumProtocolVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyInvalidationsInProgressExceptionUnmarshaller());
@@ -293,8 +295,11 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new IllegalFieldLevelEncryptionConfigAssociationWithCacheBehaviorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTTLOrderExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyQueryStringsInOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionConfigAlreadyExistsExceptionUnmarshaller());
@@ -309,6 +314,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new DistributionAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CachePolicyAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidProtocolSettingsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
@@ -322,6 +328,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCookieNamesInWhiteListExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHeadersInCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchFieldLevelEncryptionProfileExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchResourceExceptionUnmarshaller());
@@ -329,11 +336,17 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new InvalidLambdaFunctionAssociationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyLambdaFunctionAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidViewerCertificateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCachePoliciesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyQueryStringsInCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionNotDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginGroupsPerDistributionExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new CachePolicyInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDefaultRootObjectExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AccessDeniedExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCookiesInCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginRequestPoliciesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchStreamingDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchPublicKeyExceptionUnmarshaller());
@@ -341,15 +354,20 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new InvalidRelativePathExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToFieldLevelEncryptionConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CannotChangeImmutablePublicKeyFieldsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionQueryArgProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PublicKeyAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileInUseExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCookiesInOriginRequestPolicyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new IllegalDeleteExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidIfMatchVersionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidTaggingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyHeadersInOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidGeoRestrictionParameterExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.cloudfront.model.AmazonCloudFrontException.class));
@@ -362,6 +380,114 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/cloudfront/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/cloudfront/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Creates a cache policy.
+     * </p>
+     * <p>
+     * After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache
+     * behavior, the cache policy determines the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and
+     * URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront
+     * cache.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
+     * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
+     * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
+     * cache key, use <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * For more information about cache policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html"
+     * >Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createCachePolicyRequest
+     * @return Result of the CreateCachePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws CachePolicyAlreadyExistsException
+     *         A cache policy with this name already exists. You must provide a unique name. To modify an existing cache
+     *         policy, use <code>UpdateCachePolicy</code>.
+     * @throws TooManyCachePoliciesException
+     *         You have reached the maximum number of cache policies for this AWS account. For more information, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyHeadersInCachePolicyException
+     *         The number of headers in the cache policy exceeds the maximum. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyCookiesInCachePolicyException
+     *         The number of cookies in the cache policy exceeds the maximum. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyQueryStringsInCachePolicyException
+     *         The number of query strings in the cache policy exceeds the maximum. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.CreateCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateCachePolicyResult createCachePolicy(CreateCachePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCachePolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreateCachePolicyResult executeCreateCachePolicy(CreateCachePolicyRequest createCachePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCachePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCachePolicyRequest> request = null;
+        Response<CreateCachePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(createCachePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCachePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateCachePolicyResult> responseHandler = new StaxResponseHandler<CreateCachePolicyResult>(
+                    new CreateCachePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -395,7 +521,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -550,6 +676,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyDistributionsWithLambdaAssociationsException
      *         Processing your request would cause the maximum number of distributions with Lambda function associations
      *         per owner to be exceeded.
+     * @throws TooManyDistributionsWithSingleFunctionARNException
+     *         The maximum number of distributions have been associated with the specified Lambda function.
      * @throws TooManyLambdaFunctionAssociationsException
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
@@ -566,8 +694,22 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
      *         The maximum number of distributions have been associated with the specified configuration for field-level
      *         encryption.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws TooManyDistributionsAssociatedToCachePolicyException
+     *         The maximum number of distributions have been associated with the specified cache policy. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws TooManyDistributionsAssociatedToOriginRequestPolicyException
+     *         The maximum number of distributions have been associated with the specified origin request policy. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -707,6 +849,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyDistributionsWithLambdaAssociationsException
      *         Processing your request would cause the maximum number of distributions with Lambda function associations
      *         per owner to be exceeded.
+     * @throws TooManyDistributionsWithSingleFunctionARNException
+     *         The maximum number of distributions have been associated with the specified Lambda function.
      * @throws TooManyLambdaFunctionAssociationsException
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
@@ -723,8 +867,22 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
      *         The maximum number of distributions have been associated with the specified configuration for field-level
      *         encryption.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws TooManyDistributionsAssociatedToCachePolicyException
+     *         The maximum number of distributions have been associated with the specified cache policy. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws TooManyDistributionsAssociatedToOriginRequestPolicyException
+     *         The maximum number of distributions have been associated with the specified origin request policy. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -793,7 +951,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws QueryArgProfileEmptyException
      *         No profile specified for the field-level encryption query argument.
      * @sample AmazonCloudFront.CreateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -863,7 +1021,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyFieldLevelEncryptionFieldPatternsException
      *         The maximum number of field patterns for field-level encryption have been created.
      * @sample AmazonCloudFront.CreateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -934,7 +1092,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -981,6 +1139,122 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates an origin request policy.
+     * </p>
+     * <p>
+     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached
+     * to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it
+     * sends to the origin. Each request that CloudFront sends to the origin includes the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The request body and the URL path (without the domain name) from the viewer request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>,
+     * <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request
+     * policy. These can include items from the viewer request and, in the case of headers, additional ones that are
+     * added by CloudFront.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
+     * to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * For more information about origin request policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html"
+     * >Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginRequestPolicyRequest
+     * @return Result of the CreateOriginRequestPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws OriginRequestPolicyAlreadyExistsException
+     *         An origin request policy with this name already exists. You must provide a unique name. To modify an
+     *         existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+     * @throws TooManyOriginRequestPoliciesException
+     *         You have reached the maximum number of origin request policies for this AWS account. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyHeadersInOriginRequestPolicyException
+     *         The number of headers in the origin request policy exceeds the maximum. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyCookiesInOriginRequestPolicyException
+     *         The number of cookies in the origin request policy exceeds the maximum. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyQueryStringsInOriginRequestPolicyException
+     *         The number of query strings in the origin request policy exceeds the maximum. For more information, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.CreateOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateOriginRequestPolicyResult createOriginRequestPolicy(CreateOriginRequestPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOriginRequestPolicy(request);
+    }
+
+    @SdkInternalApi
+    final CreateOriginRequestPolicyResult executeCreateOriginRequestPolicy(CreateOriginRequestPolicyRequest createOriginRequestPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOriginRequestPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOriginRequestPolicyRequest> request = null;
+        Response<CreateOriginRequestPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(createOriginRequestPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOriginRequestPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateOriginRequestPolicyResult> responseHandler = new StaxResponseHandler<CreateOriginRequestPolicyResult>(
+                    new CreateOriginRequestPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Add a new public key to CloudFront to use, for example, for field-level encryption. You can add a maximum of 10
      * public keys with one AWS account.
      * </p>
@@ -995,7 +1269,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The maximum number of public keys for field-level encryption have been created. To create a new public
      *         key, delete one of the existing keys.
      * @sample AmazonCloudFront.CreatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1103,7 +1377,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1185,7 +1459,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidTaggingException
      *         The tagging specified is not valid.
      * @sample AmazonCloudFront.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1234,6 +1508,79 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes a cache policy.
+     * </p>
+     * <p>
+     * You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove
+     * the cache policy from all cache behaviors, then delete the cache policy.
+     * </p>
+     * <p>
+     * To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use
+     * <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
+     * </p>
+     * 
+     * @param deleteCachePolicyRequest
+     * @return Result of the DeleteCachePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws IllegalDeleteException
+     *         You cannot delete a managed policy.
+     * @throws CachePolicyInUseException
+     *         Cannot delete the cache policy because it is attached to one or more cache behaviors.
+     * @sample AmazonCloudFront.DeleteCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCachePolicyResult deleteCachePolicy(DeleteCachePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCachePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCachePolicyResult executeDeleteCachePolicy(DeleteCachePolicyRequest deleteCachePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCachePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCachePolicyRequest> request = null;
+        Response<DeleteCachePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteCachePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCachePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteCachePolicyResult> responseHandler = new StaxResponseHandler<DeleteCachePolicyResult>(
+                    new DeleteCachePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Delete an origin access identity.
      * </p>
      * 
@@ -1243,7 +1590,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      *         The specified origin access identity does not exist.
      * @throws PreconditionFailedException
@@ -1251,7 +1598,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws CloudFrontOriginAccessIdentityInUseException
      *         The Origin Access Identity specified is already in use.
      * @sample AmazonCloudFront.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1372,13 +1719,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The specified CloudFront distribution is not disabled. You must disable the distribution before you can
      *         delete it.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchDistributionException
      *         The specified distribution does not exist.
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -1433,7 +1780,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
@@ -1441,7 +1788,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws FieldLevelEncryptionConfigInUseException
      *         The specified configuration for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1497,7 +1844,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws PreconditionFailedException
@@ -1505,7 +1852,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws FieldLevelEncryptionProfileInUseException
      *         The specified profile for field-level encryption is in use.
      * @sample AmazonCloudFront.DeleteFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1553,6 +1900,80 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Deletes an origin request policy.
+     * </p>
+     * <p>
+     * You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your
+     * distributions to remove the origin request policy from all cache behaviors, then delete the origin request
+     * policy.
+     * </p>
+     * <p>
+     * To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier,
+     * you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
+     * </p>
+     * 
+     * @param deleteOriginRequestPolicyRequest
+     * @return Result of the DeleteOriginRequestPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws IllegalDeleteException
+     *         You cannot delete a managed policy.
+     * @throws OriginRequestPolicyInUseException
+     *         Cannot delete the origin request policy because it is attached to one or more cache behaviors.
+     * @sample AmazonCloudFront.DeleteOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteOriginRequestPolicyResult deleteOriginRequestPolicy(DeleteOriginRequestPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOriginRequestPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOriginRequestPolicyResult executeDeleteOriginRequestPolicy(DeleteOriginRequestPolicyRequest deleteOriginRequestPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOriginRequestPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOriginRequestPolicyRequest> request = null;
+        Response<DeleteOriginRequestPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteOriginRequestPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOriginRequestPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteOriginRequestPolicyResult> responseHandler = new StaxResponseHandler<DeleteOriginRequestPolicyResult>(
+                    new DeleteOriginRequestPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Remove a public key you previously added to CloudFront.
      * </p>
      * 
@@ -1563,13 +1984,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws PublicKeyInUseException
      *         The specified public key is in use.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeletePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1689,13 +2110,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         The specified CloudFront distribution is not disabled. You must disable the distribution before you can
      *         delete it.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchStreamingDistributionException
      *         The specified streaming distribution does not exist.
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1742,6 +2163,144 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a cache policy, including the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The policy’s identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The date and time when the policy was last modified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a
+     * distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
+     * using <code>ListCachePolicies</code>.
+     * </p>
+     * 
+     * @param getCachePolicyRequest
+     * @return Result of the GetCachePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @sample AmazonCloudFront.GetCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCachePolicyResult getCachePolicy(GetCachePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCachePolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetCachePolicyResult executeGetCachePolicy(GetCachePolicyRequest getCachePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCachePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCachePolicyRequest> request = null;
+        Response<GetCachePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(getCachePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCachePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetCachePolicyResult> responseHandler = new StaxResponseHandler<GetCachePolicyResult>(
+                    new GetCachePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a cache policy configuration.
+     * </p>
+     * <p>
+     * To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to
+     * a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
+     * using <code>ListCachePolicies</code>.
+     * </p>
+     * 
+     * @param getCachePolicyConfigRequest
+     * @return Result of the GetCachePolicyConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @sample AmazonCloudFront.GetCachePolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetCachePolicyConfigResult getCachePolicyConfig(GetCachePolicyConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCachePolicyConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetCachePolicyConfigResult executeGetCachePolicyConfig(GetCachePolicyConfigRequest getCachePolicyConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCachePolicyConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCachePolicyConfigRequest> request = null;
+        Response<GetCachePolicyConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCachePolicyConfigRequestMarshaller().marshall(super.beforeMarshalling(getCachePolicyConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCachePolicyConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetCachePolicyConfigResult> responseHandler = new StaxResponseHandler<GetCachePolicyConfigResult>(
+                    new GetCachePolicyConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get the information about an origin access identity.
      * </p>
      * 
@@ -1753,7 +2312,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1815,7 +2374,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         Access denied.
      * @sample AmazonCloudFront.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1875,7 +2434,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -1933,7 +2492,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -1990,7 +2549,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryption
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryption"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2047,7 +2606,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionConfigException
      *         The specified configuration for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2104,7 +2663,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2161,7 +2720,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @sample AmazonCloudFront.GetFieldLevelEncryptionProfileConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfileConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2223,7 +2782,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2270,6 +2829,144 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets an origin request policy, including the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The policy’s identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The date and time when the policy was last modified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is
+     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
+     * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
+     * </p>
+     * 
+     * @param getOriginRequestPolicyRequest
+     * @return Result of the GetOriginRequestPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @sample AmazonCloudFront.GetOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOriginRequestPolicyResult getOriginRequestPolicy(GetOriginRequestPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOriginRequestPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetOriginRequestPolicyResult executeGetOriginRequestPolicy(GetOriginRequestPolicyRequest getOriginRequestPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOriginRequestPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOriginRequestPolicyRequest> request = null;
+        Response<GetOriginRequestPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(getOriginRequestPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOriginRequestPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetOriginRequestPolicyResult> responseHandler = new StaxResponseHandler<GetOriginRequestPolicyResult>(
+                    new GetOriginRequestPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets an origin request policy configuration.
+     * </p>
+     * <p>
+     * To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request
+     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
+     * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
+     * </p>
+     * 
+     * @param getOriginRequestPolicyConfigRequest
+     * @return Result of the GetOriginRequestPolicyConfig operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @sample AmazonCloudFront.GetOriginRequestPolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetOriginRequestPolicyConfigResult getOriginRequestPolicyConfig(GetOriginRequestPolicyConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOriginRequestPolicyConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetOriginRequestPolicyConfigResult executeGetOriginRequestPolicyConfig(GetOriginRequestPolicyConfigRequest getOriginRequestPolicyConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOriginRequestPolicyConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOriginRequestPolicyConfigRequest> request = null;
+        Response<GetOriginRequestPolicyConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOriginRequestPolicyConfigRequestMarshaller().marshall(super.beforeMarshalling(getOriginRequestPolicyConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOriginRequestPolicyConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetOriginRequestPolicyConfigResult> responseHandler = new StaxResponseHandler<GetOriginRequestPolicyConfigResult>(
+                    new GetOriginRequestPolicyConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get the public key information.
      * </p>
      * 
@@ -2280,7 +2977,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @sample AmazonCloudFront.GetPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2336,7 +3033,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @sample AmazonCloudFront.GetPublicKeyConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2394,7 +3091,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2452,7 +3149,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2499,6 +3196,75 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of cache policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
+     * created in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listCachePoliciesRequest
+     * @return Result of the ListCachePolicies operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListCachePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListCachePoliciesResult listCachePolicies(ListCachePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCachePolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListCachePoliciesResult executeListCachePolicies(ListCachePoliciesRequest listCachePoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCachePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCachePoliciesRequest> request = null;
+        Response<ListCachePoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCachePoliciesRequestMarshaller().marshall(super.beforeMarshalling(listCachePoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCachePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListCachePoliciesResult> responseHandler = new StaxResponseHandler<ListCachePoliciesResult>(
+                    new ListCachePoliciesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists origin access identities.
      * </p>
      * 
@@ -2508,7 +3274,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @sample AmazonCloudFront.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2566,7 +3332,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @sample AmazonCloudFront.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2613,6 +3379,142 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * cache policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByCachePolicyIdRequest
+     * @return Result of the ListDistributionsByCachePolicyId operation returned by the service.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.ListDistributionsByCachePolicyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDistributionsByCachePolicyIdResult listDistributionsByCachePolicyId(ListDistributionsByCachePolicyIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDistributionsByCachePolicyId(request);
+    }
+
+    @SdkInternalApi
+    final ListDistributionsByCachePolicyIdResult executeListDistributionsByCachePolicyId(
+            ListDistributionsByCachePolicyIdRequest listDistributionsByCachePolicyIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDistributionsByCachePolicyIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDistributionsByCachePolicyIdRequest> request = null;
+        Response<ListDistributionsByCachePolicyIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDistributionsByCachePolicyIdRequestMarshaller().marshall(super.beforeMarshalling(listDistributionsByCachePolicyIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByCachePolicyId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListDistributionsByCachePolicyIdResult> responseHandler = new StaxResponseHandler<ListDistributionsByCachePolicyIdResult>(
+                    new ListDistributionsByCachePolicyIdResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * origin request policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByOriginRequestPolicyIdRequest
+     * @return Result of the ListDistributionsByOriginRequestPolicyId operation returned by the service.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @sample AmazonCloudFront.ListDistributionsByOriginRequestPolicyId
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDistributionsByOriginRequestPolicyIdResult listDistributionsByOriginRequestPolicyId(ListDistributionsByOriginRequestPolicyIdRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDistributionsByOriginRequestPolicyId(request);
+    }
+
+    @SdkInternalApi
+    final ListDistributionsByOriginRequestPolicyIdResult executeListDistributionsByOriginRequestPolicyId(
+            ListDistributionsByOriginRequestPolicyIdRequest listDistributionsByOriginRequestPolicyIdRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDistributionsByOriginRequestPolicyIdRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDistributionsByOriginRequestPolicyIdRequest> request = null;
+        Response<ListDistributionsByOriginRequestPolicyIdResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDistributionsByOriginRequestPolicyIdRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDistributionsByOriginRequestPolicyIdRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByOriginRequestPolicyId");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListDistributionsByOriginRequestPolicyIdResult> responseHandler = new StaxResponseHandler<ListDistributionsByOriginRequestPolicyIdResult>(
+                    new ListDistributionsByOriginRequestPolicyIdResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
      * </p>
      * 
@@ -2628,7 +3530,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *         . To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
      *         <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
      * @sample AmazonCloudFront.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2683,7 +3585,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @sample AmazonCloudFront.ListFieldLevelEncryptionConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2739,7 +3641,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @sample AmazonCloudFront.ListFieldLevelEncryptionProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2800,7 +3702,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @sample AmazonCloudFront.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -2847,6 +3749,75 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of origin request policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
+     * created in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listOriginRequestPoliciesRequest
+     * @return Result of the ListOriginRequestPolicies operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListOriginRequestPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListOriginRequestPoliciesResult listOriginRequestPolicies(ListOriginRequestPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOriginRequestPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListOriginRequestPoliciesResult executeListOriginRequestPolicies(ListOriginRequestPoliciesRequest listOriginRequestPoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOriginRequestPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOriginRequestPoliciesRequest> request = null;
+        Response<ListOriginRequestPoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOriginRequestPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listOriginRequestPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginRequestPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListOriginRequestPoliciesResult> responseHandler = new StaxResponseHandler<ListOriginRequestPoliciesResult>(
+                    new ListOriginRequestPoliciesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List all public keys that have been added to CloudFront for this account.
      * </p>
      * 
@@ -2855,7 +3826,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @sample AmazonCloudFront.ListPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -2911,7 +3882,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @sample AmazonCloudFront.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -2973,7 +3944,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @sample AmazonCloudFront.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -3035,7 +4006,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @sample AmazonCloudFront.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3096,7 +4067,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws NoSuchResourceException
      *         A resource that was specified is not valid.
      * @sample AmazonCloudFront.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3142,6 +4113,110 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Updates a cache policy configuration.
+     * </p>
+     * <p>
+     * When you update a cache policy configuration, all the fields are updated with the values provided in the request.
+     * You cannot update some fields independent of others. To update a cache policy configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetCachePolicyConfig</code> to get the current configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the cache policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that
+     * you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateCachePolicyRequest
+     * @return Result of the UpdateCachePolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws IllegalUpdateException
+     *         The update contains modifications that are not allowed.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws CachePolicyAlreadyExistsException
+     *         A cache policy with this name already exists. You must provide a unique name. To modify an existing cache
+     *         policy, use <code>UpdateCachePolicy</code>.
+     * @throws TooManyHeadersInCachePolicyException
+     *         The number of headers in the cache policy exceeds the maximum. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyCookiesInCachePolicyException
+     *         The number of cookies in the cache policy exceeds the maximum. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyQueryStringsInCachePolicyException
+     *         The number of query strings in the cache policy exceeds the maximum. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.UpdateCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateCachePolicyResult updateCachePolicy(UpdateCachePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateCachePolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateCachePolicyResult executeUpdateCachePolicy(UpdateCachePolicyRequest updateCachePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateCachePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateCachePolicyRequest> request = null;
+        Response<UpdateCachePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(updateCachePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCachePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateCachePolicyResult> responseHandler = new StaxResponseHandler<UpdateCachePolicyResult>(
+                    new UpdateCachePolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Update an origin access identity.
      * </p>
      * 
@@ -3151,9 +4226,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws IllegalUpdateException
-     *         Origin and <code>CallerReference</code> cannot be updated.
+     *         The update contains modifications that are not allowed.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
      *         is set.
@@ -3166,7 +4241,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3334,9 +4409,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws CNAMEAlreadyExistsException
      *         The CNAME specified is already defined for CloudFront.
      * @throws IllegalUpdateException
-     *         Origin and <code>CallerReference</code> cannot be updated.
+     *         The update contains modifications that are not allowed.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
      *         is set.
@@ -3412,6 +4487,8 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyDistributionsWithLambdaAssociationsException
      *         Processing your request would cause the maximum number of distributions with Lambda function associations
      *         per owner to be exceeded.
+     * @throws TooManyDistributionsWithSingleFunctionARNException
+     *         The maximum number of distributions have been associated with the specified Lambda function.
      * @throws TooManyLambdaFunctionAssociationsException
      *         Your request contains more Lambda function associations than are allowed per distribution.
      * @throws InvalidLambdaFunctionAssociationException
@@ -3428,8 +4505,22 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyDistributionsAssociatedToFieldLevelEncryptionConfigException
      *         The maximum number of distributions have been associated with the specified configuration for field-level
      *         encryption.
+     * @throws NoSuchCachePolicyException
+     *         The cache policy does not exist.
+     * @throws TooManyDistributionsAssociatedToCachePolicyException
+     *         The maximum number of distributions have been associated with the specified cache policy. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws TooManyDistributionsAssociatedToOriginRequestPolicyException
+     *         The maximum number of distributions have been associated with the specified origin request policy. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
      * @sample AmazonCloudFront.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
@@ -3484,13 +4575,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws AccessDeniedException
      *         Access denied.
      * @throws IllegalUpdateException
-     *         Origin and <code>CallerReference</code> cannot be updated.
+     *         The update contains modifications that are not allowed.
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchFieldLevelEncryptionProfileException
      *         The specified profile for field-level encryption doesn't exist.
      * @throws NoSuchFieldLevelEncryptionConfigException
@@ -3504,7 +4595,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws QueryArgProfileEmptyException
      *         No profile specified for the field-level encryption query argument.
      * @sample AmazonCloudFront.UpdateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3562,13 +4653,13 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws FieldLevelEncryptionProfileAlreadyExistsException
      *         The specified profile for field-level encryption already exists.
      * @throws IllegalUpdateException
-     *         Origin and <code>CallerReference</code> cannot be updated.
+     *         The update contains modifications that are not allowed.
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws NoSuchFieldLevelEncryptionProfileException
@@ -3582,7 +4673,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws TooManyFieldLevelEncryptionFieldPatternsException
      *         The maximum number of field patterns for field-level encryption have been created.
      * @sample AmazonCloudFront.UpdateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     @Override
@@ -3630,6 +4721,114 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Updates an origin request policy configuration.
+     * </p>
+     * <p>
+     * When you update an origin request policy configuration, all the fields are updated with the values provided in
+     * the request. You cannot update some fields independent of others. To update an origin request policy
+     * configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the origin request policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration,
+     * including the fields that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateOriginRequestPolicyRequest
+     * @return Result of the UpdateOriginRequestPolicy operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws IllegalUpdateException
+     *         The update contains modifications that are not allowed.
+     * @throws InconsistentQuantitiesException
+     *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @throws InvalidIfMatchVersionException
+     *         The <code>If-Match</code> version is missing or not valid.
+     * @throws NoSuchOriginRequestPolicyException
+     *         The origin request policy does not exist.
+     * @throws PreconditionFailedException
+     *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
+     * @throws OriginRequestPolicyAlreadyExistsException
+     *         An origin request policy with this name already exists. You must provide a unique name. To modify an
+     *         existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+     * @throws TooManyHeadersInOriginRequestPolicyException
+     *         The number of headers in the origin request policy exceeds the maximum. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyCookiesInOriginRequestPolicyException
+     *         The number of cookies in the origin request policy exceeds the maximum. For more information, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
+     *         (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws TooManyQueryStringsInOriginRequestPolicyException
+     *         The number of query strings in the origin request policy exceeds the maximum. For more information, see
+     *         <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas
+     *         </a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @sample AmazonCloudFront.UpdateOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateOriginRequestPolicyResult updateOriginRequestPolicy(UpdateOriginRequestPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOriginRequestPolicy(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOriginRequestPolicyResult executeUpdateOriginRequestPolicy(UpdateOriginRequestPolicyRequest updateOriginRequestPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOriginRequestPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOriginRequestPolicyRequest> request = null;
+        Response<UpdateOriginRequestPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(updateOriginRequestPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOriginRequestPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateOriginRequestPolicyResult> responseHandler = new StaxResponseHandler<UpdateOriginRequestPolicyResult>(
+                    new UpdateOriginRequestPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Update public key information. Note that the only value you can change is the comment.
      * </p>
      * 
@@ -3642,15 +4841,15 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InvalidArgumentException
      *         An argument is invalid.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws IllegalUpdateException
-     *         Origin and <code>CallerReference</code> cannot be updated.
+     *         The update contains modifications that are not allowed.
      * @throws NoSuchPublicKeyException
      *         The specified public key doesn't exist.
      * @throws PreconditionFailedException
      *         The precondition given in one or more of the request header fields evaluated to <code>false</code>.
      * @sample AmazonCloudFront.UpdatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     @Override
@@ -3708,9 +4907,9 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws CNAMEAlreadyExistsException
      *         The CNAME specified is already defined for CloudFront.
      * @throws IllegalUpdateException
-     *         Origin and <code>CallerReference</code> cannot be updated.
+     *         The update contains modifications that are not allowed.
      * @throws InvalidIfMatchVersionException
-     *         The <code>If-Match</code> version is missing or not valid for the distribution.
+     *         The <code>If-Match</code> version is missing or not valid.
      * @throws MissingBodyException
      *         This operation requires a body. Ensure that the body is present and the <code>Content-Type</code> header
      *         is set.
@@ -3731,7 +4930,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      * @throws InconsistentQuantitiesException
      *         The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
      * @sample AmazonCloudFront.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     @Override

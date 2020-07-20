@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * codes for which CloudFront will failover from the primary origin to the second origin.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/OriginGroupFailoverCriteria"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginGroupFailoverCriteria"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

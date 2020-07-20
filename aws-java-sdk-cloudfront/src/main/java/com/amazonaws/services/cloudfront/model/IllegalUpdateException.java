@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Origin and <code>CallerReference</code> cannot be updated.
+ * The update contains modifications that are not allowed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

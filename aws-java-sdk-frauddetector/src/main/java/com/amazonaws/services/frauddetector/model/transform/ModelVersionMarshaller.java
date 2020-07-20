@@ -33,6 +33,8 @@ public class ModelVersionMarshaller {
             .marshallLocationName("modelType").build();
     private static final MarshallingInfo<String> MODELVERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelVersionNumber").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final ModelVersionMarshaller instance = new ModelVersionMarshaller();
 
@@ -53,6 +55,7 @@ public class ModelVersionMarshaller {
             protocolMarshaller.marshall(modelVersion.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(modelVersion.getModelType(), MODELTYPE_BINDING);
             protocolMarshaller.marshall(modelVersion.getModelVersionNumber(), MODELVERSIONNUMBER_BINDING);
+            protocolMarshaller.marshall(modelVersion.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

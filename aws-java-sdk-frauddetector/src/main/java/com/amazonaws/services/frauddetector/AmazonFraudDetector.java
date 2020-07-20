@@ -56,6 +56,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.BatchCreateVariable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchCreateVariable"
      *      target="_top">AWS API Documentation</a>
@@ -75,6 +79,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.BatchGetVariable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/BatchGetVariable" target="_top">AWS
      *      API Documentation</a>
@@ -96,6 +104,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.CreateDetectorVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateDetectorVersion"
      *      target="_top">AWS API Documentation</a>
@@ -104,7 +116,28 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Creates a version of the model using the specified model type.
+     * Creates a model using the specified model type.
+     * </p>
+     * 
+     * @param createModelRequest
+     * @return Result of the CreateModel operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.CreateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateModelResult createModel(CreateModelRequest createModelRequest);
+
+    /**
+     * <p>
+     * Creates a version of the model using the specified model type and model id.
      * </p>
      * 
      * @param createModelVersionRequest
@@ -113,10 +146,12 @@ public interface AmazonFraudDetector {
      *         An exception indicating a specified value is not allowed.
      * @throws ResourceNotFoundException
      *         An exception indicating the specified resource was not found.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
      * @sample AmazonFraudDetector.CreateModelVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModelVersion"
      *      target="_top">AWS API Documentation</a>
@@ -136,6 +171,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.CreateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateRule" target="_top">AWS API
      *      Documentation</a>
@@ -155,6 +194,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.CreateVariable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateVariable" target="_top">AWS
      *      API Documentation</a>
@@ -188,8 +231,8 @@ public interface AmazonFraudDetector {
      *         </li>
      *         <li>
      *         <p>
-     *         DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an
-     *         associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
      *         </p>
      *         </li>
      * @throws ValidationException
@@ -198,6 +241,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.DeleteDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetector" target="_top">AWS
      *      API Documentation</a>
@@ -238,10 +285,14 @@ public interface AmazonFraudDetector {
      *         </li>
      *         <li>
      *         <p>
-     *         DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an
-     *         associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
      *         </p>
      *         </li>
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.DeleteDetectorVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteDetectorVersion"
      *      target="_top">AWS API Documentation</a>
@@ -259,6 +310,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.DeleteEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteEvent" target="_top">AWS API
      *      Documentation</a>
@@ -267,12 +322,12 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code> or
-     * <code>INACTIVE</code> detector version.
+     * Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code>
+     * detector version.
      * </p>
      * 
-     * @param deleteRuleVersionRequest
-     * @return Result of the DeleteRuleVersion operation returned by the service.
+     * @param deleteRuleRequest
+     * @return Result of the DeleteRule operation returned by the service.
      * @throws ConflictException
      *         An exception indicating there was a conflict during a delete operation. The following delete operations
      *         can cause a conflict exception:</p>
@@ -292,8 +347,8 @@ public interface AmazonFraudDetector {
      *         </li>
      *         <li>
      *         <p>
-     *         DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an
-     *         associated <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
+     *         DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+     *         <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
      *         </p>
      *         </li>
      * @throws ValidationException
@@ -302,11 +357,15 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
-     * @sample AmazonFraudDetector.DeleteRuleVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion"
-     *      target="_top">AWS API Documentation</a>
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    DeleteRuleVersionResult deleteRuleVersion(DeleteRuleVersionRequest deleteRuleVersionRequest);
+    DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
 
     /**
      * <p>
@@ -323,6 +382,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.DescribeDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DescribeDetector" target="_top">AWS
      *      API Documentation</a>
@@ -343,8 +406,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating the specified resource was not found.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.DescribeModelVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DescribeModelVersions"
      *      target="_top">AWS API Documentation</a>
@@ -366,6 +431,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetDetectorVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDetectorVersion"
      *      target="_top">AWS API Documentation</a>
@@ -374,11 +443,11 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all of detectors. This is a paginated API. If you provide a null <code>maxSizePerPage</code>, this actions
-     * retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>, the value must be
-     * between 5 and 10. To get the next page results, provide the pagination token from the
-     * <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the records from the
-     * beginning.
+     * Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If
+     * you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you
+     * provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the
+     * pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token
+     * fetches the records from the beginning.
      * </p>
      * 
      * @param getDetectorsRequest
@@ -391,6 +460,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetDetectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetDetectors" target="_top">AWS API
      *      Documentation</a>
@@ -399,11 +472,91 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
+     * Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a
+     * null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination
+     * token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the
+     * records from the beginning.
+     * </p>
+     * 
+     * @param getEntityTypesRequest
+     * @return Result of the GetEntityTypes operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetEntityTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetEntityTypesResult getEntityTypes(GetEntityTypesRequest getEntityTypesRequest);
+
+    /**
+     * <p>
+     * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (
+     * <code>ACTIVE</code>) version is used.
+     * </p>
+     * 
+     * @param getEventPredictionRequest
+     * @return Result of the GetEventPrediction operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws ThrottlingException
+     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetEventPrediction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetEventPredictionResult getEventPrediction(GetEventPredictionRequest getEventPredictionRequest);
+
+    /**
+     * <p>
+     * Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null
+     * <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination
+     * token from the <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the
+     * records from the beginning.
+     * </p>
+     * 
+     * @param getEventTypesRequest
+     * @return Result of the GetEventTypes operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetEventTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetEventTypesResult getEventTypes(GetEventTypesRequest getEventTypesRequest);
+
+    /**
+     * <p>
      * Gets the details for one or more Amazon SageMaker models that have been imported into the service. This is a
-     * paginated API. If you provide a null <code>maxSizePerPage</code>, this actions retrieves a maximum of 10 records
-     * per page. If you provide a <code>maxSizePerPage</code>, the value must be between 5 and 10. To get the next page
-     * results, provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A
-     * null pagination token fetches the records from the beginning.
+     * paginated API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of 10 records per
+     * page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results,
+     * provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A null
+     * pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getExternalModelsRequest
@@ -416,6 +569,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetExternalModels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetExternalModels"
      *      target="_top">AWS API Documentation</a>
@@ -424,7 +581,56 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets a model version.
+     * Gets the encryption key if a Key Management Service (KMS) customer master key (CMK) has been specified to be used
+     * to encrypt content in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param getKMSEncryptionKeyRequest
+     * @return Result of the GetKMSEncryptionKey operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetKMSEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetKMSEncryptionKeyResult getKMSEncryptionKey(GetKMSEncryptionKeyRequest getKMSEncryptionKeyRequest);
+
+    /**
+     * <p>
+     * Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null
+     * <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the
+     * pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token
+     * fetches the records from the beginning.
+     * </p>
+     * 
+     * @param getLabelsRequest
+     * @return Result of the GetLabels operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.GetLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLabelsResult getLabels(GetLabelsRequest getLabelsRequest);
+
+    /**
+     * <p>
+     * Gets the details of the specified model version.
      * </p>
      * 
      * @param getModelVersionRequest
@@ -435,8 +641,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating the specified resource was not found.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetModelVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetModelVersion" target="_top">AWS
      *      API Documentation</a>
@@ -445,8 +653,15 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all of the models for the AWS account, or the specified model type, or gets a single model for the specified
-     * model type, model ID combination.
+     * Gets one or more models. Gets all models for the AWS account if no model type and no model id provided. Gets all
+     * models for the AWS account and model type, if the model type is specified but model id is not provided. Gets a
+     * specific model if (model type, model id) tuple is specified.
+     * </p>
+     * <p>
+     * This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10
+     * records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 10. To get the next
+     * page results, provide the pagination token from the response as part of your request. A null pagination token
+     * fetches the records from the beginning.
      * </p>
      * 
      * @param getModelsRequest
@@ -457,8 +672,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating the specified resource was not found.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetModels
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetModels" target="_top">AWS API
      *      Documentation</a>
@@ -467,11 +684,10 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxSizePerPage</code>, this
-     * actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>, the value must
-     * be between 50 and 100. To get the next page results, provide the pagination token from the
-     * <code>GetOutcomesResult</code> as part of your request. A null pagination token fetches the records from the
-     * beginning.
+     * Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>, this actions
+     * retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>, the value must be between
+     * 50 and 100. To get the next page results, provide the pagination token from the <code>GetOutcomesResult</code> as
+     * part of your request. A null pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getOutcomesRequest
@@ -484,6 +700,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetOutcomes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetOutcomes" target="_top">AWS API
      *      Documentation</a>
@@ -506,6 +726,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetPrediction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction" target="_top">AWS
      *      API Documentation</a>
@@ -514,7 +738,14 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all rules available for the specified detector.
+     * Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified.
+     * Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both
+     * the <code>ruleId</code> and the <code>ruleVersion</code> are specified.
+     * </p>
+     * <p>
+     * This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records per page. If you
+     * provide maxResults the value must be between 50 and 100. To get the next page result, a provide a pagination
+     * token from GetRulesResult as part of your request. Null pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getRulesRequest
@@ -527,6 +758,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetRules" target="_top">AWS API
      *      Documentation</a>
@@ -552,11 +787,38 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.GetVariables
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetVariables" target="_top">AWS API
      *      Documentation</a>
      */
     GetVariablesResult getVariables(GetVariablesRequest getVariablesRequest);
+
+    /**
+     * <p>
+     * Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the
+     * pagination token from the response as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -571,11 +833,63 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.PutDetector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutDetector" target="_top">AWS API
      *      Documentation</a>
      */
     PutDetectorResult putDetector(PutDetectorRequest putDetectorRequest);
+
+    /**
+     * <p>
+     * Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud
+     * prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type
+     * classifies the entity. Example classifications include customer, merchant, or account.
+     * </p>
+     * 
+     * @param putEntityTypeRequest
+     * @return Result of the PutEntityType operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.PutEntityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutEntityTypeResult putEntityType(PutEntityTypeRequest putEntityTypeRequest);
+
+    /**
+     * <p>
+     * Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon
+     * Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent
+     * to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event
+     * (such as a customer), and the labels that classify the event. Example event types include online payment
+     * transactions, account registrations, and authentications.
+     * </p>
+     * 
+     * @param putEventTypeRequest
+     * @return Result of the PutEventType operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.PutEventType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutEventTypeResult putEventType(PutEventTypeRequest putEventTypeRequest);
 
     /**
      * <p>
@@ -591,6 +905,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.PutExternalModel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutExternalModel" target="_top">AWS
      *      API Documentation</a>
@@ -599,22 +917,49 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Creates or updates a model.
+     * Specifies the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content in Amazon
+     * Fraud Detector.
      * </p>
      * 
-     * @param putModelRequest
-     * @return Result of the PutModel operation returned by the service.
+     * @param putKMSEncryptionKeyRequest
+     * @return Result of the PutKMSEncryptionKey operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.PutKMSEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutKMSEncryptionKeyResult putKMSEncryptionKey(PutKMSEncryptionKeyRequest putKMSEncryptionKeyRequest);
+
+    /**
+     * <p>
+     * Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with
+     * event types and used to train supervised machine learning models in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param putLabelRequest
+     * @return Result of the PutLabel operation returned by the service.
      * @throws ValidationException
      *         An exception indicating a specified value is not allowed.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
-     * @sample AmazonFraudDetector.PutModel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutModel" target="_top">AWS API
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.PutLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel" target="_top">AWS API
      *      Documentation</a>
      */
-    PutModelResult putModel(PutModelRequest putModelRequest);
+    PutLabelResult putLabel(PutLabelRequest putLabelRequest);
 
     /**
      * <p>
@@ -629,6 +974,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.PutOutcome
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutOutcome" target="_top">AWS API
      *      Documentation</a>
@@ -637,8 +986,51 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
+     * Assigns tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
      * Updates a detector version. The detector version attributes that you can update include models, external model
-     * endpoints, rules, and description. You can only update a <code>DRAFT</code> detector version.
+     * endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector
+     * version.
      * </p>
      * 
      * @param updateDetectorVersionRequest
@@ -651,6 +1043,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.UpdateDetectorVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateDetectorVersion"
      *      target="_top">AWS API Documentation</a>
@@ -671,6 +1067,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.UpdateDetectorVersionMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateDetectorVersionMetadata"
      *      target="_top">AWS API Documentation</a>
@@ -694,6 +1094,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.UpdateDetectorVersionStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateDetectorVersionStatus"
      *      target="_top">AWS API Documentation</a>
@@ -702,21 +1106,34 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a model version. You can update the description and status attributes using this action. You can perform
-     * the following status updates:
+     * Updates a model. You can update the description attribute using this action.
      * </p>
-     * <ol>
-     * <li>
+     * 
+     * @param updateModelRequest
+     * @return Result of the UpdateModel operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateModelResult updateModel(UpdateModelRequest updateModelRequest);
+
+    /**
      * <p>
-     * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>
+     * Updates a model version. Updating a model version retrains an existing model version using updated training data
+     * and produces a new minor version of the model. You can update the training data set location and data access role
+     * attributes using this action. This action creates and trains a new minor version of the model, for example
+     * version 1.01, 1.02, 1.03.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Change <code>ACTIVE</code> back to <code>TRAINING_COMPLETE</code>
-     * </p>
-     * </li>
-     * </ol>
      * 
      * @param updateModelVersionRequest
      * @return Result of the UpdateModelVersion operation returned by the service.
@@ -724,10 +1141,12 @@ public interface AmazonFraudDetector {
      *         An exception indicating a specified value is not allowed.
      * @throws ResourceNotFoundException
      *         An exception indicating the specified resource was not found.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @throws InternalServerException
      *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
      * @sample AmazonFraudDetector.UpdateModelVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersion"
      *      target="_top">AWS API Documentation</a>
@@ -736,7 +1155,45 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a rule's metadata.
+     * Updates the status of a model version.
+     * </p>
+     * <p>
+     * You can perform the following status updates:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change <code>ACTIVE</code>to <code>INACTIVE</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateModelVersionStatusRequest
+     * @return Result of the UpdateModelVersionStatus operation returned by the service.
+     * @throws ValidationException
+     *         An exception indicating a specified value is not allowed.
+     * @throws ResourceNotFoundException
+     *         An exception indicating the specified resource was not found.
+     * @throws InternalServerException
+     *         An exception indicating an internal server error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
+     * @sample AmazonFraudDetector.UpdateModelVersionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateModelVersionStatusResult updateModelVersionStatus(UpdateModelVersionStatusRequest updateModelVersionStatusRequest);
+
+    /**
+     * <p>
+     * Updates a rule's metadata. The description attribute can be updated.
      * </p>
      * 
      * @param updateRuleMetadataRequest
@@ -749,6 +1206,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.UpdateRuleMetadata
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateRuleMetadata"
      *      target="_top">AWS API Documentation</a>
@@ -757,7 +1218,8 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a rule version resulting in a new rule version.
+     * Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version
+     * (version 1, 2, 3 ...).
      * </p>
      * 
      * @param updateRuleVersionRequest
@@ -770,6 +1232,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.UpdateRuleVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateRuleVersion"
      *      target="_top">AWS API Documentation</a>
@@ -791,6 +1257,10 @@ public interface AmazonFraudDetector {
      *         An exception indicating an internal server error.
      * @throws ThrottlingException
      *         An exception indicating a throttling error.
+     * @throws AccessDeniedException
+     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
+     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
+     *         account.
      * @sample AmazonFraudDetector.UpdateVariable
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateVariable" target="_top">AWS
      *      API Documentation</a>

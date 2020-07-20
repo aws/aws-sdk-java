@@ -33,6 +33,12 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
     private String modelEndpoint;
     /**
      * <p>
+     * The event type name.
+     * </p>
+     */
+    private String eventTypeName;
+    /**
+     * <p>
      * The source of the model.
      * </p>
      */
@@ -61,6 +67,12 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String modelEndpointStatus;
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -99,6 +111,46 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     public PutExternalModelRequest withModelEndpoint(String modelEndpoint) {
         setModelEndpoint(modelEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event type name.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The event type name.
+     */
+
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The event type name.
+     * </p>
+     * 
+     * @return The event type name.
+     */
+
+    public String getEventTypeName() {
+        return this.eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The event type name.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The event type name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutExternalModelRequest withEventTypeName(String eventTypeName) {
+        setEventTypeName(eventTypeName);
         return this;
     }
 
@@ -341,6 +393,76 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @return A collection of key and value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutExternalModelRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutExternalModelRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -354,6 +476,8 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getModelEndpoint() != null)
             sb.append("ModelEndpoint: ").append(getModelEndpoint()).append(",");
+        if (getEventTypeName() != null)
+            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getModelSource() != null)
             sb.append("ModelSource: ").append(getModelSource()).append(",");
         if (getRole() != null)
@@ -363,7 +487,9 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         if (getOutputConfiguration() != null)
             sb.append("OutputConfiguration: ").append(getOutputConfiguration()).append(",");
         if (getModelEndpointStatus() != null)
-            sb.append("ModelEndpointStatus: ").append(getModelEndpointStatus());
+            sb.append("ModelEndpointStatus: ").append(getModelEndpointStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -381,6 +507,10 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getModelEndpoint() == null ^ this.getModelEndpoint() == null)
             return false;
         if (other.getModelEndpoint() != null && other.getModelEndpoint().equals(this.getModelEndpoint()) == false)
+            return false;
+        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
+            return false;
+        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
             return false;
         if (other.getModelSource() == null ^ this.getModelSource() == null)
             return false;
@@ -402,6 +532,10 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getModelEndpointStatus() != null && other.getModelEndpointStatus().equals(this.getModelEndpointStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -411,11 +545,13 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelEndpoint() == null) ? 0 : getModelEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getModelSource() == null) ? 0 : getModelSource().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getInputConfiguration() == null) ? 0 : getInputConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputConfiguration() == null) ? 0 : getOutputConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelEndpointStatus() == null) ? 0 : getModelEndpointStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

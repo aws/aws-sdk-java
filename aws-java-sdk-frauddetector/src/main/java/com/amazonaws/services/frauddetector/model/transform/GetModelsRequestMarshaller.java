@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetModelsRequestMarshaller {
 
-    private static final MarshallingInfo<String> MODELTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("modelType").build();
     private static final MarshallingInfo<String> MODELID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("modelId").build();
+    private static final MarshallingInfo<String> MODELTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("modelType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,8 +52,8 @@ public class GetModelsRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getModelsRequest.getModelType(), MODELTYPE_BINDING);
             protocolMarshaller.marshall(getModelsRequest.getModelId(), MODELID_BINDING);
+            protocolMarshaller.marshall(getModelsRequest.getModelType(), MODELTYPE_BINDING);
             protocolMarshaller.marshall(getModelsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(getModelsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

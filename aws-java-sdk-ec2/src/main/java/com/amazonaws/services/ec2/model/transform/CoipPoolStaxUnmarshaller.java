@@ -75,6 +75,10 @@ public class CoipPoolStaxUnmarshaller implements Unmarshaller<CoipPool, StaxUnma
                     continue;
                 }
 
+                if (context.testExpression("poolArn", targetDepth)) {
+                    coipPool.setPoolArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return coipPool;

@@ -35,7 +35,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * DeleteRuleVersion: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
+ * DeleteRule: A conflict exception will occur if the <code>RuleVersion</code> is in use by an associated
  * <code>ACTIVE</code> or <code>INACTIVE DetectorVersion</code>.
  * </p>
  * </li>

@@ -56,6 +56,10 @@ public class DetectorJsonUnmarshaller implements Unmarshaller<Detector, JsonUnma
                     context.nextToken();
                     detector.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("eventTypeName", targetDepth)) {
+                    context.nextToken();
+                    detector.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
                     context.nextToken();
                     detector.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +67,10 @@ public class DetectorJsonUnmarshaller implements Unmarshaller<Detector, JsonUnma
                 if (context.testExpression("createdTime", targetDepth)) {
                     context.nextToken();
                     detector.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    detector.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

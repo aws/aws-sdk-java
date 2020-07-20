@@ -53,11 +53,6 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
-                if (context.testExpression("ForwardedValues", targetDepth)) {
-                    cacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("TrustedSigners", targetDepth)) {
                     cacheBehavior.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -68,11 +63,6 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
-                if (context.testExpression("MinTTL", targetDepth)) {
-                    cacheBehavior.setMinTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("AllowedMethods", targetDepth)) {
                     cacheBehavior.setAllowedMethods(AllowedMethodsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -80,16 +70,6 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
 
                 if (context.testExpression("SmoothStreaming", targetDepth)) {
                     cacheBehavior.setSmoothStreaming(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("DefaultTTL", targetDepth)) {
-                    cacheBehavior.setDefaultTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("MaxTTL", targetDepth)) {
-                    cacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -105,6 +85,36 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
 
                 if (context.testExpression("FieldLevelEncryptionId", targetDepth)) {
                     cacheBehavior.setFieldLevelEncryptionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CachePolicyId", targetDepth)) {
+                    cacheBehavior.setCachePolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginRequestPolicyId", targetDepth)) {
+                    cacheBehavior.setOriginRequestPolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ForwardedValues", targetDepth)) {
+                    cacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinTTL", targetDepth)) {
+                    cacheBehavior.setMinTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DefaultTTL", targetDepth)) {
+                    cacheBehavior.setDefaultTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxTTL", targetDepth)) {
+                    cacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

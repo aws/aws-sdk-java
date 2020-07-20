@@ -53,14 +53,14 @@ public class UpdateFieldLevelEncryptionProfileRequestMarshaller implements
             request.addHeader("If-Match", StringUtils.fromString(updateFieldLevelEncryptionProfileRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2019-03-26/field-level-encryption-profile/{Id}/config";
+        String uriResourcePath = "/2020-05-31/field-level-encryption-profile/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateFieldLevelEncryptionProfileRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2020-05-31/");
 
             FieldLevelEncryptionProfileConfig fieldLevelEncryptionProfileConfig = updateFieldLevelEncryptionProfileRequest
                     .getFieldLevelEncryptionProfileConfig();

@@ -42,7 +42,7 @@ public class ListDistributionsByWebACLIdRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2019-03-26/distributionsByWebACLId/{WebACLId}";
+        String uriResourcePath = "/2020-05-31/distributionsByWebACLId/{WebACLId}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "WebACLId",
                 listDistributionsByWebACLIdRequest.getWebACLId());

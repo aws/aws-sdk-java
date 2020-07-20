@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.frauddetector.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,12 +32,12 @@ public class UpdateModelVersionRequestMarshaller {
             .marshallLocationName("modelId").build();
     private static final MarshallingInfo<String> MODELTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("modelType").build();
-    private static final MarshallingInfo<String> MODELVERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelVersionNumber").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> MAJORVERSIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("majorVersionNumber").build();
+    private static final MarshallingInfo<StructuredPojo> EXTERNALEVENTSDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalEventsDetail").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final UpdateModelVersionRequestMarshaller instance = new UpdateModelVersionRequestMarshaller();
 
@@ -56,9 +57,9 @@ public class UpdateModelVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateModelVersionRequest.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(updateModelVersionRequest.getModelType(), MODELTYPE_BINDING);
-            protocolMarshaller.marshall(updateModelVersionRequest.getModelVersionNumber(), MODELVERSIONNUMBER_BINDING);
-            protocolMarshaller.marshall(updateModelVersionRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(updateModelVersionRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(updateModelVersionRequest.getMajorVersionNumber(), MAJORVERSIONNUMBER_BINDING);
+            protocolMarshaller.marshall(updateModelVersionRequest.getExternalEventsDetail(), EXTERNALEVENTSDETAIL_BINDING);
+            protocolMarshaller.marshall(updateModelVersionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

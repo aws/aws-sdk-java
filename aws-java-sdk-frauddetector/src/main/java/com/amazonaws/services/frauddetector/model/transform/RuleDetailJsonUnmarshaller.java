@@ -86,6 +86,10 @@ public class RuleDetailJsonUnmarshaller implements Unmarshaller<RuleDetail, Json
                     context.nextToken();
                     ruleDetail.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    ruleDetail.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

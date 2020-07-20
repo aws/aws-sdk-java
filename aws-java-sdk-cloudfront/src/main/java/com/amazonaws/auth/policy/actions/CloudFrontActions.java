@@ -25,6 +25,8 @@ public enum CloudFrontActions implements Action {
     /** Represents any action executed on CloudFront. */
     AllCloudFrontActions("cloudfront:*"),
 
+    /** Action for the CreateCachePolicy operation. */
+    CreateCachePolicy("cloudfront:CreateCachePolicy"),
     /** Action for the CreateCloudFrontOriginAccessIdentity operation. */
     CreateCloudFrontOriginAccessIdentity("cloudfront:CreateCloudFrontOriginAccessIdentity"),
     /** Action for the CreateDistribution operation. */
@@ -37,12 +39,16 @@ public enum CloudFrontActions implements Action {
     CreateFieldLevelEncryptionProfile("cloudfront:CreateFieldLevelEncryptionProfile"),
     /** Action for the CreateInvalidation operation. */
     CreateInvalidation("cloudfront:CreateInvalidation"),
+    /** Action for the CreateOriginRequestPolicy operation. */
+    CreateOriginRequestPolicy("cloudfront:CreateOriginRequestPolicy"),
     /** Action for the CreatePublicKey operation. */
     CreatePublicKey("cloudfront:CreatePublicKey"),
     /** Action for the CreateStreamingDistribution operation. */
     CreateStreamingDistribution("cloudfront:CreateStreamingDistribution"),
     /** Action for the CreateStreamingDistributionWithTags operation. */
     CreateStreamingDistributionWithTags("cloudfront:CreateStreamingDistributionWithTags"),
+    /** Action for the DeleteCachePolicy operation. */
+    DeleteCachePolicy("cloudfront:DeleteCachePolicy"),
     /** Action for the DeleteCloudFrontOriginAccessIdentity operation. */
     DeleteCloudFrontOriginAccessIdentity("cloudfront:DeleteCloudFrontOriginAccessIdentity"),
     /** Action for the DeleteDistribution operation. */
@@ -51,10 +57,16 @@ public enum CloudFrontActions implements Action {
     DeleteFieldLevelEncryptionConfig("cloudfront:DeleteFieldLevelEncryptionConfig"),
     /** Action for the DeleteFieldLevelEncryptionProfile operation. */
     DeleteFieldLevelEncryptionProfile("cloudfront:DeleteFieldLevelEncryptionProfile"),
+    /** Action for the DeleteOriginRequestPolicy operation. */
+    DeleteOriginRequestPolicy("cloudfront:DeleteOriginRequestPolicy"),
     /** Action for the DeletePublicKey operation. */
     DeletePublicKey("cloudfront:DeletePublicKey"),
     /** Action for the DeleteStreamingDistribution operation. */
     DeleteStreamingDistribution("cloudfront:DeleteStreamingDistribution"),
+    /** Action for the GetCachePolicy operation. */
+    GetCachePolicy("cloudfront:GetCachePolicy"),
+    /** Action for the GetCachePolicyConfig operation. */
+    GetCachePolicyConfig("cloudfront:GetCachePolicyConfig"),
     /** Action for the GetCloudFrontOriginAccessIdentity operation. */
     GetCloudFrontOriginAccessIdentity("cloudfront:GetCloudFrontOriginAccessIdentity"),
     /** Action for the GetCloudFrontOriginAccessIdentityConfig operation. */
@@ -73,6 +85,10 @@ public enum CloudFrontActions implements Action {
     GetFieldLevelEncryptionProfileConfig("cloudfront:GetFieldLevelEncryptionProfileConfig"),
     /** Action for the GetInvalidation operation. */
     GetInvalidation("cloudfront:GetInvalidation"),
+    /** Action for the GetOriginRequestPolicy operation. */
+    GetOriginRequestPolicy("cloudfront:GetOriginRequestPolicy"),
+    /** Action for the GetOriginRequestPolicyConfig operation. */
+    GetOriginRequestPolicyConfig("cloudfront:GetOriginRequestPolicyConfig"),
     /** Action for the GetPublicKey operation. */
     GetPublicKey("cloudfront:GetPublicKey"),
     /** Action for the GetPublicKeyConfig operation. */
@@ -81,10 +97,16 @@ public enum CloudFrontActions implements Action {
     GetStreamingDistribution("cloudfront:GetStreamingDistribution"),
     /** Action for the GetStreamingDistributionConfig operation. */
     GetStreamingDistributionConfig("cloudfront:GetStreamingDistributionConfig"),
+    /** Action for the ListCachePolicies operation. */
+    ListCachePolicies("cloudfront:ListCachePolicies"),
     /** Action for the ListCloudFrontOriginAccessIdentities operation. */
     ListCloudFrontOriginAccessIdentities("cloudfront:ListCloudFrontOriginAccessIdentities"),
     /** Action for the ListDistributions operation. */
     ListDistributions("cloudfront:ListDistributions"),
+    /** Action for the ListDistributionsByCachePolicyId operation. */
+    ListDistributionsByCachePolicyId("cloudfront:ListDistributionsByCachePolicyId"),
+    /** Action for the ListDistributionsByOriginRequestPolicyId operation. */
+    ListDistributionsByOriginRequestPolicyId("cloudfront:ListDistributionsByOriginRequestPolicyId"),
     /** Action for the ListDistributionsByWebACLId operation. */
     ListDistributionsByWebACLId("cloudfront:ListDistributionsByWebACLId"),
     /** Action for the ListFieldLevelEncryptionConfigs operation. */
@@ -93,6 +115,8 @@ public enum CloudFrontActions implements Action {
     ListFieldLevelEncryptionProfiles("cloudfront:ListFieldLevelEncryptionProfiles"),
     /** Action for the ListInvalidations operation. */
     ListInvalidations("cloudfront:ListInvalidations"),
+    /** Action for the ListOriginRequestPolicies operation. */
+    ListOriginRequestPolicies("cloudfront:ListOriginRequestPolicies"),
     /** Action for the ListPublicKeys operation. */
     ListPublicKeys("cloudfront:ListPublicKeys"),
     /** Action for the ListStreamingDistributions operation. */
@@ -103,6 +127,8 @@ public enum CloudFrontActions implements Action {
     TagResource("cloudfront:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("cloudfront:UntagResource"),
+    /** Action for the UpdateCachePolicy operation. */
+    UpdateCachePolicy("cloudfront:UpdateCachePolicy"),
     /** Action for the UpdateCloudFrontOriginAccessIdentity operation. */
     UpdateCloudFrontOriginAccessIdentity("cloudfront:UpdateCloudFrontOriginAccessIdentity"),
     /** Action for the UpdateDistribution operation. */
@@ -111,6 +137,8 @@ public enum CloudFrontActions implements Action {
     UpdateFieldLevelEncryptionConfig("cloudfront:UpdateFieldLevelEncryptionConfig"),
     /** Action for the UpdateFieldLevelEncryptionProfile operation. */
     UpdateFieldLevelEncryptionProfile("cloudfront:UpdateFieldLevelEncryptionProfile"),
+    /** Action for the UpdateOriginRequestPolicy operation. */
+    UpdateOriginRequestPolicy("cloudfront:UpdateOriginRequestPolicy"),
     /** Action for the UpdatePublicKey operation. */
     UpdatePublicKey("cloudfront:UpdatePublicKey"),
     /** Action for the UpdateStreamingDistribution operation. */

@@ -37,6 +37,18 @@ public class PutDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     */
+    private String eventTypeName;
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -119,6 +131,116 @@ public class PutDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The name of the event type.
+     */
+
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @return The name of the event type.
+     */
+
+    public String getEventTypeName() {
+        return this.eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The name of the event type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDetectorRequest withEventTypeName(String eventTypeName) {
+        setEventTypeName(eventTypeName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @return A collection of key and value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDetectorRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutDetectorRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +255,11 @@ public class PutDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getEventTypeName() != null)
+            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +282,14 @@ public class PutDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
+            return false;
+        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +300,8 @@ public class PutDetectorRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

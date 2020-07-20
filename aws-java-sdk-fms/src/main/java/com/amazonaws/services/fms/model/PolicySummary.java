@@ -42,7 +42,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
     private String policyId;
     /**
      * <p>
-     * The friendly name of the specified policy.
+     * The name of the specified policy.
      * </p>
      */
     private String policyName;
@@ -156,11 +156,11 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the specified policy.
+     * The name of the specified policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the specified policy.
+     *        The name of the specified policy.
      */
 
     public void setPolicyName(String policyName) {
@@ -169,10 +169,10 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the specified policy.
+     * The name of the specified policy.
      * </p>
      * 
-     * @return The friendly name of the specified policy.
+     * @return The name of the specified policy.
      */
 
     public String getPolicyName() {
@@ -181,11 +181,11 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the specified policy.
+     * The name of the specified policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the specified policy.
+     *        The name of the specified policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

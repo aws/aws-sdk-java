@@ -40,7 +40,7 @@ public class ListPublicKeysRequestMarshaller implements Marshaller<Request<ListP
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2019-03-26/public-key";
+        String uriResourcePath = "/2020-05-31/public-key";
 
         request.setResourcePath(uriResourcePath);
 

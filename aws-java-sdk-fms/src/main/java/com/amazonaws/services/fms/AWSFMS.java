@@ -60,9 +60,11 @@ public interface AWSFMS {
      * @param associateAdminAccountRequest
      * @return Result of the AssociateAdminAccount operation returned by the service.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InvalidInputException
      *         The parameters of the request were invalid.
      * @throws ResourceNotFoundException
@@ -77,6 +79,29 @@ public interface AWSFMS {
 
     /**
      * <p>
+     * Permanently deletes an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param deleteAppsListRequest
+     * @return Result of the DeleteAppsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.DeleteAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAppsListResult deleteAppsList(DeleteAppsListRequest deleteAppsListRequest);
+
+    /**
+     * <p>
      * Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS)
      * topic that is used to record AWS Firewall Manager SNS logs.
      * </p>
@@ -86,9 +111,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.DeleteNotificationChannel
@@ -107,9 +134,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.DeletePolicy
@@ -120,6 +149,29 @@ public interface AWSFMS {
 
     /**
      * <p>
+     * Permanently deletes an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param deleteProtocolsListRequest
+     * @return Result of the DeleteProtocolsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.DeleteProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteProtocolsListResult deleteProtocolsList(DeleteProtocolsListRequest deleteProtocolsListRequest);
+
+    /**
+     * <p>
      * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
      * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
      * </p>
@@ -127,9 +179,11 @@ public interface AWSFMS {
      * @param disassociateAdminAccountRequest
      * @return Result of the DisassociateAdminAccount operation returned by the service.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalErrorException
@@ -149,9 +203,11 @@ public interface AWSFMS {
      * @param getAdminAccountRequest
      * @return Result of the GetAdminAccount operation returned by the service.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalErrorException
@@ -161,6 +217,29 @@ public interface AWSFMS {
      *      Documentation</a>
      */
     GetAdminAccountResult getAdminAccount(GetAdminAccountRequest getAdminAccountRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param getAppsListRequest
+     * @return Result of the GetAppsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAppsListResult getAppsList(GetAppsListRequest getAppsListRequest);
 
     /**
      * <p>
@@ -177,6 +256,14 @@ public interface AWSFMS {
      *         The specified resource was not found.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @sample AWSFMS.GetComplianceDetail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail" target="_top">AWS API
      *      Documentation</a>
@@ -194,9 +281,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.GetNotificationChannel
@@ -215,9 +304,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidTypeException
@@ -250,9 +341,78 @@ public interface AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
-     * <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified
-     * policy.
+     * Returns information about the specified AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param getProtocolsListRequest
+     * @return Result of the GetProtocolsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetProtocolsListResult getProtocolsList(GetProtocolsListRequest getProtocolsListRequest);
+
+    /**
+     * <p>
+     * Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+     * </p>
+     * 
+     * @param getViolationDetailsRequest
+     * @return Result of the GetViolationDetails operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetViolationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetViolationDetailsResult getViolationDetails(GetViolationDetailsRequest getViolationDetailsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>AppsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listAppsListsRequest
+     * @return Result of the ListAppsLists operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.ListAppsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAppsListsResult listAppsLists(ListAppsListsRequest listAppsListsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a
+     * summary of which member accounts are protected by the specified policy.
      * </p>
      * 
      * @param listComplianceStatusRequest
@@ -291,7 +451,7 @@ public interface AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicySummary</code> objects in the response.
+     * Returns an array of <code>PolicySummary</code> objects.
      * </p>
      * 
      * @param listPoliciesRequest
@@ -299,9 +459,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws LimitExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
      *         that you can create for an AWS account. For more information, see <a
@@ -317,6 +479,29 @@ public interface AWSFMS {
 
     /**
      * <p>
+     * Returns an array of <code>ProtocolsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listProtocolsListsRequest
+     * @return Result of the ListProtocolsLists operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.ListProtocolsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListProtocolsListsResult listProtocolsLists(ListProtocolsListsRequest listProtocolsListsRequest);
+
+    /**
+     * <p>
      * Retrieves the list of tags for the specified AWS resource.
      * </p>
      * 
@@ -325,9 +510,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidInputException
@@ -340,6 +527,36 @@ public interface AWSFMS {
 
     /**
      * <p>
+     * Creates an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param putAppsListRequest
+     * @return Result of the PutAppsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.PutAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutAppsListResult putAppsList(PutAppsListRequest putAppsListRequest);
+
+    /**
+     * <p>
      * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
      * record SNS logs.
      * </p>
@@ -349,9 +566,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.PutNotificationChannel
@@ -406,9 +625,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InvalidInputException
      *         The parameters of the request were invalid.
      * @throws LimitExceededException
@@ -428,6 +649,36 @@ public interface AWSFMS {
 
     /**
      * <p>
+     * Creates an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param putProtocolsListRequest
+     * @return Result of the PutProtocolsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.PutProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutProtocolsListResult putProtocolsList(PutProtocolsListRequest putProtocolsListRequest);
+
+    /**
+     * <p>
      * Adds one or more tags to an AWS resource.
      * </p>
      * 
@@ -436,9 +687,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidInputException
@@ -464,9 +717,11 @@ public interface AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidInputException

@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * >Cache Behavior Settings</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CacheBehavior" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CacheBehavior" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -85,12 +85,6 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private String targetOriginId;
-    /**
-     * <p>
-     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     * </p>
-     */
-    private ForwardedValues forwardedValues;
     /**
      * <p>
      * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
@@ -158,20 +152,6 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </note>
      */
     private String viewerProtocolPolicy;
-    /**
-     * <p>
-     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
-     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>).
-     * </p>
-     */
-    private Long minTTL;
 
     private AllowedMethods allowedMethods;
     /**
@@ -183,28 +163,6 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private Boolean smoothStreaming;
-    /**
-     * <p>
-     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     */
-    private Long defaultTTL;
-    /**
-     * <p>
-     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     */
-    private Long maxTTL;
     /**
      * <p>
      * Whether you want CloudFront to automatically compress certain files for this cache behavior. If so, specify true;
@@ -227,6 +185,90 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      */
     private String fieldLevelEncryptionId;
+    /**
+     * <p>
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     */
+    private String cachePolicyId;
+    /**
+     * <p>
+     * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
+     * see <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     */
+    private String originRequestPolicyId;
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send values to the origin but not include them in the cache key, use an
+     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     * </p>
+     */
+    @Deprecated
+    private ForwardedValues forwardedValues;
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
+     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
+     * <code>*</code> for <code>Name</code>).
+     * </p>
+     */
+    @Deprecated
+    private Long minTTL;
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    @Deprecated
+    private Long defaultTTL;
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    @Deprecated
+    private Long maxTTL;
 
     /**
      * <p>
@@ -413,46 +455,6 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     public CacheBehavior withTargetOriginId(String targetOriginId) {
         setTargetOriginId(targetOriginId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     * </p>
-     * 
-     * @param forwardedValues
-     *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     */
-
-    public void setForwardedValues(ForwardedValues forwardedValues) {
-        this.forwardedValues = forwardedValues;
-    }
-
-    /**
-     * <p>
-     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     * </p>
-     * 
-     * @return A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     */
-
-    public ForwardedValues getForwardedValues() {
-        return this.forwardedValues;
-    }
-
-    /**
-     * <p>
-     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     * </p>
-     * 
-     * @param forwardedValues
-     *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CacheBehavior withForwardedValues(ForwardedValues forwardedValues) {
-        setForwardedValues(forwardedValues);
         return this;
     }
 
@@ -1045,92 +1047,6 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
-     * <p>
-     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
-     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>).
-     * </p>
-     * 
-     * @param minTTL
-     *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *        another request to your origin to determine whether the object has been updated. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-     *        <p>
-     *        You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers
-     *        to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
-     *        <code>*</code> for <code>Name</code>).
-     */
-
-    public void setMinTTL(Long minTTL) {
-        this.minTTL = minTTL;
-    }
-
-    /**
-     * <p>
-     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
-     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>).
-     * </p>
-     * 
-     * @return The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *         another request to your origin to determine whether the object has been updated. For more information,
-     *         see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">
-     *         Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer
-     *         Guide</i>.</p>
-     *         <p>
-     *         You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all
-     *         headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for
-     *         <code>Quantity</code> and <code>*</code> for <code>Name</code>).
-     */
-
-    public Long getMinTTL() {
-        return this.minTTL;
-    }
-
-    /**
-     * <p>
-     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * <p>
-     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
-     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
-     * <code>*</code> for <code>Name</code>).
-     * </p>
-     * 
-     * @param minTTL
-     *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *        another request to your origin to determine whether the object has been updated. For more information, see
-     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.</p>
-     *        <p>
-     *        You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers
-     *        to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
-     *        <code>*</code> for <code>Name</code>).
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CacheBehavior withMinTTL(Long minTTL) {
-        setMinTTL(minTTL);
-        return this;
-    }
-
-    /**
      * @param allowedMethods
      */
 
@@ -1234,147 +1150,6 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     public Boolean isSmoothStreaming() {
         return this.smoothStreaming;
-    }
-
-    /**
-     * <p>
-     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * 
-     * @param defaultTTL
-     *        The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *        another request to your origin to determine whether the object has been updated. The value that you
-     *        specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>
-     *        , <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     */
-
-    public void setDefaultTTL(Long defaultTTL) {
-        this.defaultTTL = defaultTTL;
-    }
-
-    /**
-     * <p>
-     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * 
-     * @return The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *         another request to your origin to determine whether the object has been updated. The value that you
-     *         specify applies only when your origin does not add HTTP headers such as
-     *         <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to
-     *         objects. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     */
-
-    public Long getDefaultTTL() {
-        return this.defaultTTL;
-    }
-
-    /**
-     * <p>
-     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * 
-     * @param defaultTTL
-     *        The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *        another request to your origin to determine whether the object has been updated. The value that you
-     *        specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>
-     *        , <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CacheBehavior withDefaultTTL(Long defaultTTL) {
-        setDefaultTTL(defaultTTL);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * 
-     * @param maxTTL
-     *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *        another request to your origin to determine whether the object has been updated. The value that you
-     *        specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     *        <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     */
-
-    public void setMaxTTL(Long maxTTL) {
-        this.maxTTL = maxTTL;
-    }
-
-    /**
-     * <p>
-     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * 
-     * @return The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *         another request to your origin to determine whether the object has been updated. The value that you
-     *         specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     *         <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     */
-
-    public Long getMaxTTL() {
-        return this.maxTTL;
-    }
-
-    /**
-     * <p>
-     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
-     * request to your origin to determine whether the object has been updated. The value that you specify applies only
-     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
-     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * </p>
-     * 
-     * @param maxTTL
-     *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
-     *        another request to your origin to determine whether the object has been updated. The value that you
-     *        specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
-     *        <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
-     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CacheBehavior withMaxTTL(Long maxTTL) {
-        setMaxTTL(maxTTL);
-        return this;
     }
 
     /**
@@ -1540,6 +1315,498 @@ public class CacheBehavior implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * 
+     * @param cachePolicyId
+     *        The unique identifier of the cache policy that is attached to this cache behavior. For more information,
+     *        see <code>CreateCachePolicy</code>.
+     */
+
+    public void setCachePolicyId(String cachePolicyId) {
+        this.cachePolicyId = cachePolicyId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * 
+     * @return The unique identifier of the cache policy that is attached to this cache behavior. For more information,
+     *         see <code>CreateCachePolicy</code>.
+     */
+
+    public String getCachePolicyId() {
+        return this.cachePolicyId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * 
+     * @param cachePolicyId
+     *        The unique identifier of the cache policy that is attached to this cache behavior. For more information,
+     *        see <code>CreateCachePolicy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheBehavior withCachePolicyId(String cachePolicyId) {
+        setCachePolicyId(cachePolicyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
+     * see <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * 
+     * @param originRequestPolicyId
+     *        The unique identifier of the origin request policy that is attached to this cache behavior. For more
+     *        information, see <code>CreateOriginRequestPolicy</code>.
+     */
+
+    public void setOriginRequestPolicyId(String originRequestPolicyId) {
+        this.originRequestPolicyId = originRequestPolicyId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
+     * see <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * 
+     * @return The unique identifier of the origin request policy that is attached to this cache behavior. For more
+     *         information, see <code>CreateOriginRequestPolicy</code>.
+     */
+
+    public String getOriginRequestPolicyId() {
+        return this.originRequestPolicyId;
+    }
+
+    /**
+     * <p>
+     * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
+     * see <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * 
+     * @param originRequestPolicyId
+     *        The unique identifier of the origin request policy that is attached to this cache behavior. For more
+     *        information, see <code>CreateOriginRequestPolicy</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheBehavior withOriginRequestPolicyId(String originRequestPolicyId) {
+        setOriginRequestPolicyId(originRequestPolicyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send values to the origin but not include them in the cache key, use an
+     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     * </p>
+     * 
+     * @param forwardedValues
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send values to the origin but not include them in the cache key, use an
+     *        <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
+     *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     */
+    @Deprecated
+    public void setForwardedValues(ForwardedValues forwardedValues) {
+        this.forwardedValues = forwardedValues;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send values to the origin but not include them in the cache key, use an
+     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     * </p>
+     * 
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     *         <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send values to the origin but not include them in the cache key, use an
+     *         <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     */
+    @Deprecated
+    public ForwardedValues getForwardedValues() {
+        return this.forwardedValues;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send values to the origin but not include them in the cache key, use an
+     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     * </p>
+     * 
+     * @param forwardedValues
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include values in the cache key, use a <code>CachePolicy</code>. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send values to the origin but not include them in the cache key, use an
+     *        <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
+     *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public CacheBehavior withForwardedValues(ForwardedValues forwardedValues) {
+        setForwardedValues(forwardedValues);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
+     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
+     * <code>*</code> for <code>Name</code>).
+     * </p>
+     * 
+     * @param minTTL
+     *        This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        <p>
+     *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers
+     *        to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
+     *        <code>*</code> for <code>Name</code>).
+     */
+    @Deprecated
+    public void setMinTTL(Long minTTL) {
+        this.minTTL = minTTL;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
+     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
+     * <code>*</code> for <code>Name</code>).
+     * </p>
+     * 
+     * @return This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     *         <code>CachePolicyConfig</code> instead of this field.</p>
+     *         <p>
+     *         The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *         another request to your origin to determine whether the object has been updated. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">
+     *         Managing How Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer
+     *         Guide</i>.
+     *         </p>
+     *         <p>
+     *         You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all
+     *         headers to your origin (under <code>Headers</code>, if you specify <code>1</code> for
+     *         <code>Quantity</code> and <code>*</code> for <code>Name</code>).
+     */
+    @Deprecated
+    public Long getMinTTL() {
+        return this.minTTL;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers to
+     * your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
+     * <code>*</code> for <code>Name</code>).
+     * </p>
+     * 
+     * @param minTTL
+     *        This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
+     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        <p>
+     *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html"> Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        You must specify <code>0</code> for <code>MinTTL</code> if you configure CloudFront to forward all headers
+     *        to your origin (under <code>Headers</code>, if you specify <code>1</code> for <code>Quantity</code> and
+     *        <code>*</code> for <code>Name</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public CacheBehavior withMinTTL(Long minTTL) {
+        setMinTTL(minTTL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param defaultTTL
+     *        This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        <p>
+     *        The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. The value that you
+     *        specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+    @Deprecated
+    public void setDefaultTTL(Long defaultTTL) {
+        this.defaultTTL = defaultTTL;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     *         <code>CachePolicyConfig</code> instead of this field.</p>
+     *         <p>
+     *         The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *         another request to your origin to determine whether the object has been updated. The value that you
+     *         specify applies only when your origin does not add HTTP headers such as
+     *         <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to
+     *         objects. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+    @Deprecated
+    public Long getDefaultTTL() {
+        return this.defaultTTL;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param defaultTTL
+     *        This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
+     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        <p>
+     *        The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. The value that you
+     *        specify applies only when your origin does not add HTTP headers such as <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public CacheBehavior withDefaultTTL(Long defaultTTL) {
+        setDefaultTTL(defaultTTL);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param maxTTL
+     *        This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        <p>
+     *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. The value that you
+     *        specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     *        <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+    @Deprecated
+    public void setMaxTTL(Long maxTTL) {
+        this.maxTTL = maxTTL;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     *         <code>CachePolicyConfig</code> instead of this field.</p>
+     *         <p>
+     *         The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *         another request to your origin to determine whether the object has been updated. The value that you
+     *         specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     *         <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *         Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+    @Deprecated
+    public Long getMaxTTL() {
+        return this.maxTTL;
+    }
+
+    /**
+     * <p>
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     * <code>CachePolicyConfig</code> instead of this field.
+     * </p>
+     * <p>
+     * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
+     * request to your origin to determine whether the object has been updated. The value that you specify applies only
+     * when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How Long
+     * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param maxTTL
+     *        This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
+     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        <p>
+     *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
+     *        another request to your origin to determine whether the object has been updated. The value that you
+     *        specify applies only when your origin adds HTTP headers such as <code>Cache-Control max-age</code>,
+     *        <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing How
+     *        Long Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public CacheBehavior withMaxTTL(Long maxTTL) {
+        setMaxTTL(maxTTL);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1555,28 +1822,32 @@ public class CacheBehavior implements Serializable, Cloneable {
             sb.append("PathPattern: ").append(getPathPattern()).append(",");
         if (getTargetOriginId() != null)
             sb.append("TargetOriginId: ").append(getTargetOriginId()).append(",");
-        if (getForwardedValues() != null)
-            sb.append("ForwardedValues: ").append(getForwardedValues()).append(",");
         if (getTrustedSigners() != null)
             sb.append("TrustedSigners: ").append(getTrustedSigners()).append(",");
         if (getViewerProtocolPolicy() != null)
             sb.append("ViewerProtocolPolicy: ").append(getViewerProtocolPolicy()).append(",");
-        if (getMinTTL() != null)
-            sb.append("MinTTL: ").append(getMinTTL()).append(",");
         if (getAllowedMethods() != null)
             sb.append("AllowedMethods: ").append(getAllowedMethods()).append(",");
         if (getSmoothStreaming() != null)
             sb.append("SmoothStreaming: ").append(getSmoothStreaming()).append(",");
-        if (getDefaultTTL() != null)
-            sb.append("DefaultTTL: ").append(getDefaultTTL()).append(",");
-        if (getMaxTTL() != null)
-            sb.append("MaxTTL: ").append(getMaxTTL()).append(",");
         if (getCompress() != null)
             sb.append("Compress: ").append(getCompress()).append(",");
         if (getLambdaFunctionAssociations() != null)
             sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations()).append(",");
         if (getFieldLevelEncryptionId() != null)
-            sb.append("FieldLevelEncryptionId: ").append(getFieldLevelEncryptionId());
+            sb.append("FieldLevelEncryptionId: ").append(getFieldLevelEncryptionId()).append(",");
+        if (getCachePolicyId() != null)
+            sb.append("CachePolicyId: ").append(getCachePolicyId()).append(",");
+        if (getOriginRequestPolicyId() != null)
+            sb.append("OriginRequestPolicyId: ").append(getOriginRequestPolicyId()).append(",");
+        if (getForwardedValues() != null)
+            sb.append("ForwardedValues: ").append(getForwardedValues()).append(",");
+        if (getMinTTL() != null)
+            sb.append("MinTTL: ").append(getMinTTL()).append(",");
+        if (getDefaultTTL() != null)
+            sb.append("DefaultTTL: ").append(getDefaultTTL()).append(",");
+        if (getMaxTTL() != null)
+            sb.append("MaxTTL: ").append(getMaxTTL());
         sb.append("}");
         return sb.toString();
     }
@@ -1599,10 +1870,6 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getTargetOriginId() != null && other.getTargetOriginId().equals(this.getTargetOriginId()) == false)
             return false;
-        if (other.getForwardedValues() == null ^ this.getForwardedValues() == null)
-            return false;
-        if (other.getForwardedValues() != null && other.getForwardedValues().equals(this.getForwardedValues()) == false)
-            return false;
         if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null)
             return false;
         if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false)
@@ -1611,10 +1878,6 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getViewerProtocolPolicy() != null && other.getViewerProtocolPolicy().equals(this.getViewerProtocolPolicy()) == false)
             return false;
-        if (other.getMinTTL() == null ^ this.getMinTTL() == null)
-            return false;
-        if (other.getMinTTL() != null && other.getMinTTL().equals(this.getMinTTL()) == false)
-            return false;
         if (other.getAllowedMethods() == null ^ this.getAllowedMethods() == null)
             return false;
         if (other.getAllowedMethods() != null && other.getAllowedMethods().equals(this.getAllowedMethods()) == false)
@@ -1622,14 +1885,6 @@ public class CacheBehavior implements Serializable, Cloneable {
         if (other.getSmoothStreaming() == null ^ this.getSmoothStreaming() == null)
             return false;
         if (other.getSmoothStreaming() != null && other.getSmoothStreaming().equals(this.getSmoothStreaming()) == false)
-            return false;
-        if (other.getDefaultTTL() == null ^ this.getDefaultTTL() == null)
-            return false;
-        if (other.getDefaultTTL() != null && other.getDefaultTTL().equals(this.getDefaultTTL()) == false)
-            return false;
-        if (other.getMaxTTL() == null ^ this.getMaxTTL() == null)
-            return false;
-        if (other.getMaxTTL() != null && other.getMaxTTL().equals(this.getMaxTTL()) == false)
             return false;
         if (other.getCompress() == null ^ this.getCompress() == null)
             return false;
@@ -1643,6 +1898,30 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getFieldLevelEncryptionId() != null && other.getFieldLevelEncryptionId().equals(this.getFieldLevelEncryptionId()) == false)
             return false;
+        if (other.getCachePolicyId() == null ^ this.getCachePolicyId() == null)
+            return false;
+        if (other.getCachePolicyId() != null && other.getCachePolicyId().equals(this.getCachePolicyId()) == false)
+            return false;
+        if (other.getOriginRequestPolicyId() == null ^ this.getOriginRequestPolicyId() == null)
+            return false;
+        if (other.getOriginRequestPolicyId() != null && other.getOriginRequestPolicyId().equals(this.getOriginRequestPolicyId()) == false)
+            return false;
+        if (other.getForwardedValues() == null ^ this.getForwardedValues() == null)
+            return false;
+        if (other.getForwardedValues() != null && other.getForwardedValues().equals(this.getForwardedValues()) == false)
+            return false;
+        if (other.getMinTTL() == null ^ this.getMinTTL() == null)
+            return false;
+        if (other.getMinTTL() != null && other.getMinTTL().equals(this.getMinTTL()) == false)
+            return false;
+        if (other.getDefaultTTL() == null ^ this.getDefaultTTL() == null)
+            return false;
+        if (other.getDefaultTTL() != null && other.getDefaultTTL().equals(this.getDefaultTTL()) == false)
+            return false;
+        if (other.getMaxTTL() == null ^ this.getMaxTTL() == null)
+            return false;
+        if (other.getMaxTTL() != null && other.getMaxTTL().equals(this.getMaxTTL()) == false)
+            return false;
         return true;
     }
 
@@ -1653,17 +1932,19 @@ public class CacheBehavior implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getPathPattern() == null) ? 0 : getPathPattern().hashCode());
         hashCode = prime * hashCode + ((getTargetOriginId() == null) ? 0 : getTargetOriginId().hashCode());
-        hashCode = prime * hashCode + ((getForwardedValues() == null) ? 0 : getForwardedValues().hashCode());
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode());
         hashCode = prime * hashCode + ((getViewerProtocolPolicy() == null) ? 0 : getViewerProtocolPolicy().hashCode());
-        hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode());
         hashCode = prime * hashCode + ((getAllowedMethods() == null) ? 0 : getAllowedMethods().hashCode());
         hashCode = prime * hashCode + ((getSmoothStreaming() == null) ? 0 : getSmoothStreaming().hashCode());
-        hashCode = prime * hashCode + ((getDefaultTTL() == null) ? 0 : getDefaultTTL().hashCode());
-        hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode());
         hashCode = prime * hashCode + ((getCompress() == null) ? 0 : getCompress().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionAssociations() == null) ? 0 : getLambdaFunctionAssociations().hashCode());
         hashCode = prime * hashCode + ((getFieldLevelEncryptionId() == null) ? 0 : getFieldLevelEncryptionId().hashCode());
+        hashCode = prime * hashCode + ((getCachePolicyId() == null) ? 0 : getCachePolicyId().hashCode());
+        hashCode = prime * hashCode + ((getOriginRequestPolicyId() == null) ? 0 : getOriginRequestPolicyId().hashCode());
+        hashCode = prime * hashCode + ((getForwardedValues() == null) ? 0 : getForwardedValues().hashCode());
+        hashCode = prime * hashCode + ((getMinTTL() == null) ? 0 : getMinTTL().hashCode());
+        hashCode = prime * hashCode + ((getDefaultTTL() == null) ? 0 : getDefaultTTL().hashCode());
+        hashCode = prime * hashCode + ((getMaxTTL() == null) ? 0 : getMaxTTL().hashCode());
         return hashCode;
     }
 

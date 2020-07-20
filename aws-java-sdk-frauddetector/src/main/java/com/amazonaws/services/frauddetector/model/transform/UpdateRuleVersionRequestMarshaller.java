@@ -38,6 +38,8 @@ public class UpdateRuleVersionRequestMarshaller {
             .marshallLocationName("language").build();
     private static final MarshallingInfo<List> OUTCOMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("outcomes").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final UpdateRuleVersionRequestMarshaller instance = new UpdateRuleVersionRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class UpdateRuleVersionRequestMarshaller {
             protocolMarshaller.marshall(updateRuleVersionRequest.getExpression(), EXPRESSION_BINDING);
             protocolMarshaller.marshall(updateRuleVersionRequest.getLanguage(), LANGUAGE_BINDING);
             protocolMarshaller.marshall(updateRuleVersionRequest.getOutcomes(), OUTCOMES_BINDING);
+            protocolMarshaller.marshall(updateRuleVersionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

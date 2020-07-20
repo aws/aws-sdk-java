@@ -29,6 +29,8 @@ public class DeleteEventRequestMarshaller {
 
     private static final MarshallingInfo<String> EVENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eventId").build();
+    private static final MarshallingInfo<String> EVENTTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeName").build();
 
     private static final DeleteEventRequestMarshaller instance = new DeleteEventRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteEventRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteEventRequest.getEventId(), EVENTID_BINDING);
+            protocolMarshaller.marshall(deleteEventRequest.getEventTypeName(), EVENTTYPENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -28,6 +28,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCachePolicyResult> createCachePolicyAsync(CreateCachePolicyRequest request) {
+
+        return createCachePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCachePolicyResult> createCachePolicyAsync(CreateCachePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCachePolicyRequest, CreateCachePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
             CreateCloudFrontOriginAccessIdentityRequest request) {
 
@@ -112,6 +125,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOriginRequestPolicyResult> createOriginRequestPolicyAsync(CreateOriginRequestPolicyRequest request) {
+
+        return createOriginRequestPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOriginRequestPolicyResult> createOriginRequestPolicyAsync(CreateOriginRequestPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateOriginRequestPolicyRequest, CreateOriginRequestPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(CreatePublicKeyRequest request) {
 
         return createPublicKeyAsync(request, null);
@@ -148,6 +174,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
             CreateStreamingDistributionWithTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCachePolicyResult> deleteCachePolicyAsync(DeleteCachePolicyRequest request) {
+
+        return deleteCachePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCachePolicyResult> deleteCachePolicyAsync(DeleteCachePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCachePolicyRequest, DeleteCachePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -211,6 +250,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOriginRequestPolicyResult> deleteOriginRequestPolicyAsync(DeleteOriginRequestPolicyRequest request) {
+
+        return deleteOriginRequestPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOriginRequestPolicyResult> deleteOriginRequestPolicyAsync(DeleteOriginRequestPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteOriginRequestPolicyRequest, DeleteOriginRequestPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest request) {
 
         return deletePublicKeyAsync(request, null);
@@ -232,6 +284,32 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(DeleteStreamingDistributionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCachePolicyResult> getCachePolicyAsync(GetCachePolicyRequest request) {
+
+        return getCachePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCachePolicyResult> getCachePolicyAsync(GetCachePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCachePolicyRequest, GetCachePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCachePolicyConfigResult> getCachePolicyConfigAsync(GetCachePolicyConfigRequest request) {
+
+        return getCachePolicyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCachePolicyConfigResult> getCachePolicyConfigAsync(GetCachePolicyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetCachePolicyConfigRequest, GetCachePolicyConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -360,6 +438,32 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetOriginRequestPolicyResult> getOriginRequestPolicyAsync(GetOriginRequestPolicyRequest request) {
+
+        return getOriginRequestPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginRequestPolicyResult> getOriginRequestPolicyAsync(GetOriginRequestPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOriginRequestPolicyRequest, GetOriginRequestPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginRequestPolicyConfigResult> getOriginRequestPolicyConfigAsync(GetOriginRequestPolicyConfigRequest request) {
+
+        return getOriginRequestPolicyConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetOriginRequestPolicyConfigResult> getOriginRequestPolicyConfigAsync(GetOriginRequestPolicyConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetOriginRequestPolicyConfigRequest, GetOriginRequestPolicyConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest request) {
 
         return getPublicKeyAsync(request, null);
@@ -412,6 +516,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<ListCachePoliciesResult> listCachePoliciesAsync(ListCachePoliciesRequest request) {
+
+        return listCachePoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCachePoliciesResult> listCachePoliciesAsync(ListCachePoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCachePoliciesRequest, ListCachePoliciesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
             ListCloudFrontOriginAccessIdentitiesRequest request) {
 
@@ -435,6 +552,36 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByCachePolicyIdResult> listDistributionsByCachePolicyIdAsync(
+            ListDistributionsByCachePolicyIdRequest request) {
+
+        return listDistributionsByCachePolicyIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByCachePolicyIdResult> listDistributionsByCachePolicyIdAsync(
+            ListDistributionsByCachePolicyIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByCachePolicyIdRequest, ListDistributionsByCachePolicyIdResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByOriginRequestPolicyIdResult> listDistributionsByOriginRequestPolicyIdAsync(
+            ListDistributionsByOriginRequestPolicyIdRequest request) {
+
+        return listDistributionsByOriginRequestPolicyIdAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByOriginRequestPolicyIdResult> listDistributionsByOriginRequestPolicyIdAsync(
+            ListDistributionsByOriginRequestPolicyIdRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByOriginRequestPolicyIdRequest, ListDistributionsByOriginRequestPolicyIdResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -491,6 +638,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     @Override
     public java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOriginRequestPoliciesResult> listOriginRequestPoliciesAsync(ListOriginRequestPoliciesRequest request) {
+
+        return listOriginRequestPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOriginRequestPoliciesResult> listOriginRequestPoliciesAsync(ListOriginRequestPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListOriginRequestPoliciesRequest, ListOriginRequestPoliciesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -561,6 +721,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateCachePolicyResult> updateCachePolicyAsync(UpdateCachePolicyRequest request) {
+
+        return updateCachePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCachePolicyResult> updateCachePolicyAsync(UpdateCachePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateCachePolicyRequest, UpdateCachePolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
             UpdateCloudFrontOriginAccessIdentityRequest request) {
 
@@ -614,6 +787,19 @@ public class AbstractAmazonCloudFrontAsync extends AbstractAmazonCloudFront impl
     public java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
             UpdateFieldLevelEncryptionProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOriginRequestPolicyResult> updateOriginRequestPolicyAsync(UpdateOriginRequestPolicyRequest request) {
+
+        return updateOriginRequestPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOriginRequestPolicyResult> updateOriginRequestPolicyAsync(UpdateOriginRequestPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateOriginRequestPolicyRequest, UpdateOriginRequestPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

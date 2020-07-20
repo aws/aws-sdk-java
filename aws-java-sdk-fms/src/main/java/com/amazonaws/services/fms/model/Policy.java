@@ -35,7 +35,7 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     private String policyId;
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      */
     private String policyName;
@@ -211,11 +211,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the AWS Firewall Manager policy.
+     *        The name of the AWS Firewall Manager policy.
      */
 
     public void setPolicyName(String policyName) {
@@ -224,10 +224,10 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
-     * @return The friendly name of the AWS Firewall Manager policy.
+     * @return The name of the AWS Firewall Manager policy.
      */
 
     public String getPolicyName() {
@@ -236,11 +236,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the AWS Firewall Manager policy.
+     *        The name of the AWS Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

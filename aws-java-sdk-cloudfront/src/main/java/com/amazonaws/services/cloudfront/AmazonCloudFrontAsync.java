@@ -37,6 +37,95 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a cache policy.
+     * </p>
+     * <p>
+     * After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache
+     * behavior, the cache policy determines the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and
+     * URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront
+     * cache.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
+     * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
+     * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
+     * cache key, use <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * For more information about cache policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html"
+     * >Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createCachePolicyRequest
+     * @return A Java Future containing the result of the CreateCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCachePolicyResult> createCachePolicyAsync(CreateCachePolicyRequest createCachePolicyRequest);
+
+    /**
+     * <p>
+     * Creates a cache policy.
+     * </p>
+     * <p>
+     * After you create a cache policy, you can attach it to one or more cache behaviors. When it’s attached to a cache
+     * behavior, the cache policy determines the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The values that CloudFront includes in the <i>cache key</i>. These values can include HTTP headers, cookies, and
+     * URL query strings. CloudFront uses the cache key to find an object in its cache that it can return to the viewer.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The default, minimum, and maximum time to live (TTL) values that you want objects to stay in the CloudFront
+     * cache.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
+     * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
+     * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
+     * cache key, use <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
+     * For more information about cache policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html"
+     * >Controlling the cache key</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createCachePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCachePolicyResult> createCachePolicyAsync(CreateCachePolicyRequest createCachePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCachePolicyRequest, CreateCachePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new origin access identity. If you're using Amazon S3 for your origin, you can use an origin access
      * identity to require users to access your content using a CloudFront URL instead of the Amazon S3 URL. For more
      * information about how to use origin access identities, see <a
@@ -54,7 +143,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
@@ -83,7 +172,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateCloudFrontOriginAccessIdentityResult> createCloudFrontOriginAccessIdentityAsync(
@@ -114,7 +203,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new distribution.
      * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest);
@@ -147,7 +236,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest,
@@ -162,7 +251,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new distribution with tags.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
@@ -181,7 +270,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateDistributionWithTags operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateDistributionWithTagsResult> createDistributionWithTagsAsync(
@@ -197,7 +286,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionConfigResult> createFieldLevelEncryptionConfigAsync(
@@ -216,7 +305,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionConfigResult> createFieldLevelEncryptionConfigAsync(
@@ -232,7 +321,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionProfileResult> createFieldLevelEncryptionProfileAsync(
@@ -251,7 +340,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateFieldLevelEncryptionProfileResult> createFieldLevelEncryptionProfileAsync(
@@ -267,7 +356,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create an invalidation.
      * @return A Java Future containing the result of the CreateInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest);
@@ -285,11 +374,112 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateInvalidation" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateInvalidation" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<CreateInvalidationResult> createInvalidationAsync(CreateInvalidationRequest createInvalidationRequest,
             com.amazonaws.handlers.AsyncHandler<CreateInvalidationRequest, CreateInvalidationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an origin request policy.
+     * </p>
+     * <p>
+     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached
+     * to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it
+     * sends to the origin. Each request that CloudFront sends to the origin includes the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The request body and the URL path (without the domain name) from the viewer request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>,
+     * <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request
+     * policy. These can include items from the viewer request and, in the case of headers, additional ones that are
+     * added by CloudFront.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
+     * to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * For more information about origin request policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html"
+     * >Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginRequestPolicyRequest
+     * @return A Java Future containing the result of the CreateOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOriginRequestPolicyResult> createOriginRequestPolicyAsync(
+            CreateOriginRequestPolicyRequest createOriginRequestPolicyRequest);
+
+    /**
+     * <p>
+     * Creates an origin request policy.
+     * </p>
+     * <p>
+     * After you create an origin request policy, you can attach it to one or more cache behaviors. When it’s attached
+     * to a cache behavior, the origin request policy determines the values that CloudFront includes in requests that it
+     * sends to the origin. Each request that CloudFront sends to the origin includes the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The request body and the URL path (without the domain name) from the viewer request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The headers that CloudFront automatically includes in every origin request, including <code>Host</code>,
+     * <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All HTTP headers, cookies, and URL query strings that are specified in the cache policy or the origin request
+     * policy. These can include items from the viewer request and, in the case of headers, additional ones that are
+     * added by CloudFront.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
+     * to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * For more information about origin request policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html"
+     * >Controlling origin requests</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createOriginRequestPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOriginRequestPolicyResult> createOriginRequestPolicyAsync(
+            CreateOriginRequestPolicyRequest createOriginRequestPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOriginRequestPolicyRequest, CreateOriginRequestPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -300,7 +490,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param createPublicKeyRequest
      * @return A Java Future containing the result of the CreatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(CreatePublicKeyRequest createPublicKeyRequest);
@@ -318,7 +508,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<CreatePublicKeyResult> createPublicKeyAsync(CreatePublicKeyRequest createPublicKeyRequest,
@@ -361,7 +551,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to create a new streaming distribution.
      * @return A Java Future containing the result of the CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
@@ -408,7 +598,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the CreateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(
@@ -425,7 +615,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateStreamingDistributionWithTags operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
@@ -445,12 +635,59 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the CreateStreamingDistributionWithTags operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.CreateStreamingDistributionWithTags
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateStreamingDistributionWithTags"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionWithTags"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<CreateStreamingDistributionWithTagsResult> createStreamingDistributionWithTagsAsync(
             CreateStreamingDistributionWithTagsRequest createStreamingDistributionWithTagsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateStreamingDistributionWithTagsRequest, CreateStreamingDistributionWithTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a cache policy.
+     * </p>
+     * <p>
+     * You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove
+     * the cache policy from all cache behaviors, then delete the cache policy.
+     * </p>
+     * <p>
+     * To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use
+     * <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
+     * </p>
+     * 
+     * @param deleteCachePolicyRequest
+     * @return A Java Future containing the result of the DeleteCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCachePolicyResult> deleteCachePolicyAsync(DeleteCachePolicyRequest deleteCachePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes a cache policy.
+     * </p>
+     * <p>
+     * You cannot delete a cache policy if it’s attached to a cache behavior. First update your distributions to remove
+     * the cache policy from all cache behaviors, then delete the cache policy.
+     * </p>
+     * <p>
+     * To delete a cache policy, you must provide the policy’s identifier and version. To get these values, you can use
+     * <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
+     * </p>
+     * 
+     * @param deleteCachePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCachePolicyResult> deleteCachePolicyAsync(DeleteCachePolicyRequest deleteCachePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCachePolicyRequest, DeleteCachePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -462,7 +699,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
@@ -482,7 +719,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteCloudFrontOriginAccessIdentityResult> deleteCloudFrontOriginAccessIdentityAsync(
@@ -558,7 +795,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        >Deleting a Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest);
@@ -636,7 +873,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest,
@@ -651,7 +888,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionConfigResult> deleteFieldLevelEncryptionConfigAsync(
@@ -670,7 +907,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionConfigResult> deleteFieldLevelEncryptionConfigAsync(
@@ -686,7 +923,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.DeleteFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
@@ -705,12 +942,63 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the DeleteFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
             DeleteFieldLevelEncryptionProfileRequest deleteFieldLevelEncryptionProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFieldLevelEncryptionProfileRequest, DeleteFieldLevelEncryptionProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an origin request policy.
+     * </p>
+     * <p>
+     * You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your
+     * distributions to remove the origin request policy from all cache behaviors, then delete the origin request
+     * policy.
+     * </p>
+     * <p>
+     * To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier,
+     * you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
+     * </p>
+     * 
+     * @param deleteOriginRequestPolicyRequest
+     * @return A Java Future containing the result of the DeleteOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOriginRequestPolicyResult> deleteOriginRequestPolicyAsync(
+            DeleteOriginRequestPolicyRequest deleteOriginRequestPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes an origin request policy.
+     * </p>
+     * <p>
+     * You cannot delete an origin request policy if it’s attached to any cache behaviors. First update your
+     * distributions to remove the origin request policy from all cache behaviors, then delete the origin request
+     * policy.
+     * </p>
+     * <p>
+     * To delete an origin request policy, you must provide the policy’s identifier and version. To get the identifier,
+     * you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
+     * </p>
+     * 
+     * @param deleteOriginRequestPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOriginRequestPolicyResult> deleteOriginRequestPolicyAsync(
+            DeleteOriginRequestPolicyRequest deleteOriginRequestPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOriginRequestPolicyRequest, DeleteOriginRequestPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -720,7 +1008,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param deletePublicKeyRequest
      * @return A Java Future containing the result of the DeletePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeletePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest deletePublicKeyRequest);
@@ -737,7 +1025,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeletePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeletePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeletePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeletePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest deletePublicKeyRequest,
@@ -813,7 +1101,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to delete a streaming distribution.
      * @return A Java Future containing the result of the DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
@@ -893,12 +1181,122 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the DeleteStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.DeleteStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/DeleteStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<DeleteStreamingDistributionResult> deleteStreamingDistributionAsync(
             DeleteStreamingDistributionRequest deleteStreamingDistributionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteStreamingDistributionRequest, DeleteStreamingDistributionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a cache policy, including the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The policy’s identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The date and time when the policy was last modified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a
+     * distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
+     * using <code>ListCachePolicies</code>.
+     * </p>
+     * 
+     * @param getCachePolicyRequest
+     * @return A Java Future containing the result of the GetCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCachePolicyResult> getCachePolicyAsync(GetCachePolicyRequest getCachePolicyRequest);
+
+    /**
+     * <p>
+     * Gets a cache policy, including the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The policy’s identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The date and time when the policy was last modified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached to a
+     * distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
+     * using <code>ListCachePolicies</code>.
+     * </p>
+     * 
+     * @param getCachePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCachePolicyResult> getCachePolicyAsync(GetCachePolicyRequest getCachePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCachePolicyRequest, GetCachePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a cache policy configuration.
+     * </p>
+     * <p>
+     * To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to
+     * a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
+     * using <code>ListCachePolicies</code>.
+     * </p>
+     * 
+     * @param getCachePolicyConfigRequest
+     * @return A Java Future containing the result of the GetCachePolicyConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetCachePolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCachePolicyConfigResult> getCachePolicyConfigAsync(GetCachePolicyConfigRequest getCachePolicyConfigRequest);
+
+    /**
+     * <p>
+     * Gets a cache policy configuration.
+     * </p>
+     * <p>
+     * To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy is attached to
+     * a distribution’s cache behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the identifier
+     * using <code>ListCachePolicies</code>.
+     * </p>
+     * 
+     * @param getCachePolicyConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCachePolicyConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetCachePolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCachePolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCachePolicyConfigResult> getCachePolicyConfigAsync(GetCachePolicyConfigRequest getCachePolicyConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCachePolicyConfigRequest, GetCachePolicyConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -910,7 +1308,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
@@ -930,7 +1328,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityResult> getCloudFrontOriginAccessIdentityAsync(
@@ -950,7 +1348,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *         the service.
      * @sample AmazonCloudFrontAsync.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
@@ -973,7 +1371,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *         the service.
      * @sample AmazonCloudFrontAsyncHandler.GetCloudFrontOriginAccessIdentityConfig
      * @see <a
-     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetCloudFrontOriginAccessIdentityConfig"
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetCloudFrontOriginAccessIdentityConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetCloudFrontOriginAccessIdentityConfigResult> getCloudFrontOriginAccessIdentityConfigAsync(
@@ -989,7 +1387,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a distribution's information.
      * @return A Java Future containing the result of the GetDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest);
@@ -1007,7 +1405,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistribution" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistribution" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionResult> getDistributionAsync(GetDistributionRequest getDistributionRequest,
@@ -1022,7 +1420,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a distribution configuration.
      * @return A Java Future containing the result of the GetDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest);
@@ -1040,7 +1438,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetDistributionConfig operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetDistributionConfigResult> getDistributionConfigAsync(GetDistributionConfigRequest getDistributionConfigRequest,
@@ -1054,7 +1452,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param getFieldLevelEncryptionRequest
      * @return A Java Future containing the result of the GetFieldLevelEncryption operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryption
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryption"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionResult> getFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest getFieldLevelEncryptionRequest);
@@ -1071,7 +1469,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetFieldLevelEncryption operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryption
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryption"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryption"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionResult> getFieldLevelEncryptionAsync(GetFieldLevelEncryptionRequest getFieldLevelEncryptionRequest,
@@ -1086,7 +1484,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionConfigResult> getFieldLevelEncryptionConfigAsync(
@@ -1105,7 +1503,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionConfigResult> getFieldLevelEncryptionConfigAsync(
@@ -1121,7 +1519,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileResult> getFieldLevelEncryptionProfileAsync(
@@ -1140,7 +1538,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileResult> getFieldLevelEncryptionProfileAsync(
@@ -1156,7 +1554,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfileConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetFieldLevelEncryptionProfileConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfileConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
@@ -1175,7 +1573,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetFieldLevelEncryptionProfileConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetFieldLevelEncryptionProfileConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetFieldLevelEncryptionProfileConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetFieldLevelEncryptionProfileConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetFieldLevelEncryptionProfileConfigResult> getFieldLevelEncryptionProfileConfigAsync(
@@ -1191,7 +1589,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get an invalidation's information.
      * @return A Java Future containing the result of the GetInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest);
@@ -1209,11 +1607,125 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetInvalidation operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetInvalidation
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetInvalidation" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetInvalidation" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest,
             com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an origin request policy, including the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The policy’s identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The date and time when the policy was last modified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is
+     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
+     * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
+     * </p>
+     * 
+     * @param getOriginRequestPolicyRequest
+     * @return A Java Future containing the result of the GetOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginRequestPolicyResult> getOriginRequestPolicyAsync(GetOriginRequestPolicyRequest getOriginRequestPolicyRequest);
+
+    /**
+     * <p>
+     * Gets an origin request policy, including the following metadata:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The policy’s identifier.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The date and time when the policy was last modified.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get an origin request policy, you must provide the policy’s identifier. If the origin request policy is
+     * attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
+     * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
+     * </p>
+     * 
+     * @param getOriginRequestPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginRequestPolicyResult> getOriginRequestPolicyAsync(GetOriginRequestPolicyRequest getOriginRequestPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOriginRequestPolicyRequest, GetOriginRequestPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets an origin request policy configuration.
+     * </p>
+     * <p>
+     * To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request
+     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
+     * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
+     * </p>
+     * 
+     * @param getOriginRequestPolicyConfigRequest
+     * @return A Java Future containing the result of the GetOriginRequestPolicyConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.GetOriginRequestPolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginRequestPolicyConfigResult> getOriginRequestPolicyConfigAsync(
+            GetOriginRequestPolicyConfigRequest getOriginRequestPolicyConfigRequest);
+
+    /**
+     * <p>
+     * Gets an origin request policy configuration.
+     * </p>
+     * <p>
+     * To get an origin request policy configuration, you must provide the policy’s identifier. If the origin request
+     * policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
+     * <code>ListDistributions</code> or <code>GetDistribution</code>. If the origin request policy is not attached to a
+     * cache behavior, you can get the identifier using <code>ListOriginRequestPolicies</code>.
+     * </p>
+     * 
+     * @param getOriginRequestPolicyConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOriginRequestPolicyConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.GetOriginRequestPolicyConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetOriginRequestPolicyConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetOriginRequestPolicyConfigResult> getOriginRequestPolicyConfigAsync(
+            GetOriginRequestPolicyConfigRequest getOriginRequestPolicyConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOriginRequestPolicyConfigRequest, GetOriginRequestPolicyConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1223,7 +1735,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param getPublicKeyRequest
      * @return A Java Future containing the result of the GetPublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest getPublicKeyRequest);
@@ -1240,7 +1752,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetPublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyResult> getPublicKeyAsync(GetPublicKeyRequest getPublicKeyRequest,
@@ -1254,7 +1766,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param getPublicKeyConfigRequest
      * @return A Java Future containing the result of the GetPublicKeyConfig operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetPublicKeyConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyConfigResult> getPublicKeyConfigAsync(GetPublicKeyConfigRequest getPublicKeyConfigRequest);
@@ -1271,7 +1783,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetPublicKeyConfig operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetPublicKeyConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<GetPublicKeyConfigResult> getPublicKeyConfigAsync(GetPublicKeyConfigRequest getPublicKeyConfigRequest,
@@ -1286,7 +1798,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to get a streaming distribution's information.
      * @return A Java Future containing the result of the GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest);
@@ -1304,7 +1816,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the GetStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.GetStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest getStreamingDistributionRequest,
@@ -1320,7 +1832,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetStreamingDistributionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
@@ -1340,12 +1852,63 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the GetStreamingDistributionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.GetStreamingDistributionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetStreamingDistributionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetStreamingDistributionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<GetStreamingDistributionConfigResult> getStreamingDistributionConfigAsync(
             GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest,
             com.amazonaws.handlers.AsyncHandler<GetStreamingDistributionConfigRequest, GetStreamingDistributionConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of cache policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
+     * created in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listCachePoliciesRequest
+     * @return A Java Future containing the result of the ListCachePolicies operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListCachePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCachePoliciesResult> listCachePoliciesAsync(ListCachePoliciesRequest listCachePoliciesRequest);
+
+    /**
+     * <p>
+     * Gets a list of cache policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
+     * created in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listCachePoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCachePolicies operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListCachePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCachePolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCachePoliciesResult> listCachePoliciesAsync(ListCachePoliciesRequest listCachePoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCachePoliciesRequest, ListCachePoliciesResult> asyncHandler);
 
     /**
      * <p>
@@ -1357,7 +1920,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
@@ -1377,7 +1940,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListCloudFrontOriginAccessIdentities operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListCloudFrontOriginAccessIdentities
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListCloudFrontOriginAccessIdentities"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListCloudFrontOriginAccessIdentities"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListCloudFrontOriginAccessIdentitiesResult> listCloudFrontOriginAccessIdentitiesAsync(
@@ -1393,7 +1956,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list your distributions.
      * @return A Java Future containing the result of the ListDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest);
@@ -1411,11 +1974,111 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributions" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributions" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsResult> listDistributionsAsync(ListDistributionsRequest listDistributionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDistributionsRequest, ListDistributionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * cache policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByCachePolicyIdRequest
+     * @return A Java Future containing the result of the ListDistributionsByCachePolicyId operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.ListDistributionsByCachePolicyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByCachePolicyIdResult> listDistributionsByCachePolicyIdAsync(
+            ListDistributionsByCachePolicyIdRequest listDistributionsByCachePolicyIdRequest);
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * cache policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByCachePolicyIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDistributionsByCachePolicyId operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByCachePolicyId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByCachePolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByCachePolicyIdResult> listDistributionsByCachePolicyIdAsync(
+            ListDistributionsByCachePolicyIdRequest listDistributionsByCachePolicyIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByCachePolicyIdRequest, ListDistributionsByCachePolicyIdResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * origin request policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByOriginRequestPolicyIdRequest
+     * @return A Java Future containing the result of the ListDistributionsByOriginRequestPolicyId operation returned by
+     *         the service.
+     * @sample AmazonCloudFrontAsync.ListDistributionsByOriginRequestPolicyId
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByOriginRequestPolicyIdResult> listDistributionsByOriginRequestPolicyIdAsync(
+            ListDistributionsByOriginRequestPolicyIdRequest listDistributionsByOriginRequestPolicyIdRequest);
+
+    /**
+     * <p>
+     * Gets a list of distribution IDs for distributions that have a cache behavior that’s associated with the specified
+     * origin request policy.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByOriginRequestPolicyIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDistributionsByOriginRequestPolicyId operation returned by
+     *         the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByOriginRequestPolicyId
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByOriginRequestPolicyId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByOriginRequestPolicyIdResult> listDistributionsByOriginRequestPolicyIdAsync(
+            ListDistributionsByOriginRequestPolicyIdRequest listDistributionsByOriginRequestPolicyIdRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByOriginRequestPolicyIdRequest, ListDistributionsByOriginRequestPolicyIdResult> asyncHandler);
 
     /**
      * <p>
@@ -1426,7 +2089,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list distributions that are associated with a specified AWS WAF web ACL.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(
@@ -1445,7 +2108,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListDistributionsByWebACLId operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByWebACLId
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListDistributionsByWebACLId"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(
@@ -1461,7 +2124,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionConfigs operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListFieldLevelEncryptionConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionConfigsResult> listFieldLevelEncryptionConfigsAsync(
@@ -1480,7 +2143,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionConfigs operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListFieldLevelEncryptionConfigs
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionConfigs"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionConfigs"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionConfigsResult> listFieldLevelEncryptionConfigsAsync(
@@ -1496,7 +2159,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionProfiles operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.ListFieldLevelEncryptionProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionProfilesResult> listFieldLevelEncryptionProfilesAsync(
@@ -1515,7 +2178,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the ListFieldLevelEncryptionProfiles operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.ListFieldLevelEncryptionProfiles
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListFieldLevelEncryptionProfiles"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListFieldLevelEncryptionProfiles"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListFieldLevelEncryptionProfilesResult> listFieldLevelEncryptionProfilesAsync(
@@ -1531,7 +2194,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list invalidations.
      * @return A Java Future containing the result of the ListInvalidations operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest);
@@ -1549,11 +2212,64 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListInvalidations operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListInvalidations
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListInvalidations" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListInvalidations" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListInvalidationsResult> listInvalidationsAsync(ListInvalidationsRequest listInvalidationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListInvalidationsRequest, ListInvalidationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of origin request policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
+     * created in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listOriginRequestPoliciesRequest
+     * @return A Java Future containing the result of the ListOriginRequestPolicies operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListOriginRequestPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOriginRequestPoliciesResult> listOriginRequestPoliciesAsync(
+            ListOriginRequestPoliciesRequest listOriginRequestPoliciesRequest);
+
+    /**
+     * <p>
+     * Gets a list of origin request policies.
+     * </p>
+     * <p>
+     * You can optionally apply a filter to return only the managed policies created by AWS, or only the custom policies
+     * created in your AWS account.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listOriginRequestPoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOriginRequestPolicies operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListOriginRequestPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListOriginRequestPolicies"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOriginRequestPoliciesResult> listOriginRequestPoliciesAsync(
+            ListOriginRequestPoliciesRequest listOriginRequestPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOriginRequestPoliciesRequest, ListOriginRequestPoliciesResult> asyncHandler);
 
     /**
      * <p>
@@ -1563,7 +2279,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param listPublicKeysRequest
      * @return A Java Future containing the result of the ListPublicKeys operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest);
@@ -1580,7 +2296,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListPublicKeys operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListPublicKeys
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListPublicKeys" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListPublicKeys" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest,
@@ -1595,7 +2311,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list your streaming distributions.
      * @return A Java Future containing the result of the ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
@@ -1614,7 +2330,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListStreamingDistributions operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListStreamingDistributions
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListStreamingDistributions"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListStreamingDistributions"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<ListStreamingDistributionsResult> listStreamingDistributionsAsync(
@@ -1630,7 +2346,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to list tags for a CloudFront resource.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
@@ -1648,7 +2364,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.ListTagsForResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ListTagsForResource" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
@@ -1663,7 +2379,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to add tags to a CloudFront resource.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
@@ -1681,7 +2397,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.TagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
@@ -1696,7 +2412,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to remove tags from a CloudFront resource.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudFrontAsync.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
@@ -1714,11 +2430,86 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UntagResource
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UntagResource" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UntagResource" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a cache policy configuration.
+     * </p>
+     * <p>
+     * When you update a cache policy configuration, all the fields are updated with the values provided in the request.
+     * You cannot update some fields independent of others. To update a cache policy configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetCachePolicyConfig</code> to get the current configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the cache policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that
+     * you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateCachePolicyRequest
+     * @return A Java Future containing the result of the UpdateCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCachePolicyResult> updateCachePolicyAsync(UpdateCachePolicyRequest updateCachePolicyRequest);
+
+    /**
+     * <p>
+     * Updates a cache policy configuration.
+     * </p>
+     * <p>
+     * When you update a cache policy configuration, all the fields are updated with the values provided in the request.
+     * You cannot update some fields independent of others. To update a cache policy configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetCachePolicyConfig</code> to get the current configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the cache policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration, including the fields that
+     * you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateCachePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCachePolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateCachePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCachePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCachePolicyResult> updateCachePolicyAsync(UpdateCachePolicyRequest updateCachePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCachePolicyRequest, UpdateCachePolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1730,7 +2521,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
@@ -1750,7 +2541,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateCloudFrontOriginAccessIdentity operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateCloudFrontOriginAccessIdentity
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateCloudFrontOriginAccessIdentity"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateCloudFrontOriginAccessIdentityResult> updateCloudFrontOriginAccessIdentityAsync(
@@ -1874,7 +2665,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to update a distribution.
      * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest);
@@ -2000,7 +2791,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateDistribution" target="_top">AWS
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateDistribution" target="_top">AWS
      *      API Documentation</a>
      */
     java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest,
@@ -2015,7 +2806,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionConfigResult> updateFieldLevelEncryptionConfigAsync(
@@ -2034,7 +2825,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionConfig operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateFieldLevelEncryptionConfig
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionConfig"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionConfig"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionConfigResult> updateFieldLevelEncryptionConfigAsync(
@@ -2050,7 +2841,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsync.UpdateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
@@ -2069,12 +2860,91 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @return A Java Future containing the result of the UpdateFieldLevelEncryptionProfile operation returned by the
      *         service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateFieldLevelEncryptionProfile
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateFieldLevelEncryptionProfile"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateFieldLevelEncryptionProfile"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateFieldLevelEncryptionProfileResult> updateFieldLevelEncryptionProfileAsync(
             UpdateFieldLevelEncryptionProfileRequest updateFieldLevelEncryptionProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateFieldLevelEncryptionProfileRequest, UpdateFieldLevelEncryptionProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an origin request policy configuration.
+     * </p>
+     * <p>
+     * When you update an origin request policy configuration, all the fields are updated with the values provided in
+     * the request. You cannot update some fields independent of others. To update an origin request policy
+     * configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the origin request policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration,
+     * including the fields that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateOriginRequestPolicyRequest
+     * @return A Java Future containing the result of the UpdateOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOriginRequestPolicyResult> updateOriginRequestPolicyAsync(
+            UpdateOriginRequestPolicyRequest updateOriginRequestPolicyRequest);
+
+    /**
+     * <p>
+     * Updates an origin request policy configuration.
+     * </p>
+     * <p>
+     * When you update an origin request policy configuration, all the fields are updated with the values provided in
+     * the request. You cannot update some fields independent of others. To update an origin request policy
+     * configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the fields in the origin request policy configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request policy configuration,
+     * including the fields that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateOriginRequestPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOriginRequestPolicy operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateOriginRequestPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginRequestPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOriginRequestPolicyResult> updateOriginRequestPolicyAsync(
+            UpdateOriginRequestPolicyRequest updateOriginRequestPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOriginRequestPolicyRequest, UpdateOriginRequestPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -2084,7 +2954,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * @param updatePublicKeyRequest
      * @return A Java Future containing the result of the UpdatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(UpdatePublicKeyRequest updatePublicKeyRequest);
@@ -2101,7 +2971,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdatePublicKey operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdatePublicKey
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdatePublicKey" target="_top">AWS API
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey" target="_top">AWS API
      *      Documentation</a>
      */
     java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(UpdatePublicKeyRequest updatePublicKeyRequest,
@@ -2116,7 +2986,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        The request to update a streaming distribution.
      * @return A Java Future containing the result of the UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsync.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(
@@ -2135,7 +3005,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      *        unsuccessful completion of the operation.
      * @return A Java Future containing the result of the UpdateStreamingDistribution operation returned by the service.
      * @sample AmazonCloudFrontAsyncHandler.UpdateStreamingDistribution
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/UpdateStreamingDistribution"
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateStreamingDistribution"
      *      target="_top">AWS API Documentation</a>
      */
     java.util.concurrent.Future<UpdateStreamingDistributionResult> updateStreamingDistributionAsync(

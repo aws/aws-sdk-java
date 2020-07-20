@@ -301,6 +301,14 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String imagePullCredentialsTypeOverride;
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>.
+     * </p>
+     */
+    private Boolean debugSessionEnabled;
 
     /**
      * <p>
@@ -2343,6 +2351,74 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies if session debugging is enabled for this build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>.
+     * </p>
+     * 
+     * @param debugSessionEnabled
+     *        Specifies if session debugging is enabled for this build. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
+     *        in Session Manager</a>.
+     */
+
+    public void setDebugSessionEnabled(Boolean debugSessionEnabled) {
+        this.debugSessionEnabled = debugSessionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>.
+     * </p>
+     * 
+     * @return Specifies if session debugging is enabled for this build. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
+     *         build in Session Manager</a>.
+     */
+
+    public Boolean getDebugSessionEnabled() {
+        return this.debugSessionEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>.
+     * </p>
+     * 
+     * @param debugSessionEnabled
+     *        Specifies if session debugging is enabled for this build. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build
+     *        in Session Manager</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBuildRequest withDebugSessionEnabled(Boolean debugSessionEnabled) {
+        setDebugSessionEnabled(debugSessionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies if session debugging is enabled for this build. For more information, see <a
+     * href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running build in
+     * Session Manager</a>.
+     * </p>
+     * 
+     * @return Specifies if session debugging is enabled for this build. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/session-manager.html">Viewing a running
+     *         build in Session Manager</a>.
+     */
+
+    public Boolean isDebugSessionEnabled() {
+        return this.debugSessionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2413,7 +2489,9 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getRegistryCredentialOverride() != null)
             sb.append("RegistryCredentialOverride: ").append(getRegistryCredentialOverride()).append(",");
         if (getImagePullCredentialsTypeOverride() != null)
-            sb.append("ImagePullCredentialsTypeOverride: ").append(getImagePullCredentialsTypeOverride());
+            sb.append("ImagePullCredentialsTypeOverride: ").append(getImagePullCredentialsTypeOverride()).append(",");
+        if (getDebugSessionEnabled() != null)
+            sb.append("DebugSessionEnabled: ").append(getDebugSessionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -2551,6 +2629,10 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getImagePullCredentialsTypeOverride() != null
                 && other.getImagePullCredentialsTypeOverride().equals(this.getImagePullCredentialsTypeOverride()) == false)
             return false;
+        if (other.getDebugSessionEnabled() == null ^ this.getDebugSessionEnabled() == null)
+            return false;
+        if (other.getDebugSessionEnabled() != null && other.getDebugSessionEnabled().equals(this.getDebugSessionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -2589,6 +2671,7 @@ public class StartBuildRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getLogsConfigOverride() == null) ? 0 : getLogsConfigOverride().hashCode());
         hashCode = prime * hashCode + ((getRegistryCredentialOverride() == null) ? 0 : getRegistryCredentialOverride().hashCode());
         hashCode = prime * hashCode + ((getImagePullCredentialsTypeOverride() == null) ? 0 : getImagePullCredentialsTypeOverride().hashCode());
+        hashCode = prime * hashCode + ((getDebugSessionEnabled() == null) ? 0 : getDebugSessionEnabled().hashCode());
         return hashCode;
     }
 

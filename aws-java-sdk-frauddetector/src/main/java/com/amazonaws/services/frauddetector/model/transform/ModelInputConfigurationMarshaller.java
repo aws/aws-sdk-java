@@ -29,8 +29,8 @@ public class ModelInputConfigurationMarshaller {
 
     private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("format").build();
-    private static final MarshallingInfo<Boolean> ISOPAQUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isOpaque").build();
+    private static final MarshallingInfo<Boolean> USEEVENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("useEventVariables").build();
     private static final MarshallingInfo<String> JSONINPUTTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jsonInputTemplate").build();
     private static final MarshallingInfo<String> CSVINPUTTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,7 +53,7 @@ public class ModelInputConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(modelInputConfiguration.getFormat(), FORMAT_BINDING);
-            protocolMarshaller.marshall(modelInputConfiguration.getIsOpaque(), ISOPAQUE_BINDING);
+            protocolMarshaller.marshall(modelInputConfiguration.getUseEventVariables(), USEEVENTVARIABLES_BINDING);
             protocolMarshaller.marshall(modelInputConfiguration.getJsonInputTemplate(), JSONINPUTTEMPLATE_BINDING);
             protocolMarshaller.marshall(modelInputConfiguration.getCsvInputTemplate(), CSVINPUTTEMPLATE_BINDING);
         } catch (Exception e) {

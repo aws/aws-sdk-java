@@ -49,6 +49,12 @@ public class CoipPool implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The ARN of the address pool.
+     * </p>
+     */
+    private String poolArn;
 
     /**
      * <p>
@@ -277,6 +283,46 @@ public class CoipPool implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN of the address pool.
+     * </p>
+     * 
+     * @param poolArn
+     *        The ARN of the address pool.
+     */
+
+    public void setPoolArn(String poolArn) {
+        this.poolArn = poolArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the address pool.
+     * </p>
+     * 
+     * @return The ARN of the address pool.
+     */
+
+    public String getPoolArn() {
+        return this.poolArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the address pool.
+     * </p>
+     * 
+     * @param poolArn
+     *        The ARN of the address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoipPool withPoolArn(String poolArn) {
+        setPoolArn(poolArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -295,7 +341,9 @@ public class CoipPool implements Serializable, Cloneable {
         if (getLocalGatewayRouteTableId() != null)
             sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPoolArn() != null)
+            sb.append("PoolArn: ").append(getPoolArn());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +374,10 @@ public class CoipPool implements Serializable, Cloneable {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPoolArn() == null ^ this.getPoolArn() == null)
+            return false;
+        if (other.getPoolArn() != null && other.getPoolArn().equals(this.getPoolArn()) == false)
+            return false;
         return true;
     }
 
@@ -338,6 +390,7 @@ public class CoipPool implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPoolCidrs() == null) ? 0 : getPoolCidrs().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPoolArn() == null) ? 0 : getPoolArn().hashCode());
         return hashCode;
     }
 

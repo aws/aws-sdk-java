@@ -40,6 +40,8 @@ public class CreateDetectorVersionRequestMarshaller {
             .marshallLocationName("modelVersions").build();
     private static final MarshallingInfo<String> RULEEXECUTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ruleExecutionMode").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDetectorVersionRequestMarshaller instance = new CreateDetectorVersionRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateDetectorVersionRequestMarshaller {
             protocolMarshaller.marshall(createDetectorVersionRequest.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(createDetectorVersionRequest.getModelVersions(), MODELVERSIONS_BINDING);
             protocolMarshaller.marshall(createDetectorVersionRequest.getRuleExecutionMode(), RULEEXECUTIONMODE_BINDING);
+            protocolMarshaller.marshall(createDetectorVersionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -48,13 +48,13 @@ public class CreateFieldLevelEncryptionConfigRequestMarshaller implements
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2019-03-26/field-level-encryption";
+        String uriResourcePath = "/2020-05-31/field-level-encryption";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2020-05-31/");
 
             FieldLevelEncryptionConfig fieldLevelEncryptionConfig = createFieldLevelEncryptionConfigRequest.getFieldLevelEncryptionConfig();
             if (fieldLevelEncryptionConfig != null) {

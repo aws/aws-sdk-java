@@ -88,6 +88,8 @@ public class StartBuildRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registryCredentialOverride").build();
     private static final MarshallingInfo<String> IMAGEPULLCREDENTIALSTYPEOVERRIDE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imagePullCredentialsTypeOverride").build();
+    private static final MarshallingInfo<Boolean> DEBUGSESSIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("debugSessionEnabled").build();
 
     private static final StartBuildRequestMarshaller instance = new StartBuildRequestMarshaller();
 
@@ -135,6 +137,7 @@ public class StartBuildRequestMarshaller {
             protocolMarshaller.marshall(startBuildRequest.getLogsConfigOverride(), LOGSCONFIGOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getRegistryCredentialOverride(), REGISTRYCREDENTIALOVERRIDE_BINDING);
             protocolMarshaller.marshall(startBuildRequest.getImagePullCredentialsTypeOverride(), IMAGEPULLCREDENTIALSTYPEOVERRIDE_BINDING);
+            protocolMarshaller.marshall(startBuildRequest.getDebugSessionEnabled(), DEBUGSESSIONENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

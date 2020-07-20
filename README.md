@@ -12,7 +12,7 @@ started in minutes using ***Maven*** or by downloading a [single zip file][insta
 * [SDK Blog][blog]
 * [Getting Help](#getting-help)
 
-Note: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#AWS-SDK-for-Java-2.x) section for more information.
+Note: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#aws-sdk-for-java-2x) section for more information.
 
 
 ## Release Notes ##
@@ -48,7 +48,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.822</version>
+      <version>1.11.823</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -110,7 +110,7 @@ mvn clean install -Dgpg.skip=true
 ```
 
 ## Getting Help
-Please use these community resources for getting help. We use GitHub [issues][sdk-issues] for tracking bugs and feature requests and have limited bandwidth to address them.
+GitHub [issues][sdk-issues] is the preferred channel to interact with our team. Also check these community resources for getting help:
 
 * Ask a question on [StackOverflow][stack-overflow] and tag it with `aws-java-sdk`
 * Come join the AWS Java community chat on [Gitter][gitter]

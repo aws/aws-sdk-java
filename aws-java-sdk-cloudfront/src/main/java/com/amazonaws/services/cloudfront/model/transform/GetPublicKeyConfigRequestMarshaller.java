@@ -38,7 +38,7 @@ public class GetPublicKeyConfigRequestMarshaller implements Marshaller<Request<G
 
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2019-03-26/public-key/{Id}/config";
+        String uriResourcePath = "/2020-05-31/public-key/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", getPublicKeyConfigRequest.getId());
         request.setResourcePath(uriResourcePath);

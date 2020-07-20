@@ -36,6 +36,12 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
     private String modelEndpoint;
     /**
      * <p>
+     * The event type names.
+     * </p>
+     */
+    private String eventTypeName;
+    /**
+     * <p>
      * The source of the model.
      * </p>
      */
@@ -76,6 +82,12 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * The model ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -114,6 +126,46 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
 
     public ExternalModel withModelEndpoint(String modelEndpoint) {
         setModelEndpoint(modelEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The event type names.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The event type names.
+     */
+
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The event type names.
+     * </p>
+     * 
+     * @return The event type names.
+     */
+
+    public String getEventTypeName() {
+        return this.eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The event type names.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The event type names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExternalModel withEventTypeName(String eventTypeName) {
+        setEventTypeName(eventTypeName);
         return this;
     }
 
@@ -436,6 +488,46 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The model ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The model ARN.
+     * </p>
+     * 
+     * @return The model ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The model ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExternalModel withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -449,6 +541,8 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getModelEndpoint() != null)
             sb.append("ModelEndpoint: ").append(getModelEndpoint()).append(",");
+        if (getEventTypeName() != null)
+            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getModelSource() != null)
             sb.append("ModelSource: ").append(getModelSource()).append(",");
         if (getRole() != null)
@@ -462,7 +556,9 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -480,6 +576,10 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         if (other.getModelEndpoint() == null ^ this.getModelEndpoint() == null)
             return false;
         if (other.getModelEndpoint() != null && other.getModelEndpoint().equals(this.getModelEndpoint()) == false)
+            return false;
+        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
+            return false;
+        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
             return false;
         if (other.getModelSource() == null ^ this.getModelSource() == null)
             return false;
@@ -509,6 +609,10 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -518,6 +622,7 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelEndpoint() == null) ? 0 : getModelEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getModelSource() == null) ? 0 : getModelSource().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getInputConfiguration() == null) ? 0 : getInputConfiguration().hashCode());
@@ -525,6 +630,7 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getModelEndpointStatus() == null) ? 0 : getModelEndpointStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

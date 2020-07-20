@@ -58,6 +58,12 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
      * </p>
      */
     private String peerRegion;
+    /**
+     * <p>
+     * The tags to assign to the peering connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -262,6 +268,79 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The tags to assign to the peering connection.
+     * </p>
+     * 
+     * @return The tags to assign to the peering connection.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the peering connection.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the peering connection.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the peering connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the peering connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcPeeringConnectionRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the peering connection.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the peering connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpcPeeringConnectionRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -291,7 +370,9 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getPeerRegion() != null)
-            sb.append("PeerRegion: ").append(getPeerRegion());
+            sb.append("PeerRegion: ").append(getPeerRegion()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -322,6 +403,10 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
             return false;
         if (other.getPeerRegion() != null && other.getPeerRegion().equals(this.getPeerRegion()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -334,6 +419,7 @@ public class CreateVpcPeeringConnectionRequest extends AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getPeerRegion() == null) ? 0 : getPeerRegion().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

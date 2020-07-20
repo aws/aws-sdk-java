@@ -17,16 +17,38 @@ import javax.annotation.Generated;
 
 /**
  * <p>
+ * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
+ * </p>
+ * <p>
+ * If you want to include values in the cache key, use a <code>CachePolicy</code>. See <code>CreateCachePolicy</code>.
+ * </p>
+ * <p>
+ * If you want to send values to the origin but not include them in the cache key, use an
+ * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+ * </p>
+ * <p>
  * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ForwardedValues" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ForwardedValues" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ForwardedValues implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
      * <p>
      * Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache
      * behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
@@ -56,6 +78,18 @@ public class ForwardedValues implements Serializable, Cloneable {
     private Boolean queryString;
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
@@ -64,6 +98,18 @@ public class ForwardedValues implements Serializable, Cloneable {
      */
     private CookiePreference cookies;
     /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send headers to the origin but not include them in the cache key, use <code>HeadersConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
      * <p>
      * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
      * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
@@ -78,6 +124,18 @@ public class ForwardedValues implements Serializable, Cloneable {
     private Headers headers;
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use an
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that contains information about the query string parameters that you want CloudFront to use for
      * caching for this cache behavior.
      * </p>
@@ -85,6 +143,18 @@ public class ForwardedValues implements Serializable, Cloneable {
     private QueryStringCacheKeys queryStringCacheKeys;
 
     /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
      * <p>
      * Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache
      * behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
@@ -112,10 +182,21 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param queryString
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *        policy. See <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send query strings to the origin but not include them in the cache key, use
+     *        <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Indicates whether you want CloudFront to forward query strings to the origin that is associated with this
      *        cache behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
-     *        <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if
-     *        any:</p>
+     *        <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if any:
+     *        </p>
      *        <p>
      *        If you specify true for <code>QueryString</code> and you don't specify any values for
      *        <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin and
@@ -144,6 +225,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache
      * behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
      * <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if any:
@@ -169,10 +262,22 @@ public class ForwardedValues implements Serializable, Cloneable {
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return Indicates whether you want CloudFront to forward query strings to the origin that is associated with this
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *         policy. See <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send query strings to the origin but not include them in the cache key, use
+     *         <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         Indicates whether you want CloudFront to forward query strings to the origin that is associated with this
      *         cache behavior and cache based on the query string parameters. CloudFront behavior depends on the value
      *         of <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if
-     *         any:</p>
+     *         any:
+     *         </p>
      *         <p>
      *         If you specify true for <code>QueryString</code> and you don't specify any values for
      *         <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin and
@@ -201,6 +306,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache
      * behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
      * <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if any:
@@ -227,10 +344,21 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param queryString
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *        policy. See <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send query strings to the origin but not include them in the cache key, use
+     *        <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Indicates whether you want CloudFront to forward query strings to the origin that is associated with this
      *        cache behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
-     *        <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if
-     *        any:</p>
+     *        <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if any:
+     *        </p>
      *        <p>
      *        If you specify true for <code>QueryString</code> and you don't specify any values for
      *        <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin and
@@ -261,6 +389,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Indicates whether you want CloudFront to forward query strings to the origin that is associated with this cache
      * behavior and cache based on the query string parameters. CloudFront behavior depends on the value of
      * <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if any:
@@ -286,10 +426,22 @@ public class ForwardedValues implements Serializable, Cloneable {
      * CloudFront to Cache Based on Query String Parameters</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return Indicates whether you want CloudFront to forward query strings to the origin that is associated with this
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *         policy. See <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send query strings to the origin but not include them in the cache key, use
+     *         <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         Indicates whether you want CloudFront to forward query strings to the origin that is associated with this
      *         cache behavior and cache based on the query string parameters. CloudFront behavior depends on the value
      *         of <code>QueryString</code> and on the values that you specify for <code>QueryStringCacheKeys</code>, if
-     *         any:</p>
+     *         any:
+     *         </p>
      *         <p>
      *         If you specify true for <code>QueryString</code> and you don't specify any values for
      *         <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters to the origin and
@@ -318,6 +470,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
@@ -325,6 +489,17 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param cookies
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
      *        which ones. For more information about forwarding cookies to the origin, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
@@ -337,13 +512,36 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
      * Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *         <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send cookies to the origin but not include them in the cache key, use
+     *         <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
      *         which ones. For more information about forwarding cookies to the origin, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
      *         Forwards, Caches, and Logs Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -355,6 +553,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which
      * ones. For more information about forwarding cookies to the origin, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront Forwards,
@@ -362,6 +572,17 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param cookies
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so,
      *        which ones. For more information about forwarding cookies to the origin, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">How CloudFront
@@ -376,6 +597,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send headers to the origin but not include them in the cache key, use <code>HeadersConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
      * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
      * versions of a specified object that is based on the header values in viewer requests.
@@ -387,9 +620,21 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param headers
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send headers to the origin but not include them in the cache key, use
+     *        <code>HeadersConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the
      *        origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also
-     *        caches separate versions of a specified object that is based on the header values in viewer requests.</p>
+     *        caches separate versions of a specified object that is based on the header values in viewer requests.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching
@@ -402,6 +647,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send headers to the origin but not include them in the cache key, use <code>HeadersConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
      * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
      * versions of a specified object that is based on the header values in viewer requests.
@@ -412,10 +669,22 @@ public class ForwardedValues implements Serializable, Cloneable {
      * Based on Request Headers</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     *         <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send headers to the origin but not include them in the cache key, use
+     *         <code>HeadersConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to
      *         the origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront
      *         also caches separate versions of a specified object that is based on the header values in viewer
-     *         requests.</p>
+     *         requests.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching
@@ -428,6 +697,18 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send headers to the origin but not include them in the cache key, use <code>HeadersConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the origin
      * for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also caches separate
      * versions of a specified object that is based on the header values in viewer requests.
@@ -439,9 +720,21 @@ public class ForwardedValues implements Serializable, Cloneable {
      * </p>
      * 
      * @param headers
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include headers in the cache key, use <code>HeadersConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send headers to the origin but not include them in the cache key, use
+     *        <code>HeadersConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront to forward to the
      *        origin for this cache behavior (whitelisted headers). For the headers that you specify, CloudFront also
-     *        caches separate versions of a specified object that is based on the header values in viewer requests.</p>
+     *        caches separate versions of a specified object that is based on the header values in viewer requests.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/header-caching.html"> Caching
@@ -456,11 +749,34 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use an
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that contains information about the query string parameters that you want CloudFront to use for
      * caching for this cache behavior.
      * </p>
      * 
      * @param queryStringCacheKeys
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *        policy. See <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send query strings to the origin but not include them in the cache key, use an
+     *        <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        A complex type that contains information about the query string parameters that you want CloudFront to use
      *        for caching for this cache behavior.
      */
@@ -471,11 +787,34 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use an
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that contains information about the query string parameters that you want CloudFront to use for
      * caching for this cache behavior.
      * </p>
      * 
-     * @return A complex type that contains information about the query string parameters that you want CloudFront to
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *         policy. See <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send query strings to the origin but not include them in the cache key, use an
+     *         <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         A complex type that contains information about the query string parameters that you want CloudFront to
      *         use for caching for this cache behavior.
      */
 
@@ -485,11 +824,34 @@ public class ForwardedValues implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send query strings to the origin but not include them in the cache key, use an
+     * <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * A complex type that contains information about the query string parameters that you want CloudFront to use for
      * caching for this cache behavior.
      * </p>
      * 
      * @param queryStringCacheKeys
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache
+     *        policy. See <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send query strings to the origin but not include them in the cache key, use an
+     *        <code>QueryStringsConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        A complex type that contains information about the query string parameters that you want CloudFront to use
      *        for caching for this cache behavior.
      * @return Returns a reference to this object so that method calls can be chained together.

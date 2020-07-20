@@ -36,7 +36,8 @@ public class Frequency implements Serializable, Cloneable, StructuredPojo {
     private String units;
     /**
      * <p>
-     * Frequency value.
+     * Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz
+     * for uplink.
      * </p>
      */
     private Double value;
@@ -102,11 +103,13 @@ public class Frequency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Frequency value.
+     * Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz
+     * for uplink.
      * </p>
      * 
      * @param value
-     *        Frequency value.
+     *        Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to
+     *        2120 MHz for uplink.
      */
 
     public void setValue(Double value) {
@@ -115,10 +118,12 @@ public class Frequency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Frequency value.
+     * Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz
+     * for uplink.
      * </p>
      * 
-     * @return Frequency value.
+     * @return Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to
+     *         2120 MHz for uplink.
      */
 
     public Double getValue() {
@@ -127,11 +132,13 @@ public class Frequency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Frequency value.
+     * Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz
+     * for uplink.
      * </p>
      * 
      * @param value
-     *        Frequency value.
+     *        Frequency value. Valid values are between 2200 to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to
+     *        2120 MHz for uplink.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -52,9 +52,9 @@ public class ModelInputConfigurationJsonUnmarshaller implements Unmarshaller<Mod
                     context.nextToken();
                     modelInputConfiguration.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("isOpaque", targetDepth)) {
+                if (context.testExpression("useEventVariables", targetDepth)) {
                     context.nextToken();
-                    modelInputConfiguration.setIsOpaque(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    modelInputConfiguration.setUseEventVariables(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("jsonInputTemplate", targetDepth)) {
                     context.nextToken();

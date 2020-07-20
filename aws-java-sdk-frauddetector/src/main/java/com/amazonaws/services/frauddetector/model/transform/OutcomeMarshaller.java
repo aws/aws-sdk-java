@@ -35,6 +35,8 @@ public class OutcomeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").build();
     private static final MarshallingInfo<String> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final OutcomeMarshaller instance = new OutcomeMarshaller();
 
@@ -56,6 +58,7 @@ public class OutcomeMarshaller {
             protocolMarshaller.marshall(outcome.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(outcome.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(outcome.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(outcome.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

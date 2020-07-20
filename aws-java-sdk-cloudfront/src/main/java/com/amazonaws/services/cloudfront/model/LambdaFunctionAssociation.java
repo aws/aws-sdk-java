@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * A complex type that contains a Lambda function association.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/LambdaFunctionAssociation"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/LambdaFunctionAssociation"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -46,8 +46,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
-     * the requested object is in the edge cache, the function doesn't execute.
+     * <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin. When the
+     * requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
@@ -137,8 +137,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
-     * the requested object is in the edge cache, the function doesn't execute.
+     * <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin. When the
+     * requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
@@ -171,7 +171,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin.
      *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
@@ -211,8 +211,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
-     * the requested object is in the edge cache, the function doesn't execute.
+     * <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin. When the
+     * requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
@@ -244,8 +244,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>origin-request</code>: The function executes only when CloudFront forwards a request to your
-     *         origin. When the requested object is in the edge cache, the function doesn't execute.
+     *         <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin.
+     *         When the requested object is in the edge cache, the function doesn't execute.
      *         </p>
      *         </li>
      *         <li>
@@ -284,8 +284,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
-     * the requested object is in the edge cache, the function doesn't execute.
+     * <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin. When the
+     * requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
@@ -318,7 +318,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin.
      *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
@@ -360,8 +360,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
-     * the requested object is in the edge cache, the function doesn't execute.
+     * <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin. When the
+     * requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
@@ -394,7 +394,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin.
      *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>
@@ -434,8 +434,8 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin. When
-     * the requested object is in the edge cache, the function doesn't execute.
+     * <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin. When the
+     * requested object is in the edge cache, the function doesn't execute.
      * </p>
      * </li>
      * <li>
@@ -468,7 +468,7 @@ public class LambdaFunctionAssociation implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>origin-request</code>: The function executes only when CloudFront forwards a request to your origin.
+     *        <code>origin-request</code>: The function executes only when CloudFront sends a request to your origin.
      *        When the requested object is in the edge cache, the function doesn't execute.
      *        </p>
      *        </li>

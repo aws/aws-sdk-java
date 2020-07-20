@@ -48,10 +48,6 @@ public class LabelSchemaJsonUnmarshaller implements Unmarshaller<LabelSchema, Js
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("labelKey", targetDepth)) {
-                    context.nextToken();
-                    labelSchema.setLabelKey(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("labelMapper", targetDepth)) {
                     context.nextToken();
                     labelSchema.setLabelMapper(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),

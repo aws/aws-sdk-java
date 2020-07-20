@@ -44,7 +44,7 @@ public class DeleteDistributionRequestMarshaller implements Marshaller<Request<D
             request.addHeader("If-Match", StringUtils.fromString(deleteDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2019-03-26/distribution/{Id}";
+        String uriResourcePath = "/2020-05-31/distribution/{Id}";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", deleteDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);

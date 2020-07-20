@@ -75,6 +75,12 @@ public class CreateDetectorVersionRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String ruleExecutionMode;
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -538,6 +544,76 @@ public class CreateDetectorVersionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @return A collection of key and value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorVersionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorVersionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -560,7 +636,9 @@ public class CreateDetectorVersionRequest extends com.amazonaws.AmazonWebService
         if (getModelVersions() != null)
             sb.append("ModelVersions: ").append(getModelVersions()).append(",");
         if (getRuleExecutionMode() != null)
-            sb.append("RuleExecutionMode: ").append(getRuleExecutionMode());
+            sb.append("RuleExecutionMode: ").append(getRuleExecutionMode()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -599,6 +677,10 @@ public class CreateDetectorVersionRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getRuleExecutionMode() != null && other.getRuleExecutionMode().equals(this.getRuleExecutionMode()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -613,6 +695,7 @@ public class CreateDetectorVersionRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getModelVersions() == null) ? 0 : getModelVersions().hashCode());
         hashCode = prime * hashCode + ((getRuleExecutionMode() == null) ? 0 : getRuleExecutionMode().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

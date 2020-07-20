@@ -129,7 +129,38 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Creates a version of the model using the specified model type.
+     * Creates a model using the specified model type.
+     * </p>
+     * 
+     * @param createModelRequest
+     * @return A Java Future containing the result of the CreateModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.CreateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelResult> createModelAsync(CreateModelRequest createModelRequest);
+
+    /**
+     * <p>
+     * Creates a model using the specified model type.
+     * </p>
+     * 
+     * @param createModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.CreateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/CreateModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelResult> createModelAsync(CreateModelRequest createModelRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateModelRequest, CreateModelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a version of the model using the specified model type and model id.
      * </p>
      * 
      * @param createModelVersionRequest
@@ -142,7 +173,7 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Creates a version of the model using the specified model type.
+     * Creates a version of the model using the specified model type and model id.
      * </p>
      * 
      * @param createModelVersionRequest
@@ -317,36 +348,36 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code> or
-     * <code>INACTIVE</code> detector version.
+     * Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code>
+     * detector version.
      * </p>
      * 
-     * @param deleteRuleVersionRequest
-     * @return A Java Future containing the result of the DeleteRuleVersion operation returned by the service.
-     * @sample AmazonFraudDetectorAsync.DeleteRuleVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion"
-     *      target="_top">AWS API Documentation</a>
+     * @param deleteRuleRequest
+     * @return A Java Future containing the result of the DeleteRule operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteRuleVersionResult> deleteRuleVersionAsync(DeleteRuleVersionRequest deleteRuleVersionRequest);
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest);
 
     /**
      * <p>
-     * Deletes the rule version. You cannot delete a rule version if it is used by an <code>ACTIVE</code> or
-     * <code>INACTIVE</code> detector version.
+     * Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code> or <code>INACTIVE</code>
+     * detector version.
      * </p>
      * 
-     * @param deleteRuleVersionRequest
+     * @param deleteRuleRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the DeleteRuleVersion operation returned by the service.
-     * @sample AmazonFraudDetectorAsyncHandler.DeleteRuleVersion
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRuleVersion"
-     *      target="_top">AWS API Documentation</a>
+     * @return A Java Future containing the result of the DeleteRule operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
      */
-    java.util.concurrent.Future<DeleteRuleVersionResult> deleteRuleVersionAsync(DeleteRuleVersionRequest deleteRuleVersionRequest,
-            com.amazonaws.handlers.AsyncHandler<DeleteRuleVersionRequest, DeleteRuleVersionResult> asyncHandler);
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -445,11 +476,11 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all of detectors. This is a paginated API. If you provide a null <code>maxSizePerPage</code>, this actions
-     * retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>, the value must be
-     * between 5 and 10. To get the next page results, provide the pagination token from the
-     * <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the records from the
-     * beginning.
+     * Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If
+     * you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you
+     * provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the
+     * pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token
+     * fetches the records from the beginning.
      * </p>
      * 
      * @param getDetectorsRequest
@@ -462,11 +493,11 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all of detectors. This is a paginated API. If you provide a null <code>maxSizePerPage</code>, this actions
-     * retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>, the value must be
-     * between 5 and 10. To get the next page results, provide the pagination token from the
-     * <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the records from the
-     * beginning.
+     * Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If
+     * you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you
+     * provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the
+     * pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token
+     * fetches the records from the beginning.
      * </p>
      * 
      * @param getDetectorsRequest
@@ -484,11 +515,122 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a
+     * null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination
+     * token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the
+     * records from the beginning.
+     * </p>
+     * 
+     * @param getEntityTypesRequest
+     * @return A Java Future containing the result of the GetEntityTypes operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetEntityTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEntityTypesResult> getEntityTypesAsync(GetEntityTypesRequest getEntityTypesRequest);
+
+    /**
+     * <p>
+     * Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a
+     * null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination
+     * token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the
+     * records from the beginning.
+     * </p>
+     * 
+     * @param getEntityTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEntityTypes operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetEntityTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEntityTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEntityTypesResult> getEntityTypesAsync(GetEntityTypesRequest getEntityTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEntityTypesRequest, GetEntityTypesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (
+     * <code>ACTIVE</code>) version is used.
+     * </p>
+     * 
+     * @param getEventPredictionRequest
+     * @return A Java Future containing the result of the GetEventPrediction operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetEventPrediction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventPredictionResult> getEventPredictionAsync(GetEventPredictionRequest getEventPredictionRequest);
+
+    /**
+     * <p>
+     * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (
+     * <code>ACTIVE</code>) version is used.
+     * </p>
+     * 
+     * @param getEventPredictionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventPrediction operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetEventPrediction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventPrediction"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventPredictionResult> getEventPredictionAsync(GetEventPredictionRequest getEventPredictionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventPredictionRequest, GetEventPredictionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null
+     * <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination
+     * token from the <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the
+     * records from the beginning.
+     * </p>
+     * 
+     * @param getEventTypesRequest
+     * @return A Java Future containing the result of the GetEventTypes operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetEventTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventTypesResult> getEventTypesAsync(GetEventTypesRequest getEventTypesRequest);
+
+    /**
+     * <p>
+     * Gets all event types or a specific event type if name is provided. This is a paginated API. If you provide a null
+     * <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination
+     * token from the <code>GetEventTypesResponse</code> as part of your request. A null pagination token fetches the
+     * records from the beginning.
+     * </p>
+     * 
+     * @param getEventTypesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEventTypes operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetEventTypes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetEventTypes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEventTypesResult> getEventTypesAsync(GetEventTypesRequest getEventTypesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEventTypesRequest, GetEventTypesResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the details for one or more Amazon SageMaker models that have been imported into the service. This is a
-     * paginated API. If you provide a null <code>maxSizePerPage</code>, this actions retrieves a maximum of 10 records
-     * per page. If you provide a <code>maxSizePerPage</code>, the value must be between 5 and 10. To get the next page
-     * results, provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A
-     * null pagination token fetches the records from the beginning.
+     * paginated API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of 10 records per
+     * page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results,
+     * provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A null
+     * pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getExternalModelsRequest
@@ -502,10 +644,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
     /**
      * <p>
      * Gets the details for one or more Amazon SageMaker models that have been imported into the service. This is a
-     * paginated API. If you provide a null <code>maxSizePerPage</code>, this actions retrieves a maximum of 10 records
-     * per page. If you provide a <code>maxSizePerPage</code>, the value must be between 5 and 10. To get the next page
-     * results, provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A
-     * null pagination token fetches the records from the beginning.
+     * paginated API. If you provide a null <code>maxResults</code>, this actions retrieves a maximum of 10 records per
+     * page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results,
+     * provide the pagination token from the <code>GetExternalModelsResult</code> as part of your request. A null
+     * pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getExternalModelsRequest
@@ -523,7 +665,79 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets a model version.
+     * Gets the encryption key if a Key Management Service (KMS) customer master key (CMK) has been specified to be used
+     * to encrypt content in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param getKMSEncryptionKeyRequest
+     * @return A Java Future containing the result of the GetKMSEncryptionKey operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetKMSEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetKMSEncryptionKeyResult> getKMSEncryptionKeyAsync(GetKMSEncryptionKeyRequest getKMSEncryptionKeyRequest);
+
+    /**
+     * <p>
+     * Gets the encryption key if a Key Management Service (KMS) customer master key (CMK) has been specified to be used
+     * to encrypt content in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param getKMSEncryptionKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetKMSEncryptionKey operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetKMSEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetKMSEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetKMSEncryptionKeyResult> getKMSEncryptionKeyAsync(GetKMSEncryptionKeyRequest getKMSEncryptionKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetKMSEncryptionKeyRequest, GetKMSEncryptionKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null
+     * <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the
+     * pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token
+     * fetches the records from the beginning.
+     * </p>
+     * 
+     * @param getLabelsRequest
+     * @return A Java Future containing the result of the GetLabels operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.GetLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLabelsResult> getLabelsAsync(GetLabelsRequest getLabelsRequest);
+
+    /**
+     * <p>
+     * Gets all labels or a specific label if name is provided. This is a paginated API. If you provide a null
+     * <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a
+     * <code>maxResults</code>, the value must be between 10 and 50. To get the next page results, provide the
+     * pagination token from the <code>GetGetLabelsResponse</code> as part of your request. A null pagination token
+     * fetches the records from the beginning.
+     * </p>
+     * 
+     * @param getLabelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLabels operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.GetLabels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetLabels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLabelsResult> getLabelsAsync(GetLabelsRequest getLabelsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLabelsRequest, GetLabelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the details of the specified model version.
      * </p>
      * 
      * @param getModelVersionRequest
@@ -536,7 +750,7 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets a model version.
+     * Gets the details of the specified model version.
      * </p>
      * 
      * @param getModelVersionRequest
@@ -554,8 +768,15 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all of the models for the AWS account, or the specified model type, or gets a single model for the specified
-     * model type, model ID combination.
+     * Gets one or more models. Gets all models for the AWS account if no model type and no model id provided. Gets all
+     * models for the AWS account and model type, if the model type is specified but model id is not provided. Gets a
+     * specific model if (model type, model id) tuple is specified.
+     * </p>
+     * <p>
+     * This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10
+     * records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 10. To get the next
+     * page results, provide the pagination token from the response as part of your request. A null pagination token
+     * fetches the records from the beginning.
      * </p>
      * 
      * @param getModelsRequest
@@ -568,8 +789,15 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all of the models for the AWS account, or the specified model type, or gets a single model for the specified
-     * model type, model ID combination.
+     * Gets one or more models. Gets all models for the AWS account if no model type and no model id provided. Gets all
+     * models for the AWS account and model type, if the model type is specified but model id is not provided. Gets a
+     * specific model if (model type, model id) tuple is specified.
+     * </p>
+     * <p>
+     * This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10
+     * records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 10. To get the next
+     * page results, provide the pagination token from the response as part of your request. A null pagination token
+     * fetches the records from the beginning.
      * </p>
      * 
      * @param getModelsRequest
@@ -587,11 +815,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxSizePerPage</code>, this
-     * actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>, the value must
-     * be between 50 and 100. To get the next page results, provide the pagination token from the
-     * <code>GetOutcomesResult</code> as part of your request. A null pagination token fetches the records from the
-     * beginning.
+     * Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>, this actions
+     * retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>, the value must be between
+     * 50 and 100. To get the next page results, provide the pagination token from the <code>GetOutcomesResult</code> as
+     * part of your request. A null pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getOutcomesRequest
@@ -604,11 +831,10 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxSizePerPage</code>, this
-     * actions retrieves a maximum of 10 records per page. If you provide a <code>maxSizePerPage</code>, the value must
-     * be between 50 and 100. To get the next page results, provide the pagination token from the
-     * <code>GetOutcomesResult</code> as part of your request. A null pagination token fetches the records from the
-     * beginning.
+     * Gets one or more outcomes. This is a paginated API. If you provide a null <code>maxResults</code>, this actions
+     * retrieves a maximum of 100 records per page. If you provide a <code>maxResults</code>, the value must be between
+     * 50 and 100. To get the next page results, provide the pagination token from the <code>GetOutcomesResult</code> as
+     * part of your request. A null pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getOutcomesRequest
@@ -659,7 +885,14 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all rules available for the specified detector.
+     * Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified.
+     * Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both
+     * the <code>ruleId</code> and the <code>ruleVersion</code> are specified.
+     * </p>
+     * <p>
+     * This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records per page. If you
+     * provide maxResults the value must be between 50 and 100. To get the next page result, a provide a pagination
+     * token from GetRulesResult as part of your request. Null pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getRulesRequest
@@ -672,7 +905,14 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Gets all rules available for the specified detector.
+     * Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified.
+     * Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both
+     * the <code>ruleId</code> and the <code>ruleVersion</code> are specified.
+     * </p>
+     * <p>
+     * This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records per page. If you
+     * provide maxResults the value must be between 50 and 100. To get the next page result, a provide a pagination
+     * token from GetRulesResult as part of your request. Null pagination token fetches the records from the beginning.
      * </p>
      * 
      * @param getRulesRequest
@@ -729,6 +969,41 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the
+     * pagination token from the response as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all tags associated with the resource. This is a paginated API. To get the next page results, provide the
+     * pagination token from the response as part of your request. A null pagination token fetches the records from the
+     * beginning.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates or updates a detector.
      * </p>
      * 
@@ -757,6 +1032,80 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
      */
     java.util.concurrent.Future<PutDetectorResult> putDetectorAsync(PutDetectorRequest putDetectorRequest,
             com.amazonaws.handlers.AsyncHandler<PutDetectorRequest, PutDetectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud
+     * prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type
+     * classifies the entity. Example classifications include customer, merchant, or account.
+     * </p>
+     * 
+     * @param putEntityTypeRequest
+     * @return A Java Future containing the result of the PutEntityType operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.PutEntityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEntityTypeResult> putEntityTypeAsync(PutEntityTypeRequest putEntityTypeRequest);
+
+    /**
+     * <p>
+     * Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud
+     * prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type
+     * classifies the entity. Example classifications include customer, merchant, or account.
+     * </p>
+     * 
+     * @param putEntityTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEntityType operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.PutEntityType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEntityType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutEntityTypeResult> putEntityTypeAsync(PutEntityTypeRequest putEntityTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEntityTypeRequest, PutEntityTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon
+     * Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent
+     * to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event
+     * (such as a customer), and the labels that classify the event. Example event types include online payment
+     * transactions, account registrations, and authentications.
+     * </p>
+     * 
+     * @param putEventTypeRequest
+     * @return A Java Future containing the result of the PutEventType operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.PutEventType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventTypeResult> putEventTypeAsync(PutEventTypeRequest putEventTypeRequest);
+
+    /**
+     * <p>
+     * Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon
+     * Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent
+     * to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event
+     * (such as a customer), and the labels that classify the event. Example event types include online payment
+     * transactions, account registrations, and authentications.
+     * </p>
+     * 
+     * @param putEventTypeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutEventType operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.PutEventType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutEventType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutEventTypeResult> putEventTypeAsync(PutEventTypeRequest putEventTypeRequest,
+            com.amazonaws.handlers.AsyncHandler<PutEventTypeRequest, PutEventTypeResult> asyncHandler);
 
     /**
      * <p>
@@ -793,34 +1142,69 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Creates or updates a model.
+     * Specifies the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content in Amazon
+     * Fraud Detector.
      * </p>
      * 
-     * @param putModelRequest
-     * @return A Java Future containing the result of the PutModel operation returned by the service.
-     * @sample AmazonFraudDetectorAsync.PutModel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutModel" target="_top">AWS API
-     *      Documentation</a>
+     * @param putKMSEncryptionKeyRequest
+     * @return A Java Future containing the result of the PutKMSEncryptionKey operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.PutKMSEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
      */
-    java.util.concurrent.Future<PutModelResult> putModelAsync(PutModelRequest putModelRequest);
+    java.util.concurrent.Future<PutKMSEncryptionKeyResult> putKMSEncryptionKeyAsync(PutKMSEncryptionKeyRequest putKMSEncryptionKeyRequest);
 
     /**
      * <p>
-     * Creates or updates a model.
+     * Specifies the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content in Amazon
+     * Fraud Detector.
      * </p>
      * 
-     * @param putModelRequest
+     * @param putKMSEncryptionKeyRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
      *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutModel operation returned by the service.
-     * @sample AmazonFraudDetectorAsyncHandler.PutModel
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutModel" target="_top">AWS API
+     * @return A Java Future containing the result of the PutKMSEncryptionKey operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.PutKMSEncryptionKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutKMSEncryptionKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutKMSEncryptionKeyResult> putKMSEncryptionKeyAsync(PutKMSEncryptionKeyRequest putKMSEncryptionKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutKMSEncryptionKeyRequest, PutKMSEncryptionKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with
+     * event types and used to train supervised machine learning models in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param putLabelRequest
+     * @return A Java Future containing the result of the PutLabel operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.PutLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel" target="_top">AWS API
      *      Documentation</a>
      */
-    java.util.concurrent.Future<PutModelResult> putModelAsync(PutModelRequest putModelRequest,
-            com.amazonaws.handlers.AsyncHandler<PutModelRequest, PutModelResult> asyncHandler);
+    java.util.concurrent.Future<PutLabelResult> putLabelAsync(PutLabelRequest putLabelRequest);
+
+    /**
+     * <p>
+     * Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with
+     * event types and used to train supervised machine learning models in Amazon Fraud Detector.
+     * </p>
+     * 
+     * @param putLabelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutLabel operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.PutLabel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/PutLabel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutLabelResult> putLabelAsync(PutLabelRequest putLabelRequest,
+            com.amazonaws.handlers.AsyncHandler<PutLabelRequest, PutLabelResult> asyncHandler);
 
     /**
      * <p>
@@ -855,8 +1239,71 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
+     * Assigns tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Assigns tags to a resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UntagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a detector version. The detector version attributes that you can update include models, external model
-     * endpoints, rules, and description. You can only update a <code>DRAFT</code> detector version.
+     * endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector
+     * version.
      * </p>
      * 
      * @param updateDetectorVersionRequest
@@ -870,7 +1317,8 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
     /**
      * <p>
      * Updates a detector version. The detector version attributes that you can update include models, external model
-     * endpoints, rules, and description. You can only update a <code>DRAFT</code> detector version.
+     * endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector
+     * version.
      * </p>
      * 
      * @param updateDetectorVersionRequest
@@ -962,21 +1410,42 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a model version. You can update the description and status attributes using this action. You can perform
-     * the following status updates:
+     * Updates a model. You can update the description attribute using this action.
      * </p>
-     * <ol>
-     * <li>
+     * 
+     * @param updateModelRequest
+     * @return A Java Future containing the result of the UpdateModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest updateModelRequest);
+
+    /**
      * <p>
-     * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>
+     * Updates a model. You can update the description attribute using this action.
      * </p>
-     * </li>
-     * <li>
+     * 
+     * @param updateModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateModel operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.UpdateModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelResult> updateModelAsync(UpdateModelRequest updateModelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateModelRequest, UpdateModelResult> asyncHandler);
+
+    /**
      * <p>
-     * Change <code>ACTIVE</code> back to <code>TRAINING_COMPLETE</code>
+     * Updates a model version. Updating a model version retrains an existing model version using updated training data
+     * and produces a new minor version of the model. You can update the training data set location and data access role
+     * attributes using this action. This action creates and trains a new minor version of the model, for example
+     * version 1.01, 1.02, 1.03.
      * </p>
-     * </li>
-     * </ol>
      * 
      * @param updateModelVersionRequest
      * @return A Java Future containing the result of the UpdateModelVersion operation returned by the service.
@@ -988,21 +1457,11 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a model version. You can update the description and status attributes using this action. You can perform
-     * the following status updates:
+     * Updates a model version. Updating a model version retrains an existing model version using updated training data
+     * and produces a new minor version of the model. You can update the training data set location and data access role
+     * attributes using this action. This action creates and trains a new minor version of the model, for example
+     * version 1.01, 1.02, 1.03.
      * </p>
-     * <ol>
-     * <li>
-     * <p>
-     * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Change <code>ACTIVE</code> back to <code>TRAINING_COMPLETE</code>
-     * </p>
-     * </li>
-     * </ol>
      * 
      * @param updateModelVersionRequest
      * @param asyncHandler
@@ -1019,7 +1478,68 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a rule's metadata.
+     * Updates the status of a model version.
+     * </p>
+     * <p>
+     * You can perform the following status updates:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change <code>ACTIVE</code>to <code>INACTIVE</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateModelVersionStatusRequest
+     * @return A Java Future containing the result of the UpdateModelVersionStatus operation returned by the service.
+     * @sample AmazonFraudDetectorAsync.UpdateModelVersionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelVersionStatusResult> updateModelVersionStatusAsync(UpdateModelVersionStatusRequest updateModelVersionStatusRequest);
+
+    /**
+     * <p>
+     * Updates the status of a model version.
+     * </p>
+     * <p>
+     * You can perform the following status updates:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Change the <code>TRAINING_COMPLETE</code> status to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Change <code>ACTIVE</code>to <code>INACTIVE</code>.
+     * </p>
+     * </li>
+     * </ol>
+     * 
+     * @param updateModelVersionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateModelVersionStatus operation returned by the service.
+     * @sample AmazonFraudDetectorAsyncHandler.UpdateModelVersionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/UpdateModelVersionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelVersionStatusResult> updateModelVersionStatusAsync(UpdateModelVersionStatusRequest updateModelVersionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateModelVersionStatusRequest, UpdateModelVersionStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a rule's metadata. The description attribute can be updated.
      * </p>
      * 
      * @param updateRuleMetadataRequest
@@ -1032,7 +1552,7 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a rule's metadata.
+     * Updates a rule's metadata. The description attribute can be updated.
      * </p>
      * 
      * @param updateRuleMetadataRequest
@@ -1050,7 +1570,8 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a rule version resulting in a new rule version.
+     * Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version
+     * (version 1, 2, 3 ...).
      * </p>
      * 
      * @param updateRuleVersionRequest
@@ -1063,7 +1584,8 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Updates a rule version resulting in a new rule version.
+     * Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version
+     * (version 1, 2, 3 ...).
      * </p>
      * 
      * @param updateRuleVersionRequest

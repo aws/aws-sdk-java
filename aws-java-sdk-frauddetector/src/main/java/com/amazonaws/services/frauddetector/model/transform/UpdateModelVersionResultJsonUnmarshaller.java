@@ -20,6 +20,7 @@ import com.amazonaws.services.frauddetector.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
+import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
@@ -30,6 +31,47 @@ public class UpdateModelVersionResultJsonUnmarshaller implements Unmarshaller<Up
 
     public UpdateModelVersionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         UpdateModelVersionResult updateModelVersionResult = new UpdateModelVersionResult();
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
+            return updateModelVersionResult;
+        }
+
+        while (true) {
+            if (token == null)
+                break;
+
+            if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("modelId", targetDepth)) {
+                    context.nextToken();
+                    updateModelVersionResult.setModelId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("modelType", targetDepth)) {
+                    context.nextToken();
+                    updateModelVersionResult.setModelType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("modelVersionNumber", targetDepth)) {
+                    context.nextToken();
+                    updateModelVersionResult.setModelVersionNumber(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    updateModelVersionResult.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
 
         return updateModelVersionResult;
     }

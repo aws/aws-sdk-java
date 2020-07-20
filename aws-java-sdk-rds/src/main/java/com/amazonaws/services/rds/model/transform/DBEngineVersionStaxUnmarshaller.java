@@ -149,6 +149,16 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     dBEngineVersion.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("SupportsParallelQuery", targetDepth)) {
+                    dBEngineVersion.setSupportsParallelQuery(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SupportsGlobalDatabases", targetDepth)) {
+                    dBEngineVersion.setSupportsGlobalDatabases(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

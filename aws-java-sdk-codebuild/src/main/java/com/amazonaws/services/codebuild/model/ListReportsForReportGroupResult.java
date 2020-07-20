@@ -35,7 +35,7 @@ public class ListReportsForReportGroupResult extends com.amazonaws.AmazonWebServ
     private String nextToken;
     /**
      * <p>
-     * The list of returned report group ARNs.
+     * The list of report ARNs.
      * </p>
      */
     private java.util.List<String> reports;
@@ -106,10 +106,10 @@ public class ListReportsForReportGroupResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of returned report group ARNs.
+     * The list of report ARNs.
      * </p>
      * 
-     * @return The list of returned report group ARNs.
+     * @return The list of report ARNs.
      */
 
     public java.util.List<String> getReports() {
@@ -118,11 +118,11 @@ public class ListReportsForReportGroupResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of returned report group ARNs.
+     * The list of report ARNs.
      * </p>
      * 
      * @param reports
-     *        The list of returned report group ARNs.
+     *        The list of report ARNs.
      */
 
     public void setReports(java.util.Collection<String> reports) {
@@ -136,7 +136,7 @@ public class ListReportsForReportGroupResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of returned report group ARNs.
+     * The list of report ARNs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -145,7 +145,7 @@ public class ListReportsForReportGroupResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param reports
-     *        The list of returned report group ARNs.
+     *        The list of report ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class ListReportsForReportGroupResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The list of returned report group ARNs.
+     * The list of report ARNs.
      * </p>
      * 
      * @param reports
-     *        The list of returned report group ARNs.
+     *        The list of report ARNs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,78 +30,36 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The label key.
-     * </p>
-     */
-    private String labelKey;
-    /**
-     * <p>
-     * The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For example, if
-     * <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels, this mapper could be:
-     * <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     * <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     * <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is
-     * a list, because you may have multiple variants for a single Amazon Fraud Detector label.
+     * The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>,
+     * <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     * <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     * <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>,
+     * <code>"LEGIT" =&gt; ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>,
+     * <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have
+     * multiple label variants from your event type for a single Amazon Fraud Detector label.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> labelMapper;
 
     /**
      * <p>
-     * The label key.
+     * The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>,
+     * <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     * <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     * <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>,
+     * <code>"LEGIT" =&gt; ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>,
+     * <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have
+     * multiple label variants from your event type for a single Amazon Fraud Detector label.
      * </p>
      * 
-     * @param labelKey
-     *        The label key.
-     */
-
-    public void setLabelKey(String labelKey) {
-        this.labelKey = labelKey;
-    }
-
-    /**
-     * <p>
-     * The label key.
-     * </p>
-     * 
-     * @return The label key.
-     */
-
-    public String getLabelKey() {
-        return this.labelKey;
-    }
-
-    /**
-     * <p>
-     * The label key.
-     * </p>
-     * 
-     * @param labelKey
-     *        The label key.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public LabelSchema withLabelKey(String labelKey) {
-        setLabelKey(labelKey);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For example, if
-     * <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels, this mapper could be:
-     * <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     * <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     * <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is
-     * a list, because you may have multiple variants for a single Amazon Fraud Detector label.
-     * </p>
-     * 
-     * @return The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For
-     *         example, if <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels,
-     *         this mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     *         <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     *         <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the
-     *         mapper is a list, because you may have multiple variants for a single Amazon Fraud Detector label.
+     * @return The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>
+     *         , <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     *         <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     *         <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or
+     *         <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt; ["true"]}</code> or
+     *         <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value
+     *         part of the mapper is a list, because you may have multiple label variants from your event type for a
+     *         single Amazon Fraud Detector label.
      */
 
     public java.util.Map<String, java.util.List<String>> getLabelMapper() {
@@ -110,21 +68,24 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For example, if
-     * <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels, this mapper could be:
-     * <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     * <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     * <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is
-     * a list, because you may have multiple variants for a single Amazon Fraud Detector label.
+     * The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>,
+     * <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     * <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     * <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>,
+     * <code>"LEGIT" =&gt; ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>,
+     * <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have
+     * multiple label variants from your event type for a single Amazon Fraud Detector label.
      * </p>
      * 
      * @param labelMapper
-     *        The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For
-     *        example, if <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels, this
-     *        mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     *        <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     *        <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the
-     *        mapper is a list, because you may have multiple variants for a single Amazon Fraud Detector label.
+     *        The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>,
+     *        <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     *        <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     *        <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or
+     *        <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt; ["true"]}</code> or
+     *        <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value
+     *        part of the mapper is a list, because you may have multiple label variants from your event type for a
+     *        single Amazon Fraud Detector label.
      */
 
     public void setLabelMapper(java.util.Map<String, java.util.List<String>> labelMapper) {
@@ -133,21 +94,24 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For example, if
-     * <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels, this mapper could be:
-     * <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     * <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     * <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is
-     * a list, because you may have multiple variants for a single Amazon Fraud Detector label.
+     * The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>,
+     * <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     * <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     * <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or <code>{"FRAUD" =&gt; ["false"]</code>,
+     * <code>"LEGIT" =&gt; ["true"]}</code> or <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>,
+     * <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the mapper is a list, because you may have
+     * multiple label variants from your event type for a single Amazon Fraud Detector label.
      * </p>
      * 
      * @param labelMapper
-     *        The label mapper maps the Amazon Fraud Detector supported label to the appropriate source labels. For
-     *        example, if <code>"FRAUD"</code> and <code>"LEGIT"</code> are Amazon Fraud Detector supported labels, this
-     *        mapper could be: <code>{"FRAUD" =&gt; ["0"]</code>, "LEGIT" =&gt; ["1"]} or
-     *        <code>{"FRAUD" =&gt; ["false"], "LEGIT" =&gt; ["true"]}</code> or
-     *        <code>{"FRAUD" =&gt; ["fraud", "abuse"], "LEGIT" =&gt; ["legit", "safe"]}</code>. The value part of the
-     *        mapper is a list, because you may have multiple variants for a single Amazon Fraud Detector label.
+     *        The label mapper maps the Amazon Fraud Detector supported model classification labels (<code>FRAUD</code>,
+     *        <code>LEGIT</code>) to the appropriate event type labels. For example, if "<code>FRAUD</code>" and "
+     *        <code>LEGIT</code>" are Amazon Fraud Detector supported labels, this mapper could be:
+     *        <code>{"FRAUD" =&gt; ["0"]</code>, <code>"LEGIT" =&gt; ["1"]}</code> or
+     *        <code>{"FRAUD" =&gt; ["false"]</code>, <code>"LEGIT" =&gt; ["true"]}</code> or
+     *        <code>{"FRAUD" =&gt; ["fraud", "abuse"]</code>, <code>"LEGIT" =&gt; ["legit", "safe"]}</code>. The value
+     *        part of the mapper is a list, because you may have multiple label variants from your event type for a
+     *        single Amazon Fraud Detector label.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,8 +160,6 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getLabelKey() != null)
-            sb.append("LabelKey: ").append(getLabelKey()).append(",");
         if (getLabelMapper() != null)
             sb.append("LabelMapper: ").append(getLabelMapper());
         sb.append("}");
@@ -214,10 +176,6 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof LabelSchema == false)
             return false;
         LabelSchema other = (LabelSchema) obj;
-        if (other.getLabelKey() == null ^ this.getLabelKey() == null)
-            return false;
-        if (other.getLabelKey() != null && other.getLabelKey().equals(this.getLabelKey()) == false)
-            return false;
         if (other.getLabelMapper() == null ^ this.getLabelMapper() == null)
             return false;
         if (other.getLabelMapper() != null && other.getLabelMapper().equals(this.getLabelMapper()) == false)
@@ -230,7 +188,6 @@ public class LabelSchema implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getLabelKey() == null) ? 0 : getLabelKey().hashCode());
         hashCode = prime * hashCode + ((getLabelMapper() == null) ? 0 : getLabelMapper().hashCode());
         return hashCode;
     }

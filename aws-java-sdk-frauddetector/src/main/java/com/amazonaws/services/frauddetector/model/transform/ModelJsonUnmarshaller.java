@@ -60,27 +60,21 @@ public class ModelJsonUnmarshaller implements Unmarshaller<Model, JsonUnmarshall
                     context.nextToken();
                     model.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("trainingDataSource", targetDepth)) {
+                if (context.testExpression("eventTypeName", targetDepth)) {
                     context.nextToken();
-                    model.setTrainingDataSource(TrainingDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                    model.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("modelVariables", targetDepth)) {
+                if (context.testExpression("createdTime", targetDepth)) {
                     context.nextToken();
-                    model.setModelVariables(new ListUnmarshaller<ModelVariable>(ModelVariableJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("labelSchema", targetDepth)) {
-                    context.nextToken();
-                    model.setLabelSchema(LabelSchemaJsonUnmarshaller.getInstance().unmarshall(context));
+                    model.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("lastUpdatedTime", targetDepth)) {
                     context.nextToken();
                     model.setLastUpdatedTime(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("createdTime", targetDepth)) {
+                if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
-                    model.setCreatedTime(context.getUnmarshaller(String.class).unmarshall(context));
+                    model.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

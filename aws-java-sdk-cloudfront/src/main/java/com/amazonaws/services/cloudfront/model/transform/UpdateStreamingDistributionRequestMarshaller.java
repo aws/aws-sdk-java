@@ -53,14 +53,14 @@ public class UpdateStreamingDistributionRequestMarshaller implements
             request.addHeader("If-Match", StringUtils.fromString(updateStreamingDistributionRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2019-03-26/streaming-distribution/{Id}/config";
+        String uriResourcePath = "/2020-05-31/streaming-distribution/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updateStreamingDistributionRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2020-05-31/");
 
             StreamingDistributionConfig streamingDistributionConfig = updateStreamingDistributionRequest.getStreamingDistributionConfig();
             if (streamingDistributionConfig != null) {

@@ -29,8 +29,6 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class LabelSchemaMarshaller {
 
-    private static final MarshallingInfo<String> LABELKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("labelKey").build();
     private static final MarshallingInfo<Map> LABELMAPPER_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labelMapper").build();
 
@@ -50,7 +48,6 @@ public class LabelSchemaMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(labelSchema.getLabelKey(), LABELKEY_BINDING);
             protocolMarshaller.marshall(labelSchema.getLabelMapper(), LABELMAPPER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

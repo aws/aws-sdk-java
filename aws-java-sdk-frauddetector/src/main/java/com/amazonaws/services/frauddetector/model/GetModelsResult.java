@@ -25,24 +25,24 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The next token for subsequent requests.
+     * The next page token to be used in subsequent requests.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The returned models.
+     * The array of models.
      * </p>
      */
     private java.util.List<Model> models;
 
     /**
      * <p>
-     * The next token for subsequent requests.
+     * The next page token to be used in subsequent requests.
      * </p>
      * 
      * @param nextToken
-     *        The next token for subsequent requests.
+     *        The next page token to be used in subsequent requests.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +51,10 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The next token for subsequent requests.
+     * The next page token to be used in subsequent requests.
      * </p>
      * 
-     * @return The next token for subsequent requests.
+     * @return The next page token to be used in subsequent requests.
      */
 
     public String getNextToken() {
@@ -63,11 +63,11 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The next token for subsequent requests.
+     * The next page token to be used in subsequent requests.
      * </p>
      * 
      * @param nextToken
-     *        The next token for subsequent requests.
+     *        The next page token to be used in subsequent requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The returned models.
+     * The array of models.
      * </p>
      * 
-     * @return The returned models.
+     * @return The array of models.
      */
 
     public java.util.List<Model> getModels() {
@@ -90,11 +90,11 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The returned models.
+     * The array of models.
      * </p>
      * 
      * @param models
-     *        The returned models.
+     *        The array of models.
      */
 
     public void setModels(java.util.Collection<Model> models) {
@@ -108,7 +108,7 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The returned models.
+     * The array of models.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param models
-     *        The returned models.
+     *        The array of models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class GetModelsResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The returned models.
+     * The array of models.
      * </p>
      * 
      * @param models
-     *        The returned models.
+     *        The array of models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -43,6 +43,11 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public CreateModelResult createModel(CreateModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateModelVersionResult createModelVersion(CreateModelVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,7 +78,7 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
-    public DeleteRuleVersionResult deleteRuleVersion(DeleteRuleVersionRequest request) {
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,7 +103,32 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public GetEntityTypesResult getEntityTypes(GetEntityTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEventPredictionResult getEventPrediction(GetEventPredictionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEventTypesResult getEventTypes(GetEventTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetExternalModelsResult getExternalModels(GetExternalModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetKMSEncryptionKeyResult getKMSEncryptionKey(GetKMSEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLabelsResult getLabels(GetLabelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,7 +163,22 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDetectorResult putDetector(PutDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEntityTypeResult putEntityType(PutEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEventTypeResult putEventType(PutEventTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,12 +188,27 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
-    public PutModelResult putModel(PutModelRequest request) {
+    public PutKMSEncryptionKeyResult putKMSEncryptionKey(PutKMSEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutLabelResult putLabel(PutLabelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutOutcomeResult putOutcome(PutOutcomeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,7 +228,17 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public UpdateModelResult updateModel(UpdateModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateModelVersionResult updateModelVersion(UpdateModelVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateModelVersionStatusResult updateModelVersionStatus(UpdateModelVersionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

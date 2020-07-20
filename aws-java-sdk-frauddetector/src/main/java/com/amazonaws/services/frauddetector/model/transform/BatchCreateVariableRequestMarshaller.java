@@ -30,6 +30,8 @@ public class BatchCreateVariableRequestMarshaller {
 
     private static final MarshallingInfo<List> VARIABLEENTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("variableEntries").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final BatchCreateVariableRequestMarshaller instance = new BatchCreateVariableRequestMarshaller();
 
@@ -48,6 +50,7 @@ public class BatchCreateVariableRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(batchCreateVariableRequest.getVariableEntries(), VARIABLEENTRIES_BINDING);
+            protocolMarshaller.marshall(batchCreateVariableRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

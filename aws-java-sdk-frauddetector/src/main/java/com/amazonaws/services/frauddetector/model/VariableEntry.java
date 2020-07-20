@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The variable entry in a list.
+ * A variable in the list of variables for the batch create variable request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/VariableEntry" target="_top">AWS API
@@ -30,48 +30,52 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the variable entry.
+     * The name of the variable.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The data type of the variable entry.
+     * The data type of the variable.
      * </p>
      */
     private String dataType;
     /**
      * <p>
-     * The data source of the variable entry.
+     * The data source of the variable.
      * </p>
      */
     private String dataSource;
     /**
      * <p>
-     * The default value of the variable entry.
+     * The default value of the variable.
      * </p>
      */
     private String defaultValue;
     /**
      * <p>
-     * The description of the variable entry.
+     * The description of the variable.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The type of the variable entry.
+     * The type of the variable.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      * </p>
      */
     private String variableType;
 
     /**
      * <p>
-     * The name of the variable entry.
+     * The name of the variable.
      * </p>
      * 
      * @param name
-     *        The name of the variable entry.
+     *        The name of the variable.
      */
 
     public void setName(String name) {
@@ -80,10 +84,10 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the variable entry.
+     * The name of the variable.
      * </p>
      * 
-     * @return The name of the variable entry.
+     * @return The name of the variable.
      */
 
     public String getName() {
@@ -92,11 +96,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the variable entry.
+     * The name of the variable.
      * </p>
      * 
      * @param name
-     *        The name of the variable entry.
+     *        The name of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +111,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable entry.
+     * The data type of the variable.
      * </p>
      * 
      * @param dataType
-     *        The data type of the variable entry.
+     *        The data type of the variable.
      */
 
     public void setDataType(String dataType) {
@@ -120,10 +124,10 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable entry.
+     * The data type of the variable.
      * </p>
      * 
-     * @return The data type of the variable entry.
+     * @return The data type of the variable.
      */
 
     public String getDataType() {
@@ -132,11 +136,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable entry.
+     * The data type of the variable.
      * </p>
      * 
      * @param dataType
-     *        The data type of the variable entry.
+     *        The data type of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +151,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source of the variable entry.
+     * The data source of the variable.
      * </p>
      * 
      * @param dataSource
-     *        The data source of the variable entry.
+     *        The data source of the variable.
      */
 
     public void setDataSource(String dataSource) {
@@ -160,10 +164,10 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source of the variable entry.
+     * The data source of the variable.
      * </p>
      * 
-     * @return The data source of the variable entry.
+     * @return The data source of the variable.
      */
 
     public String getDataSource() {
@@ -172,11 +176,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source of the variable entry.
+     * The data source of the variable.
      * </p>
      * 
      * @param dataSource
-     *        The data source of the variable entry.
+     *        The data source of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +191,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default value of the variable entry.
+     * The default value of the variable.
      * </p>
      * 
      * @param defaultValue
-     *        The default value of the variable entry.
+     *        The default value of the variable.
      */
 
     public void setDefaultValue(String defaultValue) {
@@ -200,10 +204,10 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default value of the variable entry.
+     * The default value of the variable.
      * </p>
      * 
-     * @return The default value of the variable entry.
+     * @return The default value of the variable.
      */
 
     public String getDefaultValue() {
@@ -212,11 +216,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default value of the variable entry.
+     * The default value of the variable.
      * </p>
      * 
      * @param defaultValue
-     *        The default value of the variable entry.
+     *        The default value of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +231,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the variable entry.
+     * The description of the variable.
      * </p>
      * 
      * @param description
-     *        The description of the variable entry.
+     *        The description of the variable.
      */
 
     public void setDescription(String description) {
@@ -240,10 +244,10 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the variable entry.
+     * The description of the variable.
      * </p>
      * 
-     * @return The description of the variable entry.
+     * @return The description of the variable.
      */
 
     public String getDescription() {
@@ -252,11 +256,11 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the variable entry.
+     * The description of the variable.
      * </p>
      * 
      * @param description
-     *        The description of the variable entry.
+     *        The description of the variable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +271,18 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the variable entry.
+     * The type of the variable.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      * </p>
      * 
      * @param variableType
-     *        The type of the variable entry.
+     *        The type of the variable.</p>
+     *        <p>
+     *        Valid Values:
+     *        <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      */
 
     public void setVariableType(String variableType) {
@@ -280,10 +291,17 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the variable entry.
+     * The type of the variable.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      * </p>
      * 
-     * @return The type of the variable entry.
+     * @return The type of the variable.</p>
+     *         <p>
+     *         Valid Values:
+     *         <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      */
 
     public String getVariableType() {
@@ -292,11 +310,18 @@ public class VariableEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the variable entry.
+     * The type of the variable.
+     * </p>
+     * <p>
+     * Valid Values:
+     * <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      * </p>
      * 
      * @param variableType
-     *        The type of the variable entry.
+     *        The type of the variable.</p>
+     *        <p>
+     *        Valid Values:
+     *        <code>AUTH_CODE | AVS | BILLING_ADDRESS_L1 | BILLING_ADDRESS_L2 | BILLING_CITY | BILLING_COUNTRY | BILLING_NAME | BILLING_PHONE | BILLING_STATE | BILLING_ZIP | CARD_BIN | CATEGORICAL | CURRENCY_CODE | EMAIL_ADDRESS | FINGERPRINT | FRAUD_LABEL | FREE_FORM_TEXT | IP_ADDRESS | NUMERIC | ORDER_ID | PAYMENT_TYPE | PHONE_NUMBER | PRICE | PRODUCT_CATEGORY | SHIPPING_ADDRESS_L1 | SHIPPING_ADDRESS_L2 | SHIPPING_CITY | SHIPPING_COUNTRY | SHIPPING_NAME | SHIPPING_PHONE | SHIPPING_STATE | SHIPPING_ZIP | USERAGENT | SHIPPING_ZIP | USERAGENT</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

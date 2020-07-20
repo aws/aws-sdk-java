@@ -17,19 +17,42 @@ import javax.annotation.Generated;
 
 /**
  * <p>
+ * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
+ * </p>
+ * <p>
+ * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+ * <code>CreateCachePolicy</code>.
+ * </p>
+ * <p>
+ * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an
+ * origin request policy. See <code>CreateOriginRequestPolicy</code>.
+ * </p>
+ * <p>
  * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones.
  * For more information about forwarding cookies to the origin, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Cookies.html">Caching Content Based on
  * Cookies</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CookiePreference" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CookiePreference" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CookiePreference implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
      * <p>
      * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
      * specified in the <code>WhitelistedNames</code> complex type.
@@ -41,6 +64,18 @@ public class CookiePreference implements Serializable, Cloneable {
      */
     private String forward;
     /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
      * <p>
      * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
@@ -62,6 +97,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
      * specified in the <code>WhitelistedNames</code> complex type.
      * </p>
@@ -71,8 +118,20 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param forward
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
-     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.
+     *        </p>
      *        <p>
      *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
      *        specify none for the <code>Forward</code> element.
@@ -85,6 +144,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
      * specified in the <code>WhitelistedNames</code> complex type.
      * </p>
@@ -93,8 +164,20 @@ public class CookiePreference implements Serializable, Cloneable {
      * none for the <code>Forward</code> element.
      * </p>
      * 
-     * @return Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
-     *         cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *         <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send cookies to the origin but not include them in the cache key, use
+     *         <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
+     *         cookies specified in the <code>WhitelistedNames</code> complex type.
+     *         </p>
      *         <p>
      *         Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
      *         specify none for the <code>Forward</code> element.
@@ -107,6 +190,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
      * specified in the <code>WhitelistedNames</code> complex type.
      * </p>
@@ -116,8 +211,20 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param forward
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
-     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.
+     *        </p>
      *        <p>
      *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
      *        specify none for the <code>Forward</code> element.
@@ -132,6 +239,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
      * specified in the <code>WhitelistedNames</code> complex type.
      * </p>
@@ -141,8 +260,20 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param forward
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
-     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.
+     *        </p>
      *        <p>
      *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
      *        specify none for the <code>Forward</code> element.
@@ -155,6 +286,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of cookies
      * specified in the <code>WhitelistedNames</code> complex type.
      * </p>
@@ -164,8 +307,20 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param forward
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Specifies which cookies to forward to the origin for this cache behavior: all, none, or the list of
-     *        cookies specified in the <code>WhitelistedNames</code> complex type.</p>
+     *        cookies specified in the <code>WhitelistedNames</code> complex type.
+     *        </p>
      *        <p>
      *        Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests to an Amazon S3 origin,
      *        specify none for the <code>Forward</code> element.
@@ -179,6 +334,18 @@ public class CookiePreference implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
      * <p>
      * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
@@ -197,9 +364,21 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param whitelistedNames
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      *        specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
-     *        and, if you want to forward selected cookies, the names of those cookies.</p>
+     *        and, if you want to forward selected cookies, the names of those cookies.
+     *        </p>
      *        <p>
      *        If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
      *        <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code>
@@ -218,6 +397,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
      * you want to forward selected cookies, the names of those cookies.
@@ -234,9 +425,21 @@ public class CookiePreference implements Serializable, Cloneable {
      * Limits</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
+     * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *         this field.</p>
+     *         <p>
+     *         If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *         <code>CreateCachePolicy</code>.
+     *         </p>
+     *         <p>
+     *         If you want to send cookies to the origin but not include them in the cache key, use
+     *         <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *         </p>
+     *         <p>
+     *         Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      *         specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
-     *         and, if you want to forward selected cookies, the names of those cookies.</p>
+     *         and, if you want to forward selected cookies, the names of those cookies.
+     *         </p>
      *         <p>
      *         If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
      *         <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from
@@ -255,6 +458,18 @@ public class CookiePreference implements Serializable, Cloneable {
 
     /**
      * <p>
+     * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
+     * field.
+     * </p>
+     * <p>
+     * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     * <code>CreateCachePolicy</code>.
+     * </p>
+     * <p>
+     * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code>
+     * in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     * </p>
+     * <p>
      * Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      * specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior and, if
      * you want to forward selected cookies, the names of those cookies.
@@ -272,9 +487,21 @@ public class CookiePreference implements Serializable, Cloneable {
      * </p>
      * 
      * @param whitelistedNames
+     *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
+     *        this field.</p>
+     *        <p>
+     *        If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
+     *        <code>CreateCachePolicy</code>.
+     *        </p>
+     *        <p>
+     *        If you want to send cookies to the origin but not include them in the cache key, use
+     *        <code>CookiesConfig</code> in an origin request policy. See <code>CreateOriginRequestPolicy</code>.
+     *        </p>
+     *        <p>
      *        Required if you specify <code>whitelist</code> for the value of <code>Forward</code>. A complex type that
      *        specifies how many different cookies you want CloudFront to forward to the origin for this cache behavior
-     *        and, if you want to forward selected cookies, the names of those cookies.</p>
+     *        and, if you want to forward selected cookies, the names of those cookies.
+     *        </p>
      *        <p>
      *        If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>, omit
      *        <code>WhitelistedNames</code>. If you change the value of <code>Forward</code> from <code>whitelist</code>

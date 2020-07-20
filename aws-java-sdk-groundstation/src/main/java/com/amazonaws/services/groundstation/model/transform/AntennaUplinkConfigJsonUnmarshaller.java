@@ -56,6 +56,10 @@ public class AntennaUplinkConfigJsonUnmarshaller implements Unmarshaller<Antenna
                     context.nextToken();
                     antennaUplinkConfig.setTargetEirp(EirpJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("transmitDisabled", targetDepth)) {
+                    context.nextToken();
+                    antennaUplinkConfig.setTransmitDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

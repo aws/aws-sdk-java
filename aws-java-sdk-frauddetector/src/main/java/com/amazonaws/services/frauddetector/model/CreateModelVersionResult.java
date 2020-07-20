@@ -37,7 +37,7 @@ public class CreateModelVersionResult extends com.amazonaws.AmazonWebServiceResu
     private String modelType;
     /**
      * <p>
-     * The version of the model.
+     * The model version number of the model version created.
      * </p>
      */
     private String modelVersionNumber;
@@ -149,11 +149,11 @@ public class CreateModelVersionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The version of the model.
+     * The model version number of the model version created.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The version of the model.
+     *        The model version number of the model version created.
      */
 
     public void setModelVersionNumber(String modelVersionNumber) {
@@ -162,10 +162,10 @@ public class CreateModelVersionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The version of the model.
+     * The model version number of the model version created.
      * </p>
      * 
-     * @return The version of the model.
+     * @return The model version number of the model version created.
      */
 
     public String getModelVersionNumber() {
@@ -174,11 +174,11 @@ public class CreateModelVersionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The version of the model.
+     * The model version number of the model version created.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The version of the model.
+     *        The model version number of the model version created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

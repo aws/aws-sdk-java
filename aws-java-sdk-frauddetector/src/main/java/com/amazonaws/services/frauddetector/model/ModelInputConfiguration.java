@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The model input configuration.
+ * The Amazon SageMaker model input configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/ModelInputConfiguration"
@@ -37,12 +37,10 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
     private String format;
     /**
      * <p>
-     * For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction request, and
-     * will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration.
+     * The event variables.
      * </p>
      */
-    private Boolean isOpaque;
+    private Boolean useEventVariables;
     /**
      * <p>
      * Template for constructing the JSON input-data sent to SageMaker. At event-evaluation, the placeholders for
@@ -127,70 +125,54 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction request, and
-     * will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration.
+     * The event variables.
      * </p>
      * 
-     * @param isOpaque
-     *        For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction
-     *        request, and will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by
-     *        Amazon Fraud Detector based on the model-configuration.
+     * @param useEventVariables
+     *        The event variables.
      */
 
-    public void setIsOpaque(Boolean isOpaque) {
-        this.isOpaque = isOpaque;
+    public void setUseEventVariables(Boolean useEventVariables) {
+        this.useEventVariables = useEventVariables;
     }
 
     /**
      * <p>
-     * For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction request, and
-     * will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration.
+     * The event variables.
      * </p>
      * 
-     * @return For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction
-     *         request, and will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by
-     *         Amazon Fraud Detector based on the model-configuration.
+     * @return The event variables.
      */
 
-    public Boolean getIsOpaque() {
-        return this.isOpaque;
+    public Boolean getUseEventVariables() {
+        return this.useEventVariables;
     }
 
     /**
      * <p>
-     * For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction request, and
-     * will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration.
+     * The event variables.
      * </p>
      * 
-     * @param isOpaque
-     *        For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction
-     *        request, and will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by
-     *        Amazon Fraud Detector based on the model-configuration.
+     * @param useEventVariables
+     *        The event variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ModelInputConfiguration withIsOpaque(Boolean isOpaque) {
-        setIsOpaque(isOpaque);
+    public ModelInputConfiguration withUseEventVariables(Boolean useEventVariables) {
+        setUseEventVariables(useEventVariables);
         return this;
     }
 
     /**
      * <p>
-     * For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction request, and
-     * will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by Amazon Fraud Detector
-     * based on the model-configuration.
+     * The event variables.
      * </p>
      * 
-     * @return For an opaque-model, the input to the model will be a ByteBuffer blob provided in the getPrediction
-     *         request, and will be passed to SageMaker as-is. For non-opaque models, the input will be constructed by
-     *         Amazon Fraud Detector based on the model-configuration.
+     * @return The event variables.
      */
 
-    public Boolean isOpaque() {
-        return this.isOpaque;
+    public Boolean isUseEventVariables() {
+        return this.useEventVariables;
     }
 
     /**
@@ -300,8 +282,8 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
         sb.append("{");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
-        if (getIsOpaque() != null)
-            sb.append("IsOpaque: ").append(getIsOpaque()).append(",");
+        if (getUseEventVariables() != null)
+            sb.append("UseEventVariables: ").append(getUseEventVariables()).append(",");
         if (getJsonInputTemplate() != null)
             sb.append("JsonInputTemplate: ").append(getJsonInputTemplate()).append(",");
         if (getCsvInputTemplate() != null)
@@ -324,9 +306,9 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
             return false;
-        if (other.getIsOpaque() == null ^ this.getIsOpaque() == null)
+        if (other.getUseEventVariables() == null ^ this.getUseEventVariables() == null)
             return false;
-        if (other.getIsOpaque() != null && other.getIsOpaque().equals(this.getIsOpaque()) == false)
+        if (other.getUseEventVariables() != null && other.getUseEventVariables().equals(this.getUseEventVariables()) == false)
             return false;
         if (other.getJsonInputTemplate() == null ^ this.getJsonInputTemplate() == null)
             return false;
@@ -345,7 +327,7 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
-        hashCode = prime * hashCode + ((getIsOpaque() == null) ? 0 : getIsOpaque().hashCode());
+        hashCode = prime * hashCode + ((getUseEventVariables() == null) ? 0 : getUseEventVariables().hashCode());
         hashCode = prime * hashCode + ((getJsonInputTemplate() == null) ? 0 : getJsonInputTemplate().hashCode());
         hashCode = prime * hashCode + ((getCsvInputTemplate() == null) ? 0 : getCsvInputTemplate().hashCode());
         return hashCode;

@@ -25,24 +25,24 @@ public class PutPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy that was created.
+     * The details of the AWS Firewall Manager policy.
      * </p>
      */
     private Policy policy;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the policy that was created.
+     * The Amazon Resource Name (ARN) of the policy.
      * </p>
      */
     private String policyArn;
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy that was created.
+     * The details of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policy
-     *        The details of the AWS Firewall Manager policy that was created.
+     *        The details of the AWS Firewall Manager policy.
      */
 
     public void setPolicy(Policy policy) {
@@ -51,10 +51,10 @@ public class PutPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy that was created.
+     * The details of the AWS Firewall Manager policy.
      * </p>
      * 
-     * @return The details of the AWS Firewall Manager policy that was created.
+     * @return The details of the AWS Firewall Manager policy.
      */
 
     public Policy getPolicy() {
@@ -63,11 +63,11 @@ public class PutPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The details of the AWS Firewall Manager policy that was created.
+     * The details of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policy
-     *        The details of the AWS Firewall Manager policy that was created.
+     *        The details of the AWS Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class PutPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the policy that was created.
+     * The Amazon Resource Name (ARN) of the policy.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the policy that was created.
+     *        The Amazon Resource Name (ARN) of the policy.
      */
 
     public void setPolicyArn(String policyArn) {
@@ -91,10 +91,10 @@ public class PutPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the policy that was created.
+     * The Amazon Resource Name (ARN) of the policy.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the policy that was created.
+     * @return The Amazon Resource Name (ARN) of the policy.
      */
 
     public String getPolicyArn() {
@@ -103,11 +103,11 @@ public class PutPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the policy that was created.
+     * The Amazon Resource Name (ARN) of the policy.
      * </p>
      * 
      * @param policyArn
-     *        The Amazon Resource Name (ARN) of the policy that was created.
+     *        The Amazon Resource Name (ARN) of the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

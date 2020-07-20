@@ -52,6 +52,10 @@ public class DataflowEndpointJsonUnmarshaller implements Unmarshaller<DataflowEn
                     context.nextToken();
                     dataflowEndpoint.setAddress(SocketAddressJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("mtu", targetDepth)) {
+                    context.nextToken();
+                    dataflowEndpoint.setMtu(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     dataflowEndpoint.setName(context.getUnmarshaller(String.class).unmarshall(context));

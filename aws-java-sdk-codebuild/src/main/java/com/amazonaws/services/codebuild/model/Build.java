@@ -330,6 +330,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ProjectFileSystemLocation> fileSystemLocations;
+    /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     */
+    private DebugSession debugSession;
 
     /**
      * <p>
@@ -2697,6 +2703,46 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     * 
+     * @param debugSession
+     *        Contains information about the debug session for this build.
+     */
+
+    public void setDebugSession(DebugSession debugSession) {
+        this.debugSession = debugSession;
+    }
+
+    /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     * 
+     * @return Contains information about the debug session for this build.
+     */
+
+    public DebugSession getDebugSession() {
+        return this.debugSession;
+    }
+
+    /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     * 
+     * @param debugSession
+     *        Contains information about the debug session for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withDebugSession(DebugSession debugSession) {
+        setDebugSession(debugSession);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2767,7 +2813,9 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (getReportArns() != null)
             sb.append("ReportArns: ").append(getReportArns()).append(",");
         if (getFileSystemLocations() != null)
-            sb.append("FileSystemLocations: ").append(getFileSystemLocations());
+            sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
+        if (getDebugSession() != null)
+            sb.append("DebugSession: ").append(getDebugSession());
         sb.append("}");
         return sb.toString();
     }
@@ -2902,6 +2950,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFileSystemLocations() != null && other.getFileSystemLocations().equals(this.getFileSystemLocations()) == false)
             return false;
+        if (other.getDebugSession() == null ^ this.getDebugSession() == null)
+            return false;
+        if (other.getDebugSession() != null && other.getDebugSession().equals(this.getDebugSession()) == false)
+            return false;
         return true;
     }
 
@@ -2940,6 +2992,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExportedEnvironmentVariables() == null) ? 0 : getExportedEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getReportArns() == null) ? 0 : getReportArns().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
+        hashCode = prime * hashCode + ((getDebugSession() == null) ? 0 : getDebugSession().hashCode());
         return hashCode;
     }
 

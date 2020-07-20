@@ -40,6 +40,12 @@ public class AntennaUplinkConfig implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private Eirp targetEirp;
+    /**
+     * <p>
+     * Whether or not uplink transmit is disabled.
+     * </p>
+     */
+    private Boolean transmitDisabled;
 
     /**
      * <p>
@@ -122,6 +128,58 @@ public class AntennaUplinkConfig implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether or not uplink transmit is disabled.
+     * </p>
+     * 
+     * @param transmitDisabled
+     *        Whether or not uplink transmit is disabled.
+     */
+
+    public void setTransmitDisabled(Boolean transmitDisabled) {
+        this.transmitDisabled = transmitDisabled;
+    }
+
+    /**
+     * <p>
+     * Whether or not uplink transmit is disabled.
+     * </p>
+     * 
+     * @return Whether or not uplink transmit is disabled.
+     */
+
+    public Boolean getTransmitDisabled() {
+        return this.transmitDisabled;
+    }
+
+    /**
+     * <p>
+     * Whether or not uplink transmit is disabled.
+     * </p>
+     * 
+     * @param transmitDisabled
+     *        Whether or not uplink transmit is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AntennaUplinkConfig withTransmitDisabled(Boolean transmitDisabled) {
+        setTransmitDisabled(transmitDisabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not uplink transmit is disabled.
+     * </p>
+     * 
+     * @return Whether or not uplink transmit is disabled.
+     */
+
+    public Boolean isTransmitDisabled() {
+        return this.transmitDisabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +194,9 @@ public class AntennaUplinkConfig implements Serializable, Cloneable, StructuredP
         if (getSpectrumConfig() != null)
             sb.append("SpectrumConfig: ").append(getSpectrumConfig()).append(",");
         if (getTargetEirp() != null)
-            sb.append("TargetEirp: ").append(getTargetEirp());
+            sb.append("TargetEirp: ").append(getTargetEirp()).append(",");
+        if (getTransmitDisabled() != null)
+            sb.append("TransmitDisabled: ").append(getTransmitDisabled());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +219,10 @@ public class AntennaUplinkConfig implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTargetEirp() != null && other.getTargetEirp().equals(this.getTargetEirp()) == false)
             return false;
+        if (other.getTransmitDisabled() == null ^ this.getTransmitDisabled() == null)
+            return false;
+        if (other.getTransmitDisabled() != null && other.getTransmitDisabled().equals(this.getTransmitDisabled()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +233,7 @@ public class AntennaUplinkConfig implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getSpectrumConfig() == null) ? 0 : getSpectrumConfig().hashCode());
         hashCode = prime * hashCode + ((getTargetEirp() == null) ? 0 : getTargetEirp().hashCode());
+        hashCode = prime * hashCode + ((getTransmitDisabled() == null) ? 0 : getTransmitDisabled().hashCode());
         return hashCode;
     }
 

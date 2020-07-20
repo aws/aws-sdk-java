@@ -27,7 +27,7 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by
+     * The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
      * <code>ListPolicies</code>.
      * </p>
      */
@@ -84,13 +84,13 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by
+     * The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
      * <code>ListPolicies</code>.
      * </p>
      * 
      * @param policyId
-     *        The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code>
-     *        and by <code>ListPolicies</code>.
+     *        The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
+     *        <code>ListPolicies</code>.
      */
 
     public void setPolicyId(String policyId) {
@@ -99,12 +99,12 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by
+     * The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
      * <code>ListPolicies</code>.
      * </p>
      * 
-     * @return The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code>
-     *         and by <code>ListPolicies</code>.
+     * @return The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
+     *         <code>ListPolicies</code>.
      */
 
     public String getPolicyId() {
@@ -113,13 +113,13 @@ public class DeletePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code> and by
+     * The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
      * <code>ListPolicies</code>.
      * </p>
      * 
      * @param policyId
-     *        The ID of the policy that you want to delete. <code>PolicyId</code> is returned by <code>PutPolicy</code>
-     *        and by <code>ListPolicies</code>.
+     *        The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code> and
+     *        <code>ListPolicies</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

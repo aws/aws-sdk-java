@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/OriginCustomHeader" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginCustomHeader" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,9 +29,9 @@ public class OriginCustomHeader implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
-     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private String headerName;
@@ -44,16 +44,15 @@ public class OriginCustomHeader implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
-     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param headerName
-     *        The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">
-     *        Forwarding Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront
-     *        Developer Guide</i>.
+     *        The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html"
+     *        >Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      */
 
     public void setHeaderName(String headerName) {
@@ -62,15 +61,14 @@ public class OriginCustomHeader implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
-     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">
-     *         Forwarding Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront
-     *         Developer Guide</i>.
+     * @return The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html"
+     *         >Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      */
 
     public String getHeaderName() {
@@ -79,16 +77,15 @@ public class OriginCustomHeader implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
-     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront Developer Guide</i>.
+     * The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Adding
+     * Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param headerName
-     *        The name of a header that you want CloudFront to forward to your origin. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">
-     *        Forwarding Custom Headers to Your Origin (Web Distributions Only)</a> in the <i> Amazon CloudFront
-     *        Developer Guide</i>.
+     *        The name of a header that you want CloudFront to send to your origin. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html"
+     *        >Adding Custom Headers to Origin Requests</a> in the <i> Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

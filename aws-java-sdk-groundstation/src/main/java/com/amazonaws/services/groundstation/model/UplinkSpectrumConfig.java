@@ -30,24 +30,25 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Center frequency of an uplink spectral <code>Config</code>.
+     * Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      * </p>
      */
     private Frequency centerFrequency;
     /**
      * <p>
-     * Polarization of an uplink spectral <code>Config</code>.
+     * Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      */
     private String polarization;
 
     /**
      * <p>
-     * Center frequency of an uplink spectral <code>Config</code>.
+     * Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      * </p>
      * 
      * @param centerFrequency
-     *        Center frequency of an uplink spectral <code>Config</code>.
+     *        Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      */
 
     public void setCenterFrequency(Frequency centerFrequency) {
@@ -56,10 +57,10 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Center frequency of an uplink spectral <code>Config</code>.
+     * Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      * </p>
      * 
-     * @return Center frequency of an uplink spectral <code>Config</code>.
+     * @return Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      */
 
     public Frequency getCenterFrequency() {
@@ -68,11 +69,11 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Center frequency of an uplink spectral <code>Config</code>.
+     * Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      * </p>
      * 
      * @param centerFrequency
-     *        Center frequency of an uplink spectral <code>Config</code>.
+     *        Center frequency of an uplink spectral <code>Config</code>. Valid values are between 2025 to 2120 MHz.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +84,13 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Polarization of an uplink spectral <code>Config</code>.
+     * Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
      * @param polarization
-     *        Polarization of an uplink spectral <code>Config</code>.
+     *        Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *        <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @see Polarization
      */
 
@@ -97,10 +100,12 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Polarization of an uplink spectral <code>Config</code>.
+     * Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
-     * @return Polarization of an uplink spectral <code>Config</code>.
+     * @return Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *         <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @see Polarization
      */
 
@@ -110,11 +115,13 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Polarization of an uplink spectral <code>Config</code>.
+     * Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
      * @param polarization
-     *        Polarization of an uplink spectral <code>Config</code>.
+     *        Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *        <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Polarization
      */
@@ -126,11 +133,13 @@ public class UplinkSpectrumConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Polarization of an uplink spectral <code>Config</code>.
+     * Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     * <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * </p>
      * 
      * @param polarization
-     *        Polarization of an uplink spectral <code>Config</code>.
+     *        Polarization of an uplink spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code> and
+     *        <code>"LEFT_HAND"</code> polarization requires two separate configs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Polarization
      */

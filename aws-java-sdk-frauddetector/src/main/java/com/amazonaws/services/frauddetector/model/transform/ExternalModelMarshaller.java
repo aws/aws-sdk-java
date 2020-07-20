@@ -29,6 +29,8 @@ public class ExternalModelMarshaller {
 
     private static final MarshallingInfo<String> MODELENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelEndpoint").build();
+    private static final MarshallingInfo<String> EVENTTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeName").build();
     private static final MarshallingInfo<String> MODELSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelSource").build();
     private static final MarshallingInfo<StructuredPojo> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -43,6 +45,8 @@ public class ExternalModelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedTime").build();
     private static final MarshallingInfo<String> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdTime").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("arn").build();
 
     private static final ExternalModelMarshaller instance = new ExternalModelMarshaller();
 
@@ -61,6 +65,7 @@ public class ExternalModelMarshaller {
 
         try {
             protocolMarshaller.marshall(externalModel.getModelEndpoint(), MODELENDPOINT_BINDING);
+            protocolMarshaller.marshall(externalModel.getEventTypeName(), EVENTTYPENAME_BINDING);
             protocolMarshaller.marshall(externalModel.getModelSource(), MODELSOURCE_BINDING);
             protocolMarshaller.marshall(externalModel.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(externalModel.getInputConfiguration(), INPUTCONFIGURATION_BINDING);
@@ -68,6 +73,7 @@ public class ExternalModelMarshaller {
             protocolMarshaller.marshall(externalModel.getModelEndpointStatus(), MODELENDPOINTSTATUS_BINDING);
             protocolMarshaller.marshall(externalModel.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(externalModel.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(externalModel.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
