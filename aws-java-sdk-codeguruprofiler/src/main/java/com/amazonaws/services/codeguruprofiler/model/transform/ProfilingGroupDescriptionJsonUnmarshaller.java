@@ -72,6 +72,11 @@ public class ProfilingGroupDescriptionJsonUnmarshaller implements Unmarshaller<P
                     context.nextToken();
                     profilingGroupDescription.setProfilingStatus(ProfilingStatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    profilingGroupDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();
                     profilingGroupDescription.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));

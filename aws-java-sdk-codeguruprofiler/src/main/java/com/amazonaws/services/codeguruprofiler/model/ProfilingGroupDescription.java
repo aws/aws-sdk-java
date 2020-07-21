@@ -75,6 +75,12 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
     private ProfilingStatus profilingStatus;
     /**
      * <p>
+     * A list of the tags that belong to this profiling group.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
      * The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example,
      * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
@@ -402,6 +408,74 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * A list of the tags that belong to this profiling group.
+     * </p>
+     * 
+     * @return A list of the tags that belong to this profiling group.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of the tags that belong to this profiling group.
+     * </p>
+     * 
+     * @param tags
+     *        A list of the tags that belong to this profiling group.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A list of the tags that belong to this profiling group.
+     * </p>
+     * 
+     * @param tags
+     *        A list of the tags that belong to this profiling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProfilingGroupDescription withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see ProfilingGroupDescription#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProfilingGroupDescription addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProfilingGroupDescription clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time when the profiling group was last updated. Specify using the ISO 8601 format. For example,
      * 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
@@ -470,6 +544,8 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
             sb.append("Name: ").append(getName()).append(",");
         if (getProfilingStatus() != null)
             sb.append("ProfilingStatus: ").append(getProfilingStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt());
         sb.append("}");
@@ -510,6 +586,10 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
             return false;
         if (other.getProfilingStatus() != null && other.getProfilingStatus().equals(this.getProfilingStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getUpdatedAt() == null ^ this.getUpdatedAt() == null)
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
@@ -528,6 +608,7 @@ public class ProfilingGroupDescription implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         return hashCode;
     }

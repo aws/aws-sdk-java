@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.codeguruprofiler.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +41,8 @@ public class ProfilingGroupDescriptionMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> PROFILINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profilingStatus").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("iso8601").build();
 
@@ -64,6 +68,7 @@ public class ProfilingGroupDescriptionMarshaller {
             protocolMarshaller.marshall(profilingGroupDescription.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getName(), NAME_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getProfilingStatus(), PROFILINGSTATUS_BINDING);
+            protocolMarshaller.marshall(profilingGroupDescription.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(profilingGroupDescription.getUpdatedAt(), UPDATEDAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

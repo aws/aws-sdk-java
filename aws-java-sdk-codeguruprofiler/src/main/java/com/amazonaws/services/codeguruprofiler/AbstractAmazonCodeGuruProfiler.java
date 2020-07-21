@@ -98,6 +98,11 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PostAgentProfileResult postAgentProfile(PostAgentProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +124,16 @@ public class AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfiler {
 
     @Override
     public SubmitFeedbackResult submitFeedback(SubmitFeedbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

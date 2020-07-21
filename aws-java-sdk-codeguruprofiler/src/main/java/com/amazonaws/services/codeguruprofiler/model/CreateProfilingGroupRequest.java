@@ -55,6 +55,12 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String profilingGroupName;
+    /**
+     * <p>
+     * A list of tags to add to the created profiling group.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -262,6 +268,74 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * A list of tags to add to the created profiling group.
+     * </p>
+     * 
+     * @return A list of tags to add to the created profiling group.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the created profiling group.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the created profiling group.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to add to the created profiling group.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to add to the created profiling group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfilingGroupRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see CreateProfilingGroupRequest#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfilingGroupRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfilingGroupRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +354,9 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
         if (getComputePlatform() != null)
             sb.append("ComputePlatform: ").append(getComputePlatform()).append(",");
         if (getProfilingGroupName() != null)
-            sb.append("ProfilingGroupName: ").append(getProfilingGroupName());
+            sb.append("ProfilingGroupName: ").append(getProfilingGroupName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +387,10 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getProfilingGroupName() != null && other.getProfilingGroupName().equals(this.getProfilingGroupName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -323,6 +403,7 @@ public class CreateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getComputePlatform() == null) ? 0 : getComputePlatform().hashCode());
         hashCode = prime * hashCode + ((getProfilingGroupName() == null) ? 0 : getProfilingGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 
