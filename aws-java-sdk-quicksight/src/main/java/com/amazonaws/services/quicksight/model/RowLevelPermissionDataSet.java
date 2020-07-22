@@ -30,6 +30,12 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
 
     /**
      * <p>
+     * The namespace associated with the row-level permissions dataset.
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the permission dataset.
      * </p>
      */
@@ -40,6 +46,46 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
      * </p>
      */
     private String permissionPolicy;
+
+    /**
+     * <p>
+     * The namespace associated with the row-level permissions dataset.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace associated with the row-level permissions dataset.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace associated with the row-level permissions dataset.
+     * </p>
+     * 
+     * @return The namespace associated with the row-level permissions dataset.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace associated with the row-level permissions dataset.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace associated with the row-level permissions dataset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RowLevelPermissionDataSet withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
 
     /**
      * <p>
@@ -152,6 +198,8 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getPermissionPolicy() != null)
@@ -170,6 +218,10 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         if (obj instanceof RowLevelPermissionDataSet == false)
             return false;
         RowLevelPermissionDataSet other = (RowLevelPermissionDataSet) obj;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -186,6 +238,7 @@ public class RowLevelPermissionDataSet implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getPermissionPolicy() == null) ? 0 : getPermissionPolicy().hashCode());
         return hashCode;

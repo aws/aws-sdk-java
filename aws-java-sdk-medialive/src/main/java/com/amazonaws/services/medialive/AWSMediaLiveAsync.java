@@ -553,6 +553,39 @@ public interface AWSMediaLiveAsync extends AWSMediaLive {
             com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceRequest, DescribeInputDeviceResult> asyncHandler);
 
     /**
+     * Get the latest thumbnail data for the input device.
+     * 
+     * @param describeInputDeviceThumbnailRequest
+     *        Placeholder documentation for DescribeInputDeviceThumbnailRequest
+     * @return A Java Future containing the result of the DescribeInputDeviceThumbnail operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsync.DescribeInputDeviceThumbnail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInputDeviceThumbnailResult> describeInputDeviceThumbnailAsync(
+            DescribeInputDeviceThumbnailRequest describeInputDeviceThumbnailRequest);
+
+    /**
+     * Get the latest thumbnail data for the input device.
+     * 
+     * @param describeInputDeviceThumbnailRequest
+     *        Placeholder documentation for DescribeInputDeviceThumbnailRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInputDeviceThumbnail operation returned by the
+     *         service.
+     * @sample AWSMediaLiveAsyncHandler.DescribeInputDeviceThumbnail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInputDeviceThumbnailResult> describeInputDeviceThumbnailAsync(
+            DescribeInputDeviceThumbnailRequest describeInputDeviceThumbnailRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceThumbnailRequest, DescribeInputDeviceThumbnailResult> asyncHandler);
+
+    /**
      * Produces a summary of an Input Security Group
      * 
      * @param describeInputSecurityGroupRequest

@@ -41,6 +41,8 @@ public class UserMarshaller {
             .marshallLocationName("Active").build();
     private static final MarshallingInfo<String> PRINCIPALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalId").build();
+    private static final MarshallingInfo<String> CUSTOMPERMISSIONSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPermissionsName").build();
 
     private static final UserMarshaller instance = new UserMarshaller();
 
@@ -65,6 +67,7 @@ public class UserMarshaller {
             protocolMarshaller.marshall(user.getIdentityType(), IDENTITYTYPE_BINDING);
             protocolMarshaller.marshall(user.getActive(), ACTIVE_BINDING);
             protocolMarshaller.marshall(user.getPrincipalId(), PRINCIPALID_BINDING);
+            protocolMarshaller.marshall(user.getCustomPermissionsName(), CUSTOMPERMISSIONSNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

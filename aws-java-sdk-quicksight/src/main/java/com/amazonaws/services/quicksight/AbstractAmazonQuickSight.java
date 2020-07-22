@@ -33,6 +33,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateAccountCustomizationResult createAccountCustomization(CreateAccountCustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDashboardResult createDashboard(CreateDashboardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,6 +73,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateNamespaceResult createNamespace(CreateNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTemplateResult createTemplate(CreateTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -84,6 +94,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public CreateThemeAliasResult createThemeAlias(CreateThemeAliasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccountCustomizationResult deleteAccountCustomization(DeleteAccountCustomizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +133,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTemplateResult deleteTemplate(DeleteTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +164,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DeleteUserByPrincipalIdResult deleteUserByPrincipalId(DeleteUserByPrincipalIdRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountCustomizationResult describeAccountCustomization(DescribeAccountCustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +223,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTemplateResult describeTemplate(DescribeTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -229,6 +264,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public GetDashboardEmbedUrlResult getDashboardEmbedUrl(GetDashboardEmbedUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSessionEmbedUrlResult getSessionEmbedUrl(GetSessionEmbedUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,6 +314,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public ListIngestionsResult listIngestions(ListIngestionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListNamespacesResult listNamespaces(ListNamespacesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -339,6 +384,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccountCustomizationResult updateAccountCustomization(UpdateAccountCustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

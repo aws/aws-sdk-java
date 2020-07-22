@@ -37,6 +37,10 @@ public class UpdateUserRequestMarshaller {
             .marshallLocationName("Email").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> CUSTOMPERMISSIONSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPermissionsName").build();
+    private static final MarshallingInfo<Boolean> UNAPPLYCUSTOMPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnapplyCustomPermissions").build();
 
     private static final UpdateUserRequestMarshaller instance = new UpdateUserRequestMarshaller();
 
@@ -59,6 +63,8 @@ public class UpdateUserRequestMarshaller {
             protocolMarshaller.marshall(updateUserRequest.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getEmail(), EMAIL_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getCustomPermissionsName(), CUSTOMPERMISSIONSNAME_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getUnapplyCustomPermissions(), UNAPPLYCUSTOMPERMISSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -76,6 +76,10 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                     context.nextToken();
                     user.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CustomPermissionsName", targetDepth)) {
+                    context.nextToken();
+                    user.setCustomPermissionsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

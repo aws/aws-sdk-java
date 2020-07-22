@@ -74,6 +74,36 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a customization for the Amazon QuickSight subscription associated with your AWS account.
+     * </p>
+     * 
+     * @param createAccountCustomizationRequest
+     * @return Result of the CreateAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.CreateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAccountCustomizationResult createAccountCustomization(CreateAccountCustomizationRequest createAccountCustomizationRequest);
+
+    /**
+     * <p>
      * Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a> API operation.
      * </p>
      * <p>
@@ -320,6 +350,49 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+     * </p>
+     * <p>
+     * A namespace allows you to isolate the QuickSight users and groups that are registered for that namespace. Users
+     * that access the namespace can share assets only with other users or groups in the same namespace. They can't see
+     * users and groups in other namespaces. You can create a namespace after your AWS account is subscribed to
+     * QuickSight. The namespace must be unique within the AWS account. By default, there is a limit of 100 namespaces
+     * per AWS account. To increase your limit, create a ticket with AWS Support.
+     * </p>
+     * 
+     * @param createNamespaceRequest
+     * @return Result of the CreateNamespace operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.CreateNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateNamespaceResult createNamespace(CreateNamespaceRequest createNamespaceRequest);
+
+    /**
+     * <p>
      * Creates a template from an existing QuickSight analysis or template. You can use the resulting template to create
      * a dashboard.
      * </p>
@@ -462,6 +535,34 @@ public interface AmazonQuickSight {
      *      API Documentation</a>
      */
     CreateThemeAliasResult createThemeAlias(CreateThemeAliasRequest createThemeAliasRequest);
+
+    /**
+     * <p>
+     * Deletes customizations for the QuickSight subscription on your AWS account.
+     * </p>
+     * 
+     * @param deleteAccountCustomizationRequest
+     * @return Result of the DeleteAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteAccountCustomizationResult deleteAccountCustomization(DeleteAccountCustomizationRequest deleteAccountCustomizationRequest);
 
     /**
      * <p>
@@ -635,6 +736,38 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
+     * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
+     * assets, you use the APIs for the relevant asset.
+     * </p>
+     * 
+     * @param deleteNamespaceRequest
+     * @return Result of the DeleteNamespace operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest deleteNamespaceRequest);
+
+    /**
+     * <p>
      * Deletes a template.
      * </p>
      * 
@@ -767,6 +900,8 @@ public interface AmazonQuickSight {
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -795,6 +930,8 @@ public interface AmazonQuickSight {
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -804,6 +941,62 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteUserByPrincipalIdResult deleteUserByPrincipalId(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest);
+
+    /**
+     * <p>
+     * Describes the customizations associated with your AWS account.
+     * </p>
+     * 
+     * @param describeAccountCustomizationRequest
+     * @return Result of the DescribeAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountCustomizationResult describeAccountCustomization(DescribeAccountCustomizationRequest describeAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Describes the settings that were used when your QuickSight subscription was first created in this AWS Account.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @return Result of the DescribeAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest describeAccountSettingsRequest);
 
     /**
      * <p>
@@ -1055,6 +1248,34 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Describes the current namespace.
+     * </p>
+     * 
+     * @param describeNamespaceRequest
+     * @return Result of the DescribeNamespace operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest describeNamespaceRequest);
+
+    /**
+     * <p>
      * Describes a template's metadata.
      * </p>
      * 
@@ -1244,6 +1465,8 @@ public interface AmazonQuickSight {
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -1332,6 +1555,45 @@ public interface AmazonQuickSight {
      *      target="_top">AWS API Documentation</a>
      */
     GetDashboardEmbedUrlResult getDashboardEmbedUrl(GetDashboardEmbedUrlRequest getDashboardEmbedUrlRequest);
+
+    /**
+     * <p>
+     * Generates a session URL and authorization code that you can embed in your web server code.
+     * </p>
+     * 
+     * @param getSessionEmbedUrlRequest
+     * @return Result of the GetSessionEmbedUrl operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws QuickSightUserNotFoundException
+     *         The user with the provided name isn't found. This error can happen in any operation that requires finding
+     *         a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so
+     *         on.
+     * @throws SessionLifetimeInMinutesInvalidException
+     *         The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be
+     *         15-600 minutes.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.GetSessionEmbedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetSessionEmbedUrlResult getSessionEmbedUrl(GetSessionEmbedUrlRequest getSessionEmbedUrlRequest);
 
     /**
      * <p>
@@ -1594,6 +1856,38 @@ public interface AmazonQuickSight {
 
     /**
      * <p>
+     * Lists the namespaces for the specified AWS account.
+     * </p>
+     * 
+     * @param listNamespacesRequest
+     * @return Result of the ListNamespaces operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.ListNamespaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListNamespacesResult listNamespaces(ListNamespacesRequest listNamespacesRequest);
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -1808,6 +2102,8 @@ public interface AmazonQuickSight {
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -1838,6 +2134,8 @@ public interface AmazonQuickSight {
      *         Access is throttled.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -1991,6 +2289,62 @@ public interface AmazonQuickSight {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates customizations associated with the QuickSight subscription on your AWS account.
+     * </p>
+     * 
+     * @param updateAccountCustomizationRequest
+     * @return Result of the UpdateAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.UpdateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAccountCustomizationResult updateAccountCustomization(UpdateAccountCustomizationRequest updateAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Updates the settings for the Amazon QuickSight subscription in your AWS Account.
+     * </p>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return Result of the UpdateAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest updateAccountSettingsRequest);
 
     /**
      * <p>
@@ -2555,6 +2909,8 @@ public interface AmazonQuickSight {
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException

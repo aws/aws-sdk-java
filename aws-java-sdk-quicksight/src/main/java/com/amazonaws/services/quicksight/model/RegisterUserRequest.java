@@ -118,6 +118,36 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String userName;
+    /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight console. You
+     * use this API to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * Customizing permissions in the QuickSight UI allows you to control a user's access to the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * </ul>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts (admin, author, reader) in
+     * QuickSight.
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     */
+    private String customPermissionsName;
 
     /**
      * <p>
@@ -822,6 +852,190 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight console. You
+     * use this API to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * Customizing permissions in the QuickSight UI allows you to control a user's access to the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * </ul>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts (admin, author, reader) in
+     * QuickSight.
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     *        Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight
+     *        console. You use this API to assign the named set of permissions to a QuickSight user. </p>
+     *        <p>
+     *        Customizing permissions in the QuickSight UI allows you to control a user's access to the following
+     *        operations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p/></li>
+     *        <li>
+     *        <p/></li>
+     *        <li>
+     *        <p/></li>
+     *        <li>
+     *        <p/></li>
+     *        </ul>
+     *        <p>
+     *        QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     *        typically granted by assigning QuickSight users to one of the default security cohorts (admin, author,
+     *        reader) in QuickSight.
+     *        </p>
+     *        <p>
+     *        This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
+     *        Federation for Single Sign-On (SSO).
+     */
+
+    public void setCustomPermissionsName(String customPermissionsName) {
+        this.customPermissionsName = customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight console. You
+     * use this API to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * Customizing permissions in the QuickSight UI allows you to control a user's access to the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * </ul>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts (admin, author, reader) in
+     * QuickSight.
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     * 
+     * @return (Enterprise edition only) The name of the custom permissions profile that you want to assign to this
+     *         user. Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight
+     *         console. You use this API to assign the named set of permissions to a QuickSight user. </p>
+     *         <p>
+     *         Customizing permissions in the QuickSight UI allows you to control a user's access to the following
+     *         operations:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p/></li>
+     *         <li>
+     *         <p/></li>
+     *         <li>
+     *         <p/></li>
+     *         <li>
+     *         <p/></li>
+     *         </ul>
+     *         <p>
+     *         QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     *         typically granted by assigning QuickSight users to one of the default security cohorts (admin, author,
+     *         reader) in QuickSight.
+     *         </p>
+     *         <p>
+     *         This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
+     *         Federation for Single Sign-On (SSO).
+     */
+
+    public String getCustomPermissionsName() {
+        return this.customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     * Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight console. You
+     * use this API to assign the named set of permissions to a QuickSight user.
+     * </p>
+     * <p>
+     * Customizing permissions in the QuickSight UI allows you to control a user's access to the following operations:
+     * </p>
+     * <ul>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * <li>
+     * <p/></li>
+     * </ul>
+     * <p>
+     * QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     * typically granted by assigning QuickSight users to one of the default security cohorts (admin, author, reader) in
+     * QuickSight.
+     * </p>
+     * <p>
+     * This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based Federation
+     * for Single Sign-On (SSO).
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        (Enterprise edition only) The name of the custom permissions profile that you want to assign to this user.
+     *        Currently, custom permissions profile names are assigned to permissions profiles in the QuickSight
+     *        console. You use this API to assign the named set of permissions to a QuickSight user. </p>
+     *        <p>
+     *        Customizing permissions in the QuickSight UI allows you to control a user's access to the following
+     *        operations:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p/></li>
+     *        <li>
+     *        <p/></li>
+     *        <li>
+     *        <p/></li>
+     *        <li>
+     *        <p/></li>
+     *        </ul>
+     *        <p>
+     *        QuickSight custom permissions are applied through IAM policies. Therefore, they override the permissions
+     *        typically granted by assigning QuickSight users to one of the default security cohorts (admin, author,
+     *        reader) in QuickSight.
+     *        </p>
+     *        <p>
+     *        This feature is available only to QuickSight Enterprise edition subscriptions that use SAML 2.0-Based
+     *        Federation for Single Sign-On (SSO).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserRequest withCustomPermissionsName(String customPermissionsName) {
+        setCustomPermissionsName(customPermissionsName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -848,7 +1062,9 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getNamespace() != null)
             sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getUserName() != null)
-            sb.append("UserName: ").append(getUserName());
+            sb.append("UserName: ").append(getUserName()).append(",");
+        if (getCustomPermissionsName() != null)
+            sb.append("CustomPermissionsName: ").append(getCustomPermissionsName());
         sb.append("}");
         return sb.toString();
     }
@@ -895,6 +1111,10 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
             return false;
+        if (other.getCustomPermissionsName() == null ^ this.getCustomPermissionsName() == null)
+            return false;
+        if (other.getCustomPermissionsName() != null && other.getCustomPermissionsName().equals(this.getCustomPermissionsName()) == false)
+            return false;
         return true;
     }
 
@@ -911,6 +1131,7 @@ public class RegisterUserRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        hashCode = prime * hashCode + ((getCustomPermissionsName() == null) ? 0 : getCustomPermissionsName().hashCode());
         return hashCode;
     }
 

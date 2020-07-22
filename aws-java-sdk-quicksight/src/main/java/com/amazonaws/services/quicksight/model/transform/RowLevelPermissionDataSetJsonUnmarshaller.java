@@ -48,6 +48,10 @@ public class RowLevelPermissionDataSetJsonUnmarshaller implements Unmarshaller<R
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Namespace", targetDepth)) {
+                    context.nextToken();
+                    rowLevelPermissionDataSet.setNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Arn", targetDepth)) {
                     context.nextToken();
                     rowLevelPermissionDataSet.setArn(context.getUnmarshaller(String.class).unmarshall(context));

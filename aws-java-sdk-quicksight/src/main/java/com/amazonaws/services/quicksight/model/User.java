@@ -99,6 +99,12 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String principalId;
+    /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     */
+    private String customPermissionsName;
 
     /**
      * <p>
@@ -651,6 +657,46 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        The custom permissions profile associated with this user.
+     */
+
+    public void setCustomPermissionsName(String customPermissionsName) {
+        this.customPermissionsName = customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     * 
+     * @return The custom permissions profile associated with this user.
+     */
+
+    public String getCustomPermissionsName() {
+        return this.customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        The custom permissions profile associated with this user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withCustomPermissionsName(String customPermissionsName) {
+        setCustomPermissionsName(customPermissionsName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -675,7 +721,9 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (getActive() != null)
             sb.append("Active: ").append(getActive()).append(",");
         if (getPrincipalId() != null)
-            sb.append("PrincipalId: ").append(getPrincipalId());
+            sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getCustomPermissionsName() != null)
+            sb.append("CustomPermissionsName: ").append(getCustomPermissionsName());
         sb.append("}");
         return sb.toString();
     }
@@ -718,6 +766,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
             return false;
+        if (other.getCustomPermissionsName() == null ^ this.getCustomPermissionsName() == null)
+            return false;
+        if (other.getCustomPermissionsName() != null && other.getCustomPermissionsName().equals(this.getCustomPermissionsName()) == false)
+            return false;
         return true;
     }
 
@@ -733,6 +785,7 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIdentityType() == null) ? 0 : getIdentityType().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getCustomPermissionsName() == null) ? 0 : getCustomPermissionsName().hashCode());
         return hashCode;
     }
 

@@ -73,6 +73,22 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </ul>
      */
     private String role;
+    /**
+     * <p>
+     * The name of the custom permissions profile that you want to assign to this user. Currently, custom permissions
+     * profile names are assigned to permissions profiles in the QuickSight console. You use this API to assign the
+     * named set of permissions to a QuickSight user.
+     * </p>
+     */
+    private String customPermissionsName;
+    /**
+     * <p>
+     * A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     * parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter
+     * defaults to NULL and it doesn't accept any other value.
+     * </p>
+     */
+    private Boolean unapplyCustomPermissions;
 
     /**
      * <p>
@@ -432,6 +448,126 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The name of the custom permissions profile that you want to assign to this user. Currently, custom permissions
+     * profile names are assigned to permissions profiles in the QuickSight console. You use this API to assign the
+     * named set of permissions to a QuickSight user.
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        The name of the custom permissions profile that you want to assign to this user. Currently, custom
+     *        permissions profile names are assigned to permissions profiles in the QuickSight console. You use this API
+     *        to assign the named set of permissions to a QuickSight user.
+     */
+
+    public void setCustomPermissionsName(String customPermissionsName) {
+        this.customPermissionsName = customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * The name of the custom permissions profile that you want to assign to this user. Currently, custom permissions
+     * profile names are assigned to permissions profiles in the QuickSight console. You use this API to assign the
+     * named set of permissions to a QuickSight user.
+     * </p>
+     * 
+     * @return The name of the custom permissions profile that you want to assign to this user. Currently, custom
+     *         permissions profile names are assigned to permissions profiles in the QuickSight console. You use this
+     *         API to assign the named set of permissions to a QuickSight user.
+     */
+
+    public String getCustomPermissionsName() {
+        return this.customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * The name of the custom permissions profile that you want to assign to this user. Currently, custom permissions
+     * profile names are assigned to permissions profiles in the QuickSight console. You use this API to assign the
+     * named set of permissions to a QuickSight user.
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        The name of the custom permissions profile that you want to assign to this user. Currently, custom
+     *        permissions profile names are assigned to permissions profiles in the QuickSight console. You use this API
+     *        to assign the named set of permissions to a QuickSight user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withCustomPermissionsName(String customPermissionsName) {
+        setCustomPermissionsName(customPermissionsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     * parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter
+     * defaults to NULL and it doesn't accept any other value.
+     * </p>
+     * 
+     * @param unapplyCustomPermissions
+     *        A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     *        parameter resets the user to the state it was in before a custom permissions profile was applied. This
+     *        parameter defaults to NULL and it doesn't accept any other value.
+     */
+
+    public void setUnapplyCustomPermissions(Boolean unapplyCustomPermissions) {
+        this.unapplyCustomPermissions = unapplyCustomPermissions;
+    }
+
+    /**
+     * <p>
+     * A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     * parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter
+     * defaults to NULL and it doesn't accept any other value.
+     * </p>
+     * 
+     * @return A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     *         parameter resets the user to the state it was in before a custom permissions profile was applied. This
+     *         parameter defaults to NULL and it doesn't accept any other value.
+     */
+
+    public Boolean getUnapplyCustomPermissions() {
+        return this.unapplyCustomPermissions;
+    }
+
+    /**
+     * <p>
+     * A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     * parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter
+     * defaults to NULL and it doesn't accept any other value.
+     * </p>
+     * 
+     * @param unapplyCustomPermissions
+     *        A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     *        parameter resets the user to the state it was in before a custom permissions profile was applied. This
+     *        parameter defaults to NULL and it doesn't accept any other value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserRequest withUnapplyCustomPermissions(Boolean unapplyCustomPermissions) {
+        setUnapplyCustomPermissions(unapplyCustomPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     * parameter resets the user to the state it was in before a custom permissions profile was applied. This parameter
+     * defaults to NULL and it doesn't accept any other value.
+     * </p>
+     * 
+     * @return A flag that you use to indicate that you want to remove all custom permissions from this user. Using this
+     *         parameter resets the user to the state it was in before a custom permissions profile was applied. This
+     *         parameter defaults to NULL and it doesn't accept any other value.
+     */
+
+    public Boolean isUnapplyCustomPermissions() {
+        return this.unapplyCustomPermissions;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -452,7 +588,11 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getEmail() != null)
             sb.append("Email: ").append(getEmail()).append(",");
         if (getRole() != null)
-            sb.append("Role: ").append(getRole());
+            sb.append("Role: ").append(getRole()).append(",");
+        if (getCustomPermissionsName() != null)
+            sb.append("CustomPermissionsName: ").append(getCustomPermissionsName()).append(",");
+        if (getUnapplyCustomPermissions() != null)
+            sb.append("UnapplyCustomPermissions: ").append(getUnapplyCustomPermissions());
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +627,14 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
             return false;
+        if (other.getCustomPermissionsName() == null ^ this.getCustomPermissionsName() == null)
+            return false;
+        if (other.getCustomPermissionsName() != null && other.getCustomPermissionsName().equals(this.getCustomPermissionsName()) == false)
+            return false;
+        if (other.getUnapplyCustomPermissions() == null ^ this.getUnapplyCustomPermissions() == null)
+            return false;
+        if (other.getUnapplyCustomPermissions() != null && other.getUnapplyCustomPermissions().equals(this.getUnapplyCustomPermissions()) == false)
+            return false;
         return true;
     }
 
@@ -500,6 +648,8 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getEmail() == null) ? 0 : getEmail().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getCustomPermissionsName() == null) ? 0 : getCustomPermissionsName().hashCode());
+        hashCode = prime * hashCode + ((getUnapplyCustomPermissions() == null) ? 0 : getUnapplyCustomPermissions().hashCode());
         return hashCode;
     }
 

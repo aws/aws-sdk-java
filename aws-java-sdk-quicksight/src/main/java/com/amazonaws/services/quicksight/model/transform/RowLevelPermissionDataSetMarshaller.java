@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RowLevelPermissionDataSetMarshaller {
 
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Namespace").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> PERMISSIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class RowLevelPermissionDataSetMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(rowLevelPermissionDataSet.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getPermissionPolicy(), PERMISSIONPOLICY_BINDING);
         } catch (Exception e) {

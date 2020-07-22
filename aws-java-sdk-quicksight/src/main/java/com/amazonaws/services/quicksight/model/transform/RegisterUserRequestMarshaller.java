@@ -43,6 +43,8 @@ public class RegisterUserRequestMarshaller {
             .marshallLocationName("Namespace").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserName").build();
+    private static final MarshallingInfo<String> CUSTOMPERMISSIONSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPermissionsName").build();
 
     private static final RegisterUserRequestMarshaller instance = new RegisterUserRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class RegisterUserRequestMarshaller {
             protocolMarshaller.marshall(registerUserRequest.getAwsAccountId(), AWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(registerUserRequest.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(registerUserRequest.getUserName(), USERNAME_BINDING);
+            protocolMarshaller.marshall(registerUserRequest.getCustomPermissionsName(), CUSTOMPERMISSIONSNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
