@@ -51,7 +51,7 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
      * The role used to invoke the model.
      * </p>
      */
-    private Role role;
+    private String invokeModelEndpointRoleArn;
     /**
      * <p>
      * The input configuration.
@@ -233,12 +233,12 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
      * The role used to invoke the model.
      * </p>
      * 
-     * @param role
+     * @param invokeModelEndpointRoleArn
      *        The role used to invoke the model.
      */
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setInvokeModelEndpointRoleArn(String invokeModelEndpointRoleArn) {
+        this.invokeModelEndpointRoleArn = invokeModelEndpointRoleArn;
     }
 
     /**
@@ -249,8 +249,8 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
      * @return The role used to invoke the model.
      */
 
-    public Role getRole() {
-        return this.role;
+    public String getInvokeModelEndpointRoleArn() {
+        return this.invokeModelEndpointRoleArn;
     }
 
     /**
@@ -258,13 +258,13 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
      * The role used to invoke the model.
      * </p>
      * 
-     * @param role
+     * @param invokeModelEndpointRoleArn
      *        The role used to invoke the model.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ExternalModel withRole(Role role) {
-        setRole(role);
+    public ExternalModel withInvokeModelEndpointRoleArn(String invokeModelEndpointRoleArn) {
+        setInvokeModelEndpointRoleArn(invokeModelEndpointRoleArn);
         return this;
     }
 
@@ -545,8 +545,8 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
             sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getModelSource() != null)
             sb.append("ModelSource: ").append(getModelSource()).append(",");
-        if (getRole() != null)
-            sb.append("Role: ").append(getRole()).append(",");
+        if (getInvokeModelEndpointRoleArn() != null)
+            sb.append("InvokeModelEndpointRoleArn: ").append(getInvokeModelEndpointRoleArn()).append(",");
         if (getInputConfiguration() != null)
             sb.append("InputConfiguration: ").append(getInputConfiguration()).append(",");
         if (getOutputConfiguration() != null)
@@ -585,9 +585,9 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getModelSource() != null && other.getModelSource().equals(this.getModelSource()) == false)
             return false;
-        if (other.getRole() == null ^ this.getRole() == null)
+        if (other.getInvokeModelEndpointRoleArn() == null ^ this.getInvokeModelEndpointRoleArn() == null)
             return false;
-        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
+        if (other.getInvokeModelEndpointRoleArn() != null && other.getInvokeModelEndpointRoleArn().equals(this.getInvokeModelEndpointRoleArn()) == false)
             return false;
         if (other.getInputConfiguration() == null ^ this.getInputConfiguration() == null)
             return false;
@@ -624,7 +624,7 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getModelEndpoint() == null) ? 0 : getModelEndpoint().hashCode());
         hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getModelSource() == null) ? 0 : getModelSource().hashCode());
-        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getInvokeModelEndpointRoleArn() == null) ? 0 : getInvokeModelEndpointRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfiguration() == null) ? 0 : getInputConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputConfiguration() == null) ? 0 : getOutputConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelEndpointStatus() == null) ? 0 : getModelEndpointStatus().hashCode());

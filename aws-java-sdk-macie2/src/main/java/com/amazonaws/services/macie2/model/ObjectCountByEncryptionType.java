@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a grouping
- * that reports the total number of objects that aren't encrypted.
+ * Provides information about the number of objects that are in an S3 bucket and use certain types of server-side
+ * encryption, use client-side encryption, or aren't encrypted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ObjectCountByEncryptionType" target="_top">AWS
@@ -31,36 +31,41 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using a customer-managed key. The objects use customer-provided
+     * server-side (SSE-C) encryption.
      * </p>
      */
     private Long customerManaged;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
+     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
      * </p>
      */
     private Long kmsManaged;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * (SSE-S3) encryption.
      * </p>
      */
     private Long s3Managed;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      */
     private Long unencrypted;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using a customer-managed key. The objects use customer-provided
+     * server-side (SSE-C) encryption.
      * </p>
      * 
      * @param customerManaged
-     *        Reserved for future use.
+     *        The total number of objects that are encrypted using a customer-managed key. The objects use
+     *        customer-provided server-side (SSE-C) encryption.
      */
 
     public void setCustomerManaged(Long customerManaged) {
@@ -69,10 +74,12 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using a customer-managed key. The objects use customer-provided
+     * server-side (SSE-C) encryption.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of objects that are encrypted using a customer-managed key. The objects use
+     *         customer-provided server-side (SSE-C) encryption.
      */
 
     public Long getCustomerManaged() {
@@ -81,11 +88,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using a customer-managed key. The objects use customer-provided
+     * server-side (SSE-C) encryption.
      * </p>
      * 
      * @param customerManaged
-     *        Reserved for future use.
+     *        The total number of objects that are encrypted using a customer-managed key. The objects use
+     *        customer-provided server-side (SSE-C) encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +105,14 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
+     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
      * </p>
      * 
      * @param kmsManaged
-     *        Reserved for future use.
+     *        The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer
+     *        master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *        (SSE-KMS) encryption.
      */
 
     public void setKmsManaged(Long kmsManaged) {
@@ -109,10 +121,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
+     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer
+     *         master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *         (SSE-KMS) encryption.
      */
 
     public Long getKmsManaged() {
@@ -121,11 +136,14 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer master key
+     * (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed (SSE-KMS) encryption.
      * </p>
      * 
      * @param kmsManaged
-     *        Reserved for future use.
+     *        The total number of objects that are encrypted using an AWS Key Management Service (AWS KMS) customer
+     *        master key (CMK). The objects use AWS KMS AWS-managed (AWS-KMS) encryption or AWS KMS customer-managed
+     *        (SSE-KMS) encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +154,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * (SSE-S3) encryption.
      * </p>
      * 
      * @param s3Managed
-     *        Reserved for future use.
+     *        The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon
+     *        S3-managed (SSE-S3) encryption.
      */
 
     public void setS3Managed(Long s3Managed) {
@@ -149,10 +169,12 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * (SSE-S3) encryption.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon
+     *         S3-managed (SSE-S3) encryption.
      */
 
     public Long getS3Managed() {
@@ -161,11 +183,13 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon S3-managed
+     * (SSE-S3) encryption.
      * </p>
      * 
      * @param s3Managed
-     *        Reserved for future use.
+     *        The total number of objects that are encrypted using an Amazon S3-managed key. The objects use Amazon
+     *        S3-managed (SSE-S3) encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +200,11 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param unencrypted
-     *        Reserved for future use.
+     *        The total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public void setUnencrypted(Long unencrypted) {
@@ -189,10 +213,10 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public Long getUnencrypted() {
@@ -201,11 +225,11 @@ public class ObjectCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param unencrypted
-     *        Reserved for future use.
+     *        The total number of objects that aren't encrypted or use client-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

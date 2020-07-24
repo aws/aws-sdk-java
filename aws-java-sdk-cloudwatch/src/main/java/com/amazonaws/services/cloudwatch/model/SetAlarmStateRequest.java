@@ -27,7 +27,7 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account. The maximum length is 255 characters.
+     * The name of the alarm.
      * </p>
      */
     private String alarmName;
@@ -56,12 +56,11 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account. The maximum length is 255 characters.
+     * The name of the alarm.
      * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within the AWS account. The maximum length is 255
-     *        characters.
+     *        The name of the alarm.
      */
 
     public void setAlarmName(String alarmName) {
@@ -70,11 +69,10 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account. The maximum length is 255 characters.
+     * The name of the alarm.
      * </p>
      * 
-     * @return The name for the alarm. This name must be unique within the AWS account. The maximum length is 255
-     *         characters.
+     * @return The name of the alarm.
      */
 
     public String getAlarmName() {
@@ -83,12 +81,11 @@ public class SetAlarmStateRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within the AWS account. The maximum length is 255 characters.
+     * The name of the alarm.
      * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within the AWS account. The maximum length is 255
-     *        characters.
+     *        The name of the alarm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

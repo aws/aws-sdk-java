@@ -56,6 +56,14 @@ public class OutputConfigJsonUnmarshaller implements Unmarshaller<OutputConfig, 
                     context.nextToken();
                     outputConfig.setTargetDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TargetPlatform", targetDepth)) {
+                    context.nextToken();
+                    outputConfig.setTargetPlatform(TargetPlatformJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CompilerOptions", targetDepth)) {
+                    context.nextToken();
+                    outputConfig.setCompilerOptions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -34,6 +34,8 @@ public class WorkteamMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemberDefinitions").build();
     private static final MarshallingInfo<String> WORKTEAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkteamArn").build();
+    private static final MarshallingInfo<String> WORKFORCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceArn").build();
     private static final MarshallingInfo<List> PRODUCTLISTINGIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductListingIds").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,6 +68,7 @@ public class WorkteamMarshaller {
             protocolMarshaller.marshall(workteam.getWorkteamName(), WORKTEAMNAME_BINDING);
             protocolMarshaller.marshall(workteam.getMemberDefinitions(), MEMBERDEFINITIONS_BINDING);
             protocolMarshaller.marshall(workteam.getWorkteamArn(), WORKTEAMARN_BINDING);
+            protocolMarshaller.marshall(workteam.getWorkforceArn(), WORKFORCEARN_BINDING);
             protocolMarshaller.marshall(workteam.getProductListingIds(), PRODUCTLISTINGIDS_BINDING);
             protocolMarshaller.marshall(workteam.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(workteam.getSubDomain(), SUBDOMAIN_BINDING);

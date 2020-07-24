@@ -64,6 +64,22 @@ public class WorkforceJsonUnmarshaller implements Unmarshaller<Workforce, JsonUn
                     context.nextToken();
                     workforce.setSourceIpConfig(SourceIpConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SubDomain", targetDepth)) {
+                    context.nextToken();
+                    workforce.setSubDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CognitoConfig", targetDepth)) {
+                    context.nextToken();
+                    workforce.setCognitoConfig(CognitoConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OidcConfig", targetDepth)) {
+                    context.nextToken();
+                    workforce.setOidcConfig(OidcConfigForResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("CreateDate", targetDepth)) {
+                    context.nextToken();
+                    workforce.setCreateDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

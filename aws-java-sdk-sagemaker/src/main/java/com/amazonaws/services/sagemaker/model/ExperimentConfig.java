@@ -19,8 +19,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration for the experiment.
+ * Associates a SageMaker job as a trial component with an experiment and trial. Specified when you call the following
+ * APIs:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateProcessingJob</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateTrainingJob</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateTransformJob</a>
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ExperimentConfig" target="_top">AWS API
  *      Documentation</a>
@@ -30,30 +48,31 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the experiment.
+     * The name of an existing experiment to associate the trial component with.
      * </p>
      */
     private String experimentName;
     /**
      * <p>
-     * The name of the trial.
+     * The name of an existing trial to associate the trial component with. If not specified, a new trial is created.
      * </p>
      */
     private String trialName;
     /**
      * <p>
-     * Display name for the trial component.
+     * The display name for the trial component. If this key isn't specified, the display name is the trial component
+     * name.
      * </p>
      */
     private String trialComponentDisplayName;
 
     /**
      * <p>
-     * The name of the experiment.
+     * The name of an existing experiment to associate the trial component with.
      * </p>
      * 
      * @param experimentName
-     *        The name of the experiment.
+     *        The name of an existing experiment to associate the trial component with.
      */
 
     public void setExperimentName(String experimentName) {
@@ -62,10 +81,10 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the experiment.
+     * The name of an existing experiment to associate the trial component with.
      * </p>
      * 
-     * @return The name of the experiment.
+     * @return The name of an existing experiment to associate the trial component with.
      */
 
     public String getExperimentName() {
@@ -74,11 +93,11 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the experiment.
+     * The name of an existing experiment to associate the trial component with.
      * </p>
      * 
      * @param experimentName
-     *        The name of the experiment.
+     *        The name of an existing experiment to associate the trial component with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +108,12 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the trial.
+     * The name of an existing trial to associate the trial component with. If not specified, a new trial is created.
      * </p>
      * 
      * @param trialName
-     *        The name of the trial.
+     *        The name of an existing trial to associate the trial component with. If not specified, a new trial is
+     *        created.
      */
 
     public void setTrialName(String trialName) {
@@ -102,10 +122,11 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the trial.
+     * The name of an existing trial to associate the trial component with. If not specified, a new trial is created.
      * </p>
      * 
-     * @return The name of the trial.
+     * @return The name of an existing trial to associate the trial component with. If not specified, a new trial is
+     *         created.
      */
 
     public String getTrialName() {
@@ -114,11 +135,12 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the trial.
+     * The name of an existing trial to associate the trial component with. If not specified, a new trial is created.
      * </p>
      * 
      * @param trialName
-     *        The name of the trial.
+     *        The name of an existing trial to associate the trial component with. If not specified, a new trial is
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +151,13 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Display name for the trial component.
+     * The display name for the trial component. If this key isn't specified, the display name is the trial component
+     * name.
      * </p>
      * 
      * @param trialComponentDisplayName
-     *        Display name for the trial component.
+     *        The display name for the trial component. If this key isn't specified, the display name is the trial
+     *        component name.
      */
 
     public void setTrialComponentDisplayName(String trialComponentDisplayName) {
@@ -142,10 +166,12 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Display name for the trial component.
+     * The display name for the trial component. If this key isn't specified, the display name is the trial component
+     * name.
      * </p>
      * 
-     * @return Display name for the trial component.
+     * @return The display name for the trial component. If this key isn't specified, the display name is the trial
+     *         component name.
      */
 
     public String getTrialComponentDisplayName() {
@@ -154,11 +180,13 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Display name for the trial component.
+     * The display name for the trial component. If this key isn't specified, the display name is the trial component
+     * name.
      * </p>
      * 
      * @param trialComponentDisplayName
-     *        Display name for the trial component.
+     *        The display name for the trial component. If this key isn't specified, the display name is the trial
+     *        component name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

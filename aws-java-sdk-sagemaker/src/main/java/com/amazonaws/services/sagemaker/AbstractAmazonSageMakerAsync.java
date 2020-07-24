@@ -396,6 +396,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkforceResult> createWorkforceAsync(CreateWorkforceRequest request) {
+
+        return createWorkforceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkforceResult> createWorkforceAsync(CreateWorkforceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkforceRequest, CreateWorkforceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkteamResult> createWorkteamAsync(CreateWorkteamRequest request) {
 
         return createWorkteamAsync(request, null);
@@ -640,6 +653,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     @Override
     public java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(DeleteUserProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, DeleteUserProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkforceResult> deleteWorkforceAsync(DeleteWorkforceRequest request) {
+
+        return deleteWorkforceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkforceResult> deleteWorkforceAsync(DeleteWorkforceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkforceRequest, DeleteWorkforceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1428,6 +1454,19 @@ public class AbstractAmazonSageMakerAsync extends AbstractAmazonSageMaker implem
     @Override
     public java.util.concurrent.Future<ListUserProfilesResult> listUserProfilesAsync(ListUserProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListUserProfilesRequest, ListUserProfilesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkforcesResult> listWorkforcesAsync(ListWorkforcesRequest request) {
+
+        return listWorkforcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkforcesResult> listWorkforcesAsync(ListWorkforcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorkforcesRequest, ListWorkforcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

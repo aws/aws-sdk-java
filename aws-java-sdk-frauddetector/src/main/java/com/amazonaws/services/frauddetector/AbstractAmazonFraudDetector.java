@@ -148,11 +148,6 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
-    public GetPredictionResult getPrediction(GetPredictionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public GetRulesResult getRules(GetRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

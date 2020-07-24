@@ -35,6 +35,14 @@ public class WorkforceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEIPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceIpConfig").build();
+    private static final MarshallingInfo<String> SUBDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SubDomain").build();
+    private static final MarshallingInfo<StructuredPojo> COGNITOCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoConfig").build();
+    private static final MarshallingInfo<StructuredPojo> OIDCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OidcConfig").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDate").timestampFormat("unixTimestamp").build();
 
     private static final WorkforceMarshaller instance = new WorkforceMarshaller();
 
@@ -56,6 +64,10 @@ public class WorkforceMarshaller {
             protocolMarshaller.marshall(workforce.getWorkforceArn(), WORKFORCEARN_BINDING);
             protocolMarshaller.marshall(workforce.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
             protocolMarshaller.marshall(workforce.getSourceIpConfig(), SOURCEIPCONFIG_BINDING);
+            protocolMarshaller.marshall(workforce.getSubDomain(), SUBDOMAIN_BINDING);
+            protocolMarshaller.marshall(workforce.getCognitoConfig(), COGNITOCONFIG_BINDING);
+            protocolMarshaller.marshall(workforce.getOidcConfig(), OIDCCONFIG_BINDING);
+            protocolMarshaller.marshall(workforce.getCreateDate(), CREATEDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

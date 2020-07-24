@@ -48,6 +48,10 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("authenticationStrategy", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("autoMinorVersionUpgrade", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -67,6 +71,10 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                 if (context.testExpression("hostInstanceType", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ldapServerMetadata", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();

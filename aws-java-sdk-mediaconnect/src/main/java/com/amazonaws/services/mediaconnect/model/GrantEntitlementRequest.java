@@ -35,6 +35,11 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
     private String description;
     /** The type of encryption that will be used on the output that is associated with this entitlement. */
     private Encryption encryption;
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t
+     * specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     */
+    private String entitlementStatus;
     /** The name of the entitlement. This value must be unique within the current flow. */
     private String name;
     /**
@@ -148,6 +153,65 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
 
     public GrantEntitlementRequest withEncryption(Encryption encryption) {
         setEncryption(encryption);
+        return this;
+    }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t
+     * specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If
+     *        you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * @see EntitlementStatus
+     */
+
+    public void setEntitlementStatus(String entitlementStatus) {
+        this.entitlementStatus = entitlementStatus;
+    }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t
+     * specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * 
+     * @return An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If
+     *         you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * @see EntitlementStatus
+     */
+
+    public String getEntitlementStatus() {
+        return this.entitlementStatus;
+    }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t
+     * specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If
+     *        you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntitlementStatus
+     */
+
+    public GrantEntitlementRequest withEntitlementStatus(String entitlementStatus) {
+        setEntitlementStatus(entitlementStatus);
+        return this;
+    }
+
+    /**
+     * An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don’t
+     * specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If
+     *        you don’t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntitlementStatus
+     */
+
+    public GrantEntitlementRequest withEntitlementStatus(EntitlementStatus entitlementStatus) {
+        this.entitlementStatus = entitlementStatus.toString();
         return this;
     }
 
@@ -273,6 +337,8 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
+        if (getEntitlementStatus() != null)
+            sb.append("EntitlementStatus: ").append(getEntitlementStatus()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getSubscribers() != null)
@@ -304,6 +370,10 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
             return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
             return false;
+        if (other.getEntitlementStatus() == null ^ this.getEntitlementStatus() == null)
+            return false;
+        if (other.getEntitlementStatus() != null && other.getEntitlementStatus().equals(this.getEntitlementStatus()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -323,6 +393,7 @@ public class GrantEntitlementRequest implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDataTransferSubscriberFeePercent() == null) ? 0 : getDataTransferSubscriberFeePercent().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getEntitlementStatus() == null) ? 0 : getEntitlementStatus().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSubscribers() == null) ? 0 : getSubscribers().hashCode());
         return hashCode;

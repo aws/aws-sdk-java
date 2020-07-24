@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.frauddetector.model.transform;
+package com.amazonaws.services.kendra.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.frauddetector.model.*;
+import com.amazonaws.services.kendra.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * Role JSON Unmarshaller
+ * SortingConfiguration JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RoleJsonUnmarshaller implements Unmarshaller<Role, JsonUnmarshallerContext> {
+public class SortingConfigurationJsonUnmarshaller implements Unmarshaller<SortingConfiguration, JsonUnmarshallerContext> {
 
-    public Role unmarshall(JsonUnmarshallerContext context) throws Exception {
-        Role role = new Role();
+    public SortingConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
+        SortingConfiguration sortingConfiguration = new SortingConfiguration();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -48,13 +48,13 @@ public class RoleJsonUnmarshaller implements Unmarshaller<Role, JsonUnmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
+                if (context.testExpression("DocumentAttributeKey", targetDepth)) {
                     context.nextToken();
-                    role.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    sortingConfiguration.setDocumentAttributeKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("name", targetDepth)) {
+                if (context.testExpression("SortOrder", targetDepth)) {
                     context.nextToken();
-                    role.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                    sortingConfiguration.setSortOrder(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -65,14 +65,14 @@ public class RoleJsonUnmarshaller implements Unmarshaller<Role, JsonUnmarshaller
             token = context.nextToken();
         }
 
-        return role;
+        return sortingConfiguration;
     }
 
-    private static RoleJsonUnmarshaller instance;
+    private static SortingConfigurationJsonUnmarshaller instance;
 
-    public static RoleJsonUnmarshaller getInstance() {
+    public static SortingConfigurationJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new RoleJsonUnmarshaller();
+            instance = new SortingConfigurationJsonUnmarshaller();
         return instance;
     }
 }

@@ -82,6 +82,18 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
      * </p>
      */
     private Integer pageSize;
+    /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     */
+    private SortingConfiguration sortingConfiguration;
 
     /**
      * <p>
@@ -547,6 +559,79 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     * 
+     * @param sortingConfiguration
+     *        Provides information that determines how the results of the query are sorted. You can set the field that
+     *        Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or
+     *        descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+     *        <p>
+     *        If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra
+     *        determines for the result.
+     */
+
+    public void setSortingConfiguration(SortingConfiguration sortingConfiguration) {
+        this.sortingConfiguration = sortingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     * 
+     * @return Provides information that determines how the results of the query are sorted. You can set the field that
+     *         Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending
+     *         or descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+     *         <p>
+     *         If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra
+     *         determines for the result.
+     */
+
+    public SortingConfiguration getSortingConfiguration() {
+        return this.sortingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information that determines how the results of the query are sorted. You can set the field that Amazon
+     * Kendra should sort the results on, and specify whether the results should be sorted in ascending or descending
+     * order. In the case of ties in sorting the results, the results are sorted by relevance.
+     * </p>
+     * <p>
+     * If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra determines
+     * for the result.
+     * </p>
+     * 
+     * @param sortingConfiguration
+     *        Provides information that determines how the results of the query are sorted. You can set the field that
+     *        Amazon Kendra should sort the results on, and specify whether the results should be sorted in ascending or
+     *        descending order. In the case of ties in sorting the results, the results are sorted by relevance.</p>
+     *        <p>
+     *        If you don't provide sorting configuration, the results are sorted by the relevance that Amazon Kendra
+     *        determines for the result.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryRequest withSortingConfiguration(SortingConfiguration sortingConfiguration) {
+        setSortingConfiguration(sortingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -573,7 +658,9 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         if (getPageNumber() != null)
             sb.append("PageNumber: ").append(getPageNumber()).append(",");
         if (getPageSize() != null)
-            sb.append("PageSize: ").append(getPageSize());
+            sb.append("PageSize: ").append(getPageSize()).append(",");
+        if (getSortingConfiguration() != null)
+            sb.append("SortingConfiguration: ").append(getSortingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -620,6 +707,10 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
             return false;
         if (other.getPageSize() != null && other.getPageSize().equals(this.getPageSize()) == false)
             return false;
+        if (other.getSortingConfiguration() == null ^ this.getSortingConfiguration() == null)
+            return false;
+        if (other.getSortingConfiguration() != null && other.getSortingConfiguration().equals(this.getSortingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -636,6 +727,7 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getQueryResultTypeFilter() == null) ? 0 : getQueryResultTypeFilter().hashCode());
         hashCode = prime * hashCode + ((getPageNumber() == null) ? 0 : getPageNumber().hashCode());
         hashCode = prime * hashCode + ((getPageSize() == null) ? 0 : getPageSize().hashCode());
+        hashCode = prime * hashCode + ((getSortingConfiguration() == null) ? 0 : getSortingConfiguration().hashCode());
         return hashCode;
     }
 

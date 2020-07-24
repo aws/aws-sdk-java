@@ -48,6 +48,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("authenticationStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("autoMinorVersionUpgrade", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -102,6 +106,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ldapServerMetadata", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setLogs(LogsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
@@ -110,6 +118,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setMaintenanceWindowStartTime(WeeklyStartTimeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("pendingAuthenticationStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("pendingEngineVersion", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setPendingEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
@@ -117,6 +129,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("pendingHostInstanceType", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setPendingHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("pendingLdapServerMetadata", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("pendingSecurityGroups", targetDepth)) {
                     context.nextToken();

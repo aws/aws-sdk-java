@@ -36,8 +36,7 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      */
     private java.util.Date freeTrialStartDate;
@@ -91,13 +90,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      * 
      * @param freeTrialStartDate
-     *        The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the
-     *        account. This value is null if the account didn't participate in the free trial.
+     *        The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      */
 
     public void setFreeTrialStartDate(java.util.Date freeTrialStartDate) {
@@ -106,12 +103,10 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the
-     *         account. This value is null if the account didn't participate in the free trial.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      */
 
     public java.util.Date getFreeTrialStartDate() {
@@ -120,13 +115,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the account. This
-     * value is null if the account didn't participate in the free trial.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * </p>
      * 
      * @param freeTrialStartDate
-     *        The date and time, in UTC and extended ISO 8601 format, when the free trial period started for the
-     *        account. This value is null if the account didn't participate in the free trial.
+     *        The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

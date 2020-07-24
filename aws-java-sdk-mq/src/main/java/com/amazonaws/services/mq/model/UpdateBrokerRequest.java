@@ -26,16 +26,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The authentication strategy used to secure the broker. */
+    private String authenticationStrategy;
     /**
      * Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic
      * upgrades occur during the maintenance window of the broker or after a manual broker reboot.
      */
     private Boolean autoMinorVersionUpgrade;
-    /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
-     */
+    /** The unique ID that Amazon MQ generates for the broker. */
     private String brokerId;
     /** A list of information about the configuration. */
     private ConfigurationId configuration;
@@ -49,10 +47,63 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
      */
     private String hostInstanceType;
+    /** The metadata of the LDAP server used to authenticate and authorize connections to the broker. */
+    private LdapServerMetadataInput ldapServerMetadata;
     /** Enables Amazon CloudWatch logging for brokers. */
     private Logs logs;
     /** The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers. */
     private java.util.List<String> securityGroups;
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @see AuthenticationStrategy
+     */
+
+    public void setAuthenticationStrategy(String authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @return The authentication strategy used to secure the broker.
+     * @see AuthenticationStrategy
+     */
+
+    public String getAuthenticationStrategy() {
+        return this.authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public UpdateBrokerRequest withAuthenticationStrategy(String authenticationStrategy) {
+        setAuthenticationStrategy(authenticationStrategy);
+        return this;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public UpdateBrokerRequest withAuthenticationStrategy(AuthenticationStrategy authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy.toString();
+        return this;
+    }
 
     /**
      * Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic
@@ -107,14 +158,10 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * The unique ID that Amazon MQ generates for the broker.
      * 
      * @param brokerId
-     *        The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *        only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The unique ID that Amazon MQ generates for the broker.
      */
 
     public void setBrokerId(String brokerId) {
@@ -122,13 +169,9 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * The unique ID that Amazon MQ generates for the broker.
      * 
-     * @return The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *         only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *         characters, or special characters.
+     * @return The unique ID that Amazon MQ generates for the broker.
      */
 
     public String getBrokerId() {
@@ -136,14 +179,10 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * The unique ID that Amazon MQ generates for the broker.
      * 
      * @param brokerId
-     *        The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *        only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The unique ID that Amazon MQ generates for the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,6 +306,40 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @param ldapServerMetadata
+     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     */
+
+    public void setLdapServerMetadata(LdapServerMetadataInput ldapServerMetadata) {
+        this.ldapServerMetadata = ldapServerMetadata;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @return The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     */
+
+    public LdapServerMetadataInput getLdapServerMetadata() {
+        return this.ldapServerMetadata;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @param ldapServerMetadata
+     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerRequest withLdapServerMetadata(LdapServerMetadataInput ldapServerMetadata) {
+        setLdapServerMetadata(ldapServerMetadata);
+        return this;
+    }
+
+    /**
      * Enables Amazon CloudWatch logging for brokers.
      * 
      * @param logs
@@ -374,6 +447,8 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationStrategy() != null)
+            sb.append("AuthenticationStrategy: ").append(getAuthenticationStrategy()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
             sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getBrokerId() != null)
@@ -384,6 +459,8 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getHostInstanceType() != null)
             sb.append("HostInstanceType: ").append(getHostInstanceType()).append(",");
+        if (getLdapServerMetadata() != null)
+            sb.append("LdapServerMetadata: ").append(getLdapServerMetadata()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs()).append(",");
         if (getSecurityGroups() != null)
@@ -402,6 +479,10 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof UpdateBrokerRequest == false)
             return false;
         UpdateBrokerRequest other = (UpdateBrokerRequest) obj;
+        if (other.getAuthenticationStrategy() == null ^ this.getAuthenticationStrategy() == null)
+            return false;
+        if (other.getAuthenticationStrategy() != null && other.getAuthenticationStrategy().equals(this.getAuthenticationStrategy()) == false)
+            return false;
         if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
         if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
@@ -422,6 +503,10 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getHostInstanceType() != null && other.getHostInstanceType().equals(this.getHostInstanceType()) == false)
             return false;
+        if (other.getLdapServerMetadata() == null ^ this.getLdapServerMetadata() == null)
+            return false;
+        if (other.getLdapServerMetadata() != null && other.getLdapServerMetadata().equals(this.getLdapServerMetadata()) == false)
+            return false;
         if (other.getLogs() == null ^ this.getLogs() == null)
             return false;
         if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
@@ -438,11 +523,13 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationStrategy() == null) ? 0 : getAuthenticationStrategy().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getBrokerId() == null) ? 0 : getBrokerId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getLdapServerMetadata() == null) ? 0 : getLdapServerMetadata().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;

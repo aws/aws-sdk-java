@@ -25,22 +25,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteBrokerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
-     */
+    /** The unique ID that Amazon MQ generates for the broker. */
     private String brokerId;
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * The unique ID that Amazon MQ generates for the broker.
      * 
      * @param brokerId
-     *        The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *        only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The unique ID that Amazon MQ generates for the broker.
      */
 
     public void setBrokerId(String brokerId) {
@@ -48,13 +40,9 @@ public class DeleteBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * The unique ID that Amazon MQ generates for the broker.
      * 
-     * @return The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *         only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *         characters, or special characters.
+     * @return The unique ID that Amazon MQ generates for the broker.
      */
 
     public String getBrokerId() {
@@ -62,14 +50,10 @@ public class DeleteBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only
-     * letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or
-     * special characters.
+     * The unique ID that Amazon MQ generates for the broker.
      * 
      * @param brokerId
-     *        The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain
-     *        only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard
-     *        characters, or special characters.
+     *        The unique ID that Amazon MQ generates for the broker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

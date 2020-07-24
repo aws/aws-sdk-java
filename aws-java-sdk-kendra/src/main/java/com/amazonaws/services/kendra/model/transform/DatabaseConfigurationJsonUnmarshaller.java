@@ -68,6 +68,10 @@ public class DatabaseConfigurationJsonUnmarshaller implements Unmarshaller<Datab
                     context.nextToken();
                     databaseConfiguration.setAclConfiguration(AclConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SqlConfiguration", targetDepth)) {
+                    context.nextToken();
+                    databaseConfiguration.setSqlConfiguration(SqlConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

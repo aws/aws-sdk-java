@@ -561,7 +561,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </li>
      * <li>
      * <p>
-     * <code>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation job</code>
+     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation
+     * job.
      * </p>
      * </li>
      * </ul>
@@ -905,7 +906,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
+     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
      * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
      * machine learning model.
      * </p>
@@ -2294,6 +2295,77 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Use this operation to create a workforce. This operation will return an error if a workforce already exists in
+     * the AWS Region that you specify. You can only create one workforce in each AWS Region.
+     * </p>
+     * <p>
+     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use the API
+     * operation to delete the existing workforce and then use this operation to create a new workforce.
+     * </p>
+     * <p>
+     * To create a private workforce using Amazon Cognito, you must specify a Cognito user pool in
+     * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce using the Amazon SageMaker console.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html"> Create a Private
+     * Workforce (Amazon Cognito)</a>.
+     * </p>
+     * <p>
+     * To create a private workforce using your own OIDC Identity Provider (IdP), specify your IdP configuration in
+     * <code>OidcConfig</code>. You must create a OIDC IdP workforce using this API operation. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html"> Create a
+     * Private Workforce (OIDC IdP)</a>.
+     * </p>
+     * 
+     * @param createWorkforceRequest
+     * @return Result of the CreateWorkforce operation returned by the service.
+     * @sample AmazonSageMaker.CreateWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateWorkforceResult createWorkforce(CreateWorkforceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkforce(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkforceResult executeCreateWorkforce(CreateWorkforceRequest createWorkforceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkforceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkforceRequest> request = null;
+        Response<CreateWorkforceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkforceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkforceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkforce");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkforceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkforceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user pools.
      * You must first create the user pools before you can create a work team.
      * </p>
@@ -2758,6 +2830,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteFlowDefinitionRequest
      * @return Result of the DeleteFlowDefinition operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
      * @throws ResourceNotFoundException
      *         Resource being access is not found.
      * @sample AmazonSageMaker.DeleteFlowDefinition
@@ -2808,7 +2882,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+     * Use this operation to delete a human task user interface (worker task template).
      * </p>
      * <p>
      * To see a list of human task user interfaces (work task templates) in your account, use . When you delete a worker
@@ -3375,6 +3449,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteUserProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Use this operation to delete a workforce.
+     * </p>
+     * <p>
+     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use this operation
+     * to delete the existing workforce and then use to create a new workforce.
+     * </p>
+     * 
+     * @param deleteWorkforceRequest
+     * @return Result of the DeleteWorkforce operation returned by the service.
+     * @sample AmazonSageMaker.DeleteWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteWorkforceResult deleteWorkforce(DeleteWorkforceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkforce(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkforceResult executeDeleteWorkforce(DeleteWorkforceRequest deleteWorkforceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkforceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkforceRequest> request = null;
+        Response<DeleteWorkforceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkforceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkforceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkforce");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkforceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkforceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6718,6 +6849,60 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Use this operation to list all private and vendor workforces in an AWS Region. Note that you can only have one
+     * private workforce per AWS Region.
+     * </p>
+     * 
+     * @param listWorkforcesRequest
+     * @return Result of the ListWorkforces operation returned by the service.
+     * @sample AmazonSageMaker.ListWorkforces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWorkforcesResult listWorkforces(ListWorkforcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkforces(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkforcesResult executeListWorkforces(ListWorkforcesRequest listWorkforcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkforcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkforcesRequest> request = null;
+        Response<ListWorkforcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkforcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkforcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkforces");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkforcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWorkforcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a list of work teams that you have defined in a region. The list may be empty if no work team satisfies the
      * filter specified in the <code>NameContains</code> parameter.
      * </p>
@@ -6777,6 +6962,8 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * 
      * @param renderUiTemplateRequest
      * @return Result of the RenderUiTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
      * @sample AmazonSageMaker.RenderUiTemplate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/RenderUiTemplate" target="_top">AWS API
      *      Documentation</a>

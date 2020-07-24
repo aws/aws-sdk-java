@@ -27,7 +27,8 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If the array contains more than
+     * one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * </p>
      */
     private java.util.List<UsageStatisticsFilter> filterBy;
@@ -52,10 +53,12 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If the array contains more than
+     * one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * </p>
      * 
-     * @return The criteria to use to filter the query results.
+     * @return An array of objects, one for each condition to use to filter the query results. If the array contains
+     *         more than one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      */
 
     public java.util.List<UsageStatisticsFilter> getFilterBy() {
@@ -64,11 +67,13 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If the array contains more than
+     * one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * </p>
      * 
      * @param filterBy
-     *        The criteria to use to filter the query results.
+     *        An array of objects, one for each condition to use to filter the query results. If the array contains more
+     *        than one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      */
 
     public void setFilterBy(java.util.Collection<UsageStatisticsFilter> filterBy) {
@@ -82,7 +87,8 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If the array contains more than
+     * one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +97,8 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param filterBy
-     *        The criteria to use to filter the query results.
+     *        An array of objects, one for each condition to use to filter the query results. If the array contains more
+     *        than one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +114,13 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If the array contains more than
+     * one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * </p>
      * 
      * @param filterBy
-     *        The criteria to use to filter the query results.
+     *        An array of objects, one for each condition to use to filter the query results. If the array contains more
+     *        than one object, Amazon Macie uses an AND operator to join the conditions specified by the objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

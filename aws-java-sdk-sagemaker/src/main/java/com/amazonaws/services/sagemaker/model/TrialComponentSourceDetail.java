@@ -47,6 +47,12 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private ProcessingJob processingJob;
+    /**
+     * <p>
+     * Information about a transform job that's the source of the trial component.
+     * </p>
+     */
+    private TransformJob transformJob;
 
     /**
      * <p>
@@ -169,6 +175,46 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Information about a transform job that's the source of the trial component.
+     * </p>
+     * 
+     * @param transformJob
+     *        Information about a transform job that's the source of the trial component.
+     */
+
+    public void setTransformJob(TransformJob transformJob) {
+        this.transformJob = transformJob;
+    }
+
+    /**
+     * <p>
+     * Information about a transform job that's the source of the trial component.
+     * </p>
+     * 
+     * @return Information about a transform job that's the source of the trial component.
+     */
+
+    public TransformJob getTransformJob() {
+        return this.transformJob;
+    }
+
+    /**
+     * <p>
+     * Information about a transform job that's the source of the trial component.
+     * </p>
+     * 
+     * @param transformJob
+     *        Information about a transform job that's the source of the trial component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrialComponentSourceDetail withTransformJob(TransformJob transformJob) {
+        setTransformJob(transformJob);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +231,9 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
         if (getTrainingJob() != null)
             sb.append("TrainingJob: ").append(getTrainingJob()).append(",");
         if (getProcessingJob() != null)
-            sb.append("ProcessingJob: ").append(getProcessingJob());
+            sb.append("ProcessingJob: ").append(getProcessingJob()).append(",");
+        if (getTransformJob() != null)
+            sb.append("TransformJob: ").append(getTransformJob());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +260,10 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getProcessingJob() != null && other.getProcessingJob().equals(this.getProcessingJob()) == false)
             return false;
+        if (other.getTransformJob() == null ^ this.getTransformJob() == null)
+            return false;
+        if (other.getTransformJob() != null && other.getTransformJob().equals(this.getTransformJob()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +275,7 @@ public class TrialComponentSourceDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getTrainingJob() == null) ? 0 : getTrainingJob().hashCode());
         hashCode = prime * hashCode + ((getProcessingJob() == null) ? 0 : getProcessingJob().hashCode());
+        hashCode = prime * hashCode + ((getTransformJob() == null) ? 0 : getTransformJob().hashCode());
         return hashCode;
     }
 

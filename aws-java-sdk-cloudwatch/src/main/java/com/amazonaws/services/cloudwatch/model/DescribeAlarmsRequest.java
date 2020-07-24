@@ -57,7 +57,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except
-     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -78,7 +78,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -369,7 +369,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except
-     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -388,7 +388,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>ChildrenOfAlarmName</code> is not returned.</p>
      *        <p>
      *        If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request
-     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation
+     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
      *        error.
      *        </p>
      *        <note>
@@ -413,7 +413,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except
-     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -431,8 +431,8 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>ChildrenOfAlarmName</code> is not returned.</p>
      *         <p>
      *         If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request
-     *         except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a
-     *         validation error.
+     *         except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
+     *         error.
      *         </p>
      *         <note>
      *         <p>
@@ -456,7 +456,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request except
-     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -475,7 +475,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>ChildrenOfAlarmName</code> is not returned.</p>
      *        <p>
      *        If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters in the request
-     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation
+     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
      *        error.
      *        </p>
      *        <note>
@@ -502,7 +502,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -519,7 +519,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
      *        <p>
      *        If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request
-     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation
+     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
      *        error.
      *        </p>
      *        <note>
@@ -543,7 +543,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -559,8 +559,8 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
      *         <p>
      *         If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request
-     *         except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a
-     *         validation error.
+     *         except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
+     *         error.
      *         </p>
      *         <note>
      *         <p>
@@ -583,7 +583,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request except for
-     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation error.
+     * <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation error.
      * </p>
      * <note>
      * <p>
@@ -600,7 +600,7 @@ public class DescribeAlarmsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        Information about the alarm that you specify in <code>ParentsOfAlarmName</code> is not returned.</p>
      *        <p>
      *        If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters in the request
-     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you will receive a validation
+     *        except for <code>MaxRecords</code> and <code>NextToken</code>. If you do so, you receive a validation
      *        error.
      *        </p>
      *        <note>

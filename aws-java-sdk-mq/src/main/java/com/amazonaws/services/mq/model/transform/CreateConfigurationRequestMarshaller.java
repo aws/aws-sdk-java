@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateConfigurationRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationStrategy").build();
     private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineType").build();
     private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class CreateConfigurationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createConfigurationRequest.getAuthenticationStrategy(), AUTHENTICATIONSTRATEGY_BINDING);
             protocolMarshaller.marshall(createConfigurationRequest.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(createConfigurationRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(createConfigurationRequest.getName(), NAME_BINDING);

@@ -25,7 +25,7 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The metrics.
+     * The metrics that match your request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Metric> metrics;
@@ -38,10 +38,10 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The metrics.
+     * The metrics that match your request.
      * </p>
      * 
-     * @return The metrics.
+     * @return The metrics that match your request.
      */
 
     public java.util.List<Metric> getMetrics() {
@@ -53,11 +53,11 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The metrics.
+     * The metrics that match your request.
      * </p>
      * 
      * @param metrics
-     *        The metrics.
+     *        The metrics that match your request.
      */
 
     public void setMetrics(java.util.Collection<Metric> metrics) {
@@ -71,7 +71,7 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The metrics.
+     * The metrics that match your request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param metrics
-     *        The metrics.
+     *        The metrics that match your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The metrics.
+     * The metrics that match your request.
      * </p>
      * 
      * @param metrics
-     *        The metrics.
+     *        The metrics that match your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

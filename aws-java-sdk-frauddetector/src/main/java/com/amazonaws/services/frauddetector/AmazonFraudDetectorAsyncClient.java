@@ -870,39 +870,6 @@ public class AmazonFraudDetectorAsyncClient extends AmazonFraudDetectorClient im
     }
 
     @Override
-    public java.util.concurrent.Future<GetPredictionResult> getPredictionAsync(GetPredictionRequest request) {
-
-        return getPredictionAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetPredictionResult> getPredictionAsync(final GetPredictionRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetPredictionRequest, GetPredictionResult> asyncHandler) {
-        final GetPredictionRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<GetPredictionResult>() {
-            @Override
-            public GetPredictionResult call() throws Exception {
-                GetPredictionResult result = null;
-
-                try {
-                    result = executeGetPrediction(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<GetRulesResult> getRulesAsync(GetRulesRequest request) {
 
         return getRulesAsync(request, null);

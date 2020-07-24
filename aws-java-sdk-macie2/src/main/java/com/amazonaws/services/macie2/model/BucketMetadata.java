@@ -74,7 +74,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      */
     private ObjectCountByEncryptionType objectCountByEncryptionType;
@@ -435,12 +435,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
      *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted.
+     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public void setObjectCountByEncryptionType(ObjectCountByEncryptionType objectCountByEncryptionType) {
@@ -450,11 +450,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @return The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *         a grouping that reports the total number of objects that aren't encrypted.
+     *         a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public ObjectCountByEncryptionType getObjectCountByEncryptionType() {
@@ -464,12 +464,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
      *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted.
+     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

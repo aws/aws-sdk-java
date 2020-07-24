@@ -31,6 +31,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateBrokerRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationStrategy").build();
     private static final MarshallingInfo<Boolean> AUTOMINORVERSIONUPGRADE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoMinorVersionUpgrade").build();
     private static final MarshallingInfo<String> BROKERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -50,6 +52,8 @@ public class CreateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineVersion").build();
     private static final MarshallingInfo<String> HOSTINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostInstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> LDAPSERVERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ldapServerMetadata").build();
     private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
     private static final MarshallingInfo<StructuredPojo> MAINTENANCEWINDOWSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -83,6 +87,7 @@ public class CreateBrokerRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createBrokerRequest.getAuthenticationStrategy(), AUTHENTICATIONSTRATEGY_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getAutoMinorVersionUpgrade(), AUTOMINORVERSIONUPGRADE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getBrokerName(), BROKERNAME_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getConfiguration(), CONFIGURATION_BINDING);
@@ -92,6 +97,7 @@ public class CreateBrokerRequestMarshaller {
             protocolMarshaller.marshall(createBrokerRequest.getEngineType(), ENGINETYPE_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createBrokerRequest.getLdapServerMetadata(), LDAPSERVERMETADATA_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getMaintenanceWindowStartTime(), MAINTENANCEWINDOWSTARTTIME_BINDING);
             protocolMarshaller.marshall(createBrokerRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);

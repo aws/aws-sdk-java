@@ -72,6 +72,18 @@ public class CompilationJobSummaryJsonUnmarshaller implements Unmarshaller<Compi
                     context.nextToken();
                     compilationJobSummary.setCompilationTargetDevice(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CompilationTargetPlatformOs", targetDepth)) {
+                    context.nextToken();
+                    compilationJobSummary.setCompilationTargetPlatformOs(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CompilationTargetPlatformArch", targetDepth)) {
+                    context.nextToken();
+                    compilationJobSummary.setCompilationTargetPlatformArch(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CompilationTargetPlatformAccelerator", targetDepth)) {
+                    context.nextToken();
+                    compilationJobSummary.setCompilationTargetPlatformAccelerator(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
                     compilationJobSummary.setLastModifiedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

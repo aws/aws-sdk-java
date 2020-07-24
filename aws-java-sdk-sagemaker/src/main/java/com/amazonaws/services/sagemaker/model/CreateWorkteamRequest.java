@@ -33,6 +33,12 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     private String workteamName;
     /**
      * <p>
+     * The name of the workforce.
+     * </p>
+     */
+    private String workforceName;
+    /**
+     * <p>
      * A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito user pool
      * that makes up the work team. For more information, see <a
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
@@ -107,6 +113,46 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public CreateWorkteamRequest withWorkteamName(String workteamName) {
         setWorkteamName(workteamName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the workforce.
+     * </p>
+     * 
+     * @param workforceName
+     *        The name of the workforce.
+     */
+
+    public void setWorkforceName(String workforceName) {
+        this.workforceName = workforceName;
+    }
+
+    /**
+     * <p>
+     * The name of the workforce.
+     * </p>
+     * 
+     * @return The name of the workforce.
+     */
+
+    public String getWorkforceName() {
+        return this.workforceName;
+    }
+
+    /**
+     * <p>
+     * The name of the workforce.
+     * </p>
+     * 
+     * @param workforceName
+     *        The name of the workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkteamRequest withWorkforceName(String workforceName) {
+        setWorkforceName(workforceName);
         return this;
     }
 
@@ -448,6 +494,8 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
         sb.append("{");
         if (getWorkteamName() != null)
             sb.append("WorkteamName: ").append(getWorkteamName()).append(",");
+        if (getWorkforceName() != null)
+            sb.append("WorkforceName: ").append(getWorkforceName()).append(",");
         if (getMemberDefinitions() != null)
             sb.append("MemberDefinitions: ").append(getMemberDefinitions()).append(",");
         if (getDescription() != null)
@@ -474,6 +522,10 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getWorkteamName() != null && other.getWorkteamName().equals(this.getWorkteamName()) == false)
             return false;
+        if (other.getWorkforceName() == null ^ this.getWorkforceName() == null)
+            return false;
+        if (other.getWorkforceName() != null && other.getWorkforceName().equals(this.getWorkforceName()) == false)
+            return false;
         if (other.getMemberDefinitions() == null ^ this.getMemberDefinitions() == null)
             return false;
         if (other.getMemberDefinitions() != null && other.getMemberDefinitions().equals(this.getMemberDefinitions()) == false)
@@ -499,6 +551,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getWorkteamName() == null) ? 0 : getWorkteamName().hashCode());
+        hashCode = prime * hashCode + ((getWorkforceName() == null) ? 0 : getWorkforceName().hashCode());
         hashCode = prime * hashCode + ((getMemberDefinitions() == null) ? 0 : getMemberDefinitions().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode());

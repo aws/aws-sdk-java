@@ -76,8 +76,8 @@ public class MetricStat implements Serializable, Cloneable {
      * <p>
      * In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      */
@@ -357,8 +357,8 @@ public class MetricStat implements Serializable, Cloneable {
      * <p>
      * In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
@@ -368,7 +368,7 @@ public class MetricStat implements Serializable, Cloneable {
      *        <p>
      *        In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any
      *        unit is returned, along with the corresponding units that were specified when the data was reported to
-     *        CloudWatch. If you specify a unit, the operation returns only data data that was collected with that unit
+     *        CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit
      *        specified. If you specify a unit that does not match the data collected, the results of the operation are
      *        null. CloudWatch does not perform unit conversions.
      * @see StandardUnit
@@ -385,8 +385,8 @@ public class MetricStat implements Serializable, Cloneable {
      * <p>
      * In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
@@ -395,7 +395,7 @@ public class MetricStat implements Serializable, Cloneable {
      *         <p>
      *         In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any
      *         unit is returned, along with the corresponding units that were specified when the data was reported to
-     *         CloudWatch. If you specify a unit, the operation returns only data data that was collected with that unit
+     *         CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit
      *         specified. If you specify a unit that does not match the data collected, the results of the operation are
      *         null. CloudWatch does not perform unit conversions.
      * @see StandardUnit
@@ -412,8 +412,8 @@ public class MetricStat implements Serializable, Cloneable {
      * <p>
      * In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
@@ -423,7 +423,7 @@ public class MetricStat implements Serializable, Cloneable {
      *        <p>
      *        In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any
      *        unit is returned, along with the corresponding units that were specified when the data was reported to
-     *        CloudWatch. If you specify a unit, the operation returns only data data that was collected with that unit
+     *        CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit
      *        specified. If you specify a unit that does not match the data collected, the results of the operation are
      *        null. CloudWatch does not perform unit conversions.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -442,8 +442,8 @@ public class MetricStat implements Serializable, Cloneable {
      * <p>
      * In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
@@ -453,7 +453,7 @@ public class MetricStat implements Serializable, Cloneable {
      *        <p>
      *        In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that was collected with any
      *        unit is returned, along with the corresponding units that were specified when the data was reported to
-     *        CloudWatch. If you specify a unit, the operation returns only data data that was collected with that unit
+     *        CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit
      *        specified. If you specify a unit that does not match the data collected, the results of the operation are
      *        null. CloudWatch does not perform unit conversions.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -29,6 +29,8 @@ public class MemberDefinitionMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> COGNITOMEMBERDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CognitoMemberDefinition").build();
+    private static final MarshallingInfo<StructuredPojo> OIDCMEMBERDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OidcMemberDefinition").build();
 
     private static final MemberDefinitionMarshaller instance = new MemberDefinitionMarshaller();
 
@@ -47,6 +49,7 @@ public class MemberDefinitionMarshaller {
 
         try {
             protocolMarshaller.marshall(memberDefinition.getCognitoMemberDefinition(), COGNITOMEMBERDEFINITION_BINDING);
+            protocolMarshaller.marshall(memberDefinition.getOidcMemberDefinition(), OIDCMEMBERDEFINITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

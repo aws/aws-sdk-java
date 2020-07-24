@@ -340,19 +340,6 @@ public class AbstractAmazonFraudDetectorAsync extends AbstractAmazonFraudDetecto
     }
 
     @Override
-    public java.util.concurrent.Future<GetPredictionResult> getPredictionAsync(GetPredictionRequest request) {
-
-        return getPredictionAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetPredictionResult> getPredictionAsync(GetPredictionRequest request,
-            com.amazonaws.handlers.AsyncHandler<GetPredictionRequest, GetPredictionResult> asyncHandler) {
-
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public java.util.concurrent.Future<GetRulesResult> getRulesAsync(GetRulesRequest request) {
 
         return getRulesAsync(request, null);

@@ -27,7 +27,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within your AWS account.
+     * The name for the alarm. This name must be unique within the Region.
      * </p>
      */
     private String alarmName;
@@ -161,7 +161,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -180,12 +180,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-     * metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the alarm will
-     * work as intended.
+     * metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works
+     * as intended.
      * </p>
      * <p>
      * However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     * behavior is not defined and will behave un-predictably.
+     * behavior is not defined and it behaves predictably.
      * </p>
      * <p>
      * We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not
@@ -289,7 +289,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      */
@@ -310,11 +310,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within your AWS account.
+     * The name for the alarm. This name must be unique within the Region.
      * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within your AWS account.
+     *        The name for the alarm. This name must be unique within the Region.
      */
 
     public void setAlarmName(String alarmName) {
@@ -323,10 +323,10 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within your AWS account.
+     * The name for the alarm. This name must be unique within the Region.
      * </p>
      * 
-     * @return The name for the alarm. This name must be unique within your AWS account.
+     * @return The name for the alarm. This name must be unique within the Region.
      */
 
     public String getAlarmName() {
@@ -335,11 +335,11 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name for the alarm. This name must be unique within your AWS account.
+     * The name for the alarm. This name must be unique within the Region.
      * </p>
      * 
      * @param alarmName
-     *        The name for the alarm. This name must be unique within your AWS account.
+     *        The name for the alarm. This name must be unique within the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1365,7 +1365,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1387,9 +1387,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
-     *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
-     *        alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about
-     *        pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     *        resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
+     *        this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information
+     *        about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      *        </p>
      *        <p>
      *        An alarm's total current evaluation period can be no longer than one day, so <code>Period</code>
@@ -1415,7 +1415,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1436,7 +1436,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *         sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *         this case, it does not receive data for the attempts that do not correspond to a one-minute data
-     *         resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
+     *         resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
      *         this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information
      *         about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      *         </p>
@@ -1464,7 +1464,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      * sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case,
      * it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm
-     * may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
+     * might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution
      * alarm, which has a higher charge than other alarms. For more information about pricing, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>
@@ -1486,9 +1486,9 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have
      *        sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In
      *        this case, it does not receive data for the attempts that do not correspond to a one-minute data
-     *        resolution, and the alarm may often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this
-     *        alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about
-     *        pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     *        resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets
+     *        this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information
+     *        about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      *        </p>
      *        <p>
      *        An alarm's total current evaluation period can be no longer than one day, so <code>Period</code>
@@ -1510,12 +1510,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-     * metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the alarm will
-     * work as intended.
+     * metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works
+     * as intended.
      * </p>
      * <p>
      * However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     * behavior is not defined and will behave un-predictably.
+     * behavior is not defined and it behaves predictably.
      * </p>
      * <p>
      * We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not
@@ -1529,12 +1529,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
-     *        the metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the
-     *        alarm will work as intended.
+     *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
+     *        alarm works as intended.
      *        </p>
      *        <p>
      *        However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     *        behavior is not defined and will behave un-predictably.
+     *        behavior is not defined and it behaves predictably.
      *        </p>
      *        <p>
      *        We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is
@@ -1556,12 +1556,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-     * metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the alarm will
-     * work as intended.
+     * metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works
+     * as intended.
      * </p>
      * <p>
      * However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     * behavior is not defined and will behave un-predictably.
+     * behavior is not defined and it behaves predictably.
      * </p>
      * <p>
      * We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not
@@ -1575,12 +1575,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *         separately.</p>
      *         <p>
      *         If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
-     *         the metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the
-     *         alarm will work as intended.
+     *         the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
+     *         alarm works as intended.
      *         </p>
      *         <p>
      *         However, if the metric is published with multiple types of units and you don't specify a unit, the
-     *         alarm's behavior is not defined and will behave un-predictably.
+     *         alarm's behavior is not defined and it behaves predictably.
      *         </p>
      *         <p>
      *         We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is
@@ -1602,12 +1602,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-     * metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the alarm will
-     * work as intended.
+     * metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works
+     * as intended.
      * </p>
      * <p>
      * However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     * behavior is not defined and will behave un-predictably.
+     * behavior is not defined and it behaves predictably.
      * </p>
      * <p>
      * We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not
@@ -1621,12 +1621,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
-     *        the metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the
-     *        alarm will work as intended.
+     *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
+     *        alarm works as intended.
      *        </p>
      *        <p>
      *        However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     *        behavior is not defined and will behave un-predictably.
+     *        behavior is not defined and it behaves predictably.
      *        </p>
      *        <p>
      *        We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is
@@ -1650,12 +1650,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-     * metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the alarm will
-     * work as intended.
+     * metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works
+     * as intended.
      * </p>
      * <p>
      * However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     * behavior is not defined and will behave un-predictably.
+     * behavior is not defined and it behaves predictably.
      * </p>
      * <p>
      * We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not
@@ -1669,12 +1669,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
-     *        the metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the
-     *        alarm will work as intended.
+     *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
+     *        alarm works as intended.
      *        </p>
      *        <p>
      *        However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     *        behavior is not defined and will behave un-predictably.
+     *        behavior is not defined and it behaves predictably.
      *        </p>
      *        <p>
      *        We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is
@@ -1696,12 +1696,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * <p>
      * If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the
-     * metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the alarm will
-     * work as intended.
+     * metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works
+     * as intended.
      * </p>
      * <p>
      * However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     * behavior is not defined and will behave un-predictably.
+     * behavior is not defined and it behaves predictably.
      * </p>
      * <p>
      * We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not
@@ -1715,12 +1715,12 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        data. Metric data points that specify a unit of measure, such as Percent, are aggregated separately.</p>
      *        <p>
      *        If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for
-     *        the metric and attempts to evaluate the alarm. Usually metrics are published with only one unit, so the
-     *        alarm will work as intended.
+     *        the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the
+     *        alarm works as intended.
      *        </p>
      *        <p>
      *        However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's
-     *        behavior is not defined and will behave un-predictably.
+     *        behavior is not defined and it behaves predictably.
      *        </p>
      *        <p>
      *        We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is
@@ -2414,15 +2414,15 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * 
      * @return A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
      *         alarm.</p>
      *         <p>
-     *         Tags can help you organize and categorize your resources. You can also use them to scope user
-     *         permissions, by granting a user permission to access or change only resources with certain tag values.
+     *         Tags can help you organize and categorize your resources. You can also use them to scope user permissions
+     *         by granting a user permission to access or change only resources with certain tag values.
      */
 
     public java.util.List<Tag> getTags() {
@@ -2437,7 +2437,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * 
@@ -2445,7 +2445,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
      *        alarm.</p>
      *        <p>
-     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
      */
 
@@ -2463,7 +2463,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * <p>
@@ -2476,7 +2476,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
      *        alarm.</p>
      *        <p>
-     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2496,7 +2496,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      * A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an alarm.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * 
@@ -2504,7 +2504,7 @@ public class PutMetricAlarmRequest extends com.amazonaws.AmazonWebServiceRequest
      *        A list of key-value pairs to associate with the alarm. You can associate as many as 50 tags with an
      *        alarm.</p>
      *        <p>
-     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions,
+     *        Tags can help you organize and categorize your resources. You can also use them to scope user permissions
      *        by granting a user permission to access or change only resources with certain tag values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

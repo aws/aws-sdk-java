@@ -62,6 +62,10 @@ public class WorkteamJsonUnmarshaller implements Unmarshaller<Workteam, JsonUnma
                     context.nextToken();
                     workteam.setWorkteamArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("WorkforceArn", targetDepth)) {
+                    context.nextToken();
+                    workteam.setWorkforceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ProductListingIds", targetDepth)) {
                     context.nextToken();
                     workteam.setProductListingIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

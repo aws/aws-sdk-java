@@ -48,6 +48,10 @@ public class UsageStatisticsFilterJsonUnmarshaller implements Unmarshaller<Usage
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("comparator", targetDepth)) {
+                    context.nextToken();
+                    usageStatisticsFilter.setComparator(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("key", targetDepth)) {
                     context.nextToken();
                     usageStatisticsFilter.setKey(context.getUnmarshaller(String.class).unmarshall(context));

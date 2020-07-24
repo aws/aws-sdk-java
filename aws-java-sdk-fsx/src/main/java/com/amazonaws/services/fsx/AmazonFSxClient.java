@@ -294,9 +294,14 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html">https:/
-     * /docs.aws.amazon.com/fsx/latest/LustreGuide/lustre-backups.html</a>.
+     * For more information about backing up Amazon FSx for Lustre file systems, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with FSx for Lustre
+     * backups</a>.
+     * </p>
+     * <p>
+     * For more information about backing up Amazon FSx for Lustre file systems, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for Windows
+     * backups</a>.
      * </p>
      * <p>
      * If a backup with the specified client request token exists, and the parameters match, this operation returns the
@@ -1358,9 +1363,11 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
 
     /**
      * <p>
-     * Use this operation to update the configuration of an existing Amazon FSx file system. For an Amazon FSx for
-     * Lustre file system, you can update only the WeeklyMaintenanceStartTime. For an Amazon for Windows File Server
-     * file system, you can update the following properties:
+     * Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple
+     * properties in a single request.
+     * </p>
+     * <p>
+     * For Amazon FSx for Windows File Server file systems, you can update the following properties:
      * </p>
      * <ul>
      * <li>
@@ -1395,8 +1402,30 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * </li>
      * </ul>
      * <p>
-     * You can update multiple properties in a single request.
+     * For Amazon FSx for Lustre file systems, you can update the following properties:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AutoImportPolicy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AutomaticBackupRetentionDays
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WeeklyMaintenanceStartTime
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateFileSystemRequest
      *        The request object for the <code>UpdateFileSystem</code> operation.

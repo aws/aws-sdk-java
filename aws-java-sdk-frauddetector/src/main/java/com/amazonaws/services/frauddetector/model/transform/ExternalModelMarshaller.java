@@ -33,8 +33,8 @@ public class ExternalModelMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeName").build();
     private static final MarshallingInfo<String> MODELSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelSource").build();
-    private static final MarshallingInfo<StructuredPojo> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("role").build();
+    private static final MarshallingInfo<String> INVOKEMODELENDPOINTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invokeModelEndpointRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> INPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -67,7 +67,7 @@ public class ExternalModelMarshaller {
             protocolMarshaller.marshall(externalModel.getModelEndpoint(), MODELENDPOINT_BINDING);
             protocolMarshaller.marshall(externalModel.getEventTypeName(), EVENTTYPENAME_BINDING);
             protocolMarshaller.marshall(externalModel.getModelSource(), MODELSOURCE_BINDING);
-            protocolMarshaller.marshall(externalModel.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(externalModel.getInvokeModelEndpointRoleArn(), INVOKEMODELENDPOINTROLEARN_BINDING);
             protocolMarshaller.marshall(externalModel.getInputConfiguration(), INPUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(externalModel.getOutputConfiguration(), OUTPUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(externalModel.getModelEndpointStatus(), MODELENDPOINTSTATUS_BINDING);

@@ -351,6 +351,185 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </li>
      * </ul>
      * <p>
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Classification</b> - Use this task type when you need workers to classify videos using predefined labels
+     * that you specify. Workers are shown videos and are asked to choose one label for each video.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to identify and localize various objects in a series of video frames, such as cars, bikes, and
+     * pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in a 3D
      * point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask workers to
      * identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -666,6 +845,94 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust bounding
+     * boxes that workers have added to video frames to classify and localize objects in a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust bounding boxes
+     * that workers have added to video frames to track object movement across a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      * </p>
      * </li>
      * </ul>
@@ -1127,6 +1394,185 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </li>
      * </ul>
      * <p>
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Classification</b> - Use this task type when you need workers to classify videos using predefined labels
+     * that you specify. Workers are shown videos and are asked to choose one label for each video.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to identify and localize various objects in a series of video frames, such as cars, bikes, and
+     * pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in a 3D
      * point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask workers to
      * identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -1442,6 +1888,94 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust bounding
+     * boxes that workers have added to video frames to classify and localize objects in a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust bounding boxes
+     * that workers have added to video frames to track object movement across a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      * </p>
      * </li>
      * </ul>
@@ -1899,6 +2433,185 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving
+     *        to most-assigned label.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Classification</b> - Use this task type when you need workers to classify videos using predefined
+     *        labels that you specify. Workers are shown videos and are asked to choose one label for each video.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     *        sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use
+     *        this task to ask workers to identify and localize various objects in a series of video frames, such as
+     *        cars, bikes, and pedestrians.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in a
+     *        sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use
+     *        this task to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in a
      *        3D point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask
      *        workers to identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -2215,6 +2928,96 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust
+     *        bounding boxes that workers have added to video frames to classify and localize objects in a sequence of
+     *        video frames.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust
+     *        bounding boxes that workers have added to video frames to track object movement across a sequence of video
+     *        frames.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2678,6 +3481,185 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </li>
      * </ul>
      * <p>
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Classification</b> - Use this task type when you need workers to classify videos using predefined labels
+     * that you specify. Workers are shown videos and are asked to choose one label for each video.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to identify and localize various objects in a series of video frames, such as cars, bikes, and
+     * pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in a 3D
      * point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask workers to
      * identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -2993,6 +3975,94 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust bounding
+     * boxes that workers have added to video frames to classify and localize objects in a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust bounding boxes
+     * that workers have added to video frames to track object movement across a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      * </p>
      * </li>
      * </ul>
@@ -3449,6 +4519,186 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </li>
      *         </ul>
      *         <p>
+     *         <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries,
+     *         resolving to most-assigned label.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Video Classification</b> - Use this task type when you need workers to classify videos using
+     *         predefined labels that you specify. Workers are shown videos and are asked to choose one label for each
+     *         video.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     *         sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use
+     *         this task to ask workers to identify and localize various objects in a series of video frames, such as
+     *         cars, bikes, and pedestrians.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in
+     *         a sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use
+     *         this task to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
      *         <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in
      *         a 3D point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask
      *         workers to identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -3766,6 +5016,96 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </p>
      *         <p>
      *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust
+     *         bounding boxes that workers have added to video frames to classify and localize objects in a sequence of
+     *         video frames.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust
+     *         bounding boxes that workers have added to video frames to track object movement across a sequence of
+     *         video frames.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -4229,6 +5569,185 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </li>
      * </ul>
      * <p>
+     * <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Classification</b> - Use this task type when you need workers to classify videos using predefined labels
+     * that you specify. Workers are shown videos and are asked to choose one label for each video.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to identify and localize various objects in a series of video frames, such as cars, bikes, and
+     * pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in a
+     * sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use this task
+     * to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in a 3D
      * point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask workers to
      * identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -4544,6 +6063,94 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust bounding
+     * boxes that workers have added to video frames to classify and localize objects in a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust bounding boxes
+     * that workers have added to video frames to track object movement across a sequence of video frames.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      * </p>
      * </li>
      * </ul>
@@ -5001,6 +6608,185 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>Named entity recognition</b> - Groups similar selections and calculates aggregate boundaries, resolving
+     *        to most-assigned label.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Classification</b> - Use this task type when you need workers to classify videos using predefined
+     *        labels that you specify. Workers are shown videos and are asked to choose one label for each video.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoMultiClass</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Detection</b> - Use this task type to have workers identify and locate objects in a
+     *        sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use
+     *        this task to ask workers to identify and localize various objects in a series of video frames, such as
+     *        cars, bikes, and pedestrians.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectDetection</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Tracking</b> - Use this task type to have workers track the movement of objects in a
+     *        sequence of video frames (images extracted from a video) using bounding boxes. For example, you can use
+     *        this task to ask workers to track the movement of objects, such as cars, bikes, and pedestrians.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-VideoObjectTracking</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
      *        <b>3D point cloud object detection</b> - Use this task type when you want workers to classify objects in a
      *        3D point cloud by drawing 3D cuboids around objects. For example, you can use this task type to ask
      *        workers to identify different types of objects in a point cloud, such as cars, bikes, and pedestrians.
@@ -5317,6 +7103,96 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentBoundingBox</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Detection Adjustment</b> - Use this task type when you want workers to adjust
+     *        bounding boxes that workers have added to video frames to classify and localize objects in a sequence of
+     *        video frames.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectDetection</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame Object Tracking Adjustment</b> - Use this task type when you want workers to adjust
+     *        bounding boxes that workers have added to video frames to track object movement across a sequence of video
+     *        frames.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-AdjustmentVideoObjectTracking</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-AdjustmentVideoObjectTracking</code>
      *        </p>
      *        </li>
      *        </ul>

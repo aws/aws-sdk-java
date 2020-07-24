@@ -47,7 +47,7 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private BackupFailureDetails failureDetails;
     /**
      * <p>
-     * The type of the backup.
+     * The type of the file system backup.
      * </p>
      */
     private String type;
@@ -234,11 +234,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the backup.
+     * The type of the file system backup.
      * </p>
      * 
      * @param type
-     *        The type of the backup.
+     *        The type of the file system backup.
      * @see BackupType
      */
 
@@ -248,10 +248,10 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the backup.
+     * The type of the file system backup.
      * </p>
      * 
-     * @return The type of the backup.
+     * @return The type of the file system backup.
      * @see BackupType
      */
 
@@ -261,11 +261,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the backup.
+     * The type of the file system backup.
      * </p>
      * 
      * @param type
-     *        The type of the backup.
+     *        The type of the file system backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupType
      */
@@ -277,11 +277,11 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the backup.
+     * The type of the file system backup.
      * </p>
      * 
      * @param type
-     *        The type of the backup.
+     *        The type of the file system backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupType
      */

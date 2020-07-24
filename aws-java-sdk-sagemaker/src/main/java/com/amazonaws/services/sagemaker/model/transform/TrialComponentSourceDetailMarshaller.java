@@ -33,6 +33,8 @@ public class TrialComponentSourceDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrainingJob").build();
     private static final MarshallingInfo<StructuredPojo> PROCESSINGJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingJob").build();
+    private static final MarshallingInfo<StructuredPojo> TRANSFORMJOB_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformJob").build();
 
     private static final TrialComponentSourceDetailMarshaller instance = new TrialComponentSourceDetailMarshaller();
 
@@ -53,6 +55,7 @@ public class TrialComponentSourceDetailMarshaller {
             protocolMarshaller.marshall(trialComponentSourceDetail.getSourceArn(), SOURCEARN_BINDING);
             protocolMarshaller.marshall(trialComponentSourceDetail.getTrainingJob(), TRAININGJOB_BINDING);
             protocolMarshaller.marshall(trialComponentSourceDetail.getProcessingJob(), PROCESSINGJOB_BINDING);
+            protocolMarshaller.marshall(trialComponentSourceDetail.getTransformJob(), TRANSFORMJOB_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

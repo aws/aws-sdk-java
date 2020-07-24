@@ -1313,6 +1313,11 @@
           "locationName": "entitlementArn",
           "documentation": "The ARN of the entitlement."
         },
+        "EntitlementStatus": {
+          "shape": "EntitlementStatus",
+          "locationName": "entitlementStatus",
+          "documentation": "An indication of whether the entitlement is enabled."
+        },
         "Name": {
           "shape": "__string",
           "locationName": "name",
@@ -1329,6 +1334,13 @@
         "EntitlementArn",
         "Subscribers",
         "Name"
+      ]
+    },
+    "EntitlementStatus": {
+      "type": "string",
+      "enum": [
+        "ENABLED",
+        "DISABLED"
       ]
     },
     "FailoverConfig": {
@@ -1453,6 +1465,11 @@
           "shape": "Encryption",
           "locationName": "encryption",
           "documentation": "The type of encryption that will be used on the output that is associated with this entitlement."
+        },
+        "EntitlementStatus": {
+          "shape": "EntitlementStatus",
+          "locationName": "entitlementStatus",
+          "documentation": "An indication of whether the new entitlement should be enabled or disabled as soon as it is created. If you don\u2019t specify the entitlementStatus field in your request, MediaConnect sets it to ENABLED."
         },
         "Name": {
           "shape": "__string",
@@ -2397,6 +2414,11 @@
           "location": "uri",
           "locationName": "entitlementArn",
           "documentation": "The ARN of the entitlement that you want to update."
+        },
+        "EntitlementStatus": {
+          "shape": "EntitlementStatus",
+          "locationName": "entitlementStatus",
+          "documentation": "An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming content to the subscriber\u2019s flow temporarily. If you don\u2019t specify the entitlementStatus field in your request, MediaConnect leaves the value unchanged."
         },
         "FlowArn": {
           "shape": "__string",

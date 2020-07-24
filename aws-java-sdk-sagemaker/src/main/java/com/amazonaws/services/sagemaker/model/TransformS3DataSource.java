@@ -82,7 +82,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -286,7 +286,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -343,7 +343,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <code>]</code>
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        The preceding JSON matches the following <code>S3Uris</code>:
      *        </p>
      *        <p>
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -406,7 +406,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -462,7 +462,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *         <code>]</code>
      *         </p>
      *         <p>
-     *         The preceding JSON matches the following <code>s3Uris</code>:
+     *         The preceding JSON matches the following <code>S3Uris</code>:
      *         </p>
      *         <p>
      *         <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -525,7 +525,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -582,7 +582,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <code>]</code>
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        The preceding JSON matches the following <code>S3Uris</code>:
      *        </p>
      *        <p>
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>

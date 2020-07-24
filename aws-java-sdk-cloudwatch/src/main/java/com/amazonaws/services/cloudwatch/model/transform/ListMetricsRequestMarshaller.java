@@ -71,6 +71,10 @@ public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetr
             request.addParameter("NextToken", StringUtils.fromString(listMetricsRequest.getNextToken()));
         }
 
+        if (listMetricsRequest.getRecentlyActive() != null) {
+            request.addParameter("RecentlyActive", StringUtils.fromString(listMetricsRequest.getRecentlyActive()));
+        }
+
         return request;
     }
 

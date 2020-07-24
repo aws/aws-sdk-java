@@ -20,16 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ModelVersionStatus {
 
-    TRAINING_IN_PROGRESS("TRAINING_IN_PROGRESS"),
-    TRAINING_COMPLETE("TRAINING_COMPLETE"),
-    ACTIVATE_REQUESTED("ACTIVATE_REQUESTED"),
-    ACTIVATE_IN_PROGRESS("ACTIVATE_IN_PROGRESS"),
     ACTIVE("ACTIVE"),
-    INACTIVATE_IN_PROGRESS("INACTIVATE_IN_PROGRESS"),
-    INACTIVE("INACTIVE"),
-    DELETE_REQUESTED("DELETE_REQUESTED"),
-    DELETE_IN_PROGRESS("DELETE_IN_PROGRESS"),
-    ERROR("ERROR");
+    INACTIVE("INACTIVE");
 
     private String value;
 

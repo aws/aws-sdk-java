@@ -48,6 +48,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     private String workteamArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     */
+    private String workforceArn;
+    /**
+     * <p>
      * The Amazon Marketplace identifier for a vendor's work team.
      * </p>
      */
@@ -230,6 +236,46 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     public Workteam withWorkteamArn(String workteamArn) {
         setWorkteamArn(workteamArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     * 
+     * @param workforceArn
+     *        The Amazon Resource Name (ARN) of the workforce.
+     */
+
+    public void setWorkforceArn(String workforceArn) {
+        this.workforceArn = workforceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the workforce.
+     */
+
+    public String getWorkforceArn() {
+        return this.workforceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the workforce.
+     * </p>
+     * 
+     * @param workforceArn
+     *        The Amazon Resource Name (ARN) of the workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workteam withWorkforceArn(String workforceArn) {
+        setWorkforceArn(workforceArn);
         return this;
     }
 
@@ -521,6 +567,8 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
             sb.append("MemberDefinitions: ").append(getMemberDefinitions()).append(",");
         if (getWorkteamArn() != null)
             sb.append("WorkteamArn: ").append(getWorkteamArn()).append(",");
+        if (getWorkforceArn() != null)
+            sb.append("WorkforceArn: ").append(getWorkforceArn()).append(",");
         if (getProductListingIds() != null)
             sb.append("ProductListingIds: ").append(getProductListingIds()).append(",");
         if (getDescription() != null)
@@ -559,6 +607,10 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkteamArn() != null && other.getWorkteamArn().equals(this.getWorkteamArn()) == false)
             return false;
+        if (other.getWorkforceArn() == null ^ this.getWorkforceArn() == null)
+            return false;
+        if (other.getWorkforceArn() != null && other.getWorkforceArn().equals(this.getWorkforceArn()) == false)
+            return false;
         if (other.getProductListingIds() == null ^ this.getProductListingIds() == null)
             return false;
         if (other.getProductListingIds() != null && other.getProductListingIds().equals(this.getProductListingIds()) == false)
@@ -594,6 +646,7 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWorkteamName() == null) ? 0 : getWorkteamName().hashCode());
         hashCode = prime * hashCode + ((getMemberDefinitions() == null) ? 0 : getMemberDefinitions().hashCode());
         hashCode = prime * hashCode + ((getWorkteamArn() == null) ? 0 : getWorkteamArn().hashCode());
+        hashCode = prime * hashCode + ((getWorkforceArn() == null) ? 0 : getWorkforceArn().hashCode());
         hashCode = prime * hashCode + ((getProductListingIds() == null) ? 0 : getProductListingIds().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSubDomain() == null) ? 0 : getSubDomain().hashCode());

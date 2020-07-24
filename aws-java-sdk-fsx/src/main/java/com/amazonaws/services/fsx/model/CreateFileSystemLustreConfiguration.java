@@ -80,11 +80,6 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
      * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
-     * <note>
-     * <p>
-     * This option can only be set for for PERSISTENT_1 deployments types.
-     * </p>
-     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -107,36 +102,38 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
     private String deploymentType;
     /**
      * <p>
-     * Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * You can set the policy to have one the following values:
+     * (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3 data
+     * repository. You use AutoImport to update the contents of your FSx for Lustre file system automatically with
+     * changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      */
     private String autoImportPolicy;
     /**
@@ -163,6 +160,10 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified
      * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
      * copied from the file system, regardless of this value.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
      * </p>
      */
     private Boolean copyTagsToBackups;
@@ -468,11 +469,6 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
      * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
-     * <note>
-     * <p>
-     * This option can only be set for for PERSISTENT_1 deployments types.
-     * </p>
-     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -495,11 +491,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * @param deploymentType
      *        Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
      *        and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
-     *        <p>
-     *        This option can only be set for for PERSISTENT_1 deployments types.
-     *        </p>
-     *        </note>
+     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      *        <p>
      *        Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *        data in transit. To learn more about deployment types, see <a
@@ -530,11 +522,6 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
      * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
-     * <note>
-     * <p>
-     * This option can only be set for for PERSISTENT_1 deployments types.
-     * </p>
-     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -556,11 +543,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * 
      * @return Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
      *         and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     *         encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
-     *         <p>
-     *         This option can only be set for for PERSISTENT_1 deployments types.
-     *         </p>
-     *         </note>
+     *         encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      *         <p>
      *         Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *         data in transit. To learn more about deployment types, see <a
@@ -591,11 +574,6 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
      * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
-     * <note>
-     * <p>
-     * This option can only be set for for PERSISTENT_1 deployments types.
-     * </p>
-     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -618,11 +596,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * @param deploymentType
      *        Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
      *        and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
-     *        <p>
-     *        This option can only be set for for PERSISTENT_1 deployments types.
-     *        </p>
-     *        </note>
+     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      *        <p>
      *        Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *        data in transit. To learn more about deployment types, see <a
@@ -655,11 +629,6 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit encryption of
      * data and higher burst throughput capacity than <code>SCRATCH_1</code>.
      * </p>
-     * <note>
-     * <p>
-     * This option can only be set for for PERSISTENT_1 deployments types.
-     * </p>
-     * </note>
      * <p>
      * Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of data in
      * transit. To learn more about deployment types, see <a
@@ -682,11 +651,7 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * @param deploymentType
      *        Choose <code>SCRATCH_1</code> and <code>SCRATCH_2</code> deployment types when you need temporary storage
      *        and shorter-term processing of data. The <code>SCRATCH_2</code> deployment type provides in-transit
-     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p> <note>
-     *        <p>
-     *        This option can only be set for for PERSISTENT_1 deployments types.
-     *        </p>
-     *        </note>
+     *        encryption of data and higher burst throughput capacity than <code>SCRATCH_1</code>.</p>
      *        <p>
      *        Choose <code>PERSISTENT_1</code> deployment type for longer-term storage and workloads and encryption of
      *        data in transit. To learn more about deployment types, see <a
@@ -715,68 +680,71 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * You can set the policy to have one the following values:
+     * (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3 data
+     * repository. You use AutoImport to update the contents of your FSx for Lustre file system automatically with
+     * changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
      * @param autoImportPolicy
-     *        Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file
-     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *        repository. You can set the policy to have one the following values:</p>
+     *        (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3
+     *        data repository. You use AutoImport to update the contents of your FSx for Lustre file system
+     *        automatically with changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can
+     *        have the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be
-     *        reflected on the FSx file system.
+     *        <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *        on the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
-     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *        system.
+     *        <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *        in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *        FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
-     *        system.
+     *        <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *        currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *        linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *        data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *        deleted files in the linked S3 repository will be imported to the FSx file system.
-     *        </p>
-     *        </li>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *        updates from your S3 bucket</a>.
      * @see AutoImportPolicyType
      */
 
@@ -786,67 +754,70 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * You can set the policy to have one the following values:
+     * (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3 data
+     * repository. You use AutoImport to update the contents of your FSx for Lustre file system automatically with
+     * changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
-     * @return Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file
-     *         system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *         repository. You can set the policy to have one the following values:</p>
+     * @return (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3
+     *         data repository. You use AutoImport to update the contents of your FSx for Lustre file system
+     *         automatically with changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can
+     *         have the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be
-     *         reflected on the FSx file system.
+     *         <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *         on the FSx file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported
-     *         to the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *         system.
+     *         <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *         in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *         FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *         S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx
-     *         file system.
+     *         <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *         currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *         linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *         data repository are not deleted from the FSx file system.
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *         deleted files in the linked S3 repository will be imported to the FSx file system.
-     *         </p>
-     *         </li>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *         updates from your S3 bucket</a>.
      * @see AutoImportPolicyType
      */
 
@@ -856,68 +827,71 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * You can set the policy to have one the following values:
+     * (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3 data
+     * repository. You use AutoImport to update the contents of your FSx for Lustre file system automatically with
+     * changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
      * @param autoImportPolicy
-     *        Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file
-     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *        repository. You can set the policy to have one the following values:</p>
+     *        (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3
+     *        data repository. You use AutoImport to update the contents of your FSx for Lustre file system
+     *        automatically with changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can
+     *        have the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be
-     *        reflected on the FSx file system.
+     *        <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *        on the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
-     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *        system.
+     *        <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *        in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *        FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
-     *        system.
+     *        <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *        currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *        linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *        data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *        deleted files in the linked S3 repository will be imported to the FSx file system.
-     *        </p>
-     *        </li>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *        updates from your S3 bucket</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */
@@ -929,68 +903,71 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * You can set the policy to have one the following values:
+     * (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3 data
+     * repository. You use AutoImport to update the contents of your FSx for Lustre file system automatically with
+     * changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
      * @param autoImportPolicy
-     *        Use this property to turn the Autoimport feature on and off. AutoImport enables your FSx for Lustre file
-     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *        repository. You can set the policy to have one the following values:</p>
+     *        (Optional) Use this property to configure the AutoImport feature on the file system's linked Amazon S3
+     *        data repository. You use AutoImport to update the contents of your FSx for Lustre file system
+     *        automatically with changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can
+     *        have the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - (Default) Autoimport is turned off. Changes to your S3 repository will not be
-     *        reflected on the FSx file system.
+     *        <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *        on the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
-     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *        system.
+     *        <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *        in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *        FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
-     *        system.
+     *        <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *        currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *        linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *        data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *        deleted files in the linked S3 repository will be imported to the FSx file system.
-     *        </p>
-     *        </li>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *        updates from your S3 bucket</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */
@@ -1139,13 +1116,20 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
      * copied from the file system, regardless of this value.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
+     * </p>
      * 
      * @param copyTagsToBackups
      *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
      *        more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
-     *        user-initiated backup, no tags are copied from the file system, regardless of this value.
+     *        user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
      */
 
     public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
@@ -1160,12 +1144,20 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
      * copied from the file system, regardless of this value.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
+     * </p>
      * 
      * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
      *         more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
-     *         user-initiated backup, no tags are copied from the file system, regardless of this value.
+     *         user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with
+     *         backups</a>.
      */
 
     public Boolean getCopyTagsToBackups() {
@@ -1180,13 +1172,20 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
      * copied from the file system, regardless of this value.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
+     * </p>
      * 
      * @param copyTagsToBackups
      *        A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *        defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *        user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
      *        more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
-     *        user-initiated backup, no tags are copied from the file system, regardless of this value.
+     *        user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1203,12 +1202,20 @@ public class CreateFileSystemLustreConfiguration implements Serializable, Clonea
      * tags are copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are
      * copied from the file system, regardless of this value.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with backups</a>.
+     * </p>
      * 
      * @return A boolean flag indicating whether tags for the file system should be copied to backups. This value
      *         defaults to false. If it's set to true, all tags for the file system are copied to all automatic and
      *         user-initiated backups where the user doesn't specify tags. If this value is true, and you specify one or
      *         more tags, only the specified tags are copied to backups. If you specify one or more tags when creating a
-     *         user-initiated backup, no tags are copied from the file system, regardless of this value.
+     *         user-initiated backup, no tags are copied from the file system, regardless of this value.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with
+     *         backups</a>.
      */
 
     public Boolean isCopyTagsToBackups() {

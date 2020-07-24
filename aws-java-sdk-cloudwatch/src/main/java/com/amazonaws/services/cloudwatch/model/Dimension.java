@@ -17,7 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Expands the identity of a metric.
+ * A dimension is a name/value pair that is part of the identity of a metric. You can assign up to 10 dimensions to a
+ * metric. Because dimensions are part of the unique identifier for a metric, whenever you add a unique name/value pair
+ * to one of your metrics, you are creating a new variation of that metric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/Dimension" target="_top">AWS API
@@ -28,24 +30,24 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension.
+     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The value representing the dimension measurement.
+     * The value of the dimension.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The name of the dimension.
+     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      * </p>
      * 
      * @param name
-     *        The name of the dimension.
+     *        The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      */
 
     public void setName(String name) {
@@ -54,10 +56,10 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension.
+     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      * </p>
      * 
-     * @return The name of the dimension.
+     * @return The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      */
 
     public String getName() {
@@ -66,11 +68,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the dimension.
+     * The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      * </p>
      * 
      * @param name
-     *        The name of the dimension.
+     *        The name of the dimension. Dimension names cannot contain blank spaces or non-ASCII characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +83,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value representing the dimension measurement.
+     * The value of the dimension.
      * </p>
      * 
      * @param value
-     *        The value representing the dimension measurement.
+     *        The value of the dimension.
      */
 
     public void setValue(String value) {
@@ -94,10 +96,10 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value representing the dimension measurement.
+     * The value of the dimension.
      * </p>
      * 
-     * @return The value representing the dimension measurement.
+     * @return The value of the dimension.
      */
 
     public String getValue() {
@@ -106,11 +108,11 @@ public class Dimension implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value representing the dimension measurement.
+     * The value of the dimension.
      * </p>
      * 
      * @param value
-     *        The value representing the dimension measurement.
+     *        The value of the dimension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

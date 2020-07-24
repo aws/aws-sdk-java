@@ -64,6 +64,10 @@ public class EntitlementJsonUnmarshaller implements Unmarshaller<Entitlement, Js
                     context.nextToken();
                     entitlement.setEntitlementArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("entitlementStatus", targetDepth)) {
+                    context.nextToken();
+                    entitlement.setEntitlementStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     entitlement.setName(context.getUnmarshaller(String.class).unmarshall(context));

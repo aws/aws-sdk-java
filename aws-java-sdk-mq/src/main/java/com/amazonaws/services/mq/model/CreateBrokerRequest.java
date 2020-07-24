@@ -26,6 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The authentication strategy used to secure the broker. */
+    private String authenticationStrategy;
     /**
      * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
      * automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
@@ -58,6 +60,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String engineVersion;
     /** Required. The broker's instance type. */
     private String hostInstanceType;
+    /** The metadata of the LDAP server used to authenticate and authorize connections to the broker. */
+    private LdapServerMetadataInput ldapServerMetadata;
     /** Enables Amazon CloudWatch logging for brokers. */
     private Logs logs;
     /** The parameters that determine the WeeklyStartTime. */
@@ -82,6 +86,57 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 2-100 characters long.
      */
     private java.util.List<User> users;
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @see AuthenticationStrategy
+     */
+
+    public void setAuthenticationStrategy(String authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @return The authentication strategy used to secure the broker.
+     * @see AuthenticationStrategy
+     */
+
+    public String getAuthenticationStrategy() {
+        return this.authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public CreateBrokerRequest withAuthenticationStrategy(String authenticationStrategy) {
+        setAuthenticationStrategy(authenticationStrategy);
+        return this;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public CreateBrokerRequest withAuthenticationStrategy(AuthenticationStrategy authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy.toString();
+        return this;
+    }
 
     /**
      * Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The
@@ -468,6 +523,40 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     public CreateBrokerRequest withHostInstanceType(String hostInstanceType) {
         setHostInstanceType(hostInstanceType);
+        return this;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @param ldapServerMetadata
+     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     */
+
+    public void setLdapServerMetadata(LdapServerMetadataInput ldapServerMetadata) {
+        this.ldapServerMetadata = ldapServerMetadata;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @return The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     */
+
+    public LdapServerMetadataInput getLdapServerMetadata() {
+        return this.ldapServerMetadata;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @param ldapServerMetadata
+     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBrokerRequest withLdapServerMetadata(LdapServerMetadataInput ldapServerMetadata) {
+        setLdapServerMetadata(ldapServerMetadata);
         return this;
     }
 
@@ -926,6 +1015,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationStrategy() != null)
+            sb.append("AuthenticationStrategy: ").append(getAuthenticationStrategy()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
             sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getBrokerName() != null)
@@ -944,6 +1035,8 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getHostInstanceType() != null)
             sb.append("HostInstanceType: ").append(getHostInstanceType()).append(",");
+        if (getLdapServerMetadata() != null)
+            sb.append("LdapServerMetadata: ").append(getLdapServerMetadata()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs()).append(",");
         if (getMaintenanceWindowStartTime() != null)
@@ -974,6 +1067,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof CreateBrokerRequest == false)
             return false;
         CreateBrokerRequest other = (CreateBrokerRequest) obj;
+        if (other.getAuthenticationStrategy() == null ^ this.getAuthenticationStrategy() == null)
+            return false;
+        if (other.getAuthenticationStrategy() != null && other.getAuthenticationStrategy().equals(this.getAuthenticationStrategy()) == false)
+            return false;
         if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
         if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
@@ -1009,6 +1106,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getHostInstanceType() == null ^ this.getHostInstanceType() == null)
             return false;
         if (other.getHostInstanceType() != null && other.getHostInstanceType().equals(this.getHostInstanceType()) == false)
+            return false;
+        if (other.getLdapServerMetadata() == null ^ this.getLdapServerMetadata() == null)
+            return false;
+        if (other.getLdapServerMetadata() != null && other.getLdapServerMetadata().equals(this.getLdapServerMetadata()) == false)
             return false;
         if (other.getLogs() == null ^ this.getLogs() == null)
             return false;
@@ -1050,6 +1151,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationStrategy() == null) ? 0 : getAuthenticationStrategy().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getBrokerName() == null) ? 0 : getBrokerName().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
@@ -1059,6 +1161,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getLdapServerMetadata() == null) ? 0 : getLdapServerMetadata().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());

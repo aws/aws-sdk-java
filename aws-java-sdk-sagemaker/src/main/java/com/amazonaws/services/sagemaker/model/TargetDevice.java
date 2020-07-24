@@ -27,6 +27,7 @@ public enum TargetDevice {
     Ml_c5("ml_c5"),
     Ml_p2("ml_p2"),
     Ml_p3("ml_p3"),
+    Ml_g4dn("ml_g4dn"),
     Ml_inf1("ml_inf1"),
     Jetson_tx1("jetson_tx1"),
     Jetson_tx2("jetson_tx2"),
@@ -42,7 +43,9 @@ public enum TargetDevice {
     Qcs605("qcs605"),
     Qcs603("qcs603"),
     Sitara_am57x("sitara_am57x"),
-    Amba_cv22("amba_cv22");
+    Amba_cv22("amba_cv22"),
+    X86_win32("x86_win32"),
+    X86_win64("x86_win64");
 
     private String value;
 

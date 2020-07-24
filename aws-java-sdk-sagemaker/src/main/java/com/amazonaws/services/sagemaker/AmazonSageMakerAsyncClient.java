@@ -1020,6 +1020,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkforceResult> createWorkforceAsync(CreateWorkforceRequest request) {
+
+        return createWorkforceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkforceResult> createWorkforceAsync(final CreateWorkforceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWorkforceRequest, CreateWorkforceResult> asyncHandler) {
+        final CreateWorkforceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWorkforceResult>() {
+            @Override
+            public CreateWorkforceResult call() throws Exception {
+                CreateWorkforceResult result = null;
+
+                try {
+                    result = executeCreateWorkforce(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkteamResult> createWorkteamAsync(CreateWorkteamRequest request) {
 
         return createWorkteamAsync(request, null);
@@ -1633,6 +1666,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDeleteUserProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkforceResult> deleteWorkforceAsync(DeleteWorkforceRequest request) {
+
+        return deleteWorkforceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkforceResult> deleteWorkforceAsync(final DeleteWorkforceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWorkforceRequest, DeleteWorkforceResult> asyncHandler) {
+        final DeleteWorkforceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWorkforceResult>() {
+            @Override
+            public DeleteWorkforceResult call() throws Exception {
+                DeleteWorkforceResult result = null;
+
+                try {
+                    result = executeDeleteWorkforce(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3621,6 +3687,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListUserProfiles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkforcesResult> listWorkforcesAsync(ListWorkforcesRequest request) {
+
+        return listWorkforcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkforcesResult> listWorkforcesAsync(final ListWorkforcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWorkforcesRequest, ListWorkforcesResult> asyncHandler) {
+        final ListWorkforcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWorkforcesResult>() {
+            @Override
+            public ListWorkforcesResult call() throws Exception {
+                ListWorkforcesResult result = null;
+
+                try {
+                    result = executeListWorkforces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

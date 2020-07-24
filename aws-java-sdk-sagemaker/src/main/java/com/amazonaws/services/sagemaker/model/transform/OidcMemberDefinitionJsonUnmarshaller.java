@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.frauddetector.model.transform;
+package com.amazonaws.services.sagemaker.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.frauddetector.model.*;
+import com.amazonaws.services.sagemaker.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * GetPredictionResult JSON Unmarshaller
+ * OidcMemberDefinition JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetPredictionResultJsonUnmarshaller implements Unmarshaller<GetPredictionResult, JsonUnmarshallerContext> {
+public class OidcMemberDefinitionJsonUnmarshaller implements Unmarshaller<OidcMemberDefinition, JsonUnmarshallerContext> {
 
-    public GetPredictionResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        GetPredictionResult getPredictionResult = new GetPredictionResult();
+    public OidcMemberDefinition unmarshall(JsonUnmarshallerContext context) throws Exception {
+        OidcMemberDefinition oidcMemberDefinition = new OidcMemberDefinition();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class GetPredictionResultJsonUnmarshaller implements Unmarshaller<GetPred
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return getPredictionResult;
+            return null;
         }
 
         while (true) {
@@ -48,21 +48,9 @@ public class GetPredictionResultJsonUnmarshaller implements Unmarshaller<GetPred
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("outcomes", targetDepth)) {
+                if (context.testExpression("Groups", targetDepth)) {
                     context.nextToken();
-                    getPredictionResult.setOutcomes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("modelScores", targetDepth)) {
-                    context.nextToken();
-                    getPredictionResult.setModelScores(new ListUnmarshaller<ModelScores>(ModelScoresJsonUnmarshaller.getInstance())
-
-                    .unmarshall(context));
-                }
-                if (context.testExpression("ruleResults", targetDepth)) {
-                    context.nextToken();
-                    getPredictionResult.setRuleResults(new ListUnmarshaller<RuleResult>(RuleResultJsonUnmarshaller.getInstance())
+                    oidcMemberDefinition.setGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
 
                     .unmarshall(context));
                 }
@@ -75,14 +63,14 @@ public class GetPredictionResultJsonUnmarshaller implements Unmarshaller<GetPred
             token = context.nextToken();
         }
 
-        return getPredictionResult;
+        return oidcMemberDefinition;
     }
 
-    private static GetPredictionResultJsonUnmarshaller instance;
+    private static OidcMemberDefinitionJsonUnmarshaller instance;
 
-    public static GetPredictionResultJsonUnmarshaller getInstance() {
+    public static OidcMemberDefinitionJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new GetPredictionResultJsonUnmarshaller();
+            instance = new OidcMemberDefinitionJsonUnmarshaller();
         return instance;
     }
 }

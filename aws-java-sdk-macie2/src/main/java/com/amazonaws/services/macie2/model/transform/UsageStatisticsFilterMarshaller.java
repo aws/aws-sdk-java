@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UsageStatisticsFilterMarshaller {
 
+    private static final MarshallingInfo<String> COMPARATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("comparator").build();
     private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("key").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,7 @@ public class UsageStatisticsFilterMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(usageStatisticsFilter.getComparator(), COMPARATOR_BINDING);
             protocolMarshaller.marshall(usageStatisticsFilter.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(usageStatisticsFilter.getValues(), VALUES_BINDING);
         } catch (Exception e) {

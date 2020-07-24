@@ -30,6 +30,8 @@ public class CreateWorkteamRequestMarshaller {
 
     private static final MarshallingInfo<String> WORKTEAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkteamName").build();
+    private static final MarshallingInfo<String> WORKFORCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceName").build();
     private static final MarshallingInfo<List> MEMBERDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemberDefinitions").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -56,6 +58,7 @@ public class CreateWorkteamRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createWorkteamRequest.getWorkteamName(), WORKTEAMNAME_BINDING);
+            protocolMarshaller.marshall(createWorkteamRequest.getWorkforceName(), WORKFORCENAME_BINDING);
             protocolMarshaller.marshall(createWorkteamRequest.getMemberDefinitions(), MEMBERDEFINITIONS_BINDING);
             protocolMarshaller.marshall(createWorkteamRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createWorkteamRequest.getNotificationConfiguration(), NOTIFICATIONCONFIGURATION_BINDING);

@@ -27,6 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** The authentication strategy associated with the configuration. */
+    private String authenticationStrategy;
     /** Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ. */
     private String engineType;
     /**
@@ -41,6 +43,57 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     private String name;
     /** Create tags when creating the configuration. */
     private java.util.Map<String, String> tags;
+
+    /**
+     * The authentication strategy associated with the configuration.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy associated with the configuration.
+     * @see AuthenticationStrategy
+     */
+
+    public void setAuthenticationStrategy(String authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     * 
+     * @return The authentication strategy associated with the configuration.
+     * @see AuthenticationStrategy
+     */
+
+    public String getAuthenticationStrategy() {
+        return this.authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy associated with the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public CreateConfigurationRequest withAuthenticationStrategy(String authenticationStrategy) {
+        setAuthenticationStrategy(authenticationStrategy);
+        return this;
+    }
+
+    /**
+     * The authentication strategy associated with the configuration.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy associated with the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public CreateConfigurationRequest withAuthenticationStrategy(AuthenticationStrategy authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy.toString();
+        return this;
+    }
 
     /**
      * Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
@@ -247,6 +300,8 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationStrategy() != null)
+            sb.append("AuthenticationStrategy: ").append(getAuthenticationStrategy()).append(",");
         if (getEngineType() != null)
             sb.append("EngineType: ").append(getEngineType()).append(",");
         if (getEngineVersion() != null)
@@ -269,6 +324,10 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof CreateConfigurationRequest == false)
             return false;
         CreateConfigurationRequest other = (CreateConfigurationRequest) obj;
+        if (other.getAuthenticationStrategy() == null ^ this.getAuthenticationStrategy() == null)
+            return false;
+        if (other.getAuthenticationStrategy() != null && other.getAuthenticationStrategy().equals(this.getAuthenticationStrategy()) == false)
+            return false;
         if (other.getEngineType() == null ^ this.getEngineType() == null)
             return false;
         if (other.getEngineType() != null && other.getEngineType().equals(this.getEngineType()) == false)
@@ -293,6 +352,7 @@ public class CreateConfigurationRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationStrategy() == null) ? 0 : getAuthenticationStrategy().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

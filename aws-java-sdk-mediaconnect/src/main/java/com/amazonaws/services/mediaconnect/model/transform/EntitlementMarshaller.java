@@ -36,6 +36,8 @@ public class EntitlementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<String> ENTITLEMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entitlementArn").build();
+    private static final MarshallingInfo<String> ENTITLEMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entitlementStatus").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<List> SUBSCRIBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +63,7 @@ public class EntitlementMarshaller {
             protocolMarshaller.marshall(entitlement.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(entitlement.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(entitlement.getEntitlementArn(), ENTITLEMENTARN_BINDING);
+            protocolMarshaller.marshall(entitlement.getEntitlementStatus(), ENTITLEMENTSTATUS_BINDING);
             protocolMarshaller.marshall(entitlement.getName(), NAME_BINDING);
             protocolMarshaller.marshall(entitlement.getSubscribers(), SUBSCRIBERS_BINDING);
         } catch (Exception e) {

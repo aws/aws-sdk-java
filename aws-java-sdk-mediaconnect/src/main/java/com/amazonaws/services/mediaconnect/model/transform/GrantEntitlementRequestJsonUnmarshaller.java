@@ -60,6 +60,10 @@ public class GrantEntitlementRequestJsonUnmarshaller implements Unmarshaller<Gra
                     context.nextToken();
                     grantEntitlementRequest.setEncryption(EncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("entitlementStatus", targetDepth)) {
+                    context.nextToken();
+                    grantEntitlementRequest.setEntitlementStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     grantEntitlementRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));

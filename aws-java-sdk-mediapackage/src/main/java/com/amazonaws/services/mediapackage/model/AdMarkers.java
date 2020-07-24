@@ -22,7 +22,8 @@ public enum AdMarkers {
 
     NONE("NONE"),
     SCTE35_ENHANCED("SCTE35_ENHANCED"),
-    PASSTHROUGH("PASSTHROUGH");
+    PASSTHROUGH("PASSTHROUGH"),
+    DATERANGE("DATERANGE");
 
     private String value;
 

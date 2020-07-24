@@ -36,7 +36,9 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The data type of the variable.
+     * The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      */
     private String dataType;
@@ -129,11 +131,15 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable.
+     * The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
      * @param dataType
-     *        The data type of the variable.
+     *        The data type of the variable. For more information see <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *        types</a>.
      * @see DataType
      */
 
@@ -143,10 +149,14 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable.
+     * The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
-     * @return The data type of the variable.
+     * @return The data type of the variable. For more information see <a
+     *         href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *         types</a>.
      * @see DataType
      */
 
@@ -156,11 +166,15 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable.
+     * The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
      * @param dataType
-     *        The data type of the variable.
+     *        The data type of the variable. For more information see <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *        types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataType
      */
@@ -172,11 +186,15 @@ public class Variable implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data type of the variable.
+     * The data type of the variable. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
      * @param dataType
-     *        The data type of the variable.
+     *        The data type of the variable. For more information see <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *        types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataType
      */

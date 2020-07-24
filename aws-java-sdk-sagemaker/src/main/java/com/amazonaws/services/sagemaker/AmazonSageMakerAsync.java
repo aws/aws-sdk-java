@@ -344,7 +344,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation job</code>
+     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation
+     * job.
      * </p>
      * </li>
      * </ul>
@@ -397,7 +398,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation job</code>
+     * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker assumes to perform the model compilation
+     * job.
      * </p>
      * </li>
      * </ul>
@@ -729,7 +731,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
+     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
      * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
      * machine learning model.
      * </p>
@@ -767,7 +769,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
+     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
      * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
      * machine learning model.
      * </p>
@@ -1997,6 +1999,73 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Use this operation to create a workforce. This operation will return an error if a workforce already exists in
+     * the AWS Region that you specify. You can only create one workforce in each AWS Region.
+     * </p>
+     * <p>
+     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use the API
+     * operation to delete the existing workforce and then use this operation to create a new workforce.
+     * </p>
+     * <p>
+     * To create a private workforce using Amazon Cognito, you must specify a Cognito user pool in
+     * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce using the Amazon SageMaker console.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html"> Create a Private
+     * Workforce (Amazon Cognito)</a>.
+     * </p>
+     * <p>
+     * To create a private workforce using your own OIDC Identity Provider (IdP), specify your IdP configuration in
+     * <code>OidcConfig</code>. You must create a OIDC IdP workforce using this API operation. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html"> Create a
+     * Private Workforce (OIDC IdP)</a>.
+     * </p>
+     * 
+     * @param createWorkforceRequest
+     * @return A Java Future containing the result of the CreateWorkforce operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkforceResult> createWorkforceAsync(CreateWorkforceRequest createWorkforceRequest);
+
+    /**
+     * <p>
+     * Use this operation to create a workforce. This operation will return an error if a workforce already exists in
+     * the AWS Region that you specify. You can only create one workforce in each AWS Region.
+     * </p>
+     * <p>
+     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use the API
+     * operation to delete the existing workforce and then use this operation to create a new workforce.
+     * </p>
+     * <p>
+     * To create a private workforce using Amazon Cognito, you must specify a Cognito user pool in
+     * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce using the Amazon SageMaker console.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html"> Create a Private
+     * Workforce (Amazon Cognito)</a>.
+     * </p>
+     * <p>
+     * To create a private workforce using your own OIDC Identity Provider (IdP), specify your IdP configuration in
+     * <code>OidcConfig</code>. You must create a OIDC IdP workforce using this API operation. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html"> Create a
+     * Private Workforce (OIDC IdP)</a>.
+     * </p>
+     * 
+     * @param createWorkforceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWorkforce operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWorkforceResult> createWorkforceAsync(CreateWorkforceRequest createWorkforceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWorkforceRequest, CreateWorkforceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user pools.
      * You must first create the user pools before you can create a work team.
      * </p>
@@ -2316,7 +2385,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+     * Use this operation to delete a human task user interface (worker task template).
      * </p>
      * <p>
      * To see a list of human task user interfaces (work task templates) in your account, use . When you delete a worker
@@ -2333,7 +2402,7 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Use this operation to delete a worker task template (<code>HumanTaskUi</code>).
+     * Use this operation to delete a human task user interface (worker task template).
      * </p>
      * <p>
      * To see a list of human task user interfaces (work task templates) in your account, use . When you delete a worker
@@ -2689,6 +2758,45 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteUserProfileResult> deleteUserProfileAsync(DeleteUserProfileRequest deleteUserProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserProfileRequest, DeleteUserProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this operation to delete a workforce.
+     * </p>
+     * <p>
+     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use this operation
+     * to delete the existing workforce and then use to create a new workforce.
+     * </p>
+     * 
+     * @param deleteWorkforceRequest
+     * @return A Java Future containing the result of the DeleteWorkforce operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkforceResult> deleteWorkforceAsync(DeleteWorkforceRequest deleteWorkforceRequest);
+
+    /**
+     * <p>
+     * Use this operation to delete a workforce.
+     * </p>
+     * <p>
+     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use this operation
+     * to delete the existing workforce and then use to create a new workforce.
+     * </p>
+     * 
+     * @param deleteWorkforceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWorkforce operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteWorkforce
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWorkforceResult> deleteWorkforceAsync(DeleteWorkforceRequest deleteWorkforceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorkforceRequest, DeleteWorkforceResult> asyncHandler);
 
     /**
      * <p>
@@ -4709,6 +4817,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListUserProfilesResult> listUserProfilesAsync(ListUserProfilesRequest listUserProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<ListUserProfilesRequest, ListUserProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use this operation to list all private and vendor workforces in an AWS Region. Note that you can only have one
+     * private workforce per AWS Region.
+     * </p>
+     * 
+     * @param listWorkforcesRequest
+     * @return A Java Future containing the result of the ListWorkforces operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListWorkforces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkforcesResult> listWorkforcesAsync(ListWorkforcesRequest listWorkforcesRequest);
+
+    /**
+     * <p>
+     * Use this operation to list all private and vendor workforces in an AWS Region. Note that you can only have one
+     * private workforce per AWS Region.
+     * </p>
+     * 
+     * @param listWorkforcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWorkforces operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListWorkforces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListWorkforces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWorkforcesResult> listWorkforcesAsync(ListWorkforcesRequest listWorkforcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWorkforcesRequest, ListWorkforcesResult> asyncHandler);
 
     /**
      * <p>

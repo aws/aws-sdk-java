@@ -23,7 +23,9 @@ import javax.annotation.Generated;
 public enum UsageStatisticsSortKey {
 
     AccountId("accountId"),
-    Total("total");
+    Total("total"),
+    ServiceLimitValue("serviceLimitValue"),
+    FreeTrialStartDate("freeTrialStartDate");
 
     private String value;
 

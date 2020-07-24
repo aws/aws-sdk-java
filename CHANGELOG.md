@@ -1,3 +1,40 @@
+# __1.11.827__ __2020-07-24__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - The release adds daterange as a new ad marker option. This option enables MediaPackage to insert EXT-X-DATERANGE tags in HLS and CMAF manifests. The EXT-X-DATERANGE tag is used to signal ad and program transition events.
+
+## __AWS MediaConnect__
+  - ### Features
+    - You can now disable an entitlement to stop streaming content to the subscriber's flow temporarily. When you are ready to allow content to start streaming to the subscriber's flow again, you can enable the entitlement.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now supports sorting query results based on document attributes. Amazon Kendra also introduced an option to enclose table and column names with double quotes for database data sources. 
+
+## __Amazon CloudWatch__
+  - ### Features
+    - AWS CloudWatch ListMetrics now supports an optional parameter (RecentlyActive) to filter results by only metrics that have received new datapoints in the past 3 hours. This enables more targeted metric data retrieval through the Get APIs
+
+## __Amazon FSx__
+  - ### Features
+    - Documentation update for FSx for Lustre
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - GetPrediction has been replaced with GetEventPrediction. PutExternalModel has been simplified to accept a role ARN.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API introduces additional criteria for sorting and filtering query results for account quotas and usage statistics.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Sagemaker Ground Truth:Added support for OIDC (OpenID Connect) to authenticate workers via their own identity provider instead of through Amazon Cognito. This release adds new APIs (CreateWorkforce, DeleteWorkforce, and ListWorkforces) to SageMaker Ground Truth service.  Sagemaker Neo: Added support for detailed target device description by using TargetPlatform fields - OS, architecture, and accelerator. Added support for additional compilation parameters by using JSON field CompilerOptions.  Sagemaker Search: SageMaker Search supports transform job details in trial components.
+
+## __AmazonMQ__
+  - ### Features
+    - Amazon MQ now supports LDAP (Lightweight Directory Access Protocol), providing authentication and authorization of Amazon MQ users via a customer designated LDAP server.
+
 # __1.11.826__ __2020-07-23__
 ## __AWS Config__
   - ### Features

@@ -50,7 +50,7 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
     private String alarmDescription;
     /**
      * <p>
-     * The name for the composite alarm. This name must be unique within your AWS account.
+     * The name for the composite alarm. This name must be unique within the Region.
      * </p>
      */
     private String alarmName;
@@ -369,11 +369,11 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name for the composite alarm. This name must be unique within your AWS account.
+     * The name for the composite alarm. This name must be unique within the Region.
      * </p>
      * 
      * @param alarmName
-     *        The name for the composite alarm. This name must be unique within your AWS account.
+     *        The name for the composite alarm. This name must be unique within the Region.
      */
 
     public void setAlarmName(String alarmName) {
@@ -382,10 +382,10 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name for the composite alarm. This name must be unique within your AWS account.
+     * The name for the composite alarm. This name must be unique within the Region.
      * </p>
      * 
-     * @return The name for the composite alarm. This name must be unique within your AWS account.
+     * @return The name for the composite alarm. This name must be unique within the Region.
      */
 
     public String getAlarmName() {
@@ -394,11 +394,11 @@ public class PutCompositeAlarmRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name for the composite alarm. This name must be unique within your AWS account.
+     * The name for the composite alarm. This name must be unique within the Region.
      * </p>
      * 
      * @param alarmName
-     *        The name for the composite alarm. This name must be unique within your AWS account.
+     *        The name for the composite alarm. This name must be unique within the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

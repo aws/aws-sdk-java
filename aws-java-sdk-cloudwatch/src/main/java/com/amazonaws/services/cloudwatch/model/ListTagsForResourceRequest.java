@@ -38,7 +38,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      * </p>
      * <p>
-     * For more information on ARN format, see <a href=
+     * For more information about ARN format, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
@@ -58,7 +58,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      * </p>
      * <p>
-     * For more information on ARN format, see <a href=
+     * For more information about ARN format, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
@@ -74,7 +74,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      *        </p>
      *        <p>
-     *        For more information on ARN format, see <a href=
+     *        For more information about ARN format, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      *        > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      */
@@ -96,7 +96,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      * </p>
      * <p>
-     * For more information on ARN format, see <a href=
+     * For more information about ARN format, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
@@ -111,7 +111,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *         <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      *         </p>
      *         <p>
-     *         For more information on ARN format, see <a href=
+     *         For more information about ARN format, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      *         > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      */
@@ -133,7 +133,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      * </p>
      * <p>
-     * For more information on ARN format, see <a href=
+     * For more information about ARN format, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      * > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
@@ -149,7 +149,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      *        <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule:<i>insight-rule-name</i> </code>
      *        </p>
      *        <p>
-     *        For more information on ARN format, see <a href=
+     *        For more information about ARN format, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies"
      *        > Resource Types Defined by Amazon CloudWatch</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -60,10 +60,28 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
     private java.util.Date compilationEndTime;
     /**
      * <p>
-     * The type of device that the model will run on after compilation has completed.
+     * The type of device that the model will run on after the compilation job has completed.
      * </p>
      */
     private String compilationTargetDevice;
+    /**
+     * <p>
+     * The type of OS that the model will run on after the compilation job has completed.
+     * </p>
+     */
+    private String compilationTargetPlatformOs;
+    /**
+     * <p>
+     * The type of architecture that the model will run on after the compilation job has completed.
+     * </p>
+     */
+    private String compilationTargetPlatformArch;
+    /**
+     * <p>
+     * The type of accelerator that the model will run on after the compilation job has completed.
+     * </p>
+     */
+    private String compilationTargetPlatformAccelerator;
     /**
      * <p>
      * The time when the model compilation job was last modified.
@@ -279,11 +297,11 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of device that the model will run on after compilation has completed.
+     * The type of device that the model will run on after the compilation job has completed.
      * </p>
      * 
      * @param compilationTargetDevice
-     *        The type of device that the model will run on after compilation has completed.
+     *        The type of device that the model will run on after the compilation job has completed.
      * @see TargetDevice
      */
 
@@ -293,10 +311,10 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of device that the model will run on after compilation has completed.
+     * The type of device that the model will run on after the compilation job has completed.
      * </p>
      * 
-     * @return The type of device that the model will run on after compilation has completed.
+     * @return The type of device that the model will run on after the compilation job has completed.
      * @see TargetDevice
      */
 
@@ -306,11 +324,11 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of device that the model will run on after compilation has completed.
+     * The type of device that the model will run on after the compilation job has completed.
      * </p>
      * 
      * @param compilationTargetDevice
-     *        The type of device that the model will run on after compilation has completed.
+     *        The type of device that the model will run on after the compilation job has completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetDevice
      */
@@ -322,17 +340,194 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of device that the model will run on after compilation has completed.
+     * The type of device that the model will run on after the compilation job has completed.
      * </p>
      * 
      * @param compilationTargetDevice
-     *        The type of device that the model will run on after compilation has completed.
+     *        The type of device that the model will run on after the compilation job has completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TargetDevice
      */
 
     public CompilationJobSummary withCompilationTargetDevice(TargetDevice compilationTargetDevice) {
         this.compilationTargetDevice = compilationTargetDevice.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of OS that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformOs
+     *        The type of OS that the model will run on after the compilation job has completed.
+     * @see TargetPlatformOs
+     */
+
+    public void setCompilationTargetPlatformOs(String compilationTargetPlatformOs) {
+        this.compilationTargetPlatformOs = compilationTargetPlatformOs;
+    }
+
+    /**
+     * <p>
+     * The type of OS that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @return The type of OS that the model will run on after the compilation job has completed.
+     * @see TargetPlatformOs
+     */
+
+    public String getCompilationTargetPlatformOs() {
+        return this.compilationTargetPlatformOs;
+    }
+
+    /**
+     * <p>
+     * The type of OS that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformOs
+     *        The type of OS that the model will run on after the compilation job has completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetPlatformOs
+     */
+
+    public CompilationJobSummary withCompilationTargetPlatformOs(String compilationTargetPlatformOs) {
+        setCompilationTargetPlatformOs(compilationTargetPlatformOs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of OS that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformOs
+     *        The type of OS that the model will run on after the compilation job has completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetPlatformOs
+     */
+
+    public CompilationJobSummary withCompilationTargetPlatformOs(TargetPlatformOs compilationTargetPlatformOs) {
+        this.compilationTargetPlatformOs = compilationTargetPlatformOs.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of architecture that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformArch
+     *        The type of architecture that the model will run on after the compilation job has completed.
+     * @see TargetPlatformArch
+     */
+
+    public void setCompilationTargetPlatformArch(String compilationTargetPlatformArch) {
+        this.compilationTargetPlatformArch = compilationTargetPlatformArch;
+    }
+
+    /**
+     * <p>
+     * The type of architecture that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @return The type of architecture that the model will run on after the compilation job has completed.
+     * @see TargetPlatformArch
+     */
+
+    public String getCompilationTargetPlatformArch() {
+        return this.compilationTargetPlatformArch;
+    }
+
+    /**
+     * <p>
+     * The type of architecture that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformArch
+     *        The type of architecture that the model will run on after the compilation job has completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetPlatformArch
+     */
+
+    public CompilationJobSummary withCompilationTargetPlatformArch(String compilationTargetPlatformArch) {
+        setCompilationTargetPlatformArch(compilationTargetPlatformArch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of architecture that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformArch
+     *        The type of architecture that the model will run on after the compilation job has completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetPlatformArch
+     */
+
+    public CompilationJobSummary withCompilationTargetPlatformArch(TargetPlatformArch compilationTargetPlatformArch) {
+        this.compilationTargetPlatformArch = compilationTargetPlatformArch.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of accelerator that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformAccelerator
+     *        The type of accelerator that the model will run on after the compilation job has completed.
+     * @see TargetPlatformAccelerator
+     */
+
+    public void setCompilationTargetPlatformAccelerator(String compilationTargetPlatformAccelerator) {
+        this.compilationTargetPlatformAccelerator = compilationTargetPlatformAccelerator;
+    }
+
+    /**
+     * <p>
+     * The type of accelerator that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @return The type of accelerator that the model will run on after the compilation job has completed.
+     * @see TargetPlatformAccelerator
+     */
+
+    public String getCompilationTargetPlatformAccelerator() {
+        return this.compilationTargetPlatformAccelerator;
+    }
+
+    /**
+     * <p>
+     * The type of accelerator that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformAccelerator
+     *        The type of accelerator that the model will run on after the compilation job has completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetPlatformAccelerator
+     */
+
+    public CompilationJobSummary withCompilationTargetPlatformAccelerator(String compilationTargetPlatformAccelerator) {
+        setCompilationTargetPlatformAccelerator(compilationTargetPlatformAccelerator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of accelerator that the model will run on after the compilation job has completed.
+     * </p>
+     * 
+     * @param compilationTargetPlatformAccelerator
+     *        The type of accelerator that the model will run on after the compilation job has completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetPlatformAccelerator
+     */
+
+    public CompilationJobSummary withCompilationTargetPlatformAccelerator(TargetPlatformAccelerator compilationTargetPlatformAccelerator) {
+        this.compilationTargetPlatformAccelerator = compilationTargetPlatformAccelerator.toString();
         return this;
     }
 
@@ -459,6 +654,12 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
             sb.append("CompilationEndTime: ").append(getCompilationEndTime()).append(",");
         if (getCompilationTargetDevice() != null)
             sb.append("CompilationTargetDevice: ").append(getCompilationTargetDevice()).append(",");
+        if (getCompilationTargetPlatformOs() != null)
+            sb.append("CompilationTargetPlatformOs: ").append(getCompilationTargetPlatformOs()).append(",");
+        if (getCompilationTargetPlatformArch() != null)
+            sb.append("CompilationTargetPlatformArch: ").append(getCompilationTargetPlatformArch()).append(",");
+        if (getCompilationTargetPlatformAccelerator() != null)
+            sb.append("CompilationTargetPlatformAccelerator: ").append(getCompilationTargetPlatformAccelerator()).append(",");
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getCompilationJobStatus() != null)
@@ -501,6 +702,20 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getCompilationTargetDevice() != null && other.getCompilationTargetDevice().equals(this.getCompilationTargetDevice()) == false)
             return false;
+        if (other.getCompilationTargetPlatformOs() == null ^ this.getCompilationTargetPlatformOs() == null)
+            return false;
+        if (other.getCompilationTargetPlatformOs() != null && other.getCompilationTargetPlatformOs().equals(this.getCompilationTargetPlatformOs()) == false)
+            return false;
+        if (other.getCompilationTargetPlatformArch() == null ^ this.getCompilationTargetPlatformArch() == null)
+            return false;
+        if (other.getCompilationTargetPlatformArch() != null
+                && other.getCompilationTargetPlatformArch().equals(this.getCompilationTargetPlatformArch()) == false)
+            return false;
+        if (other.getCompilationTargetPlatformAccelerator() == null ^ this.getCompilationTargetPlatformAccelerator() == null)
+            return false;
+        if (other.getCompilationTargetPlatformAccelerator() != null
+                && other.getCompilationTargetPlatformAccelerator().equals(this.getCompilationTargetPlatformAccelerator()) == false)
+            return false;
         if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null)
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
@@ -523,6 +738,9 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCompilationStartTime() == null) ? 0 : getCompilationStartTime().hashCode());
         hashCode = prime * hashCode + ((getCompilationEndTime() == null) ? 0 : getCompilationEndTime().hashCode());
         hashCode = prime * hashCode + ((getCompilationTargetDevice() == null) ? 0 : getCompilationTargetDevice().hashCode());
+        hashCode = prime * hashCode + ((getCompilationTargetPlatformOs() == null) ? 0 : getCompilationTargetPlatformOs().hashCode());
+        hashCode = prime * hashCode + ((getCompilationTargetPlatformArch() == null) ? 0 : getCompilationTargetPlatformArch().hashCode());
+        hashCode = prime * hashCode + ((getCompilationTargetPlatformAccelerator() == null) ? 0 : getCompilationTargetPlatformAccelerator().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getCompilationJobStatus() == null) ? 0 : getCompilationJobStatus().hashCode());
         return hashCode;

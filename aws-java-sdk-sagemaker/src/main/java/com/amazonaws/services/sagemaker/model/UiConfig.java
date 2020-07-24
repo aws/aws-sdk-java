@@ -42,9 +42,12 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.
      * </p>
      * <p>
-     * Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your labeling
-     * job task type to select one of the following ARN's and use it with this parameter when you create a labeling job.
-     * Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
+     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * </p>
+     * <p>
+     * <b>3D Point Cloud HumanTaskUiArns</b>
      * </p>
      * <p>
      * Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection
@@ -76,6 +79,31 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Video Frame HumanTaskUiArns</b>
+     * </p>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
      * </p>
      * </li>
      * </ul>
@@ -145,9 +173,12 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.
      * </p>
      * <p>
-     * Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your labeling
-     * job task type to select one of the following ARN's and use it with this parameter when you create a labeling job.
-     * Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
+     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * </p>
+     * <p>
+     * <b>3D Point Cloud HumanTaskUiArns</b>
      * </p>
      * <p>
      * Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection
@@ -182,13 +213,42 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Video Frame HumanTaskUiArns</b>
+     * </p>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param humanTaskUiArn
      *        The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
      *        <p>
-     *        Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your
-     *        labeling job task type to select one of the following ARN's and use it with this parameter when you create
-     *        a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     *        Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs.
+     *        Use your labeling job task type to select one of the following ARN's and use it with this parameter when
+     *        you create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your
+     *        labeling job in.
+     *        </p>
+     *        <p>
+     *        <b>3D Point Cloud HumanTaskUiArns</b>
      *        </p>
      *        <p>
      *        Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object
@@ -222,6 +282,31 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      *        <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame HumanTaskUiArns</b>
+     *        </p>
+     *        <p>
+     *        Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection
+     *        adjustment labeling jobs.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking
+     *        adjustment labeling jobs.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
+     *        </p>
+     *        </li>
      */
 
     public void setHumanTaskUiArn(String humanTaskUiArn) {
@@ -233,9 +318,12 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.
      * </p>
      * <p>
-     * Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your labeling
-     * job task type to select one of the following ARN's and use it with this parameter when you create a labeling job.
-     * Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
+     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * </p>
+     * <p>
+     * <b>3D Point Cloud HumanTaskUiArns</b>
      * </p>
      * <p>
      * Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection
@@ -270,13 +358,41 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Video Frame HumanTaskUiArns</b>
+     * </p>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
      *         <p>
-     *         Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your
-     *         labeling job task type to select one of the following ARN's and use it with this parameter when you
-     *         create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling
-     *         job in.
+     *         Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs.
+     *         Use your labeling job task type to select one of the following ARN's and use it with this parameter when
+     *         you create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your
+     *         labeling job in.
+     *         </p>
+     *         <p>
+     *         <b>3D Point Cloud HumanTaskUiArns</b>
      *         </p>
      *         <p>
      *         Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object
@@ -310,6 +426,31 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      *         <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Video Frame HumanTaskUiArns</b>
+     *         </p>
+     *         <p>
+     *         Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection
+     *         adjustment labeling jobs.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking
+     *         adjustment labeling jobs.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
+     *         </p>
+     *         </li>
      */
 
     public String getHumanTaskUiArn() {
@@ -321,9 +462,12 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.
      * </p>
      * <p>
-     * Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your labeling
-     * job task type to select one of the following ARN's and use it with this parameter when you create a labeling job.
-     * Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs. Use your
+     * labeling job task type to select one of the following ARN's and use it with this parameter when you create a
+     * labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     * </p>
+     * <p>
+     * <b>3D Point Cloud HumanTaskUiArns</b>
      * </p>
      * <p>
      * Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object detection
@@ -358,13 +502,42 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * <b>Video Frame HumanTaskUiArns</b>
+     * </p>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking adjustment
+     * labeling jobs.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param humanTaskUiArn
      *        The ARN of the worker task template used to render the worker UI and tools for labeling job tasks.</p>
      *        <p>
-     *        Use this parameter when you are creating a labeling job for 3D point cloud labeling modalities. Use your
-     *        labeling job task type to select one of the following ARN's and use it with this parameter when you create
-     *        a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your labeling job in.
+     *        Use this parameter when you are creating a labeling job for 3D point cloud and video fram labeling jobs.
+     *        Use your labeling job task type to select one of the following ARN's and use it with this parameter when
+     *        you create a labeling job. Replace <code>aws-region</code> with the AWS region you are creating your
+     *        labeling job in.
+     *        </p>
+     *        <p>
+     *        <b>3D Point Cloud HumanTaskUiArns</b>
      *        </p>
      *        <p>
      *        Use this <code>HumanTaskUiArn</code> for 3D point cloud object detection and 3D point cloud object
@@ -396,6 +569,31 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/PointCloudSemanticSegmentation</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Video Frame HumanTaskUiArns</b>
+     *        </p>
+     *        <p>
+     *        Use this <code>HumanTaskUiArn</code> for video frame object detection and video frame object detection
+     *        adjustment labeling jobs.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sagemaker:region:394669845002:human-task-ui/VideoObjectDetection</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Use this <code>HumanTaskUiArn</code> for video frame object tracking and video frame object tracking
+     *        adjustment labeling jobs.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/VideoObjectTracking</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

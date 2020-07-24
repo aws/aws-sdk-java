@@ -852,39 +852,6 @@ public interface AmazonFraudDetectorAsync extends AmazonFraudDetector {
 
     /**
      * <p>
-     * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (
-     * <code>ACTIVE</code>) version is used.
-     * </p>
-     * 
-     * @param getPredictionRequest
-     * @return A Java Future containing the result of the GetPrediction operation returned by the service.
-     * @sample AmazonFraudDetectorAsync.GetPrediction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<GetPredictionResult> getPredictionAsync(GetPredictionRequest getPredictionRequest);
-
-    /**
-     * <p>
-     * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (
-     * <code>ACTIVE</code>) version is used.
-     * </p>
-     * 
-     * @param getPredictionRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the GetPrediction operation returned by the service.
-     * @sample AmazonFraudDetectorAsyncHandler.GetPrediction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction" target="_top">AWS
-     *      API Documentation</a>
-     */
-    java.util.concurrent.Future<GetPredictionResult> getPredictionAsync(GetPredictionRequest getPredictionRequest,
-            com.amazonaws.handlers.AsyncHandler<GetPredictionRequest, GetPredictionResult> asyncHandler);
-
-    /**
-     * <p>
      * Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified.
      * Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both
      * the <code>ruleId</code> and the <code>ruleVersion</code> are specified.

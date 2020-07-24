@@ -60,9 +60,9 @@ public class ExternalModelJsonUnmarshaller implements Unmarshaller<ExternalModel
                     context.nextToken();
                     externalModel.setModelSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("role", targetDepth)) {
+                if (context.testExpression("invokeModelEndpointRoleArn", targetDepth)) {
                     context.nextToken();
-                    externalModel.setRole(RoleJsonUnmarshaller.getInstance().unmarshall(context));
+                    externalModel.setInvokeModelEndpointRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("inputConfiguration", targetDepth)) {
                     context.nextToken();

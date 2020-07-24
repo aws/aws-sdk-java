@@ -16,13 +16,17 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The field to use to filter the results of a query for account quotas and usage data:
+ * The field to use in a condition that filters the results of a query for account quotas and usage data. Valid values
+ * are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum UsageStatisticsFilterKey {
 
-    AccountId("accountId");
+    AccountId("accountId"),
+    ServiceLimit("serviceLimit"),
+    FreeTrialStartDate("freeTrialStartDate"),
+    Total("total");
 
     private String value;
 

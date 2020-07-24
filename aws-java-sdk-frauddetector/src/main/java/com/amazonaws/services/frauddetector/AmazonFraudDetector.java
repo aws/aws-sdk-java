@@ -712,32 +712,6 @@ public interface AmazonFraudDetector {
 
     /**
      * <p>
-     * Evaluates an event against a detector version. If a version ID is not provided, the detector’s (
-     * <code>ACTIVE</code>) version is used.
-     * </p>
-     * 
-     * @param getPredictionRequest
-     * @return Result of the GetPrediction operation returned by the service.
-     * @throws ValidationException
-     *         An exception indicating a specified value is not allowed.
-     * @throws ResourceNotFoundException
-     *         An exception indicating the specified resource was not found.
-     * @throws InternalServerException
-     *         An exception indicating an internal server error.
-     * @throws ThrottlingException
-     *         An exception indicating a throttling error.
-     * @throws AccessDeniedException
-     *         An exception indicating Amazon Fraud Detector does not have the needed permissions. This can occur if you
-     *         submit a request, such as <code>PutExternalModel</code>, that specifies a role that is not in your
-     *         account.
-     * @sample AmazonFraudDetector.GetPrediction
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/frauddetector-2019-11-15/GetPrediction" target="_top">AWS
-     *      API Documentation</a>
-     */
-    GetPredictionResult getPrediction(GetPredictionRequest getPredictionRequest);
-
-    /**
-     * <p>
      * Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified.
      * Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both
      * the <code>ruleId</code> and the <code>ruleVersion</code> are specified.

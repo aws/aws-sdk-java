@@ -37,6 +37,8 @@ public class DatabaseConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> ACLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AclConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SQLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqlConfiguration").build();
 
     private static final DatabaseConfigurationMarshaller instance = new DatabaseConfigurationMarshaller();
 
@@ -59,6 +61,7 @@ public class DatabaseConfigurationMarshaller {
             protocolMarshaller.marshall(databaseConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(databaseConfiguration.getColumnConfiguration(), COLUMNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(databaseConfiguration.getAclConfiguration(), ACLCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(databaseConfiguration.getSqlConfiguration(), SQLCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

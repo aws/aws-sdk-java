@@ -43,6 +43,13 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private SourceIpConfig sourceIpConfig;
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     */
+    private OidcConfig oidcConfig;
 
     /**
      * <p>
@@ -158,6 +165,52 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     * 
+     * @param oidcConfig
+     *        Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using
+     *        your own IdP.
+     */
+
+    public void setOidcConfig(OidcConfig oidcConfig) {
+        this.oidcConfig = oidcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     * 
+     * @return Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using
+     *         your own IdP.
+     */
+
+    public OidcConfig getOidcConfig() {
+        return this.oidcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     * 
+     * @param oidcConfig
+     *        Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using
+     *        your own IdP.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkforceRequest withOidcConfig(OidcConfig oidcConfig) {
+        setOidcConfig(oidcConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -172,7 +225,9 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
         if (getWorkforceName() != null)
             sb.append("WorkforceName: ").append(getWorkforceName()).append(",");
         if (getSourceIpConfig() != null)
-            sb.append("SourceIpConfig: ").append(getSourceIpConfig());
+            sb.append("SourceIpConfig: ").append(getSourceIpConfig()).append(",");
+        if (getOidcConfig() != null)
+            sb.append("OidcConfig: ").append(getOidcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +250,10 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getSourceIpConfig() != null && other.getSourceIpConfig().equals(this.getSourceIpConfig()) == false)
             return false;
+        if (other.getOidcConfig() == null ^ this.getOidcConfig() == null)
+            return false;
+        if (other.getOidcConfig() != null && other.getOidcConfig().equals(this.getOidcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -205,6 +264,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getWorkforceName() == null) ? 0 : getWorkforceName().hashCode());
         hashCode = prime * hashCode + ((getSourceIpConfig() == null) ? 0 : getSourceIpConfig().hashCode());
+        hashCode = prime * hashCode + ((getOidcConfig() == null) ? 0 : getOidcConfig().hashCode());
         return hashCode;
     }
 

@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateBrokerRequestMarshaller {
 
+    private static final MarshallingInfo<String> AUTHENTICATIONSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authenticationStrategy").build();
     private static final MarshallingInfo<Boolean> AUTOMINORVERSIONUPGRADE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoMinorVersionUpgrade").build();
     private static final MarshallingInfo<String> BROKERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
@@ -38,6 +40,8 @@ public class UpdateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineVersion").build();
     private static final MarshallingInfo<String> HOSTINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostInstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> LDAPSERVERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ldapServerMetadata").build();
     private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
     private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -59,11 +63,13 @@ public class UpdateBrokerRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateBrokerRequest.getAuthenticationStrategy(), AUTHENTICATIONSTRATEGY_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getAutoMinorVersionUpgrade(), AUTOMINORVERSIONUPGRADE_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getBrokerId(), BROKERID_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getHostInstanceType(), HOSTINSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(updateBrokerRequest.getLdapServerMetadata(), LDAPSERVERMETADATA_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getLogs(), LOGS_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
         } catch (Exception e) {

@@ -37,7 +37,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3 data
+     * repository is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -47,12 +48,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the data
+     * repository configuration is corrected. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     * >Troubleshooting a Misconfigured linked S3 bucket</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be
+     * impacted.
      * </p>
      * </li>
      * </ul>
@@ -87,18 +92,38 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
     private Integer importedFileChunkSize;
     /**
      * <p>
-     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * The policy can have the following values:
+     * Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy
+     * configures how your FSx for Lustre file system automatically updates its contents with changes that occur in the
+     * linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Auto new files, changes to existing files, and deleted files in the linked S3
-     * repository will be imported to the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      */
     private String autoImportPolicy;
 
@@ -112,7 +137,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3 data
+     * repository is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -122,12 +148,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the data
+     * repository configuration is corrected. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     * >Troubleshooting a Misconfigured linked S3 bucket</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be
+     * impacted.
      * </p>
      * </li>
      * </ul>
@@ -138,7 +168,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *        <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3
+     *        data repository is being created. The data repository is unavailable.
      *        </p>
      *        </li>
      *        <li>
@@ -148,12 +179,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *        <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the
+     *        data repository configuration is corrected. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     *        >Troubleshooting a Misconfigured linked S3 bucket</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may
+     *        be impacted.
      *        </p>
      *        </li>
      * @see DataRepositoryLifecycle
@@ -171,7 +206,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3 data
+     * repository is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -181,12 +217,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the data
+     * repository configuration is corrected. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     * >Troubleshooting a Misconfigured linked S3 bucket</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be
+     * impacted.
      * </p>
      * </li>
      * </ul>
@@ -196,7 +236,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *         <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3
+     *         data repository is being created. The data repository is unavailable.
      *         </p>
      *         </li>
      *         <li>
@@ -206,12 +247,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *         <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the
+     *         data repository configuration is corrected. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     *         >Troubleshooting a Misconfigured linked S3 bucket</a>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *         <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability
+     *         may be impacted.
      *         </p>
      *         </li>
      * @see DataRepositoryLifecycle
@@ -229,7 +274,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3 data
+     * repository is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -239,12 +285,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the data
+     * repository configuration is corrected. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     * >Troubleshooting a Misconfigured linked S3 bucket</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be
+     * impacted.
      * </p>
      * </li>
      * </ul>
@@ -255,7 +305,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *        <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3
+     *        data repository is being created. The data repository is unavailable.
      *        </p>
      *        </li>
      *        <li>
@@ -265,12 +316,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *        <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the
+     *        data repository configuration is corrected. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     *        >Troubleshooting a Misconfigured linked S3 bucket</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may
+     *        be impacted.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -290,7 +345,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * <ul>
      * <li>
      * <p>
-     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3 data
+     * repository is being created. The data repository is unavailable.
      * </p>
      * </li>
      * <li>
@@ -300,12 +356,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the data
+     * repository configuration is corrected. For more information, see <a href=
+     * "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     * >Troubleshooting a Misconfigured linked S3 bucket</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may be
+     * impacted.
      * </p>
      * </li>
      * </ul>
@@ -316,7 +376,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *        <code>CREATING</code> - The data repository configuration between the FSx file system and the linked S3
+     *        data repository is being created. The data repository is unavailable.
      *        </p>
      *        </li>
      *        <li>
@@ -326,12 +387,16 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *        <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from the S3 bucket until the
+     *        data repository configuration is corrected. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository"
+     *        >Troubleshooting a Misconfigured linked S3 bucket</a>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update and availability may
+     *        be impacted.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -519,68 +584,71 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * The policy can have the following values:
+     * Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy
+     * configures how your FSx for Lustre file system automatically updates its contents with changes that occur in the
+     * linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
      * @param autoImportPolicy
-     *        Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file
-     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *        repository. The policy can have the following values:</p>
+     *        Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The
+     *        AutoImportPolicy configures how your FSx for Lustre file system automatically updates its contents with
+     *        changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
-     *        reflected on the FSx file system.
+     *        <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *        on the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
-     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *        system.
+     *        <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *        in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *        FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
-     *        system.
+     *        <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *        currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *        linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *        data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *        deleted files in the linked S3 repository will be imported to the FSx file system.
-     *        </p>
-     *        </li>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *        updates from your S3 bucket</a>.
      * @see AutoImportPolicyType
      */
 
@@ -590,67 +658,70 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * The policy can have the following values:
+     * Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy
+     * configures how your FSx for Lustre file system automatically updates its contents with changes that occur in the
+     * linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
-     * @return Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre
-     *         file system to automatically update its contents with changes that have been made to its linked Amazon S3
-     *         data repository. The policy can have the following values:</p>
+     * @return Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The
+     *         AutoImportPolicy configures how your FSx for Lustre file system automatically updates its contents with
+     *         changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following
+     *         values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
-     *         reflected on the FSx file system.
+     *         <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *         on the FSx file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported
-     *         to the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *         system.
+     *         <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *         in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *         FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *         S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx
-     *         file system.
+     *         <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *         currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *         linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *         data repository are not deleted from the FSx file system.
      *         </p>
      *         </li>
-     *         <li>
+     *         </ul>
      *         <p>
-     *         <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *         deleted files in the linked S3 repository will be imported to the FSx file system.
-     *         </p>
-     *         </li>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *         updates from your S3 bucket</a>.
      * @see AutoImportPolicyType
      */
 
@@ -660,68 +731,71 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * The policy can have the following values:
+     * Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy
+     * configures how your FSx for Lustre file system automatically updates its contents with changes that occur in the
+     * linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
      * @param autoImportPolicy
-     *        Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file
-     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *        repository. The policy can have the following values:</p>
+     *        Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The
+     *        AutoImportPolicy configures how your FSx for Lustre file system automatically updates its contents with
+     *        changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
-     *        reflected on the FSx file system.
+     *        <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *        on the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
-     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *        system.
+     *        <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *        in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *        FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
-     *        system.
+     *        <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *        currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *        linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *        data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *        deleted files in the linked S3 repository will be imported to the FSx file system.
-     *        </p>
-     *        </li>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *        updates from your S3 bucket</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */
@@ -733,68 +807,71 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
-     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
-     * The policy can have the following values:
+     * Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The AutoImportPolicy
+     * configures how your FSx for Lustre file system automatically updates its contents with changes that occur in the
+     * linked S3 data repository. <code>AutoImportPolicy</code> can have the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
-     * the FSx file system.
+     * <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected on the
+     * FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
-     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist in the
+     * FSx file system are automatically imported. Updates to existing FSx files are not imported to the FSx file
+     * system. Files deleted from the linked data repository are not deleted from the FSx file system.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
-     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
-     * files in the linked S3 repository will be imported to the FSx file system.
+     * <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not currently
+     * exist in the FSx file system are automatically imported. Changes to existing FSx files in the linked repository
+     * are also automatically imported to the FSx file system. Files deleted from the linked data repository are not
+     * deleted from the FSx file system.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import updates
+     * from your S3 bucket</a>.
+     * </p>
      * 
      * @param autoImportPolicy
-     *        Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file
-     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
-     *        repository. The policy can have the following values:</p>
+     *        Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>. The
+     *        AutoImportPolicy configures how your FSx for Lustre file system automatically updates its contents with
+     *        changes that occur in the linked S3 data repository. <code>AutoImportPolicy</code> can have the following
+     *        values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
-     *        reflected on the FSx file system.
+     *        <code>NONE</code> - (Default) AutoImport is off. Changes in the linked data repository are not reflected
+     *        on the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
-     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
-     *        system.
+     *        <code>NEW</code> - AutoImport is on. New files in the linked data repository that do not currently exist
+     *        in the FSx file system are automatically imported. Updates to existing FSx files are not imported to the
+     *        FSx file system. Files deleted from the linked data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
-     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
-     *        system.
+     *        <code>NEW_CHANGED</code> - AutoImport is on. New files in the linked S3 data repository that do not
+     *        currently exist in the FSx file system are automatically imported. Changes to existing FSx files in the
+     *        linked repository are also automatically imported to the FSx file system. Files deleted from the linked
+     *        data repository are not deleted from the FSx file system.
      *        </p>
      *        </li>
-     *        <li>
+     *        </ul>
      *        <p>
-     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
-     *        deleted files in the linked S3 repository will be imported to the FSx file system.
-     *        </p>
-     *        </li>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/autoimport-data-repo.html">Automatically import
+     *        updates from your S3 bucket</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoImportPolicyType
      */

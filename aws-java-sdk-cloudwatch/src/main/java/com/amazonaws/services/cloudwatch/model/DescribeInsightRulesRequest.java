@@ -33,8 +33,8 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value
+     * might be different.
      * </p>
      */
     private Integer maxResults;
@@ -81,13 +81,13 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value
+     * might be different.
      * </p>
      * 
      * @param maxResults
      *        This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum
-     *        value may be different.
+     *        value might be different.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -96,12 +96,12 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value
+     * might be different.
      * </p>
      * 
      * @return This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum
-     *         value may be different.
+     *         value might be different.
      */
 
     public Integer getMaxResults() {
@@ -110,13 +110,13 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value
+     * might be different.
      * </p>
      * 
      * @param maxResults
      *        This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum
-     *        value may be different.
+     *        value might be different.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -31,6 +31,10 @@ public class OutputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OutputLocation").build();
     private static final MarshallingInfo<String> TARGETDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetDevice").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETPLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetPlatform").build();
+    private static final MarshallingInfo<String> COMPILEROPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilerOptions").build();
 
     private static final OutputConfigMarshaller instance = new OutputConfigMarshaller();
 
@@ -50,6 +54,8 @@ public class OutputConfigMarshaller {
         try {
             protocolMarshaller.marshall(outputConfig.getS3OutputLocation(), S3OUTPUTLOCATION_BINDING);
             protocolMarshaller.marshall(outputConfig.getTargetDevice(), TARGETDEVICE_BINDING);
+            protocolMarshaller.marshall(outputConfig.getTargetPlatform(), TARGETPLATFORM_BINDING);
+            protocolMarshaller.marshall(outputConfig.getCompilerOptions(), COMPILEROPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
