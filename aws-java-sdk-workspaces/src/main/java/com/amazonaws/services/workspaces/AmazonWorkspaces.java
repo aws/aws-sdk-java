@@ -292,7 +292,7 @@ public interface AmazonWorkspaces {
     /**
      * <p>
      * Deletes the specified image from your account. To delete an image, you must first delete any bundles that are
-     * associated with the image and un-share the image if it is shared with other accounts.
+     * associated with the image and unshare the image if it is shared with other accounts.
      * </p>
      * 
      * @param deleteWorkspaceImageRequest
@@ -462,6 +462,25 @@ public interface AmazonWorkspaces {
      * @see #describeWorkspaceDirectories(DescribeWorkspaceDirectoriesRequest)
      */
     DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories();
+
+    /**
+     * <p>
+     * Describes the permissions that the owner of an image has granted to other AWS accounts for an image.
+     * </p>
+     * 
+     * @param describeWorkspaceImagePermissionsRequest
+     * @return Result of the DescribeWorkspaceImagePermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DescribeWorkspaceImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeWorkspaceImagePermissionsResult describeWorkspaceImagePermissions(DescribeWorkspaceImagePermissionsRequest describeWorkspaceImagePermissionsRequest);
 
     /**
      * <p>
@@ -753,7 +772,9 @@ public interface AmazonWorkspaces {
 
     /**
      * <p>
-     * Modifies the specified WorkSpace properties.
+     * Modifies the specified WorkSpace properties. For important information about how to modify the size of the root
+     * and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+     * Modify a WorkSpace</a>.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -830,7 +851,7 @@ public interface AmazonWorkspaces {
      * </p>
      * <p>
      * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-     * <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+     * <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
@@ -1020,6 +1041,46 @@ public interface AmazonWorkspaces {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateRulesOfIpGroupResult updateRulesOfIpGroup(UpdateRulesOfIpGroupRequest updateRulesOfIpGroupRequest);
+
+    /**
+     * <p>
+     * Shares or unshares an image with one account by specifying whether that account has permission to copy the image.
+     * If the copy image permission is granted, the image is shared with that account. If the copy image permission is
+     * revoked, the image is unshared with the account.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * To delete an image that has been shared, you must unshare the image before you delete it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at this time in the AWS GovCloud
+     * (US-West) Region. To share BYOL images across accounts in the AWS GovCloud (US-West) Region, contact AWS Support.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param updateWorkspaceImagePermissionRequest
+     * @return Result of the UpdateWorkspaceImagePermission operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @sample AmazonWorkspaces.UpdateWorkspaceImagePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateWorkspaceImagePermissionResult updateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest updateWorkspaceImagePermissionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

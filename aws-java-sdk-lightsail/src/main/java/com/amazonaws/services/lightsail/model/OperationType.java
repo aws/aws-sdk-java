@@ -74,7 +74,16 @@ public enum OperationType {
     CreateContactMethod("CreateContactMethod"),
     GetContactMethods("GetContactMethods"),
     SendContactMethodVerification("SendContactMethodVerification"),
-    DeleteContactMethod("DeleteContactMethod");
+    DeleteContactMethod("DeleteContactMethod"),
+    CreateDistribution("CreateDistribution"),
+    UpdateDistribution("UpdateDistribution"),
+    DeleteDistribution("DeleteDistribution"),
+    ResetDistributionCache("ResetDistributionCache"),
+    AttachCertificateToDistribution("AttachCertificateToDistribution"),
+    DetachCertificateFromDistribution("DetachCertificateFromDistribution"),
+    UpdateDistributionBundle("UpdateDistributionBundle"),
+    CreateCertificate("CreateCertificate"),
+    DeleteCertificate("DeleteCertificate");
 
     private String value;
 

@@ -161,8 +161,68 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private java.util.List<LoadBalancerTlsCertificateDomainValidationRecord> domainValidationRecords;
     /**
      * <p>
-     * The reason for the SSL/TLS certificate validation failure.
+     * The validation failure reason, if any, of the certificate.
      * </p>
+     * <p>
+     * The following failure reasons are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available
+     * for Lightsail certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
+     * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
+     * Alexa top 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     * cloudfront.net, or elasticbeanstalk.com.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
+     * website. If your domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
+     * do.
+     * </p>
+     * <p>
+     * If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list
+     * itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.
+     * </p>
+     * <p>
+     * If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not
+     * valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a
+     * certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all
+     * domain names in the request are for valid top-level domains. For example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more
+     * of the domain names in the certificate request. Try to request a certificate again, correcting any spelling
+     * errors or typos that were in the failed request.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String failureReason;
     /**
@@ -179,7 +239,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String issuer;
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm used to generate the key pair (the public and private key).
      * </p>
      */
     private String keyAlgorithm;
@@ -197,19 +257,21 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private java.util.Date notBefore;
     /**
      * <p>
-     * An object containing information about the status of Lightsail's managed renewal for the certificate.
+     * An object that describes the status of the certificate renewal managed by Lightsail.
      * </p>
      */
     private LoadBalancerTlsCertificateRenewalSummary renewalSummary;
     /**
      * <p>
-     * The reason the certificate was revoked. Valid values are below.
+     * The reason the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      */
     private String revocationReason;
     /**
      * <p>
-     * The timestamp when the SSL/TLS certificate was revoked.
+     * The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      */
     private java.util.Date revokedAt;
@@ -233,10 +295,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private String subject;
     /**
      * <p>
-     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
-     * to the public key that is contained in the certificate. The subject alternative names include the canonical
-     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
-     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
+     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * <code>blog.example.com</code>) for the certificate.
      * </p>
      */
     private java.util.List<String> subjectAlternativeNames;
@@ -1277,11 +1337,131 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the SSL/TLS certificate validation failure.
+     * The validation failure reason, if any, of the certificate.
      * </p>
+     * <p>
+     * The following failure reasons are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available
+     * for Lightsail certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
+     * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
+     * Alexa top 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     * cloudfront.net, or elasticbeanstalk.com.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
+     * website. If your domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
+     * do.
+     * </p>
+     * <p>
+     * If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list
+     * itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.
+     * </p>
+     * <p>
+     * If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not
+     * valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a
+     * certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all
+     * domain names in the request are for valid top-level domains. For example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more
+     * of the domain names in the certificate request. Try to request a certificate again, correcting any spelling
+     * errors or typos that were in the failed request.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        The reason for the SSL/TLS certificate validation failure.
+     *        The validation failure reason, if any, of the certificate.</p>
+     *        <p>
+     *        The following failure reasons are possible:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not
+     *        available for Lightsail certificates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
+     *        process this certificate request. This can happen as a fraud-protection measure, such as when the domain
+     *        ranks within the Alexa top 1000 websites. To provide the required information, use the <a
+     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     *        cloudfront.net, or elasticbeanstalk.com.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     *        reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
+     *        correct the problem, search for your domain name on the <a
+     *        href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
+     *        suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     *        Websites</a> to learn what you can do.
+     *        </p>
+     *        <p>
+     *        If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     *        VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a
+     *        block list itself. After you correct the problem and the VirusTotal registry has been updated, request a
+     *        new certificate.
+     *        </p>
+     *        <p>
+     *        If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request
+     *        is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try
+     *        to request a certificate again, correcting any spelling errors or typos that were in the failed request,
+     *        and ensure that all domain names in the request are for valid top-level domains. For example, you cannot
+     *        request a certificate for <code>example.invalidpublicdomain</code> because
+     *        <code>invalidpublicdomain</code> is not a valid top-level domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or
+     *        more of the domain names in the certificate request. Try to request a certificate again, correcting any
+     *        spelling errors or typos that were in the failed request.
+     *        </p>
+     *        </li>
      * @see LoadBalancerTlsCertificateFailureReason
      */
 
@@ -1291,10 +1471,130 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the SSL/TLS certificate validation failure.
+     * The validation failure reason, if any, of the certificate.
      * </p>
+     * <p>
+     * The following failure reasons are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available
+     * for Lightsail certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
+     * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
+     * Alexa top 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     * cloudfront.net, or elasticbeanstalk.com.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
+     * website. If your domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
+     * do.
+     * </p>
+     * <p>
+     * If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list
+     * itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.
+     * </p>
+     * <p>
+     * If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not
+     * valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a
+     * certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all
+     * domain names in the request are for valid top-level domains. For example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more
+     * of the domain names in the certificate request. Try to request a certificate again, correcting any spelling
+     * errors or typos that were in the failed request.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The reason for the SSL/TLS certificate validation failure.
+     * @return The validation failure reason, if any, of the certificate.</p>
+     *         <p>
+     *         The following failure reasons are possible:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not
+     *         available for Lightsail certificates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
+     *         process this certificate request. This can happen as a fraud-protection measure, such as when the domain
+     *         ranks within the Alexa top 1000 websites. To provide the required information, use the <a
+     *         href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     *         cloudfront.net, or elasticbeanstalk.com.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     *         reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
+     *         correct the problem, search for your domain name on the <a
+     *         href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
+     *         suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     *         Websites</a> to learn what you can do.
+     *         </p>
+     *         <p>
+     *         If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     *         VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a
+     *         block list itself. After you correct the problem and the VirusTotal registry has been updated, request a
+     *         new certificate.
+     *         </p>
+     *         <p>
+     *         If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     *         href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request
+     *         is not valid. Typically, this is because a domain name in the request is not a valid top-level domain.
+     *         Try to request a certificate again, correcting any spelling errors or typos that were in the failed
+     *         request, and ensure that all domain names in the request are for valid top-level domains. For example,
+     *         you cannot request a certificate for <code>example.invalidpublicdomain</code> because
+     *         <code>invalidpublicdomain</code> is not a valid top-level domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one
+     *         or more of the domain names in the certificate request. Try to request a certificate again, correcting
+     *         any spelling errors or typos that were in the failed request.
+     *         </p>
+     *         </li>
      * @see LoadBalancerTlsCertificateFailureReason
      */
 
@@ -1304,11 +1604,131 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the SSL/TLS certificate validation failure.
+     * The validation failure reason, if any, of the certificate.
      * </p>
+     * <p>
+     * The following failure reasons are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available
+     * for Lightsail certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
+     * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
+     * Alexa top 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     * cloudfront.net, or elasticbeanstalk.com.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
+     * website. If your domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
+     * do.
+     * </p>
+     * <p>
+     * If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list
+     * itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.
+     * </p>
+     * <p>
+     * If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not
+     * valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a
+     * certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all
+     * domain names in the request are for valid top-level domains. For example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more
+     * of the domain names in the certificate request. Try to request a certificate again, correcting any spelling
+     * errors or typos that were in the failed request.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        The reason for the SSL/TLS certificate validation failure.
+     *        The validation failure reason, if any, of the certificate.</p>
+     *        <p>
+     *        The following failure reasons are possible:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not
+     *        available for Lightsail certificates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
+     *        process this certificate request. This can happen as a fraud-protection measure, such as when the domain
+     *        ranks within the Alexa top 1000 websites. To provide the required information, use the <a
+     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     *        cloudfront.net, or elasticbeanstalk.com.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     *        reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
+     *        correct the problem, search for your domain name on the <a
+     *        href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
+     *        suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     *        Websites</a> to learn what you can do.
+     *        </p>
+     *        <p>
+     *        If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     *        VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a
+     *        block list itself. After you correct the problem and the VirusTotal registry has been updated, request a
+     *        new certificate.
+     *        </p>
+     *        <p>
+     *        If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request
+     *        is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try
+     *        to request a certificate again, correcting any spelling errors or typos that were in the failed request,
+     *        and ensure that all domain names in the request are for valid top-level domains. For example, you cannot
+     *        request a certificate for <code>example.invalidpublicdomain</code> because
+     *        <code>invalidpublicdomain</code> is not a valid top-level domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or
+     *        more of the domain names in the certificate request. Try to request a certificate again, correcting any
+     *        spelling errors or typos that were in the failed request.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateFailureReason
      */
@@ -1320,11 +1740,131 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason for the SSL/TLS certificate validation failure.
+     * The validation failure reason, if any, of the certificate.
      * </p>
+     * <p>
+     * The following failure reasons are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not available
+     * for Lightsail certificates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
+     * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
+     * Alexa top 1000 websites. To provide the required information, use the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     * cloudfront.net, or elasticbeanstalk.com.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     * reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To correct the
+     * problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
+     * website. If your domain is reported as suspicious, see <a
+     * href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked Websites</a> to learn what you can
+     * do.
+     * </p>
+     * <p>
+     * If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     * VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a block list
+     * itself. After you correct the problem and the VirusTotal registry has been updated, request a new certificate.
+     * </p>
+     * <p>
+     * If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request is not
+     * valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try to request a
+     * certificate again, correcting any spelling errors or typos that were in the failed request, and ensure that all
+     * domain names in the request are for valid top-level domains. For example, you cannot request a certificate for
+     * <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code> is not a valid top-level
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or more
+     * of the domain names in the certificate request. Try to request a certificate again, correcting any spelling
+     * errors or typos that were in the failed request.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param failureReason
-     *        The reason for the SSL/TLS certificate validation failure.
+     *        The validation failure reason, if any, of the certificate.</p>
+     *        <p>
+     *        The following failure reasons are possible:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation, which is not
+     *        available for Lightsail certificates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
+     *        process this certificate request. This can happen as a fraud-protection measure, such as when the domain
+     *        ranks within the Alexa top 1000 websites. To provide the required information, use the <a
+     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot request a certificate for Amazon-owned domain names such as those ending in amazonaws.com,
+     *        cloudfront.net, or elasticbeanstalk.com.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the certificate request was
+     *        reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>. To
+     *        correct the problem, search for your domain name on the <a
+     *        href="https://www.virustotal.com/gui/home/url">VirusTotal</a> website. If your domain is reported as
+     *        suspicious, see <a href="https://www.google.com/webmasters/hacked/?hl=en">Google Help for Hacked
+     *        Websites</a> to learn what you can do.
+     *        </p>
+     *        <p>
+     *        If you believe that the result is a false positive, notify the organization that is reporting the domain.
+     *        VirusTotal is an aggregate of several antivirus and URL scanners and cannot remove your domain from a
+     *        block list itself. After you correct the problem and the VirusTotal registry has been updated, request a
+     *        new certificate.
+     *        </p>
+     *        <p>
+     *        If you see this error and your domain is not included in the VirusTotal list, visit the <a
+     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in the certificate request
+     *        is not valid. Typically, this is because a domain name in the request is not a valid top-level domain. Try
+     *        to request a certificate again, correcting any spelling errors or typos that were in the failed request,
+     *        and ensure that all domain names in the request are for valid top-level domains. For example, you cannot
+     *        request a certificate for <code>example.invalidpublicdomain</code> because
+     *        <code>invalidpublicdomain</code> is not a valid top-level domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical error in one or
+     *        more of the domain names in the certificate request. Try to request a certificate again, correcting any
+     *        spelling errors or typos that were in the failed request.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateFailureReason
      */
@@ -1416,11 +1956,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm used to generate the key pair (the public and private key).
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm that was used to generate the key pair (the public and private key).
+     *        The algorithm used to generate the key pair (the public and private key).
      */
 
     public void setKeyAlgorithm(String keyAlgorithm) {
@@ -1429,10 +1969,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm used to generate the key pair (the public and private key).
      * </p>
      * 
-     * @return The algorithm that was used to generate the key pair (the public and private key).
+     * @return The algorithm used to generate the key pair (the public and private key).
      */
 
     public String getKeyAlgorithm() {
@@ -1441,11 +1981,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The algorithm that was used to generate the key pair (the public and private key).
+     * The algorithm used to generate the key pair (the public and private key).
      * </p>
      * 
      * @param keyAlgorithm
-     *        The algorithm that was used to generate the key pair (the public and private key).
+     *        The algorithm used to generate the key pair (the public and private key).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1536,11 +2076,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An object containing information about the status of Lightsail's managed renewal for the certificate.
+     * An object that describes the status of the certificate renewal managed by Lightsail.
      * </p>
      * 
      * @param renewalSummary
-     *        An object containing information about the status of Lightsail's managed renewal for the certificate.
+     *        An object that describes the status of the certificate renewal managed by Lightsail.
      */
 
     public void setRenewalSummary(LoadBalancerTlsCertificateRenewalSummary renewalSummary) {
@@ -1549,10 +2089,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An object containing information about the status of Lightsail's managed renewal for the certificate.
+     * An object that describes the status of the certificate renewal managed by Lightsail.
      * </p>
      * 
-     * @return An object containing information about the status of Lightsail's managed renewal for the certificate.
+     * @return An object that describes the status of the certificate renewal managed by Lightsail.
      */
 
     public LoadBalancerTlsCertificateRenewalSummary getRenewalSummary() {
@@ -1561,11 +2101,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * An object containing information about the status of Lightsail's managed renewal for the certificate.
+     * An object that describes the status of the certificate renewal managed by Lightsail.
      * </p>
      * 
      * @param renewalSummary
-     *        An object containing information about the status of Lightsail's managed renewal for the certificate.
+     *        An object that describes the status of the certificate renewal managed by Lightsail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1576,11 +2116,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason the certificate was revoked. Valid values are below.
+     * The reason the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
      * @param revocationReason
-     *        The reason the certificate was revoked. Valid values are below.
+     *        The reason the certificate was revoked. This value is present only when the certificate status is
+     *        <code>REVOKED</code>.
      * @see LoadBalancerTlsCertificateRevocationReason
      */
 
@@ -1590,10 +2132,12 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason the certificate was revoked. Valid values are below.
+     * The reason the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
-     * @return The reason the certificate was revoked. Valid values are below.
+     * @return The reason the certificate was revoked. This value is present only when the certificate status is
+     *         <code>REVOKED</code>.
      * @see LoadBalancerTlsCertificateRevocationReason
      */
 
@@ -1603,11 +2147,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason the certificate was revoked. Valid values are below.
+     * The reason the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
      * @param revocationReason
-     *        The reason the certificate was revoked. Valid values are below.
+     *        The reason the certificate was revoked. This value is present only when the certificate status is
+     *        <code>REVOKED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateRevocationReason
      */
@@ -1619,11 +2165,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The reason the certificate was revoked. Valid values are below.
+     * The reason the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
      * @param revocationReason
-     *        The reason the certificate was revoked. Valid values are below.
+     *        The reason the certificate was revoked. This value is present only when the certificate status is
+     *        <code>REVOKED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateRevocationReason
      */
@@ -1635,11 +2183,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the SSL/TLS certificate was revoked.
+     * The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
      * @param revokedAt
-     *        The timestamp when the SSL/TLS certificate was revoked.
+     *        The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     *        <code>REVOKED</code>.
      */
 
     public void setRevokedAt(java.util.Date revokedAt) {
@@ -1648,10 +2198,12 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the SSL/TLS certificate was revoked.
+     * The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
-     * @return The timestamp when the SSL/TLS certificate was revoked.
+     * @return The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     *         <code>REVOKED</code>.
      */
 
     public java.util.Date getRevokedAt() {
@@ -1660,11 +2212,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The timestamp when the SSL/TLS certificate was revoked.
+     * The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     * <code>REVOKED</code>.
      * </p>
      * 
      * @param revokedAt
-     *        The timestamp when the SSL/TLS certificate was revoked.
+     *        The timestamp when the certificate was revoked. This value is present only when the certificate status is
+     *        <code>REVOKED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1795,17 +2349,12 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
-     * to the public key that is contained in the certificate. The subject alternative names include the canonical
-     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
-     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
+     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * <code>blog.example.com</code>) for the certificate.
      * </p>
      * 
-     * @return One or more domains or subdomains included in the certificate. This list contains the domain names that
-     *         are bound to the public key that is contained in the certificate. The subject alternative names include
-     *         the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
-     *         connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
-     *         <code>m.example.com</code>.
+     * @return An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
+     *         (e.g., <code>blog.example.com</code>) for the certificate.
      */
 
     public java.util.List<String> getSubjectAlternativeNames() {
@@ -1814,18 +2363,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
-     * to the public key that is contained in the certificate. The subject alternative names include the canonical
-     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
-     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
+     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * <code>blog.example.com</code>) for the certificate.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domains or subdomains included in the certificate. This list contains the domain names that
-     *        are bound to the public key that is contained in the certificate. The subject alternative names include
-     *        the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
-     *        connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
-     *        <code>m.example.com</code>.
+     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
+     *        (e.g., <code>blog.example.com</code>) for the certificate.
      */
 
     public void setSubjectAlternativeNames(java.util.Collection<String> subjectAlternativeNames) {
@@ -1839,10 +2383,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
-     * to the public key that is contained in the certificate. The subject alternative names include the canonical
-     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
-     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
+     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * <code>blog.example.com</code>) for the certificate.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1851,11 +2393,8 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domains or subdomains included in the certificate. This list contains the domain names that
-     *        are bound to the public key that is contained in the certificate. The subject alternative names include
-     *        the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
-     *        connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
-     *        <code>m.example.com</code>.
+     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
+     *        (e.g., <code>blog.example.com</code>) for the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1871,18 +2410,13 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * One or more domains or subdomains included in the certificate. This list contains the domain names that are bound
-     * to the public key that is contained in the certificate. The subject alternative names include the canonical
-     * domain name (CNAME) of the certificate and additional domain names that can be used to connect to the website,
-     * such as <code>example.com</code>, <code>www.example.com</code>, or <code>m.example.com</code>.
+     * An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains (e.g.,
+     * <code>blog.example.com</code>) for the certificate.
      * </p>
      * 
      * @param subjectAlternativeNames
-     *        One or more domains or subdomains included in the certificate. This list contains the domain names that
-     *        are bound to the public key that is contained in the certificate. The subject alternative names include
-     *        the canonical domain name (CNAME) of the certificate and additional domain names that can be used to
-     *        connect to the website, such as <code>example.com</code>, <code>www.example.com</code>, or
-     *        <code>m.example.com</code>.
+     *        An array of strings that specify the alternate domains (e.g., <code>example2.com</code>) and subdomains
+     *        (e.g., <code>blog.example.com</code>) for the certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

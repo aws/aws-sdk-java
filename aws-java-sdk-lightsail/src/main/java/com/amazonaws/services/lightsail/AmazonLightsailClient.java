@@ -51,20 +51,23 @@ import com.amazonaws.services.lightsail.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
- * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
- * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
+ * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
+ * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
+ * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
+ * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
+ * monthly price.
  * </p>
  * <p>
- * For more information about Lightsail concepts and tasks, see the <a
- * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
- * </p>
- * <p>
- * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
- * keys. For details about how to set this up, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
+ * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
+ * </p>
+ * <p>
+ * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
+ * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @ThreadSafe
@@ -90,9 +93,6 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationFailureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lightsail.model.transform.OperationFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnauthenticatedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lightsail.model.transform.UnauthenticatedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -102,14 +102,17 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lightsail.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.lightsail.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lightsail.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccountSetupInProgressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lightsail.model.transform.AccountSetupInProgressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.OperationFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.lightsail.model.AmazonLightsailException.class));
 
     /**
@@ -375,6 +378,94 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<AllocateStaticIpResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AllocateStaticIpResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * <p>
+     * Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param attachCertificateToDistributionRequest
+     * @return Result of the AttachCertificateToDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachCertificateToDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AttachCertificateToDistributionResult attachCertificateToDistribution(AttachCertificateToDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachCertificateToDistribution(request);
+    }
+
+    @SdkInternalApi
+    final AttachCertificateToDistributionResult executeAttachCertificateToDistribution(
+            AttachCertificateToDistributionRequest attachCertificateToDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(attachCertificateToDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AttachCertificateToDistributionRequest> request = null;
+        Response<AttachCertificateToDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachCertificateToDistributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(attachCertificateToDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachCertificateToDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AttachCertificateToDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AttachCertificateToDistributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -877,6 +968,86 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is created, use the <code>AttachCertificateToDistribution</code> action to attach the
+     * certificate to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateRequest
+     * @return Result of the CreateCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateCertificateResult createCertificate(CreateCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCertificate(request);
+    }
+
+    @SdkInternalApi
+    final CreateCertificateResult executeCreateCertificate(CreateCertificateRequest createCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCertificateRequest> request = null;
+        Response<CreateCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail
      * snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS
      * CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of
@@ -1287,6 +1458,83 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateDiskSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDiskSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution is a globally distributed network of caching servers that improve the performance of your website
+     * or web application hosted on a Lightsail instance. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
+     * delivery networks in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param createDistributionRequest
+     * @return Result of the CreateDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateDistributionResult createDistribution(CreateDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDistribution(request);
+    }
+
+    @SdkInternalApi
+    final CreateDistributionResult executeCreateDistribution(CreateDistributionRequest createDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDistributionRequest> request = null;
+        Response<CreateDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateDistributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2351,6 +2599,79 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Certificates that are currently attached to a distribution cannot be deleted. Use the
+     * <code>DetachCertificateFromDistribution</code> action to detach a certificate from a distribution.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return Result of the DeleteCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCertificate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCertificateResult executeDeleteCertificate(DeleteCertificateRequest deleteCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCertificateRequest> request = null;
+        Response<DeleteCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteCertificateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteCertificateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a contact method.
      * </p>
      * <p>
@@ -2588,6 +2909,77 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteDiskSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDiskSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * 
+     * @param deleteDistributionRequest
+     * @return Result of the DeleteDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDistributionResult deleteDistribution(DeleteDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDistribution(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDistributionResult executeDeleteDistribution(DeleteDistributionRequest deleteDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDistributionRequest> request = null;
+        Response<DeleteDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteDistributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3392,6 +3784,84 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRelationalDatabaseSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteRelationalDatabaseSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is detached, your distribution stops accepting traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * 
+     * @param detachCertificateFromDistributionRequest
+     * @return Result of the DetachCertificateFromDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DetachCertificateFromDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetachCertificateFromDistributionResult detachCertificateFromDistribution(DetachCertificateFromDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachCertificateFromDistribution(request);
+    }
+
+    @SdkInternalApi
+    final DetachCertificateFromDistributionResult executeDetachCertificateFromDistribution(
+            DetachCertificateFromDistributionRequest detachCertificateFromDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detachCertificateFromDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetachCertificateFromDistributionRequest> request = null;
+        Response<DetachCertificateFromDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachCertificateFromDistributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(detachCertificateFromDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachCertificateFromDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DetachCertificateFromDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DetachCertificateFromDistributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4338,6 +4808,81 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Returns information about one or more Amazon Lightsail SSL/TLS certificates.
+     * </p>
+     * <note>
+     * <p>
+     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
+     * </p>
+     * </note>
+     * 
+     * @param getCertificatesRequest
+     * @return Result of the GetCertificates operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetCertificatesResult getCertificates(GetCertificatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetCertificates(request);
+    }
+
+    @SdkInternalApi
+    final GetCertificatesResult executeGetCertificates(GetCertificatesRequest getCertificatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getCertificatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetCertificatesRequest> request = null;
+        Response<GetCertificatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCertificatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetCertificatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetCertificatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
      * operation.
      * </p>
@@ -4777,6 +5322,305 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDisksResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDisksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list bundles that can be applied to you Amazon Lightsail content delivery network (CDN)
+     * distributions.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * 
+     * @param getDistributionBundlesRequest
+     * @return Result of the GetDistributionBundles operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributionBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDistributionBundlesResult getDistributionBundles(GetDistributionBundlesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDistributionBundles(request);
+    }
+
+    @SdkInternalApi
+    final GetDistributionBundlesResult executeGetDistributionBundles(GetDistributionBundlesRequest getDistributionBundlesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDistributionBundlesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDistributionBundlesRequest> request = null;
+        Response<GetDistributionBundlesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDistributionBundlesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDistributionBundlesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionBundles");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDistributionBundlesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDistributionBundlesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network
+     * (CDN) distribution.
+     * </p>
+     * 
+     * @param getDistributionLatestCacheResetRequest
+     * @return Result of the GetDistributionLatestCacheReset operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributionLatestCacheReset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDistributionLatestCacheResetResult getDistributionLatestCacheReset(GetDistributionLatestCacheResetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDistributionLatestCacheReset(request);
+    }
+
+    @SdkInternalApi
+    final GetDistributionLatestCacheResetResult executeGetDistributionLatestCacheReset(
+            GetDistributionLatestCacheResetRequest getDistributionLatestCacheResetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDistributionLatestCacheResetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDistributionLatestCacheResetRequest> request = null;
+        Response<GetDistributionLatestCacheResetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDistributionLatestCacheResetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDistributionLatestCacheResetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionLatestCacheReset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDistributionLatestCacheResetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDistributionLatestCacheResetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect
+     * metric data regularly to maintain the reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getDistributionMetricDataRequest
+     * @return Result of the GetDistributionMetricData operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributionMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDistributionMetricDataResult getDistributionMetricData(GetDistributionMetricDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDistributionMetricData(request);
+    }
+
+    @SdkInternalApi
+    final GetDistributionMetricDataResult executeGetDistributionMetricData(GetDistributionMetricDataRequest getDistributionMetricDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDistributionMetricDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDistributionMetricDataRequest> request = null;
+        Response<GetDistributionMetricDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDistributionMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDistributionMetricDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionMetricData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDistributionMetricDataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDistributionMetricDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.
+     * </p>
+     * 
+     * @param getDistributionsRequest
+     * @return Result of the GetDistributions operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDistributionsResult getDistributions(GetDistributionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDistributions(request);
+    }
+
+    @SdkInternalApi
+    final GetDistributionsResult executeGetDistributions(GetDistributionsRequest getDistributionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDistributionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDistributionsRequest> request = null;
+        Response<GetDistributionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDistributionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDistributionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDistributionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDistributionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8143,6 +8987,82 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes currently cached content from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After resetting the cache, the next time a content request is made, your distribution pulls, serves, and caches
+     * it from the origin.
+     * </p>
+     * 
+     * @param resetDistributionCacheRequest
+     * @return Result of the ResetDistributionCache operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.ResetDistributionCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ResetDistributionCacheResult resetDistributionCache(ResetDistributionCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetDistributionCache(request);
+    }
+
+    @SdkInternalApi
+    final ResetDistributionCacheResult executeResetDistributionCache(ResetDistributionCacheRequest resetDistributionCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetDistributionCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetDistributionCacheRequest> request = null;
+        Response<ResetDistributionCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetDistributionCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetDistributionCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDistributionCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetDistributionCacheResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ResetDistributionCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact
      * methods don't need to be verified.
      * </p>
@@ -8872,6 +9792,166 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Use this action to update the configuration of your existing distribution
+     * </p>
+     * 
+     * @param updateDistributionRequest
+     * @return Result of the UpdateDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDistribution(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDistributionResult executeUpdateDistribution(UpdateDistributionRequest updateDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDistributionRequest> request = null;
+        Response<UpdateDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDistributionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * <p>
+     * Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is
+     * incurring an overage fee.
+     * </p>
+     * <p>
+     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
+     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
+     * distribution's bundle.
+     * </p>
+     * 
+     * @param updateDistributionBundleRequest
+     * @return Result of the UpdateDistributionBundle operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateDistributionBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateDistributionBundleResult updateDistributionBundle(UpdateDistributionBundleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDistributionBundle(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDistributionBundleResult executeUpdateDistributionBundle(UpdateDistributionBundleRequest updateDistributionBundleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDistributionBundleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDistributionBundleRequest> request = null;
+        Response<UpdateDistributionBundleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDistributionBundleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDistributionBundleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistributionBundle");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDistributionBundleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDistributionBundleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

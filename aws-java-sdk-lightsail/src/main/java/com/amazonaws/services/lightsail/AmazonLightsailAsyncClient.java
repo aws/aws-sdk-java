@@ -31,20 +31,23 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
- * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
- * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
+ * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
+ * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
+ * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
+ * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
+ * monthly price.
  * </p>
  * <p>
- * For more information about Lightsail concepts and tasks, see the <a
- * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
- * </p>
- * <p>
- * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
- * keys. For details about how to set this up, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
+ * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
+ * </p>
+ * <p>
+ * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
+ * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @ThreadSafe
@@ -304,6 +307,41 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<AttachCertificateToDistributionResult> attachCertificateToDistributionAsync(
+            AttachCertificateToDistributionRequest request) {
+
+        return attachCertificateToDistributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachCertificateToDistributionResult> attachCertificateToDistributionAsync(
+            final AttachCertificateToDistributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AttachCertificateToDistributionRequest, AttachCertificateToDistributionResult> asyncHandler) {
+        final AttachCertificateToDistributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AttachCertificateToDistributionResult>() {
+            @Override
+            public AttachCertificateToDistributionResult call() throws Exception {
+                AttachCertificateToDistributionResult result = null;
+
+                try {
+                    result = executeAttachCertificateToDistribution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AttachDiskResult> attachDiskAsync(AttachDiskRequest request) {
 
         return attachDiskAsync(request, null);
@@ -505,6 +543,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCertificateResult> createCertificateAsync(CreateCertificateRequest request) {
+
+        return createCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCertificateResult> createCertificateAsync(final CreateCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCertificateRequest, CreateCertificateResult> asyncHandler) {
+        final CreateCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCertificateResult>() {
+            @Override
+            public CreateCertificateResult call() throws Exception {
+                CreateCertificateResult result = null;
+
+                try {
+                    result = executeCreateCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateCloudFormationStackResult> createCloudFormationStackAsync(CreateCloudFormationStackRequest request) {
 
         return createCloudFormationStackAsync(request, null);
@@ -654,6 +725,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeCreateDiskSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest request) {
+
+        return createDistributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(final CreateDistributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler) {
+        final CreateDistributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDistributionResult>() {
+            @Override
+            public CreateDistributionResult call() throws Exception {
+                CreateDistributionResult result = null;
+
+                try {
+                    result = executeCreateDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1105,6 +1209,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest request) {
+
+        return deleteCertificateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(final DeleteCertificateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler) {
+        final DeleteCertificateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCertificateResult>() {
+            @Override
+            public DeleteCertificateResult call() throws Exception {
+                DeleteCertificateResult result = null;
+
+                try {
+                    result = executeDeleteCertificate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteContactMethodResult> deleteContactMethodAsync(DeleteContactMethodRequest request) {
 
         return deleteContactMethodAsync(request, null);
@@ -1188,6 +1325,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDeleteDiskSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest request) {
+
+        return deleteDistributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(final DeleteDistributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler) {
+        final DeleteDistributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDistributionResult>() {
+            @Override
+            public DeleteDistributionResult call() throws Exception {
+                DeleteDistributionResult result = null;
+
+                try {
+                    result = executeDeleteDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1522,6 +1692,41 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeDeleteRelationalDatabaseSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachCertificateFromDistributionResult> detachCertificateFromDistributionAsync(
+            DetachCertificateFromDistributionRequest request) {
+
+        return detachCertificateFromDistributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachCertificateFromDistributionResult> detachCertificateFromDistributionAsync(
+            final DetachCertificateFromDistributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DetachCertificateFromDistributionRequest, DetachCertificateFromDistributionResult> asyncHandler) {
+        final DetachCertificateFromDistributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DetachCertificateFromDistributionResult>() {
+            @Override
+            public DetachCertificateFromDistributionResult call() throws Exception {
+                DetachCertificateFromDistributionResult result = null;
+
+                try {
+                    result = executeDetachCertificateFromDistribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1936,6 +2141,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetCertificatesResult> getCertificatesAsync(GetCertificatesRequest request) {
+
+        return getCertificatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCertificatesResult> getCertificatesAsync(final GetCertificatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCertificatesRequest, GetCertificatesResult> asyncHandler) {
+        final GetCertificatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCertificatesResult>() {
+            @Override
+            public GetCertificatesResult call() throws Exception {
+                GetCertificatesResult result = null;
+
+                try {
+                    result = executeGetCertificates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCloudFormationStackRecordsResult> getCloudFormationStackRecordsAsync(GetCloudFormationStackRecordsRequest request) {
 
         return getCloudFormationStackRecordsAsync(request, null);
@@ -2119,6 +2357,140 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeGetDisks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionBundlesResult> getDistributionBundlesAsync(GetDistributionBundlesRequest request) {
+
+        return getDistributionBundlesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionBundlesResult> getDistributionBundlesAsync(final GetDistributionBundlesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDistributionBundlesRequest, GetDistributionBundlesResult> asyncHandler) {
+        final GetDistributionBundlesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDistributionBundlesResult>() {
+            @Override
+            public GetDistributionBundlesResult call() throws Exception {
+                GetDistributionBundlesResult result = null;
+
+                try {
+                    result = executeGetDistributionBundles(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionLatestCacheResetResult> getDistributionLatestCacheResetAsync(
+            GetDistributionLatestCacheResetRequest request) {
+
+        return getDistributionLatestCacheResetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionLatestCacheResetResult> getDistributionLatestCacheResetAsync(
+            final GetDistributionLatestCacheResetRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDistributionLatestCacheResetRequest, GetDistributionLatestCacheResetResult> asyncHandler) {
+        final GetDistributionLatestCacheResetRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDistributionLatestCacheResetResult>() {
+            @Override
+            public GetDistributionLatestCacheResetResult call() throws Exception {
+                GetDistributionLatestCacheResetResult result = null;
+
+                try {
+                    result = executeGetDistributionLatestCacheReset(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionMetricDataResult> getDistributionMetricDataAsync(GetDistributionMetricDataRequest request) {
+
+        return getDistributionMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionMetricDataResult> getDistributionMetricDataAsync(final GetDistributionMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDistributionMetricDataRequest, GetDistributionMetricDataResult> asyncHandler) {
+        final GetDistributionMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDistributionMetricDataResult>() {
+            @Override
+            public GetDistributionMetricDataResult call() throws Exception {
+                GetDistributionMetricDataResult result = null;
+
+                try {
+                    result = executeGetDistributionMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionsResult> getDistributionsAsync(GetDistributionsRequest request) {
+
+        return getDistributionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDistributionsResult> getDistributionsAsync(final GetDistributionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDistributionsRequest, GetDistributionsResult> asyncHandler) {
+        final GetDistributionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDistributionsResult>() {
+            @Override
+            public GetDistributionsResult call() throws Exception {
+                GetDistributionsResult result = null;
+
+                try {
+                    result = executeGetDistributions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3601,6 +3973,39 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ResetDistributionCacheResult> resetDistributionCacheAsync(ResetDistributionCacheRequest request) {
+
+        return resetDistributionCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetDistributionCacheResult> resetDistributionCacheAsync(final ResetDistributionCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetDistributionCacheRequest, ResetDistributionCacheResult> asyncHandler) {
+        final ResetDistributionCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetDistributionCacheResult>() {
+            @Override
+            public ResetDistributionCacheResult call() throws Exception {
+                ResetDistributionCacheResult result = null;
+
+                try {
+                    result = executeResetDistributionCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendContactMethodVerificationResult> sendContactMethodVerificationAsync(SendContactMethodVerificationRequest request) {
 
         return sendContactMethodVerificationAsync(request, null);
@@ -3883,6 +4288,72 @@ public class AmazonLightsailAsyncClient extends AmazonLightsailClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest request) {
+
+        return updateDistributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(final UpdateDistributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler) {
+        final UpdateDistributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDistributionResult>() {
+            @Override
+            public UpdateDistributionResult call() throws Exception {
+                UpdateDistributionResult result = null;
+
+                try {
+                    result = executeUpdateDistribution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDistributionBundleResult> updateDistributionBundleAsync(UpdateDistributionBundleRequest request) {
+
+        return updateDistributionBundleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDistributionBundleResult> updateDistributionBundleAsync(final UpdateDistributionBundleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDistributionBundleRequest, UpdateDistributionBundleResult> asyncHandler) {
+        final UpdateDistributionBundleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDistributionBundleResult>() {
+            @Override
+            public UpdateDistributionBundleResult call() throws Exception {
+                UpdateDistributionBundleResult result = null;
+
+                try {
+                    result = executeUpdateDistributionBundle(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

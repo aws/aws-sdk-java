@@ -44,13 +44,17 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
     private Integer runningModeAutoStopTimeoutInMinutes;
     /**
      * <p>
-     * The size of the root volume.
+     * The size of the root volume. For important information about how to modify the size of the root and user volumes,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      */
     private Integer rootVolumeSizeGib;
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user storage. For important information about how to modify the size of the root and user
+     * volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      */
     private Integer userVolumeSizeGib;
@@ -200,11 +204,16 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The size of the root volume.
+     * The size of the root volume. For important information about how to modify the size of the root and user volumes,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      * 
      * @param rootVolumeSizeGib
-     *        The size of the root volume.
+     *        The size of the root volume. For important information about how to modify the size of the root and user
+     *        volumes, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     *        WorkSpace</a>.
      */
 
     public void setRootVolumeSizeGib(Integer rootVolumeSizeGib) {
@@ -213,10 +222,15 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The size of the root volume.
+     * The size of the root volume. For important information about how to modify the size of the root and user volumes,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      * 
-     * @return The size of the root volume.
+     * @return The size of the root volume. For important information about how to modify the size of the root and user
+     *         volumes, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     *         WorkSpace</a>.
      */
 
     public Integer getRootVolumeSizeGib() {
@@ -225,11 +239,16 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The size of the root volume.
+     * The size of the root volume. For important information about how to modify the size of the root and user volumes,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      * 
      * @param rootVolumeSizeGib
-     *        The size of the root volume.
+     *        The size of the root volume. For important information about how to modify the size of the root and user
+     *        volumes, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     *        WorkSpace</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +259,16 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user storage. For important information about how to modify the size of the root and user
+     * volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      * 
      * @param userVolumeSizeGib
-     *        The size of the user storage.
+     *        The size of the user storage. For important information about how to modify the size of the root and user
+     *        volumes, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     *        WorkSpace</a>.
      */
 
     public void setUserVolumeSizeGib(Integer userVolumeSizeGib) {
@@ -253,10 +277,15 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user storage. For important information about how to modify the size of the root and user
+     * volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      * 
-     * @return The size of the user storage.
+     * @return The size of the user storage. For important information about how to modify the size of the root and user
+     *         volumes, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     *         WorkSpace</a>.
      */
 
     public Integer getUserVolumeSizeGib() {
@@ -265,11 +294,16 @@ public class WorkspaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The size of the user storage.
+     * The size of the user storage. For important information about how to modify the size of the root and user
+     * volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     * WorkSpace</a>.
      * </p>
      * 
      * @param userVolumeSizeGib
-     *        The size of the user storage.
+     *        The size of the user storage. For important information about how to modify the size of the root and user
+     *        volumes, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">Modify a
+     *        WorkSpace</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

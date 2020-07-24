@@ -46,13 +46,17 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
     private String tableName;
     /**
      * <p>
-     * A list of the values defining the partition.
+     * List of partition key values that define the partition to update.
      * </p>
      */
     private java.util.List<String> partitionValueList;
     /**
      * <p>
      * The new partition object to update the partition to.
+     * </p>
+     * <p>
+     * The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     * partition, delete and recreate the partition.
      * </p>
      */
     private PartitionInput partitionInput;
@@ -185,10 +189,10 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the values defining the partition.
+     * List of partition key values that define the partition to update.
      * </p>
      * 
-     * @return A list of the values defining the partition.
+     * @return List of partition key values that define the partition to update.
      */
 
     public java.util.List<String> getPartitionValueList() {
@@ -197,11 +201,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the values defining the partition.
+     * List of partition key values that define the partition to update.
      * </p>
      * 
      * @param partitionValueList
-     *        A list of the values defining the partition.
+     *        List of partition key values that define the partition to update.
      */
 
     public void setPartitionValueList(java.util.Collection<String> partitionValueList) {
@@ -215,7 +219,7 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the values defining the partition.
+     * List of partition key values that define the partition to update.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -224,7 +228,7 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param partitionValueList
-     *        A list of the values defining the partition.
+     *        List of partition key values that define the partition to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +244,11 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of the values defining the partition.
+     * List of partition key values that define the partition to update.
      * </p>
      * 
      * @param partitionValueList
-     *        A list of the values defining the partition.
+     *        List of partition key values that define the partition to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,9 +261,16 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new partition object to update the partition to.
      * </p>
+     * <p>
+     * The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     * partition, delete and recreate the partition.
+     * </p>
      * 
      * @param partitionInput
-     *        The new partition object to update the partition to.
+     *        The new partition object to update the partition to.</p>
+     *        <p>
+     *        The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     *        partition, delete and recreate the partition.
      */
 
     public void setPartitionInput(PartitionInput partitionInput) {
@@ -270,8 +281,15 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new partition object to update the partition to.
      * </p>
+     * <p>
+     * The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     * partition, delete and recreate the partition.
+     * </p>
      * 
-     * @return The new partition object to update the partition to.
+     * @return The new partition object to update the partition to.</p>
+     *         <p>
+     *         The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     *         partition, delete and recreate the partition.
      */
 
     public PartitionInput getPartitionInput() {
@@ -282,9 +300,16 @@ public class UpdatePartitionRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The new partition object to update the partition to.
      * </p>
+     * <p>
+     * The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     * partition, delete and recreate the partition.
+     * </p>
      * 
      * @param partitionInput
-     *        The new partition object to update the partition to.
+     *        The new partition object to update the partition to.</p>
+     *        <p>
+     *        The <code>Values</code> property can't be changed. If you want to change the partition key values for a
+     *        partition, delete and recreate the partition.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

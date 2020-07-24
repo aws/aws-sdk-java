@@ -37,6 +37,8 @@ public class CreateFileSystemLustreConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportedFileChunkSize").build();
     private static final MarshallingInfo<String> DEPLOYMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeploymentType").build();
+    private static final MarshallingInfo<String> AUTOIMPORTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoImportPolicy").build();
     private static final MarshallingInfo<Integer> PERUNITSTORAGETHROUGHPUT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PerUnitStorageThroughput").build();
     private static final MarshallingInfo<String> DAILYAUTOMATICBACKUPSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -67,6 +69,7 @@ public class CreateFileSystemLustreConfigurationMarshaller {
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getExportPath(), EXPORTPATH_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getImportedFileChunkSize(), IMPORTEDFILECHUNKSIZE_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getDeploymentType(), DEPLOYMENTTYPE_BINDING);
+            protocolMarshaller.marshall(createFileSystemLustreConfiguration.getAutoImportPolicy(), AUTOIMPORTPOLICY_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getPerUnitStorageThroughput(), PERUNITSTORAGETHROUGHPUT_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getDailyAutomaticBackupStartTime(), DAILYAUTOMATICBACKUPSTARTTIME_BINDING);
             protocolMarshaller.marshall(createFileSystemLustreConfiguration.getAutomaticBackupRetentionDays(), AUTOMATICBACKUPRETENTIONDAYS_BINDING);

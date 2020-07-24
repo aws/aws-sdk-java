@@ -27,20 +27,23 @@ import com.amazonaws.services.lightsail.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
- * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
- * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
+ * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
+ * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
+ * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
+ * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
+ * monthly price.
  * </p>
  * <p>
- * For more information about Lightsail concepts and tasks, see the <a
- * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
- * </p>
- * <p>
- * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
- * keys. For details about how to set this up, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
+ * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
+ * </p>
+ * <p>
+ * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
+ * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -139,6 +142,51 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     AllocateStaticIpResult allocateStaticIp(AllocateStaticIpRequest allocateStaticIpRequest);
+
+    /**
+     * <p>
+     * Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * <p>
+     * Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param attachCertificateToDistributionRequest
+     * @return Result of the AttachCertificateToDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.AttachCertificateToDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AttachCertificateToDistributionResult attachCertificateToDistribution(AttachCertificateToDistributionRequest attachCertificateToDistributionRequest);
 
     /**
      * <p>
@@ -385,6 +433,46 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is created, use the <code>AttachCertificateToDistribution</code> action to attach the
+     * certificate to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateRequest
+     * @return Result of the CreateCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateCertificateResult createCertificate(CreateCertificateRequest createCertificateRequest);
+
+    /**
+     * <p>
      * Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail
      * snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS
      * CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of
@@ -601,6 +689,43 @@ public interface AmazonLightsail {
      *      API Documentation</a>
      */
     CreateDiskSnapshotResult createDiskSnapshot(CreateDiskSnapshotRequest createDiskSnapshotRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution is a globally distributed network of caching servers that improve the performance of your website
+     * or web application hosted on a Lightsail instance. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
+     * delivery networks in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param createDistributionRequest
+     * @return Result of the CreateDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.CreateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest);
 
     /**
      * <p>
@@ -1123,6 +1248,39 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Certificates that are currently attached to a distribution cannot be deleted. Use the
+     * <code>DetachCertificateFromDistribution</code> action to detach a certificate from a distribution.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return Result of the DeleteCertificate operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
      * Deletes a contact method.
      * </p>
      * <p>
@@ -1249,6 +1407,37 @@ public interface AmazonLightsail {
      *      API Documentation</a>
      */
     DeleteDiskSnapshotResult deleteDiskSnapshot(DeleteDiskSnapshotRequest deleteDiskSnapshotRequest);
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * 
+     * @param deleteDistributionRequest
+     * @return Result of the DeleteDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DeleteDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteDistributionResult deleteDistribution(DeleteDistributionRequest deleteDistributionRequest);
 
     /**
      * <p>
@@ -1644,6 +1833,41 @@ public interface AmazonLightsail {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteRelationalDatabaseSnapshotResult deleteRelationalDatabaseSnapshot(DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest);
+
+    /**
+     * <p>
+     * Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is detached, your distribution stops accepting traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * 
+     * @param detachCertificateFromDistributionRequest
+     * @return Result of the DetachCertificateFromDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.DetachCertificateFromDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DetachCertificateFromDistributionResult detachCertificateFromDistribution(DetachCertificateFromDistributionRequest detachCertificateFromDistributionRequest);
 
     /**
      * <p>
@@ -2097,6 +2321,41 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Returns information about one or more Amazon Lightsail SSL/TLS certificates.
+     * </p>
+     * <note>
+     * <p>
+     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
+     * </p>
+     * </note>
+     * 
+     * @param getCertificatesRequest
+     * @return Result of the GetCertificates operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetCertificatesResult getCertificates(GetCertificatesRequest getCertificatesRequest);
+
+    /**
+     * <p>
      * Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
      * operation.
      * </p>
@@ -2303,6 +2562,139 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     GetDisksResult getDisks(GetDisksRequest getDisksRequest);
+
+    /**
+     * <p>
+     * Returns the list bundles that can be applied to you Amazon Lightsail content delivery network (CDN)
+     * distributions.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * 
+     * @param getDistributionBundlesRequest
+     * @return Result of the GetDistributionBundles operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributionBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDistributionBundlesResult getDistributionBundles(GetDistributionBundlesRequest getDistributionBundlesRequest);
+
+    /**
+     * <p>
+     * Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network
+     * (CDN) distribution.
+     * </p>
+     * 
+     * @param getDistributionLatestCacheResetRequest
+     * @return Result of the GetDistributionLatestCacheReset operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributionLatestCacheReset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDistributionLatestCacheResetResult getDistributionLatestCacheReset(GetDistributionLatestCacheResetRequest getDistributionLatestCacheResetRequest);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect
+     * metric data regularly to maintain the reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getDistributionMetricDataRequest
+     * @return Result of the GetDistributionMetricData operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributionMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDistributionMetricDataResult getDistributionMetricData(GetDistributionMetricDataRequest getDistributionMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.
+     * </p>
+     * 
+     * @param getDistributionsRequest
+     * @return Result of the GetDistributions operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.GetDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDistributionsResult getDistributions(GetDistributionsRequest getDistributionsRequest);
 
     /**
      * <p>
@@ -3857,6 +4249,41 @@ public interface AmazonLightsail {
 
     /**
      * <p>
+     * Deletes currently cached content from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After resetting the cache, the next time a content request is made, your distribution pulls, serves, and caches
+     * it from the origin.
+     * </p>
+     * 
+     * @param resetDistributionCacheRequest
+     * @return Result of the ResetDistributionCache operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.ResetDistributionCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ResetDistributionCacheResult resetDistributionCache(ResetDistributionCacheRequest resetDistributionCacheRequest);
+
+    /**
+     * <p>
      * Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact
      * methods don't need to be verified.
      * </p>
@@ -4230,6 +4657,84 @@ public interface AmazonLightsail {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Use this action to update the configuration of your existing distribution
+     * </p>
+     * 
+     * @param updateDistributionRequest
+     * @return Result of the UpdateDistribution operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest);
+
+    /**
+     * <p>
+     * Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * <p>
+     * Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is
+     * incurring an overage fee.
+     * </p>
+     * <p>
+     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
+     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
+     * distribution's bundle.
+     * </p>
+     * 
+     * @param updateDistributionBundleRequest
+     * @return Result of the UpdateDistributionBundle operation returned by the service.
+     * @throws ServiceException
+     *         A general service exception.
+     * @throws InvalidInputException
+     *         Lightsail throws this exception when user input does not conform to the validation rules of an input
+     *         field.</p> <note>
+     *         <p>
+     *         Domain-related APIs are only available in the N. Virginia (us-east-1) Region. Please set your AWS Region
+     *         configuration to us-east-1 to create, view, or edit these resources.
+     *         </p>
+     * @throws NotFoundException
+     *         Lightsail throws this exception when it cannot find a resource.
+     * @throws OperationFailureException
+     *         Lightsail throws this exception when an operation fails to execute.
+     * @throws AccessDeniedException
+     *         Lightsail throws this exception when the user cannot be authenticated or uses invalid credentials to
+     *         access a resource.
+     * @throws UnauthenticatedException
+     *         Lightsail throws this exception when the user has not been authenticated.
+     * @sample AmazonLightsail.UpdateDistributionBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateDistributionBundleResult updateDistributionBundle(UpdateDistributionBundleRequest updateDistributionBundleRequest);
 
     /**
      * <p>

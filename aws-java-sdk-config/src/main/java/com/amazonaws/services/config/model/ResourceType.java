@@ -109,7 +109,10 @@ public enum ResourceType {
     AWSServiceCatalogPortfolio("AWS::ServiceCatalog::Portfolio"),
     AWSSQSQueue("AWS::SQS::Queue"),
     AWSKMSKey("AWS::KMS::Key"),
-    AWSQLDBLedger("AWS::QLDB::Ledger");
+    AWSQLDBLedger("AWS::QLDB::Ledger"),
+    AWSSecretsManagerSecret("AWS::SecretsManager::Secret"),
+    AWSSNSTopic("AWS::SNS::Topic"),
+    AWSSSMFileData("AWS::SSM::FileData");
 
     private String value;
 

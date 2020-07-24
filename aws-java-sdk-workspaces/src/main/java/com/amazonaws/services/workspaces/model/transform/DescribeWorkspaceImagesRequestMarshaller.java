@@ -30,6 +30,8 @@ public class DescribeWorkspaceImagesRequestMarshaller {
 
     private static final MarshallingInfo<List> IMAGEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageIds").build();
+    private static final MarshallingInfo<String> IMAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageType").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -52,6 +54,7 @@ public class DescribeWorkspaceImagesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(describeWorkspaceImagesRequest.getImageIds(), IMAGEIDS_BINDING);
+            protocolMarshaller.marshall(describeWorkspaceImagesRequest.getImageType(), IMAGETYPE_BINDING);
             protocolMarshaller.marshall(describeWorkspaceImagesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeWorkspaceImagesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

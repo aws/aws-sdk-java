@@ -43,7 +43,11 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private Integer limit;
-
+    /**
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     */
     private Integer maxResults;
     /**
      * <p>
@@ -174,7 +178,13 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of query results returned on each page. AWS Config also allows the Limit request
+     *        parameter.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -182,7 +192,12 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     * 
+     * @return The maximum number of query results returned on each page. AWS Config also allows the Limit request
+     *         parameter.
      */
 
     public Integer getMaxResults() {
@@ -190,7 +205,13 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of query results returned on each page. AWS Config also allows the Limit request
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

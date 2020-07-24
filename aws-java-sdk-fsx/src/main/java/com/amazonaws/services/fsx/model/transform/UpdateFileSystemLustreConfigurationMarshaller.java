@@ -33,6 +33,8 @@ public class UpdateFileSystemLustreConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DailyAutomaticBackupStartTime").build();
     private static final MarshallingInfo<Integer> AUTOMATICBACKUPRETENTIONDAYS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomaticBackupRetentionDays").build();
+    private static final MarshallingInfo<String> AUTOIMPORTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoImportPolicy").build();
 
     private static final UpdateFileSystemLustreConfigurationMarshaller instance = new UpdateFileSystemLustreConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateFileSystemLustreConfigurationMarshaller {
             protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getWeeklyMaintenanceStartTime(), WEEKLYMAINTENANCESTARTTIME_BINDING);
             protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getDailyAutomaticBackupStartTime(), DAILYAUTOMATICBACKUPSTARTTIME_BINDING);
             protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getAutomaticBackupRetentionDays(), AUTOMATICBACKUPRETENTIONDAYS_BINDING);
+            protocolMarshaller.marshall(updateFileSystemLustreConfiguration.getAutoImportPolicy(), AUTOIMPORTPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

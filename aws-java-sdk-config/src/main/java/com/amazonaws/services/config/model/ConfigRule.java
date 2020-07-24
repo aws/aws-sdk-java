@@ -73,6 +73,11 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope,
      * evaluations are triggered when any resource in the recording group changes.
      * </p>
+     * <note>
+     * <p>
+     * The scope can be empty.
+     * </p>
+     * </note>
      */
     private Scope scope;
     /**
@@ -314,12 +319,20 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope,
      * evaluations are triggered when any resource in the recording group changes.
      * </p>
+     * <note>
+     * <p>
+     * The scope can be empty.
+     * </p>
+     * </note>
      * 
      * @param scope
      *        Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource
      *        types, a combination of one resource type and one resource ID, or a combination of a tag key and value.
      *        Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not
-     *        specify a scope, evaluations are triggered when any resource in the recording group changes.
+     *        specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
+     *        <p>
+     *        The scope can be empty.
+     *        </p>
      */
 
     public void setScope(Scope scope) {
@@ -333,11 +346,20 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope,
      * evaluations are triggered when any resource in the recording group changes.
      * </p>
+     * <note>
+     * <p>
+     * The scope can be empty.
+     * </p>
+     * </note>
      * 
      * @return Defines which resources can trigger an evaluation for the rule. The scope can include one or more
      *         resource types, a combination of one resource type and one resource ID, or a combination of a tag key and
      *         value. Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do
-     *         not specify a scope, evaluations are triggered when any resource in the recording group changes.
+     *         not specify a scope, evaluations are triggered when any resource in the recording group changes.</p>
+     *         <note>
+     *         <p>
+     *         The scope can be empty.
+     *         </p>
      */
 
     public Scope getScope() {
@@ -351,12 +373,20 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * to constrain the resources that can trigger an evaluation for the rule. If you do not specify a scope,
      * evaluations are triggered when any resource in the recording group changes.
      * </p>
+     * <note>
+     * <p>
+     * The scope can be empty.
+     * </p>
+     * </note>
      * 
      * @param scope
      *        Defines which resources can trigger an evaluation for the rule. The scope can include one or more resource
      *        types, a combination of one resource type and one resource ID, or a combination of a tag key and value.
      *        Specify a scope to constrain the resources that can trigger an evaluation for the rule. If you do not
-     *        specify a scope, evaluations are triggered when any resource in the recording group changes.
+     *        specify a scope, evaluations are triggered when any resource in the recording group changes.</p> <note>
+     *        <p>
+     *        The scope can be empty.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

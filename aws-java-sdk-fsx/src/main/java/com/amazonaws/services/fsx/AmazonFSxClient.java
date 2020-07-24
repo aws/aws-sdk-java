@@ -78,6 +78,27 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportPath").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidImportPathExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNetworkSettings").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidNetworkSettingsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskExecuting").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskExecutingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.FileSystemNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceDoesNotSupportTagging").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.ResourceDoesNotSupportTaggingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.BackupNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.ServiceLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -90,20 +111,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperation").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportPath").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.InvalidImportPathExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNetworkSettings").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.InvalidNetworkSettingsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MissingFileSystemConfiguration").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.MissingFileSystemConfigurationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskExecuting").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskExecutingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.FileSystemNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BackupRestoring").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.BackupRestoringExceptionUnmarshaller.getInstance()))
@@ -122,15 +131,6 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidExportPath").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.InvalidExportPathExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceDoesNotSupportTagging").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.ResourceDoesNotSupportTaggingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DataRepositoryTaskNotFound").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.DataRepositoryTaskNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFound").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fsx.model.transform.BackupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ActiveDirectoryError").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.ActiveDirectoryErrorExceptionUnmarshaller.getInstance()))

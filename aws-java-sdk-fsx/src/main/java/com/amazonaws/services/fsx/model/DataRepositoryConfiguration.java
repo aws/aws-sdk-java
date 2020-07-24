@@ -31,6 +31,35 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+     * The lifecycle can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The data repository is available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String lifecycle;
+    /**
+     * <p>
      * The import path to the Amazon S3 bucket (and optional prefix) that you're using as the data repository for your
      * FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>. If a prefix is specified
      * after the Amazon S3 bucket name, only object keys with that prefix are loaded into the file system.
@@ -56,6 +85,263 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
      * </p>
      */
     private Integer importedFileChunkSize;
+    /**
+     * <p>
+     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
+     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
+     * The policy can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - (Default) Auto new files, changes to existing files, and deleted files in the linked S3
+     * repository will be imported to the FSx file system.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String autoImportPolicy;
+
+    private DataRepositoryFailureDetails failureDetails;
+
+    /**
+     * <p>
+     * Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+     * The lifecycle can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The data repository is available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lifecycle
+     *        Describes the state of the file system's S3 durable data repository, if it is configured with an S3
+     *        repository. The lifecycle can have the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The data repository is available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *        </p>
+     *        </li>
+     * @see DataRepositoryLifecycle
+     */
+
+    public void setLifecycle(String lifecycle) {
+        this.lifecycle = lifecycle;
+    }
+
+    /**
+     * <p>
+     * Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+     * The lifecycle can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The data repository is available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Describes the state of the file system's S3 durable data repository, if it is configured with an S3
+     *         repository. The lifecycle can have the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AVAILABLE</code> - The data repository is available for use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *         </p>
+     *         </li>
+     * @see DataRepositoryLifecycle
+     */
+
+    public String getLifecycle() {
+        return this.lifecycle;
+    }
+
+    /**
+     * <p>
+     * Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+     * The lifecycle can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The data repository is available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lifecycle
+     *        Describes the state of the file system's S3 durable data repository, if it is configured with an S3
+     *        repository. The lifecycle can have the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The data repository is available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataRepositoryLifecycle
+     */
+
+    public DataRepositoryConfiguration withLifecycle(String lifecycle) {
+        setLifecycle(lifecycle);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the state of the file system's S3 durable data repository, if it is configured with an S3 repository.
+     * The lifecycle can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The data repository is available for use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lifecycle
+     *        Describes the state of the file system's S3 durable data repository, if it is configured with an S3
+     *        repository. The lifecycle can have the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - Amazon FSx is creating the new data repository.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The data repository is available for use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MISCONFIGURED</code> - The data repository is in a failed but recoverable state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATING</code> - The data repository is undergoing a customer initiated update.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataRepositoryLifecycle
+     */
+
+    public DataRepositoryConfiguration withLifecycle(DataRepositoryLifecycle lifecycle) {
+        this.lifecycle = lifecycle.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -232,6 +518,319 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
+     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
+     * The policy can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
+     * the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
+     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
+     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
+     * files in the linked S3 repository will be imported to the FSx file system.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param autoImportPolicy
+     *        Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file
+     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
+     *        repository. The policy can have the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     *        reflected on the FSx file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
+     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
+     *        system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
+     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
+     *        system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
+     *        deleted files in the linked S3 repository will be imported to the FSx file system.
+     *        </p>
+     *        </li>
+     * @see AutoImportPolicyType
+     */
+
+    public void setAutoImportPolicy(String autoImportPolicy) {
+        this.autoImportPolicy = autoImportPolicy;
+    }
+
+    /**
+     * <p>
+     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
+     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
+     * The policy can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
+     * the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
+     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
+     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
+     * files in the linked S3 repository will be imported to the FSx file system.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre
+     *         file system to automatically update its contents with changes that have been made to its linked Amazon S3
+     *         data repository. The policy can have the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     *         reflected on the FSx file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported
+     *         to the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
+     *         system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
+     *         S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx
+     *         file system.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
+     *         deleted files in the linked S3 repository will be imported to the FSx file system.
+     *         </p>
+     *         </li>
+     * @see AutoImportPolicyType
+     */
+
+    public String getAutoImportPolicy() {
+        return this.autoImportPolicy;
+    }
+
+    /**
+     * <p>
+     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
+     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
+     * The policy can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
+     * the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
+     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
+     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
+     * files in the linked S3 repository will be imported to the FSx file system.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param autoImportPolicy
+     *        Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file
+     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
+     *        repository. The policy can have the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     *        reflected on the FSx file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
+     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
+     *        system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
+     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
+     *        system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
+     *        deleted files in the linked S3 repository will be imported to the FSx file system.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoImportPolicyType
+     */
+
+    public DataRepositoryConfiguration withAutoImportPolicy(String autoImportPolicy) {
+        setAutoImportPolicy(autoImportPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file system
+     * to automatically update its contents with changes that have been made to its linked Amazon S3 data repository.
+     * The policy can have the following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be reflected on
+     * the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to the
+     * FSx file system. Updates to existing files and deleted files will not be imported to the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked S3
+     * repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file system.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and deleted
+     * files in the linked S3 repository will be imported to the FSx file system.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param autoImportPolicy
+     *        Describes the data repository's <code>AutoImportPolicy</code>. AutoImport enables your FSx for Lustre file
+     *        system to automatically update its contents with changes that have been made to its linked Amazon S3 data
+     *        repository. The policy can have the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NONE</code> - (Default) Autoimport is turned off, Changes to your S3 repository will not be
+     *        reflected on the FSx file system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW</code> - Autoimport is turned on; only new files in the linked S3 repository will be imported to
+     *        the FSx file system. Updates to existing files and deleted files will not be imported to the FSx file
+     *        system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW_CHANGED</code> - Autoimport is turned on; new files and changes to existing files in the linked
+     *        S3 repository will be imported to the FSx file system. Files deleted in S3 are not deleted in the FSx file
+     *        system.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NEW_CHANGED_DELETED</code> - Autoimport is turned on; new files, changes to existing files, and
+     *        deleted files in the linked S3 repository will be imported to the FSx file system.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutoImportPolicyType
+     */
+
+    public DataRepositoryConfiguration withAutoImportPolicy(AutoImportPolicyType autoImportPolicy) {
+        this.autoImportPolicy = autoImportPolicy.toString();
+        return this;
+    }
+
+    /**
+     * @param failureDetails
+     */
+
+    public void setFailureDetails(DataRepositoryFailureDetails failureDetails) {
+        this.failureDetails = failureDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public DataRepositoryFailureDetails getFailureDetails() {
+        return this.failureDetails;
+    }
+
+    /**
+     * @param failureDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataRepositoryConfiguration withFailureDetails(DataRepositoryFailureDetails failureDetails) {
+        setFailureDetails(failureDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,12 +842,18 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getLifecycle() != null)
+            sb.append("Lifecycle: ").append(getLifecycle()).append(",");
         if (getImportPath() != null)
             sb.append("ImportPath: ").append(getImportPath()).append(",");
         if (getExportPath() != null)
             sb.append("ExportPath: ").append(getExportPath()).append(",");
         if (getImportedFileChunkSize() != null)
-            sb.append("ImportedFileChunkSize: ").append(getImportedFileChunkSize());
+            sb.append("ImportedFileChunkSize: ").append(getImportedFileChunkSize()).append(",");
+        if (getAutoImportPolicy() != null)
+            sb.append("AutoImportPolicy: ").append(getAutoImportPolicy()).append(",");
+        if (getFailureDetails() != null)
+            sb.append("FailureDetails: ").append(getFailureDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +868,10 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
         if (obj instanceof DataRepositoryConfiguration == false)
             return false;
         DataRepositoryConfiguration other = (DataRepositoryConfiguration) obj;
+        if (other.getLifecycle() == null ^ this.getLifecycle() == null)
+            return false;
+        if (other.getLifecycle() != null && other.getLifecycle().equals(this.getLifecycle()) == false)
+            return false;
         if (other.getImportPath() == null ^ this.getImportPath() == null)
             return false;
         if (other.getImportPath() != null && other.getImportPath().equals(this.getImportPath()) == false)
@@ -275,6 +884,14 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
             return false;
         if (other.getImportedFileChunkSize() != null && other.getImportedFileChunkSize().equals(this.getImportedFileChunkSize()) == false)
             return false;
+        if (other.getAutoImportPolicy() == null ^ this.getAutoImportPolicy() == null)
+            return false;
+        if (other.getAutoImportPolicy() != null && other.getAutoImportPolicy().equals(this.getAutoImportPolicy()) == false)
+            return false;
+        if (other.getFailureDetails() == null ^ this.getFailureDetails() == null)
+            return false;
+        if (other.getFailureDetails() != null && other.getFailureDetails().equals(this.getFailureDetails()) == false)
+            return false;
         return true;
     }
 
@@ -283,9 +900,12 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getImportPath() == null) ? 0 : getImportPath().hashCode());
         hashCode = prime * hashCode + ((getExportPath() == null) ? 0 : getExportPath().hashCode());
         hashCode = prime * hashCode + ((getImportedFileChunkSize() == null) ? 0 : getImportedFileChunkSize().hashCode());
+        hashCode = prime * hashCode + ((getAutoImportPolicy() == null) ? 0 : getAutoImportPolicy().hashCode());
+        hashCode = prime * hashCode + ((getFailureDetails() == null) ? 0 : getFailureDetails().hashCode());
         return hashCode;
     }
 

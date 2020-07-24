@@ -839,7 +839,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Deletes the specified image from your account. To delete an image, you must first delete any bundles that are
-     * associated with the image and un-share the image if it is shared with other accounts.
+     * associated with the image and unshare the image if it is shared with other accounts.
      * </p>
      * 
      * @param deleteWorkspaceImageRequest
@@ -1374,6 +1374,68 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
     @Override
     public DescribeWorkspaceDirectoriesResult describeWorkspaceDirectories() {
         return describeWorkspaceDirectories(new DescribeWorkspaceDirectoriesRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the permissions that the owner of an image has granted to other AWS accounts for an image.
+     * </p>
+     * 
+     * @param describeWorkspaceImagePermissionsRequest
+     * @return Result of the DescribeWorkspaceImagePermissions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @sample AmazonWorkspaces.DescribeWorkspaceImagePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceImagePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWorkspaceImagePermissionsResult describeWorkspaceImagePermissions(DescribeWorkspaceImagePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceImagePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceImagePermissionsResult executeDescribeWorkspaceImagePermissions(
+            DescribeWorkspaceImagePermissionsRequest describeWorkspaceImagePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWorkspaceImagePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkspaceImagePermissionsRequest> request = null;
+        Response<DescribeWorkspaceImagePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkspaceImagePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkspaceImagePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceImagePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspaceImagePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWorkspaceImagePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2202,7 +2264,9 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Modifies the specified WorkSpace properties.
+     * Modifies the specified WorkSpace properties. For important information about how to modify the size of the root
+     * and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
+     * Modify a WorkSpace</a>.
      * </p>
      * 
      * @param modifyWorkspacePropertiesRequest
@@ -2401,7 +2465,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-     * <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+     * <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
      * </p>
      * <p>
      * Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more
@@ -2904,6 +2968,88 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRulesOfIpGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRulesOfIpGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Shares or unshares an image with one account by specifying whether that account has permission to copy the image.
+     * If the copy image permission is granted, the image is shared with that account. If the copy image permission is
+     * revoked, the image is unshared with the account.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * To delete an image that has been shared, you must unshare the image before you delete it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Sharing Bring Your Own License (BYOL) images across AWS accounts isn't supported at this time in the AWS GovCloud
+     * (US-West) Region. To share BYOL images across accounts in the AWS GovCloud (US-West) Region, contact AWS Support.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param updateWorkspaceImagePermissionRequest
+     * @return Result of the UpdateWorkspaceImagePermission operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ResourceUnavailableException
+     *         The specified resource is not available.
+     * @throws AccessDeniedException
+     *         The user is not authorized to access a resource.
+     * @throws InvalidParameterValuesException
+     *         One or more parameter values are not valid.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
+     * @sample AmazonWorkspaces.UpdateWorkspaceImagePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/UpdateWorkspaceImagePermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateWorkspaceImagePermissionResult updateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWorkspaceImagePermission(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWorkspaceImagePermissionResult executeUpdateWorkspaceImagePermission(UpdateWorkspaceImagePermissionRequest updateWorkspaceImagePermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWorkspaceImagePermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWorkspaceImagePermissionRequest> request = null;
+        Response<UpdateWorkspaceImagePermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWorkspaceImagePermissionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateWorkspaceImagePermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkspaceImagePermission");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkspaceImagePermissionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateWorkspaceImagePermissionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

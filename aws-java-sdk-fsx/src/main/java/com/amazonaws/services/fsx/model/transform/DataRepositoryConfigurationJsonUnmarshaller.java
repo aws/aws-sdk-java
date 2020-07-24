@@ -48,6 +48,10 @@ public class DataRepositoryConfigurationJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Lifecycle", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryConfiguration.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ImportPath", targetDepth)) {
                     context.nextToken();
                     dataRepositoryConfiguration.setImportPath(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +63,14 @@ public class DataRepositoryConfigurationJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ImportedFileChunkSize", targetDepth)) {
                     context.nextToken();
                     dataRepositoryConfiguration.setImportedFileChunkSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AutoImportPolicy", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryConfiguration.setAutoImportPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FailureDetails", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryConfiguration.setFailureDetails(DataRepositoryFailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

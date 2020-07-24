@@ -1,3 +1,28 @@
+# __1.11.826__ __2020-07-23__
+## __AWS Config__
+  - ### Features
+    - Adding service linked configuration aggregation support along with new enums for config resource coverage
+
+## __AWS Direct Connect__
+  - ### Features
+    - Documentation updates for AWS Direct Connect
+
+## __AWS Glue__
+  - ### Features
+    - Added new ConnectionProperties: "KAFKA_SSL_ENABLED" (to toggle SSL connections) and "KAFKA_CUSTOM_CERT" (import CA certificate file)
+
+## __Amazon FSx__
+  - ### Features
+    - Adds support for AutoImport, a new FSx for Lustre feature that allows customers to configure their FSx file system to automatically update its contents when new objects are added to S3 or existing objects are overwritten.
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds support for Amazon Lightsail content delivery network (CDN) distributions and SSL/TLS certificates.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Added UpdateWorkspaceImagePermission API to share Amazon WorkSpaces images across AWS accounts.
+
 # __1.11.825__ __2020-07-22__
 ## __AWS Elemental MediaLive__
   - ### Features

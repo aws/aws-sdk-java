@@ -35,7 +35,9 @@ public enum ResourceType {
     ExportSnapshotRecord("ExportSnapshotRecord"),
     CloudFormationStackRecord("CloudFormationStackRecord"),
     Alarm("Alarm"),
-    ContactMethod("ContactMethod");
+    ContactMethod("ContactMethod"),
+    Distribution("Distribution"),
+    Certificate("Certificate");
 
     private String value;
 

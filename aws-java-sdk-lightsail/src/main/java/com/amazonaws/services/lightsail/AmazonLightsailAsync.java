@@ -26,20 +26,23 @@ import com.amazonaws.services.lightsail.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Lightsail is the easiest way to get started with AWS for developers who just need virtual private servers.
- * Lightsail includes everything you need to launch your project quickly - a virtual machine, a managed database,
- * SSD-based storage, data transfer, DNS management, and a static IP - for a low, predictable price. You manage those
- * Lightsail servers through the Lightsail console or by using the API or command-line interface (CLI).
+ * Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers who need to build
+ * websites or web applications. It includes everything you need to launch your project quickly – instances (virtual
+ * private servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery
+ * network (CDN) distributions, DNS management of registered domains, and snapshots (backups) – for a low, predictable
+ * monthly price.
  * </p>
  * <p>
- * For more information about Lightsail concepts and tasks, see the <a
- * href="https://lightsail.aws.amazon.com/ls/docs/all">Lightsail Dev Guide</a>.
- * </p>
- * <p>
- * To use the Lightsail API or the CLI, you will need to use AWS Identity and Access Management (IAM) to generate access
- * keys. For details about how to set this up, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
+ * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Lightsail Dev Guide</a>.
+ * </p>
+ * <p>
+ * This API Reference provides detailed information about the actions, data types, parameters, and errors of the
+ * Lightsail service. For more information about the supported AWS Regions, endpoints, and service quotas for the
+ * Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail
+ * Endpoints and Quotas</a> in the <i>AWS General Reference</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -75,6 +78,69 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<AllocateStaticIpResult> allocateStaticIpAsync(AllocateStaticIpRequest allocateStaticIpRequest,
             com.amazonaws.handlers.AsyncHandler<AllocateStaticIpRequest, AllocateStaticIpResult> asyncHandler);
+
+    /**
+     * <p>
+     * Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * <p>
+     * Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param attachCertificateToDistributionRequest
+     * @return A Java Future containing the result of the AttachCertificateToDistribution operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.AttachCertificateToDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachCertificateToDistributionResult> attachCertificateToDistributionAsync(
+            AttachCertificateToDistributionRequest attachCertificateToDistributionRequest);
+
+    /**
+     * <p>
+     * Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * <p>
+     * Use the <code>CreateCertificate</code> action to create a certificate that you can attach to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param attachCertificateToDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachCertificateToDistribution operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.AttachCertificateToDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/AttachCertificateToDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachCertificateToDistributionResult> attachCertificateToDistributionAsync(
+            AttachCertificateToDistributionRequest attachCertificateToDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachCertificateToDistributionRequest, AttachCertificateToDistributionResult> asyncHandler);
 
     /**
      * <p>
@@ -362,6 +428,59 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is created, use the <code>AttachCertificateToDistribution</code> action to attach the
+     * certificate to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateRequest
+     * @return A Java Future containing the result of the CreateCertificate operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCertificateResult> createCertificateAsync(CreateCertificateRequest createCertificateRequest);
+
+    /**
+     * <p>
+     * Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is created, use the <code>AttachCertificateToDistribution</code> action to attach the
+     * certificate to your distribution.
+     * </p>
+     * <important>
+     * <p>
+     * Only certificates created in the <code>us-east-1</code> AWS Region can be attached to Lightsail distributions.
+     * Lightsail distributions are global resources that can reference an origin in any AWS Region, and distribute its
+     * content globally. However, all distributions are located in the <code>us-east-1</code> Region.
+     * </p>
+     * </important>
+     * 
+     * @param createCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCertificate operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCertificateResult> createCertificateAsync(CreateCertificateRequest createCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCertificateRequest, CreateCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail
      * snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS
      * CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of
@@ -628,6 +747,49 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<CreateDiskSnapshotResult> createDiskSnapshotAsync(CreateDiskSnapshotRequest createDiskSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDiskSnapshotRequest, CreateDiskSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution is a globally distributed network of caching servers that improve the performance of your website
+     * or web application hosted on a Lightsail instance. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
+     * delivery networks in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param createDistributionRequest
+     * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
+     * @sample AmazonLightsailAsync.CreateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution is a globally distributed network of caching servers that improve the performance of your website
+     * or web application hosted on a Lightsail instance. For more information, see <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content
+     * delivery networks in Amazon Lightsail</a>.
+     * </p>
+     * 
+     * @param createDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDistribution operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.CreateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CreateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDistributionResult> createDistributionAsync(CreateDistributionRequest createDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDistributionRequest, CreateDistributionResult> asyncHandler);
 
     /**
      * <p>
@@ -1234,6 +1396,45 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Certificates that are currently attached to a distribution cannot be deleted. Use the
+     * <code>DetachCertificateFromDistribution</code> action to detach a certificate from a distribution.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @return A Java Future containing the result of the DeleteCertificate operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest);
+
+    /**
+     * <p>
+     * Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Certificates that are currently attached to a distribution cannot be deleted. Use the
+     * <code>DetachCertificateFromDistribution</code> action to detach a certificate from a distribution.
+     * </p>
+     * 
+     * @param deleteCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCertificate operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCertificateResult> deleteCertificateAsync(DeleteCertificateRequest deleteCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a contact method.
      * </p>
      * <p>
@@ -1388,6 +1589,37 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<DeleteDiskSnapshotResult> deleteDiskSnapshotAsync(DeleteDiskSnapshotRequest deleteDiskSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDiskSnapshotRequest, DeleteDiskSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * 
+     * @param deleteDistributionRequest
+     * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
+     * @sample AmazonLightsailAsync.DeleteDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest);
+
+    /**
+     * <p>
+     * Deletes your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * 
+     * @param deleteDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDistribution operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.DeleteDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDistributionResult> deleteDistributionAsync(DeleteDistributionRequest deleteDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDistributionRequest, DeleteDistributionResult> asyncHandler);
 
     /**
      * <p>
@@ -1836,6 +2068,49 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
     java.util.concurrent.Future<DeleteRelationalDatabaseSnapshotResult> deleteRelationalDatabaseSnapshotAsync(
             DeleteRelationalDatabaseSnapshotRequest deleteRelationalDatabaseSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRelationalDatabaseSnapshotRequest, DeleteRelationalDatabaseSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is detached, your distribution stops accepting traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * 
+     * @param detachCertificateFromDistributionRequest
+     * @return A Java Future containing the result of the DetachCertificateFromDistribution operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.DetachCertificateFromDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachCertificateFromDistributionResult> detachCertificateFromDistributionAsync(
+            DetachCertificateFromDistributionRequest detachCertificateFromDistributionRequest);
+
+    /**
+     * <p>
+     * Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After the certificate is detached, your distribution stops accepting traffic for all of the domains that are
+     * associated with the certificate.
+     * </p>
+     * 
+     * @param detachCertificateFromDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachCertificateFromDistribution operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.DetachCertificateFromDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DetachCertificateFromDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachCertificateFromDistributionResult> detachCertificateFromDistributionAsync(
+            DetachCertificateFromDistributionRequest detachCertificateFromDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachCertificateFromDistributionRequest, DetachCertificateFromDistributionResult> asyncHandler);
 
     /**
      * <p>
@@ -2339,6 +2614,49 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Returns information about one or more Amazon Lightsail SSL/TLS certificates.
+     * </p>
+     * <note>
+     * <p>
+     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
+     * </p>
+     * </note>
+     * 
+     * @param getCertificatesRequest
+     * @return A Java Future containing the result of the GetCertificates operation returned by the service.
+     * @sample AmazonLightsailAsync.GetCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCertificatesResult> getCertificatesAsync(GetCertificatesRequest getCertificatesRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more Amazon Lightsail SSL/TLS certificates.
+     * </p>
+     * <note>
+     * <p>
+     * To get a summary of a certificate, ommit <code>includeCertificateDetails</code> from your request. The response
+     * will include only the certificate Amazon Resource Name (ARN), certificate name, domain name, and tags.
+     * </p>
+     * </note>
+     * 
+     * @param getCertificatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCertificates operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetCertificates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetCertificates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetCertificatesResult> getCertificatesAsync(GetCertificatesRequest getCertificatesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCertificatesRequest, GetCertificatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the CloudFormation stack record created as a result of the <code>create cloud formation stack</code>
      * operation.
      * </p>
@@ -2552,6 +2870,154 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<GetDisksResult> getDisksAsync(GetDisksRequest getDisksRequest,
             com.amazonaws.handlers.AsyncHandler<GetDisksRequest, GetDisksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list bundles that can be applied to you Amazon Lightsail content delivery network (CDN)
+     * distributions.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * 
+     * @param getDistributionBundlesRequest
+     * @return A Java Future containing the result of the GetDistributionBundles operation returned by the service.
+     * @sample AmazonLightsailAsync.GetDistributionBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionBundlesResult> getDistributionBundlesAsync(GetDistributionBundlesRequest getDistributionBundlesRequest);
+
+    /**
+     * <p>
+     * Returns the list bundles that can be applied to you Amazon Lightsail content delivery network (CDN)
+     * distributions.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * 
+     * @param getDistributionBundlesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDistributionBundles operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetDistributionBundles
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionBundles"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionBundlesResult> getDistributionBundlesAsync(GetDistributionBundlesRequest getDistributionBundlesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDistributionBundlesRequest, GetDistributionBundlesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network
+     * (CDN) distribution.
+     * </p>
+     * 
+     * @param getDistributionLatestCacheResetRequest
+     * @return A Java Future containing the result of the GetDistributionLatestCacheReset operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsync.GetDistributionLatestCacheReset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionLatestCacheResetResult> getDistributionLatestCacheResetAsync(
+            GetDistributionLatestCacheResetRequest getDistributionLatestCacheResetRequest);
+
+    /**
+     * <p>
+     * Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network
+     * (CDN) distribution.
+     * </p>
+     * 
+     * @param getDistributionLatestCacheResetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDistributionLatestCacheReset operation returned by the
+     *         service.
+     * @sample AmazonLightsailAsyncHandler.GetDistributionLatestCacheReset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionLatestCacheReset"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionLatestCacheResetResult> getDistributionLatestCacheResetAsync(
+            GetDistributionLatestCacheResetRequest getDistributionLatestCacheResetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDistributionLatestCacheResetRequest, GetDistributionLatestCacheResetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect
+     * metric data regularly to maintain the reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getDistributionMetricDataRequest
+     * @return A Java Future containing the result of the GetDistributionMetricData operation returned by the service.
+     * @sample AmazonLightsailAsync.GetDistributionMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionMetricDataResult> getDistributionMetricDataAsync(
+            GetDistributionMetricDataRequest getDistributionMetricDataRequest);
+
+    /**
+     * <p>
+     * Returns the data points of a specific metric for an Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Metrics report the utilization of your resources, and the error counts generated by them. Monitor and collect
+     * metric data regularly to maintain the reliability, availability, and performance of your resources.
+     * </p>
+     * 
+     * @param getDistributionMetricDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDistributionMetricData operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetDistributionMetricData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributionMetricData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionMetricDataResult> getDistributionMetricDataAsync(
+            GetDistributionMetricDataRequest getDistributionMetricDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDistributionMetricDataRequest, GetDistributionMetricDataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.
+     * </p>
+     * 
+     * @param getDistributionsRequest
+     * @return A Java Future containing the result of the GetDistributions operation returned by the service.
+     * @sample AmazonLightsailAsync.GetDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionsResult> getDistributionsAsync(GetDistributionsRequest getDistributionsRequest);
+
+    /**
+     * <p>
+     * Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.
+     * </p>
+     * 
+     * @param getDistributionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDistributions operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.GetDistributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDistributions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDistributionsResult> getDistributionsAsync(GetDistributionsRequest getDistributionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDistributionsRequest, GetDistributionsResult> asyncHandler);
 
     /**
      * <p>
@@ -4163,6 +4629,45 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
+     * Deletes currently cached content from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After resetting the cache, the next time a content request is made, your distribution pulls, serves, and caches
+     * it from the origin.
+     * </p>
+     * 
+     * @param resetDistributionCacheRequest
+     * @return A Java Future containing the result of the ResetDistributionCache operation returned by the service.
+     * @sample AmazonLightsailAsync.ResetDistributionCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetDistributionCacheResult> resetDistributionCacheAsync(ResetDistributionCacheRequest resetDistributionCacheRequest);
+
+    /**
+     * <p>
+     * Deletes currently cached content from your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * After resetting the cache, the next time a content request is made, your distribution pulls, serves, and caches
+     * it from the origin.
+     * </p>
+     * 
+     * @param resetDistributionCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetDistributionCache operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.ResetDistributionCache
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/ResetDistributionCache"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResetDistributionCacheResult> resetDistributionCacheAsync(ResetDistributionCacheRequest resetDistributionCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetDistributionCacheRequest, ResetDistributionCacheResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact
      * methods don't need to be verified.
      * </p>
@@ -4609,6 +5114,100 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Use this action to update the configuration of your existing distribution
+     * </p>
+     * 
+     * @param updateDistributionRequest
+     * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest);
+
+    /**
+     * <p>
+     * Updates an existing Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * Use this action to update the configuration of your existing distribution
+     * </p>
+     * 
+     * @param updateDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDistribution operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDistributionResult> updateDistributionAsync(UpdateDistributionRequest updateDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDistributionRequest, UpdateDistributionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * <p>
+     * Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is
+     * incurring an overage fee.
+     * </p>
+     * <p>
+     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
+     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
+     * distribution's bundle.
+     * </p>
+     * 
+     * @param updateDistributionBundleRequest
+     * @return A Java Future containing the result of the UpdateDistributionBundle operation returned by the service.
+     * @sample AmazonLightsailAsync.UpdateDistributionBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDistributionBundleResult> updateDistributionBundleAsync(UpdateDistributionBundleRequest updateDistributionBundleRequest);
+
+    /**
+     * <p>
+     * Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.
+     * </p>
+     * <p>
+     * A distribution bundle specifies the monthly network transfer quota and monthly cost of your dsitribution.
+     * </p>
+     * <p>
+     * Update your distribution's bundle if your distribution is going over its monthly network transfer quota and is
+     * incurring an overage fee.
+     * </p>
+     * <p>
+     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
+     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
+     * distribution's bundle.
+     * </p>
+     * 
+     * @param updateDistributionBundleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDistributionBundle operation returned by the service.
+     * @sample AmazonLightsailAsyncHandler.UpdateDistributionBundle
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/UpdateDistributionBundle"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDistributionBundleResult> updateDistributionBundleAsync(UpdateDistributionBundleRequest updateDistributionBundleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDistributionBundleRequest, UpdateDistributionBundleResult> asyncHandler);
 
     /**
      * <p>

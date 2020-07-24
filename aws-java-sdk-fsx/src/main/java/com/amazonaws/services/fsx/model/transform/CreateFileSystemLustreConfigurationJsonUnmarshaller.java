@@ -68,6 +68,10 @@ public class CreateFileSystemLustreConfigurationJsonUnmarshaller implements Unma
                     context.nextToken();
                     createFileSystemLustreConfiguration.setDeploymentType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AutoImportPolicy", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemLustreConfiguration.setAutoImportPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("PerUnitStorageThroughput", targetDepth)) {
                     context.nextToken();
                     createFileSystemLustreConfiguration.setPerUnitStorageThroughput(context.getUnmarshaller(Integer.class).unmarshall(context));

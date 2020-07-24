@@ -21,6 +21,41 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains information about the status of Lightsail's managed renewal for the certificate.
  * </p>
+ * <p>
+ * The renewal status of the certificate.
+ * </p>
+ * <p>
+ * The following renewal status are possible:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names in the
+ * certificate. No further action is required.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names in the
+ * certificate. You must take action to validate these domain names or the certificate won't be renewed. If you used DNS
+ * validation, check to make sure your certificate's domain validation records exist in your domain's DNS, and that your
+ * certificate remains in use.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the
+ * certificate. No further action is required.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and
+ * Lightsail did not renew the certificate. You can request a new certificate using the <code>CreateCertificate</code>
+ * action.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/LoadBalancerTlsCertificateRenewalSummary"
  *      target="_top">AWS API Documentation</a>
@@ -30,8 +65,40 @@ public class LoadBalancerTlsCertificateRenewalSummary implements Serializable, C
 
     /**
      * <p>
-     * The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     * The renewal status of the certificate.
      * </p>
+     * <p>
+     * The following renewal status are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of
+     * the certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of
+     * the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check
+     * to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate
+     * remains in use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the
+     * certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and
+     * Lightsail did not renew the certificate. You can request a new certificate using the
+     * <code>CreateCertificate</code> action.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String renewalStatus;
     /**
@@ -45,11 +112,74 @@ public class LoadBalancerTlsCertificateRenewalSummary implements Serializable, C
 
     /**
      * <p>
-     * The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     * The renewal status of the certificate.
      * </p>
+     * <p>
+     * The following renewal status are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of
+     * the certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of
+     * the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check
+     * to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate
+     * remains in use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the
+     * certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and
+     * Lightsail did not renew the certificate. You can request a new certificate using the
+     * <code>CreateCertificate</code> action.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param renewalStatus
-     *        The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     *        The renewal status of the certificate.</p>
+     *        <p>
+     *        The following renewal status are possible:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain
+     *        names of the certificate. No further action is required.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain
+     *        names of the certificate. You must take action to validate these domain names or the certificate won't be
+     *        renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and
+     *        that your certificate remains in use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed
+     *        the certificate. No further action is required.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired,
+     *        and Lightsail did not renew the certificate. You can request a new certificate using the
+     *        <code>CreateCertificate</code> action.
+     *        </p>
+     *        </li>
      * @see LoadBalancerTlsCertificateRenewalStatus
      */
 
@@ -59,10 +189,73 @@ public class LoadBalancerTlsCertificateRenewalSummary implements Serializable, C
 
     /**
      * <p>
-     * The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     * The renewal status of the certificate.
      * </p>
+     * <p>
+     * The following renewal status are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of
+     * the certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of
+     * the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check
+     * to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate
+     * remains in use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the
+     * certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and
+     * Lightsail did not renew the certificate. You can request a new certificate using the
+     * <code>CreateCertificate</code> action.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     * @return The renewal status of the certificate.</p>
+     *         <p>
+     *         The following renewal status are possible:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain
+     *         names of the certificate. No further action is required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain
+     *         names of the certificate. You must take action to validate these domain names or the certificate won't be
+     *         renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and
+     *         that your certificate remains in use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed
+     *         the certificate. No further action is required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate
+     *         expired, and Lightsail did not renew the certificate. You can request a new certificate using the
+     *         <code>CreateCertificate</code> action.
+     *         </p>
+     *         </li>
      * @see LoadBalancerTlsCertificateRenewalStatus
      */
 
@@ -72,11 +265,74 @@ public class LoadBalancerTlsCertificateRenewalSummary implements Serializable, C
 
     /**
      * <p>
-     * The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     * The renewal status of the certificate.
      * </p>
+     * <p>
+     * The following renewal status are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of
+     * the certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of
+     * the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check
+     * to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate
+     * remains in use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the
+     * certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and
+     * Lightsail did not renew the certificate. You can request a new certificate using the
+     * <code>CreateCertificate</code> action.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param renewalStatus
-     *        The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     *        The renewal status of the certificate.</p>
+     *        <p>
+     *        The following renewal status are possible:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain
+     *        names of the certificate. No further action is required.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain
+     *        names of the certificate. You must take action to validate these domain names or the certificate won't be
+     *        renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and
+     *        that your certificate remains in use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed
+     *        the certificate. No further action is required.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired,
+     *        and Lightsail did not renew the certificate. You can request a new certificate using the
+     *        <code>CreateCertificate</code> action.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateRenewalStatus
      */
@@ -88,11 +344,74 @@ public class LoadBalancerTlsCertificateRenewalSummary implements Serializable, C
 
     /**
      * <p>
-     * The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     * The renewal status of the certificate.
      * </p>
+     * <p>
+     * The following renewal status are possible:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain names of
+     * the certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain names of
+     * the certificate. You must take action to validate these domain names or the certificate won't be renewed. Check
+     * to make sure your certificate's domain validation records exist in your domain's DNS, and that your certificate
+     * remains in use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed the
+     * certificate. No further action is required.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired, and
+     * Lightsail did not renew the certificate. You can request a new certificate using the
+     * <code>CreateCertificate</code> action.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param renewalStatus
-     *        The status of Lightsail's managed renewal of the certificate. Valid values are listed below.
+     *        The renewal status of the certificate.</p>
+     *        <p>
+     *        The following renewal status are possible:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically validate the domain
+     *        names of the certificate. No further action is required.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate one or more domain
+     *        names of the certificate. You must take action to validate these domain names or the certificate won't be
+     *        renewed. Check to make sure your certificate's domain validation records exist in your domain's DNS, and
+     *        that your certificate remains in use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Success</code> </b> - All domain names in the certificate are validated, and Lightsail renewed
+     *        the certificate. No further action is required.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b> <code>Failed</code> </b> - One or more domain names were not validated before the certificate expired,
+     *        and Lightsail did not renew the certificate. You can request a new certificate using the
+     *        <code>CreateCertificate</code> action.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LoadBalancerTlsCertificateRenewalStatus
      */

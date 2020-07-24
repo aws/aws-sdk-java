@@ -27,7 +27,7 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      */
     private String catalogId;
@@ -41,6 +41,15 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
+     * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
      * </p>
      */
     private java.util.List<PropertyPredicate> filters;
@@ -88,11 +97,11 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      * 
      * @param catalogId
-     *        A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     *        A unique identifier, consisting of <code> <i>account_id</i> </code>.
      */
 
     public void setCatalogId(String catalogId) {
@@ -101,10 +110,10 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      * 
-     * @return A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * @return A unique identifier, consisting of <code> <i>account_id</i> </code>.
      */
 
     public String getCatalogId() {
@@ -113,11 +122,11 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     * A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * </p>
      * 
      * @param catalogId
-     *        A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.
+     *        A unique identifier, consisting of <code> <i>account_id</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,9 +180,27 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
      * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
      * 
      * @return A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *         matching the predicate.
+     *         matching the predicate.</p>
+     *         <p>
+     *         The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *         fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *         <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the
+     *         value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #,
+     *         etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *         <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *         named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *         not returned.
      */
 
     public java.util.List<PropertyPredicate> getFilters() {
@@ -185,10 +212,28 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
      * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
      * 
      * @param filters
      *        A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *        matching the predicate.
+     *        matching the predicate.</p>
+     *        <p>
+     *        The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *        fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *        <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value
+     *        of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc.
+     *        into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *        <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *        named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *        not returned.
      */
 
     public void setFilters(java.util.Collection<PropertyPredicate> filters) {
@@ -206,6 +251,15 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * predicate.
      * </p>
      * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
@@ -213,7 +267,16 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param filters
      *        A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *        matching the predicate.
+     *        matching the predicate.</p>
+     *        <p>
+     *        The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *        fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *        <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value
+     *        of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc.
+     *        into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *        <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *        named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *        not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,10 +295,28 @@ public class SearchTablesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the
      * predicate.
      * </p>
+     * <p>
+     * The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and
+     * can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a
+     * fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field)
+     * is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is
+     * exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if
+     * <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and
+     * <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.
+     * </p>
      * 
      * @param filters
      *        A list of key-value pairs, and a comparator used to filter the search results. Returns all entities
-     *        matching the predicate.
+     *        matching the predicate.</p>
+     *        <p>
+     *        The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time
+     *        fields, and can be omitted for other field types. Also, when comparing string values, such as when
+     *        <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value
+     *        of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc.
+     *        into tokens. Then each token is exact-match compared with the <code>Value</code> member of
+     *        <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables
+     *        named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is
+     *        not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

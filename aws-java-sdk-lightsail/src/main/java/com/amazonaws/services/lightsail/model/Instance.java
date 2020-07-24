@@ -50,7 +50,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String supportCode;
     /**
      * <p>
-     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      * </p>
      */
     private java.util.Date createdAt;
@@ -289,11 +289,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     *        The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -302,10 +302,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      * </p>
      * 
-     * @return The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     * @return The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      */
 
     public java.util.Date getCreatedAt() {
@@ -314,11 +314,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     * The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp when the instance was created (e.g., <code>1479734909.17</code>).
+     *        The timestamp when the instance was created (e.g., <code>1479734909.17</code>) in Unix time format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

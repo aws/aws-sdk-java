@@ -549,9 +549,8 @@ public interface AmazonDirectConnect {
      * Direct Connect gateway.
      * </p>
      * <p>
-     * You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account
-     * that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway
-     * have the same AWS Payer ID.
+     * You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any
+     * AWS account.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationProposalRequest

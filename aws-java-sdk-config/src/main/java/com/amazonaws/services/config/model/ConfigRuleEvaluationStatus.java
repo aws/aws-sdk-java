@@ -80,7 +80,11 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.Date firstActivatedTime;
-
+    /**
+     * <p>
+     * The time that you last turned off the AWS Config rule.
+     * </p>
+     */
     private java.util.Date lastDeactivatedTime;
     /**
      * <p>
@@ -434,7 +438,12 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The time that you last turned off the AWS Config rule.
+     * </p>
+     * 
      * @param lastDeactivatedTime
+     *        The time that you last turned off the AWS Config rule.
      */
 
     public void setLastDeactivatedTime(java.util.Date lastDeactivatedTime) {
@@ -442,7 +451,11 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The time that you last turned off the AWS Config rule.
+     * </p>
+     * 
+     * @return The time that you last turned off the AWS Config rule.
      */
 
     public java.util.Date getLastDeactivatedTime() {
@@ -450,7 +463,12 @@ public class ConfigRuleEvaluationStatus implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The time that you last turned off the AWS Config rule.
+     * </p>
+     * 
      * @param lastDeactivatedTime
+     *        The time that you last turned off the AWS Config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

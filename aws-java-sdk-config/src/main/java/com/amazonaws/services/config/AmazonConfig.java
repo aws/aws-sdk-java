@@ -454,7 +454,12 @@ public interface AmazonConfig {
     /**
      * <p>
      * Deletes the specified organization config rule and all of its evaluation results from all member accounts in that
-     * organization. Only a master account can delete an organization config rule.
+     * organization.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can delete an organization config rule. When calling
+     * this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a
@@ -523,7 +528,12 @@ public interface AmazonConfig {
     /**
      * <p>
      * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
-     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * member accounts in that organization.
+     * </p>
+     * <p>
+     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
@@ -669,6 +679,12 @@ public interface AmazonConfig {
      * <p>
      * Deletes one or more remediation exceptions mentioned in the resource keys.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param deleteRemediationExceptionsRequest
      * @return Result of the DeleteRemediationExceptions operation returned by the service.
@@ -1134,6 +1150,8 @@ public interface AmazonConfig {
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConformancePackStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus"
      *      target="_top">AWS API Documentation</a>
@@ -1154,6 +1172,8 @@ public interface AmazonConfig {
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConformancePacks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks"
      *      target="_top">AWS API Documentation</a>
@@ -1222,6 +1242,11 @@ public interface AmazonConfig {
      * <p>
      * Provides organization config rule deployment status for an organization.
      * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can call this API. When calling this API with a
+     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
+     * are added.
+     * </p>
      * <note>
      * <p>
      * The status is not considered successful until organization config rule is successfully deployed in all the member
@@ -1231,9 +1256,6 @@ public interface AmazonConfig {
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1262,14 +1284,16 @@ public interface AmazonConfig {
      * <p>
      * Returns a list of organization config rules.
      * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can call this API. When calling this API with a
+     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
+     * are added.&#x2028;
+     * </p>
      * <note>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1297,6 +1321,11 @@ public interface AmazonConfig {
      * <p>
      * Provides organization conformance pack deployment status for an organization.
      * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can call this API. When calling this API with a
+     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
+     * are added.
+     * </p>
      * <note>
      * <p>
      * The status is not considered successful until organization conformance pack is successfully deployed in all the
@@ -1306,9 +1335,6 @@ public interface AmazonConfig {
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
      * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
      * organization conformance packs.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1342,6 +1368,11 @@ public interface AmazonConfig {
      * <p>
      * Returns a list of organization conformance packs.
      * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can call this API. When calling this API with a
+     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
+     * are added.
+     * </p>
      * <note>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response.
@@ -1349,9 +1380,6 @@ public interface AmazonConfig {
      * <p>
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1421,6 +1449,10 @@ public interface AmazonConfig {
      * you specify the limit and the next token, you receive a paginated response.
      * </p>
      * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response.
      * </p>
@@ -1821,11 +1853,11 @@ public interface AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
      * </p>
-     * <note>
      * <p>
-     * Only a master account can call this API.
+     * Only a master account and a delegated administrator account can call this API. When calling this API with a
+     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
+     * are added.
      * </p>
-     * </note>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
      * @return Result of the GetOrganizationConfigRuleDetailedStatus operation returned by the service.
@@ -1853,7 +1885,9 @@ public interface AmazonConfig {
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
      * </p>
      * <p>
-     * Only a master account can call this API.
+     * Only a master account and a delegated administrator account can call this API. When calling this API with a
+     * delegated administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions
+     * are added.
      * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
@@ -2262,8 +2296,7 @@ public interface AmazonConfig {
      * </p>
      * <p>
      * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
-     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
-     * role with <code>GetRole</code> action.
+     * linked role is created only when the role does not exist in your account.
      * </p>
      * <note>
      * <p>
@@ -2439,25 +2472,39 @@ public interface AmazonConfig {
     /**
      * <p>
      * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources
-     * comply with your desired configurations. Only a master account can create or update an organization config rule.
+     * comply with your desired configurations.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator can create or update an organization config rule. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your
-     * organization. The service linked role is created only when the role does not exist in the master account. AWS
-     * Config verifies the existence of role with <code>GetRole</code> action.
+     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+     * administrator account of your organization. The service linked role is created only when the role does not exist
+     * in the caller account. AWS Config verifies the existence of role with <code>GetRole</code> action.
+     * </p>
+     * <p>
+     * To use this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
      * You can use this action to create both custom AWS Config rules and AWS managed Config rules. If you are adding a
-     * new custom AWS Config rule, you must first create AWS Lambda function in the master account that the rule invokes
-     * to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to AWS
-     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. If you are
-     * adding an AWS managed Config rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.
+     * new custom AWS Config rule, you must first create AWS Lambda function in the master account or a delegated
+     * administrator that the rule invokes to evaluate your resources. When you use the
+     * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource
+     * Name (ARN) that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule, specify the
+     * rule's identifier for the <code>RuleIdentifier</code> key.
      * </p>
      * <p>
-     * The maximum number of organization config rules that AWS Config supports is 150.
+     * The maximum number of organization config rules that AWS Config supports is 150 and 3 delegated administrator per
+     * organization.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
      * </p>
@@ -2575,24 +2622,33 @@ public interface AmazonConfig {
      * Deploys conformance packs across member accounts in an AWS Organization.
      * </p>
      * <p>
+     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
+     * administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * </p>
+     * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
      * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your organization. The service
-     * linked role is created only when the role does not exist in the master account. AWS Config verifies the existence
-     * of role with GetRole action.
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
+     * organization. The service linked role is created only when the role does not exist in the caller account. To use
+     * this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
      * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
      * <code>TemplateBody</code> parameter.
      * </p>
      * <p>
-     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the confomance
-     * pack is created or updated. You cannot update a conformance pack while it is in this state.
+     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+     * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack.
+     * You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * organization.
      * </p>
      * </note>
      * 
@@ -2711,6 +2767,12 @@ public interface AmazonConfig {
      * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
      * permissions to use the target.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
+     * remediations can run.
+     * </p>
+     * </note>
      * 
      * @param putRemediationConfigurationsRequest
      * @return Result of the PutRemediationConfigurations operation returned by the service.
@@ -2766,11 +2828,56 @@ public interface AmazonConfig {
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
      * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param putRemediationExceptionsRequest
      * @return Result of the PutRemediationExceptions operation returned by the service.
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks
+     *         permissions to perform the config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the
+     *         function's permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      * @sample AmazonConfig.PutRemediationExceptions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions"
      *      target="_top">AWS API Documentation</a>
@@ -2791,6 +2898,9 @@ public interface AmazonConfig {
      * <p>
      * When you call this API, AWS Config only stores configuration state of the resource provided in the request. This
      * API does not change or remediate the configuration of the resource.
+     * </p>
+     * <p>
+     * Write-only schema properites are not recorded as part of the published configuration item.
      * </p>
      * </note>
      * 

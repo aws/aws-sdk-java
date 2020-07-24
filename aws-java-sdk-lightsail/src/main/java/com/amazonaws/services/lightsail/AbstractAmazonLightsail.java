@@ -43,6 +43,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public AttachCertificateToDistributionResult attachCertificateToDistribution(AttachCertificateToDistributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachDiskResult attachDisk(AttachDiskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +78,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public CreateCertificateResult createCertificate(CreateCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCloudFormationStackResult createCloudFormationStack(CreateCloudFormationStackRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -94,6 +104,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public CreateDiskSnapshotResult createDiskSnapshot(CreateDiskSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDistributionResult createDistribution(CreateDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,6 +178,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public DeleteCertificateResult deleteCertificate(DeleteCertificateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteContactMethodResult deleteContactMethod(DeleteContactMethodRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +194,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public DeleteDiskSnapshotResult deleteDiskSnapshot(DeleteDiskSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDistributionResult deleteDistribution(DeleteDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,6 +249,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public DeleteRelationalDatabaseSnapshotResult deleteRelationalDatabaseSnapshot(DeleteRelationalDatabaseSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetachCertificateFromDistributionResult detachCertificateFromDistribution(DetachCertificateFromDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -288,6 +318,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public GetCertificatesResult getCertificates(GetCertificatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCloudFormationStackRecordsResult getCloudFormationStackRecords(GetCloudFormationStackRecordsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -314,6 +349,26 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public GetDisksResult getDisks(GetDisksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDistributionBundlesResult getDistributionBundles(GetDistributionBundlesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDistributionLatestCacheResetResult getDistributionLatestCacheReset(GetDistributionLatestCacheResetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDistributionMetricDataResult getDistributionMetricData(GetDistributionMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDistributionsResult getDistributions(GetDistributionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -538,6 +593,11 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
     }
 
     @Override
+    public ResetDistributionCacheResult resetDistributionCache(ResetDistributionCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendContactMethodVerificationResult sendContactMethodVerification(SendContactMethodVerificationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -579,6 +639,16 @@ public class AbstractAmazonLightsail implements AmazonLightsail {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDistributionBundleResult updateDistributionBundle(UpdateDistributionBundleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

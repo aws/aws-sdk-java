@@ -48,8 +48,42 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
     private java.util.Date configurationItemCaptureTime;
     /**
      * <p>
-     * The configuration item status.
+     * The configuration item status. The valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OK – The resource configuration has been updated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDiscovered – The resource was newly discovered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeleted – The resource was deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The CIs do not incur any cost.
+     * </p>
+     * </note>
      */
     private String configurationItemStatus;
     /**
@@ -276,11 +310,78 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status.
+     * The configuration item status. The valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OK – The resource configuration has been updated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDiscovered – The resource was newly discovered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeleted – The resource was deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The CIs do not incur any cost.
+     * </p>
+     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status.
+     *        The configuration item status. The valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OK – The resource configuration has been updated
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDiscovered – The resource was newly discovered
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeleted – The resource was deleted
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The CIs do not incur any cost.
+     *        </p>
      * @see ConfigurationItemStatus
      */
 
@@ -290,10 +391,77 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status.
+     * The configuration item status. The valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OK – The resource configuration has been updated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDiscovered – The resource was newly discovered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeleted – The resource was deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The CIs do not incur any cost.
+     * </p>
+     * </note>
      * 
-     * @return The configuration item status.
+     * @return The configuration item status. The valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OK – The resource configuration has been updated
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ResourceDiscovered – The resource was newly discovered
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
+     *         recorder excludes the recording of resources of this type
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ResourceDeleted – The resource was deleted
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
+     *         recorder excludes the recording of resources of this type
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The CIs do not incur any cost.
+     *         </p>
      * @see ConfigurationItemStatus
      */
 
@@ -303,11 +471,78 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status.
+     * The configuration item status. The valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OK – The resource configuration has been updated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDiscovered – The resource was newly discovered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeleted – The resource was deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The CIs do not incur any cost.
+     * </p>
+     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status.
+     *        The configuration item status. The valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OK – The resource configuration has been updated
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDiscovered – The resource was newly discovered
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeleted – The resource was deleted
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The CIs do not incur any cost.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemStatus
      */
@@ -319,11 +554,78 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status.
+     * The configuration item status. The valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OK – The resource configuration has been updated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDiscovered – The resource was newly discovered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeleted – The resource was deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The CIs do not incur any cost.
+     * </p>
+     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status.
+     *        The configuration item status. The valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OK – The resource configuration has been updated
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDiscovered – The resource was newly discovered
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeleted – The resource was deleted
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The CIs do not incur any cost.
+     *        </p>
      * @see ConfigurationItemStatus
      */
 
@@ -333,11 +635,78 @@ public class ConfigurationItem implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The configuration item status.
+     * The configuration item status. The valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OK – The resource configuration has been updated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDiscovered – The resource was newly discovered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeleted – The resource was deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the recorder
+     * excludes the recording of resources of this type
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The CIs do not incur any cost.
+     * </p>
+     * </note>
      * 
      * @param configurationItemStatus
-     *        The configuration item status.
+     *        The configuration item status. The valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OK – The resource configuration has been updated
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDiscovered – The resource was newly discovered
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceNotRecorded – The resource was discovered but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeleted – The resource was deleted
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ResourceDeletedNotRecorded – The resource was deleted but its configuration was not recorded since the
+     *        recorder excludes the recording of resources of this type
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The CIs do not incur any cost.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConfigurationItemStatus
      */

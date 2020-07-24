@@ -79,6 +79,19 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * The date when the image was created. If the image has been shared, the AWS account that the image has been shared
+     * with sees the original creation date of the image.
+     * </p>
+     */
+    private java.util.Date created;
+    /**
+     * <p>
+     * The identifier of the AWS account that owns the image.
+     * </p>
+     */
+    private String ownerAccountId;
 
     /**
      * <p>
@@ -463,6 +476,92 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date when the image was created. If the image has been shared, the AWS account that the image has been shared
+     * with sees the original creation date of the image.
+     * </p>
+     * 
+     * @param created
+     *        The date when the image was created. If the image has been shared, the AWS account that the image has been
+     *        shared with sees the original creation date of the image.
+     */
+
+    public void setCreated(java.util.Date created) {
+        this.created = created;
+    }
+
+    /**
+     * <p>
+     * The date when the image was created. If the image has been shared, the AWS account that the image has been shared
+     * with sees the original creation date of the image.
+     * </p>
+     * 
+     * @return The date when the image was created. If the image has been shared, the AWS account that the image has
+     *         been shared with sees the original creation date of the image.
+     */
+
+    public java.util.Date getCreated() {
+        return this.created;
+    }
+
+    /**
+     * <p>
+     * The date when the image was created. If the image has been shared, the AWS account that the image has been shared
+     * with sees the original creation date of the image.
+     * </p>
+     * 
+     * @param created
+     *        The date when the image was created. If the image has been shared, the AWS account that the image has been
+     *        shared with sees the original creation date of the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceImage withCreated(java.util.Date created) {
+        setCreated(created);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the AWS account that owns the image.
+     * </p>
+     * 
+     * @param ownerAccountId
+     *        The identifier of the AWS account that owns the image.
+     */
+
+    public void setOwnerAccountId(String ownerAccountId) {
+        this.ownerAccountId = ownerAccountId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the AWS account that owns the image.
+     * </p>
+     * 
+     * @return The identifier of the AWS account that owns the image.
+     */
+
+    public String getOwnerAccountId() {
+        return this.ownerAccountId;
+    }
+
+    /**
+     * <p>
+     * The identifier of the AWS account that owns the image.
+     * </p>
+     * 
+     * @param ownerAccountId
+     *        The identifier of the AWS account that owns the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceImage withOwnerAccountId(String ownerAccountId) {
+        setOwnerAccountId(ownerAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -489,7 +588,11 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getCreated() != null)
+            sb.append("Created: ").append(getCreated()).append(",");
+        if (getOwnerAccountId() != null)
+            sb.append("OwnerAccountId: ").append(getOwnerAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -536,6 +639,14 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getCreated() == null ^ this.getCreated() == null)
+            return false;
+        if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
+            return false;
+        if (other.getOwnerAccountId() == null ^ this.getOwnerAccountId() == null)
+            return false;
+        if (other.getOwnerAccountId() != null && other.getOwnerAccountId().equals(this.getOwnerAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -552,6 +663,8 @@ public class WorkspaceImage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRequiredTenancy() == null) ? 0 : getRequiredTenancy().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccountId() == null) ? 0 : getOwnerAccountId().hashCode());
         return hashCode;
     }
 
