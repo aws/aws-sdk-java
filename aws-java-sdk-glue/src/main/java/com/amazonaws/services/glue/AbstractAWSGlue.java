@@ -533,6 +533,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ResumeWorkflowRunResult resumeWorkflowRun(ResumeWorkflowRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchTablesResult searchTables(SearchTablesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

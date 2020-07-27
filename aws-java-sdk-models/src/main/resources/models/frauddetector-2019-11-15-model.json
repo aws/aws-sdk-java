@@ -913,7 +913,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -949,7 +949,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID. </p>"
         },
         "modelType":{
@@ -978,7 +978,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -1238,7 +1238,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelVersionNumber":{
@@ -1354,6 +1354,10 @@
     },
     "Entity":{
       "type":"structure",
+      "required":[
+        "entityType",
+        "entityId"
+      ],
       "members":{
         "entityType":{
           "shape":"string",
@@ -1460,10 +1464,6 @@
         "modelEndpoint":{
           "shape":"string",
           "documentation":"<p>The Amazon SageMaker model endpoints.</p>"
-        },
-        "eventTypeName":{
-          "shape":"identifier",
-          "documentation":"<p>The event type names.</p>"
         },
         "modelSource":{
           "shape":"ModelSource",
@@ -1852,7 +1852,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -1869,7 +1869,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -1906,7 +1906,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -2180,7 +2180,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -2235,6 +2235,10 @@
       "type":"structure",
       "required":["useEventVariables"],
       "members":{
+        "eventTypeName":{
+          "shape":"identifier",
+          "documentation":"<p>The event type name.</p>"
+        },
         "format":{
           "shape":"ModelInputDataFormat",
           "documentation":"<p> The format of the model input configuration. The format differs depending on if it is passed through to SageMaker or constructed by Amazon Fraud Detector.</p>"
@@ -2323,7 +2327,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -2345,7 +2349,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -2551,10 +2555,6 @@
         "modelEndpoint":{
           "shape":"sageMakerEndpointIdentifier",
           "documentation":"<p>The model endpoints name.</p>"
-        },
-        "eventTypeName":{
-          "shape":"identifier",
-          "documentation":"<p>The event type name.</p>"
         },
         "modelSource":{
           "shape":"ModelSource",
@@ -2991,7 +2991,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -3018,7 +3018,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -3043,7 +3043,7 @@
       "type":"structure",
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID.</p>"
         },
         "modelType":{
@@ -3070,7 +3070,7 @@
       ],
       "members":{
         "modelId":{
-          "shape":"identifier",
+          "shape":"modelIdentifier",
           "documentation":"<p>The model ID of the model version to update.</p>"
         },
         "modelType":{
@@ -3370,6 +3370,12 @@
     "metricDataPointsList":{
       "type":"list",
       "member":{"shape":"MetricDataPoint"}
+    },
+    "modelIdentifier":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"^[0-9a-z_]+$"
     },
     "modelList":{
       "type":"list",

@@ -3417,6 +3417,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ResumeWorkflowRunResult> resumeWorkflowRunAsync(ResumeWorkflowRunRequest request) {
+
+        return resumeWorkflowRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResumeWorkflowRunResult> resumeWorkflowRunAsync(final ResumeWorkflowRunRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResumeWorkflowRunRequest, ResumeWorkflowRunResult> asyncHandler) {
+        final ResumeWorkflowRunRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResumeWorkflowRunResult>() {
+            @Override
+            public ResumeWorkflowRunResult call() throws Exception {
+                ResumeWorkflowRunResult result = null;
+
+                try {
+                    result = executeResumeWorkflowRun(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchTablesResult> searchTablesAsync(SearchTablesRequest request) {
 
         return searchTablesAsync(request, null);

@@ -30,6 +30,12 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The event type name.
+     * </p>
+     */
+    private String eventTypeName;
+    /**
+     * <p>
      * The format of the model input configuration. The format differs depending on if it is passed through to SageMaker
      * or constructed by Amazon Fraud Detector.
      * </p>
@@ -55,6 +61,46 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private String csvInputTemplate;
+
+    /**
+     * <p>
+     * The event type name.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The event type name.
+     */
+
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The event type name.
+     * </p>
+     * 
+     * @return The event type name.
+     */
+
+    public String getEventTypeName() {
+        return this.eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The event type name.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The event type name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelInputConfiguration withEventTypeName(String eventTypeName) {
+        setEventTypeName(eventTypeName);
+        return this;
+    }
 
     /**
      * <p>
@@ -280,6 +326,8 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEventTypeName() != null)
+            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getFormat() != null)
             sb.append("Format: ").append(getFormat()).append(",");
         if (getUseEventVariables() != null)
@@ -302,6 +350,10 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
         if (obj instanceof ModelInputConfiguration == false)
             return false;
         ModelInputConfiguration other = (ModelInputConfiguration) obj;
+        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
+            return false;
+        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
+            return false;
         if (other.getFormat() == null ^ this.getFormat() == null)
             return false;
         if (other.getFormat() != null && other.getFormat().equals(this.getFormat()) == false)
@@ -326,6 +378,7 @@ public class ModelInputConfiguration implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getFormat() == null) ? 0 : getFormat().hashCode());
         hashCode = prime * hashCode + ((getUseEventVariables() == null) ? 0 : getUseEventVariables().hashCode());
         hashCode = prime * hashCode + ((getJsonInputTemplate() == null) ? 0 : getJsonInputTemplate().hashCode());

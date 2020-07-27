@@ -38,19 +38,22 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred.
+     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
      * </p>
      * <p>
-     * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     * ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      * </p>
      * <p>
-     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that
+     * source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.
      * </p>
      * <p>
-     * NONE: Skip verification.
+     * NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.
      * </p>
      */
     private String verifyMode;
@@ -221,52 +224,70 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
-     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
      * see <a>queue-task-execution</a>.
      * </p>
      */
     private String taskQueueing;
     /**
      * <p>
-     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
-     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log
+     * group that you provide. For more information about providing a log group for DataSync, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     * >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs
+     * on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object
+     * that is transferred and integrity checked.
      * </p>
      */
     private String logLevel;
+    /**
+     * <p>
+     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
+     * modification time between source and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.
+     * </p>
+     */
+    private String transferMode;
 
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred.
+     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
      * </p>
      * <p>
-     * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     * ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      * </p>
      * <p>
-     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that
+     * source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.
      * </p>
      * <p>
-     * NONE: Skip verification.
+     * NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.
      * </p>
      * 
      * @param verifyMode
      *        A value that determines whether a data integrity verification should be performed at the end of a task
-     *        execution after all data and metadata have been transferred. </p>
+     *        execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *        </p>
      *        <p>
      *        Default value: POINT_IN_TIME_CONSISTENT.
      *        </p>
      *        <p>
-     *        POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *        ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      *        </p>
      *        <p>
-     *        ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     *        POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to
+     *        verify that source and destination are fully synchronized. This option isn't supported when transferring
+     *        to S3 Glacier or S3 Glacier Deep Archive storage classes.
      *        </p>
      *        <p>
-     *        NONE: Skip verification.
+     *        NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     *        integrity-checked with checksum verification during the transfer.
      * @see VerifyMode
      */
 
@@ -277,34 +298,41 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred.
+     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
      * </p>
      * <p>
-     * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     * ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      * </p>
      * <p>
-     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that
+     * source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.
      * </p>
      * <p>
-     * NONE: Skip verification.
+     * NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.
      * </p>
      * 
      * @return A value that determines whether a data integrity verification should be performed at the end of a task
-     *         execution after all data and metadata have been transferred. </p>
+     *         execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *         </p>
      *         <p>
      *         Default value: POINT_IN_TIME_CONSISTENT.
      *         </p>
      *         <p>
-     *         POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *         ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      *         </p>
      *         <p>
-     *         ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     *         POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to
+     *         verify that source and destination are fully synchronized. This option isn't supported when transferring
+     *         to S3 Glacier or S3 Glacier Deep Archive storage classes.
      *         </p>
      *         <p>
-     *         NONE: Skip verification.
+     *         NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     *         integrity-checked with checksum verification during the transfer.
      * @see VerifyMode
      */
 
@@ -315,35 +343,42 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred.
+     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
      * </p>
      * <p>
-     * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     * ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      * </p>
      * <p>
-     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that
+     * source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.
      * </p>
      * <p>
-     * NONE: Skip verification.
+     * NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.
      * </p>
      * 
      * @param verifyMode
      *        A value that determines whether a data integrity verification should be performed at the end of a task
-     *        execution after all data and metadata have been transferred. </p>
+     *        execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *        </p>
      *        <p>
      *        Default value: POINT_IN_TIME_CONSISTENT.
      *        </p>
      *        <p>
-     *        POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *        ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      *        </p>
      *        <p>
-     *        ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     *        POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to
+     *        verify that source and destination are fully synchronized. This option isn't supported when transferring
+     *        to S3 Glacier or S3 Glacier Deep Archive storage classes.
      *        </p>
      *        <p>
-     *        NONE: Skip verification.
+     *        NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     *        integrity-checked with checksum verification during the transfer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifyMode
      */
@@ -356,35 +391,42 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A value that determines whether a data integrity verification should be performed at the end of a task execution
-     * after all data and metadata have been transferred.
+     * after all data and metadata have been transferred. For more information, see <a>create-task</a>
      * </p>
      * <p>
      * Default value: POINT_IN_TIME_CONSISTENT.
      * </p>
      * <p>
-     * POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     * ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      * </p>
      * <p>
-     * ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     * POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to verify that
+     * source and destination are fully synchronized. This option isn't supported when transferring to S3 Glacier or S3
+     * Glacier Deep Archive storage classes.
      * </p>
      * <p>
-     * NONE: Skip verification.
+     * NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     * integrity-checked with checksum verification during the transfer.
      * </p>
      * 
      * @param verifyMode
      *        A value that determines whether a data integrity verification should be performed at the end of a task
-     *        execution after all data and metadata have been transferred. </p>
+     *        execution after all data and metadata have been transferred. For more information, see <a>create-task</a>
+     *        </p>
      *        <p>
      *        Default value: POINT_IN_TIME_CONSISTENT.
      *        </p>
      *        <p>
-     *        POINT_IN_TIME_CONSISTENT: Perform verification (recommended).
+     *        ONLY_FILES_TRANSFERRED (recommended): Perform verification only on files that were transferred.
      *        </p>
      *        <p>
-     *        ONLY_FILES_TRANSFERRED: Perform verification on only files that were transferred.
+     *        POINT_IN_TIME_CONSISTENT: Scan the entire source and entire destination at the end of the transfer to
+     *        verify that source and destination are fully synchronized. This option isn't supported when transferring
+     *        to S3 Glacier or S3 Glacier Deep Archive storage classes.
      *        </p>
      *        <p>
-     *        NONE: Skip verification.
+     *        NONE: No additional verification is done at the end of the transfer, but all data transmissions are
+     *        integrity-checked with checksum verification during the transfer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VerifyMode
      */
@@ -1742,7 +1784,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
-     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
      * see <a>queue-task-execution</a>.
      * </p>
      * 
@@ -1750,8 +1792,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        A value that determines whether tasks should be queued before executing the tasks. If set to
      *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
-     *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *        information see <a>queue-task-execution</a>.
+     *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
+     *        information, see <a>queue-task-execution</a>.
      * @see TaskQueueing
      */
 
@@ -1765,15 +1807,15 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
-     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
      * see <a>queue-task-execution</a>.
      * </p>
      * 
      * @return A value that determines whether tasks should be queued before executing the tasks. If set to
      *         <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *         <p>
-     *         If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *         information see <a>queue-task-execution</a>.
+     *         If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
+     *         information, see <a>queue-task-execution</a>.
      * @see TaskQueueing
      */
 
@@ -1787,7 +1829,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
-     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
      * see <a>queue-task-execution</a>.
      * </p>
      * 
@@ -1795,8 +1837,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        A value that determines whether tasks should be queued before executing the tasks. If set to
      *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
-     *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *        information see <a>queue-task-execution</a>.
+     *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
+     *        information, see <a>queue-task-execution</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */
@@ -1812,7 +1854,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      * , the tasks will be queued. The default is <code>ENABLED</code>.
      * </p>
      * <p>
-     * If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more information
+     * If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more information,
      * see <a>queue-task-execution</a>.
      * </p>
      * 
@@ -1820,8 +1862,8 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
      *        A value that determines whether tasks should be queued before executing the tasks. If set to
      *        <code>ENABLED</code>, the tasks will be queued. The default is <code>ENABLED</code>.</p>
      *        <p>
-     *        If you use the same agent to run multiple tasks you can enable the tasks to run in series. For more
-     *        information see <a>queue-task-execution</a>.
+     *        If you use the same agent to run multiple tasks, you can enable the tasks to run in series. For more
+     *        information, see <a>queue-task-execution</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskQueueing
      */
@@ -1833,16 +1875,21 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
-     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log
+     * group that you provide. For more information about providing a log group for DataSync, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     * >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs
+     * on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object
+     * that is transferred and integrity checked.
      * </p>
      * 
      * @param logLevel
-     *        A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     *        <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
-     *        operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
-     *        transferred.
+     *        A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch
+     *        log group that you provide. For more information about providing a log group for DataSync, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     *        >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code>
+     *        publishes logs on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for
+     *        every file or object that is transferred and integrity checked.
      * @see LogLevel
      */
 
@@ -1852,15 +1899,20 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
-     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log
+     * group that you provide. For more information about providing a log group for DataSync, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     * >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs
+     * on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object
+     * that is transferred and integrity checked.
      * </p>
      * 
-     * @return A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set
-     *         to <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
-     *         operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
-     *         transferred.
+     * @return A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch
+     *         log group that you provide. For more information about providing a log group for DataSync, see <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     *         >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code>
+     *         publishes logs on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for
+     *         every file or object that is transferred and integrity checked.
      * @see LogLevel
      */
 
@@ -1870,16 +1922,21 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
-     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log
+     * group that you provide. For more information about providing a log group for DataSync, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     * >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs
+     * on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object
+     * that is transferred and integrity checked.
      * </p>
      * 
      * @param logLevel
-     *        A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     *        <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
-     *        operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
-     *        transferred.
+     *        A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch
+     *        log group that you provide. For more information about providing a log group for DataSync, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     *        >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code>
+     *        publishes logs on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for
+     *        every file or object that is transferred and integrity checked.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */
@@ -1891,22 +1948,102 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     * <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer operation
-     * and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is transferred.
+     * A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch log
+     * group that you provide. For more information about providing a log group for DataSync, see <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     * >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code> publishes logs
+     * on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for every file or object
+     * that is transferred and integrity checked.
      * </p>
      * 
      * @param logLevel
-     *        A value that determines the type of logs DataSync will deliver to your AWS CloudWatch Logs file. If set to
-     *        <code>OFF</code>, no logs will be delivered. <code>BASIC</code> will deliver a few logs per transfer
-     *        operation and <code>TRANSFER</code> will deliver a verbose log that contains logs for every file that is
-     *        transferred.
+     *        A value that determines the type of logs that DataSync publishes to a log stream in the Amazon CloudWatch
+     *        log group that you provide. For more information about providing a log group for DataSync, see <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateTask.html#DataSync-CreateTask-request-CloudWatchLogGroupArn"
+     *        >CloudWatchLogGroupArn</a>. If set to <code>OFF</code>, no logs are published. <code>BASIC</code>
+     *        publishes logs on errors for individual files transferred, and <code>TRANSFER</code> publishes logs for
+     *        every file or object that is transferred and integrity checked.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */
 
     public Options withLogLevel(LogLevel logLevel) {
         this.logLevel = logLevel.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
+     * modification time between source and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.
+     * </p>
+     * 
+     * @param transferMode
+     *        TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
+     *        compares file modification time between source and destination to determine which files need to be
+     *        transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     * @see TransferMode
+     */
+
+    public void setTransferMode(String transferMode) {
+        this.transferMode = transferMode;
+    }
+
+    /**
+     * <p>
+     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
+     * modification time between source and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.
+     * </p>
+     * 
+     * @return TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
+     *         compares file modification time between source and destination to determine which files need to be
+     *         transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     * @see TransferMode
+     */
+
+    public String getTransferMode() {
+        return this.transferMode;
+    }
+
+    /**
+     * <p>
+     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
+     * modification time between source and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.
+     * </p>
+     * 
+     * @param transferMode
+     *        TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
+     *        compares file modification time between source and destination to determine which files need to be
+     *        transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransferMode
+     */
+
+    public Options withTransferMode(String transferMode) {
+        setTransferMode(transferMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
+     * modification time between source and destination to determine which files need to be transferred. ALL skips
+     * destination inventory and transfers all files discovered on the source.
+     * </p>
+     * 
+     * @param transferMode
+     *        TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
+     *        compares file modification time between source and destination to determine which files need to be
+     *        transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransferMode
+     */
+
+    public Options withTransferMode(TransferMode transferMode) {
+        this.transferMode = transferMode.toString();
         return this;
     }
 
@@ -1945,7 +2082,9 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         if (getTaskQueueing() != null)
             sb.append("TaskQueueing: ").append(getTaskQueueing()).append(",");
         if (getLogLevel() != null)
-            sb.append("LogLevel: ").append(getLogLevel());
+            sb.append("LogLevel: ").append(getLogLevel()).append(",");
+        if (getTransferMode() != null)
+            sb.append("TransferMode: ").append(getTransferMode());
         sb.append("}");
         return sb.toString();
     }
@@ -2008,6 +2147,10 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogLevel() != null && other.getLogLevel().equals(this.getLogLevel()) == false)
             return false;
+        if (other.getTransferMode() == null ^ this.getTransferMode() == null)
+            return false;
+        if (other.getTransferMode() != null && other.getTransferMode().equals(this.getTransferMode()) == false)
+            return false;
         return true;
     }
 
@@ -2028,6 +2171,7 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBytesPerSecond() == null) ? 0 : getBytesPerSecond().hashCode());
         hashCode = prime * hashCode + ((getTaskQueueing() == null) ? 0 : getTaskQueueing().hashCode());
         hashCode = prime * hashCode + ((getLogLevel() == null) ? 0 : getLogLevel().hashCode());
+        hashCode = prime * hashCode + ((getTransferMode() == null) ? 0 : getTransferMode().hashCode());
         return hashCode;
     }
 

@@ -115,6 +115,49 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Cancels a single premigration assessment run.
+     * </p>
+     * <p>
+     * This operation prevents any individual assessments from running if they haven't started running. It also attempts
+     * to cancel any individual assessments that are currently running.
+     * </p>
+     * 
+     * @param cancelReplicationTaskAssessmentRunRequest
+     * @return A Java Future containing the result of the CancelReplicationTaskAssessmentRun operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.CancelReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelReplicationTaskAssessmentRunResult> cancelReplicationTaskAssessmentRunAsync(
+            CancelReplicationTaskAssessmentRunRequest cancelReplicationTaskAssessmentRunRequest);
+
+    /**
+     * <p>
+     * Cancels a single premigration assessment run.
+     * </p>
+     * <p>
+     * This operation prevents any individual assessments from running if they haven't started running. It also attempts
+     * to cancel any individual assessments that are currently running.
+     * </p>
+     * 
+     * @param cancelReplicationTaskAssessmentRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelReplicationTaskAssessmentRun operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.CancelReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelReplicationTaskAssessmentRunResult> cancelReplicationTaskAssessmentRunAsync(
+            CancelReplicationTaskAssessmentRunRequest cancelReplicationTaskAssessmentRunRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelReplicationTaskAssessmentRunRequest, CancelReplicationTaskAssessmentRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an endpoint using the provided settings.
      * </p>
      * 
@@ -571,6 +614,49 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Deletes the record of a single premigration assessment run.
+     * </p>
+     * <p>
+     * This operation removes all metadata that AWS DMS maintains about this assessment run. However, the operation
+     * leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket.
+     * </p>
+     * 
+     * @param deleteReplicationTaskAssessmentRunRequest
+     * @return A Java Future containing the result of the DeleteReplicationTaskAssessmentRun operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.DeleteReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReplicationTaskAssessmentRunResult> deleteReplicationTaskAssessmentRunAsync(
+            DeleteReplicationTaskAssessmentRunRequest deleteReplicationTaskAssessmentRunRequest);
+
+    /**
+     * <p>
+     * Deletes the record of a single premigration assessment run.
+     * </p>
+     * <p>
+     * This operation removes all metadata that AWS DMS maintains about this assessment run. However, the operation
+     * leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket.
+     * </p>
+     * 
+     * @param deleteReplicationTaskAssessmentRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteReplicationTaskAssessmentRun operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DeleteReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteReplicationTaskAssessmentRunResult> deleteReplicationTaskAssessmentRunAsync(
+            DeleteReplicationTaskAssessmentRunRequest deleteReplicationTaskAssessmentRunRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteReplicationTaskAssessmentRunRequest, DeleteReplicationTaskAssessmentRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all of the AWS DMS attributes for a customer account. These attributes include AWS DMS quotas for the
      * account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
      * supported by the account, such as the number of replication instances allowed. The description for each resource
@@ -615,6 +701,79 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(
             DescribeAccountAttributesRequest describeAccountAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a list of individual assessments that you can specify for a new premigration assessment run, given one
+     * or more parameters.
+     * </p>
+     * <p>
+     * If you specify an existing migration task, this operation provides the default individual assessments you can
+     * specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which
+     * to base a premigration assessment run.
+     * </p>
+     * <p>
+     * To use these migration task modeling parameters, you must specify an existing replication instance, a source
+     * database engine, a target database engine, and a migration type. This combination of parameters potentially
+     * limits the default individual assessments available for an assessment run created for a corresponding migration
+     * task.
+     * </p>
+     * <p>
+     * If you specify no parameters, this operation provides a list of all possible individual assessments that you can
+     * specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of
+     * them or the operation cannot provide a list of individual assessments. The only parameter that you can specify
+     * alone is for an existing migration task. The specified task definition then determines the default list of
+     * individual assessments that you can specify in an assessment run for the task.
+     * </p>
+     * 
+     * @param describeApplicableIndividualAssessmentsRequest
+     * @return A Java Future containing the result of the DescribeApplicableIndividualAssessments operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeApplicableIndividualAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicableIndividualAssessmentsResult> describeApplicableIndividualAssessmentsAsync(
+            DescribeApplicableIndividualAssessmentsRequest describeApplicableIndividualAssessmentsRequest);
+
+    /**
+     * <p>
+     * Provides a list of individual assessments that you can specify for a new premigration assessment run, given one
+     * or more parameters.
+     * </p>
+     * <p>
+     * If you specify an existing migration task, this operation provides the default individual assessments you can
+     * specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which
+     * to base a premigration assessment run.
+     * </p>
+     * <p>
+     * To use these migration task modeling parameters, you must specify an existing replication instance, a source
+     * database engine, a target database engine, and a migration type. This combination of parameters potentially
+     * limits the default individual assessments available for an assessment run created for a corresponding migration
+     * task.
+     * </p>
+     * <p>
+     * If you specify no parameters, this operation provides a list of all possible individual assessments that you can
+     * specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of
+     * them or the operation cannot provide a list of individual assessments. The only parameter that you can specify
+     * alone is for an existing migration task. The specified task definition then determines the default list of
+     * individual assessments that you can specify in an assessment run for the task.
+     * </p>
+     * 
+     * @param describeApplicableIndividualAssessmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApplicableIndividualAssessments operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeApplicableIndividualAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApplicableIndividualAssessmentsResult> describeApplicableIndividualAssessmentsAsync(
+            DescribeApplicableIndividualAssessmentsRequest describeApplicableIndividualAssessmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicableIndividualAssessmentsRequest, DescribeApplicableIndividualAssessmentsResult> asyncHandler);
 
     /**
      * <p>
@@ -1103,6 +1262,104 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
     java.util.concurrent.Future<DescribeReplicationTaskAssessmentResultsResult> describeReplicationTaskAssessmentResultsAsync(
             DescribeReplicationTaskAssessmentResultsRequest describeReplicationTaskAssessmentResultsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskAssessmentResultsRequest, DescribeReplicationTaskAssessmentResultsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of premigration assessment runs based on filter settings.
+     * </p>
+     * <p>
+     * These filter settings can specify a combination of premigration assessment runs, migration tasks, replication
+     * instances, and assessment run status values.
+     * </p>
+     * <note>
+     * <p>
+     * This operation doesn't return information about individual assessments. For this information, see the
+     * <code>DescribeReplicationTaskIndividualAssessments</code> operation.
+     * </p>
+     * </note>
+     * 
+     * @param describeReplicationTaskAssessmentRunsRequest
+     * @return A Java Future containing the result of the DescribeReplicationTaskAssessmentRuns operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplicationTaskAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTaskAssessmentRunsResult> describeReplicationTaskAssessmentRunsAsync(
+            DescribeReplicationTaskAssessmentRunsRequest describeReplicationTaskAssessmentRunsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of premigration assessment runs based on filter settings.
+     * </p>
+     * <p>
+     * These filter settings can specify a combination of premigration assessment runs, migration tasks, replication
+     * instances, and assessment run status values.
+     * </p>
+     * <note>
+     * <p>
+     * This operation doesn't return information about individual assessments. For this information, see the
+     * <code>DescribeReplicationTaskIndividualAssessments</code> operation.
+     * </p>
+     * </note>
+     * 
+     * @param describeReplicationTaskAssessmentRunsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplicationTaskAssessmentRuns operation returned by
+     *         the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplicationTaskAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTaskAssessmentRunsResult> describeReplicationTaskAssessmentRunsAsync(
+            DescribeReplicationTaskAssessmentRunsRequest describeReplicationTaskAssessmentRunsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskAssessmentRunsRequest, DescribeReplicationTaskAssessmentRunsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of individual assessments based on filter settings.
+     * </p>
+     * <p>
+     * These filter settings can specify a combination of premigration assessment runs, migration tasks, and assessment
+     * status values.
+     * </p>
+     * 
+     * @param describeReplicationTaskIndividualAssessmentsRequest
+     * @return A Java Future containing the result of the DescribeReplicationTaskIndividualAssessments operation
+     *         returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsync.DescribeReplicationTaskIndividualAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTaskIndividualAssessmentsResult> describeReplicationTaskIndividualAssessmentsAsync(
+            DescribeReplicationTaskIndividualAssessmentsRequest describeReplicationTaskIndividualAssessmentsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of individual assessments based on filter settings.
+     * </p>
+     * <p>
+     * These filter settings can specify a combination of premigration assessment runs, migration tasks, and assessment
+     * status values.
+     * </p>
+     * 
+     * @param describeReplicationTaskIndividualAssessmentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplicationTaskIndividualAssessments operation
+     *         returned by the service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.DescribeReplicationTaskIndividualAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplicationTaskIndividualAssessmentsResult> describeReplicationTaskIndividualAssessmentsAsync(
+            DescribeReplicationTaskIndividualAssessmentsRequest describeReplicationTaskIndividualAssessmentsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskIndividualAssessmentsRequest, DescribeReplicationTaskIndividualAssessmentsResult> asyncHandler);
 
     /**
      * <p>
@@ -1668,9 +1925,55 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
 
     /**
      * <p>
+     * Starts a new premigration assessment run for one or more individual assessments of a migration task.
+     * </p>
+     * <p>
+     * The assessments that you can specify depend on the source and target database engine and the migration type
+     * defined for the given task. To run this operation, your migration task must already be created. After you run
+     * this operation, you can review the status of each individual assessment. You can also run the migration task
+     * manually after the assessment run and its individual assessments complete.
+     * </p>
+     * 
+     * @param startReplicationTaskAssessmentRunRequest
+     * @return A Java Future containing the result of the StartReplicationTaskAssessmentRun operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsync.StartReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationTaskAssessmentRunResult> startReplicationTaskAssessmentRunAsync(
+            StartReplicationTaskAssessmentRunRequest startReplicationTaskAssessmentRunRequest);
+
+    /**
+     * <p>
+     * Starts a new premigration assessment run for one or more individual assessments of a migration task.
+     * </p>
+     * <p>
+     * The assessments that you can specify depend on the source and target database engine and the migration type
+     * defined for the given task. To run this operation, your migration task must already be created. After you run
+     * this operation, you can review the status of each individual assessment. You can also run the migration task
+     * manually after the assessment run and its individual assessments complete.
+     * </p>
+     * 
+     * @param startReplicationTaskAssessmentRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartReplicationTaskAssessmentRun operation returned by the
+     *         service.
+     * @sample AWSDatabaseMigrationServiceAsyncHandler.StartReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationTaskAssessmentRunResult> startReplicationTaskAssessmentRunAsync(
+            StartReplicationTaskAssessmentRunRequest startReplicationTaskAssessmentRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationTaskAssessmentRunRequest, StartReplicationTaskAssessmentRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops the replication task.
      * </p>
-     * <p/>
      * 
      * @param stopReplicationTaskRequest
      * @return A Java Future containing the result of the StopReplicationTask operation returned by the service.
@@ -1684,7 +1987,6 @@ public interface AWSDatabaseMigrationServiceAsync extends AWSDatabaseMigrationSe
      * <p>
      * Stops the replication task.
      * </p>
-     * <p/>
      * 
      * @param stopReplicationTaskRequest
      * @param asyncHandler

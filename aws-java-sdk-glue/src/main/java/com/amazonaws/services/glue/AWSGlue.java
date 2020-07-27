@@ -2328,6 +2328,31 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Restarts any completed nodes in a workflow run and resumes the run execution.
+     * </p>
+     * 
+     * @param resumeWorkflowRunRequest
+     * @return Result of the ResumeWorkflowRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ConcurrentRunsExceededException
+     *         Too many jobs are being run concurrently.
+     * @throws IllegalWorkflowStateException
+     *         The workflow is in an invalid state to perform a requested operation.
+     * @sample AWSGlue.ResumeWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ResumeWorkflowRunResult resumeWorkflowRun(ResumeWorkflowRunRequest resumeWorkflowRunRequest);
+
+    /**
+     * <p>
      * Searches a set of tables based on properties in the table metadata as well as on the parent database. You can
      * search against text or filter conditions.
      * </p>

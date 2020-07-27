@@ -141,7 +141,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * Cancels execution of a task.
      * </p>
      * <p>
-     * When you cancel a task execution, the transfer of some files are abruptly interrupted. The contents of files that
+     * When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that
      * are transferred to the destination might be incomplete or inconsistent with the source files. However, if you
      * start a new task execution on the same task and you allow the task execution to complete, file content on the
      * destination is complete and consistent. This applies to other unexpected failures that interrupt a task
@@ -210,7 +210,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * Amazon EFS) reside. Your tasks are created in this AWS Region.
      * </p>
      * <p>
-     * You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access to a VPC endpoint so you
+     * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
      * can run tasks without going over the public Internet.
      * </p>
      * <p>
@@ -396,7 +396,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to
+     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -442,6 +442,66 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateLocationNfsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLocationNfsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an endpoint for a self-managed object storage bucket.
+     * </p>
+     * 
+     * @param createLocationObjectStorageRequest
+     *        CreateLocationObjectStorageRequest
+     * @return Result of the CreateLocationObjectStorage operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the AWS DataSync service.
+     * @sample AWSDataSync.CreateLocationObjectStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLocationObjectStorageResult createLocationObjectStorage(CreateLocationObjectStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLocationObjectStorage(request);
+    }
+
+    @SdkInternalApi
+    final CreateLocationObjectStorageResult executeCreateLocationObjectStorage(CreateLocationObjectStorageRequest createLocationObjectStorageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLocationObjectStorageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLocationObjectStorageRequest> request = null;
+        Response<CreateLocationObjectStorageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLocationObjectStorageRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLocationObjectStorageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationObjectStorage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLocationObjectStorageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLocationObjectStorageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -523,7 +583,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to.
+     * Defines a file system on a Server Message Block (SMB) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -1005,7 +1065,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns metadata, such as the path information, about a NFS location.
+     * Returns metadata, such as the path information, about an NFS location.
      * </p>
      * 
      * @param describeLocationNfsRequest
@@ -1051,6 +1111,66 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeLocationNfsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeLocationNfsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns metadata about a self-managed object storage server location.
+     * </p>
+     * 
+     * @param describeLocationObjectStorageRequest
+     *        DescribeLocationObjectStorageRequest
+     * @return Result of the DescribeLocationObjectStorage operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the AWS DataSync service.
+     * @sample AWSDataSync.DescribeLocationObjectStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeLocationObjectStorageResult describeLocationObjectStorage(DescribeLocationObjectStorageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeLocationObjectStorage(request);
+    }
+
+    @SdkInternalApi
+    final DescribeLocationObjectStorageResult executeDescribeLocationObjectStorage(DescribeLocationObjectStorageRequest describeLocationObjectStorageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeLocationObjectStorageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeLocationObjectStorageRequest> request = null;
+        Response<DescribeLocationObjectStorageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeLocationObjectStorageRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeLocationObjectStorageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationObjectStorage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeLocationObjectStorageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeLocationObjectStorageResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1121,7 +1241,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns metadata, such as the path and user information about a SMB location.
+     * Returns metadata, such as the path and user information about an SMB location.
      * </p>
      * 
      * @param describeLocationSmbRequest
@@ -1364,7 +1484,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns a lists of source and destination locations.
+     * Returns a list of source and destination locations.
      * </p>
      * <p>
      * If you have more locations than are returned in a response (that is, the response returns only a truncated list
@@ -1427,7 +1547,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns all the tags associated with a specified resources.
+     * Returns all the tags associated with a specified resource.
      * </p>
      * 
      * @param listTagsForResourceRequest

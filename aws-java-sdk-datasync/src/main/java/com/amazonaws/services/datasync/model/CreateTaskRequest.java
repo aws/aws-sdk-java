@@ -45,14 +45,6 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      */
     private String cloudWatchLogGroupArn;
     /**
@@ -69,7 +61,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the operation.
      * </p>
      */
     private Options options;
@@ -183,25 +175,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      * 
      * @param cloudWatchLogGroupArn
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
-     *        in the task. </p>
-     *        <p>
-     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *        CloudWatch User Guide.</i>
-     *        </p>
-     *        <p>
-     *        For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
-     *        <i>AWS DataSync User Guide.</i>
+     *        in the task.
      */
 
     public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
@@ -213,24 +190,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
-     *         in the task. </p>
-     *         <p>
-     *         For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *         CloudWatch User Guide.</i>
-     *         </p>
-     *         <p>
-     *         For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
-     *         <i>AWS DataSync User Guide.</i>
+     *         in the task.
      */
 
     public String getCloudWatchLogGroupArn() {
@@ -242,25 +204,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      * 
      * @param cloudWatchLogGroupArn
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
-     *        in the task. </p>
-     *        <p>
-     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *        CloudWatch User Guide.</i>
-     *        </p>
-     *        <p>
-     *        For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
-     *        <i>AWS DataSync User Guide.</i>
+     *        in the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,7 +264,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the operation.
      * </p>
      * 
      * @param options
@@ -326,8 +273,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting a the task execution. For more information, see the
-     *        operation.
+     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the operation.
      */
 
     public void setOptions(Options options) {
@@ -342,7 +288,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the operation.
      * </p>
      * 
      * @return The set of configuration options that control the behavior of a single execution of the task that occurs
@@ -350,8 +296,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *         <p>
      *         For each individual task execution, you can override these options by specifying the
-     *         <code>OverrideOptions</code> before starting a the task execution. For more information, see the
-     *         operation.
+     *         <code>OverrideOptions</code> before starting the task execution. For more information, see the operation.
      */
 
     public Options getOptions() {
@@ -366,7 +311,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the operation.
      * </p>
      * 
      * @param options
@@ -375,8 +320,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting a the task execution. For more information, see the
-     *        operation.
+     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

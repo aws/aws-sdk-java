@@ -35,7 +35,7 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      */
@@ -93,7 +93,7 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * 
@@ -102,8 +102,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        the EFS source location or write data to the EFS destination. By default, AWS DataSync uses the root
      *        directory.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
-     *        .
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
+     *        <code>/path/to/folder</code>.
      *        </p>
      */
 
@@ -118,7 +118,7 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * 
@@ -126,7 +126,7 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *         the EFS source location or write data to the EFS destination. By default, AWS DataSync uses the root
      *         directory.</p> <note>
      *         <p>
-     *         <code>Subdirectory</code> must be specified with forward slashes. For example
+     *         <code>Subdirectory</code> must be specified with forward slashes. For example,
      *         <code>/path/to/folder</code>.
      *         </p>
      */
@@ -142,7 +142,7 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * 
@@ -151,8 +151,8 @@ public class CreateLocationEfsRequest extends com.amazonaws.AmazonWebServiceRequ
      *        the EFS source location or write data to the EFS destination. By default, AWS DataSync uses the root
      *        directory.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
-     *        .
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
+     *        <code>/path/to/folder</code>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

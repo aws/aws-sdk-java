@@ -33,12 +33,6 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
     private String modelEndpoint;
     /**
      * <p>
-     * The event type name.
-     * </p>
-     */
-    private String eventTypeName;
-    /**
-     * <p>
      * The source of the model.
      * </p>
      */
@@ -111,46 +105,6 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
 
     public PutExternalModelRequest withModelEndpoint(String modelEndpoint) {
         setModelEndpoint(modelEndpoint);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The event type name.
-     * </p>
-     * 
-     * @param eventTypeName
-     *        The event type name.
-     */
-
-    public void setEventTypeName(String eventTypeName) {
-        this.eventTypeName = eventTypeName;
-    }
-
-    /**
-     * <p>
-     * The event type name.
-     * </p>
-     * 
-     * @return The event type name.
-     */
-
-    public String getEventTypeName() {
-        return this.eventTypeName;
-    }
-
-    /**
-     * <p>
-     * The event type name.
-     * </p>
-     * 
-     * @param eventTypeName
-     *        The event type name.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PutExternalModelRequest withEventTypeName(String eventTypeName) {
-        setEventTypeName(eventTypeName);
         return this;
     }
 
@@ -476,8 +430,6 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getModelEndpoint() != null)
             sb.append("ModelEndpoint: ").append(getModelEndpoint()).append(",");
-        if (getEventTypeName() != null)
-            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getModelSource() != null)
             sb.append("ModelSource: ").append(getModelSource()).append(",");
         if (getInvokeModelEndpointRoleArn() != null)
@@ -507,10 +459,6 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         if (other.getModelEndpoint() == null ^ this.getModelEndpoint() == null)
             return false;
         if (other.getModelEndpoint() != null && other.getModelEndpoint().equals(this.getModelEndpoint()) == false)
-            return false;
-        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
-            return false;
-        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
             return false;
         if (other.getModelSource() == null ^ this.getModelSource() == null)
             return false;
@@ -545,7 +493,6 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelEndpoint() == null) ? 0 : getModelEndpoint().hashCode());
-        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getModelSource() == null) ? 0 : getModelSource().hashCode());
         hashCode = prime * hashCode + ((getInvokeModelEndpointRoleArn() == null) ? 0 : getInvokeModelEndpointRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfiguration() == null) ? 0 : getInputConfiguration().hashCode());

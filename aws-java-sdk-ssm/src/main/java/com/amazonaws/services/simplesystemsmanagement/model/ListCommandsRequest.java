@@ -35,6 +35,12 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * (Optional) Lists commands issued against this instance ID.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
+     * This is because the command has not reached the instance yet.
+     * </p>
+     * </note>
      */
     private String instanceId;
     /**
@@ -101,9 +107,19 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * (Optional) Lists commands issued against this instance ID.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
+     * This is because the command has not reached the instance yet.
+     * </p>
+     * </note>
      * 
      * @param instanceId
-     *        (Optional) Lists commands issued against this instance ID.
+     *        (Optional) Lists commands issued against this instance ID.</p> <note>
+     *        <p>
+     *        You can't specify an instance ID in the same command that you specify <code>Status</code> =
+     *        <code>Pending</code>. This is because the command has not reached the instance yet.
+     *        </p>
      */
 
     public void setInstanceId(String instanceId) {
@@ -114,8 +130,18 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * (Optional) Lists commands issued against this instance ID.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
+     * This is because the command has not reached the instance yet.
+     * </p>
+     * </note>
      * 
-     * @return (Optional) Lists commands issued against this instance ID.
+     * @return (Optional) Lists commands issued against this instance ID.</p> <note>
+     *         <p>
+     *         You can't specify an instance ID in the same command that you specify <code>Status</code> =
+     *         <code>Pending</code>. This is because the command has not reached the instance yet.
+     *         </p>
      */
 
     public String getInstanceId() {
@@ -126,9 +152,19 @@ public class ListCommandsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * (Optional) Lists commands issued against this instance ID.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an instance ID in the same command that you specify <code>Status</code> = <code>Pending</code>.
+     * This is because the command has not reached the instance yet.
+     * </p>
+     * </note>
      * 
      * @param instanceId
-     *        (Optional) Lists commands issued against this instance ID.
+     *        (Optional) Lists commands issued against this instance ID.</p> <note>
+     *        <p>
+     *        You can't specify an instance ID in the same command that you specify <code>Status</code> =
+     *        <code>Pending</code>. This is because the command has not reached the instance yet.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

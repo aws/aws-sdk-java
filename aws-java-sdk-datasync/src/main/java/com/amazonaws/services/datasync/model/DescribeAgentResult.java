@@ -62,7 +62,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      */
     private String endpointType;
@@ -319,12 +319,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @param endpointType
      *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public Internet.
+     *        accessible over the public internet.
      * @see EndpointType
      */
 
@@ -335,11 +335,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @return The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *         accessible over the public Internet.
+     *         accessible over the public internet.
      * @see EndpointType
      */
 
@@ -350,12 +350,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @param endpointType
      *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public Internet.
+     *        accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -368,12 +368,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @param endpointType
      *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public Internet.
+     *        accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */

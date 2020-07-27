@@ -56,6 +56,30 @@ public class KafkaSettingsJsonUnmarshaller implements Unmarshaller<KafkaSettings
                     context.nextToken();
                     kafkaSettings.setTopic(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("MessageFormat", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeTransactionDetails", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeTransactionDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludePartitionValue", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludePartitionValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("PartitionIncludeSchemaTable", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setPartitionIncludeSchemaTable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeTableAlterOperations", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeTableAlterOperations(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeControlDetails", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeControlDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

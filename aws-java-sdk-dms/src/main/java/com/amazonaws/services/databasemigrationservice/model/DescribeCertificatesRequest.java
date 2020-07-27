@@ -27,7 +27,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters applied to the certificate described in the form of key-value pairs.
+     * Filters applied to the certificates described in the form of key-value pairs.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -52,10 +52,10 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters applied to the certificate described in the form of key-value pairs.
+     * Filters applied to the certificates described in the form of key-value pairs.
      * </p>
      * 
-     * @return Filters applied to the certificate described in the form of key-value pairs.
+     * @return Filters applied to the certificates described in the form of key-value pairs.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -64,11 +64,11 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters applied to the certificate described in the form of key-value pairs.
+     * Filters applied to the certificates described in the form of key-value pairs.
      * </p>
      * 
      * @param filters
-     *        Filters applied to the certificate described in the form of key-value pairs.
+     *        Filters applied to the certificates described in the form of key-value pairs.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -82,7 +82,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters applied to the certificate described in the form of key-value pairs.
+     * Filters applied to the certificates described in the form of key-value pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +91,7 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param filters
-     *        Filters applied to the certificate described in the form of key-value pairs.
+     *        Filters applied to the certificates described in the form of key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class DescribeCertificatesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Filters applied to the certificate described in the form of key-value pairs.
+     * Filters applied to the certificates described in the form of key-value pairs.
      * </p>
      * 
      * @param filters
-     *        Filters applied to the certificate described in the form of key-value pairs.
+     *        Filters applied to the certificates described in the form of key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

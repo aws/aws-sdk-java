@@ -43,7 +43,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      * Cancels execution of a task.
      * </p>
      * <p>
-     * When you cancel a task execution, the transfer of some files are abruptly interrupted. The contents of files that
+     * When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that
      * are transferred to the destination might be incomplete or inconsistent with the source files. However, if you
      * start a new task execution on the same task and you allow the task execution to complete, file content on the
      * destination is complete and consistent. This applies to other unexpected failures that interrupt a task
@@ -65,7 +65,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      * Cancels execution of a task.
      * </p>
      * <p>
-     * When you cancel a task execution, the transfer of some files are abruptly interrupted. The contents of files that
+     * When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents of files that
      * are transferred to the destination might be incomplete or inconsistent with the source files. However, if you
      * start a new task execution on the same task and you allow the task execution to complete, file content on the
      * destination is complete and consistent. This applies to other unexpected failures that interrupt a task
@@ -95,7 +95,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      * Amazon EFS) reside. Your tasks are created in this AWS Region.
      * </p>
      * <p>
-     * You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access to a VPC endpoint so you
+     * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
      * can run tasks without going over the public Internet.
      * </p>
      * <p>
@@ -126,7 +126,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      * Amazon EFS) reside. Your tasks are created in this AWS Region.
      * </p>
      * <p>
-     * You can activate the agent in a VPC (Virtual private Cloud) or provide the agent access to a VPC endpoint so you
+     * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
      * can run tasks without going over the public Internet.
      * </p>
      * <p>
@@ -220,7 +220,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to
+     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -234,7 +234,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on a Network File System (NFS) server that can be read from or written to
+     * Defines a file system on a Network File System (NFS) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationNfsRequest
@@ -250,6 +250,41 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      */
     java.util.concurrent.Future<CreateLocationNfsResult> createLocationNfsAsync(CreateLocationNfsRequest createLocationNfsRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLocationNfsRequest, CreateLocationNfsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an endpoint for a self-managed object storage bucket.
+     * </p>
+     * 
+     * @param createLocationObjectStorageRequest
+     *        CreateLocationObjectStorageRequest
+     * @return A Java Future containing the result of the CreateLocationObjectStorage operation returned by the service.
+     * @sample AWSDataSyncAsync.CreateLocationObjectStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationObjectStorageResult> createLocationObjectStorageAsync(
+            CreateLocationObjectStorageRequest createLocationObjectStorageRequest);
+
+    /**
+     * <p>
+     * Creates an endpoint for a self-managed object storage bucket.
+     * </p>
+     * 
+     * @param createLocationObjectStorageRequest
+     *        CreateLocationObjectStorageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLocationObjectStorage operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.CreateLocationObjectStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationObjectStorage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationObjectStorageResult> createLocationObjectStorageAsync(
+            CreateLocationObjectStorageRequest createLocationObjectStorageRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLocationObjectStorageRequest, CreateLocationObjectStorageResult> asyncHandler);
 
     /**
      * <p>
@@ -308,7 +343,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to.
+     * Defines a file system on a Server Message Block (SMB) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -322,7 +357,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Defines a file system on an Server Message Block (SMB) server that can be read from or written to.
+     * Defines a file system on a Server Message Block (SMB) server that can be read from or written to.
      * </p>
      * 
      * @param createLocationSmbRequest
@@ -606,7 +641,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata, such as the path information, about a NFS location.
+     * Returns metadata, such as the path information, about an NFS location.
      * </p>
      * 
      * @param describeLocationNfsRequest
@@ -620,7 +655,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata, such as the path information, about a NFS location.
+     * Returns metadata, such as the path information, about an NFS location.
      * </p>
      * 
      * @param describeLocationNfsRequest
@@ -636,6 +671,43 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      */
     java.util.concurrent.Future<DescribeLocationNfsResult> describeLocationNfsAsync(DescribeLocationNfsRequest describeLocationNfsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationNfsRequest, DescribeLocationNfsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns metadata about a self-managed object storage server location.
+     * </p>
+     * 
+     * @param describeLocationObjectStorageRequest
+     *        DescribeLocationObjectStorageRequest
+     * @return A Java Future containing the result of the DescribeLocationObjectStorage operation returned by the
+     *         service.
+     * @sample AWSDataSyncAsync.DescribeLocationObjectStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationObjectStorageResult> describeLocationObjectStorageAsync(
+            DescribeLocationObjectStorageRequest describeLocationObjectStorageRequest);
+
+    /**
+     * <p>
+     * Returns metadata about a self-managed object storage server location.
+     * </p>
+     * 
+     * @param describeLocationObjectStorageRequest
+     *        DescribeLocationObjectStorageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLocationObjectStorage operation returned by the
+     *         service.
+     * @sample AWSDataSyncAsyncHandler.DescribeLocationObjectStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationObjectStorage"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationObjectStorageResult> describeLocationObjectStorageAsync(
+            DescribeLocationObjectStorageRequest describeLocationObjectStorageRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLocationObjectStorageRequest, DescribeLocationObjectStorageResult> asyncHandler);
 
     /**
      * <p>
@@ -672,7 +744,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata, such as the path and user information about a SMB location.
+     * Returns metadata, such as the path and user information about an SMB location.
      * </p>
      * 
      * @param describeLocationSmbRequest
@@ -686,7 +758,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns metadata, such as the path and user information about a SMB location.
+     * Returns metadata, such as the path and user information about an SMB location.
      * </p>
      * 
      * @param describeLocationSmbRequest
@@ -824,7 +896,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns a lists of source and destination locations.
+     * Returns a list of source and destination locations.
      * </p>
      * <p>
      * If you have more locations than are returned in a response (that is, the response returns only a truncated list
@@ -843,7 +915,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns a lists of source and destination locations.
+     * Returns a list of source and destination locations.
      * </p>
      * <p>
      * If you have more locations than are returned in a response (that is, the response returns only a truncated list
@@ -867,7 +939,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns all the tags associated with a specified resources.
+     * Returns all the tags associated with a specified resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -881,7 +953,7 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
-     * Returns all the tags associated with a specified resources.
+     * Returns all the tags associated with a specified resource.
      * </p>
      * 
      * @param listTagsForResourceRequest

@@ -28,7 +28,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication instances.
      * </p>
      * <p>
      * Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
@@ -60,14 +60,14 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication instances.
      * </p>
      * <p>
      * Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
      * engine-version
      * </p>
      * 
-     * @return Filters applied to the describe action.</p>
+     * @return Filters applied to replication instances.</p>
      *         <p>
      *         Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
      *         engine-version
@@ -79,7 +79,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication instances.
      * </p>
      * <p>
      * Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
@@ -87,7 +87,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication instances.</p>
      *        <p>
      *        Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
      *        engine-version
@@ -104,7 +104,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication instances.
      * </p>
      * <p>
      * Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
@@ -117,7 +117,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication instances.</p>
      *        <p>
      *        Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
      *        engine-version
@@ -136,7 +136,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication instances.
      * </p>
      * <p>
      * Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
@@ -144,7 +144,7 @@ public class DescribeReplicationInstancesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication instances.</p>
      *        <p>
      *        Valid filter names: replication-instance-arn | replication-instance-id | replication-instance-class |
      *        engine-version

@@ -55,7 +55,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
     private String marker;
     /**
      * <p>
-     * Filters applied to the describe table statistics action.
+     * Filters applied to table statistics.
      * </p>
      * <p>
      * Valid filter names: schema-name | table-name | table-state
@@ -239,7 +239,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the describe table statistics action.
+     * Filters applied to table statistics.
      * </p>
      * <p>
      * Valid filter names: schema-name | table-name | table-state
@@ -248,7 +248,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * A combination of filters creates an AND condition where each record matches all specified filters.
      * </p>
      * 
-     * @return Filters applied to the describe table statistics action.</p>
+     * @return Filters applied to table statistics.</p>
      *         <p>
      *         Valid filter names: schema-name | table-name | table-state
      *         </p>
@@ -262,7 +262,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the describe table statistics action.
+     * Filters applied to table statistics.
      * </p>
      * <p>
      * Valid filter names: schema-name | table-name | table-state
@@ -272,7 +272,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe table statistics action.</p>
+     *        Filters applied to table statistics.</p>
      *        <p>
      *        Valid filter names: schema-name | table-name | table-state
      *        </p>
@@ -291,7 +291,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the describe table statistics action.
+     * Filters applied to table statistics.
      * </p>
      * <p>
      * Valid filter names: schema-name | table-name | table-state
@@ -306,7 +306,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe table statistics action.</p>
+     *        Filters applied to table statistics.</p>
      *        <p>
      *        Valid filter names: schema-name | table-name | table-state
      *        </p>
@@ -327,7 +327,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the describe table statistics action.
+     * Filters applied to table statistics.
      * </p>
      * <p>
      * Valid filter names: schema-name | table-name | table-state
@@ -337,7 +337,7 @@ public class DescribeTableStatisticsRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe table statistics action.</p>
+     *        Filters applied to table statistics.</p>
      *        <p>
      *        Valid filter names: schema-name | table-name | table-state
      *        </p>

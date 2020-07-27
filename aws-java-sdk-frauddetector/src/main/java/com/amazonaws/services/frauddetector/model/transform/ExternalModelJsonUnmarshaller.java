@@ -52,10 +52,6 @@ public class ExternalModelJsonUnmarshaller implements Unmarshaller<ExternalModel
                     context.nextToken();
                     externalModel.setModelEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("eventTypeName", targetDepth)) {
-                    context.nextToken();
-                    externalModel.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("modelSource", targetDepth)) {
                     context.nextToken();
                     externalModel.setModelSource(context.getUnmarshaller(String.class).unmarshall(context));

@@ -1,3 +1,28 @@
+# __1.11.828__ __2020-07-27__
+## __AWS DataSync__
+  - ### Features
+    - Today AWS DataSync releases support for self-managed object storage Locations and the new TransferMode Option.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Basic endpoint settings for relational databases, Preflight validation API.
+
+## __AWS Glue__
+  - ### Features
+    - Add ability to manually resume workflows in AWS Glue providing customers further control over the orchestration of ETL workloads.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - m6gd, c6gd, r6gd instances are powered by AWS Graviton2 processors and support local NVMe instance storage
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - Moved the eventTypeName attribute for PutExternalModel API to inputConfiguration. Model ID's no longer allow hyphens.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Assorted doc ticket-fix updates for Systems Manager.
+
 # __1.11.827__ __2020-07-24__
 ## __AWS Elemental MediaPackage__
   - ### Features

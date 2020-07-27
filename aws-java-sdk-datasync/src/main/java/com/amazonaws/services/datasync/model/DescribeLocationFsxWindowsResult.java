@@ -25,7 +25,7 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     * The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      * </p>
      */
     private String locationArn;
@@ -37,8 +37,7 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
     private String locationUri;
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file system.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
@@ -63,11 +62,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     * The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     *        The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      */
 
     public void setLocationArn(String locationArn) {
@@ -76,10 +75,10 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     * The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      * </p>
      * 
-     * @return The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     * @return The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      */
 
     public String getLocationArn() {
@@ -88,11 +87,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     * The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon resource Name (ARN) of the FSx for Windows location that was described.
+     *        The Amazon Resource Name (ARN) of the FSx for Windows location that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,12 +142,11 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file system.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for
-     *         Windows file system.
+     * @return The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file
+     *         system.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -157,13 +155,12 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file system.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for
-     *        Windows file system.
+     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file
+     *        system.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -177,8 +174,7 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file system.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -187,8 +183,8 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for
-     *        Windows file system.
+     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file
+     *        system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,13 +200,12 @@ public class DescribeLocationFsxWindowsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for Windows file
-     * system.
+     * The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file system.
      * </p>
      * 
      * @param securityGroupArns
-     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the for the FSx for
-     *        Windows file system.
+     *        The Amazon Resource Names (ARNs) of the security groups that are configured for the FSx for Windows file
+     *        system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

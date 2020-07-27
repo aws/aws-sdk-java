@@ -152,6 +152,30 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                     context.nextToken();
                     endpoint.setRedshiftSettings(RedshiftSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("PostgreSQLSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setPostgreSQLSettings(PostgreSQLSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MySQLSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setMySQLSettings(MySQLSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OracleSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setOracleSettings(OracleSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SybaseSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setSybaseSettings(SybaseSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MicrosoftSQLServerSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setMicrosoftSQLServerSettings(MicrosoftSQLServerSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IBMDb2Settings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setIBMDb2Settings(IBMDb2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

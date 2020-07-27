@@ -6558,6 +6558,71 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Restarts any completed nodes in a workflow run and resumes the run execution.
+     * </p>
+     * 
+     * @param resumeWorkflowRunRequest
+     * @return Result of the ResumeWorkflowRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ConcurrentRunsExceededException
+     *         Too many jobs are being run concurrently.
+     * @throws IllegalWorkflowStateException
+     *         The workflow is in an invalid state to perform a requested operation.
+     * @sample AWSGlue.ResumeWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ResumeWorkflowRunResult resumeWorkflowRun(ResumeWorkflowRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeResumeWorkflowRun(request);
+    }
+
+    @SdkInternalApi
+    final ResumeWorkflowRunResult executeResumeWorkflowRun(ResumeWorkflowRunRequest resumeWorkflowRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resumeWorkflowRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResumeWorkflowRunRequest> request = null;
+        Response<ResumeWorkflowRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResumeWorkflowRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeWorkflowRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeWorkflowRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResumeWorkflowRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResumeWorkflowRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Searches a set of tables based on properties in the table metadata as well as on the parent database. You can
      * search against text or filter conditions.
      * </p>

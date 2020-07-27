@@ -28,7 +28,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication tasks.
      * </p>
      * <p>
      * Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
@@ -68,14 +68,14 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication tasks.
      * </p>
      * <p>
      * Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
      * replication-instance-arn
      * </p>
      * 
-     * @return Filters applied to the describe action.</p>
+     * @return Filters applied to replication tasks.</p>
      *         <p>
      *         Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
      *         replication-instance-arn
@@ -87,7 +87,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication tasks.
      * </p>
      * <p>
      * Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
@@ -95,7 +95,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication tasks.</p>
      *        <p>
      *        Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
      *        replication-instance-arn
@@ -112,7 +112,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication tasks.
      * </p>
      * <p>
      * Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
@@ -125,7 +125,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication tasks.</p>
      *        <p>
      *        Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
      *        replication-instance-arn
@@ -144,7 +144,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication tasks.
      * </p>
      * <p>
      * Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
@@ -152,7 +152,7 @@ public class DescribeReplicationTasksRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication tasks.</p>
      *        <p>
      *        Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn |
      *        replication-instance-arn

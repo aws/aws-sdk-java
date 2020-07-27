@@ -116,11 +116,17 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                             new JsonErrorShapeMetadata().withErrorCode("ResourceQuotaExceededFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.ResourceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("KMSFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("S3AccessDeniedFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.S3AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -145,6 +151,9 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StorageQuotaExceededFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.StorageQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("S3ResourceNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.S3ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SNSNoAuthorizationFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.databasemigrationservice.model.transform.SNSNoAuthorizationExceptionUnmarshaller.getInstance()))
@@ -464,6 +473,72 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<ApplyPendingMaintenanceActionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ApplyPendingMaintenanceActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a single premigration assessment run.
+     * </p>
+     * <p>
+     * This operation prevents any individual assessments from running if they haven't started running. It also attempts
+     * to cancel any individual assessments that are currently running.
+     * </p>
+     * 
+     * @param cancelReplicationTaskAssessmentRunRequest
+     * @return Result of the CancelReplicationTaskAssessmentRun operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.CancelReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CancelReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelReplicationTaskAssessmentRunResult cancelReplicationTaskAssessmentRun(CancelReplicationTaskAssessmentRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelReplicationTaskAssessmentRun(request);
+    }
+
+    @SdkInternalApi
+    final CancelReplicationTaskAssessmentRunResult executeCancelReplicationTaskAssessmentRun(
+            CancelReplicationTaskAssessmentRunRequest cancelReplicationTaskAssessmentRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelReplicationTaskAssessmentRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelReplicationTaskAssessmentRunRequest> request = null;
+        Response<CancelReplicationTaskAssessmentRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelReplicationTaskAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelReplicationTaskAssessmentRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelReplicationTaskAssessmentRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelReplicationTaskAssessmentRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelReplicationTaskAssessmentRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1270,6 +1345,72 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Deletes the record of a single premigration assessment run.
+     * </p>
+     * <p>
+     * This operation removes all metadata that AWS DMS maintains about this assessment run. However, the operation
+     * leaves untouched all information about this assessment run that is stored in your Amazon S3 bucket.
+     * </p>
+     * 
+     * @param deleteReplicationTaskAssessmentRunRequest
+     * @return Result of the DeleteReplicationTaskAssessmentRun operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DeleteReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteReplicationTaskAssessmentRunResult deleteReplicationTaskAssessmentRun(DeleteReplicationTaskAssessmentRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteReplicationTaskAssessmentRun(request);
+    }
+
+    @SdkInternalApi
+    final DeleteReplicationTaskAssessmentRunResult executeDeleteReplicationTaskAssessmentRun(
+            DeleteReplicationTaskAssessmentRunRequest deleteReplicationTaskAssessmentRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteReplicationTaskAssessmentRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteReplicationTaskAssessmentRunRequest> request = null;
+        Response<DeleteReplicationTaskAssessmentRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteReplicationTaskAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteReplicationTaskAssessmentRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReplicationTaskAssessmentRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteReplicationTaskAssessmentRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteReplicationTaskAssessmentRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists all of the AWS DMS attributes for a customer account. These attributes include AWS DMS quotas for the
      * account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas
      * supported by the account, such as the number of replication instances allowed. The description for each resource
@@ -1320,6 +1461,87 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeAccountAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a list of individual assessments that you can specify for a new premigration assessment run, given one
+     * or more parameters.
+     * </p>
+     * <p>
+     * If you specify an existing migration task, this operation provides the default individual assessments you can
+     * specify for that task. Otherwise, the specified parameters model elements of a possible migration task on which
+     * to base a premigration assessment run.
+     * </p>
+     * <p>
+     * To use these migration task modeling parameters, you must specify an existing replication instance, a source
+     * database engine, a target database engine, and a migration type. This combination of parameters potentially
+     * limits the default individual assessments available for an assessment run created for a corresponding migration
+     * task.
+     * </p>
+     * <p>
+     * If you specify no parameters, this operation provides a list of all possible individual assessments that you can
+     * specify for an assessment run. If you specify any one of the task modeling parameters, you must specify all of
+     * them or the operation cannot provide a list of individual assessments. The only parameter that you can specify
+     * alone is for an existing migration task. The specified task definition then determines the default list of
+     * individual assessments that you can specify in an assessment run for the task.
+     * </p>
+     * 
+     * @param describeApplicableIndividualAssessmentsRequest
+     * @return Result of the DescribeApplicableIndividualAssessments operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @sample AWSDatabaseMigrationService.DescribeApplicableIndividualAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeApplicableIndividualAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeApplicableIndividualAssessmentsResult describeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplicableIndividualAssessments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicableIndividualAssessmentsResult executeDescribeApplicableIndividualAssessments(
+            DescribeApplicableIndividualAssessmentsRequest describeApplicableIndividualAssessmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeApplicableIndividualAssessmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeApplicableIndividualAssessmentsRequest> request = null;
+        Response<DescribeApplicableIndividualAssessmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeApplicableIndividualAssessmentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeApplicableIndividualAssessmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicableIndividualAssessments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeApplicableIndividualAssessmentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeApplicableIndividualAssessmentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2122,6 +2344,137 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
             HttpResponseHandler<AmazonWebServiceResponse<DescribeReplicationTaskAssessmentResultsResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeReplicationTaskAssessmentResultsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of premigration assessment runs based on filter settings.
+     * </p>
+     * <p>
+     * These filter settings can specify a combination of premigration assessment runs, migration tasks, replication
+     * instances, and assessment run status values.
+     * </p>
+     * <note>
+     * <p>
+     * This operation doesn't return information about individual assessments. For this information, see the
+     * <code>DescribeReplicationTaskIndividualAssessments</code> operation.
+     * </p>
+     * </note>
+     * 
+     * @param describeReplicationTaskAssessmentRunsRequest
+     * @return Result of the DescribeReplicationTaskAssessmentRuns operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationTaskAssessmentRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskAssessmentRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReplicationTaskAssessmentRunsResult describeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationTaskAssessmentRuns(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationTaskAssessmentRunsResult executeDescribeReplicationTaskAssessmentRuns(
+            DescribeReplicationTaskAssessmentRunsRequest describeReplicationTaskAssessmentRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplicationTaskAssessmentRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplicationTaskAssessmentRunsRequest> request = null;
+        Response<DescribeReplicationTaskAssessmentRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplicationTaskAssessmentRunsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReplicationTaskAssessmentRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplicationTaskAssessmentRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReplicationTaskAssessmentRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeReplicationTaskAssessmentRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of individual assessments based on filter settings.
+     * </p>
+     * <p>
+     * These filter settings can specify a combination of premigration assessment runs, migration tasks, and assessment
+     * status values.
+     * </p>
+     * 
+     * @param describeReplicationTaskIndividualAssessmentsRequest
+     * @return Result of the DescribeReplicationTaskIndividualAssessments operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @sample AWSDatabaseMigrationService.DescribeReplicationTaskIndividualAssessments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTaskIndividualAssessments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReplicationTaskIndividualAssessmentsResult describeReplicationTaskIndividualAssessments(
+            DescribeReplicationTaskIndividualAssessmentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReplicationTaskIndividualAssessments(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReplicationTaskIndividualAssessmentsResult executeDescribeReplicationTaskIndividualAssessments(
+            DescribeReplicationTaskIndividualAssessmentsRequest describeReplicationTaskIndividualAssessmentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReplicationTaskIndividualAssessmentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReplicationTaskIndividualAssessmentsRequest> request = null;
+        Response<DescribeReplicationTaskIndividualAssessmentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReplicationTaskIndividualAssessmentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReplicationTaskIndividualAssessmentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReplicationTaskIndividualAssessments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReplicationTaskIndividualAssessmentsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeReplicationTaskIndividualAssessmentsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3134,9 +3487,94 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
 
     /**
      * <p>
+     * Starts a new premigration assessment run for one or more individual assessments of a migration task.
+     * </p>
+     * <p>
+     * The assessments that you can specify depend on the source and target database engine and the migration type
+     * defined for the given task. To run this operation, your migration task must already be created. After you run
+     * this operation, you can review the status of each individual assessment. You can also run the migration task
+     * manually after the assessment run and its individual assessments complete.
+     * </p>
+     * 
+     * @param startReplicationTaskAssessmentRunRequest
+     * @return Result of the StartReplicationTaskAssessmentRun operation returned by the service.
+     * @throws AccessDeniedException
+     *         AWS DMS was denied access to the endpoint. Check that the role is correctly configured.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws InvalidResourceStateException
+     *         The resource is in a state that prevents it from being used for database migration.
+     * @throws KMSAccessDeniedException
+     *         The ciphertext references a key that doesn't exist or that the DMS account doesn't have access to.
+     * @throws KMSDisabledException
+     *         The specified master key (CMK) isn't enabled.
+     * @throws KMSException
+     *         An AWS Key Management Service (AWS KMS) error is preventing access to AWS KMS.
+     * @throws KMSInvalidStateException
+     *         The state of the specified AWS KMS resource isn't valid for this request.
+     * @throws KMSNotFoundException
+     *         The specified AWS KMS entity or resource can't be found.
+     * @throws KMSKeyNotAccessibleException
+     *         AWS DMS cannot access the AWS KMS key.
+     * @throws S3AccessDeniedException
+     *         Insufficient privileges are preventing access to an Amazon S3 object.
+     * @throws S3ResourceNotFoundException
+     *         A specified Amazon S3 bucket, bucket folder, or other object can't be found.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are attempting to create already exists.
+     * @sample AWSDatabaseMigrationService.StartReplicationTaskAssessmentRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessmentRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartReplicationTaskAssessmentRunResult startReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartReplicationTaskAssessmentRun(request);
+    }
+
+    @SdkInternalApi
+    final StartReplicationTaskAssessmentRunResult executeStartReplicationTaskAssessmentRun(
+            StartReplicationTaskAssessmentRunRequest startReplicationTaskAssessmentRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startReplicationTaskAssessmentRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartReplicationTaskAssessmentRunRequest> request = null;
+        Response<StartReplicationTaskAssessmentRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartReplicationTaskAssessmentRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startReplicationTaskAssessmentRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Database Migration Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartReplicationTaskAssessmentRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartReplicationTaskAssessmentRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartReplicationTaskAssessmentRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops the replication task.
      * </p>
-     * <p/>
      * 
      * @param stopReplicationTaskRequest
      * @return Result of the StopReplicationTask operation returned by the service.

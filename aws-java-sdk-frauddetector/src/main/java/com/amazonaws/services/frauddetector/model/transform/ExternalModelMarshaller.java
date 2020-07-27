@@ -29,8 +29,6 @@ public class ExternalModelMarshaller {
 
     private static final MarshallingInfo<String> MODELENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelEndpoint").build();
-    private static final MarshallingInfo<String> EVENTTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeName").build();
     private static final MarshallingInfo<String> MODELSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelSource").build();
     private static final MarshallingInfo<String> INVOKEMODELENDPOINTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,7 +63,6 @@ public class ExternalModelMarshaller {
 
         try {
             protocolMarshaller.marshall(externalModel.getModelEndpoint(), MODELENDPOINT_BINDING);
-            protocolMarshaller.marshall(externalModel.getEventTypeName(), EVENTTYPENAME_BINDING);
             protocolMarshaller.marshall(externalModel.getModelSource(), MODELSOURCE_BINDING);
             protocolMarshaller.marshall(externalModel.getInvokeModelEndpointRoleArn(), INVOKEMODELENDPOINTROLEARN_BINDING);
             protocolMarshaller.marshall(externalModel.getInputConfiguration(), INPUTCONFIGURATION_BINDING);

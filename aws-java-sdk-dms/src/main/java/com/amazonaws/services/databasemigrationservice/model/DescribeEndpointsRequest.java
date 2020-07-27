@@ -28,7 +28,7 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoints.
      * </p>
      * <p>
      * Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
@@ -59,13 +59,13 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoints.
      * </p>
      * <p>
      * Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      * </p>
      * 
-     * @return Filters applied to the describe action.</p>
+     * @return Filters applied to the endpoints.</p>
      *         <p>
      *         Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      */
@@ -76,14 +76,14 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoints.
      * </p>
      * <p>
      * Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to the endpoints.</p>
      *        <p>
      *        Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      */
@@ -99,7 +99,7 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoints.
      * </p>
      * <p>
      * Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
@@ -111,7 +111,7 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to the endpoints.</p>
      *        <p>
      *        Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -129,14 +129,14 @@ public class DescribeEndpointsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoints.
      * </p>
      * <p>
      * Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to the endpoints.</p>
      *        <p>
      *        Valid filter names: endpoint-arn | endpoint-type | endpoint-id | engine-name
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -30,18 +30,18 @@ public class DescribeLocationSmbRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location to describe.
+     * The Amazon Resource Name (ARN) of the SMB location to describe.
      * </p>
      */
     private String locationArn;
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location to describe.
+     * The Amazon Resource Name (ARN) of the SMB location to describe.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon resource Name (ARN) of the SMB location to describe.
+     *        The Amazon Resource Name (ARN) of the SMB location to describe.
      */
 
     public void setLocationArn(String locationArn) {
@@ -50,10 +50,10 @@ public class DescribeLocationSmbRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location to describe.
+     * The Amazon Resource Name (ARN) of the SMB location to describe.
      * </p>
      * 
-     * @return The Amazon resource Name (ARN) of the SMB location to describe.
+     * @return The Amazon Resource Name (ARN) of the SMB location to describe.
      */
 
     public String getLocationArn() {
@@ -62,11 +62,11 @@ public class DescribeLocationSmbRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location to describe.
+     * The Amazon Resource Name (ARN) of the SMB location to describe.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon resource Name (ARN) of the SMB location to describe.
+     *        The Amazon Resource Name (ARN) of the SMB location to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

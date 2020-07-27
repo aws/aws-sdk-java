@@ -43,6 +43,9 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
      * the name can be omitted and the details will be returned.
      * </p>
+     * <p>
+     * Plugin names are also referred to as step names in Systems Manager documents.
+     * </p>
      */
     private String pluginName;
 
@@ -137,10 +140,15 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
      * the name can be omitted and the details will be returned.
      * </p>
+     * <p>
+     * Plugin names are also referred to as step names in Systems Manager documents.
+     * </p>
      * 
      * @param pluginName
      *        (Optional) The name of the plugin for which you want detailed results. If the document contains only one
-     *        plugin, the name can be omitted and the details will be returned.
+     *        plugin, the name can be omitted and the details will be returned.</p>
+     *        <p>
+     *        Plugin names are also referred to as step names in Systems Manager documents.
      */
 
     public void setPluginName(String pluginName) {
@@ -152,9 +160,14 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
      * the name can be omitted and the details will be returned.
      * </p>
+     * <p>
+     * Plugin names are also referred to as step names in Systems Manager documents.
+     * </p>
      * 
      * @return (Optional) The name of the plugin for which you want detailed results. If the document contains only one
-     *         plugin, the name can be omitted and the details will be returned.
+     *         plugin, the name can be omitted and the details will be returned.</p>
+     *         <p>
+     *         Plugin names are also referred to as step names in Systems Manager documents.
      */
 
     public String getPluginName() {
@@ -166,10 +179,15 @@ public class GetCommandInvocationRequest extends com.amazonaws.AmazonWebServiceR
      * (Optional) The name of the plugin for which you want detailed results. If the document contains only one plugin,
      * the name can be omitted and the details will be returned.
      * </p>
+     * <p>
+     * Plugin names are also referred to as step names in Systems Manager documents.
+     * </p>
      * 
      * @param pluginName
      *        (Optional) The name of the plugin for which you want detailed results. If the document contains only one
-     *        plugin, the name can be omitted and the details will be returned.
+     *        plugin, the name can be omitted and the details will be returned.</p>
+     *        <p>
+     *        Plugin names are also referred to as step names in Systems Manager documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -145,7 +145,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -156,8 +156,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
-     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
@@ -981,7 +982,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -992,8 +993,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
-     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
@@ -1007,7 +1009,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
-     *        shell job or an Apache Spark ETL job:
+     *        shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      *        </p>
      *        <ul>
      *        <li>
@@ -1018,8 +1020,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     *        to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
+     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      */
@@ -1039,7 +1042,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -1050,8 +1053,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
-     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
@@ -1065,7 +1069,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
-     *         shell job or an Apache Spark ETL job:
+     *         shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      *         </p>
      *         <ul>
      *         <li>
@@ -1076,8 +1080,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from
-     *         2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
+     *         streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs.
+     *         The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *         </p>
      *         </li>
      */
@@ -1097,7 +1102,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell
-     * job or an Apache Spark ETL job:
+     * job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      * </p>
      * <ul>
      * <li>
@@ -1108,8 +1113,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
-     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming ETL
+     * job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs.
+     * This job type cannot have a fractional DPU allocation.
      * </p>
      * </li>
      * </ul>
@@ -1123,7 +1129,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python
-     *        shell job or an Apache Spark ETL job:
+     *        shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
      *        </p>
      *        <ul>
      *        <li>
@@ -1134,8 +1140,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
-     *        to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark
+     *        streaming ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2 to 100 DPUs. The
+     *        default is 10 DPUs. This job type cannot have a fractional DPU allocation.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

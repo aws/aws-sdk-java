@@ -49,6 +49,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public CancelReplicationTaskAssessmentRunResult cancelReplicationTaskAssessmentRun(CancelReplicationTaskAssessmentRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateEndpointResult createEndpoint(CreateEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,7 +114,17 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
     }
 
     @Override
+    public DeleteReplicationTaskAssessmentRunResult deleteReplicationTaskAssessmentRun(DeleteReplicationTaskAssessmentRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeApplicableIndividualAssessmentsResult describeApplicableIndividualAssessments(DescribeApplicableIndividualAssessmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -180,6 +195,17 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public DescribeReplicationTaskAssessmentResultsResult describeReplicationTaskAssessmentResults(DescribeReplicationTaskAssessmentResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReplicationTaskAssessmentRunsResult describeReplicationTaskAssessmentRuns(DescribeReplicationTaskAssessmentRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReplicationTaskIndividualAssessmentsResult describeReplicationTaskIndividualAssessments(
+            DescribeReplicationTaskIndividualAssessmentsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -260,6 +286,11 @@ public class AbstractAWSDatabaseMigrationService implements AWSDatabaseMigration
 
     @Override
     public StartReplicationTaskAssessmentResult startReplicationTaskAssessment(StartReplicationTaskAssessmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartReplicationTaskAssessmentRunResult startReplicationTaskAssessmentRun(StartReplicationTaskAssessmentRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

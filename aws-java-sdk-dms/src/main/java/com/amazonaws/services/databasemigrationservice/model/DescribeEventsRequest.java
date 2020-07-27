@@ -67,7 +67,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<String> eventCategories;
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to events.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -423,10 +423,10 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to events.
      * </p>
      * 
-     * @return Filters applied to the action.
+     * @return Filters applied to events.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -435,11 +435,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to events.
      * </p>
      * 
      * @param filters
-     *        Filters applied to the action.
+     *        Filters applied to events.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -453,7 +453,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to events.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -462,7 +462,7 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param filters
-     *        Filters applied to the action.
+     *        Filters applied to events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -478,11 +478,11 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to events.
      * </p>
      * 
      * @param filters
-     *        Filters applied to the action.
+     *        Filters applied to events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

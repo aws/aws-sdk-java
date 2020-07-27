@@ -245,6 +245,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLocationObjectStorageResult> createLocationObjectStorageAsync(CreateLocationObjectStorageRequest request) {
+
+        return createLocationObjectStorageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationObjectStorageResult> createLocationObjectStorageAsync(final CreateLocationObjectStorageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLocationObjectStorageRequest, CreateLocationObjectStorageResult> asyncHandler) {
+        final CreateLocationObjectStorageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLocationObjectStorageResult>() {
+            @Override
+            public CreateLocationObjectStorageResult call() throws Exception {
+                CreateLocationObjectStorageResult result = null;
+
+                try {
+                    result = executeCreateLocationObjectStorage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateLocationS3Result> createLocationS3Async(CreateLocationS3Request request) {
 
         return createLocationS3Async(request, null);
@@ -559,6 +592,40 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeDescribeLocationNfs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationObjectStorageResult> describeLocationObjectStorageAsync(DescribeLocationObjectStorageRequest request) {
+
+        return describeLocationObjectStorageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationObjectStorageResult> describeLocationObjectStorageAsync(
+            final DescribeLocationObjectStorageRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLocationObjectStorageRequest, DescribeLocationObjectStorageResult> asyncHandler) {
+        final DescribeLocationObjectStorageRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLocationObjectStorageResult>() {
+            @Override
+            public DescribeLocationObjectStorageResult call() throws Exception {
+                DescribeLocationObjectStorageResult result = null;
+
+                try {
+                    result = executeDescribeLocationObjectStorage(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

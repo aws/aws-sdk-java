@@ -56,6 +56,10 @@ public class WorkflowRunJsonUnmarshaller implements Unmarshaller<WorkflowRun, Js
                     context.nextToken();
                     workflowRun.setWorkflowRunId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PreviousRunId", targetDepth)) {
+                    context.nextToken();
+                    workflowRun.setPreviousRunId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("WorkflowRunProperties", targetDepth)) {
                     context.nextToken();
                     workflowRun.setWorkflowRunProperties(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

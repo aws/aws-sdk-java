@@ -35,6 +35,37 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <p>
+     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
+     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter> filters;
     /**
@@ -88,8 +119,70 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <p>
+     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
+     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return One or more filters. Use a filter to return a more specific list of results.
+     * @return One or more filters. Use a filter to return a more specific list of results.</p>
+     *         <p>
+     *         For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
+     *         operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
+     *         <a>CreatePatchBaseline</a>.
+     *         </p>
+     *         <p>
+     *         Examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      */
 
     public java.util.List<PatchOrchestratorFilter> getFilters() {
@@ -103,9 +196,71 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <p>
+     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
+     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        One or more filters. Use a filter to return a more specific list of results.</p>
+     *        <p>
+     *        For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
+     *        operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
+     *        <a>CreatePatchBaseline</a>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
@@ -122,13 +277,75 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
      * <p>
+     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
+     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        One or more filters. Use a filter to return a more specific list of results.</p>
+     *        <p>
+     *        For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
+     *        operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
+     *        <a>CreatePatchBaseline</a>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,9 +363,71 @@ public class DescribePatchGroupsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * One or more filters. Use a filter to return a more specific list of results.
      * </p>
+     * <p>
+     * For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid operating
+     * system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        One or more filters. Use a filter to return a more specific list of results.
+     *        One or more filters. Use a filter to return a more specific list of results.</p>
+     *        <p>
+     *        For <code>DescribePatchGroups</code>,valid filter keys include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for. For valid
+     *        operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in
+     *        <a>CreatePatchBaseline</a>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

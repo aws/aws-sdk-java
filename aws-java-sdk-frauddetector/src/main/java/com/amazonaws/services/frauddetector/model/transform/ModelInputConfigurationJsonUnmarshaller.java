@@ -48,6 +48,10 @@ public class ModelInputConfigurationJsonUnmarshaller implements Unmarshaller<Mod
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("eventTypeName", targetDepth)) {
+                    context.nextToken();
+                    modelInputConfiguration.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("format", targetDepth)) {
                     context.nextToken();
                     modelInputConfiguration.setFormat(context.getUnmarshaller(String.class).unmarshall(context));

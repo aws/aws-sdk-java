@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ModelInputConfigurationMarshaller {
 
+    private static final MarshallingInfo<String> EVENTTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTypeName").build();
     private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("format").build();
     private static final MarshallingInfo<Boolean> USEEVENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -52,6 +54,7 @@ public class ModelInputConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(modelInputConfiguration.getEventTypeName(), EVENTTYPENAME_BINDING);
             protocolMarshaller.marshall(modelInputConfiguration.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(modelInputConfiguration.getUseEventVariables(), USEEVENTVARIABLES_BINDING);
             protocolMarshaller.marshall(modelInputConfiguration.getJsonInputTemplate(), JSONINPUTTEMPLATE_BINDING);

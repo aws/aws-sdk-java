@@ -54,6 +54,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<CancelReplicationTaskAssessmentRunResult> cancelReplicationTaskAssessmentRunAsync(
+            CancelReplicationTaskAssessmentRunRequest request) {
+
+        return cancelReplicationTaskAssessmentRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelReplicationTaskAssessmentRunResult> cancelReplicationTaskAssessmentRunAsync(
+            CancelReplicationTaskAssessmentRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelReplicationTaskAssessmentRunRequest, CancelReplicationTaskAssessmentRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEndpointResult> createEndpointAsync(CreateEndpointRequest request) {
 
         return createEndpointAsync(request, null);
@@ -210,6 +225,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteReplicationTaskAssessmentRunResult> deleteReplicationTaskAssessmentRunAsync(
+            DeleteReplicationTaskAssessmentRunRequest request) {
+
+        return deleteReplicationTaskAssessmentRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteReplicationTaskAssessmentRunResult> deleteReplicationTaskAssessmentRunAsync(
+            DeleteReplicationTaskAssessmentRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteReplicationTaskAssessmentRunRequest, DeleteReplicationTaskAssessmentRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request) {
 
         return describeAccountAttributesAsync(request, null);
@@ -218,6 +248,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicableIndividualAssessmentsResult> describeApplicableIndividualAssessmentsAsync(
+            DescribeApplicableIndividualAssessmentsRequest request) {
+
+        return describeApplicableIndividualAssessmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApplicableIndividualAssessmentsResult> describeApplicableIndividualAssessmentsAsync(
+            DescribeApplicableIndividualAssessmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApplicableIndividualAssessmentsRequest, DescribeApplicableIndividualAssessmentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -410,6 +455,36 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     public java.util.concurrent.Future<DescribeReplicationTaskAssessmentResultsResult> describeReplicationTaskAssessmentResultsAsync(
             DescribeReplicationTaskAssessmentResultsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskAssessmentResultsRequest, DescribeReplicationTaskAssessmentResultsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTaskAssessmentRunsResult> describeReplicationTaskAssessmentRunsAsync(
+            DescribeReplicationTaskAssessmentRunsRequest request) {
+
+        return describeReplicationTaskAssessmentRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTaskAssessmentRunsResult> describeReplicationTaskAssessmentRunsAsync(
+            DescribeReplicationTaskAssessmentRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskAssessmentRunsRequest, DescribeReplicationTaskAssessmentRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTaskIndividualAssessmentsResult> describeReplicationTaskIndividualAssessmentsAsync(
+            DescribeReplicationTaskIndividualAssessmentsRequest request) {
+
+        return describeReplicationTaskIndividualAssessmentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplicationTaskIndividualAssessmentsResult> describeReplicationTaskIndividualAssessmentsAsync(
+            DescribeReplicationTaskIndividualAssessmentsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplicationTaskIndividualAssessmentsRequest, DescribeReplicationTaskIndividualAssessmentsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -618,6 +693,21 @@ public class AbstractAWSDatabaseMigrationServiceAsync extends AbstractAWSDatabas
     @Override
     public java.util.concurrent.Future<StartReplicationTaskAssessmentResult> startReplicationTaskAssessmentAsync(StartReplicationTaskAssessmentRequest request,
             com.amazonaws.handlers.AsyncHandler<StartReplicationTaskAssessmentRequest, StartReplicationTaskAssessmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationTaskAssessmentRunResult> startReplicationTaskAssessmentRunAsync(
+            StartReplicationTaskAssessmentRunRequest request) {
+
+        return startReplicationTaskAssessmentRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationTaskAssessmentRunResult> startReplicationTaskAssessmentRunAsync(
+            StartReplicationTaskAssessmentRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationTaskAssessmentRunRequest, StartReplicationTaskAssessmentRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

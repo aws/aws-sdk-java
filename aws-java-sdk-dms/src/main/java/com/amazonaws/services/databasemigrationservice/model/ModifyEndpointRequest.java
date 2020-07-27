@@ -218,6 +218,72 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     private NeptuneSettings neptuneSettings;
 
     private RedshiftSettings redshiftSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+     * attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection
+     * attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     */
+    private PostgreSQLSettings postgreSQLSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the source and target MySQL endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra connection
+     * attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS Database Migration
+     * Service User Guide.</i>
+     * </p>
+     */
+    private MySQLSettings mySQLSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra connection
+     * attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra connection
+     * attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     */
+    private OracleSettings oracleSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     * attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     */
+    private SybaseSettings sybaseSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other
+     * available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+     * attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection
+     * attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     */
+    private MicrosoftSQLServerSettings microsoftSQLServerSettings;
+    /**
+     * <p>
+     * Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see
+     * <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     * attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     */
+    private IBMDb2Settings iBMDb2Settings;
 
     /**
      * <p>
@@ -1546,6 +1612,438 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+     * attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection
+     * attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param postgreSQLSettings
+     *        Settings in JSON format for the source and target PostgreSQL endpoint. For information about other
+     *        available settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     *        connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra
+     *        connection attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *        Service User Guide.</i>
+     */
+
+    public void setPostgreSQLSettings(PostgreSQLSettings postgreSQLSettings) {
+        this.postgreSQLSettings = postgreSQLSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+     * attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection
+     * attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source and target PostgreSQL endpoint. For information about other
+     *         available settings, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     *         connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra
+     *         connection attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *         Service User Guide.</i>
+     */
+
+    public PostgreSQLSettings getPostgreSQLSettings() {
+        return this.postgreSQLSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target PostgreSQL endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+     * attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra connection
+     * attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param postgreSQLSettings
+     *        Settings in JSON format for the source and target PostgreSQL endpoint. For information about other
+     *        available settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+     *        connection attributes when using PostgreSQL as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib"> Extra
+     *        connection attributes when using PostgreSQL as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *        Service User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withPostgreSQLSettings(PostgreSQLSettings postgreSQLSettings) {
+        setPostgreSQLSettings(postgreSQLSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target MySQL endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra connection
+     * attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS Database Migration
+     * Service User Guide.</i>
+     * </p>
+     * 
+     * @param mySQLSettings
+     *        Settings in JSON format for the source and target MySQL endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     *        connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     *        connection attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS
+     *        Database Migration Service User Guide.</i>
+     */
+
+    public void setMySQLSettings(MySQLSettings mySQLSettings) {
+        this.mySQLSettings = mySQLSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target MySQL endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra connection
+     * attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS Database Migration
+     * Service User Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source and target MySQL endpoint. For information about other available
+     *         settings, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     *         connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     *         connection attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS
+     *         Database Migration Service User Guide.</i>
+     */
+
+    public MySQLSettings getMySQLSettings() {
+        return this.mySQLSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target MySQL endpoint. For information about other available settings,
+     * see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     * connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra connection
+     * attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS Database Migration
+     * Service User Guide.</i>
+     * </p>
+     * 
+     * @param mySQLSettings
+     *        Settings in JSON format for the source and target MySQL endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra
+     *        connection attributes when using MySQL as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
+     *        connection attributes when using a MySQL-compatible database as a target for AWS DMS</a> in the <i>AWS
+     *        Database Migration Service User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withMySQLSettings(MySQLSettings mySQLSettings) {
+        setMySQLSettings(mySQLSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra connection
+     * attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra connection
+     * attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     * 
+     * @param oracleSettings
+     *        Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     *        connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra
+     *        connection attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *        Service User Guide.</i>
+     */
+
+    public void setOracleSettings(OracleSettings oracleSettings) {
+        this.oracleSettings = oracleSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra connection
+     * attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra connection
+     * attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     *         settings, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     *         connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra
+     *         connection attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *         Service User Guide.</i>
+     */
+
+    public OracleSettings getOracleSettings() {
+        return this.oracleSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     * settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra connection
+     * attributes when using Oracle as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra connection
+     * attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration Service User Guide.</i>
+     * </p>
+     * 
+     * @param oracleSettings
+     *        Settings in JSON format for the source and target Oracle endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra
+     *        connection attributes when using Oracle as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib"> Extra
+     *        connection attributes when using Oracle as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *        Service User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withOracleSettings(OracleSettings oracleSettings) {
+        setOracleSettings(oracleSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     * attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param sybaseSettings
+     *        Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra connection
+     *        attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     *        attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     *        Guide.</i>
+     */
+
+    public void setSybaseSettings(SybaseSettings sybaseSettings) {
+        this.sybaseSettings = sybaseSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     * attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     *         settings, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra connection
+     *         attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     *         attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     *         Guide.</i>
+     */
+
+    public SybaseSettings getSybaseSettings() {
+        return this.sybaseSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     * settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra
+     * connection attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     * attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param sybaseSettings
+     *        Settings in JSON format for the source and target SAP ASE endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra connection
+     *        attributes when using SAP ASE as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection
+     *        attributes when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     *        Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withSybaseSettings(SybaseSettings sybaseSettings) {
+        setSybaseSettings(sybaseSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other
+     * available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+     * attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection
+     * attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param microsoftSQLServerSettings
+     *        Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about
+     *        other available settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     *        connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra
+     *        connection attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *        Service User Guide.</i>
+     */
+
+    public void setMicrosoftSQLServerSettings(MicrosoftSQLServerSettings microsoftSQLServerSettings) {
+        this.microsoftSQLServerSettings = microsoftSQLServerSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other
+     * available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+     * attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection
+     * attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about
+     *         other available settings, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     *         connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra
+     *         connection attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *         Service User Guide.</i>
+     */
+
+    public MicrosoftSQLServerSettings getMicrosoftSQLServerSettings() {
+        return this.microsoftSQLServerSettings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about other
+     * available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+     * attributes when using SQL Server as a source for AWS DMS</a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra connection
+     * attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param microsoftSQLServerSettings
+     *        Settings in JSON format for the source and target Microsoft SQL Server endpoint. For information about
+     *        other available settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra
+     *        connection attributes when using SQL Server as a source for AWS DMS</a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib"> Extra
+     *        connection attributes when using SQL Server as a target for AWS DMS</a> in the <i>AWS Database Migration
+     *        Service User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withMicrosoftSQLServerSettings(MicrosoftSQLServerSettings microsoftSQLServerSettings) {
+        setMicrosoftSQLServerSettings(microsoftSQLServerSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see
+     * <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     * attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param iBMDb2Settings
+     *        Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     *        attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     *        Guide.</i>
+     */
+
+    public void setIBMDb2Settings(IBMDb2Settings iBMDb2Settings) {
+        this.iBMDb2Settings = iBMDb2Settings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see
+     * <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     * attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @return Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available
+     *         settings, see <a
+     *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     *         attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     *         Guide.</i>
+     */
+
+    public IBMDb2Settings getIBMDb2Settings() {
+        return this.iBMDb2Settings;
+    }
+
+    /**
+     * <p>
+     * Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available settings, see
+     * <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     * attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     * Guide.</i>
+     * </p>
+     * 
+     * @param iBMDb2Settings
+     *        Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other available
+     *        settings, see <a
+     *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection
+     *        attributes when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database Migration Service User
+     *        Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyEndpointRequest withIBMDb2Settings(IBMDb2Settings iBMDb2Settings) {
+        setIBMDb2Settings(iBMDb2Settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1602,7 +2100,19 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getNeptuneSettings() != null)
             sb.append("NeptuneSettings: ").append(getNeptuneSettings()).append(",");
         if (getRedshiftSettings() != null)
-            sb.append("RedshiftSettings: ").append(getRedshiftSettings());
+            sb.append("RedshiftSettings: ").append(getRedshiftSettings()).append(",");
+        if (getPostgreSQLSettings() != null)
+            sb.append("PostgreSQLSettings: ").append(getPostgreSQLSettings()).append(",");
+        if (getMySQLSettings() != null)
+            sb.append("MySQLSettings: ").append(getMySQLSettings()).append(",");
+        if (getOracleSettings() != null)
+            sb.append("OracleSettings: ").append(getOracleSettings()).append(",");
+        if (getSybaseSettings() != null)
+            sb.append("SybaseSettings: ").append(getSybaseSettings()).append(",");
+        if (getMicrosoftSQLServerSettings() != null)
+            sb.append("MicrosoftSQLServerSettings: ").append(getMicrosoftSQLServerSettings()).append(",");
+        if (getIBMDb2Settings() != null)
+            sb.append("IBMDb2Settings: ").append(getIBMDb2Settings());
         sb.append("}");
         return sb.toString();
     }
@@ -1709,6 +2219,30 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRedshiftSettings() != null && other.getRedshiftSettings().equals(this.getRedshiftSettings()) == false)
             return false;
+        if (other.getPostgreSQLSettings() == null ^ this.getPostgreSQLSettings() == null)
+            return false;
+        if (other.getPostgreSQLSettings() != null && other.getPostgreSQLSettings().equals(this.getPostgreSQLSettings()) == false)
+            return false;
+        if (other.getMySQLSettings() == null ^ this.getMySQLSettings() == null)
+            return false;
+        if (other.getMySQLSettings() != null && other.getMySQLSettings().equals(this.getMySQLSettings()) == false)
+            return false;
+        if (other.getOracleSettings() == null ^ this.getOracleSettings() == null)
+            return false;
+        if (other.getOracleSettings() != null && other.getOracleSettings().equals(this.getOracleSettings()) == false)
+            return false;
+        if (other.getSybaseSettings() == null ^ this.getSybaseSettings() == null)
+            return false;
+        if (other.getSybaseSettings() != null && other.getSybaseSettings().equals(this.getSybaseSettings()) == false)
+            return false;
+        if (other.getMicrosoftSQLServerSettings() == null ^ this.getMicrosoftSQLServerSettings() == null)
+            return false;
+        if (other.getMicrosoftSQLServerSettings() != null && other.getMicrosoftSQLServerSettings().equals(this.getMicrosoftSQLServerSettings()) == false)
+            return false;
+        if (other.getIBMDb2Settings() == null ^ this.getIBMDb2Settings() == null)
+            return false;
+        if (other.getIBMDb2Settings() != null && other.getIBMDb2Settings().equals(this.getIBMDb2Settings()) == false)
+            return false;
         return true;
     }
 
@@ -1740,6 +2274,12 @@ public class ModifyEndpointRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
         hashCode = prime * hashCode + ((getNeptuneSettings() == null) ? 0 : getNeptuneSettings().hashCode());
         hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
+        hashCode = prime * hashCode + ((getPostgreSQLSettings() == null) ? 0 : getPostgreSQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getMySQLSettings() == null) ? 0 : getMySQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getOracleSettings() == null) ? 0 : getOracleSettings().hashCode());
+        hashCode = prime * hashCode + ((getSybaseSettings() == null) ? 0 : getSybaseSettings().hashCode());
+        hashCode = prime * hashCode + ((getMicrosoftSQLServerSettings() == null) ? 0 : getMicrosoftSQLServerSettings().hashCode());
+        hashCode = prime * hashCode + ((getIBMDb2Settings() == null) ? 0 : getIBMDb2Settings().hashCode());
         return hashCode;
     }
 

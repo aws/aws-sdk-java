@@ -28,7 +28,7 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication subnet groups.
      * </p>
      * <p>
      * Valid filter names: replication-subnet-group-id
@@ -59,13 +59,13 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication subnet groups.
      * </p>
      * <p>
      * Valid filter names: replication-subnet-group-id
      * </p>
      * 
-     * @return Filters applied to the describe action.</p>
+     * @return Filters applied to replication subnet groups.</p>
      *         <p>
      *         Valid filter names: replication-subnet-group-id
      */
@@ -76,14 +76,14 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication subnet groups.
      * </p>
      * <p>
      * Valid filter names: replication-subnet-group-id
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication subnet groups.</p>
      *        <p>
      *        Valid filter names: replication-subnet-group-id
      */
@@ -99,7 +99,7 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication subnet groups.
      * </p>
      * <p>
      * Valid filter names: replication-subnet-group-id
@@ -111,7 +111,7 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication subnet groups.</p>
      *        <p>
      *        Valid filter names: replication-subnet-group-id
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -129,14 +129,14 @@ public class DescribeReplicationSubnetGroupsRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to replication subnet groups.
      * </p>
      * <p>
      * Valid filter names: replication-subnet-group-id
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to replication subnet groups.</p>
      *        <p>
      *        Valid filter names: replication-subnet-group-id
      * @return Returns a reference to this object so that method calls can be chained together.

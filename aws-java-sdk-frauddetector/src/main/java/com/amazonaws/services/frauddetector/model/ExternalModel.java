@@ -36,12 +36,6 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
     private String modelEndpoint;
     /**
      * <p>
-     * The event type names.
-     * </p>
-     */
-    private String eventTypeName;
-    /**
-     * <p>
      * The source of the model.
      * </p>
      */
@@ -126,46 +120,6 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
 
     public ExternalModel withModelEndpoint(String modelEndpoint) {
         setModelEndpoint(modelEndpoint);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The event type names.
-     * </p>
-     * 
-     * @param eventTypeName
-     *        The event type names.
-     */
-
-    public void setEventTypeName(String eventTypeName) {
-        this.eventTypeName = eventTypeName;
-    }
-
-    /**
-     * <p>
-     * The event type names.
-     * </p>
-     * 
-     * @return The event type names.
-     */
-
-    public String getEventTypeName() {
-        return this.eventTypeName;
-    }
-
-    /**
-     * <p>
-     * The event type names.
-     * </p>
-     * 
-     * @param eventTypeName
-     *        The event type names.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ExternalModel withEventTypeName(String eventTypeName) {
-        setEventTypeName(eventTypeName);
         return this;
     }
 
@@ -541,8 +495,6 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getModelEndpoint() != null)
             sb.append("ModelEndpoint: ").append(getModelEndpoint()).append(",");
-        if (getEventTypeName() != null)
-            sb.append("EventTypeName: ").append(getEventTypeName()).append(",");
         if (getModelSource() != null)
             sb.append("ModelSource: ").append(getModelSource()).append(",");
         if (getInvokeModelEndpointRoleArn() != null)
@@ -576,10 +528,6 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         if (other.getModelEndpoint() == null ^ this.getModelEndpoint() == null)
             return false;
         if (other.getModelEndpoint() != null && other.getModelEndpoint().equals(this.getModelEndpoint()) == false)
-            return false;
-        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
-            return false;
-        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
             return false;
         if (other.getModelSource() == null ^ this.getModelSource() == null)
             return false;
@@ -622,7 +570,6 @@ public class ExternalModel implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelEndpoint() == null) ? 0 : getModelEndpoint().hashCode());
-        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         hashCode = prime * hashCode + ((getModelSource() == null) ? 0 : getModelSource().hashCode());
         hashCode = prime * hashCode + ((getInvokeModelEndpointRoleArn() == null) ? 0 : getInvokeModelEndpointRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfiguration() == null) ? 0 : getInputConfiguration().hashCode());

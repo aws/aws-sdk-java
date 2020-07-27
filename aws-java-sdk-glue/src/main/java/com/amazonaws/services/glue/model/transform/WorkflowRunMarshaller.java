@@ -33,6 +33,8 @@ public class WorkflowRunMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> WORKFLOWRUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowRunId").build();
+    private static final MarshallingInfo<String> PREVIOUSRUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousRunId").build();
     private static final MarshallingInfo<Map> WORKFLOWRUNPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowRunProperties").build();
     private static final MarshallingInfo<java.util.Date> STARTEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -64,6 +66,7 @@ public class WorkflowRunMarshaller {
         try {
             protocolMarshaller.marshall(workflowRun.getName(), NAME_BINDING);
             protocolMarshaller.marshall(workflowRun.getWorkflowRunId(), WORKFLOWRUNID_BINDING);
+            protocolMarshaller.marshall(workflowRun.getPreviousRunId(), PREVIOUSRUNID_BINDING);
             protocolMarshaller.marshall(workflowRun.getWorkflowRunProperties(), WORKFLOWRUNPROPERTIES_BINDING);
             protocolMarshaller.marshall(workflowRun.getStartedOn(), STARTEDON_BINDING);
             protocolMarshaller.marshall(workflowRun.getCompletedOn(), COMPLETEDON_BINDING);

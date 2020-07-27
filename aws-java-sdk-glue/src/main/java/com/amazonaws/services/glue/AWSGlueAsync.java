@@ -3474,6 +3474,37 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Restarts any completed nodes in a workflow run and resumes the run execution.
+     * </p>
+     * 
+     * @param resumeWorkflowRunRequest
+     * @return A Java Future containing the result of the ResumeWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsync.ResumeWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResumeWorkflowRunResult> resumeWorkflowRunAsync(ResumeWorkflowRunRequest resumeWorkflowRunRequest);
+
+    /**
+     * <p>
+     * Restarts any completed nodes in a workflow run and resumes the run execution.
+     * </p>
+     * 
+     * @param resumeWorkflowRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResumeWorkflowRun operation returned by the service.
+     * @sample AWSGlueAsyncHandler.ResumeWorkflowRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResumeWorkflowRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ResumeWorkflowRunResult> resumeWorkflowRunAsync(ResumeWorkflowRunRequest resumeWorkflowRunRequest,
+            com.amazonaws.handlers.AsyncHandler<ResumeWorkflowRunRequest, ResumeWorkflowRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Searches a set of tables based on properties in the table metadata as well as on the parent database. You can
      * search against text or filter conditions.
      * </p>

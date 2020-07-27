@@ -28,7 +28,7 @@ public class DescribeEndpointTypesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoint types.
      * </p>
      * <p>
      * Valid filter names: engine-name | endpoint-type
@@ -59,13 +59,13 @@ public class DescribeEndpointTypesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoint types.
      * </p>
      * <p>
      * Valid filter names: engine-name | endpoint-type
      * </p>
      * 
-     * @return Filters applied to the describe action.</p>
+     * @return Filters applied to the endpoint types.</p>
      *         <p>
      *         Valid filter names: engine-name | endpoint-type
      */
@@ -76,14 +76,14 @@ public class DescribeEndpointTypesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoint types.
      * </p>
      * <p>
      * Valid filter names: engine-name | endpoint-type
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to the endpoint types.</p>
      *        <p>
      *        Valid filter names: engine-name | endpoint-type
      */
@@ -99,7 +99,7 @@ public class DescribeEndpointTypesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoint types.
      * </p>
      * <p>
      * Valid filter names: engine-name | endpoint-type
@@ -111,7 +111,7 @@ public class DescribeEndpointTypesRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to the endpoint types.</p>
      *        <p>
      *        Valid filter names: engine-name | endpoint-type
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -129,14 +129,14 @@ public class DescribeEndpointTypesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Filters applied to the describe action.
+     * Filters applied to the endpoint types.
      * </p>
      * <p>
      * Valid filter names: engine-name | endpoint-type
      * </p>
      * 
      * @param filters
-     *        Filters applied to the describe action.</p>
+     *        Filters applied to the endpoint types.</p>
      *        <p>
      *        Valid filter names: engine-name | endpoint-type
      * @return Returns a reference to this object so that method calls can be chained together.

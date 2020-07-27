@@ -36,7 +36,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -108,7 +108,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -126,8 +126,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
      *        network.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
-     *        .
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
+     *        <code>/path/to/folder</code>.
      *        </p>
      *        </note>
      *        <p>
@@ -151,7 +151,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -168,7 +168,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *         subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
      *         network.</p> <note>
      *         <p>
-     *         <code>Subdirectory</code> must be specified with forward slashes. For example
+     *         <code>Subdirectory</code> must be specified with forward slashes. For example,
      *         <code>/path/to/folder</code>.
      *         </p>
      *         </note>
@@ -193,7 +193,7 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <note>
      * <p>
-     * <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>.
+     * <code>Subdirectory</code> must be specified with forward slashes. For example, <code>/path/to/folder</code>.
      * </p>
      * </note>
      * <p>
@@ -211,8 +211,8 @@ public class CreateLocationSmbRequest extends com.amazonaws.AmazonWebServiceRequ
      *        subdirectory of that path. The path should be such that it can be mounted by other SMB clients in your
      *        network.</p> <note>
      *        <p>
-     *        <code>Subdirectory</code> must be specified with forward slashes. For example <code>/path/to/folder</code>
-     *        .
+     *        <code>Subdirectory</code> must be specified with forward slashes. For example,
+     *        <code>/path/to/folder</code>.
      *        </p>
      *        </note>
      *        <p>
