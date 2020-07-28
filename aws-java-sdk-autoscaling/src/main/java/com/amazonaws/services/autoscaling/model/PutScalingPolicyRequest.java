@@ -62,8 +62,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private String policyType;
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
@@ -426,8 +426,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
@@ -437,8 +437,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid
-     *        values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     *        Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The
+     *        valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.</p>
      *        <p>
      *        Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
@@ -453,8 +453,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
@@ -463,8 +463,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The
-     *         valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * @return Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage).
+     *         The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.</p>
      *         <p>
      *         Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
@@ -479,8 +479,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
@@ -490,8 +490,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid
-     *        values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     *        Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The
+     *        valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.</p>
      *        <p>
      *        Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more

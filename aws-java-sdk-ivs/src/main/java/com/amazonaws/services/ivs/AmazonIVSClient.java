@@ -59,7 +59,7 @@ import com.amazonaws.services.ivs.model.transform.*;
  * responses, including errors.
  * </p>
  * <p>
- * The API is an AWS regional service, currently in these regions: us-west-2, us-east-2, and eu-west-1.
+ * The API is an AWS regional service, currently in these regions: us-west-2, us-east-1, and eu-west-1.
  * </p>
  * <p>
  * <i> <b>All API request parameters and URLs are case sensitive. </b> </i>
@@ -68,6 +68,57 @@ import com.amazonaws.services.ivs.model.transform.*;
  * For a summary of notable documentation changes in each release, see <a
  * href="https://docs.aws.amazon.com/ivs/latest/userguide/doc-history.html"> Document History</a>.
  * </p>
+ * <p>
+ * <b>Service Endpoints</b>
+ * </p>
+ * <p>
+ * The following are the Amazon IVS service endpoints (all HTTPS):
+ * </p>
+ * <p>
+ * Region name: US West (Oregon)
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Region: <code>us-west-2</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Endpoint: <code>ivs.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Region name: US East (Virginia)
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Region: <code>us-east-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Endpoint: <code>ivs.us-east-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * Region name: EU West (Dublin)
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Region: <code>eu-west-1</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Endpoint: <code>ivs.eu-west-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
  * <p>
  * <b>Allowed Header Values</b>
  * </p>
@@ -142,7 +193,7 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>GetChannel</a> — Gets the channel configuration for a specified channel ARN (Amazon Resource Name).
+ * <a>GetChannel</a> — Gets the channel configuration for the specified channel ARN (Amazon Resource Name).
  * </p>
  * </li>
  * <li>
@@ -152,7 +203,8 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>ListChannels</a> — Gets summary information about channels. This list can be filtered to match a specified string.
+ * <a>ListChannels</a> — Gets summary information about all channels in your account, in the AWS region where the API
+ * request is processed. This list can be filtered to match a specified string.
  * </p>
  * </li>
  * <li>
@@ -163,7 +215,7 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>DeleteChannel</a> — Deletes a specified channel.
+ * <a>DeleteChannel</a> — Deletes the specified channel.
  * </p>
  * </li>
  * </ul>
@@ -173,7 +225,7 @@ import com.amazonaws.services.ivs.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for a specified channel ARN.
+ * <a>CreateStreamKey</a> — Creates a stream key, used to initiate a stream, for the specified channel ARN.
  * </p>
  * </li>
  * <li>
@@ -188,12 +240,12 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>ListStreamKeys</a> — Gets a list of stream keys. The list can be filtered to a particular channel.
+ * <a>ListStreamKeys</a> — Gets summary information about stream keys for the specified channel.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteStreamKey</a> — Deletes the stream key for a specified ARN, so it can no longer be used to stream.
+ * <a>DeleteStreamKey</a> — Deletes the stream key for the specified ARN, so it can no longer be used to stream.
  * </p>
  * </li>
  * </ul>
@@ -208,19 +260,20 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a>ListStreams</a> — Gets summary information about live streams.
+ * <a>ListStreams</a> — Gets summary information about live streams in your account, in the AWS region where the API
+ * request is processed.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>StopStream</a> — Disconnects a streamer on a specified channel. This disconnects the incoming RTMP stream from the
- * client. Can be used in conjunction with <a>DeleteStreamKey</a> to prevent further streaming to a channel.
+ * <a>StopStream</a> — Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with
+ * <a>DeleteStreamKey</a> to prevent further streaming to a channel.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>PutMetadata</a> Inserts metadata into an RTMP stream for a specified channel. A maximum of 5 requests per second
- * per channel is allowed, each with a maximum 1KB payload.
+ * <a>PutMetadata</a> — Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests per
+ * second per channel is allowed, each with a maximum 1KB payload.
  * </p>
  * </li>
  * </ul>
@@ -230,17 +283,17 @@ import com.amazonaws.services.ivs.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>TagResource</a> — Adds or updates tags for an AWS resource with a specified ARN.
+ * <a>TagResource</a> — Adds or updates tags for the AWS resource with the specified ARN.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UntagResource</a> — Removes tags from a resource with a specified ARN.
+ * <a>UntagResource</a> — Removes tags from the resource with the specified ARN.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>ListTagsForResource</a> — Gets information about AWS tags for a specified ARN.
+ * <a>ListTagsForResource</a> — Gets information about AWS tags for the specified ARN.
  * </p>
  * </li>
  * </ul>
@@ -292,6 +345,9 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PendingVerification").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivs.model.transform.PendingVerificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivs.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
@@ -459,6 +515,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * @throws ValidationException
      * @throws AccessDeniedException
      * @throws ServiceQuotaExceededException
+     * @throws PendingVerificationException
      * @sample AmazonIVS.CreateChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateChannel" target="_top">AWS API
      *      Documentation</a>
@@ -507,7 +564,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Creates a stream key, used to initiate a stream, for a specified channel ARN.
+     * Creates a stream key, used to initiate a stream, for the specified channel ARN.
      * </p>
      * <p>
      * Note that <a>CreateChannel</a> creates a stream key. If you subsequently use CreateStreamKey on the same channel,
@@ -521,6 +578,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
      * @throws ServiceQuotaExceededException
+     * @throws PendingVerificationException
      * @sample AmazonIVS.CreateStreamKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateStreamKey" target="_top">AWS API
      *      Documentation</a>
@@ -569,7 +627,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Deletes a specified channel and its associated stream keys.
+     * Deletes the specified channel and its associated stream keys.
      * </p>
      * 
      * @param deleteChannelRequest
@@ -578,6 +636,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
      * @throws ConflictException
+     * @throws PendingVerificationException
      * @sample AmazonIVS.DeleteChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteChannel" target="_top">AWS API
      *      Documentation</a>
@@ -626,7 +685,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Deletes the stream key for a specified ARN, so it can no longer be used to stream.
+     * Deletes the stream key for the specified ARN, so it can no longer be used to stream.
      * </p>
      * 
      * @param deleteStreamKeyRequest
@@ -634,6 +693,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * @throws ValidationException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @sample AmazonIVS.DeleteStreamKey
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteStreamKey" target="_top">AWS API
      *      Documentation</a>
@@ -682,7 +742,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Gets the channel configuration for a specified channel ARN. See also <a>BatchGetChannel</a>.
+     * Gets the channel configuration for the specified channel ARN. See also <a>BatchGetChannel</a>.
      * </p>
      * 
      * @param getChannelRequest
@@ -851,7 +911,8 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Gets summary information about channels. This list can be filtered to match a specified string.
+     * Gets summary information about all channels in your account, in the AWS region where the API request is
+     * processed. This list can be filtered to match a specified string.
      * </p>
      * 
      * @param listChannelsRequest
@@ -906,7 +967,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Gets summary information about stream keys. The list can be filtered to a particular channel.
+     * Gets summary information about stream keys for the specified channel.
      * </p>
      * 
      * @param listStreamKeysRequest
@@ -962,7 +1023,8 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Gets summary information about live streams.
+     * Gets summary information about live streams in your account, in the AWS region where the API request is
+     * processed.
      * </p>
      * 
      * @param listStreamsRequest
@@ -1016,7 +1078,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Gets information about the tags for a specified ARN.
+     * Gets information about AWS tags for the specified ARN.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -1072,8 +1134,8 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Inserts metadata into an RTMP stream for a specified channel. A maximum of 5 requests per second per channel is
-     * allowed, each with a maximum 1KB payload.
+     * Inserts metadata into an RTMPS stream for the specified channel. A maximum of 5 requests per second per channel
+     * is allowed, each with a maximum 1KB payload.
      * </p>
      * 
      * @param putMetadataRequest
@@ -1131,12 +1193,12 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Disconnects the stream for the specified channel. This disconnects the incoming RTMP stream from the client. Can
-     * be used in conjunction with <a>DeleteStreamKey</a> to prevent further streaming to a channel.
+     * Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with
+     * <a>DeleteStreamKey</a> to prevent further streaming to a channel.
      * </p>
      * <note>
      * <p>
-     * Many streaming client-software libraries automatically reconnect a dropped RTMP session, so to stop the stream
+     * Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to stop the stream
      * permanently, you may want to first revoke the <code>streamKey</code> attached to the channel.
      * </p>
      * </note>
@@ -1196,7 +1258,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Adds or updates tags for a resource with a specified ARN.
+     * Adds or updates tags for the AWS resource with the specified ARN.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1252,7 +1314,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
-     * Removes tags for a resource with a specified ARN.
+     * Removes tags from the resource with the specified ARN.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1318,6 +1380,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
      * @throws ConflictException
+     * @throws PendingVerificationException
      * @sample AmazonIVS.UpdateChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateChannel" target="_top">AWS API
      *      Documentation</a>

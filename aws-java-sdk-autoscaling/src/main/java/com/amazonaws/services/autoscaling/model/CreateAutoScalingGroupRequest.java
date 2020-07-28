@@ -118,8 +118,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
-     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).
+     * above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).
      * </p>
      * </note>
      */
@@ -843,8 +843,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
-     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).
+     * above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).
      * </p>
      * </note>
      * 
@@ -853,8 +853,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      *        <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never
-     *        go above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many
-     *        capacity units each instance contributes to the capacity of the group).
+     *        go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many
+     *        units each instance contributes to the desired capacity of the group).
      *        </p>
      */
 
@@ -870,8 +870,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
-     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).
+     * above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).
      * </p>
      * </note>
      * 
@@ -879,8 +879,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      *         <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will
-     *         never go above <code>MaxSize</code> by more than your maximum instance weight (weights that define how
-     *         many capacity units each instance contributes to the capacity of the group).
+     *         never go above <code>MaxSize</code> by more than your largest instance weight (weights that define how
+     *         many units each instance contributes to the desired capacity of the group).
      *         </p>
      */
 
@@ -896,8 +896,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      * <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never go
-     * above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many capacity units
-     * each instance contributes to the capacity of the group).
+     * above <code>MaxSize</code> by more than your largest instance weight (weights that define how many units each
+     * instance contributes to the desired capacity of the group).
      * </p>
      * </note>
      * 
@@ -906,8 +906,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling may need to go above
      *        <code>MaxSize</code> to meet your capacity requirements. In this event, Amazon EC2 Auto Scaling will never
-     *        go above <code>MaxSize</code> by more than your maximum instance weight (weights that define how many
-     *        capacity units each instance contributes to the capacity of the group).
+     *        go above <code>MaxSize</code> by more than your largest instance weight (weights that define how many
+     *        units each instance contributes to the desired capacity of the group).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

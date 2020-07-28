@@ -57,6 +57,12 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
     private String type;
     /**
      * <p>
+     * The tags to apply to the customer gateway.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
      * A name for the customer gateway device.
      * </p>
      * <p>
@@ -321,6 +327,79 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
+     * The tags to apply to the customer gateway.
+     * </p>
+     * 
+     * @return The tags to apply to the customer gateway.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the customer gateway.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the customer gateway.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the customer gateway.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the customer gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomerGatewayRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the customer gateway.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the customer gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomerGatewayRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
+     * <p>
      * A name for the customer gateway device.
      * </p>
      * <p>
@@ -405,6 +484,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getDeviceName() != null)
             sb.append("DeviceName: ").append(getDeviceName());
         sb.append("}");
@@ -437,6 +518,10 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         if (other.getDeviceName() == null ^ this.getDeviceName() == null)
             return false;
         if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false)
@@ -453,6 +538,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode());
         return hashCode;
     }

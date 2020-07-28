@@ -76,6 +76,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                     context.nextToken();
                     h265Settings.setColorSpaceSettings(H265ColorSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("filterSettings", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setFilterSettings(H265FilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("fixedAfd", targetDepth)) {
                     context.nextToken();
                     h265Settings.setFixedAfd(context.getUnmarshaller(String.class).unmarshall(context));

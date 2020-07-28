@@ -217,6 +217,14 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private String placementTenancy;
+    /**
+     * <p>
+     * The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     */
+    private InstanceMetadataOptions metadataOptions;
 
     /**
      * <p>
@@ -1586,6 +1594,58 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the instances. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public void setMetadataOptions(InstanceMetadataOptions metadataOptions) {
+        this.metadataOptions = metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @return The metadata options for the instances. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *         and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     */
+
+    public InstanceMetadataOptions getMetadataOptions() {
+        return this.metadataOptions;
+    }
+
+    /**
+     * <p>
+     * The metadata options for the instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User
+     * Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * </p>
+     * 
+     * @param metadataOptions
+     *        The metadata options for the instances. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata
+     *        and User Data</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchConfiguration withMetadataOptions(InstanceMetadataOptions metadataOptions) {
+        setMetadataOptions(metadataOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1634,7 +1694,9 @@ public class LaunchConfiguration implements Serializable, Cloneable {
         if (getAssociatePublicIpAddress() != null)
             sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getPlacementTenancy() != null)
-            sb.append("PlacementTenancy: ").append(getPlacementTenancy());
+            sb.append("PlacementTenancy: ").append(getPlacementTenancy()).append(",");
+        if (getMetadataOptions() != null)
+            sb.append("MetadataOptions: ").append(getMetadataOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1725,6 +1787,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getPlacementTenancy() != null && other.getPlacementTenancy().equals(this.getPlacementTenancy()) == false)
             return false;
+        if (other.getMetadataOptions() == null ^ this.getMetadataOptions() == null)
+            return false;
+        if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1752,6 +1818,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
         hashCode = prime * hashCode + ((getPlacementTenancy() == null) ? 0 : getPlacementTenancy().hashCode());
+        hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
         return hashCode;
     }
 

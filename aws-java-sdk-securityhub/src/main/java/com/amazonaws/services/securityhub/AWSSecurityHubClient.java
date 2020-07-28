@@ -3004,6 +3004,72 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @return Result of the UpdateSecurityHubConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSecurityHubConfigurationResult updateSecurityHubConfiguration(UpdateSecurityHubConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSecurityHubConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSecurityHubConfigurationResult executeUpdateSecurityHubConfiguration(UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSecurityHubConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSecurityHubConfigurationRequest> request = null;
+        Response<UpdateSecurityHubConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSecurityHubConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSecurityHubConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecurityHubConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSecurityHubConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSecurityHubConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Used to control whether an individual security standard control is enabled or disabled.
      * </p>
      * 

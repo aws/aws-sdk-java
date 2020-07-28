@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum HlsOutputSelection {
 
     MANIFESTS_AND_SEGMENTS("MANIFESTS_AND_SEGMENTS"),
-    SEGMENTS_ONLY("SEGMENTS_ONLY");
+    SEGMENTS_ONLY("SEGMENTS_ONLY"),
+    VARIANT_MANIFESTS_AND_SEGMENTS("VARIANT_MANIFESTS_AND_SEGMENTS");
 
     private String value;
 

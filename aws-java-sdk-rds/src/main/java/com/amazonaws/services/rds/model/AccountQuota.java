@@ -105,8 +105,14 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The used value is the count of the
- * manual DB snapshots in the account.
+ * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per account. The used value is the
+ * count of the manual DB cluster snapshots in the account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account. The used value is the count of
+ * the manual DB instance snapshots in the account.
  * </p>
  * </li>
  * <li>

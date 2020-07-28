@@ -1,3 +1,32 @@
+# __1.11.829__ __2020-07-28__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports several new features: EBU-TT-D captions in Microsoft Smooth outputs; interlaced video in HEVC outputs; video noise reduction (using temporal filtering) in HEVC outputs.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Added UpdateSecurityHubConfiguration API. Security Hub now allows customers to choose whether to automatically enable new controls that are added to an existing standard that the customer enabled. For example, if you enabled Foundational Security Best Practices for an account, you can automatically enable new controls as we add them to that standard. By default, new controls are enabled.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Introduces support for tag-on-create capability for the following APIs: CreateVpnConnection, CreateVpnGateway, and CreateCustomerGateway. A user can now add tags while creating these resources. For further detail, please see AWS Tagging Strategies.
+
+## __Amazon Interactive Video Service__
+  - ### Features
+    - Added a new error code, PendingVerification, to differentiate between errors caused by insufficient IAM permissions and errors caused by account verification.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Adds reporting of manual cluster snapshot quota to DescribeAccountAttributes API
+
+## __Auto Scaling__
+  - ### Features
+    - Now you can enable Instance Metadata Service Version 2 (IMDSv2) or disable the instance metadata endpoint with Launch Configurations.
+
+## __EC2 Image Builder__
+  - ### Features
+    - This release updates distribution configurations to allow periods in AMI names.
+
 # __1.11.828__ __2020-07-27__
 ## __AWS DataSync__
   - ### Features

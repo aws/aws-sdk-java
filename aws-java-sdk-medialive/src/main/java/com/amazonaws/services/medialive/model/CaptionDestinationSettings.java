@@ -32,6 +32,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
 
     private DvbSubDestinationSettings dvbSubDestinationSettings;
 
+    private EbuTtDDestinationSettings ebuTtDDestinationSettings;
+
     private EmbeddedDestinationSettings embeddedDestinationSettings;
 
     private EmbeddedPlusScte20DestinationSettings embeddedPlusScte20DestinationSettings;
@@ -125,6 +127,32 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
 
     public CaptionDestinationSettings withDvbSubDestinationSettings(DvbSubDestinationSettings dvbSubDestinationSettings) {
         setDvbSubDestinationSettings(dvbSubDestinationSettings);
+        return this;
+    }
+
+    /**
+     * @param ebuTtDDestinationSettings
+     */
+
+    public void setEbuTtDDestinationSettings(EbuTtDDestinationSettings ebuTtDDestinationSettings) {
+        this.ebuTtDDestinationSettings = ebuTtDDestinationSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public EbuTtDDestinationSettings getEbuTtDDestinationSettings() {
+        return this.ebuTtDDestinationSettings;
+    }
+
+    /**
+     * @param ebuTtDDestinationSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionDestinationSettings withEbuTtDDestinationSettings(EbuTtDDestinationSettings ebuTtDDestinationSettings) {
+        setEbuTtDDestinationSettings(ebuTtDDestinationSettings);
         return this;
     }
 
@@ -380,6 +408,8 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
             sb.append("BurnInDestinationSettings: ").append(getBurnInDestinationSettings()).append(",");
         if (getDvbSubDestinationSettings() != null)
             sb.append("DvbSubDestinationSettings: ").append(getDvbSubDestinationSettings()).append(",");
+        if (getEbuTtDDestinationSettings() != null)
+            sb.append("EbuTtDDestinationSettings: ").append(getEbuTtDDestinationSettings()).append(",");
         if (getEmbeddedDestinationSettings() != null)
             sb.append("EmbeddedDestinationSettings: ").append(getEmbeddedDestinationSettings()).append(",");
         if (getEmbeddedPlusScte20DestinationSettings() != null)
@@ -423,6 +453,10 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
         if (other.getDvbSubDestinationSettings() == null ^ this.getDvbSubDestinationSettings() == null)
             return false;
         if (other.getDvbSubDestinationSettings() != null && other.getDvbSubDestinationSettings().equals(this.getDvbSubDestinationSettings()) == false)
+            return false;
+        if (other.getEbuTtDDestinationSettings() == null ^ this.getEbuTtDDestinationSettings() == null)
+            return false;
+        if (other.getEbuTtDDestinationSettings() != null && other.getEbuTtDDestinationSettings().equals(this.getEbuTtDDestinationSettings()) == false)
             return false;
         if (other.getEmbeddedDestinationSettings() == null ^ this.getEmbeddedDestinationSettings() == null)
             return false;
@@ -474,6 +508,7 @@ public class CaptionDestinationSettings implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getAribDestinationSettings() == null) ? 0 : getAribDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getBurnInDestinationSettings() == null) ? 0 : getBurnInDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getDvbSubDestinationSettings() == null) ? 0 : getDvbSubDestinationSettings().hashCode());
+        hashCode = prime * hashCode + ((getEbuTtDDestinationSettings() == null) ? 0 : getEbuTtDDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getEmbeddedDestinationSettings() == null) ? 0 : getEmbeddedDestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getEmbeddedPlusScte20DestinationSettings() == null) ? 0 : getEmbeddedPlusScte20DestinationSettings().hashCode());
         hashCode = prime * hashCode + ((getRtmpCaptionInfoDestinationSettings() == null) ? 0 : getRtmpCaptionInfoDestinationSettings().hashCode());

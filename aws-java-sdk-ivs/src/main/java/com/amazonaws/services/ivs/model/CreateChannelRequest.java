@@ -39,10 +39,26 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String latencyMode;
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     * transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source resolution,
-     * whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is transfixed; resolution
-     * can be up to 480p; and bitrate can be up to 1.5 Mbps. Default: <code>STANDARD</code>.
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
+     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers
+     * the best experience for their devices and network conditions. Vertical resolution can be up to 1080 and bitrate
+     * can be up to 8.5 Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is
+     * limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>STANDARD</code>.
      * </p>
      */
     private String type;
@@ -154,18 +170,48 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     * transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source resolution,
-     * whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is transfixed; resolution
-     * can be up to 480p; and bitrate can be up to 1.5 Mbps. Default: <code>STANDARD</code>.
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
+     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers
+     * the best experience for their devices and network conditions. Vertical resolution can be up to 1080 and bitrate
+     * can be up to 8.5 Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is
+     * limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>STANDARD</code>.
      * </p>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     *        transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source
-     *        resolution, whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     *        transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps. Default:
-     *        <code>STANDARD</code>.
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give
+     *        viewers the best experience for their devices and network conditions. Vertical resolution can be up to
+     *        1080 and bitrate can be up to 8.5 Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice
+     *        is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>STANDARD</code>.
      * @see ChannelType
      */
 
@@ -175,17 +221,47 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     * transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source resolution,
-     * whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is transfixed; resolution
-     * can be up to 480p; and bitrate can be up to 1.5 Mbps. Default: <code>STANDARD</code>.
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
+     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers
+     * the best experience for their devices and network conditions. Vertical resolution can be up to 1080 and bitrate
+     * can be up to 8.5 Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is
+     * limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>STANDARD</code>.
      * </p>
      * 
-     * @return Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     *         transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source
-     *         resolution, whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     *         transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps. Default:
-     *         <code>STANDARD</code>.
+     * @return Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *         resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give
+     *         viewers the best experience for their devices and network conditions. Vertical resolution can be up to
+     *         1080 and bitrate can be up to 8.5 Mbps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice
+     *         is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>STANDARD</code>.
      * @see ChannelType
      */
 
@@ -195,18 +271,48 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     * transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source resolution,
-     * whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is transfixed; resolution
-     * can be up to 480p; and bitrate can be up to 1.5 Mbps. Default: <code>STANDARD</code>.
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
+     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers
+     * the best experience for their devices and network conditions. Vertical resolution can be up to 1080 and bitrate
+     * can be up to 8.5 Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is
+     * limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>STANDARD</code>.
      * </p>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     *        transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source
-     *        resolution, whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     *        transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps. Default:
-     *        <code>STANDARD</code>.
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give
+     *        viewers the best experience for their devices and network conditions. Vertical resolution can be up to
+     *        1080 and bitrate can be up to 8.5 Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice
+     *        is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>STANDARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */
@@ -218,18 +324,48 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     * transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source resolution,
-     * whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is transfixed; resolution
-     * can be up to 480p; and bitrate can be up to 1.5 Mbps. Default: <code>STANDARD</code>.
+     * Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable resolution or
+     * bitrate, the stream probably will disconnect immediately.</i> Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give viewers
+     * the best experience for their devices and network conditions. Vertical resolution can be up to 1080 and bitrate
+     * can be up to 8.5 Mbps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice is
+     * limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>STANDARD</code>.
      * </p>
      * 
      * @param type
-     *        Channel type, which determines the allowable resolution and bitrate. <code>STANDARD</code>: The stream is
-     *        transcoded; resolution (width, in landscape orientation) can be up to 1080p or the input source
-     *        resolution, whichever is lower; and bitrate can be up to 8.5 Mbps. <code>BASIC</code>: The stream is
-     *        transfixed; resolution can be up to 480p; and bitrate can be up to 1.5 Mbps. Default:
-     *        <code>STANDARD</code>.
+     *        Channel type, which determines the allowable resolution and bitrate. <i>If you exceed the allowable
+     *        resolution or bitrate, the stream probably will disconnect immediately.</i> Valid values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>STANDARD</code>: Multiple qualities are generated from the original input, to automatically give
+     *        viewers the best experience for their devices and network conditions. Vertical resolution can be up to
+     *        1080 and bitrate can be up to 8.5 Mbps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BASIC</code>: Amazon IVS delivers the original input to viewers. The viewer’s video-quality choice
+     *        is limited to the original input. Vertical resolution can be up to 480 and bitrate can be up to 1.5 Mbps.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>STANDARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChannelType
      */

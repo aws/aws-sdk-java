@@ -1246,6 +1246,30 @@ public interface AWSSecurityHub {
 
     /**
      * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @return Result of the UpdateSecurityHubConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         AWS Security Hub isn't enabled for the account used to make this request.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
+     *         The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSecurityHubConfigurationResult updateSecurityHubConfiguration(UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest);
+
+    /**
+     * <p>
      * Used to control whether an individual security standard control is enabled or disabled.
      * </p>
      * 

@@ -502,6 +502,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      */
     private java.util.List<StringFilter> workflowState;
     /**
@@ -5983,8 +5987,15 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      * 
-     * @return The workflow state of a finding.
+     * @return The workflow state of a finding.</p>
+     *         <p>
+     *         Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *         <code>WorkflowStatus</code>.
      */
 
     public java.util.List<StringFilter> getWorkflowState() {
@@ -5995,9 +6006,16 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      * 
      * @param workflowState
-     *        The workflow state of a finding.
+     *        The workflow state of a finding.</p>
+     *        <p>
+     *        Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *        <code>WorkflowStatus</code>.
      */
 
     public void setWorkflowState(java.util.Collection<StringFilter> workflowState) {
@@ -6014,13 +6032,20 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * The workflow state of a finding.
      * </p>
      * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setWorkflowState(java.util.Collection)} or {@link #withWorkflowState(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param workflowState
-     *        The workflow state of a finding.
+     *        The workflow state of a finding.</p>
+     *        <p>
+     *        Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *        <code>WorkflowStatus</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6038,9 +6063,16 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      * 
      * @param workflowState
-     *        The workflow state of a finding.
+     *        The workflow state of a finding.</p>
+     *        <p>
+     *        Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *        <code>WorkflowStatus</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

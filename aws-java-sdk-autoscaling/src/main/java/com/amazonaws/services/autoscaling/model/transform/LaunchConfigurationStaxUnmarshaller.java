@@ -154,6 +154,11 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     launchConfiguration.setPlacementTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("MetadataOptions", targetDepth)) {
+                    launchConfiguration.setMetadataOptions(InstanceMetadataOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchConfiguration;

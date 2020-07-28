@@ -58,6 +58,12 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
      * </p>
      */
     private VpnConnectionOptionsSpecification options;
+    /**
+     * <p>
+     * The tags to apply to the VPN connection.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * Default constructor for CreateVpnConnectionRequest object. Callers should use the setter or fluent setter
@@ -294,6 +300,79 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
     }
 
     /**
+     * <p>
+     * The tags to apply to the VPN connection.
+     * </p>
+     * 
+     * @return The tags to apply to the VPN connection.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the VPN connection.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the VPN connection.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the VPN connection.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnConnectionRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the VPN connection.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnConnectionRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -325,7 +404,9 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getOptions() != null)
-            sb.append("Options: ").append(getOptions());
+            sb.append("Options: ").append(getOptions()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -360,6 +441,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
             return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -373,6 +458,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest implemen
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

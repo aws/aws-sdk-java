@@ -48,6 +48,41 @@ public class CreateVpnGatewayRequestMarshaller implements Marshaller<Request<Cre
             request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createVpnGatewayRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createVpnGatewayRequest
+                .getTagSpecifications();
+        if (!createVpnGatewayRequestTagSpecificationsList.isEmpty() || !createVpnGatewayRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createVpnGatewayRequestTagSpecificationsListValue : createVpnGatewayRequestTagSpecificationsList) {
+
+                if (createVpnGatewayRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createVpnGatewayRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createVpnGatewayRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         if (createVpnGatewayRequest.getAmazonSideAsn() != null) {
             request.addParameter("AmazonSideAsn", StringUtils.fromLong(createVpnGatewayRequest.getAmazonSideAsn()));
         }

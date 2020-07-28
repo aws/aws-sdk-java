@@ -29,6 +29,10 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The finding attributes used to define a condition to filter the returned findings.
      * </p>
+     * <p>
+     * Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based
+     * on its workflow status, use <code>WorkflowStatus</code>.
+     * </p>
      */
     private AwsSecurityFindingFilters filters;
     /**
@@ -59,9 +63,16 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The finding attributes used to define a condition to filter the returned findings.
      * </p>
+     * <p>
+     * Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based
+     * on its workflow status, use <code>WorkflowStatus</code>.
+     * </p>
      * 
      * @param filters
-     *        The finding attributes used to define a condition to filter the returned findings.
+     *        The finding attributes used to define a condition to filter the returned findings.</p>
+     *        <p>
+     *        Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a
+     *        finding based on its workflow status, use <code>WorkflowStatus</code>.
      */
 
     public void setFilters(AwsSecurityFindingFilters filters) {
@@ -72,8 +83,15 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The finding attributes used to define a condition to filter the returned findings.
      * </p>
+     * <p>
+     * Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based
+     * on its workflow status, use <code>WorkflowStatus</code>.
+     * </p>
      * 
-     * @return The finding attributes used to define a condition to filter the returned findings.
+     * @return The finding attributes used to define a condition to filter the returned findings.</p>
+     *         <p>
+     *         Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a
+     *         finding based on its workflow status, use <code>WorkflowStatus</code>.
      */
 
     public AwsSecurityFindingFilters getFilters() {
@@ -84,9 +102,16 @@ public class GetFindingsRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The finding attributes used to define a condition to filter the returned findings.
      * </p>
+     * <p>
+     * Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a finding based
+     * on its workflow status, use <code>WorkflowStatus</code>.
+     * </p>
      * 
      * @param filters
-     *        The finding attributes used to define a condition to filter the returned findings.
+     *        The finding attributes used to define a condition to filter the returned findings.</p>
+     *        <p>
+     *        Note that in the available filter fields, <code>WorkflowState</code> is deprecated. To search for a
+     *        finding based on its workflow status, use <code>WorkflowStatus</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

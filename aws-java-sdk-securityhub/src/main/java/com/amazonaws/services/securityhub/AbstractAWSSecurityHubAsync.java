@@ -563,6 +563,19 @@ public class AbstractAWSSecurityHubAsync extends AbstractAWSSecurityHub implemen
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateSecurityHubConfigurationResult> updateSecurityHubConfigurationAsync(UpdateSecurityHubConfigurationRequest request) {
+
+        return updateSecurityHubConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecurityHubConfigurationResult> updateSecurityHubConfigurationAsync(UpdateSecurityHubConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateSecurityHubConfigurationRequest, UpdateSecurityHubConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateStandardsControlResult> updateStandardsControlAsync(UpdateStandardsControlRequest request) {
 
         return updateStandardsControlAsync(request, null);

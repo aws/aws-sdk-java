@@ -56,6 +56,41 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
             request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
         }
 
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createCustomerGatewayRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createCustomerGatewayRequest
+                .getTagSpecifications();
+        if (!createCustomerGatewayRequestTagSpecificationsList.isEmpty() || !createCustomerGatewayRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createCustomerGatewayRequestTagSpecificationsListValue : createCustomerGatewayRequestTagSpecificationsList) {
+
+                if (createCustomerGatewayRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createCustomerGatewayRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createCustomerGatewayRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
+        }
+
         if (createCustomerGatewayRequest.getDeviceName() != null) {
             request.addParameter("DeviceName", StringUtils.fromString(createCustomerGatewayRequest.getDeviceName()));
         }

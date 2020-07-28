@@ -41,6 +41,12 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
     private String type;
     /**
      * <p>
+     * The tags to apply to the virtual private gateway.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
+    /**
+     * <p>
      * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it
      * must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
      * range.
@@ -195,6 +201,79 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
+     * The tags to apply to the virtual private gateway.
+     * </p>
+     * 
+     * @return The tags to apply to the virtual private gateway.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the virtual private gateway.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the virtual private gateway.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the virtual private gateway.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnGatewayRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the virtual private gateway.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the virtual private gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateVpnGatewayRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
+     * <p>
      * A private Autonomous System Number (ASN) for the Amazon side of a BGP session. If you're using a 16-bit ASN, it
      * must be in the 64512 to 65534 range. If you're using a 32-bit ASN, it must be in the 4200000000 to 4294967294
      * range.
@@ -287,6 +366,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getAmazonSideAsn() != null)
             sb.append("AmazonSideAsn: ").append(getAmazonSideAsn());
         sb.append("}");
@@ -311,6 +392,10 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         if (other.getAmazonSideAsn() == null ^ this.getAmazonSideAsn() == null)
             return false;
         if (other.getAmazonSideAsn() != null && other.getAmazonSideAsn().equals(this.getAmazonSideAsn()) == false)
@@ -325,6 +410,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest implements 
 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getAmazonSideAsn() == null) ? 0 : getAmazonSideAsn().hashCode());
         return hashCode;
     }

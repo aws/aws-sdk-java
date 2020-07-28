@@ -76,8 +76,8 @@ public class ScalingPolicy implements Serializable, Cloneable {
     private String policyType;
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      */
     private String adjustmentType;
@@ -447,13 +447,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid
-     *        values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     *        Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The
+     *        valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.
      */
 
@@ -463,12 +463,12 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
-     * @return Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The
-     *         valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * @return Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage).
+     *         The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.
      */
 
@@ -478,13 +478,13 @@ public class ScalingPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid values
-     * are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies how the scaling adjustment is interpreted (either an absolute number or a percentage). The valid
-     *        values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     *        Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The
+     *        valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

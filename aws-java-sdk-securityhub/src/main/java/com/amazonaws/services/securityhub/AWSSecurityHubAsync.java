@@ -1838,6 +1838,41 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @return A Java Future containing the result of the UpdateSecurityHubConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSecurityHubConfigurationResult> updateSecurityHubConfigurationAsync(
+            UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSecurityHubConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSecurityHubConfigurationResult> updateSecurityHubConfigurationAsync(
+            UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSecurityHubConfigurationRequest, UpdateSecurityHubConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Used to control whether an individual security standard control is enabled or disabled.
      * </p>
      * 

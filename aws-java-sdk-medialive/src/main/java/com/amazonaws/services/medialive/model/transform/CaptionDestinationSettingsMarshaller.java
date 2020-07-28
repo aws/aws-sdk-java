@@ -33,6 +33,8 @@ public class CaptionDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("burnInDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> DVBSUBDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dvbSubDestinationSettings").build();
+    private static final MarshallingInfo<StructuredPojo> EBUTTDDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebuTtDDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> EMBEDDEDDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("embeddedDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> EMBEDDEDPLUSSCTE20DESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class CaptionDestinationSettingsMarshaller {
             protocolMarshaller.marshall(captionDestinationSettings.getAribDestinationSettings(), ARIBDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getBurnInDestinationSettings(), BURNINDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getDvbSubDestinationSettings(), DVBSUBDESTINATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(captionDestinationSettings.getEbuTtDDestinationSettings(), EBUTTDDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getEmbeddedDestinationSettings(), EMBEDDEDDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getEmbeddedPlusScte20DestinationSettings(), EMBEDDEDPLUSSCTE20DESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getRtmpCaptionInfoDestinationSettings(), RTMPCAPTIONINFODESTINATIONSETTINGS_BINDING);

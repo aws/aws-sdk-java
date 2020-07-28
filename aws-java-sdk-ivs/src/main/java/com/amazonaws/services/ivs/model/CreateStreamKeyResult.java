@@ -25,18 +25,18 @@ public class CreateStreamKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Stream key used to authenticate an RTMP stream for ingestion.
+     * Stream key used to authenticate an RTMPS stream for ingestion.
      * </p>
      */
     private StreamKey streamKey;
 
     /**
      * <p>
-     * Stream key used to authenticate an RTMP stream for ingestion.
+     * Stream key used to authenticate an RTMPS stream for ingestion.
      * </p>
      * 
      * @param streamKey
-     *        Stream key used to authenticate an RTMP stream for ingestion.
+     *        Stream key used to authenticate an RTMPS stream for ingestion.
      */
 
     public void setStreamKey(StreamKey streamKey) {
@@ -45,10 +45,10 @@ public class CreateStreamKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Stream key used to authenticate an RTMP stream for ingestion.
+     * Stream key used to authenticate an RTMPS stream for ingestion.
      * </p>
      * 
-     * @return Stream key used to authenticate an RTMP stream for ingestion.
+     * @return Stream key used to authenticate an RTMPS stream for ingestion.
      */
 
     public StreamKey getStreamKey() {
@@ -57,11 +57,11 @@ public class CreateStreamKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Stream key used to authenticate an RTMP stream for ingestion.
+     * Stream key used to authenticate an RTMPS stream for ingestion.
      * </p>
      * 
      * @param streamKey
-     *        Stream key used to authenticate an RTMP stream for ingestion.
+     *        Stream key used to authenticate an RTMPS stream for ingestion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
