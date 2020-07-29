@@ -42,8 +42,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
-     * For the current limit on the number of namespaces that you can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map quotas</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
@@ -61,8 +61,8 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <code>DiscoverInstances</code> request but can't be discovered using DNS.
      * </p>
      * <p>
-     * For the current limit on the number of namespaces that you can create using the same AWS account, see <a
-     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
+     * For the current quota on the number of namespaces that you can create using the same AWS account, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map quotas</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
      * 
@@ -84,7 +84,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. For the current limit on the number of namespaces that you can create using the
+     * <code>backend.example.com</code>. For the current quota on the number of namespaces that you can create using the
      * same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud
      * Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -103,7 +103,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace
      * defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name
      * your service <code>backend</code>, the resulting DNS name for the service will be
-     * <code>backend.example.com</code>. For the current limit on the number of namespaces that you can create using the
+     * <code>backend.example.com</code>. For the current quota on the number of namespaces that you can create using the
      * same AWS account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud
      * Map Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -127,7 +127,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
      * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
      * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
-     * current limit on the number of namespaces that you can create using the same AWS account, see <a
+     * current quota on the number of namespaces that you can create using the same AWS account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -145,7 +145,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * Creates a public namespace based on DNS, which will be visible on the internet. The namespace defines your
      * service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service
      * <code>backend</code>, the resulting DNS name for the service will be <code>backend.example.com</code>. For the
-     * current limit on the number of namespaces that you can create using the same AWS account, see <a
+     * current quota on the number of namespaces that you can create using the same AWS account, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map Limits</a> in the
      * <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -170,32 +170,32 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <code>A</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <code>A</code> and <code>AAAA</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <code>SRV</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <code>CNAME</code>
      * </p>
      * </li>
      * </ul>
@@ -212,7 +212,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * and AWS Cloud Map uses the values in the configuration to create the specified entities.
      * </p>
      * <p>
-     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * For the current quota on the number of instances that you can register using the same namespace and using the
      * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
      * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -232,32 +232,32 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <ul>
      * <li>
      * <p>
-     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
+     * For public and private DNS namespaces, one of the following combinations of DNS records in Amazon Route 53:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <code>A</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <code>AAAA</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <code>A</code> and <code>AAAA</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <code>SRV</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <code>CNAME</code>
      * </p>
      * </li>
      * </ul>
@@ -274,7 +274,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * and AWS Cloud Map uses the values in the configuration to create the specified entities.
      * </p>
      * <p>
-     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * For the current quota on the number of instances that you can register using the same namespace and using the
      * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
      * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -358,7 +358,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
      * instance.
      * </p>
      * 
@@ -372,7 +372,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
 
     /**
      * <p>
-     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
+     * Deletes the Amazon Route 53 DNS records and health check, if any, that AWS Cloud Map created for the specified
      * instance.
      * </p>
      * 
@@ -817,7 +817,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * </ul>
      * <p>
-     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * For the current quota on the number of instances that you can register using the same namespace and using the
      * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
      * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -885,7 +885,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * </li>
      * </ul>
      * <p>
-     * For the current limit on the number of instances that you can register using the same namespace and using the
+     * For the current quota on the number of instances that you can register using the same namespace and using the
      * same service, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">AWS Cloud Map
      * Limits</a> in the <i>AWS Cloud Map Developer Guide</i>.
      * </p>
@@ -972,7 +972,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
      * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
-     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -998,7 +998,7 @@ public interface AWSServiceDiscoveryAsync extends AWSServiceDiscovery {
      * <p>
      * You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only for custom health checks,
      * which you define using <code>HealthCheckCustomConfig</code> when you create a service. You can't use it to change
-     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
+     * the status for Route 53 health checks, which you define using <code>HealthCheckConfig</code>.
      * </p>
      * <p>
      * For more information, see <a

@@ -21,7 +21,7 @@ import javax.annotation.Generated;
  * <code>capacityReservationPreference</code> response element if the instance is configured to run in On-Demand
  * capacity, or if it is configured in run in any <code>open</code> Capacity Reservation that has matching attributes
  * (instance type, platform, Availability Zone). The action returns the <code>capacityReservationTarget</code> response
- * element if the instance explicily targets a specific Capacity Reservation.
+ * element if the instance explicily targets a specific Capacity Reservation or Capacity Reservation group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationSpecificationResponse"
@@ -52,7 +52,7 @@ public class CapacityReservationSpecificationResponse implements Serializable, C
     private String capacityReservationPreference;
     /**
      * <p>
-     * Information about the targeted Capacity Reservation.
+     * Information about the targeted Capacity Reservation or Capacity Reservation group.
      * </p>
      */
     private CapacityReservationTargetResponse capacityReservationTarget;
@@ -226,11 +226,11 @@ public class CapacityReservationSpecificationResponse implements Serializable, C
 
     /**
      * <p>
-     * Information about the targeted Capacity Reservation.
+     * Information about the targeted Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the targeted Capacity Reservation.
+     *        Information about the targeted Capacity Reservation or Capacity Reservation group.
      */
 
     public void setCapacityReservationTarget(CapacityReservationTargetResponse capacityReservationTarget) {
@@ -239,10 +239,10 @@ public class CapacityReservationSpecificationResponse implements Serializable, C
 
     /**
      * <p>
-     * Information about the targeted Capacity Reservation.
+     * Information about the targeted Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
-     * @return Information about the targeted Capacity Reservation.
+     * @return Information about the targeted Capacity Reservation or Capacity Reservation group.
      */
 
     public CapacityReservationTargetResponse getCapacityReservationTarget() {
@@ -251,11 +251,11 @@ public class CapacityReservationSpecificationResponse implements Serializable, C
 
     /**
      * <p>
-     * Information about the targeted Capacity Reservation.
+     * Information about the targeted Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the targeted Capacity Reservation.
+     *        Information about the targeted Capacity Reservation or Capacity Reservation group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

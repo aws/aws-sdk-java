@@ -42,7 +42,7 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
     private String arn;
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
      * zone that has the same name as the namespace.
      * </p>
      */
@@ -156,12 +156,12 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
      * zone that has the same name as the namespace.
      * </p>
      * 
      * @param name
-     *        The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
+     *        The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
      *        hosted zone that has the same name as the namespace.
      */
 
@@ -171,11 +171,11 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
      * zone that has the same name as the namespace.
      * </p>
      * 
-     * @return The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
+     * @return The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
      *         hosted zone that has the same name as the namespace.
      */
 
@@ -185,12 +185,12 @@ public class NamespaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
+     * The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53 hosted
      * zone that has the same name as the namespace.
      * </p>
      * 
      * @param name
-     *        The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
+     *        The name of the namespace. When you create a namespace, AWS Cloud Map automatically creates a Route 53
      *        hosted zone that has the same name as the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

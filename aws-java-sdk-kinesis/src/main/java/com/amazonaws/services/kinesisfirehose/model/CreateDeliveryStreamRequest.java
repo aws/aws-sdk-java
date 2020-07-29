@@ -98,6 +98,13 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     private SplunkDestinationConfiguration splunkDestinationConfiguration;
     /**
      * <p>
+     * Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one
+     * destination.
+     * </p>
+     */
+    private HttpEndpointDestinationConfiguration httpEndpointDestinationConfiguration;
+    /**
+     * <p>
      * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
      * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
      * information that can help you distinguish the delivery stream. For more information about tags, see <a
@@ -611,6 +618,52 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one
+     * destination.
+     * </p>
+     * 
+     * @param httpEndpointDestinationConfiguration
+     *        Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify
+     *        only one destination.
+     */
+
+    public void setHttpEndpointDestinationConfiguration(HttpEndpointDestinationConfiguration httpEndpointDestinationConfiguration) {
+        this.httpEndpointDestinationConfiguration = httpEndpointDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one
+     * destination.
+     * </p>
+     * 
+     * @return Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify
+     *         only one destination.
+     */
+
+    public HttpEndpointDestinationConfiguration getHttpEndpointDestinationConfiguration() {
+        return this.httpEndpointDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify only one
+     * destination.
+     * </p>
+     * 
+     * @param httpEndpointDestinationConfiguration
+     *        Enables configuring Kinesis Firehose to deliver data to any HTTP endpoint destination. You can specify
+     *        only one destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withHttpEndpointDestinationConfiguration(HttpEndpointDestinationConfiguration httpEndpointDestinationConfiguration) {
+        setHttpEndpointDestinationConfiguration(httpEndpointDestinationConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
      * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
      * information that can help you distinguish the delivery stream. For more information about tags, see <a
@@ -761,6 +814,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("ElasticsearchDestinationConfiguration: ").append(getElasticsearchDestinationConfiguration()).append(",");
         if (getSplunkDestinationConfiguration() != null)
             sb.append("SplunkDestinationConfiguration: ").append(getSplunkDestinationConfiguration()).append(",");
+        if (getHttpEndpointDestinationConfiguration() != null)
+            sb.append("HttpEndpointDestinationConfiguration: ").append(getHttpEndpointDestinationConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -819,6 +874,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getSplunkDestinationConfiguration() != null
                 && other.getSplunkDestinationConfiguration().equals(this.getSplunkDestinationConfiguration()) == false)
             return false;
+        if (other.getHttpEndpointDestinationConfiguration() == null ^ this.getHttpEndpointDestinationConfiguration() == null)
+            return false;
+        if (other.getHttpEndpointDestinationConfiguration() != null
+                && other.getHttpEndpointDestinationConfiguration().equals(this.getHttpEndpointDestinationConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -841,6 +901,7 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRedshiftDestinationConfiguration() == null) ? 0 : getRedshiftDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationConfiguration() == null) ? 0 : getElasticsearchDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getSplunkDestinationConfiguration() == null) ? 0 : getSplunkDestinationConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getHttpEndpointDestinationConfiguration() == null) ? 0 : getHttpEndpointDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -37,6 +37,12 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
      * </p>
      */
     private Boolean memberAccountLimitReached;
+    /**
+     * <p>
+     * An object that describes which data sources are enabled automatically for member accounts.
+     * </p>
+     */
+    private OrganizationDataSourceConfigurationsResult dataSources;
 
     /**
      * <p>
@@ -151,6 +157,46 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     }
 
     /**
+     * <p>
+     * An object that describes which data sources are enabled automatically for member accounts.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources are enabled automatically for member accounts.
+     */
+
+    public void setDataSources(OrganizationDataSourceConfigurationsResult dataSources) {
+        this.dataSources = dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources are enabled automatically for member accounts.
+     * </p>
+     * 
+     * @return An object that describes which data sources are enabled automatically for member accounts.
+     */
+
+    public OrganizationDataSourceConfigurationsResult getDataSources() {
+        return this.dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources are enabled automatically for member accounts.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources are enabled automatically for member accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrganizationConfigurationResult withDataSources(OrganizationDataSourceConfigurationsResult dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -165,7 +211,9 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
         if (getAutoEnable() != null)
             sb.append("AutoEnable: ").append(getAutoEnable()).append(",");
         if (getMemberAccountLimitReached() != null)
-            sb.append("MemberAccountLimitReached: ").append(getMemberAccountLimitReached());
+            sb.append("MemberAccountLimitReached: ").append(getMemberAccountLimitReached()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -188,6 +236,10 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
             return false;
         if (other.getMemberAccountLimitReached() != null && other.getMemberAccountLimitReached().equals(this.getMemberAccountLimitReached()) == false)
             return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +250,7 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
         hashCode = prime * hashCode + ((getAutoEnable() == null) ? 0 : getAutoEnable().hashCode());
         hashCode = prime * hashCode + ((getMemberAccountLimitReached() == null) ? 0 : getMemberAccountLimitReached().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         return hashCode;
     }
 

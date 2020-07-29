@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The previous lifecycle policy preview request has not completed. Please try again later.
+ * The previous lifecycle policy preview request has not completed. Wait and try again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -585,6 +585,23 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
+     * Describes which data sources are enabled for the member account's detector.
+     * </p>
+     * 
+     * @param getMemberDetectorsRequest
+     * @return Result of the GetMemberDetectors operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetMemberDetectorsResult getMemberDetectors(GetMemberDetectorsRequest getMemberDetectorsRequest);
+
+    /**
+     * <p>
      * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
      * </p>
      * 
@@ -724,7 +741,7 @@ public interface AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about associated member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -964,6 +981,23 @@ public interface AmazonGuardDuty {
      *      Documentation</a>
      */
     UpdateIPSetResult updateIPSet(UpdateIPSetRequest updateIPSetRequest);
+
+    /**
+     * <p>
+     * Contains information on member accounts to be updated.
+     * </p>
+     * 
+     * @param updateMemberDetectorsRequest
+     * @return Result of the UpdateMemberDetectors operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.UpdateMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMemberDetectorsResult updateMemberDetectors(UpdateMemberDetectorsRequest updateMemberDetectorsRequest);
 
     /**
      * <p>

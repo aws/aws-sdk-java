@@ -27,25 +27,24 @@ public class TagRequest extends com.amazonaws.AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN of the resource to which to add tags.
+     * The ARN of the resource group to which to add tags.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have
-     * a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The ARN of the resource to which to add tags.
+     * The ARN of the resource group to which to add tags.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource to which to add tags.
+     *        The ARN of the resource group to which to add tags.
      */
 
     public void setArn(String arn) {
@@ -54,10 +53,10 @@ public class TagRequest extends com.amazonaws.AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN of the resource to which to add tags.
+     * The ARN of the resource group to which to add tags.
      * </p>
      * 
-     * @return The ARN of the resource to which to add tags.
+     * @return The ARN of the resource group to which to add tags.
      */
 
     public String getArn() {
@@ -66,11 +65,11 @@ public class TagRequest extends com.amazonaws.AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The ARN of the resource to which to add tags.
+     * The ARN of the resource group to which to add tags.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource to which to add tags.
+     *        The ARN of the resource group to which to add tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,13 +80,10 @@ public class TagRequest extends com.amazonaws.AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have
-     * a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      * </p>
      * 
-     * @return The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys
-     *         can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     *         characters.
+     * @return The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -96,14 +92,11 @@ public class TagRequest extends com.amazonaws.AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have
-     * a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys
-     *        can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     *        characters.
+     *        The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -112,14 +105,11 @@ public class TagRequest extends com.amazonaws.AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys can have
-     * a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the specified resource. A tag is a string-to-string map of key-value pairs. Tag keys
-     *        can have a maximum character length of 128 characters, and tag values can have a maximum length of 256
-     *        characters.
+     *        The tags to add to the specified resource group. A tag is a string-to-string map of key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

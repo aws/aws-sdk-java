@@ -45,6 +45,12 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     private String findingPublishingFrequency;
     /**
      * <p>
+     * An object that describes which data sources will be enabled for the detector.
+     * </p>
+     */
+    private DataSourceConfigurations dataSources;
+    /**
+     * <p>
      * The tags to be added to a new detector resource.
      * </p>
      */
@@ -203,6 +209,46 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * An object that describes which data sources will be enabled for the detector.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources will be enabled for the detector.
+     */
+
+    public void setDataSources(DataSourceConfigurations dataSources) {
+        this.dataSources = dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources will be enabled for the detector.
+     * </p>
+     * 
+     * @return An object that describes which data sources will be enabled for the detector.
+     */
+
+    public DataSourceConfigurations getDataSources() {
+        return this.dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources will be enabled for the detector.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources will be enabled for the detector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDetectorRequest withDataSources(DataSourceConfigurations dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags to be added to a new detector resource.
      * </p>
      * 
@@ -287,6 +333,8 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getFindingPublishingFrequency() != null)
             sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -315,6 +363,10 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFindingPublishingFrequency() != null && other.getFindingPublishingFrequency().equals(this.getFindingPublishingFrequency()) == false)
             return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -330,6 +382,7 @@ public class CreateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getEnable() == null) ? 0 : getEnable().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getFindingPublishingFrequency() == null) ? 0 : getFindingPublishingFrequency().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

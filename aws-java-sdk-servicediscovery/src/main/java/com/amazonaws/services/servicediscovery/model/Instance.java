@@ -36,10 +36,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
-     * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
-     * DnsRecord &gt; Type</a>.
+     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -104,7 +105,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <b/>
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
+     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -115,8 +116,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an A
-     * record, an AAAA record, or both.
+     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
@@ -145,52 +146,60 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>AWS_EC2_INSTANCE_ID</b>
+     * </p>
+     * <p>
+     * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
+     * attribute contains the primary private IPv4 address.
+     * </p>
+     * <p>
      * <b>AWS_INSTANCE_CNAME</b>
      * </p>
      * <p>
-     * If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
+     * return in response to DNS queries, for example, <code>example.com</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>CNAME</code> record.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV4</b>
      * </p>
      * <p>
-     * If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
+     * in response to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
-     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
+     * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
+     * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
      * </p>
      * <p>
-     * If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+     * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
      * </p>
      * <p>
-     * If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
      * <p>
-     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
+     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
-     * the service.
+     * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
+     * you created the service.
      * </p>
      */
     private java.util.Map<String, String> attributes;
@@ -202,10 +211,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
-     * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
-     * DnsRecord &gt; Type</a>.
+     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -238,9 +248,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
-     *        of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *        information, see <a
+     *        If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
+     *        record, the value of <code>InstanceId</code> is automatically included as part of the value for the
+     *        <code>SRV</code> record. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
      *        >DnsRecord &gt; Type</a>.
      *        </p>
@@ -281,10 +291,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
-     * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
-     * DnsRecord &gt; Type</a>.
+     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -316,9 +327,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
-     *         of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *         information, see <a
+     *         If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
+     *         record, the value of <code>InstanceId</code> is automatically included as part of the value for the
+     *         <code>SRV</code> record. For more information, see <a
      *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
      *         >DnsRecord &gt; Type</a>.
      *         </p>
@@ -359,10 +370,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value of
-     * <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more information,
-     * see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">
-     * DnsRecord &gt; Type</a>.
+     * If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code> record, the
+     * value of <code>InstanceId</code> is automatically included as part of the value for the <code>SRV</code> record.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+     * &gt; Type</a>.
      * </p>
      * </li>
      * <li>
@@ -395,9 +407,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        If the service that is specified by <code>ServiceId</code> includes settings for an SRV record, the value
-     *        of <code>InstanceId</code> is automatically included as part of the value for the SRV record. For more
-     *        information, see <a
+     *        If the service that is specified by <code>ServiceId</code> includes settings for an <code>SRV</code>
+     *        record, the value of <code>InstanceId</code> is automatically included as part of the value for the
+     *        <code>SRV</code> record. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type"
      *        >DnsRecord &gt; Type</a>.
      *        </p>
@@ -523,7 +535,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <b/>
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
+     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -534,8 +546,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an A
-     * record, an AAAA record, or both.
+     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
@@ -564,52 +576,60 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>AWS_EC2_INSTANCE_ID</b>
+     * </p>
+     * <p>
+     * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
+     * attribute contains the primary private IPv4 address.
+     * </p>
+     * <p>
      * <b>AWS_INSTANCE_CNAME</b>
      * </p>
      * <p>
-     * If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
+     * return in response to DNS queries, for example, <code>example.com</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>CNAME</code> record.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV4</b>
      * </p>
      * <p>
-     * If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
+     * in response to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
-     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
+     * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
+     * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
      * </p>
      * <p>
-     * If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+     * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
      * </p>
      * <p>
-     * If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
      * <p>
-     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
+     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
-     * the service.
+     * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
+     * you created the service.
      * </p>
      * 
      * @return A string map that contains the following information for the service that you specify in
@@ -636,7 +656,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <b/>
      *         </p>
      *         <p>
-     *         If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
+     *         If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
      *         Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *         about how to get the DNS name, see "DNSName" in the topic <a
      *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -648,7 +668,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         The configuration for the service that is specified by <code>ServiceId</code> must include settings for
-     *         an A record, an AAAA record, or both.
+     *         an <code>A</code> record, an <code>AAAA</code> record, or both.
      *         </p>
      *         </li>
      *         <li>
@@ -678,53 +698,62 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
+     *         <b>AWS_EC2_INSTANCE_ID</b>
+     *         </p>
+     *         <p>
+     *         <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The
+     *         <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
+     *         </p>
+     *         <p>
      *         <b>AWS_INSTANCE_CNAME</b>
      *         </p>
      *         <p>
-     *         If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     *         response to DNS queries, for example, <code>example.com</code>.
+     *         If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
+     *         to return in response to DNS queries, for example, <code>example.com</code>.
      *         </p>
      *         <p>
-     *         This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME
-     *         record.
+     *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *         <code>CNAME</code> record.
      *         </p>
      *         <p>
      *         <b>AWS_INSTANCE_IPV4</b>
      *         </p>
      *         <p>
-     *         If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in
-     *         response to DNS queries, for example, <code>192.0.2.44</code>.
+     *         If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53
+     *         to return in response to DNS queries, for example, <code>192.0.2.44</code>.
      *         </p>
      *         <p>
-     *         This value is required if the service specified by <code>ServiceId</code> includes settings for an A
-     *         record. If the service includes settings for an SRV record, you must specify a value for
-     *         <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
+     *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *         <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify
+     *         a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *         </p>
      *         <p>
      *         <b>AWS_INSTANCE_IPV6</b>
      *         </p>
      *         <p>
-     *         If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return
-     *         in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *         If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want
+     *         Route 53 to return in response to DNS queries, for example,
+     *         <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      *         </p>
      *         <p>
-     *         This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA
-     *         record. If the service includes settings for an SRV record, you must specify a value for
-     *         <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
+     *         This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *         <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must
+     *         specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *         </p>
      *         <p>
      *         <b>AWS_INSTANCE_PORT</b>
      *         </p>
      *         <p>
-     *         If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     *         If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
+     *         port.
      *         </p>
      *         <p>
-     *         If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
+     *         If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53
      *         to send requests to.
      *         </p>
      *         <p>
-     *         This value is required if you specified settings for an SRV record or a Route 53 health check when you
-     *         created the service.
+     *         This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health
+     *         check when you created the service.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -757,7 +786,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <b/>
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
+     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -768,8 +797,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an A
-     * record, an AAAA record, or both.
+     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
@@ -798,52 +827,60 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>AWS_EC2_INSTANCE_ID</b>
+     * </p>
+     * <p>
+     * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
+     * attribute contains the primary private IPv4 address.
+     * </p>
+     * <p>
      * <b>AWS_INSTANCE_CNAME</b>
      * </p>
      * <p>
-     * If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
+     * return in response to DNS queries, for example, <code>example.com</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>CNAME</code> record.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV4</b>
      * </p>
      * <p>
-     * If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
+     * in response to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
-     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
+     * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
+     * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
      * </p>
      * <p>
-     * If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+     * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
      * </p>
      * <p>
-     * If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
      * <p>
-     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
+     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
-     * the service.
+     * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
+     * you created the service.
      * </p>
      * 
      * @param attributes
@@ -871,7 +908,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <b/>
      *        </p>
      *        <p>
-     *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
+     *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *        about how to get the DNS name, see "DNSName" in the topic <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -883,7 +920,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
-     *        A record, an AAAA record, or both.
+     *        <code>A</code> record, an <code>AAAA</code> record, or both.
      *        </p>
      *        </li>
      *        <li>
@@ -913,53 +950,61 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>AWS_EC2_INSTANCE_ID</b>
+     *        </p>
+     *        <p>
+     *        <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The
+     *        <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
+     *        </p>
+     *        <p>
      *        <b>AWS_INSTANCE_CNAME</b>
      *        </p>
      *        <p>
-     *        If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     *        response to DNS queries, for example, <code>example.com</code>.
+     *        If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
+     *        to return in response to DNS queries, for example, <code>example.com</code>.
      *        </p>
      *        <p>
-     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME
-     *        record.
+     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *        <code>CNAME</code> record.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_IPV4</b>
      *        </p>
      *        <p>
-     *        If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in
-     *        response to DNS queries, for example, <code>192.0.2.44</code>.
+     *        If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
+     *        return in response to DNS queries, for example, <code>192.0.2.44</code>.
      *        </p>
      *        <p>
-     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an A
-     *        record. If the service includes settings for an SRV record, you must specify a value for
-     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
+     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *        <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+     *        value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_IPV6</b>
      *        </p>
      *        <p>
-     *        If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return in
-     *        response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53
+     *        to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      *        </p>
      *        <p>
-     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA
-     *        record. If the service includes settings for an SRV record, you must specify a value for
-     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
+     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *        <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must
+     *        specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_PORT</b>
      *        </p>
      *        <p>
-     *        If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     *        If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
+     *        port.
      *        </p>
      *        <p>
-     *        If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to
+     *        If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to
      *        send requests to.
      *        </p>
      *        <p>
-     *        This value is required if you specified settings for an SRV record or a Route 53 health check when you
-     *        created the service.
+     *        This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check
+     *        when you created the service.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -992,7 +1037,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <b/>
      * </p>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
+     * If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load Balancing load
      * balancer, specify the DNS name that is associated with the load balancer. For information about how to get the
      * DNS name, see "DNSName" in the topic <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -1003,8 +1048,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an A
-     * record, an AAAA record, or both.
+     * The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
+     * <code>A</code> record, an <code>AAAA</code> record, or both.
      * </p>
      * </li>
      * <li>
@@ -1033,52 +1078,60 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
+     * <b>AWS_EC2_INSTANCE_ID</b>
+     * </p>
+     * <p>
+     * <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
+     * attribute contains the primary private IPv4 address.
+     * </p>
+     * <p>
      * <b>AWS_INSTANCE_CNAME</b>
      * </p>
      * <p>
-     * If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     * response to DNS queries, for example, <code>example.com</code>.
+     * If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53 to
+     * return in response to DNS queries, for example, <code>example.com</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME record.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>CNAME</code> record.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV4</b>
      * </p>
      * <p>
-     * If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in response
-     * to DNS queries, for example, <code>192.0.2.44</code>.
+     * If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to return
+     * in response to DNS queries, for example, <code>192.0.2.44</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an A record. If
-     * the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an <code>A</code>
+     * record. If the service includes settings for an <code>SRV</code> record, you must specify a value for
+     * <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_IPV6</b>
      * </p>
      * <p>
-     * If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return in
-     * response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     * If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53 to
+     * return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      * </p>
      * <p>
-     * This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA record.
-     * If the service includes settings for an SRV record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-     * <code>AWS_INSTANCE_IPV6</code>, or both.
+     * This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     * <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+     * value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      * </p>
      * <p>
      * <b>AWS_INSTANCE_PORT</b>
      * </p>
      * <p>
-     * If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     * If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the port.
      * </p>
      * <p>
-     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
+     * If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to send
      * requests to.
      * </p>
      * <p>
-     * This value is required if you specified settings for an SRV record or a Route 53 health check when you created
-     * the service.
+     * This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check when
+     * you created the service.
      * </p>
      * 
      * @param attributes
@@ -1106,7 +1159,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <b/>
      *        </p>
      *        <p>
-     *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
+     *        If you want AWS Cloud Map to create a Route 53 alias record that routes traffic to an Elastic Load
      *        Balancing load balancer, specify the DNS name that is associated with the load balancer. For information
      *        about how to get the DNS name, see "DNSName" in the topic <a
      *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html">AliasTarget</a>.
@@ -1118,7 +1171,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        The configuration for the service that is specified by <code>ServiceId</code> must include settings for an
-     *        A record, an AAAA record, or both.
+     *        <code>A</code> record, an <code>AAAA</code> record, or both.
      *        </p>
      *        </li>
      *        <li>
@@ -1148,53 +1201,61 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
+     *        <b>AWS_EC2_INSTANCE_ID</b>
+     *        </p>
+     *        <p>
+     *        <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The
+     *        <code>AWS_INSTANCE_IPV4</code> attribute contains the primary private IPv4 address.
+     *        </p>
+     *        <p>
      *        <b>AWS_INSTANCE_CNAME</b>
      *        </p>
      *        <p>
-     *        If the service configuration includes a CNAME record, the domain name that you want Route 53 to return in
-     *        response to DNS queries, for example, <code>example.com</code>.
+     *        If the service configuration includes a <code>CNAME</code> record, the domain name that you want Route 53
+     *        to return in response to DNS queries, for example, <code>example.com</code>.
      *        </p>
      *        <p>
-     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an CNAME
-     *        record.
+     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *        <code>CNAME</code> record.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_IPV4</b>
      *        </p>
      *        <p>
-     *        If the service configuration includes an A record, the IPv4 address that you want Route 53 to return in
-     *        response to DNS queries, for example, <code>192.0.2.44</code>.
+     *        If the service configuration includes an <code>A</code> record, the IPv4 address that you want Route 53 to
+     *        return in response to DNS queries, for example, <code>192.0.2.44</code>.
      *        </p>
      *        <p>
-     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an A
-     *        record. If the service includes settings for an SRV record, you must specify a value for
-     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
+     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *        <code>A</code> record. If the service includes settings for an <code>SRV</code> record, you must specify a
+     *        value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_IPV6</b>
      *        </p>
      *        <p>
-     *        If the service configuration includes an AAAA record, the IPv6 address that you want Route 53 to return in
-     *        response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
+     *        If the service configuration includes an <code>AAAA</code> record, the IPv6 address that you want Route 53
+     *        to return in response to DNS queries, for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>.
      *        </p>
      *        <p>
-     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an AAAA
-     *        record. If the service includes settings for an SRV record, you must specify a value for
-     *        <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
+     *        This value is required if the service specified by <code>ServiceId</code> includes settings for an
+     *        <code>AAAA</code> record. If the service includes settings for an <code>SRV</code> record, you must
+     *        specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both.
      *        </p>
      *        <p>
      *        <b>AWS_INSTANCE_PORT</b>
      *        </p>
      *        <p>
-     *        If the service includes an SRV record, the value that you want Route 53 to return for the port.
+     *        If the service includes an <code>SRV</code> record, the value that you want Route 53 to return for the
+     *        port.
      *        </p>
      *        <p>
-     *        If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to
+     *        If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that you want Route 53 to
      *        send requests to.
      *        </p>
      *        <p>
-     *        This value is required if you specified settings for an SRV record or a Route 53 health check when you
-     *        created the service.
+     *        This value is required if you specified settings for an <code>SRV</code> record or a Route 53 health check
+     *        when you created the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

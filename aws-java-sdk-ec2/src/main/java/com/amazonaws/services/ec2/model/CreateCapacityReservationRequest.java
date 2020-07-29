@@ -33,9 +33,6 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
-     * <p>
-     * Constraint: Maximum 64 ASCII characters.
-     * </p>
      */
     private String clientToken;
     /**
@@ -182,17 +179,12 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
-     * <p>
-     * Constraint: Maximum 64 ASCII characters.
-     * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.</p>
-     *        <p>
-     *        Constraint: Maximum 64 ASCII characters.
+     *        Idempotency</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -206,16 +198,11 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
-     * <p>
-     * Constraint: Maximum 64 ASCII characters.
-     * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *         Idempotency</a>.</p>
-     *         <p>
-     *         Constraint: Maximum 64 ASCII characters.
+     *         Idempotency</a>.
      */
 
     public String getClientToken() {
@@ -229,17 +216,12 @@ public class CreateCapacityReservationRequest extends AmazonWebServiceRequest im
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
      * Idempotency</a>.
      * </p>
-     * <p>
-     * Constraint: Maximum 64 ASCII characters.
-     * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
-     *        Idempotency</a>.</p>
-     *        <p>
-     *        Constraint: Maximum 64 ASCII characters.
+     *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

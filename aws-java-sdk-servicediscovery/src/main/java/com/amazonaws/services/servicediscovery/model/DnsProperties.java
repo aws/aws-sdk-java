@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
+ * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
  * namespace.
  * </p>
  * 
@@ -31,18 +31,18 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      * </p>
      */
     private String hostedZoneId;
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     *        The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      */
 
     public void setHostedZoneId(String hostedZoneId) {
@@ -51,10 +51,10 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      * </p>
      * 
-     * @return The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     * @return The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      */
 
     public String getHostedZoneId() {
@@ -63,11 +63,11 @@ public class DnsProperties implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     * The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      * </p>
      * 
      * @param hostedZoneId
-     *        The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+     *        The ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

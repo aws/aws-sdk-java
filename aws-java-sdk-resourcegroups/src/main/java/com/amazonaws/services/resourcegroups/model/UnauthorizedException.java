@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request has not been applied because it lacks valid authentication credentials for the target resource.
+ * The request was rejected because it doesn't have valid credentials for the target resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

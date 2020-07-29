@@ -27,8 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateGroupQueryRequestMarshaller {
 
-    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GroupName").build();
+    private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Group").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCEQUERY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceQuery").build();
 
@@ -49,6 +51,7 @@ public class UpdateGroupQueryRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateGroupQueryRequest.getGroupName(), GROUPNAME_BINDING);
+            protocolMarshaller.marshall(updateGroupQueryRequest.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(updateGroupQueryRequest.getResourceQuery(), RESOURCEQUERY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

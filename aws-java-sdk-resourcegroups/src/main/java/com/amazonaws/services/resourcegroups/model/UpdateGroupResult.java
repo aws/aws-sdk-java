@@ -25,18 +25,18 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The full description of the resource group after it has been updated.
+     * The update description of the resource group.
      * </p>
      */
     private Group group;
 
     /**
      * <p>
-     * The full description of the resource group after it has been updated.
+     * The update description of the resource group.
      * </p>
      * 
      * @param group
-     *        The full description of the resource group after it has been updated.
+     *        The update description of the resource group.
      */
 
     public void setGroup(Group group) {
@@ -45,10 +45,10 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The full description of the resource group after it has been updated.
+     * The update description of the resource group.
      * </p>
      * 
-     * @return The full description of the resource group after it has been updated.
+     * @return The update description of the resource group.
      */
 
     public Group getGroup() {
@@ -57,11 +57,11 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The full description of the resource group after it has been updated.
+     * The update description of the resource group.
      * </p>
      * 
      * @param group
-     *        The full description of the resource group after it has been updated.
+     *        The update description of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

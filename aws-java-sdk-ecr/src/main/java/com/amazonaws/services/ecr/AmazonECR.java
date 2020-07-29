@@ -29,10 +29,11 @@ import com.amazonaws.services.ecr.waiters.AmazonECRWaiters;
  * <p>
  * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
- * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
- * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
- * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
+ * Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Customers can use the
+ * familiar Docker CLI, or their preferred client, to push, pull, and manage images. Amazon ECR provides a secure,
+ * scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports
+ * private repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can
+ * access repositories and images.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -208,7 +209,7 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @throws UploadNotFoundException
-     *         The upload could not be found, or the specified upload id is not valid for this repository.
+     *         The upload could not be found, or the specified upload ID is not valid for this repository.
      * @throws InvalidLayerException
      *         The layer digest calculation performed by Amazon ECR upon receipt of the image layer does not match the
      *         digest specified.
@@ -218,6 +219,8 @@ public interface AmazonECR {
      *         The image layer already exists in the associated repository.
      * @throws EmptyUploadException
      *         The specified layer upload does not contain any layer parts.
+     * @throws KmsException
+     *         The operation failed due to a KMS exception.
      * @sample AmazonECR.CompleteLayerUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CompleteLayerUpload" target="_top">AWS API
      *      Documentation</a>
@@ -250,6 +253,8 @@ public interface AmazonECR {
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
      *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws KmsException
+     *         The operation failed due to a KMS exception.
      * @sample AmazonECR.CreateRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/CreateRepository" target="_top">AWS API
      *      Documentation</a>
@@ -296,6 +301,8 @@ public interface AmazonECR {
      * @throws RepositoryNotEmptyException
      *         The specified repository contains images. To delete a repository that contains images, you must force the
      *         deletion with the <code>force</code> parameter.
+     * @throws KmsException
+     *         The operation failed due to a KMS exception.
      * @sample AmazonECR.DeleteRepository
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/DeleteRepository" target="_top">AWS API
      *      Documentation</a>
@@ -551,6 +558,8 @@ public interface AmazonECR {
      * @throws RepositoryNotFoundException
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
+     * @throws KmsException
+     *         The operation failed due to a KMS exception.
      * @sample AmazonECR.InitiateLayerUpload
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/InitiateLayerUpload" target="_top">AWS API
      *      Documentation</a>
@@ -645,6 +654,8 @@ public interface AmazonECR {
      *         immutability.
      * @throws ImageDigestDoesNotMatchException
      *         The specified image digest does not match the digest that Amazon ECR calculated for the image.
+     * @throws KmsException
+     *         The operation failed due to a KMS exception.
      * @sample AmazonECR.PutImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/PutImage" target="_top">AWS API
      *      Documentation</a>
@@ -787,7 +798,7 @@ public interface AmazonECR {
      * @throws LifecyclePolicyNotFoundException
      *         The lifecycle policy could not be found, and no policy is set to the repository.
      * @throws LifecyclePolicyPreviewInProgressException
-     *         The previous lifecycle policy preview request has not completed. Please try again later.
+     *         The previous lifecycle policy preview request has not completed. Wait and try again.
      * @sample AmazonECR.StartLifecyclePolicyPreview
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/StartLifecyclePolicyPreview"
      *      target="_top">AWS API Documentation</a>
@@ -875,12 +886,14 @@ public interface AmazonECR {
      *         The specified repository could not be found. Check the spelling of the specified repository and ensure
      *         that you are performing operations on the correct registry.
      * @throws UploadNotFoundException
-     *         The upload could not be found, or the specified upload id is not valid for this repository.
+     *         The upload could not be found, or the specified upload ID is not valid for this repository.
      * @throws LimitExceededException
      *         The operation did not succeed because it would have exceeded a service limit for your account. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/service-quotas.html">Amazon ECR Service
      *         Quotas</a> in the Amazon Elastic Container Registry User Guide.
+     * @throws KmsException
+     *         The operation failed due to a KMS exception.
      * @sample AmazonECR.UploadLayerPart
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/UploadLayerPart" target="_top">AWS API
      *      Documentation</a>

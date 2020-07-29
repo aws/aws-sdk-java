@@ -13,7 +13,7 @@
 package com.amazonaws.services.resourcegroups.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +37,8 @@ public class CreateGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceQuery").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Configuration").build();
 
     private static final CreateGroupRequestMarshaller instance = new CreateGroupRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class CreateGroupRequestMarshaller {
             protocolMarshaller.marshall(createGroupRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createGroupRequest.getResourceQuery(), RESOURCEQUERY_BINDING);
             protocolMarshaller.marshall(createGroupRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createGroupRequest.getConfiguration(), CONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

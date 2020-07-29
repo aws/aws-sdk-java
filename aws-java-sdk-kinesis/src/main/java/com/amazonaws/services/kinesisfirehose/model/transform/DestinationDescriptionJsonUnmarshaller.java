@@ -74,6 +74,11 @@ public class DestinationDescriptionJsonUnmarshaller implements Unmarshaller<Dest
                     context.nextToken();
                     destinationDescription.setSplunkDestinationDescription(SplunkDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("HttpEndpointDestinationDescription", targetDepth)) {
+                    context.nextToken();
+                    destinationDescription.setHttpEndpointDestinationDescription(HttpEndpointDestinationDescriptionJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

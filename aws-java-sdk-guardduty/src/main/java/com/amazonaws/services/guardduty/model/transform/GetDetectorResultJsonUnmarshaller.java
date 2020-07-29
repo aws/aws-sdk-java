@@ -68,6 +68,10 @@ public class GetDetectorResultJsonUnmarshaller implements Unmarshaller<GetDetect
                     context.nextToken();
                     getDetectorResult.setUpdatedAt(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("dataSources", targetDepth)) {
+                    context.nextToken();
+                    getDetectorResult.setDataSources(DataSourceConfigurationsResultJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     getDetectorResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

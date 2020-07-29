@@ -36,7 +36,7 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      */
@@ -86,12 +86,12 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
      *        create when you register an instance.
      */
 
@@ -101,11 +101,11 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      * 
-     * @return A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     * @return A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
      *         create when you register an instance.
      */
 
@@ -115,12 +115,12 @@ public class ServiceChange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
      *        create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

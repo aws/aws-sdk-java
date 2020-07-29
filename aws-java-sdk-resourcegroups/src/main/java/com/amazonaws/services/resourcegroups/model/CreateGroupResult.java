@@ -25,7 +25,7 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      */
     private Group group;
@@ -41,14 +41,30 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     * configurations for the following resource group types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
+     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private GroupConfiguration groupConfiguration;
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      * 
      * @param group
-     *        A full description of the resource group after it is created.
+     *        The description of the resource group.
      */
 
     public void setGroup(Group group) {
@@ -57,10 +73,10 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      * 
-     * @return A full description of the resource group after it is created.
+     * @return The description of the resource group.
      */
 
     public Group getGroup() {
@@ -69,11 +85,11 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A full description of the resource group after it is created.
+     * The description of the resource group.
      * </p>
      * 
      * @param group
-     *        A full description of the resource group after it is created.
+     *        The description of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,6 +207,106 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     * configurations for the following resource group types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
+     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param groupConfiguration
+     *        The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     *        configurations for the following resource group types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
+     *        >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     *        </p>
+     *        </li>
+     */
+
+    public void setGroupConfiguration(GroupConfiguration groupConfiguration) {
+        this.groupConfiguration = groupConfiguration;
+    }
+
+    /**
+     * <p>
+     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     * configurations for the following resource group types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
+     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     *         configurations for the following resource group types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
+     *         >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     *         </p>
+     *         </li>
+     */
+
+    public GroupConfiguration getGroupConfiguration() {
+        return this.groupConfiguration;
+    }
+
+    /**
+     * <p>
+     * The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     * configurations for the following resource group types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
+     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param groupConfiguration
+     *        The service configuration associated with the resource group. AWS Resource Groups supports adding service
+     *        configurations for the following resource group types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group"
+     *        >Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupResult withGroupConfiguration(GroupConfiguration groupConfiguration) {
+        setGroupConfiguration(groupConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +323,9 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getResourceQuery() != null)
             sb.append("ResourceQuery: ").append(getResourceQuery()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getGroupConfiguration() != null)
+            sb.append("GroupConfiguration: ").append(getGroupConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +352,10 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getGroupConfiguration() == null ^ this.getGroupConfiguration() == null)
+            return false;
+        if (other.getGroupConfiguration() != null && other.getGroupConfiguration().equals(this.getGroupConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +367,7 @@ public class CreateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getResourceQuery() == null) ? 0 : getResourceQuery().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getGroupConfiguration() == null) ? 0 : getGroupConfiguration().hashCode());
         return hashCode;
     }
 

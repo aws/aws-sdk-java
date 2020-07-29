@@ -31,7 +31,9 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
     private java.util.List<ResourceIdentifier> resourceIdentifiers;
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      */
     private String nextToken;
@@ -116,12 +118,16 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more
-     *        results.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -130,11 +136,15 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
-     * @return The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more
-     *         results.
+     * @return If present, indicates that more output is available than is included in the current response. Use this
+     *         value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *         next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *         back as <code>null</code>.
      */
 
     public String getNextToken() {
@@ -143,12 +153,16 @@ public class ListGroupResourcesResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more results.
+     * If present, indicates that more output is available than is included in the current response. Use this value in
+     * the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the
+     * output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value to include in a subsequent <code>ListGroupResources</code> request, to get more
-     *        results.
+     *        If present, indicates that more output is available than is included in the current response. Use this
+     *        value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the
+     *        next part of the output. You should repeat this until the <code>NextToken</code> response element comes
+     *        back as <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

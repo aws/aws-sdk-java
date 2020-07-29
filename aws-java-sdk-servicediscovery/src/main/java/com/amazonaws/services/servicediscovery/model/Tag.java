@@ -36,8 +36,8 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     private String key;
     /**
      * <p>
-     * The string value that's associated with the key of the tag. You can set the value of a tag to an empty string,
-     * but you can't set the value of a tag to null.
+     * The string value associated with the key of the tag. You can set the value of a tag to an empty string, but you
+     * can't set the value of a tag to null.
      * </p>
      */
     private String value;
@@ -84,13 +84,13 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The string value that's associated with the key of the tag. You can set the value of a tag to an empty string,
-     * but you can't set the value of a tag to null.
+     * The string value associated with the key of the tag. You can set the value of a tag to an empty string, but you
+     * can't set the value of a tag to null.
      * </p>
      * 
      * @param value
-     *        The string value that's associated with the key of the tag. You can set the value of a tag to an empty
-     *        string, but you can't set the value of a tag to null.
+     *        The string value associated with the key of the tag. You can set the value of a tag to an empty string,
+     *        but you can't set the value of a tag to null.
      */
 
     public void setValue(String value) {
@@ -99,12 +99,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The string value that's associated with the key of the tag. You can set the value of a tag to an empty string,
-     * but you can't set the value of a tag to null.
+     * The string value associated with the key of the tag. You can set the value of a tag to an empty string, but you
+     * can't set the value of a tag to null.
      * </p>
      * 
-     * @return The string value that's associated with the key of the tag. You can set the value of a tag to an empty
-     *         string, but you can't set the value of a tag to null.
+     * @return The string value associated with the key of the tag. You can set the value of a tag to an empty string,
+     *         but you can't set the value of a tag to null.
      */
 
     public String getValue() {
@@ -113,13 +113,13 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The string value that's associated with the key of the tag. You can set the value of a tag to an empty string,
-     * but you can't set the value of a tag to null.
+     * The string value associated with the key of the tag. You can set the value of a tag to an empty string, but you
+     * can't set the value of a tag to null.
      * </p>
      * 
      * @param value
-     *        The string value that's associated with the key of the tag. You can set the value of a tag to an empty
-     *        string, but you can't set the value of a tag to null.
+     *        The string value associated with the key of the tag. You can set the value of a tag to an empty string,
+     *        but you can't set the value of a tag to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

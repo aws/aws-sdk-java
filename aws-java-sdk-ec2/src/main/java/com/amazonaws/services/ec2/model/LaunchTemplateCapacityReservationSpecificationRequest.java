@@ -20,7 +20,8 @@ import javax.annotation.Generated;
  * Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the
  * <code>CapacityReservationPreference</code> parameter to configure the instance to run in On-Demand capacity or to run
  * in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability
- * Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation.
+ * Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation
+ * or a Capacity Reservation group.
  * </p>
  * 
  * @see <a
@@ -52,7 +53,7 @@ public class LaunchTemplateCapacityReservationSpecificationRequest implements Se
     private String capacityReservationPreference;
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      */
     private CapacityReservationTarget capacityReservationTarget;
@@ -226,11 +227,11 @@ public class LaunchTemplateCapacityReservationSpecificationRequest implements Se
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public void setCapacityReservationTarget(CapacityReservationTarget capacityReservationTarget) {
@@ -239,10 +240,10 @@ public class LaunchTemplateCapacityReservationSpecificationRequest implements Se
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
-     * @return Information about the target Capacity Reservation.
+     * @return Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public CapacityReservationTarget getCapacityReservationTarget() {
@@ -251,11 +252,11 @@ public class LaunchTemplateCapacityReservationSpecificationRequest implements Se
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

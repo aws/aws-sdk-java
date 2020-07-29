@@ -498,6 +498,12 @@ public class CreateLaunchTemplateRequestMarshaller implements Marshaller<Request
                         request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
                                 StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
                     }
+
+                    if (capacityReservationTarget.getCapacityReservationResourceGroupArn() != null) {
+                        request.addParameter(
+                                "LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn",
+                                StringUtils.fromString(capacityReservationTarget.getCapacityReservationResourceGroupArn()));
+                    }
                 }
             }
 

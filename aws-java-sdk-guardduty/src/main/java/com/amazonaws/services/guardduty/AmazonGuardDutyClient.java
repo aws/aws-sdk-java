@@ -1892,6 +1892,63 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Describes which data sources are enabled for the member account's detector.
+     * </p>
+     * 
+     * @param getMemberDetectorsRequest
+     * @return Result of the GetMemberDetectors operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetMemberDetectorsResult getMemberDetectors(GetMemberDetectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMemberDetectors(request);
+    }
+
+    @SdkInternalApi
+    final GetMemberDetectorsResult executeGetMemberDetectors(GetMemberDetectorsRequest getMemberDetectorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMemberDetectorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMemberDetectorsRequest> request = null;
+        Response<GetMemberDetectorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMemberDetectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMemberDetectorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMemberDetectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMemberDetectorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetMemberDetectorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
      * </p>
      * 
@@ -2351,7 +2408,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about associated member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -3149,6 +3206,64 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIPSetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIPSetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Contains information on member accounts to be updated.
+     * </p>
+     * 
+     * @param updateMemberDetectorsRequest
+     * @return Result of the UpdateMemberDetectors operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.UpdateMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMemberDetectorsResult updateMemberDetectors(UpdateMemberDetectorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMemberDetectors(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMemberDetectorsResult executeUpdateMemberDetectors(UpdateMemberDetectorsRequest updateMemberDetectorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMemberDetectorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMemberDetectorsRequest> request = null;
+        Response<UpdateMemberDetectorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMemberDetectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMemberDetectorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMemberDetectors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMemberDetectorsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateMemberDetectorsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

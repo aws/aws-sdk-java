@@ -178,6 +178,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public GetMemberDetectorsResult getMemberDetectors(GetMemberDetectorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMembersResult getMembers(GetMembersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -284,6 +289,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
 
     @Override
     public UpdateIPSetResult updateIPSet(UpdateIPSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMemberDetectorsResult updateMemberDetectors(UpdateMemberDetectorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

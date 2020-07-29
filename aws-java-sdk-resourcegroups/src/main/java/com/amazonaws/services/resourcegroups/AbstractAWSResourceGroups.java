@@ -43,12 +43,22 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
     }
 
     @Override
+    public GetGroupConfigurationResult getGroupConfiguration(GetGroupConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetGroupQueryResult getGroupQuery(GetGroupQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetTagsResult getTags(GetTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GroupResourcesResult groupResources(GroupResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,6 +79,11 @@ public class AbstractAWSResourceGroups implements AWSResourceGroups {
 
     @Override
     public TagResult tag(TagRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UngroupResourcesResult ungroupResources(UngroupResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

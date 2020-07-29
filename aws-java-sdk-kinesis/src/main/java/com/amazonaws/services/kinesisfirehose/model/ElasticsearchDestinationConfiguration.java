@@ -109,6 +109,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
      * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
+     * <p>
+     * You can't change this backup mode after you create the delivery stream.
+     * </p>
      */
     private String s3BackupMode;
     /**
@@ -646,6 +649,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
      * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
+     * <p>
+     * You can't change this backup mode after you create the delivery stream.
+     * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
@@ -655,7 +661,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      *        writes failed documents with <code>elasticsearch-failed/</code> appended to the prefix. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        <p>
+     *        You can't change this backup mode after you create the delivery stream.
      * @see ElasticsearchS3BackupMode
      */
 
@@ -673,6 +681,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
      * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
+     * <p>
+     * You can't change this backup mode after you create the delivery stream.
+     * </p>
      * 
      * @return Defines how documents should be delivered to Amazon S3. When it is set to
      *         <code>FailedDocumentsOnly</code>, Kinesis Data Firehose writes any documents that could not be indexed to
@@ -681,7 +692,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      *         and also writes failed documents with <code>elasticsearch-failed/</code> appended to the prefix. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *         for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     *         for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *         <p>
+     *         You can't change this backup mode after you create the delivery stream.
      * @see ElasticsearchS3BackupMode
      */
 
@@ -699,6 +712,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
      * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
+     * <p>
+     * You can't change this backup mode after you create the delivery stream.
+     * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
@@ -708,7 +724,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      *        writes failed documents with <code>elasticsearch-failed/</code> appended to the prefix. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        <p>
+     *        You can't change this backup mode after you create the delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchS3BackupMode
      */
@@ -728,6 +746,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
      * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
+     * <p>
+     * You can't change this backup mode after you create the delivery stream.
+     * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
@@ -737,7 +758,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      *        writes failed documents with <code>elasticsearch-failed/</code> appended to the prefix. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        <p>
+     *        You can't change this backup mode after you create the delivery stream.
      * @see ElasticsearchS3BackupMode
      */
 
@@ -755,6 +778,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      * href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup for the
      * Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
      * </p>
+     * <p>
+     * You can't change this backup mode after you create the delivery stream.
+     * </p>
      * 
      * @param s3BackupMode
      *        Defines how documents should be delivered to Amazon S3. When it is set to <code>FailedDocumentsOnly</code>
@@ -764,7 +790,9 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
      *        writes failed documents with <code>elasticsearch-failed/</code> appended to the prefix. For more
      *        information, see <a
      *        href="https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-s3-backup">Amazon S3 Backup
-     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.
+     *        for the Amazon ES Destination</a>. Default value is <code>FailedDocumentsOnly</code>.</p>
+     *        <p>
+     *        You can't change this backup mode after you create the delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ElasticsearchS3BackupMode
      */

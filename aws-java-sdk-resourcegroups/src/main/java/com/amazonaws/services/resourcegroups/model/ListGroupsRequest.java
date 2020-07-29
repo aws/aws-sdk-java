@@ -27,53 +27,104 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code> operation.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
-     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
+     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
+     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     * configuration types attached. The current supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS:EC2::CapacityReservationPool
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      */
     private java.util.List<GroupFilter> filters;
     /**
      * <p>
-     * The maximum number of resource group results that are returned by ListGroups in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code> operation.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
-     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
+     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
+     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     * configuration types attached. The current supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS:EC2::CapacityReservationPool
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     * @return Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code>
+     *         operation.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
-     *         format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *         <code>resource-type</code> - Filter the results to include only those of the specified resource types.
+     *         Specify up to five resource types in the format
+     *         <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example, <code>AWS::EC2::Instance</code>,
+     *         or <code>AWS::S3::Bucket</code>.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     *         configuration types attached. The current supported values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AWS:EC2::CapacityReservationPool
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      */
 
@@ -83,25 +134,54 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code> operation.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
-     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
+     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
+     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     * configuration types attached. The current supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS:EC2::CapacityReservationPool
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *        Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code>
+     *        operation.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
-     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        <code>resource-type</code> - Filter the results to include only those of the specified resource types.
+     *        Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>
+     *        . For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     *        configuration types attached. The current supported values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS:EC2::CapacityReservationPool
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      */
 
@@ -116,14 +196,28 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code> operation.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
-     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
+     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
+     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     * configuration types attached. The current supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS:EC2::CapacityReservationPool
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * <p>
@@ -133,13 +227,28 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param filters
-     *        Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *        Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code>
+     *        operation.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
-     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        <code>resource-type</code> - Filter the results to include only those of the specified resource types.
+     *        Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>
+     *        . For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     *        configuration types attached. The current supported values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS:EC2::CapacityReservationPool
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -156,25 +265,54 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.
+     * Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code> operation.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the format
-     * AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     * <code>resource-type</code> - Filter the results to include only those of the specified resource types. Specify up
+     * to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>. For example,
+     * <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     * configuration types attached. The current supported values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS:EC2::CapacityReservationPool
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * </ul>
      * 
      * @param filters
-     *        Filters, formatted as GroupFilter objects, that you want to apply to a ListGroups operation.</p>
+     *        Filters, formatted as <a>GroupFilter</a> objects, that you want to apply to a <code>ListGroups</code>
+     *        operation.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - Filter groups by resource type. Specify up to five resource types in the
-     *        format AWS::ServiceCode::ResourceType. For example, AWS::EC2::Instance, or AWS::S3::Bucket.
+     *        <code>resource-type</code> - Filter the results to include only those of the specified resource types.
+     *        Specify up to five resource types in the format <code>AWS::<i>ServiceCode</i>::<i>ResourceType</i> </code>
+     *        . For example, <code>AWS::EC2::Instance</code>, or <code>AWS::S3::Bucket</code>.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>configuration-type</code> - Filter the results to include only those groups that have the specified
+     *        configuration types attached. The current supported values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS:EC2::CapacityReservationPool
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -186,13 +324,23 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of resource group results that are returned by ListGroups in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resource group results that are returned by ListGroups in paginated output. By
-     *        default, this number is 50.
+     *        The total number of results that you want included on each page of the response. If you do not include
+     *        this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond
+     *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
+     *        operation to get the next part of the results. Note that the service might return fewer results than the
+     *        maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *        operation to ensure that you receive all of the results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -201,12 +349,22 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of resource group results that are returned by ListGroups in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
-     * @return The maximum number of resource group results that are returned by ListGroups in paginated output. By
-     *         default, this number is 50.
+     * @return The total number of results that you want included on each page of the response. If you do not include
+     *         this parameter, it defaults to a value that is specific to the operation. If additional items exist
+     *         beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value
+     *         (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the
+     *         operation to get the next part of the results. Note that the service might return fewer results than the
+     *         maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *         operation to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -215,13 +373,23 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of resource group results that are returned by ListGroups in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resource group results that are returned by ListGroups in paginated output. By
-     *        default, this number is 50.
+     *        The total number of results that you want included on each page of the response. If you do not include
+     *        this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond
+     *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
+     *        operation to get the next part of the results. Note that the service might return fewer results than the
+     *        maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *        operation to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,13 +400,17 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page
-     *        of results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     *        The parameter for receiving additional results if you receive a <code>NextToken</code> response in a
+     *        previous request. A <code>NextToken</code> response indicates that more output is available. Set this
+     *        parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the
+     *        output should continue from.
      */
 
     public void setNextToken(String nextToken) {
@@ -247,12 +419,16 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      * 
-     * @return The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page
-     *         of results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * @return The parameter for receiving additional results if you receive a <code>NextToken</code> response in a
+     *         previous request. A <code>NextToken</code> response indicates that more output is available. Set this
+     *         parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where
+     *         the output should continue from.
      */
 
     public String getNextToken() {
@@ -261,13 +437,17 @@ public class ListGroupsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value that is returned in a paginated <code>ListGroups</code> request. To get the next page
-     *        of results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     *        The parameter for receiving additional results if you receive a <code>NextToken</code> response in a
+     *        previous request. A <code>NextToken</code> response indicates that more output is available. Set this
+     *        parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the
+     *        output should continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

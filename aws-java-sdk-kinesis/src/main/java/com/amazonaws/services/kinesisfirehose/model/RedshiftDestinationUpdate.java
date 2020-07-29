@@ -86,7 +86,8 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
     private ProcessingConfiguration processingConfiguration;
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      */
     private String s3BackupMode;
@@ -470,11 +471,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @see RedshiftS3BackupMode
      */
 
@@ -484,10 +487,12 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
-     * @return The Amazon S3 backup mode.
+     * @return You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *         can't update the delivery stream to disable it.
      * @see RedshiftS3BackupMode
      */
 
@@ -497,11 +502,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedshiftS3BackupMode
      */
@@ -513,11 +520,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @see RedshiftS3BackupMode
      */
 
@@ -527,11 +536,13 @@ public class RedshiftDestinationUpdate implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        The Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RedshiftS3BackupMode
      */

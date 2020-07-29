@@ -94,7 +94,8 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
     private ProcessingConfiguration processingConfiguration;
     /**
      * <p>
-     * Enables or disables Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      */
     private String s3BackupMode;
@@ -567,11 +568,13 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables or disables Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        Enables or disables Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @see S3BackupMode
      */
 
@@ -581,10 +584,12 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables or disables Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
-     * @return Enables or disables Amazon S3 backup mode.
+     * @return You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *         can't update the delivery stream to disable it.
      * @see S3BackupMode
      */
 
@@ -594,11 +599,13 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables or disables Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        Enables or disables Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3BackupMode
      */
@@ -610,11 +617,13 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables or disables Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        Enables or disables Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @see S3BackupMode
      */
 
@@ -624,11 +633,13 @@ public class ExtendedS3DestinationUpdate implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables or disables Amazon S3 backup mode.
+     * You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you can't
+     * update the delivery stream to disable it.
      * </p>
      * 
      * @param s3BackupMode
-     *        Enables or disables Amazon S3 backup mode.
+     *        You can update a delivery stream to enable Amazon S3 backup if it is disabled. If backup is enabled, you
+     *        can't update the delivery stream to disable it.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3BackupMode
      */

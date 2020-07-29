@@ -194,21 +194,22 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a group with a specified name, description, and resource query.
+     * Creates a resource group with the specified name and description. You can optionally include a resource query, or
+     * a service configuration.
      * </p>
      * 
      * @param createGroupRequest
      * @return Result of the CreateGroup operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.CreateGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup" target="_top">AWS
      *      API Documentation</a>
@@ -257,24 +258,24 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes a specified resource group. Deleting a resource group does not delete resources that are members of the
-     * group; it only deletes the group structure.
+     * Deletes the specified resource group. Deleting a resource group does not delete any resources that are members of
+     * the group; it only deletes the group structure.
      * </p>
      * 
      * @param deleteGroupRequest
      * @return Result of the DeleteGroup operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.DeleteGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/DeleteGroup" target="_top">AWS
      *      API Documentation</a>
@@ -329,17 +330,17 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * @param getGroupRequest
      * @return Result of the GetGroup operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.GetGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroup" target="_top">AWS API
      *      Documentation</a>
@@ -388,23 +389,99 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Returns the resource query associated with the specified resource group.
+     * Returns the service configuration associated with the specified resource group. AWS Resource Groups supports
+     * configurations for the following resource group types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS::EC2::CapacityReservationPool</code> - Amazon EC2 capacity reservation pools. For more information, see
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/capacity-reservations-using.html#create-cr-group">
+     * Working with capacity reservation groups</a> in the <i>EC2 Users Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getGroupConfigurationRequest
+     * @return Result of the GetGroupConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         The request includes one or more parameters that violate validation rules.
+     * @throws ForbiddenException
+     *         The caller isn't authorized to make the request. Check permissions.
+     * @throws NotFoundException
+     *         One or more of the specified resources don't exist.
+     * @throws MethodNotAllowedException
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
+     * @throws TooManyRequestsException
+     *         You've exceeded throttling limits by making too many requests in a period of time.
+     * @throws InternalServerErrorException
+     *         An internal error occurred while processing the request. Try again later.
+     * @sample AWSResourceGroups.GetGroupConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGroupConfigurationResult getGroupConfiguration(GetGroupConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroupConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupConfigurationResult executeGetGroupConfiguration(GetGroupConfigurationRequest getGroupConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupConfigurationRequest> request = null;
+        Response<GetGroupConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetGroupConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetGroupConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the resource query associated with the specified resource group.
      * </p>
      * 
      * @param getGroupQueryRequest
      * @return Result of the GetGroupQuery operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.GetGroupQuery
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetGroupQuery" target="_top">AWS
      *      API Documentation</a>
@@ -459,17 +536,17 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * @param getTagsRequest
      * @return Result of the GetTags operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.GetTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GetTags" target="_top">AWS API
      *      Documentation</a>
@@ -518,26 +595,90 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Adds the specified resources to the specified group.
+     * </p>
+     * 
+     * @param groupResourcesRequest
+     * @return Result of the GroupResources operation returned by the service.
+     * @throws BadRequestException
+     *         The request includes one or more parameters that violate validation rules.
+     * @throws ForbiddenException
+     *         The caller isn't authorized to make the request. Check permissions.
+     * @throws NotFoundException
+     *         One or more of the specified resources don't exist.
+     * @throws MethodNotAllowedException
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
+     * @throws TooManyRequestsException
+     *         You've exceeded throttling limits by making too many requests in a period of time.
+     * @throws InternalServerErrorException
+     *         An internal error occurred while processing the request. Try again later.
+     * @sample AWSResourceGroups.GroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GroupResourcesResult groupResources(GroupResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGroupResources(request);
+    }
+
+    @SdkInternalApi
+    final GroupResourcesResult executeGroupResources(GroupResourcesRequest groupResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(groupResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GroupResourcesRequest> request = null;
+        Response<GroupResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GroupResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(groupResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GroupResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GroupResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GroupResourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of ARNs of resources that are members of a specified resource group.
      * </p>
      * 
      * @param listGroupResourcesRequest
      * @return Result of the ListGroupResources operation returned by the service.
      * @throws UnauthorizedException
-     *         The request has not been applied because it lacks valid authentication credentials for the target
-     *         resource.
+     *         The request was rejected because it doesn't have valid credentials for the target resource.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.ListGroupResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroupResources"
      *      target="_top">AWS API Documentation</a>
@@ -592,15 +733,15 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * @param listGroupsRequest
      * @return Result of the ListGroups operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.ListGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/ListGroups" target="_top">AWS API
      *      Documentation</a>
@@ -656,18 +797,17 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * @param searchResourcesRequest
      * @return Result of the SearchResources operation returned by the service.
      * @throws UnauthorizedException
-     *         The request has not been applied because it lacks valid authentication credentials for the target
-     *         resource.
+     *         The request was rejected because it doesn't have valid credentials for the target resource.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.SearchResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/SearchResources"
      *      target="_top">AWS API Documentation</a>
@@ -719,21 +859,28 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they
      * are not specified in the request parameters.
      * </p>
+     * <important>
+     * <p>
+     * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We
+     * use tags to provide you with billing and administration services. Tags are not intended to be used for private or
+     * sensitive data.
+     * </p>
+     * </important>
      * 
      * @param tagRequest
      * @return Result of the Tag operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.Tag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag" target="_top">AWS API
      *      Documentation</a>
@@ -782,23 +929,88 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Deletes specified tags from a specified resource.
+     * Removes the specified resources from the specified group.
+     * </p>
+     * 
+     * @param ungroupResourcesRequest
+     * @return Result of the UngroupResources operation returned by the service.
+     * @throws BadRequestException
+     *         The request includes one or more parameters that violate validation rules.
+     * @throws ForbiddenException
+     *         The caller isn't authorized to make the request. Check permissions.
+     * @throws NotFoundException
+     *         One or more of the specified resources don't exist.
+     * @throws MethodNotAllowedException
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
+     * @throws TooManyRequestsException
+     *         You've exceeded throttling limits by making too many requests in a period of time.
+     * @throws InternalServerErrorException
+     *         An internal error occurred while processing the request. Try again later.
+     * @sample AWSResourceGroups.UngroupResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UngroupResources"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UngroupResourcesResult ungroupResources(UngroupResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeUngroupResources(request);
+    }
+
+    @SdkInternalApi
+    final UngroupResourcesResult executeUngroupResources(UngroupResourcesRequest ungroupResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(ungroupResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UngroupResourcesRequest> request = null;
+        Response<UngroupResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UngroupResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(ungroupResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UngroupResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UngroupResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UngroupResourcesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes tags from a specified resource group.
      * </p>
      * 
      * @param untagRequest
      * @return Result of the Untag operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.Untag
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Untag" target="_top">AWS API
      *      Documentation</a>
@@ -847,23 +1059,23 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Updates an existing group with a new or changed description. You cannot update the name of a resource group.
+     * Updates the description for an existing group. You cannot update the name of a resource group.
      * </p>
      * 
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.UpdateGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroup" target="_top">AWS
      *      API Documentation</a>
@@ -918,17 +1130,17 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
      * @param updateGroupQueryRequest
      * @return Result of the UpdateGroupQuery operation returned by the service.
      * @throws BadRequestException
-     *         The request does not comply with validation rules that are defined for the request parameters.
+     *         The request includes one or more parameters that violate validation rules.
      * @throws ForbiddenException
-     *         The caller is not authorized to make the request.
+     *         The caller isn't authorized to make the request. Check permissions.
      * @throws NotFoundException
-     *         One or more resources specified in the request do not exist.
+     *         One or more of the specified resources don't exist.
      * @throws MethodNotAllowedException
-     *         The request uses an HTTP method which is not allowed for the specified resource.
+     *         The request uses an HTTP method that isn't allowed for the specified resource.
      * @throws TooManyRequestsException
-     *         The caller has exceeded throttling limits.
+     *         You've exceeded throttling limits by making too many requests in a period of time.
      * @throws InternalServerErrorException
-     *         An internal error occurred while processing the request.
+     *         An internal error occurred while processing the request. Try again later.
      * @sample AWSResourceGroups.UpdateGroupQuery
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/UpdateGroupQuery"
      *      target="_top">AWS API Documentation</a>

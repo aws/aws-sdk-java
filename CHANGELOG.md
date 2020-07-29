@@ -1,3 +1,28 @@
+# __1.11.830__ __2020-07-29__
+## __AWS Cloud Map__
+  - ### Features
+    - Added new attribute AWS_EC2_INSTANCE_ID for RegisterInstance API 
+
+## __AWS Resource Groups__
+  - ### Features
+    - Resource Groups released a new feature that enables you to create a group with an associated configuration that specifies how other AWS services interact with the group. There are two new operations `GroupResources` and `UngroupResources` to work on a group with a configuration. In this release, you can associate EC2 Capacity Reservations with a resource group. Resource Groups also added a new request parameter `Group` to replace `GroupName` for all existing operations.
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release adds support for encrypting the contents of your Amazon ECR repository with customer master keys (CMKs) stored in AWS Key Management Service.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adding support to target EC2 On-Demand Capacity Reservations within an AWS Resource Group to launch EC2 instances.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - GuardDuty now supports S3 Data Events as a configurable data source type. This feature expands GuardDuty's monitoring scope to include S3 data plane operations, such as GetObject and PutObject. This data source is optional and can be enabled or disabled at anytime. Accounts already using GuardDuty must first enable the new feature to use it; new accounts will be enabled by default. GuardDuty masters can configure this data source for individual member accounts and GuardDuty masters associated through AWS Organizations can automatically enable the data source in member accounts.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - This release includes a new Kinesis Data Firehose feature that supports data delivery to Https endpoint and to partners. You can now use Kinesis Data Firehose to ingest real-time data and deliver to Https endpoint and partners in a serverless, reliable, and salable manner.
+
 # __1.11.829__ __2020-07-28__
 ## __AWS Elemental MediaLive__
   - ### Features

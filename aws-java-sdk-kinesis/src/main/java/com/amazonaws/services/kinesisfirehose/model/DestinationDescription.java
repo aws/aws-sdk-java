@@ -64,6 +64,12 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private SplunkDestinationDescription splunkDestinationDescription;
+    /**
+     * <p>
+     * Describes the specified HTTP endpoint destination.
+     * </p>
+     */
+    private HttpEndpointDestinationDescription httpEndpointDestinationDescription;
 
     /**
      * <p>
@@ -306,6 +312,46 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Describes the specified HTTP endpoint destination.
+     * </p>
+     * 
+     * @param httpEndpointDestinationDescription
+     *        Describes the specified HTTP endpoint destination.
+     */
+
+    public void setHttpEndpointDestinationDescription(HttpEndpointDestinationDescription httpEndpointDestinationDescription) {
+        this.httpEndpointDestinationDescription = httpEndpointDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the specified HTTP endpoint destination.
+     * </p>
+     * 
+     * @return Describes the specified HTTP endpoint destination.
+     */
+
+    public HttpEndpointDestinationDescription getHttpEndpointDestinationDescription() {
+        return this.httpEndpointDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * Describes the specified HTTP endpoint destination.
+     * </p>
+     * 
+     * @param httpEndpointDestinationDescription
+     *        Describes the specified HTTP endpoint destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationDescription withHttpEndpointDestinationDescription(HttpEndpointDestinationDescription httpEndpointDestinationDescription) {
+        setHttpEndpointDestinationDescription(httpEndpointDestinationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +374,9 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         if (getElasticsearchDestinationDescription() != null)
             sb.append("ElasticsearchDestinationDescription: ").append(getElasticsearchDestinationDescription()).append(",");
         if (getSplunkDestinationDescription() != null)
-            sb.append("SplunkDestinationDescription: ").append(getSplunkDestinationDescription());
+            sb.append("SplunkDestinationDescription: ").append(getSplunkDestinationDescription()).append(",");
+        if (getHttpEndpointDestinationDescription() != null)
+            sb.append("HttpEndpointDestinationDescription: ").append(getHttpEndpointDestinationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +418,11 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getSplunkDestinationDescription() != null && other.getSplunkDestinationDescription().equals(this.getSplunkDestinationDescription()) == false)
             return false;
+        if (other.getHttpEndpointDestinationDescription() == null ^ this.getHttpEndpointDestinationDescription() == null)
+            return false;
+        if (other.getHttpEndpointDestinationDescription() != null
+                && other.getHttpEndpointDestinationDescription().equals(this.getHttpEndpointDestinationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -384,6 +437,7 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getRedshiftDestinationDescription() == null) ? 0 : getRedshiftDestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationDescription() == null) ? 0 : getElasticsearchDestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getSplunkDestinationDescription() == null) ? 0 : getSplunkDestinationDescription().hashCode());
+        hashCode = prime * hashCode + ((getHttpEndpointDestinationDescription() == null) ? 0 : getHttpEndpointDestinationDescription().hashCode());
         return hashCode;
     }
 

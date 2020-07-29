@@ -1037,6 +1037,37 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
+     * Describes which data sources are enabled for the member account's detector.
+     * </p>
+     * 
+     * @param getMemberDetectorsRequest
+     * @return A Java Future containing the result of the GetMemberDetectors operation returned by the service.
+     * @sample AmazonGuardDutyAsync.GetMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMemberDetectorsResult> getMemberDetectorsAsync(GetMemberDetectorsRequest getMemberDetectorsRequest);
+
+    /**
+     * <p>
+     * Describes which data sources are enabled for the member account's detector.
+     * </p>
+     * 
+     * @param getMemberDetectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMemberDetectors operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.GetMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetMemberDetectors" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMemberDetectorsResult> getMemberDetectorsAsync(GetMemberDetectorsRequest getMemberDetectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMemberDetectorsRequest, GetMemberDetectorsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the account IDs.
      * </p>
      * 
@@ -1291,7 +1322,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about associated member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1304,7 +1335,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current GuardDuty master account.
+     * Lists details about associated member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1738,6 +1769,37 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      */
     java.util.concurrent.Future<UpdateIPSetResult> updateIPSetAsync(UpdateIPSetRequest updateIPSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIPSetRequest, UpdateIPSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Contains information on member accounts to be updated.
+     * </p>
+     * 
+     * @param updateMemberDetectorsRequest
+     * @return A Java Future containing the result of the UpdateMemberDetectors operation returned by the service.
+     * @sample AmazonGuardDutyAsync.UpdateMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMemberDetectorsResult> updateMemberDetectorsAsync(UpdateMemberDetectorsRequest updateMemberDetectorsRequest);
+
+    /**
+     * <p>
+     * Contains information on member accounts to be updated.
+     * </p>
+     * 
+     * @param updateMemberDetectorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMemberDetectors operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.UpdateMemberDetectors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateMemberDetectors"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMemberDetectorsResult> updateMemberDetectorsAsync(UpdateMemberDetectorsRequest updateMemberDetectorsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMemberDetectorsRequest, UpdateMemberDetectorsResult> asyncHandler);
 
     /**
      * <p>

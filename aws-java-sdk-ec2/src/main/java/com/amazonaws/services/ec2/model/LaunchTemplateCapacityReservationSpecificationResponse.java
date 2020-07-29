@@ -49,7 +49,7 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
     private String capacityReservationPreference;
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      */
     private CapacityReservationTargetResponse capacityReservationTarget;
@@ -223,11 +223,11 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public void setCapacityReservationTarget(CapacityReservationTargetResponse capacityReservationTarget) {
@@ -236,10 +236,10 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
-     * @return Information about the target Capacity Reservation.
+     * @return Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public CapacityReservationTargetResponse getCapacityReservationTarget() {
@@ -248,11 +248,11 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

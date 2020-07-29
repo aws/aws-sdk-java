@@ -30,7 +30,7 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
      * namespace.
      * </p>
      */
@@ -44,12 +44,12 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
      * namespace.
      * </p>
      * 
      * @param dnsProperties
-     *        A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you
+     *        A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you
      *        create a namespace.
      */
 
@@ -59,11 +59,11 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
      * namespace.
      * </p>
      * 
-     * @return A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you
+     * @return A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you
      *         create a namespace.
      */
 
@@ -73,12 +73,12 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a
      * namespace.
      * </p>
      * 
      * @param dnsProperties
-     *        A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you
+     *        A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you
      *        create a namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

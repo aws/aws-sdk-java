@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The underlying resource query of a resource group. Resources that match query results are part of the group.
+ * A mapping of a query attached to a resource group that determines the AWS resources that are members of the group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/GroupQuery" target="_top">AWS API
@@ -30,24 +30,24 @@ public class GroupQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a resource group that is associated with a specific resource query.
+     * The name of the resource group that is associated with the specified resource query.
      * </p>
      */
     private String groupName;
     /**
      * <p>
-     * The resource query which determines which AWS resources are members of the associated resource group.
+     * The resource query that determines which AWS resources are members of the associated resource group.
      * </p>
      */
     private ResourceQuery resourceQuery;
 
     /**
      * <p>
-     * The name of a resource group that is associated with a specific resource query.
+     * The name of the resource group that is associated with the specified resource query.
      * </p>
      * 
      * @param groupName
-     *        The name of a resource group that is associated with a specific resource query.
+     *        The name of the resource group that is associated with the specified resource query.
      */
 
     public void setGroupName(String groupName) {
@@ -56,10 +56,10 @@ public class GroupQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a resource group that is associated with a specific resource query.
+     * The name of the resource group that is associated with the specified resource query.
      * </p>
      * 
-     * @return The name of a resource group that is associated with a specific resource query.
+     * @return The name of the resource group that is associated with the specified resource query.
      */
 
     public String getGroupName() {
@@ -68,11 +68,11 @@ public class GroupQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a resource group that is associated with a specific resource query.
+     * The name of the resource group that is associated with the specified resource query.
      * </p>
      * 
      * @param groupName
-     *        The name of a resource group that is associated with a specific resource query.
+     *        The name of the resource group that is associated with the specified resource query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class GroupQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource query which determines which AWS resources are members of the associated resource group.
+     * The resource query that determines which AWS resources are members of the associated resource group.
      * </p>
      * 
      * @param resourceQuery
-     *        The resource query which determines which AWS resources are members of the associated resource group.
+     *        The resource query that determines which AWS resources are members of the associated resource group.
      */
 
     public void setResourceQuery(ResourceQuery resourceQuery) {
@@ -96,10 +96,10 @@ public class GroupQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource query which determines which AWS resources are members of the associated resource group.
+     * The resource query that determines which AWS resources are members of the associated resource group.
      * </p>
      * 
-     * @return The resource query which determines which AWS resources are members of the associated resource group.
+     * @return The resource query that determines which AWS resources are members of the associated resource group.
      */
 
     public ResourceQuery getResourceQuery() {
@@ -108,11 +108,11 @@ public class GroupQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource query which determines which AWS resources are members of the associated resource group.
+     * The resource query that determines which AWS resources are members of the associated resource group.
      * </p>
      * 
      * @param resourceQuery
-     *        The resource query which determines which AWS resources are members of the associated resource group.
+     *        The resource query that determines which AWS resources are members of the associated resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

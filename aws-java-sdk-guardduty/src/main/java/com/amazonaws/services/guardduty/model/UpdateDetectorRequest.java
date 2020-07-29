@@ -43,6 +43,12 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String findingPublishingFrequency;
+    /**
+     * <p>
+     * An object that describes which data sources will be updated.
+     * </p>
+     */
+    private DataSourceConfigurations dataSources;
 
     /**
      * <p>
@@ -196,6 +202,46 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * An object that describes which data sources will be updated.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources will be updated.
+     */
+
+    public void setDataSources(DataSourceConfigurations dataSources) {
+        this.dataSources = dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources will be updated.
+     * </p>
+     * 
+     * @return An object that describes which data sources will be updated.
+     */
+
+    public DataSourceConfigurations getDataSources() {
+        return this.dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources will be updated.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources will be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDetectorRequest withDataSources(DataSourceConfigurations dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +258,9 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getEnable() != null)
             sb.append("Enable: ").append(getEnable()).append(",");
         if (getFindingPublishingFrequency() != null)
-            sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency());
+            sb.append("FindingPublishingFrequency: ").append(getFindingPublishingFrequency()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +287,10 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getFindingPublishingFrequency() != null && other.getFindingPublishingFrequency().equals(this.getFindingPublishingFrequency()) == false)
             return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +302,7 @@ public class UpdateDetectorRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getEnable() == null) ? 0 : getEnable().hashCode());
         hashCode = prime * hashCode + ((getFindingPublishingFrequency() == null) ? 0 : getFindingPublishingFrequency().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         return hashCode;
     }
 

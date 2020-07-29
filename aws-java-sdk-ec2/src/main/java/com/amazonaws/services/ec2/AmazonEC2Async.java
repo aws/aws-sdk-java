@@ -14348,6 +14348,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Lists the resource groups to which a Capacity Reservation has been added.
+     * </p>
+     * 
+     * @param getGroupsForCapacityReservationRequest
+     * @return A Java Future containing the result of the GetGroupsForCapacityReservation operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetGroupsForCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupsForCapacityReservationResult> getGroupsForCapacityReservationAsync(
+            GetGroupsForCapacityReservationRequest getGroupsForCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Lists the resource groups to which a Capacity Reservation has been added.
+     * </p>
+     * 
+     * @param getGroupsForCapacityReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetGroupsForCapacityReservation operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetGroupsForCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetGroupsForCapacityReservationResult> getGroupsForCapacityReservationAsync(
+            GetGroupsForCapacityReservationRequest getGroupsForCapacityReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetGroupsForCapacityReservationRequest, GetGroupsForCapacityReservationResult> asyncHandler);
+
+    /**
+     * <p>
      * Preview a reservation purchase with configurations that match those of your Dedicated Host. You must have active
      * Dedicated Hosts in your account before you purchase a reservation.
      * </p>

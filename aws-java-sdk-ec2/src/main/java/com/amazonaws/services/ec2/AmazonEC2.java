@@ -6302,6 +6302,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Lists the resource groups to which a Capacity Reservation has been added.
+     * </p>
+     * 
+     * @param getGroupsForCapacityReservationRequest
+     * @return Result of the GetGroupsForCapacityReservation operation returned by the service.
+     * @sample AmazonEC2.GetGroupsForCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetGroupsForCapacityReservationResult getGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest getGroupsForCapacityReservationRequest);
+
+    /**
+     * <p>
      * Preview a reservation purchase with configurations that match those of your Dedicated Host. You must have active
      * Dedicated Hosts in your account before you purchase a reservation.
      * </p>

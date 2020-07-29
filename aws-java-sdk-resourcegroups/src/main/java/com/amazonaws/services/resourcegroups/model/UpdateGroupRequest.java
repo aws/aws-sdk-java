@@ -27,53 +27,60 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the resource group for which you want to update its description.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      */
+    @Deprecated
     private String groupName;
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The name or the ARN of the resource group to modify.
+     * </p>
+     */
+    private String group;
+    /**
+     * <p>
+     * The new description that you want to update the resource group with. Descriptions can contain letters, numbers,
+     * hyphens, underscores, periods, and spaces.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The name of the resource group for which you want to update its description.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
      * @param groupName
-     *        The name of the resource group for which you want to update its description.
+     *        Don't use this parameter. Use <code>Group</code> instead.
      */
-
+    @Deprecated
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 
     /**
      * <p>
-     * The name of the resource group for which you want to update its description.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
-     * @return The name of the resource group for which you want to update its description.
+     * @return Don't use this parameter. Use <code>Group</code> instead.
      */
-
+    @Deprecated
     public String getGroupName() {
         return this.groupName;
     }
 
     /**
      * <p>
-     * The name of the resource group for which you want to update its description.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
      * @param groupName
-     *        The name of the resource group for which you want to update its description.
+     *        Don't use this parameter. Use <code>Group</code> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateGroupRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -81,13 +88,53 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The name or the ARN of the resource group to modify.
+     * </p>
+     * 
+     * @param group
+     *        The name or the ARN of the resource group to modify.
+     */
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The name or the ARN of the resource group to modify.
+     * </p>
+     * 
+     * @return The name or the ARN of the resource group to modify.
+     */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The name or the ARN of the resource group to modify.
+     * </p>
+     * 
+     * @param group
+     *        The name or the ARN of the resource group to modify.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGroupRequest withGroup(String group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The new description that you want to update the resource group with. Descriptions can contain letters, numbers,
+     * hyphens, underscores, periods, and spaces.
      * </p>
      * 
      * @param description
-     *        The description of the resource group. Descriptions can have a maximum of 511 characters, including
-     *        letters, numbers, hyphens, underscores, punctuation, and spaces.
+     *        The new description that you want to update the resource group with. Descriptions can contain letters,
+     *        numbers, hyphens, underscores, periods, and spaces.
      */
 
     public void setDescription(String description) {
@@ -96,12 +143,12 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The new description that you want to update the resource group with. Descriptions can contain letters, numbers,
+     * hyphens, underscores, periods, and spaces.
      * </p>
      * 
-     * @return The description of the resource group. Descriptions can have a maximum of 511 characters, including
-     *         letters, numbers, hyphens, underscores, punctuation, and spaces.
+     * @return The new description that you want to update the resource group with. Descriptions can contain letters,
+     *         numbers, hyphens, underscores, periods, and spaces.
      */
 
     public String getDescription() {
@@ -110,13 +157,13 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The new description that you want to update the resource group with. Descriptions can contain letters, numbers,
+     * hyphens, underscores, periods, and spaces.
      * </p>
      * 
      * @param description
-     *        The description of the resource group. Descriptions can have a maximum of 511 characters, including
-     *        letters, numbers, hyphens, underscores, punctuation, and spaces.
+     *        The new description that you want to update the resource group with. Descriptions can contain letters,
+     *        numbers, hyphens, underscores, periods, and spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,6 +186,8 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         sb.append("{");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getGroup() != null)
+            sb.append("Group: ").append(getGroup()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription());
         sb.append("}");
@@ -159,6 +208,10 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -172,6 +225,7 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }

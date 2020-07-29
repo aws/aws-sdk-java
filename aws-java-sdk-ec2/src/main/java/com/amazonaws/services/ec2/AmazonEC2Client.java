@@ -18427,6 +18427,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Lists the resource groups to which a Capacity Reservation has been added.
+     * </p>
+     * 
+     * @param getGroupsForCapacityReservationRequest
+     * @return Result of the GetGroupsForCapacityReservation operation returned by the service.
+     * @sample AmazonEC2.GetGroupsForCapacityReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetGroupsForCapacityReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetGroupsForCapacityReservationResult getGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetGroupsForCapacityReservation(request);
+    }
+
+    @SdkInternalApi
+    final GetGroupsForCapacityReservationResult executeGetGroupsForCapacityReservation(
+            GetGroupsForCapacityReservationRequest getGroupsForCapacityReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getGroupsForCapacityReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetGroupsForCapacityReservationRequest> request = null;
+        Response<GetGroupsForCapacityReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetGroupsForCapacityReservationRequestMarshaller().marshall(super.beforeMarshalling(getGroupsForCapacityReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupsForCapacityReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetGroupsForCapacityReservationResult> responseHandler = new StaxResponseHandler<GetGroupsForCapacityReservationResult>(
+                    new GetGroupsForCapacityReservationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Preview a reservation purchase with configurations that match those of your Dedicated Host. You must have active
      * Dedicated Hosts in your account before you purchase a reservation.
      * </p>

@@ -526,6 +526,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
                             StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
                 }
+
+                if (capacityReservationTarget.getCapacityReservationResourceGroupArn() != null) {
+                    request.addParameter("CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn",
+                            StringUtils.fromString(capacityReservationTarget.getCapacityReservationResourceGroupArn()));
+                }
             }
         }
 

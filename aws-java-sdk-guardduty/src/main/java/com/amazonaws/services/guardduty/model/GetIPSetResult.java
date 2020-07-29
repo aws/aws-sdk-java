@@ -37,8 +37,7 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
     private String format;
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The URI of the file that contains the IPSet.
      * </p>
      */
     private String location;
@@ -156,13 +155,11 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The URI of the file that contains the IPSet.
      * </p>
      * 
      * @param location
-     *        The URI of the file that contains the IPSet. For example:
-     *        https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     *        The URI of the file that contains the IPSet.
      */
 
     public void setLocation(String location) {
@@ -171,12 +168,10 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The URI of the file that contains the IPSet.
      * </p>
      * 
-     * @return The URI of the file that contains the IPSet. For example:
-     *         https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * @return The URI of the file that contains the IPSet.
      */
 
     public String getLocation() {
@@ -185,13 +180,11 @@ public class GetIPSetResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * The URI of the file that contains the IPSet. For example:
-     * https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     * The URI of the file that contains the IPSet.
      * </p>
      * 
      * @param location
-     *        The URI of the file that contains the IPSet. For example:
-     *        https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key.
+     *        The URI of the file that contains the IPSet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

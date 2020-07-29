@@ -48,8 +48,9 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String nextToken;
     /**
      * <p>
-     * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * Specifies what member accounts the response includes based on their relationship status with the master account.
+     * The default value is "true". If set to "false" the response includes all existing member accounts (including
+     * members who haven't been invited yet or have been disassociated).
      * </p>
      */
     private String onlyAssociated;
@@ -194,13 +195,15 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * Specifies what member accounts the response includes based on their relationship status with the master account.
+     * The default value is "true". If set to "false" the response includes all existing member accounts (including
+     * members who haven't been invited yet or have been disassociated).
      * </p>
      * 
      * @param onlyAssociated
-     *        Specifies whether to only return associated members or to return all members (including members who
-     *        haven't been invited yet or have been disassociated).
+     *        Specifies what member accounts the response includes based on their relationship status with the master
+     *        account. The default value is "true". If set to "false" the response includes all existing member accounts
+     *        (including members who haven't been invited yet or have been disassociated).
      */
 
     public void setOnlyAssociated(String onlyAssociated) {
@@ -209,12 +212,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * Specifies what member accounts the response includes based on their relationship status with the master account.
+     * The default value is "true". If set to "false" the response includes all existing member accounts (including
+     * members who haven't been invited yet or have been disassociated).
      * </p>
      * 
-     * @return Specifies whether to only return associated members or to return all members (including members who
-     *         haven't been invited yet or have been disassociated).
+     * @return Specifies what member accounts the response includes based on their relationship status with the master
+     *         account. The default value is "true". If set to "false" the response includes all existing member
+     *         accounts (including members who haven't been invited yet or have been disassociated).
      */
 
     public String getOnlyAssociated() {
@@ -223,13 +228,15 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * Specifies what member accounts the response includes based on their relationship status with the master account.
+     * The default value is "true". If set to "false" the response includes all existing member accounts (including
+     * members who haven't been invited yet or have been disassociated).
      * </p>
      * 
      * @param onlyAssociated
-     *        Specifies whether to only return associated members or to return all members (including members who
-     *        haven't been invited yet or have been disassociated).
+     *        Specifies what member accounts the response includes based on their relationship status with the master
+     *        account. The default value is "true". If set to "false" the response includes all existing member accounts
+     *        (including members who haven't been invited yet or have been disassociated).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

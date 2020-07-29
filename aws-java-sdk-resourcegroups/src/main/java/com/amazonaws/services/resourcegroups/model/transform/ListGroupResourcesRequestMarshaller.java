@@ -28,14 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListGroupResourcesRequestMarshaller {
 
-    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+    private static final MarshallingInfo<String> GROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("GroupName").build();
+    private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Group").build();
     private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Filters").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
-    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("NextToken").build();
 
     private static final ListGroupResourcesRequestMarshaller instance = new ListGroupResourcesRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class ListGroupResourcesRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listGroupResourcesRequest.getGroupName(), GROUPNAME_BINDING);
+            protocolMarshaller.marshall(listGroupResourcesRequest.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(listGroupResourcesRequest.getFilters(), FILTERS_BINDING);
             protocolMarshaller.marshall(listGroupResourcesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listGroupResourcesRequest.getNextToken(), NEXTTOKEN_BINDING);

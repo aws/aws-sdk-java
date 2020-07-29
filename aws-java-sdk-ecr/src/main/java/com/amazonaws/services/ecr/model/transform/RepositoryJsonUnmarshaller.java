@@ -76,6 +76,10 @@ public class RepositoryJsonUnmarshaller implements Unmarshaller<Repository, Json
                     context.nextToken();
                     repository.setImageScanningConfiguration(ImageScanningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("encryptionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    repository.setEncryptionConfiguration(EncryptionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

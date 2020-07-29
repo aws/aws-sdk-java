@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum GroupFilterName {
 
-    ResourceType("resource-type");
+    ResourceType("resource-type"),
+    ConfigurationType("configuration-type");
 
     private String value;
 

@@ -75,7 +75,8 @@
         {"shape":"InvalidLayerException"},
         {"shape":"LayerPartTooSmallException"},
         {"shape":"LayerAlreadyExistsException"},
-        {"shape":"EmptyUploadException"}
+        {"shape":"EmptyUploadException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Informs Amazon ECR that the image layer upload has completed for a specified registry, repository name, and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p> <p>When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to verify that the upload has completed.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -93,7 +94,8 @@
         {"shape":"InvalidTagParameterException"},
         {"shape":"TooManyTagsException"},
         {"shape":"RepositoryAlreadyExistsException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Creates a repository. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html\">Amazon ECR Repositories</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
     },
@@ -125,7 +127,8 @@
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
         {"shape":"RepositoryNotFoundException"},
-        {"shape":"RepositoryNotEmptyException"}
+        {"shape":"RepositoryNotEmptyException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Deletes a repository. If the repository contains images, you must either delete all images in the repository or use the <code>force</code> option to delete the repository.</p>"
     },
@@ -283,7 +286,8 @@
       "errors":[
         {"shape":"ServerException"},
         {"shape":"InvalidParameterException"},
-        {"shape":"RepositoryNotFoundException"}
+        {"shape":"RepositoryNotFoundException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Notifies Amazon ECR that you intend to upload an image layer.</p> <p>When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not already been uploaded. Whether or not an image layer has been uploaded is determined by the BatchCheckLayerAvailability API action.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -334,7 +338,8 @@
         {"shape":"ReferencedImagesNotFoundException"},
         {"shape":"LimitExceededException"},
         {"shape":"ImageTagAlreadyExistsException"},
-        {"shape":"ImageDigestDoesNotMatchException"}
+        {"shape":"ImageDigestDoesNotMatchException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Creates or updates the image manifest and tags associated with an image.</p> <p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called once to create or update the image manifest and the tags associated with the image.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     },
@@ -481,7 +486,8 @@
         {"shape":"InvalidLayerPartException"},
         {"shape":"RepositoryNotFoundException"},
         {"shape":"UploadNotFoundException"},
-        {"shape":"LimitExceededException"}
+        {"shape":"LimitExceededException"},
+        {"shape":"KmsException"}
       ],
       "documentation":"<p>Uploads an image layer part to Amazon ECR.</p> <p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each new image layer part.</p> <note> <p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling and pushing images. In most cases, you should use the <code>docker</code> CLI to pull, tag, and push images.</p> </note>"
     }
@@ -728,7 +734,11 @@
         },
         "imageScanningConfiguration":{
           "shape":"ImageScanningConfiguration",
-          "documentation":"<p>The image scanning configuration for the repository. This setting determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>"
+          "documentation":"<p>The image scanning configuration for the repository. This determines whether images are scanned for known vulnerabilities after being pushed to the repository.</p>"
+        },
+        "encryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>"
         }
       }
     },
@@ -984,6 +994,28 @@
       },
       "documentation":"<p>The specified layer upload does not contain any layer parts.</p>",
       "exception":true
+    },
+    "EncryptionConfiguration":{
+      "type":"structure",
+      "required":["encryptionType"],
+      "members":{
+        "encryptionType":{
+          "shape":"EncryptionType",
+          "documentation":"<p>The encryption type to use.</p> <p>If you use the <code>KMS</code> encryption type, the contents of the repository will be encrypted using server-side encryption with customer master keys (CMKs) stored in AWS KMS. When you use AWS KMS to encrypt your data, you can either use the default AWS managed CMK for Amazon ECR, or specify your own CMK, which you already created. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html\">Protecting Data Using Server-Side Encryption with CMKs Stored in AWS Key Management Service (SSE-KMS)</a> in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p> <p>If you use the <code>AES256</code> encryption type, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts the images in the repository using an AES-256 encryption algorithm. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html\">Protecting Data Using Server-Side Encryption with Amazon S3-Managed Encryption Keys (SSE-S3)</a> in the <i>Amazon Simple Storage Service Console Developer Guide.</i>.</p>"
+        },
+        "kmsKey":{
+          "shape":"KmsKey",
+          "documentation":"<p>If you use the <code>KMS</code> encryption type, specify the CMK to use for encryption. The alias, key ID, or full ARN of the CMK can be specified. The key must exist in the same Region as the repository. If no key is specified, the default AWS managed CMK for Amazon ECR will be used.</p>"
+        }
+      },
+      "documentation":"<p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p> <p>By default, when no encryption configuration is set or the <code>AES256</code> encryption type is used, Amazon ECR uses server-side encryption with Amazon S3-managed encryption keys which encrypts your data at rest using an AES-256 encryption algorithm. This does not require any action on your part.</p> <p>For more control over the encryption of the contents of your repository, you can use server-side encryption with customer master keys (CMKs) stored in AWS Key Management Service (AWS KMS) to encrypt your images. For more information, see <a href=\"https://docs.aws.amazon.com/AmazonECR/latest/userguide/encryption-at-rest.html\">Amazon ECR encryption at rest</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>"
+    },
+    "EncryptionType":{
+      "type":"string",
+      "enum":[
+        "AES256",
+        "KMS"
+      ]
     },
     "EvaluationTimestamp":{"type":"timestamp"},
     "ExceptionMessage":{"type":"string"},
@@ -1316,7 +1348,8 @@
         "ImageTagDoesNotMatchDigest",
         "ImageNotFound",
         "MissingDigestAndTag",
-        "ImageReferencedByManifestList"
+        "ImageReferencedByManifestList",
+        "KmsError"
       ]
     },
     "ImageFailureList":{
@@ -1564,6 +1597,24 @@
       "documentation":"<p>An invalid parameter has been specified. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.</p>",
       "exception":true
     },
+    "KmsError":{"type":"string"},
+    "KmsException":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ExceptionMessage"},
+        "kmsError":{
+          "shape":"KmsError",
+          "documentation":"<p>The error code returned by AWS KMS.</p>"
+        }
+      },
+      "documentation":"<p>The operation failed due to a KMS exception.</p>",
+      "exception":true
+    },
+    "KmsKey":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
     "Layer":{
       "type":"structure",
       "members":{
@@ -1710,7 +1761,7 @@
       "members":{
         "message":{"shape":"ExceptionMessage"}
       },
-      "documentation":"<p>The previous lifecycle policy preview request has not completed. Please try again later.</p>",
+      "documentation":"<p>The previous lifecycle policy preview request has not completed. Wait and try again.</p>",
       "exception":true
     },
     "LifecyclePolicyPreviewNotFoundException":{
@@ -1917,7 +1968,7 @@
         },
         "imageTag":{
           "shape":"ImageTag",
-          "documentation":"<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>"
+          "documentation":"<p>The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.</p>"
         },
         "imageDigest":{
           "shape":"ImageDigest",
@@ -2077,7 +2128,7 @@
         },
         "repositoryUri":{
           "shape":"Url",
-          "documentation":"<p>The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.</p>"
+          "documentation":"<p>The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code> operations.</p>"
         },
         "createdAt":{
           "shape":"CreationTimestamp",
@@ -2087,7 +2138,11 @@
           "shape":"ImageTagMutability",
           "documentation":"<p>The tag mutability setting for the repository.</p>"
         },
-        "imageScanningConfiguration":{"shape":"ImageScanningConfiguration"}
+        "imageScanningConfiguration":{"shape":"ImageScanningConfiguration"},
+        "encryptionConfiguration":{
+          "shape":"EncryptionConfiguration",
+          "documentation":"<p>The encryption configuration for the repository. This determines how the contents of your repository are encrypted at rest.</p>"
+        }
       },
       "documentation":"<p>An object representing a repository.</p>"
     },
@@ -2469,11 +2524,11 @@
           "documentation":"<p>The error message associated with the exception.</p>"
         }
       },
-      "documentation":"<p>The upload could not be found, or the specified upload id is not valid for this repository.</p>",
+      "documentation":"<p>The upload could not be found, or the specified upload ID is not valid for this repository.</p>",
       "exception":true
     },
     "Url":{"type":"string"},
     "VulnerabilitySourceUpdateTimestamp":{"type":"timestamp"}
   },
-  "documentation":"<fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.</p>"
+  "documentation":"<fullname>Amazon Elastic Container Registry</fullname> <p>Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Customers can use the familiar Docker CLI, or their preferred client, to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports private repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can access repositories and images.</p>"
 }

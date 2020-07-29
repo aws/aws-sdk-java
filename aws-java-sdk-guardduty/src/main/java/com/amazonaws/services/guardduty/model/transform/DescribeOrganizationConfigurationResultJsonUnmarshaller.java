@@ -56,6 +56,11 @@ public class DescribeOrganizationConfigurationResultJsonUnmarshaller implements 
                     context.nextToken();
                     describeOrganizationConfigurationResult.setMemberAccountLimitReached(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("dataSources", targetDepth)) {
+                    context.nextToken();
+                    describeOrganizationConfigurationResult.setDataSources(OrganizationDataSourceConfigurationsResultJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

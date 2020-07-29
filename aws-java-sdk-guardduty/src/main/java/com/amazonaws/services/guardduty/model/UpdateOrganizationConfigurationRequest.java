@@ -37,6 +37,12 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
      * </p>
      */
     private Boolean autoEnable;
+    /**
+     * <p>
+     * An object describes which data sources will be updated.
+     * </p>
+     */
+    private OrganizationDataSourceConfigurations dataSources;
 
     /**
      * <p>
@@ -131,6 +137,46 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * An object describes which data sources will be updated.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object describes which data sources will be updated.
+     */
+
+    public void setDataSources(OrganizationDataSourceConfigurations dataSources) {
+        this.dataSources = dataSources;
+    }
+
+    /**
+     * <p>
+     * An object describes which data sources will be updated.
+     * </p>
+     * 
+     * @return An object describes which data sources will be updated.
+     */
+
+    public OrganizationDataSourceConfigurations getDataSources() {
+        return this.dataSources;
+    }
+
+    /**
+     * <p>
+     * An object describes which data sources will be updated.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object describes which data sources will be updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOrganizationConfigurationRequest withDataSources(OrganizationDataSourceConfigurations dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -145,7 +191,9 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
         if (getDetectorId() != null)
             sb.append("DetectorId: ").append(getDetectorId()).append(",");
         if (getAutoEnable() != null)
-            sb.append("AutoEnable: ").append(getAutoEnable());
+            sb.append("AutoEnable: ").append(getAutoEnable()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -168,6 +216,10 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
             return false;
         if (other.getAutoEnable() != null && other.getAutoEnable().equals(this.getAutoEnable()) == false)
             return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -178,6 +230,7 @@ public class UpdateOrganizationConfigurationRequest extends com.amazonaws.Amazon
 
         hashCode = prime * hashCode + ((getDetectorId() == null) ? 0 : getDetectorId().hashCode());
         hashCode = prime * hashCode + ((getAutoEnable() == null) ? 0 : getAutoEnable().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         return hashCode;
     }
 

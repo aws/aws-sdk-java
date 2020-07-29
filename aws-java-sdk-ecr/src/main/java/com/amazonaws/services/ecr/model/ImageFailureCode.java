@@ -25,7 +25,8 @@ public enum ImageFailureCode {
     ImageTagDoesNotMatchDigest("ImageTagDoesNotMatchDigest"),
     ImageNotFound("ImageNotFound"),
     MissingDigestAndTag("MissingDigestAndTag"),
-    ImageReferencedByManifestList("ImageReferencedByManifestList");
+    ImageReferencedByManifestList("ImageReferencedByManifestList"),
+    KmsError("KmsError");
 
     private String value;
 

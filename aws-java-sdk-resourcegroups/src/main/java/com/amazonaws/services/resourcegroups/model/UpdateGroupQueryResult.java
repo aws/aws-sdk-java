@@ -25,18 +25,18 @@ public class UpdateGroupQueryResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resource query associated with the resource group after the update.
+     * The updated resource query associated with the resource group after the update.
      * </p>
      */
     private GroupQuery groupQuery;
 
     /**
      * <p>
-     * The resource query associated with the resource group after the update.
+     * The updated resource query associated with the resource group after the update.
      * </p>
      * 
      * @param groupQuery
-     *        The resource query associated with the resource group after the update.
+     *        The updated resource query associated with the resource group after the update.
      */
 
     public void setGroupQuery(GroupQuery groupQuery) {
@@ -45,10 +45,10 @@ public class UpdateGroupQueryResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resource query associated with the resource group after the update.
+     * The updated resource query associated with the resource group after the update.
      * </p>
      * 
-     * @return The resource query associated with the resource group after the update.
+     * @return The updated resource query associated with the resource group after the update.
      */
 
     public GroupQuery getGroupQuery() {
@@ -57,11 +57,11 @@ public class UpdateGroupQueryResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resource query associated with the resource group after the update.
+     * The updated resource query associated with the resource group after the update.
      * </p>
      * 
      * @param groupQuery
-     *        The resource query associated with the resource group after the update.
+     *        The updated resource query associated with the resource group after the update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -55,6 +55,12 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String updatedAt;
     /**
      * <p>
+     * An object that describes which data sources are enabled for the detector.
+     * </p>
+     */
+    private DataSourceConfigurationsResult dataSources;
+    /**
+     * <p>
      * The tags of the detector resource.
      * </p>
      */
@@ -300,6 +306,46 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * An object that describes which data sources are enabled for the detector.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources are enabled for the detector.
+     */
+
+    public void setDataSources(DataSourceConfigurationsResult dataSources) {
+        this.dataSources = dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources are enabled for the detector.
+     * </p>
+     * 
+     * @return An object that describes which data sources are enabled for the detector.
+     */
+
+    public DataSourceConfigurationsResult getDataSources() {
+        return this.dataSources;
+    }
+
+    /**
+     * <p>
+     * An object that describes which data sources are enabled for the detector.
+     * </p>
+     * 
+     * @param dataSources
+     *        An object that describes which data sources are enabled for the detector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDetectorResult withDataSources(DataSourceConfigurationsResult dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags of the detector resource.
      * </p>
      * 
@@ -388,6 +434,8 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("Status: ").append(getStatus()).append(",");
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -424,6 +472,10 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -441,6 +493,7 @@ public class GetDetectorResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getServiceRole() == null) ? 0 : getServiceRole().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

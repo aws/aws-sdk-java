@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request uses an HTTP method which is not allowed for the specified resource.
+ * The request uses an HTTP method that isn't allowed for the specified resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

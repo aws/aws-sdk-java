@@ -25,24 +25,24 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The ARN of the resource from which tags have been removed.
+     * The ARN of the resource group from which tags have been removed.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The keys of tags that have been removed.
+     * The keys of the tags that were removed.
      * </p>
      */
     private java.util.List<String> keys;
 
     /**
      * <p>
-     * The ARN of the resource from which tags have been removed.
+     * The ARN of the resource group from which tags have been removed.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource from which tags have been removed.
+     *        The ARN of the resource group from which tags have been removed.
      */
 
     public void setArn(String arn) {
@@ -51,10 +51,10 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The ARN of the resource from which tags have been removed.
+     * The ARN of the resource group from which tags have been removed.
      * </p>
      * 
-     * @return The ARN of the resource from which tags have been removed.
+     * @return The ARN of the resource group from which tags have been removed.
      */
 
     public String getArn() {
@@ -63,11 +63,11 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The ARN of the resource from which tags have been removed.
+     * The ARN of the resource group from which tags have been removed.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource from which tags have been removed.
+     *        The ARN of the resource group from which tags have been removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The keys of tags that have been removed.
+     * The keys of the tags that were removed.
      * </p>
      * 
-     * @return The keys of tags that have been removed.
+     * @return The keys of the tags that were removed.
      */
 
     public java.util.List<String> getKeys() {
@@ -90,11 +90,11 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The keys of tags that have been removed.
+     * The keys of the tags that were removed.
      * </p>
      * 
      * @param keys
-     *        The keys of tags that have been removed.
+     *        The keys of the tags that were removed.
      */
 
     public void setKeys(java.util.Collection<String> keys) {
@@ -108,7 +108,7 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The keys of tags that have been removed.
+     * The keys of the tags that were removed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +117,7 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
      * </p>
      * 
      * @param keys
-     *        The keys of tags that have been removed.
+     *        The keys of the tags that were removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class UntagResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The keys of tags that have been removed.
+     * The keys of the tags that were removed.
      * </p>
      * 
      * @param keys
-     *        The keys of tags that have been removed.
+     *        The keys of the tags that were removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

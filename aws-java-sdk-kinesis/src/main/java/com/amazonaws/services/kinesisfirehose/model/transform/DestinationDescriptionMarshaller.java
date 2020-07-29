@@ -39,6 +39,8 @@ public class DestinationDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ElasticsearchDestinationDescription").build();
     private static final MarshallingInfo<StructuredPojo> SPLUNKDESTINATIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SplunkDestinationDescription").build();
+    private static final MarshallingInfo<StructuredPojo> HTTPENDPOINTDESTINATIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpEndpointDestinationDescription").build();
 
     private static final DestinationDescriptionMarshaller instance = new DestinationDescriptionMarshaller();
 
@@ -62,6 +64,7 @@ public class DestinationDescriptionMarshaller {
             protocolMarshaller.marshall(destinationDescription.getRedshiftDestinationDescription(), REDSHIFTDESTINATIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(destinationDescription.getElasticsearchDestinationDescription(), ELASTICSEARCHDESTINATIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(destinationDescription.getSplunkDestinationDescription(), SPLUNKDESTINATIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(destinationDescription.getHttpEndpointDestinationDescription(), HTTPENDPOINTDESTINATIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

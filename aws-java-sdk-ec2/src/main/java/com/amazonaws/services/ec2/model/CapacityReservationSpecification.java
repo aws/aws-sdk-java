@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  * Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand
  * Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type,
  * platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a
- * specific Capacity Reservation.
+ * specific Capacity Reservation or a Capacity Reservation group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationSpecification"
@@ -51,14 +51,11 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
-     * </p>
      */
     private String capacityReservationPreference;
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      */
     private CapacityReservationTarget capacityReservationTarget;
@@ -81,9 +78,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
-     * </p>
      * 
      * @param capacityReservationPreference
      *        Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -100,9 +94,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *        instance runs as an On-Demand Instance.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @see CapacityReservationPreference
      */
 
@@ -128,9 +119,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
-     * </p>
      * 
      * @return Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
      *         <ul>
@@ -146,9 +134,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *         instance runs as an On-Demand Instance.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @see CapacityReservationPreference
      */
 
@@ -174,9 +159,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
-     * </p>
      * 
      * @param capacityReservationPreference
      *        Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -193,9 +175,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *        instance runs as an On-Demand Instance.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityReservationPreference
      */
@@ -223,9 +202,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
-     * </p>
      * 
      * @param capacityReservationPreference
      *        Indicates the instance's Capacity Reservation preferences. Possible preferences include:</p>
@@ -242,9 +218,6 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
      *        instance runs as an On-Demand Instance.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        When <code>CapacityReservationPreference</code> is not specified, it defaults to <code>open</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityReservationPreference
      */
@@ -256,11 +229,11 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public void setCapacityReservationTarget(CapacityReservationTarget capacityReservationTarget) {
@@ -269,10 +242,10 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
-     * @return Information about the target Capacity Reservation.
+     * @return Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public CapacityReservationTarget getCapacityReservationTarget() {
@@ -281,11 +254,11 @@ public class CapacityReservationSpecification implements Serializable, Cloneable
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

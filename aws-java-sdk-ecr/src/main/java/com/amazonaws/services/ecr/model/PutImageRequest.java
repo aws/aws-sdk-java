@@ -53,7 +53,7 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      */
     private String imageTag;
@@ -239,12 +239,12 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      * 
      * @param imageTag
      *        The tag to associate with the image. This parameter is required for images that use the Docker Image
-     *        Manifest V2 Schema 2 or OCI formats.
+     *        Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
      */
 
     public void setImageTag(String imageTag) {
@@ -254,11 +254,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      * 
      * @return The tag to associate with the image. This parameter is required for images that use the Docker Image
-     *         Manifest V2 Schema 2 or OCI formats.
+     *         Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
      */
 
     public String getImageTag() {
@@ -268,12 +268,12 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      * 
      * @param imageTag
      *        The tag to associate with the image. This parameter is required for images that use the Docker Image
-     *        Manifest V2 Schema 2 or OCI formats.
+     *        Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
