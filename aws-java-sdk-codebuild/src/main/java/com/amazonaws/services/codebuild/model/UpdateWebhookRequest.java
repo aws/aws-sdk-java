@@ -58,6 +58,12 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<java.util.List<WebhookFilter>> filterGroups;
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     */
+    private String buildType;
 
     /**
      * <p>
@@ -314,6 +320,65 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @param buildType
+     *        Specifies the type of build this webhook will trigger.
+     * @see WebhookBuildType
+     */
+
+    public void setBuildType(String buildType) {
+        this.buildType = buildType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @return Specifies the type of build this webhook will trigger.
+     * @see WebhookBuildType
+     */
+
+    public String getBuildType() {
+        return this.buildType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @param buildType
+     *        Specifies the type of build this webhook will trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WebhookBuildType
+     */
+
+    public UpdateWebhookRequest withBuildType(String buildType) {
+        setBuildType(buildType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @param buildType
+     *        Specifies the type of build this webhook will trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WebhookBuildType
+     */
+
+    public UpdateWebhookRequest withBuildType(WebhookBuildType buildType) {
+        this.buildType = buildType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -332,7 +397,9 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getRotateSecret() != null)
             sb.append("RotateSecret: ").append(getRotateSecret()).append(",");
         if (getFilterGroups() != null)
-            sb.append("FilterGroups: ").append(getFilterGroups());
+            sb.append("FilterGroups: ").append(getFilterGroups()).append(",");
+        if (getBuildType() != null)
+            sb.append("BuildType: ").append(getBuildType());
         sb.append("}");
         return sb.toString();
     }
@@ -363,6 +430,10 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getFilterGroups() != null && other.getFilterGroups().equals(this.getFilterGroups()) == false)
             return false;
+        if (other.getBuildType() == null ^ this.getBuildType() == null)
+            return false;
+        if (other.getBuildType() != null && other.getBuildType().equals(this.getBuildType()) == false)
+            return false;
         return true;
     }
 
@@ -375,6 +446,7 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getBranchFilter() == null) ? 0 : getBranchFilter().hashCode());
         hashCode = prime * hashCode + ((getRotateSecret() == null) ? 0 : getRotateSecret().hashCode());
         hashCode = prime * hashCode + ((getFilterGroups() == null) ? 0 : getFilterGroups().hashCode());
+        hashCode = prime * hashCode + ((getBuildType() == null) ? 0 : getBuildType().hashCode());
         return hashCode;
     }
 

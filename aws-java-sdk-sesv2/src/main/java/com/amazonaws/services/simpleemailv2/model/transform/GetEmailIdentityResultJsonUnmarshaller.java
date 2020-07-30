@@ -68,6 +68,11 @@ public class GetEmailIdentityResultJsonUnmarshaller implements Unmarshaller<GetE
                     context.nextToken();
                     getEmailIdentityResult.setMailFromAttributes(MailFromAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Policies", targetDepth)) {
+                    context.nextToken();
+                    getEmailIdentityResult.setPolicies(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     getEmailIdentityResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())

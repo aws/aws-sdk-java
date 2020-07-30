@@ -130,6 +130,39 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Creates a new custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createCustomVerificationEmailTemplateRequest
+     *        Represents a request to create a custom verification email template.
+     * @return Result of the CreateCustomVerificationEmailTemplate operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @sample AmazonSimpleEmailServiceV2.CreateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCustomVerificationEmailTemplateResult createCustomVerificationEmailTemplate(
+            CreateCustomVerificationEmailTemplateRequest createCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
      * Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are
      * associated with your AWS account. You can associate a pool with a configuration set. When you send an email that
      * uses that configuration set, the message is sent from one of the addresses in the associated pool.
@@ -243,6 +276,78 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Creates the specified sending authorization policy for the given identity (an email address or a domain).
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createEmailIdentityPolicyRequest
+     *        Represents a request to create a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return Result of the CreateEmailIdentityPolicy operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.CreateEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateEmailIdentityPolicyResult createEmailIdentityPolicy(CreateEmailIdentityPolicyRequest createEmailIdentityPolicyRequest);
+
+    /**
+     * <p>
+     * Creates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createEmailTemplateRequest
+     *        Represents a request to create an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the CreateEmailTemplate operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @sample AmazonSimpleEmailServiceV2.CreateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateEmailTemplateResult createEmailTemplate(CreateEmailTemplateRequest createEmailTemplateRequest);
+
+    /**
+     * <p>
      * Delete an existing configuration set.
      * </p>
      * <p>
@@ -297,6 +402,35 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Deletes an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteCustomVerificationEmailTemplateRequest
+     *        Represents a request to delete an existing custom verification email template.
+     * @return Result of the DeleteCustomVerificationEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.DeleteCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteCustomVerificationEmailTemplateResult deleteCustomVerificationEmailTemplate(
+            DeleteCustomVerificationEmailTemplateRequest deleteCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
      * Delete a dedicated IP pool.
      * </p>
      * 
@@ -340,6 +474,70 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     DeleteEmailIdentityResult deleteEmailIdentity(DeleteEmailIdentityRequest deleteEmailIdentityRequest);
+
+    /**
+     * <p>
+     * Deletes the specified sending authorization policy for the given identity (an email address or a domain). This
+     * API returns successfully even if a policy with the specified name does not exist.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteEmailIdentityPolicyRequest
+     *        Represents a request to delete a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return Result of the DeleteEmailIdentityPolicy operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.DeleteEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteEmailIdentityPolicyResult deleteEmailIdentityPolicy(DeleteEmailIdentityPolicyRequest deleteEmailIdentityPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes an email template.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteEmailTemplateRequest
+     *        Represents a request to delete an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the DeleteEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.DeleteEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteEmailTemplateResult deleteEmailTemplate(DeleteEmailTemplateRequest deleteEmailTemplateRequest);
 
     /**
      * <p>
@@ -452,6 +650,35 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     GetConfigurationSetEventDestinationsResult getConfigurationSetEventDestinations(
             GetConfigurationSetEventDestinationsRequest getConfigurationSetEventDestinationsRequest);
+
+    /**
+     * <p>
+     * Returns the custom email verification template for the template name you specify.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getCustomVerificationEmailTemplateRequest
+     *        Represents a request to retrieve an existing custom verification email template.
+     * @return Result of the GetCustomVerificationEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetCustomVerificationEmailTemplateResult getCustomVerificationEmailTemplate(
+            GetCustomVerificationEmailTemplateRequest getCustomVerificationEmailTemplateRequest);
 
     /**
      * <p>
@@ -593,8 +820,8 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
-     * Provides information about a specific identity, including the identity's verification status, its DKIM
-     * authentication status, and its custom Mail-From settings.
+     * Provides information about a specific identity, including the identity's verification status, sending
+     * authorization policies, its DKIM authentication status, and its custom Mail-From settings.
      * </p>
      * 
      * @param getEmailIdentityRequest
@@ -611,6 +838,67 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     GetEmailIdentityResult getEmailIdentity(GetEmailIdentityRequest getEmailIdentityRequest);
+
+    /**
+     * <p>
+     * Returns the requested sending authorization policies for the given identity (an email address or a domain). The
+     * policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a
+     * time.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getEmailIdentityPoliciesRequest
+     *        A request to return the policies of an email identity.
+     * @return Result of the GetEmailIdentityPolicies operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetEmailIdentityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailIdentityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetEmailIdentityPoliciesResult getEmailIdentityPolicies(GetEmailIdentityPoliciesRequest getEmailIdentityPoliciesRequest);
+
+    /**
+     * <p>
+     * Displays the template object (which includes the subject line, HTML part and text part) for the template you
+     * specify.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getEmailTemplateRequest
+     *        Represents a request to display the template object (which includes the subject line, HTML part and text
+     *        part) for the template you specify.
+     * @return Result of the GetEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.GetEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetEmailTemplateResult getEmailTemplate(GetEmailTemplateRequest getEmailTemplateRequest);
 
     /**
      * <p>
@@ -654,6 +942,33 @@ public interface AmazonSimpleEmailServiceV2 {
      *      API Documentation</a>
      */
     ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
+     * <p>
+     * Lists the existing custom verification email templates for your account in the current AWS Region.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listCustomVerificationEmailTemplatesRequest
+     *        Represents a request to list the existing custom verification email templates for your account.
+     * @return Result of the ListCustomVerificationEmailTemplates operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.ListCustomVerificationEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListCustomVerificationEmailTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCustomVerificationEmailTemplatesResult listCustomVerificationEmailTemplates(
+            ListCustomVerificationEmailTemplatesRequest listCustomVerificationEmailTemplatesRequest);
 
     /**
      * <p>
@@ -742,6 +1057,30 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Lists the email templates present in your Amazon SES account in the current AWS Region.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listEmailTemplatesRequest
+     *        Represents a request to list the email templates present in your Amazon SES account in the current AWS
+     *        Region. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the ListEmailTemplates operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.ListEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListEmailTemplatesResult listEmailTemplates(ListEmailTemplatesRequest listEmailTemplatesRequest);
+
+    /**
+     * <p>
      * Retrieves a list of email addresses that are on the suppression list for your account.
      * </p>
      * 
@@ -800,6 +1139,26 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     PutAccountDedicatedIpWarmupAttributesResult putAccountDedicatedIpWarmupAttributes(
             PutAccountDedicatedIpWarmupAttributesRequest putAccountDedicatedIpWarmupAttributesRequest);
+
+    /**
+     * <p>
+     * Update your Amazon SES account details.
+     * </p>
+     * 
+     * @param putAccountDetailsRequest
+     *        A request to submit new account details.
+     * @return Result of the PutAccountDetails operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws ConflictException
+     *         If there is already an ongoing account details update under review.
+     * @sample AmazonSimpleEmailServiceV2.PutAccountDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutAccountDetailsResult putAccountDetails(PutAccountDetailsRequest putAccountDetailsRequest);
 
     /**
      * <p>
@@ -1172,6 +1531,78 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Composes an email message to multiple destinations.
+     * </p>
+     * 
+     * @param sendBulkEmailRequest
+     *        Represents a request to send email messages to multiple destinations using Amazon SES. For more
+     *        information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the SendBulkEmail operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws AccountSuspendedException
+     *         The message can't be sent because the account's ability to send email has been permanently restricted.
+     * @throws SendingPausedException
+     *         The message can't be sent because the account's ability to send email is currently paused.
+     * @throws MessageRejectedException
+     *         The message can't be sent because it contains invalid content.
+     * @throws MailFromDomainNotVerifiedException
+     *         The message can't be sent because the sending domain isn't verified.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.SendBulkEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendBulkEmail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    SendBulkEmailResult sendBulkEmail(SendBulkEmailRequest sendBulkEmailRequest);
+
+    /**
+     * <p>
+     * Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and
+     * attempts to verify it. As a result of executing this operation, a customized verification email is sent to the
+     * specified address.
+     * </p>
+     * <p>
+     * To use this operation, you must first create a custom verification email template. For more information about
+     * creating and using custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param sendCustomVerificationEmailRequest
+     *        Represents a request to send a custom verification email to a specified recipient.
+     * @return Result of the SendCustomVerificationEmail operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws MessageRejectedException
+     *         The message can't be sent because it contains invalid content.
+     * @throws SendingPausedException
+     *         The message can't be sent because the account's ability to send email is currently paused.
+     * @throws MailFromDomainNotVerifiedException
+     *         The message can't be sent because the sending domain isn't verified.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.SendCustomVerificationEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SendCustomVerificationEmailResult sendCustomVerificationEmail(SendCustomVerificationEmailRequest sendCustomVerificationEmailRequest);
+
+    /**
+     * <p>
      * Sends an email message. You can use the Amazon SES API v2 to send two types of messages:
      * </p>
      * <ul>
@@ -1188,10 +1619,18 @@ public interface AmazonSimpleEmailServiceV2 {
      * attachments. The message that you specify has to be a valid MIME message.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Templated</b> – A message that contains personalization tags. When you send this type of email, Amazon SES API
+     * v2 automatically replaces the tags with values that you specify.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendEmailRequest
-     *        A request to send an email message.
+     *        Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES
+     *        Developer Guide</a>.
      * @return Result of the SendEmail operation returned by the service.
      * @throws TooManyRequestsException
      *         Too many requests have been made to the operation.
@@ -1245,6 +1684,30 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param testRenderEmailTemplateRequest
+     *        &gt;Represents a request to create a preview of the MIME content of an email when provided with a template
+     *        and a set of replacement data.
+     * @return Result of the TestRenderEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.TestRenderEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TestRenderEmailTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TestRenderEmailTemplateResult testRenderEmailTemplate(TestRenderEmailTemplateRequest testRenderEmailTemplateRequest);
+
+    /**
+     * <p>
      * Remove one or more tags (keys and values) from a specified resource.
      * </p>
      * 
@@ -1290,6 +1753,102 @@ public interface AmazonSimpleEmailServiceV2 {
      */
     UpdateConfigurationSetEventDestinationResult updateConfigurationSetEventDestination(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest);
+
+    /**
+     * <p>
+     * Updates an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateCustomVerificationEmailTemplateRequest
+     *        Represents a request to update an existing custom verification email template.
+     * @return Result of the UpdateCustomVerificationEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.UpdateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateCustomVerificationEmailTemplateResult updateCustomVerificationEmailTemplate(
+            UpdateCustomVerificationEmailTemplateRequest updateCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the specified sending authorization policy for the given identity (an email address or a domain). This
+     * API returns successfully even if a policy with the specified name does not exist.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateEmailIdentityPolicyRequest
+     *        Represents a request to update a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return Result of the UpdateEmailIdentityPolicy operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.UpdateEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateEmailIdentityPolicyResult updateEmailIdentityPolicy(UpdateEmailIdentityPolicyRequest updateEmailIdentityPolicyRequest);
+
+    /**
+     * <p>
+     * Updates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateEmailTemplateRequest
+     *        Represents a request to update an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Result of the UpdateEmailTemplate operation returned by the service.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.UpdateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateEmailTemplateResult updateEmailTemplate(UpdateEmailTemplateRequest updateEmailTemplateRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

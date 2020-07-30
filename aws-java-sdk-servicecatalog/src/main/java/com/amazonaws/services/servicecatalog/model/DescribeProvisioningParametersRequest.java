@@ -50,23 +50,42 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
     private String acceptLanguage;
     /**
      * <p>
-     * The product identifier.
+     * The product identifier. You must provide the product name or ID, but not both.
      * </p>
      */
     private String productId;
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     */
+    private String productName;
+    /**
+     * <p>
+     * The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      * </p>
      */
     private String provisioningArtifactId;
     /**
      * <p>
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     */
+    private String provisioningArtifactName;
+    /**
+     * <p>
      * The path identifier of the product. This value is optional if the product has a default path, and required if the
-     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the
+     * name or ID, but not both.
      * </p>
      */
     private String pathId;
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     */
+    private String pathName;
 
     /**
      * <p>
@@ -209,11 +228,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The product identifier.
+     * The product identifier. You must provide the product name or ID, but not both.
      * </p>
      * 
      * @param productId
-     *        The product identifier.
+     *        The product identifier. You must provide the product name or ID, but not both.
      */
 
     public void setProductId(String productId) {
@@ -222,10 +241,10 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The product identifier.
+     * The product identifier. You must provide the product name or ID, but not both.
      * </p>
      * 
-     * @return The product identifier.
+     * @return The product identifier. You must provide the product name or ID, but not both.
      */
 
     public String getProductId() {
@@ -234,11 +253,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The product identifier.
+     * The product identifier. You must provide the product name or ID, but not both.
      * </p>
      * 
      * @param productId
-     *        The product identifier.
+     *        The product identifier. You must provide the product name or ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +268,51 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param productName
+     *        The name of the product. You must provide the name or ID, but not both.
+     */
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    /**
+     * <p>
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @return The name of the product. You must provide the name or ID, but not both.
+     */
+
+    public String getProductName() {
+        return this.productName;
+    }
+
+    /**
+     * <p>
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param productName
+     *        The name of the product. You must provide the name or ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersRequest withProductName(String productName) {
+        setProductName(productName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The identifier of the provisioning artifact.
+     *        The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      */
 
     public void setProvisioningArtifactId(String provisioningArtifactId) {
@@ -262,10 +321,10 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      * </p>
      * 
-     * @return The identifier of the provisioning artifact.
+     * @return The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      */
 
     public String getProvisioningArtifactId() {
@@ -274,11 +333,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The identifier of the provisioning artifact.
+     * The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param provisioningArtifactId
-     *        The identifier of the provisioning artifact.
+     *        The identifier of the provisioning artifact. You must provide the name or ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,13 +348,55 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param provisioningArtifactName
+     *        The name of the provisioning artifact. You must provide the name or ID, but not both.
+     */
+
+    public void setProvisioningArtifactName(String provisioningArtifactName) {
+        this.provisioningArtifactName = provisioningArtifactName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @return The name of the provisioning artifact. You must provide the name or ID, but not both.
+     */
+
+    public String getProvisioningArtifactName() {
+        return this.provisioningArtifactName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param provisioningArtifactName
+     *        The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersRequest withProvisioningArtifactName(String provisioningArtifactName) {
+        setProvisioningArtifactName(provisioningArtifactName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The path identifier of the product. This value is optional if the product has a default path, and required if the
-     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the
+     * name or ID, but not both.
      * </p>
      * 
      * @param pathId
      *        The path identifier of the product. This value is optional if the product has a default path, and required
-     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
+     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>. You
+     *        must provide the name or ID, but not both.
      */
 
     public void setPathId(String pathId) {
@@ -305,12 +406,13 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The path identifier of the product. This value is optional if the product has a default path, and required if the
-     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the
+     * name or ID, but not both.
      * </p>
      * 
      * @return The path identifier of the product. This value is optional if the product has a default path, and
      *         required if the product has more than one path. To list the paths for a product, use
-     *         <a>ListLaunchPaths</a>.
+     *         <a>ListLaunchPaths</a>. You must provide the name or ID, but not both.
      */
 
     public String getPathId() {
@@ -320,17 +422,59 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * The path identifier of the product. This value is optional if the product has a default path, and required if the
-     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
+     * product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>. You must provide the
+     * name or ID, but not both.
      * </p>
      * 
      * @param pathId
      *        The path identifier of the product. This value is optional if the product has a default path, and required
-     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>.
+     *        if the product has more than one path. To list the paths for a product, use <a>ListLaunchPaths</a>. You
+     *        must provide the name or ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeProvisioningParametersRequest withPathId(String pathId) {
         setPathId(pathId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param pathName
+     *        The name of the path. You must provide the name or ID, but not both.
+     */
+
+    public void setPathName(String pathName) {
+        this.pathName = pathName;
+    }
+
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @return The name of the path. You must provide the name or ID, but not both.
+     */
+
+    public String getPathName() {
+        return this.pathName;
+    }
+
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param pathName
+     *        The name of the path. You must provide the name or ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersRequest withPathName(String pathName) {
+        setPathName(pathName);
         return this;
     }
 
@@ -350,10 +494,16 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
             sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
         if (getProductId() != null)
             sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getProductName() != null)
+            sb.append("ProductName: ").append(getProductName()).append(",");
         if (getProvisioningArtifactId() != null)
             sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
+        if (getProvisioningArtifactName() != null)
+            sb.append("ProvisioningArtifactName: ").append(getProvisioningArtifactName()).append(",");
         if (getPathId() != null)
-            sb.append("PathId: ").append(getPathId());
+            sb.append("PathId: ").append(getPathId()).append(",");
+        if (getPathName() != null)
+            sb.append("PathName: ").append(getPathName());
         sb.append("}");
         return sb.toString();
     }
@@ -376,13 +526,25 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
+        if (other.getProductName() == null ^ this.getProductName() == null)
+            return false;
+        if (other.getProductName() != null && other.getProductName().equals(this.getProductName()) == false)
+            return false;
         if (other.getProvisioningArtifactId() == null ^ this.getProvisioningArtifactId() == null)
             return false;
         if (other.getProvisioningArtifactId() != null && other.getProvisioningArtifactId().equals(this.getProvisioningArtifactId()) == false)
             return false;
+        if (other.getProvisioningArtifactName() == null ^ this.getProvisioningArtifactName() == null)
+            return false;
+        if (other.getProvisioningArtifactName() != null && other.getProvisioningArtifactName().equals(this.getProvisioningArtifactName()) == false)
+            return false;
         if (other.getPathId() == null ^ this.getPathId() == null)
             return false;
         if (other.getPathId() != null && other.getPathId().equals(this.getPathId()) == false)
+            return false;
+        if (other.getPathName() == null ^ this.getPathName() == null)
+            return false;
+        if (other.getPathName() != null && other.getPathName().equals(this.getPathName()) == false)
             return false;
         return true;
     }
@@ -394,8 +556,11 @@ public class DescribeProvisioningParametersRequest extends com.amazonaws.AmazonW
 
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getProductName() == null) ? 0 : getProductName().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactName() == null) ? 0 : getProvisioningArtifactName().hashCode());
         hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
+        hashCode = prime * hashCode + ((getPathName() == null) ? 0 : getPathName().hashCode());
         return hashCode;
     }
 

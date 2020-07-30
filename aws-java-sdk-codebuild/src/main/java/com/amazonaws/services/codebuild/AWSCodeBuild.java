@@ -309,6 +309,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Retrieves information about one or more batch builds.
+     * </p>
+     * 
+     * @param batchGetBuildBatchesRequest
+     * @return Result of the BatchGetBuildBatches operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchGetBuildBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchGetBuildBatchesResult batchGetBuildBatches(BatchGetBuildBatchesRequest batchGetBuildBatchesRequest);
+
+    /**
+     * <p>
      * Gets information about one or more builds.
      * </p>
      * 
@@ -443,6 +458,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a batch build.
+     * </p>
+     * 
+     * @param deleteBuildBatchRequest
+     * @return Result of the DeleteBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteBuildBatchResult deleteBuildBatch(DeleteBuildBatchRequest deleteBuildBatchRequest);
+
+    /**
+     * <p>
      * Deletes a build project. When you delete a project, its builds are not deleted.
      * </p>
      * 
@@ -546,6 +576,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Retrieves one or more code coverage reports.
+     * </p>
+     * 
+     * @param describeCodeCoveragesRequest
+     * @return Result of the DescribeCodeCoverages operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DescribeCodeCoverages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeCodeCoveragesResult describeCodeCoverages(DescribeCodeCoveragesRequest describeCodeCoveragesRequest);
+
+    /**
+     * <p>
      * Returns a list of details about test cases for a report.
      * </p>
      * 
@@ -615,6 +660,38 @@ public interface AWSCodeBuild {
      *      target="_top">AWS API Documentation</a>
      */
     InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest invalidateProjectCacheRequest);
+
+    /**
+     * <p>
+     * Retrieves the identifiers of your build batches in the current region.
+     * </p>
+     * 
+     * @param listBuildBatchesRequest
+     * @return Result of the ListBuildBatches operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListBuildBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListBuildBatchesResult listBuildBatches(ListBuildBatchesRequest listBuildBatchesRequest);
+
+    /**
+     * <p>
+     * Retrieves the identifiers of the build batches for a specific project.
+     * </p>
+     * 
+     * @param listBuildBatchesForProjectRequest
+     * @return Result of the ListBuildBatchesForProject operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.ListBuildBatchesForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBuildBatchesForProjectResult listBuildBatchesForProject(ListBuildBatchesForProjectRequest listBuildBatchesForProjectRequest);
 
     /**
      * <p>
@@ -760,6 +837,8 @@ public interface AWSCodeBuild {
      * 
      * @param listSourceCredentialsRequest
      * @return Result of the ListSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListSourceCredentials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
      *      target="_top">AWS API Documentation</a>
@@ -785,6 +864,42 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Restarts a build.
+     * </p>
+     * 
+     * @param retryBuildRequest
+     * @return Result of the RetryBuild operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws AccountLimitExceededException
+     *         An AWS service limit was exceeded for the calling AWS account.
+     * @sample AWSCodeBuild.RetryBuild
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RetryBuildResult retryBuild(RetryBuildRequest retryBuildRequest);
+
+    /**
+     * <p>
+     * Restarts a batch build.
+     * </p>
+     * 
+     * @param retryBuildBatchRequest
+     * @return Result of the RetryBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.RetryBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RetryBuildBatchResult retryBuildBatch(RetryBuildBatchRequest retryBuildBatchRequest);
+
+    /**
+     * <p>
      * Starts running a build.
      * </p>
      * 
@@ -804,6 +919,23 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Starts a batch build for a project.
+     * </p>
+     * 
+     * @param startBuildBatchRequest
+     * @return Result of the StartBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.StartBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartBuildBatchResult startBuildBatch(StartBuildBatchRequest startBuildBatchRequest);
+
+    /**
+     * <p>
      * Attempts to stop running a build.
      * </p>
      * 
@@ -818,6 +950,23 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     StopBuildResult stopBuild(StopBuildRequest stopBuildRequest);
+
+    /**
+     * <p>
+     * Stops a running batch build.
+     * </p>
+     * 
+     * @param stopBuildBatchRequest
+     * @return Result of the StopBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.StopBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopBuildBatchResult stopBuildBatch(StopBuildBatchRequest stopBuildBatchRequest);
 
     /**
      * <p>

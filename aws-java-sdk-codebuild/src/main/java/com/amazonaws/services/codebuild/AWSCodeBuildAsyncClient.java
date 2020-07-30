@@ -488,6 +488,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetBuildBatchesResult> batchGetBuildBatchesAsync(BatchGetBuildBatchesRequest request) {
+
+        return batchGetBuildBatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetBuildBatchesResult> batchGetBuildBatchesAsync(final BatchGetBuildBatchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetBuildBatchesRequest, BatchGetBuildBatchesResult> asyncHandler) {
+        final BatchGetBuildBatchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetBuildBatchesResult>() {
+            @Override
+            public BatchGetBuildBatchesResult call() throws Exception {
+                BatchGetBuildBatchesResult result = null;
+
+                try {
+                    result = executeBatchGetBuildBatches(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetBuildsResult> batchGetBuildsAsync(BatchGetBuildsRequest request) {
 
         return batchGetBuildsAsync(request, null);
@@ -719,6 +752,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteBuildBatchResult> deleteBuildBatchAsync(DeleteBuildBatchRequest request) {
+
+        return deleteBuildBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBuildBatchResult> deleteBuildBatchAsync(final DeleteBuildBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBuildBatchRequest, DeleteBuildBatchResult> asyncHandler) {
+        final DeleteBuildBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBuildBatchResult>() {
+            @Override
+            public DeleteBuildBatchResult call() throws Exception {
+                DeleteBuildBatchResult result = null;
+
+                try {
+                    result = executeDeleteBuildBatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest request) {
 
         return deleteProjectAsync(request, null);
@@ -917,6 +983,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeCodeCoveragesResult> describeCodeCoveragesAsync(DescribeCodeCoveragesRequest request) {
+
+        return describeCodeCoveragesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCodeCoveragesResult> describeCodeCoveragesAsync(final DescribeCodeCoveragesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCodeCoveragesRequest, DescribeCodeCoveragesResult> asyncHandler) {
+        final DescribeCodeCoveragesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCodeCoveragesResult>() {
+            @Override
+            public DescribeCodeCoveragesResult call() throws Exception {
+                DescribeCodeCoveragesResult result = null;
+
+                try {
+                    result = executeDescribeCodeCoverages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTestCasesResult> describeTestCasesAsync(DescribeTestCasesRequest request) {
 
         return describeTestCasesAsync(request, null);
@@ -1033,6 +1132,72 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeInvalidateProjectCache(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBuildBatchesResult> listBuildBatchesAsync(ListBuildBatchesRequest request) {
+
+        return listBuildBatchesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBuildBatchesResult> listBuildBatchesAsync(final ListBuildBatchesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBuildBatchesRequest, ListBuildBatchesResult> asyncHandler) {
+        final ListBuildBatchesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBuildBatchesResult>() {
+            @Override
+            public ListBuildBatchesResult call() throws Exception {
+                ListBuildBatchesResult result = null;
+
+                try {
+                    result = executeListBuildBatches(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBuildBatchesForProjectResult> listBuildBatchesForProjectAsync(ListBuildBatchesForProjectRequest request) {
+
+        return listBuildBatchesForProjectAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListBuildBatchesForProjectResult> listBuildBatchesForProjectAsync(final ListBuildBatchesForProjectRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListBuildBatchesForProjectRequest, ListBuildBatchesForProjectResult> asyncHandler) {
+        final ListBuildBatchesForProjectRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListBuildBatchesForProjectResult>() {
+            @Override
+            public ListBuildBatchesForProjectResult call() throws Exception {
+                ListBuildBatchesForProjectResult result = null;
+
+                try {
+                    result = executeListBuildBatchesForProject(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1412,6 +1577,72 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<RetryBuildResult> retryBuildAsync(RetryBuildRequest request) {
+
+        return retryBuildAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryBuildResult> retryBuildAsync(final RetryBuildRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetryBuildRequest, RetryBuildResult> asyncHandler) {
+        final RetryBuildRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RetryBuildResult>() {
+            @Override
+            public RetryBuildResult call() throws Exception {
+                RetryBuildResult result = null;
+
+                try {
+                    result = executeRetryBuild(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryBuildBatchResult> retryBuildBatchAsync(RetryBuildBatchRequest request) {
+
+        return retryBuildBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryBuildBatchResult> retryBuildBatchAsync(final RetryBuildBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RetryBuildBatchRequest, RetryBuildBatchResult> asyncHandler) {
+        final RetryBuildBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RetryBuildBatchResult>() {
+            @Override
+            public RetryBuildBatchResult call() throws Exception {
+                RetryBuildBatchResult result = null;
+
+                try {
+                    result = executeRetryBuildBatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartBuildResult> startBuildAsync(StartBuildRequest request) {
 
         return startBuildAsync(request, null);
@@ -1445,6 +1676,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
     }
 
     @Override
+    public java.util.concurrent.Future<StartBuildBatchResult> startBuildBatchAsync(StartBuildBatchRequest request) {
+
+        return startBuildBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartBuildBatchResult> startBuildBatchAsync(final StartBuildBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartBuildBatchRequest, StartBuildBatchResult> asyncHandler) {
+        final StartBuildBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartBuildBatchResult>() {
+            @Override
+            public StartBuildBatchResult call() throws Exception {
+                StartBuildBatchResult result = null;
+
+                try {
+                    result = executeStartBuildBatch(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopBuildResult> stopBuildAsync(StopBuildRequest request) {
 
         return stopBuildAsync(request, null);
@@ -1462,6 +1726,39 @@ public class AWSCodeBuildAsyncClient extends AWSCodeBuildClient implements AWSCo
 
                 try {
                     result = executeStopBuild(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBuildBatchResult> stopBuildBatchAsync(StopBuildBatchRequest request) {
+
+        return stopBuildBatchAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopBuildBatchResult> stopBuildBatchAsync(final StopBuildBatchRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopBuildBatchRequest, StopBuildBatchResult> asyncHandler) {
+        final StopBuildBatchRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopBuildBatchResult>() {
+            @Override
+            public StopBuildBatchResult call() throws Exception {
+                StopBuildBatchResult result = null;
+
+                try {
+                    result = executeStopBuildBatch(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

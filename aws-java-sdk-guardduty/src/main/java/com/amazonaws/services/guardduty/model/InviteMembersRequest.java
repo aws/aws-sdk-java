@@ -39,14 +39,14 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<String> accountIds;
     /**
      * <p>
-     * A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     * A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      * inviting to GuardDuty as members.
      * </p>
      */
     private Boolean disableEmailNotification;
     /**
      * <p>
-     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
      * </p>
      */
     private String message;
@@ -163,12 +163,12 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     * A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      * inviting to GuardDuty as members.
      * </p>
      * 
      * @param disableEmailNotification
-     *        A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     *        A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      *        inviting to GuardDuty as members.
      */
 
@@ -178,12 +178,12 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     * A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      * inviting to GuardDuty as members.
      * </p>
      * 
-     * @return A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
-     *         inviting to GuardDuty as members.
+     * @return A Boolean value that specifies whether you want to disable email notification to the accounts that you
+     *         are inviting to GuardDuty as members.
      */
 
     public Boolean getDisableEmailNotification() {
@@ -192,12 +192,12 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     * A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      * inviting to GuardDuty as members.
      * </p>
      * 
      * @param disableEmailNotification
-     *        A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     *        A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      *        inviting to GuardDuty as members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -209,12 +209,12 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
+     * A Boolean value that specifies whether you want to disable email notification to the accounts that you are
      * inviting to GuardDuty as members.
      * </p>
      * 
-     * @return A Boolean value that specifies whether you want to disable email notification to the accounts that you’re
-     *         inviting to GuardDuty as members.
+     * @return A Boolean value that specifies whether you want to disable email notification to the accounts that you
+     *         are inviting to GuardDuty as members.
      */
 
     public Boolean isDisableEmailNotification() {
@@ -223,11 +223,11 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
      * </p>
      * 
      * @param message
-     *        The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     *        The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
      */
 
     public void setMessage(String message) {
@@ -236,10 +236,10 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
      * </p>
      * 
-     * @return The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as
+     * @return The invitation message that you want to send to the accounts that you're inviting to GuardDuty as
      *         members.
      */
 
@@ -249,11 +249,11 @@ public class InviteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     * The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
      * </p>
      * 
      * @param message
-     *        The invitation message that you want to send to the accounts that you’re inviting to GuardDuty as members.
+     *        The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,6 +36,8 @@ public class UpdateWebhookRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rotateSecret").build();
     private static final MarshallingInfo<List> FILTERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filterGroups").build();
+    private static final MarshallingInfo<String> BUILDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("buildType").build();
 
     private static final UpdateWebhookRequestMarshaller instance = new UpdateWebhookRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class UpdateWebhookRequestMarshaller {
             protocolMarshaller.marshall(updateWebhookRequest.getBranchFilter(), BRANCHFILTER_BINDING);
             protocolMarshaller.marshall(updateWebhookRequest.getRotateSecret(), ROTATESECRET_BINDING);
             protocolMarshaller.marshall(updateWebhookRequest.getFilterGroups(), FILTERGROUPS_BINDING);
+            protocolMarshaller.marshall(updateWebhookRequest.getBuildType(), BUILDTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

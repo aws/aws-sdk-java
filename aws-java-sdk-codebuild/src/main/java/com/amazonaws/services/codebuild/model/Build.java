@@ -336,6 +336,12 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DebugSession debugSession;
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     */
+    private String buildBatchArn;
 
     /**
      * <p>
@@ -2743,6 +2749,46 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     * 
+     * @param buildBatchArn
+     *        The ARN of the batch build that this build is a member of, if applicable.
+     */
+
+    public void setBuildBatchArn(String buildBatchArn) {
+        this.buildBatchArn = buildBatchArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     * 
+     * @return The ARN of the batch build that this build is a member of, if applicable.
+     */
+
+    public String getBuildBatchArn() {
+        return this.buildBatchArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     * 
+     * @param buildBatchArn
+     *        The ARN of the batch build that this build is a member of, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withBuildBatchArn(String buildBatchArn) {
+        setBuildBatchArn(buildBatchArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2815,7 +2861,9 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (getFileSystemLocations() != null)
             sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
         if (getDebugSession() != null)
-            sb.append("DebugSession: ").append(getDebugSession());
+            sb.append("DebugSession: ").append(getDebugSession()).append(",");
+        if (getBuildBatchArn() != null)
+            sb.append("BuildBatchArn: ").append(getBuildBatchArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2954,6 +3002,10 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDebugSession() != null && other.getDebugSession().equals(this.getDebugSession()) == false)
             return false;
+        if (other.getBuildBatchArn() == null ^ this.getBuildBatchArn() == null)
+            return false;
+        if (other.getBuildBatchArn() != null && other.getBuildBatchArn().equals(this.getBuildBatchArn()) == false)
+            return false;
         return true;
     }
 
@@ -2993,6 +3045,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getReportArns() == null) ? 0 : getReportArns().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
         hashCode = prime * hashCode + ((getDebugSession() == null) ? 0 : getDebugSession().hashCode());
+        hashCode = prime * hashCode + ((getBuildBatchArn() == null) ? 0 : getBuildBatchArn().hashCode());
         return hashCode;
     }
 

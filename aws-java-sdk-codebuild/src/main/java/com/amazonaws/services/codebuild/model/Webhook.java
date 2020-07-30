@@ -77,6 +77,12 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<java.util.List<WebhookFilter>> filterGroups;
     /**
      * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     */
+    private String buildType;
+    /**
+     * <p>
      * A timestamp that indicates the last time a repository's secret token was modified.
      * </p>
      */
@@ -414,6 +420,65 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @param buildType
+     *        Specifies the type of build this webhook will trigger.
+     * @see WebhookBuildType
+     */
+
+    public void setBuildType(String buildType) {
+        this.buildType = buildType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @return Specifies the type of build this webhook will trigger.
+     * @see WebhookBuildType
+     */
+
+    public String getBuildType() {
+        return this.buildType;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @param buildType
+     *        Specifies the type of build this webhook will trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WebhookBuildType
+     */
+
+    public Webhook withBuildType(String buildType) {
+        setBuildType(buildType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the type of build this webhook will trigger.
+     * </p>
+     * 
+     * @param buildType
+     *        Specifies the type of build this webhook will trigger.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WebhookBuildType
+     */
+
+    public Webhook withBuildType(WebhookBuildType buildType) {
+        this.buildType = buildType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A timestamp that indicates the last time a repository's secret token was modified.
      * </p>
      * 
@@ -474,6 +539,8 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
             sb.append("BranchFilter: ").append(getBranchFilter()).append(",");
         if (getFilterGroups() != null)
             sb.append("FilterGroups: ").append(getFilterGroups()).append(",");
+        if (getBuildType() != null)
+            sb.append("BuildType: ").append(getBuildType()).append(",");
         if (getLastModifiedSecret() != null)
             sb.append("LastModifiedSecret: ").append(getLastModifiedSecret());
         sb.append("}");
@@ -510,6 +577,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFilterGroups() != null && other.getFilterGroups().equals(this.getFilterGroups()) == false)
             return false;
+        if (other.getBuildType() == null ^ this.getBuildType() == null)
+            return false;
+        if (other.getBuildType() != null && other.getBuildType().equals(this.getBuildType()) == false)
+            return false;
         if (other.getLastModifiedSecret() == null ^ this.getLastModifiedSecret() == null)
             return false;
         if (other.getLastModifiedSecret() != null && other.getLastModifiedSecret().equals(this.getLastModifiedSecret()) == false)
@@ -527,6 +598,7 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecret() == null) ? 0 : getSecret().hashCode());
         hashCode = prime * hashCode + ((getBranchFilter() == null) ? 0 : getBranchFilter().hashCode());
         hashCode = prime * hashCode + ((getFilterGroups() == null) ? 0 : getFilterGroups().hashCode());
+        hashCode = prime * hashCode + ((getBuildType() == null) ? 0 : getBuildType().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedSecret() == null) ? 0 : getLastModifiedSecret().hashCode());
         return hashCode;
     }

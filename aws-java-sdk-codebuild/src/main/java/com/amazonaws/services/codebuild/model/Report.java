@@ -40,6 +40,20 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the report that was run.
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * A code coverage report.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * A test report.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String type;
     /**
@@ -98,6 +112,12 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TestReportSummary testSummary;
+    /**
+     * <p>
+     * A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     * </p>
+     */
+    private CodeCoverageReportSummary codeCoverageSummary;
 
     /**
      * <p>
@@ -143,9 +163,36 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the report that was run.
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * A code coverage report.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * A test report.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the report that was run.
+     *        The type of the report that was run.</p>
+     *        <dl>
+     *        <dt>CODE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        A code coverage report.
+     *        </p>
+     *        </dd>
+     *        <dt>TEST</dt>
+     *        <dd>
+     *        <p>
+     *        A test report.
+     *        </p>
+     *        </dd>
      * @see ReportType
      */
 
@@ -157,8 +204,35 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the report that was run.
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * A code coverage report.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * A test report.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The type of the report that was run.
+     * @return The type of the report that was run.</p>
+     *         <dl>
+     *         <dt>CODE_COVERAGE</dt>
+     *         <dd>
+     *         <p>
+     *         A code coverage report.
+     *         </p>
+     *         </dd>
+     *         <dt>TEST</dt>
+     *         <dd>
+     *         <p>
+     *         A test report.
+     *         </p>
+     *         </dd>
      * @see ReportType
      */
 
@@ -170,9 +244,36 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the report that was run.
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * A code coverage report.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * A test report.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the report that was run.
+     *        The type of the report that was run.</p>
+     *        <dl>
+     *        <dt>CODE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        A code coverage report.
+     *        </p>
+     *        </dd>
+     *        <dt>TEST</dt>
+     *        <dd>
+     *        <p>
+     *        A test report.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportType
      */
@@ -186,9 +287,36 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of the report that was run.
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * A code coverage report.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * A test report.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the report that was run.
+     *        The type of the report that was run.</p>
+     *        <dl>
+     *        <dt>CODE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        A code coverage report.
+     *        </p>
+     *        </dd>
+     *        <dt>TEST</dt>
+     *        <dd>
+     *        <p>
+     *        A test report.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportType
      */
@@ -604,6 +732,46 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     * </p>
+     * 
+     * @param codeCoverageSummary
+     *        A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     */
+
+    public void setCodeCoverageSummary(CodeCoverageReportSummary codeCoverageSummary) {
+        this.codeCoverageSummary = codeCoverageSummary;
+    }
+
+    /**
+     * <p>
+     * A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     * </p>
+     * 
+     * @return A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     */
+
+    public CodeCoverageReportSummary getCodeCoverageSummary() {
+        return this.codeCoverageSummary;
+    }
+
+    /**
+     * <p>
+     * A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     * </p>
+     * 
+     * @param codeCoverageSummary
+     *        A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary for this report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Report withCodeCoverageSummary(CodeCoverageReportSummary codeCoverageSummary) {
+        setCodeCoverageSummary(codeCoverageSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -636,7 +804,9 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
         if (getTruncated() != null)
             sb.append("Truncated: ").append(getTruncated()).append(",");
         if (getTestSummary() != null)
-            sb.append("TestSummary: ").append(getTestSummary());
+            sb.append("TestSummary: ").append(getTestSummary()).append(",");
+        if (getCodeCoverageSummary() != null)
+            sb.append("CodeCoverageSummary: ").append(getCodeCoverageSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -695,6 +865,10 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTestSummary() != null && other.getTestSummary().equals(this.getTestSummary()) == false)
             return false;
+        if (other.getCodeCoverageSummary() == null ^ this.getCodeCoverageSummary() == null)
+            return false;
+        if (other.getCodeCoverageSummary() != null && other.getCodeCoverageSummary().equals(this.getCodeCoverageSummary()) == false)
+            return false;
         return true;
     }
 
@@ -714,6 +888,7 @@ public class Report implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExportConfig() == null) ? 0 : getExportConfig().hashCode());
         hashCode = prime * hashCode + ((getTruncated() == null) ? 0 : getTruncated().hashCode());
         hashCode = prime * hashCode + ((getTestSummary() == null) ? 0 : getTestSummary().hashCode());
+        hashCode = prime * hashCode + ((getCodeCoverageSummary() == null) ? 0 : getCodeCoverageSummary().hashCode());
         return hashCode;
     }
 

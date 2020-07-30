@@ -150,6 +150,10 @@ public class ProjectJsonUnmarshaller implements Unmarshaller<Project, JsonUnmars
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("buildBatchConfig", targetDepth)) {
+                    context.nextToken();
+                    project.setBuildBatchConfig(ProjectBuildBatchConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

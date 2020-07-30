@@ -38,10 +38,16 @@ public class UpdateProvisionedProductRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedProductId").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactName").build();
     private static final MarshallingInfo<String> PATHID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PathId").build();
+    private static final MarshallingInfo<String> PATHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PathName").build();
     private static final MarshallingInfo<List> PROVISIONINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningParameters").build();
     private static final MarshallingInfo<StructuredPojo> PROVISIONINGPREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -72,8 +78,11 @@ public class UpdateProvisionedProductRequestMarshaller {
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisionedProductName(), PROVISIONEDPRODUCTNAME_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisionedProductId(), PROVISIONEDPRODUCTID_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(updateProvisionedProductRequest.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getPathId(), PATHID_BINDING);
+            protocolMarshaller.marshall(updateProvisionedProductRequest.getPathName(), PATHNAME_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningParameters(), PROVISIONINGPARAMETERS_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getProvisioningPreferences(), PROVISIONINGPREFERENCES_BINDING);
             protocolMarshaller.marshall(updateProvisionedProductRequest.getTags(), TAGS_BINDING);

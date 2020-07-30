@@ -270,7 +270,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
      * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
-     * one detector per account per Region.
+     * one detector per account per Region. All data sources are enabled in a new detector by default.
      * </p>
      * 
      * @param createDetectorRequest
@@ -444,8 +444,19 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS
-     * account can then invite these members to manage GuardDuty in their accounts.
+     * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. This step is a
+     * prerequisite for managing the associated member accounts either by invitation or through an organization.
+     * </p>
+     * <p>
+     * When using <code>Create Members</code> as an organizations delegated administrator this action will enable
+     * GuardDuty in the added member accounts, with the exception of the organization master account, which must enable
+     * GuardDuty prior to being added as a member.
+     * </p>
+     * <p>
+     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
+     * accounts and before using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+     * <code>Invite Members</code> </a>.
      * </p>
      * 
      * @param createMembersRequest
@@ -2063,6 +2074,68 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled
+     * detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ
+     * from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How
+     * Usage Costs are Calculated</a>.
+     * </p>
+     * 
+     * @param getUsageStatisticsRequest
+     * @return Result of the GetUsageStatistics operation returned by the service.
+     * @throws BadRequestException
+     *         A bad request exception object.
+     * @throws InternalServerErrorException
+     *         An internal server error exception object.
+     * @sample AmazonGuardDuty.GetUsageStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetUsageStatisticsResult getUsageStatistics(GetUsageStatisticsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetUsageStatistics(request);
+    }
+
+    @SdkInternalApi
+    final GetUsageStatisticsResult executeGetUsageStatistics(GetUsageStatisticsRequest getUsageStatisticsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getUsageStatisticsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetUsageStatisticsRequest> request = null;
+        Response<GetUsageStatisticsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetUsageStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageStatisticsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "GuardDuty");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUsageStatistics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetUsageStatisticsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetUsageStatisticsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty,
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
@@ -2408,7 +2481,7 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Lists details about associated member accounts for the current GuardDuty master account.
+     * Lists details about all member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest

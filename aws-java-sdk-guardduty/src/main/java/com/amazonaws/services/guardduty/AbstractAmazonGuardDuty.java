@@ -193,6 +193,11 @@ public class AbstractAmazonGuardDuty implements AmazonGuardDuty {
     }
 
     @Override
+    public GetUsageStatisticsResult getUsageStatistics(GetUsageStatisticsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public InviteMembersResult inviteMembers(InviteMembersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

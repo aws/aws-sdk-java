@@ -48,6 +48,10 @@ public class TemplateJsonUnmarshaller implements Unmarshaller<Template, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("TemplateName", targetDepth)) {
+                    context.nextToken();
+                    template.setTemplateName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("TemplateArn", targetDepth)) {
                     context.nextToken();
                     template.setTemplateArn(context.getUnmarshaller(String.class).unmarshall(context));

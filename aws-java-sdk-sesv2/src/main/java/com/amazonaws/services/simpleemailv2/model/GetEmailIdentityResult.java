@@ -71,6 +71,12 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
     private MailFromAttributes mailFromAttributes;
     /**
      * <p>
+     * A map of policy names to policies.
+     * </p>
+     */
+    private java.util.Map<String, String> policies;
+    /**
+     * <p>
      * An array of objects that define the tags (keys and values) that are associated with the email identity.
      * </p>
      */
@@ -425,6 +431,74 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * A map of policy names to policies.
+     * </p>
+     * 
+     * @return A map of policy names to policies.
+     */
+
+    public java.util.Map<String, String> getPolicies() {
+        return policies;
+    }
+
+    /**
+     * <p>
+     * A map of policy names to policies.
+     * </p>
+     * 
+     * @param policies
+     *        A map of policy names to policies.
+     */
+
+    public void setPolicies(java.util.Map<String, String> policies) {
+        this.policies = policies;
+    }
+
+    /**
+     * <p>
+     * A map of policy names to policies.
+     * </p>
+     * 
+     * @param policies
+     *        A map of policy names to policies.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult withPolicies(java.util.Map<String, String> policies) {
+        setPolicies(policies);
+        return this;
+    }
+
+    /**
+     * Add a single Policies entry
+     *
+     * @see GetEmailIdentityResult#withPolicies
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult addPoliciesEntry(String key, String value) {
+        if (null == this.policies) {
+            this.policies = new java.util.HashMap<String, String>();
+        }
+        if (this.policies.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.policies.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Policies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEmailIdentityResult clearPoliciesEntries() {
+        this.policies = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * An array of objects that define the tags (keys and values) that are associated with the email identity.
      * </p>
      * 
@@ -515,6 +589,8 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("DkimAttributes: ").append(getDkimAttributes()).append(",");
         if (getMailFromAttributes() != null)
             sb.append("MailFromAttributes: ").append(getMailFromAttributes()).append(",");
+        if (getPolicies() != null)
+            sb.append("Policies: ").append(getPolicies()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -551,6 +627,10 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getMailFromAttributes() != null && other.getMailFromAttributes().equals(this.getMailFromAttributes()) == false)
             return false;
+        if (other.getPolicies() == null ^ this.getPolicies() == null)
+            return false;
+        if (other.getPolicies() != null && other.getPolicies().equals(this.getPolicies()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -568,6 +648,7 @@ public class GetEmailIdentityResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getVerifiedForSendingStatus() == null) ? 0 : getVerifiedForSendingStatus().hashCode());
         hashCode = prime * hashCode + ((getDkimAttributes() == null) ? 0 : getDkimAttributes().hashCode());
         hashCode = prime * hashCode + ((getMailFromAttributes() == null) ? 0 : getMailFromAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPolicies() == null) ? 0 : getPolicies().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

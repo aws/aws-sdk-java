@@ -31,10 +31,16 @@ public class DescribeProvisioningParametersRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactName").build();
     private static final MarshallingInfo<String> PATHID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PathId").build();
+    private static final MarshallingInfo<String> PATHNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PathName").build();
 
     private static final DescribeProvisioningParametersRequestMarshaller instance = new DescribeProvisioningParametersRequestMarshaller();
 
@@ -54,8 +60,11 @@ public class DescribeProvisioningParametersRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeProvisioningParametersRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(describeProvisioningParametersRequest.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningParametersRequest.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(describeProvisioningParametersRequest.getPathId(), PATHID_BINDING);
+            protocolMarshaller.marshall(describeProvisioningParametersRequest.getPathName(), PATHNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class TemplateMarshaller {
 
+    private static final MarshallingInfo<String> TEMPLATENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateName").build();
     private static final MarshallingInfo<String> TEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateArn").build();
     private static final MarshallingInfo<String> TEMPLATEDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class TemplateMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(template.getTemplateName(), TEMPLATENAME_BINDING);
             protocolMarshaller.marshall(template.getTemplateArn(), TEMPLATEARN_BINDING);
             protocolMarshaller.marshall(template.getTemplateData(), TEMPLATEDATA_BINDING);
         } catch (Exception e) {

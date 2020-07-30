@@ -95,43 +95,50 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status of the build phase. Valid values include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>FAILED</dt>
+     * <dd>
      * <p>
-     * <code>FAILED</code>: The build phase failed.
+     * The build phase failed.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAULT</dt>
+     * <dd>
      * <p>
-     * <code>FAULT</code>: The build phase faulted.
+     * The build phase faulted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN_PROGRESS</dt>
+     * <dd>
      * <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.
+     * The build phase is still in progress.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>QUEUED</dt>
+     * <dd>
      * <p>
-     * <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     * The build has been submitted and is queued behind other submitted builds.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>STOPPED</dt>
+     * <dd>
      * <p>
-     * <code>STOPPED</code>: The build phase stopped.
+     * The build phase stopped.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCEEDED</dt>
+     * <dd>
      * <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.
+     * The build phase succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>TIMED_OUT</dt>
+     * <dd>
      * <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.
+     * The build phase timed out.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      */
     private String phaseStatus;
     /**
@@ -801,82 +808,96 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status of the build phase. Valid values include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>FAILED</dt>
+     * <dd>
      * <p>
-     * <code>FAILED</code>: The build phase failed.
+     * The build phase failed.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAULT</dt>
+     * <dd>
      * <p>
-     * <code>FAULT</code>: The build phase faulted.
+     * The build phase faulted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN_PROGRESS</dt>
+     * <dd>
      * <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.
+     * The build phase is still in progress.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>QUEUED</dt>
+     * <dd>
      * <p>
-     * <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     * The build has been submitted and is queued behind other submitted builds.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>STOPPED</dt>
+     * <dd>
      * <p>
-     * <code>STOPPED</code>: The build phase stopped.
+     * The build phase stopped.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCEEDED</dt>
+     * <dd>
      * <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.
+     * The build phase succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>TIMED_OUT</dt>
+     * <dd>
      * <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.
+     * The build phase timed out.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param phaseStatus
      *        The current status of the build phase. Valid values include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>FAILED</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAILED</code>: The build phase failed.
+     *        The build phase failed.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAULT</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAULT</code>: The build phase faulted.
+     *        The build phase faulted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN_PROGRESS</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN_PROGRESS</code>: The build phase is still in progress.
+     *        The build phase is still in progress.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>QUEUED</dt>
+     *        <dd>
      *        <p>
-     *        <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     *        The build has been submitted and is queued behind other submitted builds.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>STOPPED</dt>
+     *        <dd>
      *        <p>
-     *        <code>STOPPED</code>: The build phase stopped.
+     *        The build phase stopped.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCEEDED</dt>
+     *        <dd>
      *        <p>
-     *        <code>SUCCEEDED</code>: The build phase succeeded.
+     *        The build phase succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>TIMED_OUT</dt>
+     *        <dd>
      *        <p>
-     *        <code>TIMED_OUT</code>: The build phase timed out.
+     *        The build phase timed out.
      *        </p>
-     *        </li>
+     *        </dd>
      * @see StatusType
      */
 
@@ -888,81 +909,95 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status of the build phase. Valid values include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>FAILED</dt>
+     * <dd>
      * <p>
-     * <code>FAILED</code>: The build phase failed.
+     * The build phase failed.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAULT</dt>
+     * <dd>
      * <p>
-     * <code>FAULT</code>: The build phase faulted.
+     * The build phase faulted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN_PROGRESS</dt>
+     * <dd>
      * <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.
+     * The build phase is still in progress.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>QUEUED</dt>
+     * <dd>
      * <p>
-     * <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     * The build has been submitted and is queued behind other submitted builds.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>STOPPED</dt>
+     * <dd>
      * <p>
-     * <code>STOPPED</code>: The build phase stopped.
+     * The build phase stopped.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCEEDED</dt>
+     * <dd>
      * <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.
+     * The build phase succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>TIMED_OUT</dt>
+     * <dd>
      * <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.
+     * The build phase timed out.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @return The current status of the build phase. Valid values include:</p>
-     *         <ul>
-     *         <li>
+     *         <dl>
+     *         <dt>FAILED</dt>
+     *         <dd>
      *         <p>
-     *         <code>FAILED</code>: The build phase failed.
+     *         The build phase failed.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>FAULT</dt>
+     *         <dd>
      *         <p>
-     *         <code>FAULT</code>: The build phase faulted.
+     *         The build phase faulted.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>IN_PROGRESS</dt>
+     *         <dd>
      *         <p>
-     *         <code>IN_PROGRESS</code>: The build phase is still in progress.
+     *         The build phase is still in progress.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>QUEUED</dt>
+     *         <dd>
      *         <p>
-     *         <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     *         The build has been submitted and is queued behind other submitted builds.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>STOPPED</dt>
+     *         <dd>
      *         <p>
-     *         <code>STOPPED</code>: The build phase stopped.
+     *         The build phase stopped.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>SUCCEEDED</dt>
+     *         <dd>
      *         <p>
-     *         <code>SUCCEEDED</code>: The build phase succeeded.
+     *         The build phase succeeded.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>TIMED_OUT</dt>
+     *         <dd>
      *         <p>
-     *         <code>TIMED_OUT</code>: The build phase timed out.
+     *         The build phase timed out.
      *         </p>
-     *         </li>
+     *         </dd>
      * @see StatusType
      */
 
@@ -974,82 +1009,96 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status of the build phase. Valid values include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>FAILED</dt>
+     * <dd>
      * <p>
-     * <code>FAILED</code>: The build phase failed.
+     * The build phase failed.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAULT</dt>
+     * <dd>
      * <p>
-     * <code>FAULT</code>: The build phase faulted.
+     * The build phase faulted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN_PROGRESS</dt>
+     * <dd>
      * <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.
+     * The build phase is still in progress.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>QUEUED</dt>
+     * <dd>
      * <p>
-     * <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     * The build has been submitted and is queued behind other submitted builds.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>STOPPED</dt>
+     * <dd>
      * <p>
-     * <code>STOPPED</code>: The build phase stopped.
+     * The build phase stopped.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCEEDED</dt>
+     * <dd>
      * <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.
+     * The build phase succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>TIMED_OUT</dt>
+     * <dd>
      * <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.
+     * The build phase timed out.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param phaseStatus
      *        The current status of the build phase. Valid values include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>FAILED</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAILED</code>: The build phase failed.
+     *        The build phase failed.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAULT</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAULT</code>: The build phase faulted.
+     *        The build phase faulted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN_PROGRESS</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN_PROGRESS</code>: The build phase is still in progress.
+     *        The build phase is still in progress.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>QUEUED</dt>
+     *        <dd>
      *        <p>
-     *        <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     *        The build has been submitted and is queued behind other submitted builds.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>STOPPED</dt>
+     *        <dd>
      *        <p>
-     *        <code>STOPPED</code>: The build phase stopped.
+     *        The build phase stopped.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCEEDED</dt>
+     *        <dd>
      *        <p>
-     *        <code>SUCCEEDED</code>: The build phase succeeded.
+     *        The build phase succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>TIMED_OUT</dt>
+     *        <dd>
      *        <p>
-     *        <code>TIMED_OUT</code>: The build phase timed out.
+     *        The build phase timed out.
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */
@@ -1063,82 +1112,96 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status of the build phase. Valid values include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>FAILED</dt>
+     * <dd>
      * <p>
-     * <code>FAILED</code>: The build phase failed.
+     * The build phase failed.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAULT</dt>
+     * <dd>
      * <p>
-     * <code>FAULT</code>: The build phase faulted.
+     * The build phase faulted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN_PROGRESS</dt>
+     * <dd>
      * <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.
+     * The build phase is still in progress.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>QUEUED</dt>
+     * <dd>
      * <p>
-     * <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     * The build has been submitted and is queued behind other submitted builds.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>STOPPED</dt>
+     * <dd>
      * <p>
-     * <code>STOPPED</code>: The build phase stopped.
+     * The build phase stopped.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCEEDED</dt>
+     * <dd>
      * <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.
+     * The build phase succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>TIMED_OUT</dt>
+     * <dd>
      * <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.
+     * The build phase timed out.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param phaseStatus
      *        The current status of the build phase. Valid values include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>FAILED</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAILED</code>: The build phase failed.
+     *        The build phase failed.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAULT</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAULT</code>: The build phase faulted.
+     *        The build phase faulted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN_PROGRESS</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN_PROGRESS</code>: The build phase is still in progress.
+     *        The build phase is still in progress.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>QUEUED</dt>
+     *        <dd>
      *        <p>
-     *        <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     *        The build has been submitted and is queued behind other submitted builds.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>STOPPED</dt>
+     *        <dd>
      *        <p>
-     *        <code>STOPPED</code>: The build phase stopped.
+     *        The build phase stopped.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCEEDED</dt>
+     *        <dd>
      *        <p>
-     *        <code>SUCCEEDED</code>: The build phase succeeded.
+     *        The build phase succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>TIMED_OUT</dt>
+     *        <dd>
      *        <p>
-     *        <code>TIMED_OUT</code>: The build phase timed out.
+     *        The build phase timed out.
      *        </p>
-     *        </li>
+     *        </dd>
      * @see StatusType
      */
 
@@ -1150,82 +1213,96 @@ public class BuildPhase implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The current status of the build phase. Valid values include:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>FAILED</dt>
+     * <dd>
      * <p>
-     * <code>FAILED</code>: The build phase failed.
+     * The build phase failed.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAULT</dt>
+     * <dd>
      * <p>
-     * <code>FAULT</code>: The build phase faulted.
+     * The build phase faulted.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>IN_PROGRESS</dt>
+     * <dd>
      * <p>
-     * <code>IN_PROGRESS</code>: The build phase is still in progress.
+     * The build phase is still in progress.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>QUEUED</dt>
+     * <dd>
      * <p>
-     * <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     * The build has been submitted and is queued behind other submitted builds.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>STOPPED</dt>
+     * <dd>
      * <p>
-     * <code>STOPPED</code>: The build phase stopped.
+     * The build phase stopped.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCEEDED</dt>
+     * <dd>
      * <p>
-     * <code>SUCCEEDED</code>: The build phase succeeded.
+     * The build phase succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>TIMED_OUT</dt>
+     * <dd>
      * <p>
-     * <code>TIMED_OUT</code>: The build phase timed out.
+     * The build phase timed out.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param phaseStatus
      *        The current status of the build phase. Valid values include:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>FAILED</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAILED</code>: The build phase failed.
+     *        The build phase failed.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAULT</dt>
+     *        <dd>
      *        <p>
-     *        <code>FAULT</code>: The build phase faulted.
+     *        The build phase faulted.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>IN_PROGRESS</dt>
+     *        <dd>
      *        <p>
-     *        <code>IN_PROGRESS</code>: The build phase is still in progress.
+     *        The build phase is still in progress.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>QUEUED</dt>
+     *        <dd>
      *        <p>
-     *        <code>QUEUED</code>: The build has been submitted and is queued behind other submitted builds.
+     *        The build has been submitted and is queued behind other submitted builds.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>STOPPED</dt>
+     *        <dd>
      *        <p>
-     *        <code>STOPPED</code>: The build phase stopped.
+     *        The build phase stopped.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCEEDED</dt>
+     *        <dd>
      *        <p>
-     *        <code>SUCCEEDED</code>: The build phase succeeded.
+     *        The build phase succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>TIMED_OUT</dt>
+     *        <dd>
      *        <p>
-     *        <code>TIMED_OUT</code>: The build phase timed out.
+     *        The build phase timed out.
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StatusType
      */

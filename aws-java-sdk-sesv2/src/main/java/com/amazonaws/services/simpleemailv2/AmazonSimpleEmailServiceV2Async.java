@@ -149,6 +149,59 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Creates a new custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createCustomVerificationEmailTemplateRequest
+     *        Represents a request to create a custom verification email template.
+     * @return A Java Future containing the result of the CreateCustomVerificationEmailTemplate operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
+            CreateCustomVerificationEmailTemplateRequest createCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a new custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createCustomVerificationEmailTemplateRequest
+     *        Represents a request to create a custom verification email template.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCustomVerificationEmailTemplate operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
+            CreateCustomVerificationEmailTemplateRequest createCustomVerificationEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCustomVerificationEmailTemplateRequest, CreateCustomVerificationEmailTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are
      * associated with your AWS account. You can associate a pool with a configuration set. When you send an email that
      * uses that configuration set, the message is sent from one of the addresses in the associated pool.
@@ -318,6 +371,126 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Creates the specified sending authorization policy for the given identity (an email address or a domain).
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createEmailIdentityPolicyRequest
+     *        Represents a request to create a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return A Java Future containing the result of the CreateEmailIdentityPolicy operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEmailIdentityPolicyResult> createEmailIdentityPolicyAsync(
+            CreateEmailIdentityPolicyRequest createEmailIdentityPolicyRequest);
+
+    /**
+     * <p>
+     * Creates the specified sending authorization policy for the given identity (an email address or a domain).
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createEmailIdentityPolicyRequest
+     *        Represents a request to create a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEmailIdentityPolicy operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEmailIdentityPolicyResult> createEmailIdentityPolicyAsync(
+            CreateEmailIdentityPolicyRequest createEmailIdentityPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEmailIdentityPolicyRequest, CreateEmailIdentityPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createEmailTemplateRequest
+     *        Represents a request to create an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the CreateEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEmailTemplateResult> createEmailTemplateAsync(CreateEmailTemplateRequest createEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Creates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param createEmailTemplateRequest
+     *        Represents a request to create an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEmailTemplateResult> createEmailTemplateAsync(CreateEmailTemplateRequest createEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEmailTemplateRequest, CreateEmailTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an existing configuration set.
      * </p>
      * <p>
@@ -410,6 +583,59 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Deletes an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteCustomVerificationEmailTemplateRequest
+     *        Represents a request to delete an existing custom verification email template.
+     * @return A Java Future containing the result of the DeleteCustomVerificationEmailTemplate operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2Async.DeleteCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomVerificationEmailTemplateResult> deleteCustomVerificationEmailTemplateAsync(
+            DeleteCustomVerificationEmailTemplateRequest deleteCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/es/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteCustomVerificationEmailTemplateRequest
+     *        Represents a request to delete an existing custom verification email template.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCustomVerificationEmailTemplate operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.DeleteCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCustomVerificationEmailTemplateResult> deleteCustomVerificationEmailTemplateAsync(
+            DeleteCustomVerificationEmailTemplateRequest deleteCustomVerificationEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCustomVerificationEmailTemplateRequest, DeleteCustomVerificationEmailTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete a dedicated IP pool.
      * </p>
      * 
@@ -477,6 +703,122 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<DeleteEmailIdentityResult> deleteEmailIdentityAsync(DeleteEmailIdentityRequest deleteEmailIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEmailIdentityRequest, DeleteEmailIdentityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified sending authorization policy for the given identity (an email address or a domain). This
+     * API returns successfully even if a policy with the specified name does not exist.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteEmailIdentityPolicyRequest
+     *        Represents a request to delete a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return A Java Future containing the result of the DeleteEmailIdentityPolicy operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.DeleteEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEmailIdentityPolicyResult> deleteEmailIdentityPolicyAsync(
+            DeleteEmailIdentityPolicyRequest deleteEmailIdentityPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the specified sending authorization policy for the given identity (an email address or a domain). This
+     * API returns successfully even if a policy with the specified name does not exist.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteEmailIdentityPolicyRequest
+     *        Represents a request to delete a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEmailIdentityPolicy operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.DeleteEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEmailIdentityPolicyResult> deleteEmailIdentityPolicyAsync(
+            DeleteEmailIdentityPolicyRequest deleteEmailIdentityPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEmailIdentityPolicyRequest, DeleteEmailIdentityPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an email template.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteEmailTemplateRequest
+     *        Represents a request to delete an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the DeleteEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.DeleteEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEmailTemplateResult> deleteEmailTemplateAsync(DeleteEmailTemplateRequest deleteEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes an email template.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param deleteEmailTemplateRequest
+     *        Represents a request to delete an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.DeleteEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEmailTemplateResult> deleteEmailTemplateAsync(DeleteEmailTemplateRequest deleteEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEmailTemplateRequest, DeleteEmailTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -674,6 +1016,59 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<GetConfigurationSetEventDestinationsResult> getConfigurationSetEventDestinationsAsync(
             GetConfigurationSetEventDestinationsRequest getConfigurationSetEventDestinationsRequest,
             com.amazonaws.handlers.AsyncHandler<GetConfigurationSetEventDestinationsRequest, GetConfigurationSetEventDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the custom email verification template for the template name you specify.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getCustomVerificationEmailTemplateRequest
+     *        Represents a request to retrieve an existing custom verification email template.
+     * @return A Java Future containing the result of the GetCustomVerificationEmailTemplate operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCustomVerificationEmailTemplateResult> getCustomVerificationEmailTemplateAsync(
+            GetCustomVerificationEmailTemplateRequest getCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Returns the custom email verification template for the template name you specify.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getCustomVerificationEmailTemplateRequest
+     *        Represents a request to retrieve an existing custom verification email template.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCustomVerificationEmailTemplate operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCustomVerificationEmailTemplateResult> getCustomVerificationEmailTemplateAsync(
+            GetCustomVerificationEmailTemplateRequest getCustomVerificationEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCustomVerificationEmailTemplateRequest, GetCustomVerificationEmailTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -923,8 +1318,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Provides information about a specific identity, including the identity's verification status, its DKIM
-     * authentication status, and its custom Mail-From settings.
+     * Provides information about a specific identity, including the identity's verification status, sending
+     * authorization policies, its DKIM authentication status, and its custom Mail-From settings.
      * </p>
      * 
      * @param getEmailIdentityRequest
@@ -938,8 +1333,8 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
-     * Provides information about a specific identity, including the identity's verification status, its DKIM
-     * authentication status, and its custom Mail-From settings.
+     * Provides information about a specific identity, including the identity's verification status, sending
+     * authorization policies, its DKIM authentication status, and its custom Mail-From settings.
      * </p>
      * 
      * @param getEmailIdentityRequest
@@ -955,6 +1350,114 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<GetEmailIdentityResult> getEmailIdentityAsync(GetEmailIdentityRequest getEmailIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<GetEmailIdentityRequest, GetEmailIdentityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the requested sending authorization policies for the given identity (an email address or a domain). The
+     * policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a
+     * time.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getEmailIdentityPoliciesRequest
+     *        A request to return the policies of an email identity.
+     * @return A Java Future containing the result of the GetEmailIdentityPolicies operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetEmailIdentityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailIdentityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEmailIdentityPoliciesResult> getEmailIdentityPoliciesAsync(GetEmailIdentityPoliciesRequest getEmailIdentityPoliciesRequest);
+
+    /**
+     * <p>
+     * Returns the requested sending authorization policies for the given identity (an email address or a domain). The
+     * policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a
+     * time.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getEmailIdentityPoliciesRequest
+     *        A request to return the policies of an email identity.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEmailIdentityPolicies operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetEmailIdentityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailIdentityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetEmailIdentityPoliciesResult> getEmailIdentityPoliciesAsync(GetEmailIdentityPoliciesRequest getEmailIdentityPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEmailIdentityPoliciesRequest, GetEmailIdentityPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays the template object (which includes the subject line, HTML part and text part) for the template you
+     * specify.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getEmailTemplateRequest
+     *        Represents a request to display the template object (which includes the subject line, HTML part and text
+     *        part) for the template you specify.
+     * @return A Java Future containing the result of the GetEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEmailTemplateResult> getEmailTemplateAsync(GetEmailTemplateRequest getEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Displays the template object (which includes the subject line, HTML part and text part) for the template you
+     * specify.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param getEmailTemplateRequest
+     *        Represents a request to display the template object (which includes the subject line, HTML part and text
+     *        part) for the template you specify.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetEmailTemplateResult> getEmailTemplateAsync(GetEmailTemplateRequest getEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetEmailTemplateRequest, GetEmailTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -1031,6 +1534,59 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest listConfigurationSetsRequest,
             com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the existing custom verification email templates for your account in the current AWS Region.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listCustomVerificationEmailTemplatesRequest
+     *        Represents a request to list the existing custom verification email templates for your account.
+     * @return A Java Future containing the result of the ListCustomVerificationEmailTemplates operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListCustomVerificationEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListCustomVerificationEmailTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomVerificationEmailTemplatesResult> listCustomVerificationEmailTemplatesAsync(
+            ListCustomVerificationEmailTemplatesRequest listCustomVerificationEmailTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists the existing custom verification email templates for your account in the current AWS Region.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listCustomVerificationEmailTemplatesRequest
+     *        Represents a request to list the existing custom verification email templates for your account.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCustomVerificationEmailTemplates operation returned by the
+     *         service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListCustomVerificationEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListCustomVerificationEmailTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomVerificationEmailTemplatesResult> listCustomVerificationEmailTemplatesAsync(
+            ListCustomVerificationEmailTemplatesRequest listCustomVerificationEmailTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResult> asyncHandler);
 
     /**
      * <p>
@@ -1192,6 +1748,51 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Lists the email templates present in your Amazon SES account in the current AWS Region.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listEmailTemplatesRequest
+     *        Represents a request to list the email templates present in your Amazon SES account in the current AWS
+     *        Region. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the ListEmailTemplates operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest listEmailTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists the email templates present in your Amazon SES account in the current AWS Region.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param listEmailTemplatesRequest
+     *        Represents a request to list the email templates present in your Amazon SES account in the current AWS
+     *        Region. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEmailTemplates operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListEmailTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailTemplates" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest listEmailTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEmailTemplatesRequest, ListEmailTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of email addresses that are on the suppression list for your account.
      * </p>
      * 
@@ -1298,6 +1899,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<PutAccountDedicatedIpWarmupAttributesResult> putAccountDedicatedIpWarmupAttributesAsync(
             PutAccountDedicatedIpWarmupAttributesRequest putAccountDedicatedIpWarmupAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutAccountDedicatedIpWarmupAttributesRequest, PutAccountDedicatedIpWarmupAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update your Amazon SES account details.
+     * </p>
+     * 
+     * @param putAccountDetailsRequest
+     *        A request to submit new account details.
+     * @return A Java Future containing the result of the PutAccountDetails operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.PutAccountDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountDetailsResult> putAccountDetailsAsync(PutAccountDetailsRequest putAccountDetailsRequest);
+
+    /**
+     * <p>
+     * Update your Amazon SES account details.
+     * </p>
+     * 
+     * @param putAccountDetailsRequest
+     *        A request to submit new account details.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAccountDetails operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.PutAccountDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAccountDetailsResult> putAccountDetailsAsync(PutAccountDetailsRequest putAccountDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAccountDetailsRequest, PutAccountDetailsResult> asyncHandler);
 
     /**
      * <p>
@@ -1974,6 +2608,102 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Composes an email message to multiple destinations.
+     * </p>
+     * 
+     * @param sendBulkEmailRequest
+     *        Represents a request to send email messages to multiple destinations using Amazon SES. For more
+     *        information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the SendBulkEmail operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.SendBulkEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendBulkEmail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendBulkEmailResult> sendBulkEmailAsync(SendBulkEmailRequest sendBulkEmailRequest);
+
+    /**
+     * <p>
+     * Composes an email message to multiple destinations.
+     * </p>
+     * 
+     * @param sendBulkEmailRequest
+     *        Represents a request to send email messages to multiple destinations using Amazon SES. For more
+     *        information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendBulkEmail operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.SendBulkEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendBulkEmail" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendBulkEmailResult> sendBulkEmailAsync(SendBulkEmailRequest sendBulkEmailRequest,
+            com.amazonaws.handlers.AsyncHandler<SendBulkEmailRequest, SendBulkEmailResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and
+     * attempts to verify it. As a result of executing this operation, a customized verification email is sent to the
+     * specified address.
+     * </p>
+     * <p>
+     * To use this operation, you must first create a custom verification email template. For more information about
+     * creating and using custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param sendCustomVerificationEmailRequest
+     *        Represents a request to send a custom verification email to a specified recipient.
+     * @return A Java Future containing the result of the SendCustomVerificationEmail operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.SendCustomVerificationEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendCustomVerificationEmailResult> sendCustomVerificationEmailAsync(
+            SendCustomVerificationEmailRequest sendCustomVerificationEmailRequest);
+
+    /**
+     * <p>
+     * Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and
+     * attempts to verify it. As a result of executing this operation, a customized verification email is sent to the
+     * specified address.
+     * </p>
+     * <p>
+     * To use this operation, you must first create a custom verification email template. For more information about
+     * creating and using custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param sendCustomVerificationEmailRequest
+     *        Represents a request to send a custom verification email to a specified recipient.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendCustomVerificationEmail operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.SendCustomVerificationEmail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendCustomVerificationEmail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SendCustomVerificationEmailResult> sendCustomVerificationEmailAsync(
+            SendCustomVerificationEmailRequest sendCustomVerificationEmailRequest,
+            com.amazonaws.handlers.AsyncHandler<SendCustomVerificationEmailRequest, SendCustomVerificationEmailResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends an email message. You can use the Amazon SES API v2 to send two types of messages:
      * </p>
      * <ul>
@@ -1990,10 +2720,18 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * attachments. The message that you specify has to be a valid MIME message.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Templated</b> – A message that contains personalization tags. When you send this type of email, Amazon SES API
+     * v2 automatically replaces the tags with values that you specify.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendEmailRequest
-     *        A request to send an email message.
+     *        Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES
+     *        Developer Guide</a>.
      * @return A Java Future containing the result of the SendEmail operation returned by the service.
      * @sample AmazonSimpleEmailServiceV2Async.SendEmail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail" target="_top">AWS API
@@ -2019,10 +2757,18 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      * attachments. The message that you specify has to be a valid MIME message.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Templated</b> – A message that contains personalization tags. When you send this type of email, Amazon SES API
+     * v2 automatically replaces the tags with values that you specify.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sendEmailRequest
-     *        A request to send an email message.
+     *        Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES
+     *        Developer Guide</a>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -2079,6 +2825,47 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param testRenderEmailTemplateRequest
+     *        &gt;Represents a request to create a preview of the MIME content of an email when provided with a template
+     *        and a set of replacement data.
+     * @return A Java Future containing the result of the TestRenderEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.TestRenderEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TestRenderEmailTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TestRenderEmailTemplateResult> testRenderEmailTemplateAsync(TestRenderEmailTemplateRequest testRenderEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param testRenderEmailTemplateRequest
+     *        &gt;Represents a request to create a preview of the MIME content of an email when provided with a template
+     *        and a set of replacement data.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TestRenderEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.TestRenderEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/TestRenderEmailTemplate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<TestRenderEmailTemplateResult> testRenderEmailTemplateAsync(TestRenderEmailTemplateRequest testRenderEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<TestRenderEmailTemplateRequest, TestRenderEmailTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -2159,5 +2946,180 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
     java.util.concurrent.Future<UpdateConfigurationSetEventDestinationResult> updateConfigurationSetEventDestinationAsync(
             UpdateConfigurationSetEventDestinationRequest updateConfigurationSetEventDestinationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigurationSetEventDestinationRequest, UpdateConfigurationSetEventDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateCustomVerificationEmailTemplateRequest
+     *        Represents a request to update an existing custom verification email template.
+     * @return A Java Future containing the result of the UpdateCustomVerificationEmailTemplate operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2Async.UpdateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCustomVerificationEmailTemplateResult> updateCustomVerificationEmailTemplateAsync(
+            UpdateCustomVerificationEmailTemplateRequest updateCustomVerificationEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Updates an existing custom verification email template.
+     * </p>
+     * <p>
+     * For more information about custom verification email templates, see <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-verify-address-custom.html">Using Custom
+     * Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateCustomVerificationEmailTemplateRequest
+     *        Represents a request to update an existing custom verification email template.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCustomVerificationEmailTemplate operation returned by
+     *         the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.UpdateCustomVerificationEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateCustomVerificationEmailTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCustomVerificationEmailTemplateResult> updateCustomVerificationEmailTemplateAsync(
+            UpdateCustomVerificationEmailTemplateRequest updateCustomVerificationEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCustomVerificationEmailTemplateRequest, UpdateCustomVerificationEmailTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified sending authorization policy for the given identity (an email address or a domain). This
+     * API returns successfully even if a policy with the specified name does not exist.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateEmailIdentityPolicyRequest
+     *        Represents a request to update a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @return A Java Future containing the result of the UpdateEmailIdentityPolicy operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.UpdateEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEmailIdentityPolicyResult> updateEmailIdentityPolicyAsync(
+            UpdateEmailIdentityPolicyRequest updateEmailIdentityPolicyRequest);
+
+    /**
+     * <p>
+     * Updates the specified sending authorization policy for the given identity (an email address or a domain). This
+     * API returns successfully even if a policy with the specified name does not exist.
+     * </p>
+     * <note>
+     * <p>
+     * This API is for the identity owner only. If you have not verified the identity, this API will return an error.
+     * </p>
+     * </note>
+     * <p>
+     * Sending authorization is a feature that enables an identity owner to authorize other senders to use its
+     * identities. For information about using sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateEmailIdentityPolicyRequest
+     *        Represents a request to update a sending authorization policy for an identity. Sending authorization is an
+     *        Amazon SES feature that enables you to authorize other senders to use your identities. For information,
+     *        see the <a href=
+     *        "https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization-identity-owner-tasks-management.html"
+     *        >Amazon SES Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEmailIdentityPolicy operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.UpdateEmailIdentityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailIdentityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEmailIdentityPolicyResult> updateEmailIdentityPolicyAsync(
+            UpdateEmailIdentityPolicyRequest updateEmailIdentityPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEmailIdentityPolicyRequest, UpdateEmailIdentityPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateEmailTemplateRequest
+     *        Represents a request to update an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return A Java Future containing the result of the UpdateEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.UpdateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEmailTemplateResult> updateEmailTemplateAsync(UpdateEmailTemplateRequest updateEmailTemplateRequest);
+
+    /**
+     * <p>
+     * Updates an email template. Email templates enable you to send personalized email to one or more destinations in a
+     * single API operation. For more information, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     * Developer Guide</a>.
+     * </p>
+     * <p>
+     * You can execute this operation no more than once per second.
+     * </p>
+     * 
+     * @param updateEmailTemplateRequest
+     *        Represents a request to update an email template. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES
+     *        Developer Guide</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEmailTemplate operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.UpdateEmailTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateEmailTemplate" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEmailTemplateResult> updateEmailTemplateAsync(UpdateEmailTemplateRequest updateEmailTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEmailTemplateRequest, UpdateEmailTemplateResult> asyncHandler);
 
 }

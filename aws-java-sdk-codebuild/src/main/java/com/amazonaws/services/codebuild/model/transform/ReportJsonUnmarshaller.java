@@ -92,6 +92,10 @@ public class ReportJsonUnmarshaller implements Unmarshaller<Report, JsonUnmarsha
                     context.nextToken();
                     report.setTestSummary(TestReportSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("codeCoverageSummary", targetDepth)) {
+                    context.nextToken();
+                    report.setCodeCoverageSummary(CodeCoverageReportSummaryJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

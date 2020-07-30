@@ -80,6 +80,13 @@ public class DescribeProvisioningParametersResultJsonUnmarshaller implements Unm
                     describeProvisioningParametersResult.setProvisioningArtifactPreferences(ProvisioningArtifactPreferencesJsonUnmarshaller.getInstance()
                             .unmarshall(context));
                 }
+                if (context.testExpression("ProvisioningArtifactOutputs", targetDepth)) {
+                    context.nextToken();
+                    describeProvisioningParametersResult.setProvisioningArtifactOutputs(new ListUnmarshaller<ProvisioningArtifactOutput>(
+                            ProvisioningArtifactOutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

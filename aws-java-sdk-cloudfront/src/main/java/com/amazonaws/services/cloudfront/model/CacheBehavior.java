@@ -187,30 +187,47 @@ public class CacheBehavior implements Serializable, Cloneable {
     private String fieldLevelEncryptionId;
     /**
      * <p>
-     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
-     * <code>CreateCachePolicy</code>.
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private String cachePolicyId;
     /**
      * <p>
      * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
-     * see <code>CreateOriginRequestPolicy</code>.
+     * see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      */
     private String originRequestPolicyId;
     /**
      * <p>
      * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
-     * field.
+     * field. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with
+     * policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     * <code>CreateCachePolicy</code>.
+     * If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to send values to the origin but not include them in the cache key, use an
-     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * If you want to send values to the origin but not include them in the cache key, use an origin request policy. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -220,8 +237,12 @@ public class CacheBehavior implements Serializable, Cloneable {
     private ForwardedValues forwardedValues;
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -239,8 +260,12 @@ public class CacheBehavior implements Serializable, Cloneable {
     private Long minTTL;
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead
+     * of this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -255,8 +280,12 @@ public class CacheBehavior implements Serializable, Cloneable {
     private Long defaultTTL;
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1316,13 +1345,21 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
-     * <code>CreateCachePolicy</code>.
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param cachePolicyId
      *        The unique identifier of the cache policy that is attached to this cache behavior. For more information,
-     *        see <code>CreateCachePolicy</code>.
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setCachePolicyId(String cachePolicyId) {
@@ -1331,12 +1368,20 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
-     * <code>CreateCachePolicy</code>.
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return The unique identifier of the cache policy that is attached to this cache behavior. For more information,
-     *         see <code>CreateCachePolicy</code>.
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *         >Creating cache policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public String getCachePolicyId() {
@@ -1345,13 +1390,21 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see
-     * <code>CreateCachePolicy</code>.
+     * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a
+     * href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param cachePolicyId
      *        The unique identifier of the cache policy that is attached to this cache behavior. For more information,
-     *        see <code>CreateCachePolicy</code>.
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1363,12 +1416,20 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
-     * see <code>CreateOriginRequestPolicy</code>.
+     * see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originRequestPolicyId
      *        The unique identifier of the origin request policy that is attached to this cache behavior. For more
-     *        information, see <code>CreateOriginRequestPolicy</code>.
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     *        >Creating origin request policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     *        >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public void setOriginRequestPolicyId(String originRequestPolicyId) {
@@ -1378,11 +1439,19 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
-     * see <code>CreateOriginRequestPolicy</code>.
+     * see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @return The unique identifier of the origin request policy that is attached to this cache behavior. For more
-     *         information, see <code>CreateOriginRequestPolicy</code>.
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     *         >Creating origin request policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     *         >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      */
 
     public String getOriginRequestPolicyId() {
@@ -1392,12 +1461,20 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * The unique identifier of the origin request policy that is attached to this cache behavior. For more information,
-     * see <code>CreateOriginRequestPolicy</code>.
+     * see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
      * @param originRequestPolicyId
      *        The unique identifier of the origin request policy that is attached to this cache behavior. For more
-     *        information, see <code>CreateOriginRequestPolicy</code>.
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     *        >Creating origin request policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     *        >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1409,15 +1486,24 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
-     * field.
+     * field. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with
+     * policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     * <code>CreateCachePolicy</code>.
+     * If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to send values to the origin but not include them in the cache key, use an
-     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * If you want to send values to the origin but not include them in the cache key, use an origin request policy. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1425,14 +1511,23 @@ public class CacheBehavior implements Serializable, Cloneable {
      * 
      * @param forwardedValues
      *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
-     *        this field.</p>
+     *        this field. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html"
+     *        >Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
-     *        If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     *        <code>CreateCachePolicy</code>.
+     *        If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you want to send values to the origin but not include them in the cache key, use an
-     *        <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     *        If you want to send values to the origin but not include them in the cache key, use an origin request
+     *        policy. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     *        >Creating origin request policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     *        >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
      *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1445,29 +1540,47 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
-     * field.
+     * field. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with
+     * policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     * <code>CreateCachePolicy</code>.
+     * If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to send values to the origin but not include them in the cache key, use an
-     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * If you want to send values to the origin but not include them in the cache key, use an origin request policy. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
      * </p>
      * 
      * @return This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
-     *         this field.</p>
+     *         this field. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html"
+     *         >Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *         <p>
-     *         If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     *         <code>CreateCachePolicy</code>.
+     *         If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *         >Creating cache policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
-     *         If you want to send values to the origin but not include them in the cache key, use an
-     *         <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     *         If you want to send values to the origin but not include them in the cache key, use an origin request
+     *         policy. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     *         >Creating origin request policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     *         >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *         </p>
      *         <p>
      *         A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1480,15 +1593,24 @@ public class CacheBehavior implements Serializable, Cloneable {
     /**
      * <p>
      * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this
-     * field.
+     * field. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html">Working with
+     * policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     * <code>CreateCachePolicy</code>.
+     * If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
-     * If you want to send values to the origin but not include them in the cache key, use an
-     * <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     * If you want to send values to the origin but not include them in the cache key, use an origin request policy. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     * >Creating origin request policies</a> or <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     * >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1496,14 +1618,23 @@ public class CacheBehavior implements Serializable, Cloneable {
      * 
      * @param forwardedValues
      *        This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of
-     *        this field.</p>
+     *        this field. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/working-with-policies.html"
+     *        >Working with policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
-     *        If you want to include values in the cache key, use a <code>CachePolicy</code>. See
-     *        <code>CreateCachePolicy</code>.
+     *        If you want to include values in the cache key, use a cache policy. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
-     *        If you want to send values to the origin but not include them in the cache key, use an
-     *        <code>OriginRequestPolicy</code>. See <code>CreateOriginRequestPolicy</code>.
+     *        If you want to send values to the origin but not include them in the cache key, use an origin request
+     *        policy. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html#origin-request-create-origin-request-policy"
+     *        >Creating origin request policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-origin-request-policies.html"
+     *        >Using the managed origin request policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      *        </p>
      *        <p>
      *        A complex type that specifies how CloudFront handles query strings, cookies, and HTTP headers.
@@ -1517,8 +1648,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1533,8 +1668,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * 
      * @param minTTL
-     *        This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy
+     *        instead of this field. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. For more information, see
@@ -1553,8 +1692,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1568,8 +1711,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <code>*</code> for <code>Name</code>).
      * </p>
      * 
-     * @return This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     *         <code>CachePolicyConfig</code> instead of this field.</p>
+     * @return This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy
+     *         instead of this field. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *         >Creating cache policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *         <p>
      *         The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *         another request to your origin to determine whether the object has been updated. For more information,
@@ -1589,8 +1736,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1605,8 +1756,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * 
      * @param minTTL
-     *        This field is deprecated. We recommend that you use the <code>MinTTL</code> field in
-     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        This field is deprecated. We recommend that you use the <code>MinTTL</code> field in a cache policy
+     *        instead of this field. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        The minimum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. For more information, see
@@ -1627,8 +1782,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead
+     * of this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1640,8 +1799,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * 
      * @param defaultTTL
-     *        This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy
+     *        instead of this field. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. The value that you
@@ -1656,8 +1819,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead
+     * of this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1668,8 +1835,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     *         <code>CachePolicyConfig</code> instead of this field.</p>
+     * @return This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy
+     *         instead of this field. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *         >Creating cache policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *         <p>
      *         The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *         another request to your origin to determine whether the object has been updated. The value that you
@@ -1686,8 +1857,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy instead
+     * of this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1699,8 +1874,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * 
      * @param defaultTTL
-     *        This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in
-     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        This field is deprecated. We recommend that you use the <code>DefaultTTL</code> field in a cache policy
+     *        instead of this field. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        The default amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. The value that you
@@ -1717,8 +1896,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1730,8 +1913,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * 
      * @param maxTTL
-     *        This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy
+     *        instead of this field. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. The value that you
@@ -1747,8 +1934,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1759,8 +1950,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * Content Stays in an Edge Cache (Expiration)</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * 
-     * @return This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     *         <code>CachePolicyConfig</code> instead of this field.</p>
+     * @return This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy
+     *         instead of this field. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *         >Creating cache policies</a> or <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *         >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *         <p>
      *         The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *         another request to your origin to determine whether the object has been updated. The value that you
@@ -1776,8 +1971,12 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     * <code>CachePolicyConfig</code> instead of this field.
+     * This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy instead of
+     * this field. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     * >Creating cache policies</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html">Using
+     * the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.
      * </p>
      * <p>
      * The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards another
@@ -1789,8 +1988,12 @@ public class CacheBehavior implements Serializable, Cloneable {
      * </p>
      * 
      * @param maxTTL
-     *        This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in
-     *        <code>CachePolicyConfig</code> instead of this field.</p>
+     *        This field is deprecated. We recommend that you use the <code>MaxTTL</code> field in a cache policy
+     *        instead of this field. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
+     *        >Creating cache policies</a> or <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-managed-cache-policies.html"
+     *        >Using the managed cache policies</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      *        <p>
      *        The maximum amount of time that you want objects to stay in CloudFront caches before CloudFront forwards
      *        another request to your origin to determine whether the object has been updated. The value that you

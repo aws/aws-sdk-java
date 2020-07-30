@@ -125,7 +125,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
      * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
-     * one detector per account per Region.
+     * one detector per account per Region. All data sources are enabled in a new detector by default.
      * </p>
      * 
      * @param createDetectorRequest
@@ -140,7 +140,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
      * <p>
      * Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To
      * start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only
-     * one detector per account per Region.
+     * one detector per account per Region. All data sources are enabled in a new detector by default.
      * </p>
      * 
      * @param createDetectorRequest
@@ -226,8 +226,19 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS
-     * account can then invite these members to manage GuardDuty in their accounts.
+     * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. This step is a
+     * prerequisite for managing the associated member accounts either by invitation or through an organization.
+     * </p>
+     * <p>
+     * When using <code>Create Members</code> as an organizations delegated administrator this action will enable
+     * GuardDuty in the added member accounts, with the exception of the organization master account, which must enable
+     * GuardDuty prior to being added as a member.
+     * </p>
+     * <p>
+     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
+     * accounts and before using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+     * <code>Invite Members</code> </a>.
      * </p>
      * 
      * @param createMembersRequest
@@ -240,8 +251,19 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS
-     * account can then invite these members to manage GuardDuty in their accounts.
+     * Creates member accounts of the current AWS account by specifying a list of AWS account IDs. This step is a
+     * prerequisite for managing the associated member accounts either by invitation or through an organization.
+     * </p>
+     * <p>
+     * When using <code>Create Members</code> as an organizations delegated administrator this action will enable
+     * GuardDuty in the added member accounts, with the exception of the organization master account, which must enable
+     * GuardDuty prior to being added as a member.
+     * </p>
+     * <p>
+     * If you are adding accounts by invitation use this action after GuardDuty has been enabled in potential member
+     * accounts and before using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">
+     * <code>Invite Members</code> </a>.
      * </p>
      * 
      * @param createMembersRequest
@@ -1130,6 +1152,47 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
+     * Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled
+     * detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ
+     * from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How
+     * Usage Costs are Calculated</a>.
+     * </p>
+     * 
+     * @param getUsageStatisticsRequest
+     * @return A Java Future containing the result of the GetUsageStatistics operation returned by the service.
+     * @sample AmazonGuardDutyAsync.GetUsageStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUsageStatisticsResult> getUsageStatisticsAsync(GetUsageStatisticsRequest getUsageStatisticsRequest);
+
+    /**
+     * <p>
+     * Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled
+     * detectors or data sources the cost returned will include only the usage so far under 30 days, this may differ
+     * from the cost metrics in the console, which projects usage over 30 days to provide a monthly cost estimate. For
+     * more information see <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How
+     * Usage Costs are Calculated</a>.
+     * </p>
+     * 
+     * @param getUsageStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetUsageStatistics operation returned by the service.
+     * @sample AmazonGuardDutyAsyncHandler.GetUsageStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetUsageStatistics" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetUsageStatisticsResult> getUsageStatisticsAsync(GetUsageStatisticsRequest getUsageStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetUsageStatisticsRequest, GetUsageStatisticsResult> asyncHandler);
+
+    /**
+     * <p>
      * Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to enable GuardDuty,
      * and allow the current AWS account to view and manage these accounts' GuardDuty findings on their behalf as the
      * master account.
@@ -1322,7 +1385,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about associated member accounts for the current GuardDuty master account.
+     * Lists details about all member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1335,7 +1398,7 @@ public interface AmazonGuardDutyAsync extends AmazonGuardDuty {
 
     /**
      * <p>
-     * Lists details about associated member accounts for the current GuardDuty master account.
+     * Lists details about all member accounts for the current GuardDuty master account.
      * </p>
      * 
      * @param listMembersRequest

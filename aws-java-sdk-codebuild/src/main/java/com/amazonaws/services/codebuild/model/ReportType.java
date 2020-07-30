@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReportType {
 
-    TEST("TEST");
+    TEST("TEST"),
+    CODE_COVERAGE("CODE_COVERAGE");
 
     private String value;
 

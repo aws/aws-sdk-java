@@ -56,6 +56,12 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
      * </p>
      */
     private ProvisioningArtifactPreferences provisioningArtifactPreferences;
+    /**
+     * <p>
+     * The output of the provisioning artifact.
+     * </p>
+     */
+    private java.util.List<ProvisioningArtifactOutput> provisioningArtifactOutputs;
 
     /**
      * <p>
@@ -393,6 +399,76 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The output of the provisioning artifact.
+     * </p>
+     * 
+     * @return The output of the provisioning artifact.
+     */
+
+    public java.util.List<ProvisioningArtifactOutput> getProvisioningArtifactOutputs() {
+        return provisioningArtifactOutputs;
+    }
+
+    /**
+     * <p>
+     * The output of the provisioning artifact.
+     * </p>
+     * 
+     * @param provisioningArtifactOutputs
+     *        The output of the provisioning artifact.
+     */
+
+    public void setProvisioningArtifactOutputs(java.util.Collection<ProvisioningArtifactOutput> provisioningArtifactOutputs) {
+        if (provisioningArtifactOutputs == null) {
+            this.provisioningArtifactOutputs = null;
+            return;
+        }
+
+        this.provisioningArtifactOutputs = new java.util.ArrayList<ProvisioningArtifactOutput>(provisioningArtifactOutputs);
+    }
+
+    /**
+     * <p>
+     * The output of the provisioning artifact.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProvisioningArtifactOutputs(java.util.Collection)} or
+     * {@link #withProvisioningArtifactOutputs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param provisioningArtifactOutputs
+     *        The output of the provisioning artifact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersResult withProvisioningArtifactOutputs(ProvisioningArtifactOutput... provisioningArtifactOutputs) {
+        if (this.provisioningArtifactOutputs == null) {
+            setProvisioningArtifactOutputs(new java.util.ArrayList<ProvisioningArtifactOutput>(provisioningArtifactOutputs.length));
+        }
+        for (ProvisioningArtifactOutput ele : provisioningArtifactOutputs) {
+            this.provisioningArtifactOutputs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The output of the provisioning artifact.
+     * </p>
+     * 
+     * @param provisioningArtifactOutputs
+     *        The output of the provisioning artifact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProvisioningParametersResult withProvisioningArtifactOutputs(java.util.Collection<ProvisioningArtifactOutput> provisioningArtifactOutputs) {
+        setProvisioningArtifactOutputs(provisioningArtifactOutputs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -413,7 +489,9 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
         if (getTagOptions() != null)
             sb.append("TagOptions: ").append(getTagOptions()).append(",");
         if (getProvisioningArtifactPreferences() != null)
-            sb.append("ProvisioningArtifactPreferences: ").append(getProvisioningArtifactPreferences());
+            sb.append("ProvisioningArtifactPreferences: ").append(getProvisioningArtifactPreferences()).append(",");
+        if (getProvisioningArtifactOutputs() != null)
+            sb.append("ProvisioningArtifactOutputs: ").append(getProvisioningArtifactOutputs());
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +528,10 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
         if (other.getProvisioningArtifactPreferences() != null
                 && other.getProvisioningArtifactPreferences().equals(this.getProvisioningArtifactPreferences()) == false)
             return false;
+        if (other.getProvisioningArtifactOutputs() == null ^ this.getProvisioningArtifactOutputs() == null)
+            return false;
+        if (other.getProvisioningArtifactOutputs() != null && other.getProvisioningArtifactOutputs().equals(this.getProvisioningArtifactOutputs()) == false)
+            return false;
         return true;
     }
 
@@ -463,6 +545,7 @@ public class DescribeProvisioningParametersResult extends com.amazonaws.AmazonWe
         hashCode = prime * hashCode + ((getUsageInstructions() == null) ? 0 : getUsageInstructions().hashCode());
         hashCode = prime * hashCode + ((getTagOptions() == null) ? 0 : getTagOptions().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactPreferences() == null) ? 0 : getProvisioningArtifactPreferences().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactOutputs() == null) ? 0 : getProvisioningArtifactOutputs().hashCode());
         return hashCode;
     }
 

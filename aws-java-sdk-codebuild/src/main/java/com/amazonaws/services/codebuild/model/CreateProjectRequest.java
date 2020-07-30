@@ -199,6 +199,12 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<ProjectFileSystemLocation> fileSystemLocations;
+    /**
+     * <p>
+     * A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     * </p>
+     */
+    private ProjectBuildBatchConfig buildBatchConfig;
 
     /**
      * <p>
@@ -1486,6 +1492,46 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     * </p>
+     * 
+     * @param buildBatchConfig
+     *        A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     */
+
+    public void setBuildBatchConfig(ProjectBuildBatchConfig buildBatchConfig) {
+        this.buildBatchConfig = buildBatchConfig;
+    }
+
+    /**
+     * <p>
+     * A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     * </p>
+     * 
+     * @return A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     */
+
+    public ProjectBuildBatchConfig getBuildBatchConfig() {
+        return this.buildBatchConfig;
+    }
+
+    /**
+     * <p>
+     * A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     * </p>
+     * 
+     * @param buildBatchConfig
+     *        A <a>ProjectBuildBatchConfig</a> object that defines the batch build options for the project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProjectRequest withBuildBatchConfig(ProjectBuildBatchConfig buildBatchConfig) {
+        setBuildBatchConfig(buildBatchConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1534,7 +1580,9 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getLogsConfig() != null)
             sb.append("LogsConfig: ").append(getLogsConfig()).append(",");
         if (getFileSystemLocations() != null)
-            sb.append("FileSystemLocations: ").append(getFileSystemLocations());
+            sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
+        if (getBuildBatchConfig() != null)
+            sb.append("BuildBatchConfig: ").append(getBuildBatchConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1625,6 +1673,10 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getFileSystemLocations() != null && other.getFileSystemLocations().equals(this.getFileSystemLocations()) == false)
             return false;
+        if (other.getBuildBatchConfig() == null ^ this.getBuildBatchConfig() == null)
+            return false;
+        if (other.getBuildBatchConfig() != null && other.getBuildBatchConfig().equals(this.getBuildBatchConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1652,6 +1704,7 @@ public class CreateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getBadgeEnabled() == null) ? 0 : getBadgeEnabled().hashCode());
         hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
+        hashCode = prime * hashCode + ((getBuildBatchConfig() == null) ? 0 : getBuildBatchConfig().hashCode());
         return hashCode;
     }
 

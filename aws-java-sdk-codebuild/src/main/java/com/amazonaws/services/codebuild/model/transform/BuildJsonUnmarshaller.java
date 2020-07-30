@@ -187,6 +187,10 @@ public class BuildJsonUnmarshaller implements Unmarshaller<Build, JsonUnmarshall
                     context.nextToken();
                     build.setDebugSession(DebugSessionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("buildBatchArn", targetDepth)) {
+                    context.nextToken();
+                    build.setBuildBatchArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

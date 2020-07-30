@@ -30,23 +30,33 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the query. The valid values in this release are the following:
+     * The type of the query. You can use the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
+     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API <a
-     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     * >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at
-     * least one value of each specified tag key, are returned in your query. If you specify more than one value for a
-     * tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
+     * resource types and tags, as supported by the AWS Tagging API <a href=
+     * "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     * > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If you
+     * specify more than one tag key, only resources that match all tag keys, and at least one value of each specified
+     * tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified values.
      * </p>
      * <p>
      * For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     * <code>Version</code>, with two values each. (
-     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The results of
-     * this query might include the following.
+     * <code>Version</code>, with two values each:
+     * </p>
+     * <p>
+     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     * </p>
+     * <p>
+     * The results of this query could include the following.
      * </p>
      * <ul>
      * <li>
@@ -63,14 +73,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The query would not return the following results, however. The following EC2 instance does not have all tag keys
-     * specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at
-     * least one of the specified tag key values in the filter.
+     * The query would not include the following items in the results, however.
      * </p>
      * <ul>
      * <li>
      * <p>
      * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     * </p>
+     * <p>
+     * The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     * results.
      * </p>
      * </li>
      * <li>
@@ -78,13 +90,12 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
+     * <p>
+     * The database has all of the tag keys, but none of those keys has an associated value that matches at least one of
+     * the specified values in the filter.
+     * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
-     * </p>
      * </li>
      * </ul>
      */
@@ -98,23 +109,33 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the query. The valid values in this release are the following:
+     * The type of the query. You can use the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
+     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API <a
-     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     * >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at
-     * least one value of each specified tag key, are returned in your query. If you specify more than one value for a
-     * tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
+     * resource types and tags, as supported by the AWS Tagging API <a href=
+     * "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     * > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If you
+     * specify more than one tag key, only resources that match all tag keys, and at least one value of each specified
+     * tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified values.
      * </p>
      * <p>
      * For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     * <code>Version</code>, with two values each. (
-     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The results of
-     * this query might include the following.
+     * <code>Version</code>, with two values each:
+     * </p>
+     * <p>
+     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     * </p>
+     * <p>
+     * The results of this query could include the following.
      * </p>
      * <ul>
      * <li>
@@ -131,14 +152,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The query would not return the following results, however. The following EC2 instance does not have all tag keys
-     * specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at
-     * least one of the specified tag key values in the filter.
+     * The query would not include the following items in the results, however.
      * </p>
      * <ul>
      * <li>
      * <p>
      * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     * </p>
+     * <p>
+     * The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     * results.
      * </p>
      * </li>
      * <li>
@@ -146,34 +169,43 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
+     * <p>
+     * The database has all of the tag keys, but none of those keys has an associated value that matches at least one of
+     * the specified values in the filter.
+     * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The type of the query. The valid values in this release are the following:</p>
+     *        The type of the query. You can use the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
+     *        <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack
+     *        ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag
-     *        filters for resource types and tags, as supported by the AWS Tagging API <a
-     *        href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     *        >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys,
-     *        and at least one value of each specified tag key, are returned in your query. If you specify more than one
-     *        value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of
-     *        the specified values.
+     *        filters for resource types and tags, as supported by the AWS Tagging API <a href=
+     *        "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     *        > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If
+     *        you specify more than one tag key, only resources that match all tag keys, and at least one value of each
+     *        specified tag key, are returned in your query. If you specify more than one value for a tag key, a
+     *        resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
      *        </p>
      *        <p>
      *        For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     *        <code>Version</code>, with two values each. (
-     *        <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The
-     *        results of this query might include the following.
+     *        <code>Version</code>, with two values each:
+     *        </p>
+     *        <p>
+     *        <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     *        </p>
+     *        <p>
+     *        The results of this query could include the following.
      *        </p>
      *        <ul>
      *        <li>
@@ -190,14 +222,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        The query would not return the following results, however. The following EC2 instance does not have all
-     *        tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no
-     *        values that match at least one of the specified tag key values in the filter.
+     *        The query would not include the following items in the results, however.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     *        </p>
+     *        <p>
+     *        The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     *        results.
      *        </p>
      *        </li>
      *        <li>
@@ -205,14 +239,12 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      *        <code>{"Key":"Version","Value":"4"}</code>
      *        </p>
+     *        <p>
+     *        The database has all of the tag keys, but none of those keys has an associated value that matches at least
+     *        one of the specified values in the filter.
+     *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack
-     *        ARN.
-     *        </p>
      *        </li>
      * @see QueryType
      */
@@ -223,23 +255,33 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the query. The valid values in this release are the following:
+     * The type of the query. You can use the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
+     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API <a
-     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     * >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at
-     * least one value of each specified tag key, are returned in your query. If you specify more than one value for a
-     * tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
+     * resource types and tags, as supported by the AWS Tagging API <a href=
+     * "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     * > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If you
+     * specify more than one tag key, only resources that match all tag keys, and at least one value of each specified
+     * tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified values.
      * </p>
      * <p>
      * For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     * <code>Version</code>, with two values each. (
-     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The results of
-     * this query might include the following.
+     * <code>Version</code>, with two values each:
+     * </p>
+     * <p>
+     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     * </p>
+     * <p>
+     * The results of this query could include the following.
      * </p>
      * <ul>
      * <li>
@@ -256,14 +298,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The query would not return the following results, however. The following EC2 instance does not have all tag keys
-     * specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at
-     * least one of the specified tag key values in the filter.
+     * The query would not include the following items in the results, however.
      * </p>
      * <ul>
      * <li>
      * <p>
      * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     * </p>
+     * <p>
+     * The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     * results.
      * </p>
      * </li>
      * <li>
@@ -271,33 +315,42 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
      * <p>
-     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
+     * The database has all of the tag keys, but none of those keys has an associated value that matches at least one of
+     * the specified values in the filter.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
      * 
-     * @return The type of the query. The valid values in this release are the following:</p>
+     * @return The type of the query. You can use the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
+     *         <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation
+     *         stack ARN.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag
-     *         filters for resource types and tags, as supported by the AWS Tagging API <a
-     *         href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     *         >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag
-     *         keys, and at least one value of each specified tag key, are returned in your query. If you specify more
-     *         than one value for a tag key, a resource matches the filter if it has a tag key value that matches
-     *         <i>any</i> of the specified values.
+     *         filters for resource types and tags, as supported by the AWS Tagging API <a href=
+     *         "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     *         > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If
+     *         you specify more than one tag key, only resources that match all tag keys, and at least one value of each
+     *         specified tag key, are returned in your query. If you specify more than one value for a tag key, a
+     *         resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
      *         </p>
      *         <p>
      *         For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     *         <code>Version</code>, with two values each. (
-     *         <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The
-     *         results of this query might include the following.
+     *         <code>Version</code>, with two values each:
+     *         </p>
+     *         <p>
+     *         <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     *         </p>
+     *         <p>
+     *         The results of this query could include the following.
      *         </p>
      *         <ul>
      *         <li>
@@ -314,14 +367,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         The query would not return the following results, however. The following EC2 instance does not have all
-     *         tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no
-     *         values that match at least one of the specified tag key values in the filter.
+     *         The query would not include the following items in the results, however.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     *         </p>
+     *         <p>
+     *         The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     *         results.
      *         </p>
      *         </li>
      *         <li>
@@ -329,14 +384,12 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *         An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      *         <code>{"Key":"Version","Value":"4"}</code>
      *         </p>
+     *         <p>
+     *         The database has all of the tag keys, but none of those keys has an associated value that matches at
+     *         least one of the specified values in the filter.
+     *         </p>
      *         </li>
      *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation
-     *         stack ARN.
-     *         </p>
      *         </li>
      * @see QueryType
      */
@@ -347,23 +400,33 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the query. The valid values in this release are the following:
+     * The type of the query. You can use the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
+     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API <a
-     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     * >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at
-     * least one value of each specified tag key, are returned in your query. If you specify more than one value for a
-     * tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
+     * resource types and tags, as supported by the AWS Tagging API <a href=
+     * "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     * > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If you
+     * specify more than one tag key, only resources that match all tag keys, and at least one value of each specified
+     * tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified values.
      * </p>
      * <p>
      * For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     * <code>Version</code>, with two values each. (
-     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The results of
-     * this query might include the following.
+     * <code>Version</code>, with two values each:
+     * </p>
+     * <p>
+     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     * </p>
+     * <p>
+     * The results of this query could include the following.
      * </p>
      * <ul>
      * <li>
@@ -380,14 +443,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The query would not return the following results, however. The following EC2 instance does not have all tag keys
-     * specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at
-     * least one of the specified tag key values in the filter.
+     * The query would not include the following items in the results, however.
      * </p>
      * <ul>
      * <li>
      * <p>
      * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     * </p>
+     * <p>
+     * The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     * results.
      * </p>
      * </li>
      * <li>
@@ -395,34 +460,43 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
+     * <p>
+     * The database has all of the tag keys, but none of those keys has an associated value that matches at least one of
+     * the specified values in the filter.
+     * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The type of the query. The valid values in this release are the following:</p>
+     *        The type of the query. You can use the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
+     *        <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack
+     *        ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag
-     *        filters for resource types and tags, as supported by the AWS Tagging API <a
-     *        href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     *        >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys,
-     *        and at least one value of each specified tag key, are returned in your query. If you specify more than one
-     *        value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of
-     *        the specified values.
+     *        filters for resource types and tags, as supported by the AWS Tagging API <a href=
+     *        "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     *        > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If
+     *        you specify more than one tag key, only resources that match all tag keys, and at least one value of each
+     *        specified tag key, are returned in your query. If you specify more than one value for a tag key, a
+     *        resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
      *        </p>
      *        <p>
      *        For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     *        <code>Version</code>, with two values each. (
-     *        <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The
-     *        results of this query might include the following.
+     *        <code>Version</code>, with two values each:
+     *        </p>
+     *        <p>
+     *        <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     *        </p>
+     *        <p>
+     *        The results of this query could include the following.
      *        </p>
      *        <ul>
      *        <li>
@@ -439,14 +513,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        The query would not return the following results, however. The following EC2 instance does not have all
-     *        tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no
-     *        values that match at least one of the specified tag key values in the filter.
+     *        The query would not include the following items in the results, however.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     *        </p>
+     *        <p>
+     *        The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     *        results.
      *        </p>
      *        </li>
      *        <li>
@@ -454,14 +530,12 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      *        <code>{"Key":"Version","Value":"4"}</code>
      *        </p>
+     *        <p>
+     *        The database has all of the tag keys, but none of those keys has an associated value that matches at least
+     *        one of the specified values in the filter.
+     *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack
-     *        ARN.
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryType
@@ -474,23 +548,33 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the query. The valid values in this release are the following:
+     * The type of the query. You can use the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
+     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag filters for
-     * resource types and tags, as supported by the AWS Tagging API <a
-     * href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     * >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys, and at
-     * least one value of each specified tag key, are returned in your query. If you specify more than one value for a
-     * tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
+     * resource types and tags, as supported by the AWS Tagging API <a href=
+     * "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     * > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If you
+     * specify more than one tag key, only resources that match all tag keys, and at least one value of each specified
+     * tag key, are returned in your query. If you specify more than one value for a tag key, a resource matches the
+     * filter if it has a tag key value that matches <i>any</i> of the specified values.
      * </p>
      * <p>
      * For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     * <code>Version</code>, with two values each. (
-     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The results of
-     * this query might include the following.
+     * <code>Version</code>, with two values each:
+     * </p>
+     * <p>
+     * <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     * </p>
+     * <p>
+     * The results of this query could include the following.
      * </p>
      * <ul>
      * <li>
@@ -507,14 +591,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * The query would not return the following results, however. The following EC2 instance does not have all tag keys
-     * specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no values that match at
-     * least one of the specified tag key values in the filter.
+     * The query would not include the following items in the results, however.
      * </p>
      * <ul>
      * <li>
      * <p>
      * An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     * </p>
+     * <p>
+     * The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     * results.
      * </p>
      * </li>
      * <li>
@@ -522,34 +608,43 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      * An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      * <code>{"Key":"Version","Value":"4"}</code>
      * </p>
+     * <p>
+     * The database has all of the tag keys, but none of those keys has an associated value that matches at least one of
+     * the specified values in the filter.
+     * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack ARN.
-     * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The type of the query. The valid values in this release are the following:</p>
+     *        The type of the query. You can use the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
+     *        <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack
+     *        ARN.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <i> <code>TAG_FILTERS_1_0:</code> </i> A JSON syntax that lets you specify a collection of simple tag
-     *        filters for resource types and tags, as supported by the AWS Tagging API <a
-     *        href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html"
-     *        >GetResources</a> operation. If you specify more than one tag key, only resources that match all tag keys,
-     *        and at least one value of each specified tag key, are returned in your query. If you specify more than one
-     *        value for a tag key, a resource matches the filter if it has a tag key value that matches <i>any</i> of
-     *        the specified values.
+     *        filters for resource types and tags, as supported by the AWS Tagging API <a href=
+     *        "https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_GetResources.html#resourcegrouptagging-GetResources-request-ResourceTypeFilters"
+     *        > <code>ResourceTypeFilters</code> parameter of the <code>tagging:GetResources</code> </a> operation. If
+     *        you specify more than one tag key, only resources that match all tag keys, and at least one value of each
+     *        specified tag key, are returned in your query. If you specify more than one value for a tag key, a
+     *        resource matches the filter if it has a tag key value that matches <i>any</i> of the specified values.
      *        </p>
      *        <p>
      *        For example, consider the following sample query for resources that have two tags, <code>Stage</code> and
-     *        <code>Version</code>, with two values each. (
-     *        <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>) The
-     *        results of this query might include the following.
+     *        <code>Version</code>, with two values each:
+     *        </p>
+     *        <p>
+     *        <code>[{"Key":"Stage","Values":["Test","Deploy"]},{"Key":"Version","Values":["1","2"]}]</code>
+     *        </p>
+     *        <p>
+     *        The results of this query could include the following.
      *        </p>
      *        <ul>
      *        <li>
@@ -566,14 +661,16 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        The query would not return the following results, however. The following EC2 instance does not have all
-     *        tag keys specified in the filter, so it is rejected. The RDS database has all of the tag keys, but no
-     *        values that match at least one of the specified tag key values in the filter.
+     *        The query would not include the following items in the results, however.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        An EC2 instance that has only the following tag: <code>{"Key":"Stage","Value":"Deploy"}</code>.
+     *        </p>
+     *        <p>
+     *        The instance does not have <b>all</b> of the tag keys specified in the filter, so it is excluded from the
+     *        results.
      *        </p>
      *        </li>
      *        <li>
@@ -581,14 +678,12 @@ public class ResourceQuery implements Serializable, Cloneable, StructuredPojo {
      *        An RDS database that has the following two tags: <code>{"Key":"Stage","Value":"Archived"}</code>, and
      *        <code>{"Key":"Version","Value":"4"}</code>
      *        </p>
+     *        <p>
+     *        The database has all of the tag keys, but none of those keys has an associated value that matches at least
+     *        one of the specified values in the filter.
+     *        </p>
      *        </li>
      *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <i> <code>CLOUDFORMATION_STACK_1_0:</code> </i> A JSON syntax that lets you specify a CloudFormation stack
-     *        ARN.
-     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryType

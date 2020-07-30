@@ -108,6 +108,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public RebootBrokerResult rebootBroker(RebootBrokerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

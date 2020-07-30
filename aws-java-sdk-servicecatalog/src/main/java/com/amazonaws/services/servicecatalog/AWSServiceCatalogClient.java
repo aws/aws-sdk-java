@@ -1022,6 +1022,9 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * <p>
      * <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.
      * </p>
+     * <p>
+     * You can't share a shared resource. This includes portfolios that contain a shared product.
+     * </p>
      * 
      * @param createPortfolioShareRequest
      * @return Result of the CreatePortfolioShare operation returned by the service.

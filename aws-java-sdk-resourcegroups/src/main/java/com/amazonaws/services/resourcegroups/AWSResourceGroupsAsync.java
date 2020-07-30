@@ -321,7 +321,7 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of ARNs of resources that are members of a specified resource group.
+     * Returns a list of ARNs of the resources that are members of a specified resource group.
      * </p>
      * 
      * @param listGroupResourcesRequest
@@ -334,7 +334,7 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of ARNs of resources that are members of a specified resource group.
+     * Returns a list of ARNs of the resources that are members of a specified resource group.
      * </p>
      * 
      * @param listGroupResourcesRequest
@@ -383,7 +383,7 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a
+     * Returns a list of AWS resource identifiers that matches tne specified query. The query uses the same format as a
      * resource query in a CreateGroup or UpdateGroupQuery operation.
      * </p>
      * 
@@ -397,7 +397,7 @@ public interface AWSResourceGroupsAsync extends AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of AWS resource identifiers that matches a specified query. The query uses the same format as a
+     * Returns a list of AWS resource identifiers that matches tne specified query. The query uses the same format as a
      * resource query in a CreateGroup or UpdateGroupQuery operation.
      * </p>
      * 
