@@ -55,8 +55,7 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
      * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
-     * you create a <code>VisibilityConfig</code>.
+     * reserved for AWS WAF, for example "All" and "Default_Action."
      * </p>
      */
     private String metricName;
@@ -201,15 +200,13 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
      * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
-     * you create a <code>VisibilityConfig</code>.
+     * reserved for AWS WAF, for example "All" and "Default_Action."
      * </p>
      * 
      * @param metricName
      *        A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
      *        _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
-     *        names reserved for AWS WAF, for example "All" and "Default_Action." You can't change a
-     *        <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
+     *        names reserved for AWS WAF, for example "All" and "Default_Action."
      */
 
     public void setMetricName(String metricName) {
@@ -220,14 +217,12 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
      * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
-     * you create a <code>VisibilityConfig</code>.
+     * reserved for AWS WAF, for example "All" and "Default_Action."
      * </p>
      * 
      * @return A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
      *         _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
-     *         names reserved for AWS WAF, for example "All" and "Default_Action." You can't change a
-     *         <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
+     *         names reserved for AWS WAF, for example "All" and "Default_Action."
      */
 
     public String getMetricName() {
@@ -238,15 +233,13 @@ public class VisibilityConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and _
      * (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric names
-     * reserved for AWS WAF, for example "All" and "Default_Action." You can't change a <code>MetricName</code> after
-     * you create a <code>VisibilityConfig</code>.
+     * reserved for AWS WAF, for example "All" and "Default_Action."
      * </p>
      * 
      * @param metricName
      *        A name of the CloudWatch metric. The name can contain only the characters: A-Z, a-z, 0-9, - (hyphen), and
      *        _ (underscore). The name can be from one to 128 characters long. It can't contain whitespace or metric
-     *        names reserved for AWS WAF, for example "All" and "Default_Action." You can't change a
-     *        <code>MetricName</code> after you create a <code>VisibilityConfig</code>.
+     *        names reserved for AWS WAF, for example "All" and "Default_Action."
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

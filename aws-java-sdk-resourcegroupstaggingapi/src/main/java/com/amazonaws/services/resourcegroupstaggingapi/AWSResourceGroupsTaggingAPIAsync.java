@@ -34,6 +34,13 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * For example, if you have two Amazon EC2 instances, you might assign both a tag key of "Stack." But the value of
  * "Stack" might be "Testing" for one and "Production" for the other.
  * </p>
+ * <important>
+ * <p>
+ * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use
+ * tags to provide you with billing and administration services. Tags are not intended to be used for private or
+ * sensitive data.
+ * </p>
+ * </important>
  * <p>
  * Tagging can help you organize your resources and enables you to simplify resource management, access management and
  * cost allocation.
@@ -103,492 +110,598 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * <i>IAM User Guide</i>.
  * </p>
  * <p>
+ * <i> <b>Services that support the Resource Groups Tagging API</b> </i>
+ * </p>
+ * <p>
  * You can use the Resource Groups Tagging API to tag resources for the following AWS services.
  * </p>
  * <ul>
  * <li>
  * <p>
- * Alexa for Business (a4b)
+ * <a href="https://docs.aws.amazon.com/a4b">Alexa for Business (a4b)</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * API Gateway
+ * <a href="https://docs.aws.amazon.com/apigateway">API Gateway</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon AppStream
+ * <a href="https://docs.aws.amazon.com/appstream2">Amazon AppStream</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS AppSync
+ * <a href="https://docs.aws.amazon.com/appsync">AWS AppSync</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS App Mesh
+ * <a href="https://docs.aws.amazon.com/app-mesh">AWS App Mesh</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Athena
+ * <a href="https://docs.aws.amazon.com/athena">Amazon Athena</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Aurora
+ * <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide">Amazon Aurora</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Backup
+ * <a href="https://docs.aws.amazon.com/aws-backup">AWS Backup</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Certificate Manager
+ * <a href="https://docs.aws.amazon.com/acm">AWS Certificate Manager</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Certificate Manager Private CA
+ * <a href="https://docs.aws.amazon.com/acm">AWS Certificate Manager Private CA</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Cloud Directory
+ * <a href="https://docs.aws.amazon.com/clouddirectory">Amazon Cloud Directory</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CloudFormation
+ * <a href="https://docs.aws.amazon.com/cloud-map">AWS Cloud Map</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon CloudFront
+ * <a href="https://docs.aws.amazon.com/cloudformation">AWS CloudFormation</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CloudHSM
+ * <a href="https://docs.aws.amazon.com/cloudfront">Amazon CloudFront</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CloudTrail
+ * <a href="https://docs.aws.amazon.com/cloudhsm">AWS CloudHSM</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon CloudWatch (alarms only)
+ * <a href="https://docs.aws.amazon.com/cloudtrail">AWS CloudTrail</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon CloudWatch Events
+ * <a href="https://docs.aws.amazon.com/cloudwatch">Amazon CloudWatch (alarms only)</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon CloudWatch Logs
+ * <a href="https://docs.aws.amazon.com/cloudwatch/?id=docs_gateway#amazon-cloudwatch-events">Amazon CloudWatch
+ * Events</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CodeBuild
+ * <a href="https://docs.aws.amazon.com/cloudwatch/?id=docs_gateway#amazon-cloudwatch-logs">Amazon CloudWatch Logs</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CodeCommit
+ * <a href="https://docs.aws.amazon.com/cloudwatch">Amazon Cloudwatch Synthetics</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CodePipeline
+ * <a href="https://docs.aws.amazon.com/codebuild">AWS CodeBuild</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS CodeStar
+ * <a href="https://docs.aws.amazon.com/codecommit">AWS CodeCommit</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Cognito Identity
+ * <a href="https://docs.aws.amazon.com/codepipeline">AWS CodePipeline</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Cognito User Pools
+ * <a href="https://docs.aws.amazon.com/codestar">AWS CodeStar</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Comprehend
+ * <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/">AWS CodeStar Connections</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Config
+ * <a href="https://docs.aws.amazon.com/cognito">Amazon Cognito Identity</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Data Exchange
+ * <a href="https://docs.aws.amazon.com/cognito">Amazon Cognito User Pools</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Data Pipeline
+ * <a href="https://docs.aws.amazon.com/comprehend">Amazon Comprehend</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Database Migration Service
+ * <a href="https://docs.aws.amazon.com/config">AWS Config</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS DataSync
+ * <a href="http://aws.amazon.com/connect/resources/?whats-new-cards#Documentation">Amazon Connect</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Device Farm
+ * <a href="https://docs.aws.amazon.com/data-exchange">AWS Data Exchange</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Direct Connect
+ * <a href="https://docs.aws.amazon.com/data-pipeline">AWS Data Pipeline</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Directory Service
+ * <a href="https://docs.aws.amazon.com/dms">AWS Database Migration Service</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon DynamoDB
+ * <a href="https://docs.aws.amazon.com/datasync">AWS DataSync</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon EBS
+ * <a href="https://docs.aws.amazon.com/devicefarm">AWS Device Farm</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon EC2
+ * <a href="https://docs.aws.amazon.com/directconnect">AWS Direct Connect</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon ECR
+ * <a href="https://docs.aws.amazon.com/directory-service">AWS Directory Service</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon ECS
+ * <a href="https://docs.aws.amazon.com/dynamodb">Amazon DynamoDB</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon EKS
+ * <a href="https://docs.aws.amazon.com/ebs">Amazon EBS</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Elastic Beanstalk
+ * <a href="https://docs.aws.amazon.com/ec2">Amazon EC2</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Elastic File System
+ * <a href="https://docs.aws.amazon.com/imagebuilder">EC2 Image Builder</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Elastic Load Balancing
+ * <a href="https://docs.aws.amazon.com/ecr">Amazon ECR</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon ElastiCache
+ * <a href="https://docs.aws.amazon.com/ecs">Amazon ECS</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Elasticsearch Service
+ * <a href="https://docs.aws.amazon.com/eks">Amazon EKS</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Elemental MediaLive
+ * <a href="https://docs.aws.amazon.com/elastic-beanstalk">AWS Elastic Beanstalk</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Elemental MediaPackage
+ * <a href="https://docs.aws.amazon.com/efs">Amazon Elastic File System</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Elemental MediaTailor
+ * <a href="https://docs.aws.amazon.com/elasticloadbalancing">Elastic Load Balancing</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon EMR
+ * <a href="https://docs.aws.amazon.com/elasticache">Amazon ElastiCache</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon FSx
+ * <a href="https://docs.aws.amazon.com/elasticsearch-service">Amazon Elasticsearch Service</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon S3 Glacier
+ * <a href="https://docs.aws.amazon.com/medialive">AWS Elemental MediaLive</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Glue
+ * <a href="https://docs.aws.amazon.com/mediapackage">AWS Elemental MediaPackage</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon GuardDuty
+ * <a href="https://docs.aws.amazon.com/mediapackage">AWS Elemental MediaPackage VoD</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Inspector
+ * <a href="https://docs.aws.amazon.com/mediatailor">AWS Elemental MediaTailor</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Analytics
+ * <a href="https://docs.aws.amazon.com/emr">Amazon EMR</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Core
+ * <a href="https://docs.aws.amazon.com/eventbridge">Amazon EventBridge Schema</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Device Defender
+ * <a href="https://docs.aws.amazon.com/firewall-manager">AWS Firewall Manager</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Device Management
+ * <a href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Events
+ * <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Greengrass
+ * <a href="https://docs.aws.amazon.com/s3/?id=docs_gateway#amazon-s3-glacier">Amazon S3 Glacier</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT 1-Click
+ * <a href="https://docs.aws.amazon.com/global-accelerator">AWS Global Accelerator</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS IoT Things Graph
+ * <a href="https://docs.aws.amazon.com/ground-station">AWS Ground Station</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Key Management Service
+ * <a href="https://docs.aws.amazon.com/glue">AWS Glue</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Kinesis
+ * <a href="https://docs.aws.amazon.com/guardduty">Amazon GuardDuty</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Kinesis Data Analytics
+ * <a href="https://docs.aws.amazon.com/inspector">Amazon Inspector</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Kinesis Data Firehose
+ * <a href="https://docs.aws.amazon.com/iotanalytics">AWS IoT Analytics</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Lambda
+ * <a href="https://docs.aws.amazon.com/iot">AWS IoT Core</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS License Manager
+ * <a href="https://docs.aws.amazon.com/iot-device-defender">AWS IoT Device Defender</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Machine Learning
+ * <a href="https://docs.aws.amazon.com/iot-device-management">AWS IoT Device Management</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon MQ
+ * <a href="https://docs.aws.amazon.com/iotevents">AWS IoT Events</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon MSK
+ * <a href="https://docs.aws.amazon.com/greengrass">AWS IoT Greengrass</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Neptune
+ * <a href="https://docs.aws.amazon.com/iot-1-click">AWS IoT 1-Click</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS OpsWorks
+ * <a href="https://docs.aws.amazon.com/iot-sitewise">AWS IoT Sitewise</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Organizations
+ * <a href="https://docs.aws.amazon.com/thingsgraph">AWS IoT Things Graph</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Quantum Ledger Database (QLDB)
+ * <a href="https://docs.aws.amazon.com/kendra">Amazon Kendra</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon RDS
+ * <a href="https://docs.aws.amazon.com/kms">AWS Key Management Service</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Redshift
+ * <a href="https://docs.aws.amazon.com/kinesis">Amazon Kinesis</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Resource Access Manager
+ * <a href="https://docs.aws.amazon.com/kinesis/?id=docs_gateway#amazon-kinesis-data-analytics">Amazon Kinesis Data
+ * Analytics</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Resource Groups
+ * <a href="https://docs.aws.amazon.com/kinesis/?id=docs_gateway#amazon-kinesis-data-firehose">Amazon Kinesis Data
+ * Firehose</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS RoboMaker
+ * <a href="https://docs.aws.amazon.com/lambda">AWS Lambda</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Route 53
+ * <a href="https://docs.aws.amazon.com/lex">Amazon Lex</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Route 53 Resolver
+ * <a href="https://docs.aws.amazon.com/license-manager">AWS License Manager</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon S3 (buckets only)
+ * <a href="https://docs.aws.amazon.com/macie">Amazon Macie</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon SageMaker
+ * <a href="https://docs.aws.amazon.com/machine-learning">Amazon Machine Learning</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Secrets Manager
+ * <a href="https://docs.aws.amazon.com/amazon-mq">Amazon MQ</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Security Hub
+ * <a href="https://docs.aws.amazon.com/msk">Amazon MSK</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Service Catalog
+ * <a href="https://docs.aws.amazon.com/neptune">Amazon Neptune</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Simple Email Service (SES)
+ * <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Simple Notification Service (SNS)
+ * <a href="https://docs.aws.amazon.com/opsworks">AWS OpsWorks CM</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Simple Queue Service (SQS)
+ * <a href="https://docs.aws.amazon.com/organizations">AWS Organizations</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon Simple Workflow Service
+ * <a href="https://docs.aws.amazon.com/pinpoint">Amazon Pinpoint</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Step Functions
+ * <a href="https://docs.aws.amazon.com/qldb">Amazon Quantum Ledger Database (QLDB)</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Storage Gateway
+ * <a href="https://docs.aws.amazon.com/rds">Amazon RDS</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Systems Manager
+ * <a href="https://docs.aws.amazon.com/redshift">Amazon Redshift</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS Transfer for SFTP
+ * <a href="https://docs.aws.amazon.com/ram">AWS Resource Access Manager</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * AWS WAF Regional
+ * <a href="https://docs.aws.amazon.com/ARG">AWS Resource Groups</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon VPC
+ * <a href="https://docs.aws.amazon.com/robomaker">AWS RoboMaker</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Amazon WorkSpaces
+ * <a href="https://docs.aws.amazon.com/route53">Amazon Route 53</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/route53">Amazon Route 53 Resolver</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/s3">Amazon S3 (buckets only)</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/sagemaker">Amazon SageMaker</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/savingsplans">Savings Plans</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/secretsmanager">AWS Secrets Manager</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/securityhub">AWS Security Hub</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/servicecatalog">AWS Service Catalog</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/ses">Amazon Simple Email Service (SES)</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/sns">Amazon Simple Notification Service (SNS)</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/sqs">Amazon Simple Queue Service (SQS)</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/swf">Amazon Simple Workflow Service</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/step-functions">AWS Step Functions</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/storagegateway">AWS Storage Gateway</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/systems-manager">AWS Systems Manager</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/transfer">AWS Transfer for SFTP</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/vpc">Amazon VPC</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/waf">AWS WAFv2</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/waf">AWS WAF Regional</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/worklink">Amazon WorkLink</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/workspaces">Amazon WorkSpaces</a>
  * </p>
  * </li>
  * </ul>
@@ -907,6 +1020,13 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We
+     * use tags to provide you with billing and administration services. Tags are not intended to be used for private or
+     * sensitive data.
+     * </p>
+     * </important>
      * 
      * @param tagResourcesRequest
      * @return A Java Future containing the result of the TagResources operation returned by the service.
@@ -947,6 +1067,13 @@ public interface AWSResourceGroupsTaggingAPIAsync extends AWSResourceGroupsTaggi
      * </p>
      * </li>
      * </ul>
+     * <important>
+     * <p>
+     * Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We
+     * use tags to provide you with billing and administration services. Tags are not intended to be used for private or
+     * sensitive data.
+     * </p>
+     * </important>
      * 
      * @param tagResourcesRequest
      * @param asyncHandler

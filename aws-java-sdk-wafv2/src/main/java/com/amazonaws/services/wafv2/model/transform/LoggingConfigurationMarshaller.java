@@ -34,6 +34,8 @@ public class LoggingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogDestinationConfigs").build();
     private static final MarshallingInfo<List> REDACTEDFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedactedFields").build();
+    private static final MarshallingInfo<Boolean> MANAGEDBYFIREWALLMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedByFirewallManager").build();
 
     private static final LoggingConfigurationMarshaller instance = new LoggingConfigurationMarshaller();
 
@@ -54,6 +56,7 @@ public class LoggingConfigurationMarshaller {
             protocolMarshaller.marshall(loggingConfiguration.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(loggingConfiguration.getLogDestinationConfigs(), LOGDESTINATIONCONFIGS_BINDING);
             protocolMarshaller.marshall(loggingConfiguration.getRedactedFields(), REDACTEDFIELDS_BINDING);
+            protocolMarshaller.marshall(loggingConfiguration.getManagedByFirewallManager(), MANAGEDBYFIREWALLMANAGER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

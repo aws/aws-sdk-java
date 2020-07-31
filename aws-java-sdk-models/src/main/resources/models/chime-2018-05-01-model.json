@@ -3166,7 +3166,7 @@
     "CreateMeetingWithAttendeesRequestItemList":{
       "type":"list",
       "member":{"shape":"CreateAttendeeRequestItem"},
-      "max":5,
+      "max":10,
       "min":1
     },
     "CreateMeetingWithAttendeesResponse":{
@@ -3872,6 +3872,7 @@
         "AccessDenied",
         "ServiceUnavailable",
         "Throttled",
+        "Throttling",
         "Unauthorized",
         "Unprocessable",
         "VoiceConnectorGroupAssociationsExist",

@@ -69,7 +69,7 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is
      * <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the
      * format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule
-     * group, the format is <code>&lt;rule name&gt;</code>.
+     * group, this field is absent.
      * </p>
      */
     private String ruleNameWithinRuleGroup;
@@ -257,14 +257,14 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is
      * <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the
      * format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule
-     * group, the format is <code>&lt;rule name&gt;</code>.
+     * group, this field is absent.
      * </p>
      * 
      * @param ruleNameWithinRuleGroup
      *        The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this
      *        name is <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own
      *        rule groups, the format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     *        rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>.
+     *        rule is not in a rule group, this field is absent.
      */
 
     public void setRuleNameWithinRuleGroup(String ruleNameWithinRuleGroup) {
@@ -276,13 +276,13 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is
      * <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the
      * format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule
-     * group, the format is <code>&lt;rule name&gt;</code>.
+     * group, this field is absent.
      * </p>
      * 
      * @return The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this
      *         name is <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own
      *         rule groups, the format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     *         rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>.
+     *         rule is not in a rule group, this field is absent.
      */
 
     public String getRuleNameWithinRuleGroup() {
@@ -294,14 +294,14 @@ public class SampledHTTPRequest implements Serializable, Cloneable, StructuredPo
      * The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this name is
      * <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own rule groups, the
      * format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule
-     * group, the format is <code>&lt;rule name&gt;</code>.
+     * group, this field is absent.
      * </p>
      * 
      * @param ruleNameWithinRuleGroup
      *        The name of the <code>Rule</code> that the request matched. For managed rule groups, the format for this
      *        name is <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule name&gt;</code>. For your own
      *        rule groups, the format for this name is <code>&lt;rule group name&gt;#&lt;rule name&gt;</code>. If the
-     *        rule is not in a rule group, the format is <code>&lt;rule name&gt;</code>.
+     *        rule is not in a rule group, this field is absent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

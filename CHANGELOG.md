@@ -1,3 +1,24 @@
+# __1.11.832__ __2020-07-31__
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - Updates to the list of services supported by this API.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Add support for gateway VM deprecation dates
+
+## __AWS WAFV2__
+  - ### Features
+    - Add ManagedByFirewallManager flag to the logging configuration, which indicates whether AWS Firewall Manager controls the configuration.
+
+## __Amazon Chime__
+  - ### Features
+    - This release increases the CreateMeetingWithAttendee max attendee limit to 10.
+
+## __Amazon Personalize Runtime__
+  - ### Features
+    - Adds support to use filters with Personalized Ranking recipe
+
 # __1.11.831__ __2020-07-30__
 ## __AWS CodeBuild__
   - ### Features

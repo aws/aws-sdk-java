@@ -30,6 +30,7 @@ public enum ErrorCode {
     AccessDenied("AccessDenied"),
     ServiceUnavailable("ServiceUnavailable"),
     Throttled("Throttled"),
+    Throttling("Throttling"),
     Unauthorized("Unauthorized"),
     Unprocessable("Unprocessable"),
     VoiceConnectorGroupAssociationsExist("VoiceConnectorGroupAssociationsExist"),

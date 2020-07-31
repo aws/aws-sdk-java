@@ -33,8 +33,8 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     private String campaignArn;
     /**
      * <p>
-     * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list. The maximum is 500.
+     * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
+     * is appended to the end of the reranked list. The maximum is 500.
      * </p>
      */
     private java.util.List<String> inputList;
@@ -52,6 +52,13 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private java.util.Map<String, String> context;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations for a
+     * given user.
+     * </p>
+     */
+    private String filterArn;
 
     /**
      * <p>
@@ -95,12 +102,12 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list. The maximum is 500.
+     * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
+     * is appended to the end of the reranked list. The maximum is 500.
      * </p>
      * 
-     * @return A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *         appended to the end of the reranked list. The maximum is 500.
+     * @return A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset,
+     *         the item is appended to the end of the reranked list. The maximum is 500.
      */
 
     public java.util.List<String> getInputList() {
@@ -109,13 +116,13 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list. The maximum is 500.
+     * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
+     * is appended to the end of the reranked list. The maximum is 500.
      * </p>
      * 
      * @param inputList
-     *        A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *        appended to the end of the reranked list. The maximum is 500.
+     *        A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the
+     *        item is appended to the end of the reranked list. The maximum is 500.
      */
 
     public void setInputList(java.util.Collection<String> inputList) {
@@ -129,8 +136,8 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list. The maximum is 500.
+     * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
+     * is appended to the end of the reranked list. The maximum is 500.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -139,8 +146,8 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param inputList
-     *        A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *        appended to the end of the reranked list. The maximum is 500.
+     *        A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the
+     *        item is appended to the end of the reranked list. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,13 +163,13 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to
-     * the end of the reranked list. The maximum is 500.
+     * A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item
+     * is appended to the end of the reranked list. The maximum is 500.
      * </p>
      * 
      * @param inputList
-     *        A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is
-     *        appended to the end of the reranked list. The maximum is 500.
+     *        A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the
+     *        item is appended to the end of the reranked list. The maximum is 500.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,6 +299,52 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations for a
+     * given user.
+     * </p>
+     * 
+     * @param filterArn
+     *        The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations
+     *        for a given user.
+     */
+
+    public void setFilterArn(String filterArn) {
+        this.filterArn = filterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations for a
+     * given user.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations
+     *         for a given user.
+     */
+
+    public String getFilterArn() {
+        return this.filterArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations for a
+     * given user.
+     * </p>
+     * 
+     * @param filterArn
+     *        The Amazon Resource Name (ARN) of a filter you created to include or exclude items from recommendations
+     *        for a given user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingRequest withFilterArn(String filterArn) {
+        setFilterArn(filterArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -310,7 +363,9 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
         if (getUserId() != null)
             sb.append("UserId: ").append(getUserId()).append(",");
         if (getContext() != null)
-            sb.append("Context: ").append("***Sensitive Data Redacted***");
+            sb.append("Context: ").append("***Sensitive Data Redacted***").append(",");
+        if (getFilterArn() != null)
+            sb.append("FilterArn: ").append(getFilterArn());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +396,10 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
             return false;
+        if (other.getFilterArn() == null ^ this.getFilterArn() == null)
+            return false;
+        if (other.getFilterArn() != null && other.getFilterArn().equals(this.getFilterArn()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +412,7 @@ public class GetPersonalizedRankingRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getInputList() == null) ? 0 : getInputList().hashCode());
         hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
+        hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         return hashCode;
     }
 

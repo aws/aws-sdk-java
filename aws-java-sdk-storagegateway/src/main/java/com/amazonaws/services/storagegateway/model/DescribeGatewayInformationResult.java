@@ -125,6 +125,18 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String endpointType;
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     */
+    private String softwareUpdatesEndDate;
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     */
+    private String deprecationDate;
 
     /**
      * @param gatewayARN
@@ -890,6 +902,86 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     * 
+     * @param softwareUpdatesEndDate
+     *        Date after which this gateway will not receive software updates for new features.
+     */
+
+    public void setSoftwareUpdatesEndDate(String softwareUpdatesEndDate) {
+        this.softwareUpdatesEndDate = softwareUpdatesEndDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     * 
+     * @return Date after which this gateway will not receive software updates for new features.
+     */
+
+    public String getSoftwareUpdatesEndDate() {
+        return this.softwareUpdatesEndDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features.
+     * </p>
+     * 
+     * @param softwareUpdatesEndDate
+     *        Date after which this gateway will not receive software updates for new features.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withSoftwareUpdatesEndDate(String softwareUpdatesEndDate) {
+        setSoftwareUpdatesEndDate(softwareUpdatesEndDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     * 
+     * @param deprecationDate
+     *        Date after which this gateway will not receive software updates for new features and bug fixes.
+     */
+
+    public void setDeprecationDate(String deprecationDate) {
+        this.deprecationDate = deprecationDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     * 
+     * @return Date after which this gateway will not receive software updates for new features and bug fixes.
+     */
+
+    public String getDeprecationDate() {
+        return this.deprecationDate;
+    }
+
+    /**
+     * <p>
+     * Date after which this gateway will not receive software updates for new features and bug fixes.
+     * </p>
+     * 
+     * @param deprecationDate
+     *        Date after which this gateway will not receive software updates for new features and bug fixes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withDeprecationDate(String deprecationDate) {
+        setDeprecationDate(deprecationDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -932,7 +1024,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getHostEnvironment() != null)
             sb.append("HostEnvironment: ").append(getHostEnvironment()).append(",");
         if (getEndpointType() != null)
-            sb.append("EndpointType: ").append(getEndpointType());
+            sb.append("EndpointType: ").append(getEndpointType()).append(",");
+        if (getSoftwareUpdatesEndDate() != null)
+            sb.append("SoftwareUpdatesEndDate: ").append(getSoftwareUpdatesEndDate()).append(",");
+        if (getDeprecationDate() != null)
+            sb.append("DeprecationDate: ").append(getDeprecationDate());
         sb.append("}");
         return sb.toString();
     }
@@ -1011,6 +1107,14 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getEndpointType() != null && other.getEndpointType().equals(this.getEndpointType()) == false)
             return false;
+        if (other.getSoftwareUpdatesEndDate() == null ^ this.getSoftwareUpdatesEndDate() == null)
+            return false;
+        if (other.getSoftwareUpdatesEndDate() != null && other.getSoftwareUpdatesEndDate().equals(this.getSoftwareUpdatesEndDate()) == false)
+            return false;
+        if (other.getDeprecationDate() == null ^ this.getDeprecationDate() == null)
+            return false;
+        if (other.getDeprecationDate() != null && other.getDeprecationDate().equals(this.getDeprecationDate()) == false)
+            return false;
         return true;
     }
 
@@ -1035,6 +1139,8 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
         hashCode = prime * hashCode + ((getHostEnvironment() == null) ? 0 : getHostEnvironment().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
+        hashCode = prime * hashCode + ((getSoftwareUpdatesEndDate() == null) ? 0 : getSoftwareUpdatesEndDate().hashCode());
+        hashCode = prime * hashCode + ((getDeprecationDate() == null) ? 0 : getDeprecationDate().hashCode());
         return hashCode;
     }
 

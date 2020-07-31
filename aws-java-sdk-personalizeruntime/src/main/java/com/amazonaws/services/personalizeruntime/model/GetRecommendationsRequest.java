@@ -65,8 +65,11 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.Map<String, String> context;
     /**
      * <p>
-     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
-     * Amazon Personalize.
+     * The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * </p>
+     * <p>
+     * When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      * </p>
      */
     private String filterArn;
@@ -343,13 +346,19 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
-     * Amazon Personalize.
+     * The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * </p>
+     * <p>
+     * When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      * </p>
      * 
      * @param filterArn
-     *        The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters
-     *        with Amazon Personalize.
+     *        The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *        Personalize</a>.</p>
+     *        <p>
+     *        When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      */
 
     public void setFilterArn(String filterArn) {
@@ -358,12 +367,18 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
-     * Amazon Personalize.
+     * The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * </p>
+     * <p>
+     * When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      * </p>
      * 
-     * @return The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters
-     *         with Amazon Personalize.
+     * @return The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *         Personalize</a>.</p>
+     *         <p>
+     *         When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      */
 
     public String getFilterArn() {
@@ -372,13 +387,19 @@ public class GetRecommendationsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters with
-     * Amazon Personalize.
+     * The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
+     * </p>
+     * <p>
+     * When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      * </p>
      * 
      * @param filterArn
-     *        The ARN of the filter to apply to the returned recommendations. For more information, see Using Filters
-     *        with Amazon Personalize.
+     *        The ARN of the filter to apply to the returned recommendations. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *        Personalize</a>.</p>
+     *        <p>
+     *        When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
