@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsManagementWaiters;
 
 /**
  * Abstract implementation of {@code AWSSimpleSystemsManagement}. Convenient method forms pass through to the
@@ -661,6 +662,11 @@ public class AbstractAWSSimpleSystemsManagement implements AWSSimpleSystemsManag
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSSimpleSystemsManagementWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

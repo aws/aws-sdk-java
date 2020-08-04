@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
+import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsManagementWaiters;
 
 /**
  * Interface for accessing Amazon SSM.
@@ -3674,5 +3675,7 @@ public interface AWSSimpleSystemsManagement {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSSimpleSystemsManagementWaiters waiters();
 
 }

@@ -19,6 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.SdkClientException;
+import com.amazonaws.auth.policy.actions.S3Actions;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
@@ -1003,6 +1004,10 @@ public interface AmazonS3 extends S3DirectSpi {
      * The caller <i>must</i> authenticate with a valid AWS Access Key ID that is registered
      * with AWS.
      * </p>
+     * <p>
+     * This operation uses the {@link #listBuckets()} operation internally, and therefore requires the
+     * <{@code s3:ListAllMyBuckets} ({@link S3Actions#ListBuckets}) IAM permission.
+     * </p>
      *
      * @return The account of the authenticated sender
      *
@@ -1026,6 +1031,10 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * The caller <i>must</i> authenticate with a valid AWS Access Key ID that is registered
      * with AWS.
+     * </p>
+     * <p>
+     * This operation uses the {@link #listBuckets()} operation internally, and therefore requires the
+     * <{@code s3:ListAllMyBuckets} ({@link S3Actions#ListBuckets}) IAM permission.
      * </p>
      *
      * @param getS3AccountOwnerRequest

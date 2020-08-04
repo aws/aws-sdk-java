@@ -27,6 +27,11 @@ public abstract class PageBasedCollection<T,R> implements Iterable<T> {
     private volatile R lastLowLevelResult;
     private volatile LowLevelResultListener<R> listener = LowLevelResultListener.none();
 
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * Each call to this method creates an independent iteration over DynamoDB data, with separate calls per iteration.
+     */
     @Override
     public IteratorSupport<T,R> iterator() {
         PageIterable<T,R> pageIterable = pages();
@@ -34,6 +39,11 @@ public abstract class PageBasedCollection<T,R> implements Iterable<T> {
         return new IteratorSupport<T,R>(pageIterator);
     }
 
+    /**
+     * Returns an iterator over pages of type {@code T}.
+     *
+     * Each call to this method creates an independent iteration over DynamoDB data, with separate calls per iteration.
+     */
     public PageIterable<T,R> pages() {
         return new PageIterable<T,R>(this);
     }

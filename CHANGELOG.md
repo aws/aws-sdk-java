@@ -1,3 +1,8 @@
+# __1.11.833__ __2020-08-03__
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Adds a waiter for CommandExecuted and paginators for various other APIs.
+
 # __1.11.832__ __2020-07-31__
 ## __AWS Resource Groups Tagging API__
   - ### Features

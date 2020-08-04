@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClientBuilder;
+import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsManagementWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -86,6 +87,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "ssm";
+
+    private volatile AWSSimpleSystemsManagementWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -9288,6 +9291,26 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AWSSimpleSystemsManagementWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSSimpleSystemsManagementWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

@@ -1,0 +1,64 @@
+/*
+ * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.simplesystemsmanagement.waiters;
+
+import javax.annotation.Generated;
+
+import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagement;
+import com.amazonaws.services.simplesystemsmanagement.model.*;
+import com.amazonaws.waiters.*;
+
+import java.util.concurrent.ExecutorService;
+
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class AWSSimpleSystemsManagementWaiters {
+
+    /**
+     * Represents the service client
+     */
+    private final AWSSimpleSystemsManagement client;
+
+    private final ExecutorService executorService = WaiterExecutorServiceFactory.buildExecutorServiceForWaiter("AWSSimpleSystemsManagementWaiters");
+
+    /**
+     * Constructs a new AWSSimpleSystemsManagementWaiters with the given client
+     * 
+     * @param client
+     *        Service client
+     */
+    @SdkInternalApi
+    public AWSSimpleSystemsManagementWaiters(AWSSimpleSystemsManagement client) {
+        this.client = client;
+    }
+
+    /**
+     * Builds a CommandExecuted waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetCommandInvocationRequest> commandExecuted() {
+
+        return new WaiterBuilder<GetCommandInvocationRequest, GetCommandInvocationResult>()
+                .withSdkFunction(new GetCommandInvocationFunction(client))
+                .withAcceptors(new CommandExecuted.IsPendingMatcher(), new CommandExecuted.IsInProgressMatcher(), new CommandExecuted.IsDelayedMatcher(),
+                        new CommandExecuted.IsSuccessMatcher(), new CommandExecuted.IsCancelledMatcher(), new CommandExecuted.IsTimedOutMatcher(),
+                        new CommandExecuted.IsFailedMatcher(), new CommandExecuted.IsCancellingMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(20), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    public void shutdown() {
+        executorService.shutdown();
+    }
+}
