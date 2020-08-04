@@ -21,6 +21,31 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Summary information about an AWS Health event.
  * </p>
+ * <p>
+ * AWS Health events can be public or account-specific:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <i>Public events</i> might be service events that are not specific to an AWS account. For example, if there is an
+ * issue with an AWS Region, AWS Health provides information about the event, even if you don't use services or
+ * resources in that Region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For
+ * example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides
+ * information about the event and the affected resources in the account.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For
+ * more information, see <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode"
+ * >eventScopeCode</a>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/Event" target="_top">AWS API Documentation</a>
  */
@@ -93,7 +118,33 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String statusCode;
-
+    /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String eventScopeCode;
 
     /**
@@ -610,7 +661,56 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @see EventScopeCode
      */
 
@@ -619,7 +719,55 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *         event.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *         value is always empty.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *         <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *         an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *         service, those account IDs appear in the response.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *         specified in the request is invalid or doesn't exist.
+     *         </p>
+     *         </li>
      * @see EventScopeCode
      */
 
@@ -628,7 +776,56 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventScopeCode
      */
@@ -639,7 +836,56 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @see EventScopeCode
      */
 
@@ -648,7 +894,56 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventScopeCode
      */

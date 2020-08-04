@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
+ * Error information returned when a <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+ * >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventDetailsErrorItem"
@@ -30,8 +32,9 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      * </p>
      */
     private String awsAccountId;
@@ -59,13 +62,15 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      * </p>
      * 
      * @param awsAccountId
-     *        Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a
-     *        specified event.
+     *        Error information returned when a <a href=
+     *        "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     *        >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -74,12 +79,14 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      * </p>
      * 
-     * @return Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a
-     *         specified event.
+     * @return Error information returned when a <a
+     *         href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     *         >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      */
 
     public String getAwsAccountId() {
@@ -88,13 +95,15 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      * </p>
      * 
      * @param awsAccountId
-     *        Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a
-     *        specified event.
+     *        Error information returned when a <a href=
+     *        "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     *        >DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

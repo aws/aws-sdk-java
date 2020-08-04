@@ -32,100 +32,20 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>AWS Health</fullname>
  * <p>
- * The AWS Health API provides programmatic access to the AWS Health information that is presented in the <a
- * href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health Dashboard</a>. You can get information about events
- * that affect your AWS resources:
+ * The AWS Health API provides programmatic access to the AWS Health information that appears in the <a
+ * href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health Dashboard</a>. You can use the API operations to get
+ * information about AWS Health events that affect your AWS services and resources.
  * </p>
- * <ul>
- * <li>
+ * <note>
  * <p>
- * <a>DescribeEvents</a>: Summary information about events.
+ * You must have a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
+ * Support</a> to use the AWS Health API. If you call the AWS Health API from an AWS account that doesn't have a
+ * Business or Enterprise support plan, you receive a <code>SubscriptionRequiredException</code> error.
  * </p>
- * </li>
- * <li>
+ * </note>
  * <p>
- * <a>DescribeEventDetails</a>: Detailed information about one or more events.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeAffectedEntities</a>: Information about AWS resources that are affected by one or more events.
- * </p>
- * </li>
- * </ul>
- * <p>
- * In addition, these operations provide information about event types and summary counts of events or affected
- * entities:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>DescribeEventTypes</a>: Information about the kinds of events that AWS Health tracks.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEventAggregates</a>: A count of the number of events that meet specified criteria.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEntityAggregates</a>: A count of the number of affected entities that meet specified criteria.
- * </p>
- * </li>
- * </ul>
- * <p>
- * AWS Health integrates with AWS Organizations to provide a centralized view of AWS Health events across all accounts
- * in your organization.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>DescribeEventsForOrganization</a>: Summary information about events across the organization.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeAffectedAccountsForOrganization</a>: List of accounts in your organization impacted by an event.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeEventDetailsForOrganization</a>: Detailed information about events in your organization.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeAffectedEntitiesForOrganization</a>: Information about AWS resources in your organization that are
- * affected by events.
- * </p>
- * </li>
- * </ul>
- * <p>
- * You can use the following operations to enable or disable AWS Health from working with AWS Organizations.
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>EnableHealthServiceAccessForOrganization</a>: Enables AWS Health to work with AWS Organizations.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DisableHealthServiceAccessForOrganization</a>: Disables AWS Health from working with AWS Organizations.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeHealthServiceStatusForOrganization</a>: Status information about enabling or disabling AWS Health from
- * working with AWS Organizations.
- * </p>
- * </li>
- * </ul>
- * <p>
- * The Health API requires a Business or Enterprise support plan from <a
- * href="http://aws.amazon.com/premiumsupport/">AWS Support</a>. Calling the Health API from an account that does not
- * have a Business or Enterprise support plan causes a <code>SubscriptionRequiredException</code>.
+ * AWS Health has a single endpoint: health.us-east-1.amazonaws.com (HTTPS). Use this endpoint to call the AWS Health
+ * API operations.
  * </p>
  * <p>
  * For authentication of requests, AWS Health uses the <a
@@ -133,22 +53,35 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * Process</a>.
  * </p>
  * <p>
- * See the <a href="https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html">AWS Health User Guide</a> for
- * information about how to use the API.
+ * If your AWS account is part of AWS Organizations, you can use the AWS Health organizational view feature. This
+ * feature provides a centralized view of AWS Health events across all accounts in your organization. You can aggregate
+ * AWS Health events in real time to identify accounts in your organization that are affected by an operational event or
+ * get notified of security vulnerabilities. Use the organizational view API operations to enable this feature and
+ * return event information. For more information, see <a
+ * href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in the
+ * <i>AWS Health User Guide</i>.
  * </p>
+ * <note>
  * <p>
- * <b>Service Endpoint</b>
- * </p>
- * <p>
- * The HTTP endpoint for the AWS Health API is:
+ * When you use the AWS Health API operations to return AWS Health events, see the following recommendations:
  * </p>
  * <ul>
  * <li>
  * <p>
- * https://health.us-east-1.amazonaws.com
+ * Use the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode"
+ * >eventScopeCode</a> parameter to specify whether to return AWS Health events that are public or account-specific.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use pagination to view all events from the response. For example, if you call the
+ * <code>DescribeEventsForOrganization</code> operation to get all events in your organization, you might receive
+ * several page results. Specify the <code>nextToken</code> in the next request to return more results.
  * </p>
  * </li>
  * </ul>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

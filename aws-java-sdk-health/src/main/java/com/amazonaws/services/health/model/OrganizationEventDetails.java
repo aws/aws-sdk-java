@@ -19,8 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Detailed information about an event. A combination of an <a>Event</a> object, an <a>EventDescription</a> object, and
- * additional metadata about the event. Returned by the <a>DescribeEventDetailsForOrganization</a> operation.
+ * Detailed information about an event. A combination of an <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a> object, an <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventDescription.html">EventDescription</a> object,
+ * and additional metadata about the event. Returned by the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+ * >DescribeEventDetailsForOrganization</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventDetails" target="_top">AWS

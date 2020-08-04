@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The values to use to filter results from the <a>DescribeEvents</a> and <a>DescribeEventAggregates</a> operations.
+ * The values to use to filter results from the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a> and <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html"
+ * >DescribeEventAggregates</a> operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventFilter" target="_top">AWS API
@@ -102,6 +105,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      */
     private java.util.List<java.util.Map<String, String>> tags;
     /**
@@ -947,8 +955,16 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
-     * @return A map of entity tags attached to the affected entity.
+     * @return A map of entity tags attached to the affected entity.</p> <note>
+     *         <p>
+     *         Currently, the <code>tags</code> property isn't supported.
+     *         </p>
      */
 
     public java.util.List<java.util.Map<String, String>> getTags() {
@@ -959,9 +975,17 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<java.util.Map<String, String>> tags) {
@@ -977,6 +1001,11 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -984,7 +1013,10 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1002,9 +1034,17 @@ public class EventFilter implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,8 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The values used to filter results from the <a>DescribeEventDetailsForOrganization</a> and
- * <a>DescribeAffectedEntitiesForOrganization</a> operations.
+ * The values used to filter results from the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+ * >DescribeEventDetailsForOrganization</a> and <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html"
+ * >DescribeAffectedEntitiesForOrganization</a> operations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAccountFilter" target="_top">AWS API

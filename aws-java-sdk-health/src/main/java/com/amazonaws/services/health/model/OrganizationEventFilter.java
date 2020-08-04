@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The values to filter results from the <a>DescribeEventsForOrganization</a> operation.
+ * The values to filter results from the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html"
+ * >DescribeEventsForOrganization</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventFilter" target="_top">AWS API
@@ -61,7 +63,7 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
     private DateTimeRange lastUpdatedTime;
     /**
      * <p>
-     * REPLACEME
+     * A list of entity ARNs (unique identifiers).
      * </p>
      */
     private java.util.List<String> entityArns;
@@ -73,7 +75,7 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
     private java.util.List<String> entityValues;
     /**
      * <p>
-     * REPLACEME
+     * A list of event type category codes (issue, scheduledChange, or accountNotification).
      * </p>
      */
     private java.util.List<String> eventTypeCategories;
@@ -452,10 +454,10 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of entity ARNs (unique identifiers).
      * </p>
      * 
-     * @return REPLACEME
+     * @return A list of entity ARNs (unique identifiers).
      */
 
     public java.util.List<String> getEntityArns() {
@@ -464,11 +466,11 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of entity ARNs (unique identifiers).
      * </p>
      * 
      * @param entityArns
-     *        REPLACEME
+     *        A list of entity ARNs (unique identifiers).
      */
 
     public void setEntityArns(java.util.Collection<String> entityArns) {
@@ -482,7 +484,7 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of entity ARNs (unique identifiers).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -491,7 +493,7 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param entityArns
-     *        REPLACEME
+     *        A list of entity ARNs (unique identifiers).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,11 +509,11 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of entity ARNs (unique identifiers).
      * </p>
      * 
      * @param entityArns
-     *        REPLACEME
+     *        A list of entity ARNs (unique identifiers).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,10 +594,10 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of event type category codes (issue, scheduledChange, or accountNotification).
      * </p>
      * 
-     * @return REPLACEME
+     * @return A list of event type category codes (issue, scheduledChange, or accountNotification).
      * @see EventTypeCategory
      */
 
@@ -605,11 +607,11 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of event type category codes (issue, scheduledChange, or accountNotification).
      * </p>
      * 
      * @param eventTypeCategories
-     *        REPLACEME
+     *        A list of event type category codes (issue, scheduledChange, or accountNotification).
      * @see EventTypeCategory
      */
 
@@ -624,7 +626,7 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of event type category codes (issue, scheduledChange, or accountNotification).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -633,7 +635,7 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param eventTypeCategories
-     *        REPLACEME
+     *        A list of event type category codes (issue, scheduledChange, or accountNotification).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventTypeCategory
      */
@@ -650,11 +652,11 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of event type category codes (issue, scheduledChange, or accountNotification).
      * </p>
      * 
      * @param eventTypeCategories
-     *        REPLACEME
+     *        A list of event type category codes (issue, scheduledChange, or accountNotification).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventTypeCategory
      */
@@ -666,11 +668,11 @@ public class OrganizationEventFilter implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * REPLACEME
+     * A list of event type category codes (issue, scheduledChange, or accountNotification).
      * </p>
      * 
      * @param eventTypeCategories
-     *        REPLACEME
+     *        A list of event type category codes (issue, scheduledChange, or accountNotification).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventTypeCategory
      */

@@ -16,8 +16,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * <a>EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying
- * again. To get the current status, use the <a>DescribeHealthServiceStatusForOrganization</a> operation.
+ * <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">
+ * EnableHealthServiceAccessForOrganization</a> is already in progress. Wait for the action to complete before trying
+ * again. To get the current status, use the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeHealthServiceStatusForOrganization.html"
+ * >DescribeHealthServiceStatusForOrganization</a> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

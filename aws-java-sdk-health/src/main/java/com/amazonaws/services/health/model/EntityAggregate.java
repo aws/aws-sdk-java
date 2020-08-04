@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The number of entities that are affected by one or more events. Returned by the <a>DescribeEntityAggregates</a>
- * operation.
+ * The number of entities that are affected by one or more events. Returned by the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEntityAggregates.html"
+ * >DescribeEntityAggregates</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EntityAggregate" target="_top">AWS API
@@ -40,7 +41,7 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
     private String eventArn;
     /**
      * <p>
-     * The number entities that match the criteria for the specified events.
+     * The number of entities that match the criteria for the specified events.
      * </p>
      */
     private Integer count;
@@ -105,11 +106,11 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number entities that match the criteria for the specified events.
+     * The number of entities that match the criteria for the specified events.
      * </p>
      * 
      * @param count
-     *        The number entities that match the criteria for the specified events.
+     *        The number of entities that match the criteria for the specified events.
      */
 
     public void setCount(Integer count) {
@@ -118,10 +119,10 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number entities that match the criteria for the specified events.
+     * The number of entities that match the criteria for the specified events.
      * </p>
      * 
-     * @return The number entities that match the criteria for the specified events.
+     * @return The number of entities that match the criteria for the specified events.
      */
 
     public Integer getCount() {
@@ -130,11 +131,11 @@ public class EntityAggregate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number entities that match the criteria for the specified events.
+     * The number of entities that match the criteria for the specified events.
      * </p>
      * 
      * @param count
-     *        The number entities that match the criteria for the specified events.
+     *        The number of entities that match the criteria for the specified events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

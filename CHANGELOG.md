@@ -1,3 +1,8 @@
+# __1.11.834__ __2020-08-04__
+## __AWS Health APIs and Notifications__
+  - ### Features
+    - Documentation updates for health
+
 # __1.11.833__ __2020-08-03__
 ## __Amazon Simple Systems Manager (SSM)__
   - ### Features

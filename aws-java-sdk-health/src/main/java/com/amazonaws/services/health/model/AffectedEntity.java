@@ -80,6 +80,11 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> tags;
 
@@ -440,8 +445,16 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
-     * @return A map of entity tags attached to the affected entity.
+     * @return A map of entity tags attached to the affected entity.</p> <note>
+     *         <p>
+     *         Currently, the <code>tags</code> property isn't supported.
+     *         </p>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -452,9 +465,17 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -465,9 +486,17 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

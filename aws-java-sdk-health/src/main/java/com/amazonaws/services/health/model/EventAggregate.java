@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The number of events of each issue type. Returned by the <a>DescribeEventAggregates</a> operation.
+ * The number of events of each issue type. Returned by the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventAggregates.html"
+ * >DescribeEventAggregates</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventAggregate" target="_top">AWS API
