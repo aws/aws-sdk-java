@@ -28,6 +28,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public CreateLanguageModelResult createLanguageModel(CreateLanguageModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMedicalVocabularyResult createMedicalVocabulary(CreateMedicalVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +44,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public CreateVocabularyFilterResult createVocabularyFilter(CreateVocabularyFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLanguageModelResult deleteLanguageModel(DeleteLanguageModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +78,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public DescribeLanguageModelResult describeLanguageModel(DescribeLanguageModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMedicalTranscriptionJobResult getMedicalTranscriptionJob(GetMedicalTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +104,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public GetVocabularyFilterResult getVocabularyFilter(GetVocabularyFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLanguageModelsResult listLanguageModels(ListLanguageModelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

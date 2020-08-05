@@ -76,6 +76,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLanguageModelResult> createLanguageModelAsync(CreateLanguageModelRequest request) {
+
+        return createLanguageModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLanguageModelResult> createLanguageModelAsync(final CreateLanguageModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLanguageModelRequest, CreateLanguageModelResult> asyncHandler) {
+        final CreateLanguageModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLanguageModelResult>() {
+            @Override
+            public CreateLanguageModelResult call() throws Exception {
+                CreateLanguageModelResult result = null;
+
+                try {
+                    result = executeCreateLanguageModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMedicalVocabularyResult> createMedicalVocabularyAsync(CreateMedicalVocabularyRequest request) {
 
         return createMedicalVocabularyAsync(request, null);
@@ -159,6 +192,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
 
                 try {
                     result = executeCreateVocabularyFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLanguageModelResult> deleteLanguageModelAsync(DeleteLanguageModelRequest request) {
+
+        return deleteLanguageModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLanguageModelResult> deleteLanguageModelAsync(final DeleteLanguageModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLanguageModelRequest, DeleteLanguageModelResult> asyncHandler) {
+        final DeleteLanguageModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLanguageModelResult>() {
+            @Override
+            public DeleteLanguageModelResult call() throws Exception {
+                DeleteLanguageModelResult result = null;
+
+                try {
+                    result = executeDeleteLanguageModel(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -341,6 +407,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLanguageModelResult> describeLanguageModelAsync(DescribeLanguageModelRequest request) {
+
+        return describeLanguageModelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLanguageModelResult> describeLanguageModelAsync(final DescribeLanguageModelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLanguageModelRequest, DescribeLanguageModelResult> asyncHandler) {
+        final DescribeLanguageModelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLanguageModelResult>() {
+            @Override
+            public DescribeLanguageModelResult call() throws Exception {
+                DescribeLanguageModelResult result = null;
+
+                try {
+                    result = executeDescribeLanguageModel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetMedicalTranscriptionJobResult> getMedicalTranscriptionJobAsync(GetMedicalTranscriptionJobRequest request) {
 
         return getMedicalTranscriptionJobAsync(request, null);
@@ -490,6 +589,39 @@ public class AmazonTranscribeAsyncClient extends AmazonTranscribeClient implemen
 
                 try {
                     result = executeGetVocabularyFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLanguageModelsResult> listLanguageModelsAsync(ListLanguageModelsRequest request) {
+
+        return listLanguageModelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLanguageModelsResult> listLanguageModelsAsync(final ListLanguageModelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLanguageModelsRequest, ListLanguageModelsResult> asyncHandler) {
+        final ListLanguageModelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLanguageModelsResult>() {
+            @Override
+            public ListLanguageModelsResult call() throws Exception {
+                ListLanguageModelsResult result = null;
+
+                try {
+                    result = executeListLanguageModels(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

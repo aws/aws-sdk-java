@@ -27,9 +27,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      */
     private String transcriptionJobName;
@@ -142,6 +142,12 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private Settings settings;
     /**
      * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     */
+    private ModelSettings modelSettings;
+    /**
+     * <p>
      * Provides information about how a transcription job is executed. Use this field to indicate that the job can be
      * queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately
      * run the job.
@@ -157,15 +163,15 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *        name must also be unique within an AWS account. If you try to create a transcription job with the same
-     *        name as a previous transcription job you will receive a <code>ConflictException</code> error.
+     *        The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+     *        job name. The name must also be unique within an AWS account. If you try to create a transcription job
+     *        with the same name as a previous transcription job, you get a <code>ConflictException</code> error.
      */
 
     public void setTranscriptionJobName(String transcriptionJobName) {
@@ -174,14 +180,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *         name must also be unique within an AWS account. If you try to create a transcription job with the same
-     *         name as a previous transcription job you will receive a <code>ConflictException</code> error.
+     * @return The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+     *         job name. The name must also be unique within an AWS account. If you try to create a transcription job
+     *         with the same name as a previous transcription job, you get a <code>ConflictException</code> error.
      */
 
     public String getTranscriptionJobName() {
@@ -190,15 +196,15 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The name must
-     * also be unique within an AWS account. If you try to create a transcription job with the same name as a previous
-     * transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the job
+     * name. The name must also be unique within an AWS account. If you try to create a transcription job with the same
+     * name as a previous transcription job, you get a <code>ConflictException</code> error.
      * </p>
      * 
      * @param transcriptionJobName
-     *        The name of the job. Note that you can't use the strings "." or ".." by themselves as the job name. The
-     *        name must also be unique within an AWS account. If you try to create a transcription job with the same
-     *        name as a previous transcription job you will receive a <code>ConflictException</code> error.
+     *        The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>" by themselves as the
+     *        job name. The name must also be unique within an AWS account. If you try to create a transcription job
+     *        with the same name as a previous transcription job, you get a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -920,6 +926,46 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     * 
+     * @param modelSettings
+     *        Choose the custom language model you use for your transcription job in this parameter.
+     */
+
+    public void setModelSettings(ModelSettings modelSettings) {
+        this.modelSettings = modelSettings;
+    }
+
+    /**
+     * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     * 
+     * @return Choose the custom language model you use for your transcription job in this parameter.
+     */
+
+    public ModelSettings getModelSettings() {
+        return this.modelSettings;
+    }
+
+    /**
+     * <p>
+     * Choose the custom language model you use for your transcription job in this parameter.
+     * </p>
+     * 
+     * @param modelSettings
+     *        Choose the custom language model you use for your transcription job in this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withModelSettings(ModelSettings modelSettings) {
+        setModelSettings(modelSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information about how a transcription job is executed. Use this field to indicate that the job can be
      * queued for deferred execution if the concurrency limit is reached and there are no slots available to immediately
      * run the job.
@@ -1038,6 +1084,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             sb.append("OutputEncryptionKMSKeyId: ").append(getOutputEncryptionKMSKeyId()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getModelSettings() != null)
+            sb.append("ModelSettings: ").append(getModelSettings()).append(",");
         if (getJobExecutionSettings() != null)
             sb.append("JobExecutionSettings: ").append(getJobExecutionSettings()).append(",");
         if (getContentRedaction() != null)
@@ -1088,6 +1136,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getModelSettings() == null ^ this.getModelSettings() == null)
+            return false;
+        if (other.getModelSettings() != null && other.getModelSettings().equals(this.getModelSettings()) == false)
+            return false;
         if (other.getJobExecutionSettings() == null ^ this.getJobExecutionSettings() == null)
             return false;
         if (other.getJobExecutionSettings() != null && other.getJobExecutionSettings().equals(this.getJobExecutionSettings()) == false)
@@ -1112,6 +1164,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getOutputBucketName() == null) ? 0 : getOutputBucketName().hashCode());
         hashCode = prime * hashCode + ((getOutputEncryptionKMSKeyId() == null) ? 0 : getOutputEncryptionKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionSettings() == null) ? 0 : getJobExecutionSettings().hashCode());
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
         return hashCode;

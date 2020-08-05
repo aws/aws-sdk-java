@@ -34,6 +34,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
+     * Creates a new custom language model. Use Amazon S3 prefixes to provide the location of your input files. The time
+     * it takes to create your model depends on the size of your training data.
+     * </p>
+     * 
+     * @param createLanguageModelRequest
+     * @return A Java Future containing the result of the CreateLanguageModel operation returned by the service.
+     * @sample AmazonTranscribeAsync.CreateLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLanguageModelResult> createLanguageModelAsync(CreateLanguageModelRequest createLanguageModelRequest);
+
+    /**
+     * <p>
+     * Creates a new custom language model. Use Amazon S3 prefixes to provide the location of your input files. The time
+     * it takes to create your model depends on the size of your training data.
+     * </p>
+     * 
+     * @param createLanguageModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLanguageModel operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.CreateLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLanguageModelResult> createLanguageModelAsync(CreateLanguageModelRequest createLanguageModelRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLanguageModelRequest, CreateLanguageModelResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical transcribes your audio
      * file.
      * </p>
@@ -130,6 +163,37 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      */
     java.util.concurrent.Future<CreateVocabularyFilterResult> createVocabularyFilterAsync(CreateVocabularyFilterRequest createVocabularyFilterRequest,
             com.amazonaws.handlers.AsyncHandler<CreateVocabularyFilterRequest, CreateVocabularyFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a custom language model using its name.
+     * </p>
+     * 
+     * @param deleteLanguageModelRequest
+     * @return A Java Future containing the result of the DeleteLanguageModel operation returned by the service.
+     * @sample AmazonTranscribeAsync.DeleteLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLanguageModelResult> deleteLanguageModelAsync(DeleteLanguageModelRequest deleteLanguageModelRequest);
+
+    /**
+     * <p>
+     * Deletes a custom language model using its name.
+     * </p>
+     * 
+     * @param deleteLanguageModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLanguageModel operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.DeleteLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLanguageModelResult> deleteLanguageModelAsync(DeleteLanguageModelRequest deleteLanguageModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLanguageModelRequest, DeleteLanguageModelResult> asyncHandler);
 
     /**
      * <p>
@@ -294,6 +358,45 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
+     * Gets information about a single custom language model. Use this information to see details about the language
+     * model in your AWS account. You can also see whether the base language model used to create your custom language
+     * model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language
+     * model using the updated base model. If the language model wasn't created, you can use this operation to
+     * understand why Amazon Transcribe couldn't create it.
+     * </p>
+     * 
+     * @param describeLanguageModelRequest
+     * @return A Java Future containing the result of the DescribeLanguageModel operation returned by the service.
+     * @sample AmazonTranscribeAsync.DescribeLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLanguageModelResult> describeLanguageModelAsync(DescribeLanguageModelRequest describeLanguageModelRequest);
+
+    /**
+     * <p>
+     * Gets information about a single custom language model. Use this information to see details about the language
+     * model in your AWS account. You can also see whether the base language model used to create your custom language
+     * model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language
+     * model using the updated base model. If the language model wasn't created, you can use this operation to
+     * understand why Amazon Transcribe couldn't create it.
+     * </p>
+     * 
+     * @param describeLanguageModelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLanguageModel operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.DescribeLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLanguageModelResult> describeLanguageModelAsync(DescribeLanguageModelRequest describeLanguageModelRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLanguageModelRequest, DescribeLanguageModelResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a transcription job from Amazon Transcribe Medical. To see the status of the job, check
      * the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished. You
      * find the results of the completed job in the <code>TranscriptFileUri</code> field.
@@ -331,7 +434,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieve information about a medical vocabulary.
+     * Retrieves information about a medical vocabulary.
      * </p>
      * 
      * @param getMedicalVocabularyRequest
@@ -344,7 +447,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieve information about a medical vocabulary.
+     * Retrieves information about a medical vocabulary.
      * </p>
      * 
      * @param getMedicalVocabularyRequest
@@ -461,6 +564,39 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
+     * Provides more information about the custom language models you've created. You can use the information in this
+     * list to find a specific custom language model. You can then use the operation to get more information about it.
+     * </p>
+     * 
+     * @param listLanguageModelsRequest
+     * @return A Java Future containing the result of the ListLanguageModels operation returned by the service.
+     * @sample AmazonTranscribeAsync.ListLanguageModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLanguageModelsResult> listLanguageModelsAsync(ListLanguageModelsRequest listLanguageModelsRequest);
+
+    /**
+     * <p>
+     * Provides more information about the custom language models you've created. You can use the information in this
+     * list to find a specific custom language model. You can then use the operation to get more information about it.
+     * </p>
+     * 
+     * @param listLanguageModelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLanguageModels operation returned by the service.
+     * @sample AmazonTranscribeAsyncHandler.ListLanguageModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLanguageModelsResult> listLanguageModelsAsync(ListLanguageModelsRequest listLanguageModelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLanguageModelsRequest, ListLanguageModelsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists medical transcription jobs with a specified status or substring that matches their names.
      * </p>
      * 
@@ -496,8 +632,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. You get the entire list of vocabularies if you
-     * don't enter a value in any of the request parameters.
+     * Returns a list of vocabularies that match the specified criteria. If you don't enter a value in any of the
+     * request parameters, returns the entire list of vocabularies.
      * </p>
      * 
      * @param listMedicalVocabulariesRequest
@@ -510,8 +646,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. You get the entire list of vocabularies if you
-     * don't enter a value in any of the request parameters.
+     * Returns a list of vocabularies that match the specified criteria. If you don't enter a value in any of the
+     * request parameters, returns the entire list of vocabularies.
      * </p>
      * 
      * @param listMedicalVocabulariesRequest
@@ -624,7 +760,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Start a batch job to transcribe medical speech to text.
+     * Starts a batch job to transcribe medical speech to text.
      * </p>
      * 
      * @param startMedicalTranscriptionJobRequest
@@ -639,7 +775,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Start a batch job to transcribe medical speech to text.
+     * Starts a batch job to transcribe medical speech to text.
      * </p>
      * 
      * @param startMedicalTranscriptionJobRequest
@@ -690,8 +826,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
-     * operation overwrites all of the existing information with the values that you provide in the request.
+     * Updates a vocabulary with new values that you provide in a different text file from the one you used to create
+     * the vocabulary. The <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing information
+     * with the values that you provide in the request.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
@@ -704,8 +841,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
-     * operation overwrites all of the existing information with the values that you provide in the request.
+     * Updates a vocabulary with new values that you provide in a different text file from the one you used to create
+     * the vocabulary. The <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing information
+     * with the values that you provide in the request.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest

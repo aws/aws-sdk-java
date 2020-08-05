@@ -27,18 +27,18 @@ public class GetVocabularyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the vocabulary to return information about. The name is case-sensitive.
+     * The name of the vocabulary to return information about. The name is case sensitive.
      * </p>
      */
     private String vocabularyName;
 
     /**
      * <p>
-     * The name of the vocabulary to return information about. The name is case-sensitive.
+     * The name of the vocabulary to return information about. The name is case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to return information about. The name is case-sensitive.
+     *        The name of the vocabulary to return information about. The name is case sensitive.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -47,10 +47,10 @@ public class GetVocabularyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the vocabulary to return information about. The name is case-sensitive.
+     * The name of the vocabulary to return information about. The name is case sensitive.
      * </p>
      * 
-     * @return The name of the vocabulary to return information about. The name is case-sensitive.
+     * @return The name of the vocabulary to return information about. The name is case sensitive.
      */
 
     public String getVocabularyName() {
@@ -59,11 +59,11 @@ public class GetVocabularyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the vocabulary to return information about. The name is case-sensitive.
+     * The name of the vocabulary to return information about. The name is case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to return information about. The name is case-sensitive.
+     *        The name of the vocabulary to return information about. The name is case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

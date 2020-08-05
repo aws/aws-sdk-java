@@ -96,6 +96,10 @@ public class TranscriptionJobJsonUnmarshaller implements Unmarshaller<Transcript
                     context.nextToken();
                     transcriptionJob.setSettings(SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ModelSettings", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJob.setModelSettings(ModelSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("JobExecutionSettings", targetDepth)) {
                     context.nextToken();
                     transcriptionJob.setJobExecutionSettings(JobExecutionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

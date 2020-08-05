@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The data structure that containts the information for a medical transcription job.
+ * The data structure that contains the information for a medical transcription job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionJob" target="_top">AWS
@@ -132,8 +132,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -712,8 +712,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -765,7 +765,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what
      *        Amazon Transcribe Medical can process. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
      *        Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>
      *        </p>
      *        </li>
@@ -823,8 +823,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -875,7 +875,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *         <p>
      *         <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what
      *         Amazon Transcribe Medical can process. For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
      *         Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>
      *         </p>
      *         </li>
@@ -933,8 +933,8 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * <p>
      * <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what Amazon
      * Transcribe Medical can process. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and Quotas</a> in
-     * the <i>Amazon Transcribe Medical Guide</i>
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and Quotas</a>
+     * in the <i>Amazon Transcribe Medical Guide</i>
      * </p>
      * </li>
      * <li>
@@ -986,7 +986,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *        <p>
      *        <code>Invalid file size: file size too large</code>- The size of your audio file is larger than what
      *        Amazon Transcribe Medical can process. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidlines and
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Guidelines and
      *        Quotas</a> in the <i>Amazon Transcribe Medical Guide</i>
      *        </p>
      *        </li>

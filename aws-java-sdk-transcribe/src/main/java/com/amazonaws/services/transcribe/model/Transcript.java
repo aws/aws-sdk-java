@@ -30,7 +30,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object location of the the transcript.
+     * The S3 object location of the transcript.
      * </p>
      * <p>
      * Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code> field
@@ -44,7 +44,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * The S3 object location of the redacted transcript.
      * </p>
      * <p>
-     * Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     * Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      * <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to
      * store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
@@ -53,7 +53,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object location of the the transcript.
+     * The S3 object location of the transcript.
      * </p>
      * <p>
      * Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code> field
@@ -62,7 +62,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param transcriptFileUri
-     *        The S3 object location of the the transcript.</p>
+     *        The S3 object location of the transcript.</p>
      *        <p>
      *        Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code>
      *        field when you created the job, this is the URI of that bucket. If you chose to store the transcript in
@@ -75,7 +75,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object location of the the transcript.
+     * The S3 object location of the transcript.
      * </p>
      * <p>
      * Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code> field
@@ -83,7 +83,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
      * 
-     * @return The S3 object location of the the transcript.</p>
+     * @return The S3 object location of the transcript.</p>
      *         <p>
      *         Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code>
      *         field when you created the job, this is the URI of that bucket. If you chose to store the transcript in
@@ -96,7 +96,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object location of the the transcript.
+     * The S3 object location of the transcript.
      * </p>
      * <p>
      * Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code> field
@@ -105,7 +105,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param transcriptFileUri
-     *        The S3 object location of the the transcript.</p>
+     *        The S3 object location of the transcript.</p>
      *        <p>
      *        Use this URI to access the transcript. If you specified an S3 bucket in the <code>OutputBucketName</code>
      *        field when you created the job, this is the URI of that bucket. If you chose to store the transcript in
@@ -123,7 +123,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * The S3 object location of the redacted transcript.
      * </p>
      * <p>
-     * Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     * Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      * <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to
      * store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
@@ -131,7 +131,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * @param redactedTranscriptFileUri
      *        The S3 object location of the redacted transcript.</p>
      *        <p>
-     *        Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     *        Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      *        <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose
      *        to store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that
      *        location.
@@ -146,14 +146,14 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * The S3 object location of the redacted transcript.
      * </p>
      * <p>
-     * Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     * Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      * <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to
      * store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
      * 
      * @return The S3 object location of the redacted transcript.</p>
      *         <p>
-     *         Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     *         Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      *         <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you
      *         chose to store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access
      *         to that location.
@@ -168,7 +168,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * The S3 object location of the redacted transcript.
      * </p>
      * <p>
-     * Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     * Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      * <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose to
      * store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that location.
      * </p>
@@ -176,7 +176,7 @@ public class Transcript implements Serializable, Cloneable, StructuredPojo {
      * @param redactedTranscriptFileUri
      *        The S3 object location of the redacted transcript.</p>
      *        <p>
-     *        Use this URI to access the redacated transcript. If you specified an S3 bucket in the
+     *        Use this URI to access the redacted transcript. If you specified an S3 bucket in the
      *        <code>OutputBucketName</code> field when you created the job, this is the URI of that bucket. If you chose
      *        to store the transcript in Amazon Transcribe, this is a shareable URL that provides secure access to that
      *        location.

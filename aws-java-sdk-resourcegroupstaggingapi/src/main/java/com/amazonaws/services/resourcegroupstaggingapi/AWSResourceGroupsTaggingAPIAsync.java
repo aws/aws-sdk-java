@@ -399,11 +399,6 @@ import com.amazonaws.services.resourcegroupstaggingapi.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a>
- * </p>
- * </li>
- * <li>
- * <p>
  * <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a>
  * </p>
  * </li>

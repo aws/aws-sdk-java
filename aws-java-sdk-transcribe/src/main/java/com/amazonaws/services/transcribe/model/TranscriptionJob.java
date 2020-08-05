@@ -153,6 +153,12 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private Settings settings;
     /**
      * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     */
+    private ModelSettings modelSettings;
+    /**
+     * <p>
      * Provides information about how a transcription job is executed.
      * </p>
      */
@@ -1009,6 +1015,46 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     * 
+     * @param modelSettings
+     *        An object containing the details of your custom language model.
+     */
+
+    public void setModelSettings(ModelSettings modelSettings) {
+        this.modelSettings = modelSettings;
+    }
+
+    /**
+     * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     * 
+     * @return An object containing the details of your custom language model.
+     */
+
+    public ModelSettings getModelSettings() {
+        return this.modelSettings;
+    }
+
+    /**
+     * <p>
+     * An object containing the details of your custom language model.
+     * </p>
+     * 
+     * @param modelSettings
+     *        An object containing the details of your custom language model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJob withModelSettings(ModelSettings modelSettings) {
+        setModelSettings(modelSettings);
+        return this;
+    }
+
+    /**
+     * <p>
      * Provides information about how a transcription job is executed.
      * </p>
      * 
@@ -1123,6 +1169,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getModelSettings() != null)
+            sb.append("ModelSettings: ").append(getModelSettings()).append(",");
         if (getJobExecutionSettings() != null)
             sb.append("JobExecutionSettings: ").append(getJobExecutionSettings()).append(",");
         if (getContentRedaction() != null)
@@ -1189,6 +1237,10 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getModelSettings() == null ^ this.getModelSettings() == null)
+            return false;
+        if (other.getModelSettings() != null && other.getModelSettings().equals(this.getModelSettings()) == false)
+            return false;
         if (other.getJobExecutionSettings() == null ^ this.getJobExecutionSettings() == null)
             return false;
         if (other.getJobExecutionSettings() != null && other.getJobExecutionSettings().equals(this.getJobExecutionSettings()) == false)
@@ -1217,6 +1269,7 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getCompletionTime() == null) ? 0 : getCompletionTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionSettings() == null) ? 0 : getJobExecutionSettings().hashCode());
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
         return hashCode;

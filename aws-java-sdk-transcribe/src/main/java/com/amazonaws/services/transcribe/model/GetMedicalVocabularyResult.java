@@ -25,25 +25,27 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid name that Amazon Transcribe Medical returns.
+     * The name of the vocabulary returned by Amazon Transcribe Medical.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The valid language code returned for your vocabulary entries.
+     * The valid language code for your vocabulary entries.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The processing state of the vocabulary.
+     * The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you can
+     * use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * </p>
      */
     private String vocabularyState;
     /**
      * <p>
-     * The date and time the vocabulary was last modified with a text file different from what was previously used.
+     * The date and time that the vocabulary was last modified with a text file different from the one that was
+     * previously used.
      * </p>
      */
     private java.util.Date lastModifiedTime;
@@ -56,7 +58,7 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     private String failureReason;
     /**
      * <p>
-     * The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+     * The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
      * can download your vocabulary from the URI for a limited time.
      * </p>
      */
@@ -64,11 +66,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid name that Amazon Transcribe Medical returns.
+     * The name of the vocabulary returned by Amazon Transcribe Medical.
      * </p>
      * 
      * @param vocabularyName
-     *        The valid name that Amazon Transcribe Medical returns.
+     *        The name of the vocabulary returned by Amazon Transcribe Medical.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -77,10 +79,10 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid name that Amazon Transcribe Medical returns.
+     * The name of the vocabulary returned by Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The valid name that Amazon Transcribe Medical returns.
+     * @return The name of the vocabulary returned by Amazon Transcribe Medical.
      */
 
     public String getVocabularyName() {
@@ -89,11 +91,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid name that Amazon Transcribe Medical returns.
+     * The name of the vocabulary returned by Amazon Transcribe Medical.
      * </p>
      * 
      * @param vocabularyName
-     *        The valid name that Amazon Transcribe Medical returns.
+     *        The name of the vocabulary returned by Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +106,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid language code returned for your vocabulary entries.
+     * The valid language code for your vocabulary entries.
      * </p>
      * 
      * @param languageCode
-     *        The valid language code returned for your vocabulary entries.
+     *        The valid language code for your vocabulary entries.
      * @see LanguageCode
      */
 
@@ -118,10 +120,10 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid language code returned for your vocabulary entries.
+     * The valid language code for your vocabulary entries.
      * </p>
      * 
-     * @return The valid language code returned for your vocabulary entries.
+     * @return The valid language code for your vocabulary entries.
      * @see LanguageCode
      */
 
@@ -131,11 +133,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid language code returned for your vocabulary entries.
+     * The valid language code for your vocabulary entries.
      * </p>
      * 
      * @param languageCode
-     *        The valid language code returned for your vocabulary entries.
+     *        The valid language code for your vocabulary entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -147,11 +149,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The valid language code returned for your vocabulary entries.
+     * The valid language code for your vocabulary entries.
      * </p>
      * 
      * @param languageCode
-     *        The valid language code returned for your vocabulary entries.
+     *        The valid language code for your vocabulary entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -163,11 +165,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The processing state of the vocabulary.
+     * The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you can
+     * use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of the vocabulary.
+     *        The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you
+     *        can use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * @see VocabularyState
      */
 
@@ -177,10 +181,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The processing state of the vocabulary.
+     * The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you can
+     * use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * </p>
      * 
-     * @return The processing state of the vocabulary.
+     * @return The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then
+     *         you can use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * @see VocabularyState
      */
 
@@ -190,11 +196,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The processing state of the vocabulary.
+     * The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you can
+     * use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of the vocabulary.
+     *        The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you
+     *        can use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -206,11 +214,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The processing state of the vocabulary.
+     * The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you can
+     * use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of the vocabulary.
+     *        The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code> then you
+     *        can use it in the <code>StartMedicalTranscriptionJob</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -222,12 +232,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the vocabulary was last modified with a text file different from what was previously used.
+     * The date and time that the vocabulary was last modified with a text file different from the one that was
+     * previously used.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the vocabulary was last modified with a text file different from what was previously
-     *        used.
+     *        The date and time that the vocabulary was last modified with a text file different from the one that was
+     *        previously used.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -236,11 +247,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the vocabulary was last modified with a text file different from what was previously used.
+     * The date and time that the vocabulary was last modified with a text file different from the one that was
+     * previously used.
      * </p>
      * 
-     * @return The date and time the vocabulary was last modified with a text file different from what was previously
-     *         used.
+     * @return The date and time that the vocabulary was last modified with a text file different from the one that was
+     *         previously used.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -249,12 +261,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The date and time the vocabulary was last modified with a text file different from what was previously used.
+     * The date and time that the vocabulary was last modified with a text file different from the one that was
+     * previously used.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the vocabulary was last modified with a text file different from what was previously
-     *        used.
+     *        The date and time that the vocabulary was last modified with a text file different from the one that was
+     *        previously used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,13 +324,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+     * The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
      * can download your vocabulary from the URI for a limited time.
      * </p>
      * 
      * @param downloadUri
-     *        The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary.
-     *        You can download your vocabulary from the URI for a limited time.
+     *        The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the
+     *        vocabulary. You can download your vocabulary from the URI for a limited time.
      */
 
     public void setDownloadUri(String downloadUri) {
@@ -326,11 +339,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+     * The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
      * can download your vocabulary from the URI for a limited time.
      * </p>
      * 
-     * @return The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the
+     * @return The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the
      *         vocabulary. You can download your vocabulary from the URI for a limited time.
      */
 
@@ -340,13 +353,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+     * The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
      * can download your vocabulary from the URI for a limited time.
      * </p>
      * 
      * @param downloadUri
-     *        The Amazon S3 location where the vocabulary is stored. Use this URI to get the contents of the vocabulary.
-     *        You can download your vocabulary from the URI for a limited time.
+     *        The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the
+     *        vocabulary. You can download your vocabulary from the URI for a limited time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

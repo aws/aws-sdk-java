@@ -27,7 +27,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
@@ -64,13 +64,13 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If
+     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If
      *        you try to create a vocabulary with the same name as a previous vocabulary you will receive a
      *        <code>ConflictException</code> error.
      */
@@ -81,12 +81,12 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If
+     * @return The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If
      *         you try to create a vocabulary with the same name as a previous vocabulary you will receive a
      *         <code>ConflictException</code> error.
      */
@@ -97,13 +97,13 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If
+     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If
      *        you try to create a vocabulary with the same name as a previous vocabulary you will receive a
      *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.

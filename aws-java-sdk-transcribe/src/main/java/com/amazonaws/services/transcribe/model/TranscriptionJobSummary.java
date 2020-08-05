@@ -93,6 +93,8 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
      */
     private ContentRedaction contentRedaction;
 
+    private ModelSettings modelSettings;
+
     /**
      * <p>
      * The name of the transcription job.
@@ -591,6 +593,32 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
     }
 
     /**
+     * @param modelSettings
+     */
+
+    public void setModelSettings(ModelSettings modelSettings) {
+        this.modelSettings = modelSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public ModelSettings getModelSettings() {
+        return this.modelSettings;
+    }
+
+    /**
+     * @param modelSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TranscriptionJobSummary withModelSettings(ModelSettings modelSettings) {
+        setModelSettings(modelSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -619,7 +647,9 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
         if (getOutputLocationType() != null)
             sb.append("OutputLocationType: ").append(getOutputLocationType()).append(",");
         if (getContentRedaction() != null)
-            sb.append("ContentRedaction: ").append(getContentRedaction());
+            sb.append("ContentRedaction: ").append(getContentRedaction()).append(",");
+        if (getModelSettings() != null)
+            sb.append("ModelSettings: ").append(getModelSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -670,6 +700,10 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getContentRedaction() != null && other.getContentRedaction().equals(this.getContentRedaction()) == false)
             return false;
+        if (other.getModelSettings() == null ^ this.getModelSettings() == null)
+            return false;
+        if (other.getModelSettings() != null && other.getModelSettings().equals(this.getModelSettings()) == false)
+            return false;
         return true;
     }
 
@@ -687,6 +721,7 @@ public class TranscriptionJobSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getOutputLocationType() == null) ? 0 : getOutputLocationType().hashCode());
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
+        hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());
         return hashCode;
     }
 

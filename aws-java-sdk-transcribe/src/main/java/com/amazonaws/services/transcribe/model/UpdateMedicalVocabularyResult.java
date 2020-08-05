@@ -31,21 +31,21 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     private String vocabularyName;
     /**
      * <p>
-     * The language code for the text file used to update the custom vocabulary. US English (en-US) is the only language
-     * supported in Amazon Transcribe Medical.
+     * The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is
+     * the only language supported in Amazon Transcribe Medical.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The date and time the vocabulary was updated.
+     * The date and time that the vocabulary was updated.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
      * The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     * <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
+     * <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
@@ -92,13 +92,13 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code for the text file used to update the custom vocabulary. US English (en-US) is the only language
-     * supported in Amazon Transcribe Medical.
+     * The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is
+     * the only language supported in Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code for the text file used to update the custom vocabulary. US English (en-US) is the only
-     *        language supported in Amazon Transcribe Medical.
+     *        The language code for the language of the text file used to update the custom vocabulary. US English
+     *        (en-US) is the only language supported in Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -108,12 +108,12 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code for the text file used to update the custom vocabulary. US English (en-US) is the only language
-     * supported in Amazon Transcribe Medical.
+     * The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is
+     * the only language supported in Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The language code for the text file used to update the custom vocabulary. US English (en-US) is the only
-     *         language supported in Amazon Transcribe Medical.
+     * @return The language code for the language of the text file used to update the custom vocabulary. US English
+     *         (en-US) is the only language supported in Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -123,13 +123,13 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code for the text file used to update the custom vocabulary. US English (en-US) is the only language
-     * supported in Amazon Transcribe Medical.
+     * The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is
+     * the only language supported in Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code for the text file used to update the custom vocabulary. US English (en-US) is the only
-     *        language supported in Amazon Transcribe Medical.
+     *        The language code for the language of the text file used to update the custom vocabulary. US English
+     *        (en-US) is the only language supported in Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -141,13 +141,13 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code for the text file used to update the custom vocabulary. US English (en-US) is the only language
-     * supported in Amazon Transcribe Medical.
+     * The language code for the language of the text file used to update the custom vocabulary. US English (en-US) is
+     * the only language supported in Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code for the text file used to update the custom vocabulary. US English (en-US) is the only
-     *        language supported in Amazon Transcribe Medical.
+     *        The language code for the language of the text file used to update the custom vocabulary. US English
+     *        (en-US) is the only language supported in Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -159,11 +159,11 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The date and time the vocabulary was updated.
+     * The date and time that the vocabulary was updated.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the vocabulary was updated.
+     *        The date and time that the vocabulary was updated.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -172,10 +172,10 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The date and time the vocabulary was updated.
+     * The date and time that the vocabulary was updated.
      * </p>
      * 
-     * @return The date and time the vocabulary was updated.
+     * @return The date and time that the vocabulary was updated.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -184,11 +184,11 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The date and time the vocabulary was updated.
+     * The date and time that the vocabulary was updated.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the vocabulary was updated.
+     *        The date and time that the vocabulary was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,12 +200,12 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     * <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
+     * <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     *        <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+     *        <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
      *        request.
      * @see VocabularyState
      */
@@ -217,11 +217,11 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     * <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
+     * <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @return The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     *         <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+     *         <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
      *         request.
      * @see VocabularyState
      */
@@ -233,12 +233,12 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     * <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
+     * <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     *        <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+     *        <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
@@ -252,12 +252,12 @@ public class UpdateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     * <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
+     * <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
-     *        <code>READY</code> the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+     *        <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState

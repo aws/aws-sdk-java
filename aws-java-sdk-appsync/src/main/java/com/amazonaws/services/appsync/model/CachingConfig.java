@@ -42,8 +42,7 @@ public class CachingConfig implements Serializable, Cloneable, StructuredPojo {
      * The caching keys for a resolver that has caching enabled.
      * </p>
      * <p>
-     * Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     * <code>$context.identity</code> maps.
+     * Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * </p>
      */
     private java.util.List<String> cachingKeys;
@@ -108,14 +107,13 @@ public class CachingConfig implements Serializable, Cloneable, StructuredPojo {
      * The caching keys for a resolver that has caching enabled.
      * </p>
      * <p>
-     * Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     * <code>$context.identity</code> maps.
+     * Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * </p>
      * 
      * @return The caching keys for a resolver that has caching enabled.</p>
      *         <p>
-     *         Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     *         <code>$context.identity</code> maps.
+     *         Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code>
+     *         maps.
      */
 
     public java.util.List<String> getCachingKeys() {
@@ -127,15 +125,13 @@ public class CachingConfig implements Serializable, Cloneable, StructuredPojo {
      * The caching keys for a resolver that has caching enabled.
      * </p>
      * <p>
-     * Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     * <code>$context.identity</code> maps.
+     * Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * </p>
      * 
      * @param cachingKeys
      *        The caching keys for a resolver that has caching enabled.</p>
      *        <p>
-     *        Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     *        <code>$context.identity</code> maps.
+     *        Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      */
 
     public void setCachingKeys(java.util.Collection<String> cachingKeys) {
@@ -152,8 +148,7 @@ public class CachingConfig implements Serializable, Cloneable, StructuredPojo {
      * The caching keys for a resolver that has caching enabled.
      * </p>
      * <p>
-     * Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     * <code>$context.identity</code> maps.
+     * Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,8 +159,7 @@ public class CachingConfig implements Serializable, Cloneable, StructuredPojo {
      * @param cachingKeys
      *        The caching keys for a resolver that has caching enabled.</p>
      *        <p>
-     *        Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     *        <code>$context.identity</code> maps.
+     *        Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,15 +178,13 @@ public class CachingConfig implements Serializable, Cloneable, StructuredPojo {
      * The caching keys for a resolver that has caching enabled.
      * </p>
      * <p>
-     * Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     * <code>$context.identity</code> maps.
+     * Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * </p>
      * 
      * @param cachingKeys
      *        The caching keys for a resolver that has caching enabled.</p>
      *        <p>
-     *        Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and
-     *        <code>$context.identity</code> maps.
+     *        Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

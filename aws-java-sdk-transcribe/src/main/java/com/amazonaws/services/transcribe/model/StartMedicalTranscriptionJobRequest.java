@@ -27,9 +27,10 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      */
     private String medicalTranscriptionJobName;
@@ -149,15 +150,16 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job
-     *        name. The name must also be unique within an AWS account. If you try to create a medical transcription job
-     *        with the same name as a previous medical transcription job you will receive a
+     *        The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
+     *        by themselves as the job name. The name must also be unique within an AWS account. If you try to create a
+     *        medical transcription job with the same name as a previous medical transcription job, you get a
      *        <code>ConflictException</code> error.
      */
 
@@ -167,14 +169,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job
-     *         name. The name must also be unique within an AWS account. If you try to create a medical transcription
-     *         job with the same name as a previous medical transcription job you will receive a
+     * @return The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>
+     *         " by themselves as the job name. The name must also be unique within an AWS account. If you try to create
+     *         a medical transcription job with the same name as a previous medical transcription job, you get a
      *         <code>ConflictException</code> error.
      */
 
@@ -184,15 +187,16 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job
-     *        name. The name must also be unique within an AWS account. If you try to create a medical transcription job
-     *        with the same name as a previous medical transcription job you will receive a
+     *        The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
+     *        by themselves as the job name. The name must also be unique within an AWS account. If you try to create a
+     *        medical transcription job with the same name as a previous medical transcription job, you get a
      *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

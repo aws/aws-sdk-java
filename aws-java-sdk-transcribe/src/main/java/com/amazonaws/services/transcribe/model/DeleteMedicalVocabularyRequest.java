@@ -27,18 +27,18 @@ public class DeleteMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      */
     private String vocabularyName;
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary you are choosing to delete.
+     *        The name of the vocabulary that you want to delete.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -47,10 +47,10 @@ public class DeleteMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      * 
-     * @return The name of the vocabulary you are choosing to delete.
+     * @return The name of the vocabulary that you want to delete.
      */
 
     public String getVocabularyName() {
@@ -59,11 +59,11 @@ public class DeleteMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary you are choosing to delete.
+     *        The name of the vocabulary that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

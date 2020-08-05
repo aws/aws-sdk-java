@@ -27,7 +27,7 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      */
@@ -66,12 +66,12 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with
+     *        The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
      *        the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      */
 
@@ -81,11 +81,11 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with
+     * @return The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
      *         the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      */
 
@@ -95,12 +95,12 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with
+     *        The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
      *        the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

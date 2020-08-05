@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The resource name already exists.
+ * There is already a resource with that name.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
