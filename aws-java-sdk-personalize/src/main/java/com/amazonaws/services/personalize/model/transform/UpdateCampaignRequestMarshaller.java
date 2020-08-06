@@ -33,6 +33,8 @@ public class UpdateCampaignRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("solutionVersionArn").build();
     private static final MarshallingInfo<Integer> MINPROVISIONEDTPS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minProvisionedTPS").build();
+    private static final MarshallingInfo<StructuredPojo> CAMPAIGNCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("campaignConfig").build();
 
     private static final UpdateCampaignRequestMarshaller instance = new UpdateCampaignRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateCampaignRequestMarshaller {
             protocolMarshaller.marshall(updateCampaignRequest.getCampaignArn(), CAMPAIGNARN_BINDING);
             protocolMarshaller.marshall(updateCampaignRequest.getSolutionVersionArn(), SOLUTIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(updateCampaignRequest.getMinProvisionedTPS(), MINPROVISIONEDTPS_BINDING);
+            protocolMarshaller.marshall(updateCampaignRequest.getCampaignConfig(), CAMPAIGNCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

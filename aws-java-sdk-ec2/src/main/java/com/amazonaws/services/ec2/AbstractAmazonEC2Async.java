@@ -656,6 +656,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCarrierGatewayResult> createCarrierGatewayAsync(CreateCarrierGatewayRequest request) {
+
+        return createCarrierGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCarrierGatewayResult> createCarrierGatewayAsync(CreateCarrierGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCarrierGatewayRequest, CreateCarrierGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClientVpnEndpointResult> createClientVpnEndpointAsync(CreateClientVpnEndpointRequest request) {
 
         return createClientVpnEndpointAsync(request, null);
@@ -1402,6 +1415,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<CreateVpnGatewayResult> createVpnGatewayAsync(CreateVpnGatewayRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateVpnGatewayRequest, CreateVpnGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCarrierGatewayResult> deleteCarrierGatewayAsync(DeleteCarrierGatewayRequest request) {
+
+        return deleteCarrierGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCarrierGatewayResult> deleteCarrierGatewayAsync(DeleteCarrierGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteCarrierGatewayRequest, DeleteCarrierGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2320,6 +2346,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeCapacityReservationsResult> describeCapacityReservationsAsync(DescribeCapacityReservationsRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeCapacityReservationsRequest, DescribeCapacityReservationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCarrierGatewaysResult> describeCarrierGatewaysAsync(DescribeCarrierGatewaysRequest request) {
+
+        return describeCarrierGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCarrierGatewaysResult> describeCarrierGatewaysAsync(DescribeCarrierGatewaysRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeCarrierGatewaysRequest, DescribeCarrierGatewaysResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -25,14 +25,17 @@ import com.amazonaws.services.personalizeevents.model.*;
  * {@link com.amazonaws.services.personalizeevents.AbstractAmazonPersonalizeEventsAsync} instead.
  * </p>
  * <p>
- * <p/>
+ * <p>
+ * Amazon Personalize can consume real-time user event data, such as <i>stream</i> or <i>click</i> data, and use it for
+ * model training either alone or combined with historical data. For more information see <a>recording-events</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPersonalizeEventsAsync extends AmazonPersonalizeEvents {
 
     /**
      * <p>
-     * Records user interaction event data.
+     * Records user interaction event data. For more information see <a>event-record-api</a>.
      * </p>
      * 
      * @param putEventsRequest
@@ -45,7 +48,7 @@ public interface AmazonPersonalizeEventsAsync extends AmazonPersonalizeEvents {
 
     /**
      * <p>
-     * Records user interaction event data.
+     * Records user interaction event data. For more information see <a>event-record-api</a>.
      * </p>
      * 
      * @param putEventsRequest

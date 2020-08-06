@@ -29,6 +29,18 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
 
     /**
      * <p>
+     * Associates a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     */
+    private Boolean associateCarrierIpAddress;
+    /**
+     * <p>
      * Associates a public IPv4 address with eth0 for a new network interface.
      * </p>
      */
@@ -115,6 +127,102 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
      * </p>
      */
     private String subnetId;
+
+    /**
+     * <p>
+     * Associates a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Associates a Carrier IP address with eth0 for a new network interface.</p>
+     *        <p>
+     *        Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *        address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *        "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *        >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     */
+
+    public void setAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        this.associateCarrierIpAddress = associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associates a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @return Associates a Carrier IP address with eth0 for a new network interface.</p>
+     *         <p>
+     *         Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *         address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *         "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *         >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     */
+
+    public Boolean getAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Associates a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Associates a Carrier IP address with eth0 for a new network interface.</p>
+     *        <p>
+     *        Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *        address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *        "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *        >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchTemplateInstanceNetworkInterfaceSpecificationRequest withAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        setAssociateCarrierIpAddress(associateCarrierIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Associates a Carrier IP address with eth0 for a new network interface.
+     * </p>
+     * <p>
+     * Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP address with
+     * the network interface. For more information about Carrier IP addresses, see <a
+     * href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     * >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @return Associates a Carrier IP address with eth0 for a new network interface.</p>
+     *         <p>
+     *         Use this option when you launch an instance in a Wavelength Zone and want to associate a Carrier IP
+     *         address with the network interface. For more information about Carrier IP addresses, see <a href=
+     *         "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip"
+     *         >Carrier IP addresses</a> in the <i>AWS Wavelength Developer Guide</i>.
+     */
+
+    public Boolean isAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
 
     /**
      * <p>
@@ -831,6 +939,8 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssociateCarrierIpAddress() != null)
+            sb.append("AssociateCarrierIpAddress: ").append(getAssociateCarrierIpAddress()).append(",");
         if (getAssociatePublicIpAddress() != null)
             sb.append("AssociatePublicIpAddress: ").append(getAssociatePublicIpAddress()).append(",");
         if (getDeleteOnTermination() != null)
@@ -871,6 +981,10 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
         if (obj instanceof LaunchTemplateInstanceNetworkInterfaceSpecificationRequest == false)
             return false;
         LaunchTemplateInstanceNetworkInterfaceSpecificationRequest other = (LaunchTemplateInstanceNetworkInterfaceSpecificationRequest) obj;
+        if (other.getAssociateCarrierIpAddress() == null ^ this.getAssociateCarrierIpAddress() == null)
+            return false;
+        if (other.getAssociateCarrierIpAddress() != null && other.getAssociateCarrierIpAddress().equals(this.getAssociateCarrierIpAddress()) == false)
+            return false;
         if (other.getAssociatePublicIpAddress() == null ^ this.getAssociatePublicIpAddress() == null)
             return false;
         if (other.getAssociatePublicIpAddress() != null && other.getAssociatePublicIpAddress().equals(this.getAssociatePublicIpAddress()) == false)
@@ -932,6 +1046,7 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationRequest implemen
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssociateCarrierIpAddress() == null) ? 0 : getAssociateCarrierIpAddress().hashCode());
         hashCode = prime * hashCode + ((getAssociatePublicIpAddress() == null) ? 0 : getAssociatePublicIpAddress().hashCode());
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

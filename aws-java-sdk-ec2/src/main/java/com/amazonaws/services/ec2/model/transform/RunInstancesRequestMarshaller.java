@@ -359,6 +359,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                             StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getSubnetId()));
                 }
 
+                if (runInstancesRequestNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                            StringUtils.fromBoolean(runInstancesRequestNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                }
+
                 if (runInstancesRequestNetworkInterfacesListValue.getInterfaceType() != null) {
                     request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".InterfaceType",
                             StringUtils.fromString(runInstancesRequestNetworkInterfacesListValue.getInterfaceType()));

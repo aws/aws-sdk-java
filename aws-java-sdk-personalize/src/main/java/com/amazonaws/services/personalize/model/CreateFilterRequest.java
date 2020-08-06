@@ -47,7 +47,8 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon Personalize.
+     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      */
     private String filterExpression;
@@ -142,7 +143,8 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon Personalize.
+     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param filterExpression
@@ -153,8 +155,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions
-     *        history, set <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon
-     *        Personalize.
+     *        history, set <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *        Personalize</a>.
      */
 
     public void setFilterExpression(String filterExpression) {
@@ -171,7 +174,8 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon Personalize.
+     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @return The filter expression that designates the interaction types that the filter will filter out. A filter
@@ -181,8 +185,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions
-     *         history, set <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon
-     *         Personalize.
+     *         history, set <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *         Personalize</a>.
      */
 
     public String getFilterExpression() {
@@ -199,7 +204,8 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions history, set
-     * <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon Personalize.
+     * <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param filterExpression
@@ -210,8 +216,9 @@ public class CreateFilterRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        Where "EVENT_TYPE" is the type of event to filter out. To filter out all items with any interactions
-     *        history, set <code>"*"</code> as the EVENT_TYPE. For more information, see Using Filters with Amazon
-     *        Personalize.
+     *        history, set <code>"*"</code> as the EVENT_TYPE. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *        Personalize</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

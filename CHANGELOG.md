@@ -1,3 +1,28 @@
+# __1.11.836__ __2020-08-06__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release supports Wavelength resources, including carrier gateways, and carrier IP addresses.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex supports the option to enable accuracy improvements and specify an intent classification confidence score threshold.
+
+## __Amazon Lex Runtime Service__
+  - ### Features
+    - Amazon Lex supports intent classification confidence scores along with a list of the top five intents.
+
+## __Amazon Personalize__
+  - ### Features
+    - Add 'exploration' functionality
+
+## __Amazon Personalize Events__
+  - ### Features
+    - Adds support implicit and explicit impression input
+
+## __Amazon Personalize Runtime__
+  - ### Features
+    - Adds support for implicit impressions
+
 # __1.11.835__ __2020-08-05__
 ## __AWS AppSync__
   - ### Features

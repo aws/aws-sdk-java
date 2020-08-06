@@ -89,6 +89,12 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
     private String localGatewayId;
     /**
      * <p>
+     * [IPv4 traffic only] The ID of a carrier gateway.
+     * </p>
+     */
+    private String carrierGatewayId;
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      */
@@ -532,6 +538,46 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
+     * [IPv4 traffic only] The ID of a carrier gateway.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        [IPv4 traffic only] The ID of a carrier gateway.
+     */
+
+    public void setCarrierGatewayId(String carrierGatewayId) {
+        this.carrierGatewayId = carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * [IPv4 traffic only] The ID of a carrier gateway.
+     * </p>
+     * 
+     * @return [IPv4 traffic only] The ID of a carrier gateway.
+     */
+
+    public String getCarrierGatewayId() {
+        return this.carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * [IPv4 traffic only] The ID of a carrier gateway.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        [IPv4 traffic only] The ID of a carrier gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplaceRouteRequest withCarrierGatewayId(String carrierGatewayId) {
+        setCarrierGatewayId(carrierGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      * 
@@ -693,6 +739,8 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getLocalGatewayId() != null)
             sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
+        if (getCarrierGatewayId() != null)
+            sb.append("CarrierGatewayId: ").append(getCarrierGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getRouteTableId() != null)
@@ -753,6 +801,10 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
             return false;
         if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
             return false;
+        if (other.getCarrierGatewayId() == null ^ this.getCarrierGatewayId() == null)
+            return false;
+        if (other.getCarrierGatewayId() != null && other.getCarrierGatewayId().equals(this.getCarrierGatewayId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -783,6 +835,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest implements Seri
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getCarrierGatewayId() == null) ? 0 : getCarrierGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());

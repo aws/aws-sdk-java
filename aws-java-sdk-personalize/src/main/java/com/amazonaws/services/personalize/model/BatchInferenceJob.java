@@ -79,6 +79,12 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
     private BatchInferenceJobOutput jobOutput;
     /**
      * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     */
+    private BatchInferenceJobConfig batchInferenceJobConfig;
+    /**
+     * <p>
      * The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.
      * </p>
      */
@@ -452,6 +458,46 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        A string to string map of the configuration details of a batch inference job.
+     */
+
+    public void setBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        this.batchInferenceJobConfig = batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     * 
+     * @return A string to string map of the configuration details of a batch inference job.
+     */
+
+    public BatchInferenceJobConfig getBatchInferenceJobConfig() {
+        return this.batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        A string to string map of the configuration details of a batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchInferenceJob withBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        setBatchInferenceJobConfig(batchInferenceJobConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.
      * </p>
      * 
@@ -767,6 +813,8 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             sb.append("JobInput: ").append(getJobInput()).append(",");
         if (getJobOutput() != null)
             sb.append("JobOutput: ").append(getJobOutput()).append(",");
+        if (getBatchInferenceJobConfig() != null)
+            sb.append("BatchInferenceJobConfig: ").append(getBatchInferenceJobConfig()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
@@ -821,6 +869,10 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getJobOutput() != null && other.getJobOutput().equals(this.getJobOutput()) == false)
             return false;
+        if (other.getBatchInferenceJobConfig() == null ^ this.getBatchInferenceJobConfig() == null)
+            return false;
+        if (other.getBatchInferenceJobConfig() != null && other.getBatchInferenceJobConfig().equals(this.getBatchInferenceJobConfig()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -853,6 +905,7 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());
         hashCode = prime * hashCode + ((getJobInput() == null) ? 0 : getJobInput().hashCode());
         hashCode = prime * hashCode + ((getJobOutput() == null) ? 0 : getJobOutput().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobConfig() == null) ? 0 : getBatchInferenceJobConfig().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());

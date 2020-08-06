@@ -265,6 +265,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateCarrierGatewayResult createCarrierGateway(CreateCarrierGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClientVpnEndpointResult createClientVpnEndpoint(CreateClientVpnEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -536,6 +541,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateVpnGatewayResult createVpnGateway(CreateVpnGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCarrierGatewayResult deleteCarrierGateway(DeleteCarrierGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -864,6 +874,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeCapacityReservationsResult describeCapacityReservations(DescribeCapacityReservationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCarrierGatewaysResult describeCarrierGateways(DescribeCarrierGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

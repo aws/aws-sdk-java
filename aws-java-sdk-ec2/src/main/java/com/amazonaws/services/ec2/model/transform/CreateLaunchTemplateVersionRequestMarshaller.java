@@ -156,6 +156,11 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
 
                 for (LaunchTemplateInstanceNetworkInterfaceSpecificationRequest requestLaunchTemplateDataNetworkInterfacesListValue : requestLaunchTemplateDataNetworkInterfacesList) {
 
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                                StringUtils.fromBoolean(requestLaunchTemplateDataNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                    }
+
                     if (requestLaunchTemplateDataNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
                                 StringUtils.fromBoolean(requestLaunchTemplateDataNetworkInterfacesListValue.getAssociatePublicIpAddress()));

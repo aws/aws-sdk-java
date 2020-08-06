@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes association information for an Elastic IP address (IPv4 only).
+ * Describes association information for an Elastic IP address (IPv4 only), or a Carrier IP address (for a network
+ * interface which resides in a subnet in a Wavelength Zone).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/NetworkInterfaceAssociation" target="_top">AWS
@@ -52,10 +53,20 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
     private String publicDnsName;
     /**
      * <p>
-     * The address of the Elastic IP address bound to the network interface.
+     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
      * </p>
      */
     private String publicIp;
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     */
+    private String carrierIp;
 
     /**
      * <p>
@@ -219,11 +230,11 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address of the Elastic IP address bound to the network interface.
+     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
      * </p>
      * 
      * @param publicIp
-     *        The address of the Elastic IP address bound to the network interface.
+     *        The address of the Elastic IP address or Carrier IP address bound to the network interface.
      */
 
     public void setPublicIp(String publicIp) {
@@ -232,10 +243,10 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address of the Elastic IP address bound to the network interface.
+     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
      * </p>
      * 
-     * @return The address of the Elastic IP address bound to the network interface.
+     * @return The address of the Elastic IP address or Carrier IP address bound to the network interface.
      */
 
     public String getPublicIp() {
@@ -244,16 +255,77 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The address of the Elastic IP address bound to the network interface.
+     * The address of the Elastic IP address or Carrier IP address bound to the network interface.
      * </p>
      * 
      * @param publicIp
-     *        The address of the Elastic IP address bound to the network interface.
+     *        The address of the Elastic IP address or Carrier IP address bound to the network interface.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NetworkInterfaceAssociation withPublicIp(String publicIp) {
         setPublicIp(publicIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated with the network interface.</p>
+     *        <p>
+     *        This option is only available when the network interface is in a subnet which is associated with a
+     *        Wavelength Zone.
+     */
+
+    public void setCarrierIp(String carrierIp) {
+        this.carrierIp = carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     * 
+     * @return The carrier IP address associated with the network interface.</p>
+     *         <p>
+     *         This option is only available when the network interface is in a subnet which is associated with a
+     *         Wavelength Zone.
+     */
+
+    public String getCarrierIp() {
+        return this.carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * <p>
+     * This option is only available when the network interface is in a subnet which is associated with a Wavelength
+     * Zone.
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated with the network interface.</p>
+     *        <p>
+     *        This option is only available when the network interface is in a subnet which is associated with a
+     *        Wavelength Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAssociation withCarrierIp(String carrierIp) {
+        setCarrierIp(carrierIp);
         return this;
     }
 
@@ -278,7 +350,9 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         if (getPublicDnsName() != null)
             sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getPublicIp() != null)
-            sb.append("PublicIp: ").append(getPublicIp());
+            sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getCarrierIp() != null)
+            sb.append("CarrierIp: ").append(getCarrierIp());
         sb.append("}");
         return sb.toString();
     }
@@ -313,6 +387,10 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
+        if (other.getCarrierIp() == null ^ this.getCarrierIp() == null)
+            return false;
+        if (other.getCarrierIp() != null && other.getCarrierIp().equals(this.getCarrierIp()) == false)
+            return false;
         return true;
     }
 
@@ -326,6 +404,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getCarrierIp() == null) ? 0 : getCarrierIp().hashCode());
         return hashCode;
     }
 

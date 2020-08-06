@@ -76,6 +76,10 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
             request.addParameter("LocalGatewayId", StringUtils.fromString(createRouteRequest.getLocalGatewayId()));
         }
 
+        if (createRouteRequest.getCarrierGatewayId() != null) {
+            request.addParameter("CarrierGatewayId", StringUtils.fromString(createRouteRequest.getCarrierGatewayId()));
+        }
+
         if (createRouteRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(createRouteRequest.getNetworkInterfaceId()));
         }

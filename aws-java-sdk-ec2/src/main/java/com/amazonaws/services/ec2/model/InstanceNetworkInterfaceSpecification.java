@@ -126,6 +126,16 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
     private String subnetId;
     /**
      * <p>
+     * Indicates whether to assign a carrier IP address to the network interface.
+     * </p>
+     * <p>
+     * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
+     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * </p>
+     */
+    private Boolean associateCarrierIpAddress;
+    /**
+     * <p>
      * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
      * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
      * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -925,6 +935,90 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
 
     /**
      * <p>
+     * Indicates whether to assign a carrier IP address to the network interface.
+     * </p>
+     * <p>
+     * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
+     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Indicates whether to assign a carrier IP address to the network interface.</p>
+     *        <p>
+     *        You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
+     *        For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     *        Guide.
+     */
+
+    public void setAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        this.associateCarrierIpAddress = associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to assign a carrier IP address to the network interface.
+     * </p>
+     * <p>
+     * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
+     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * </p>
+     * 
+     * @return Indicates whether to assign a carrier IP address to the network interface.</p>
+     *         <p>
+     *         You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
+     *         For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     *         Guide.
+     */
+
+    public Boolean getAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to assign a carrier IP address to the network interface.
+     * </p>
+     * <p>
+     * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
+     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * </p>
+     * 
+     * @param associateCarrierIpAddress
+     *        Indicates whether to assign a carrier IP address to the network interface.</p>
+     *        <p>
+     *        You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
+     *        For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     *        Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceSpecification withAssociateCarrierIpAddress(Boolean associateCarrierIpAddress) {
+        setAssociateCarrierIpAddress(associateCarrierIpAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to assign a carrier IP address to the network interface.
+     * </p>
+     * <p>
+     * You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone. For
+     * more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer Guide.
+     * </p>
+     * 
+     * @return Indicates whether to assign a carrier IP address to the network interface.</p>
+     *         <p>
+     *         You can only assign a carrier IP address to a network interface that is in a subnet in a Wavelength Zone.
+     *         For more information about carrier IP addresses, see Carrier IP addresses in the AWS Wavelength Developer
+     *         Guide.
+     */
+
+    public Boolean isAssociateCarrierIpAddress() {
+        return this.associateCarrierIpAddress;
+    }
+
+    /**
+     * <p>
      * The type of network interface. To create an Elastic Fabric Adapter (EFA), specify <code>efa</code>. For more
      * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic Fabric
      * Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
@@ -1044,6 +1138,8 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
             sb.append("SecondaryPrivateIpAddressCount: ").append(getSecondaryPrivateIpAddressCount()).append(",");
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getAssociateCarrierIpAddress() != null)
+            sb.append("AssociateCarrierIpAddress: ").append(getAssociateCarrierIpAddress()).append(",");
         if (getInterfaceType() != null)
             sb.append("InterfaceType: ").append(getInterfaceType());
         sb.append("}");
@@ -1109,6 +1205,10 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getAssociateCarrierIpAddress() == null ^ this.getAssociateCarrierIpAddress() == null)
+            return false;
+        if (other.getAssociateCarrierIpAddress() != null && other.getAssociateCarrierIpAddress().equals(this.getAssociateCarrierIpAddress()) == false)
+            return false;
         if (other.getInterfaceType() == null ^ this.getInterfaceType() == null)
             return false;
         if (other.getInterfaceType() != null && other.getInterfaceType().equals(this.getInterfaceType()) == false)
@@ -1133,6 +1233,7 @@ public class InstanceNetworkInterfaceSpecification implements Serializable, Clon
         hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getAssociateCarrierIpAddress() == null) ? 0 : getAssociateCarrierIpAddress().hashCode());
         hashCode = prime * hashCode + ((getInterfaceType() == null) ? 0 : getInterfaceType().hashCode());
         return hashCode;
     }

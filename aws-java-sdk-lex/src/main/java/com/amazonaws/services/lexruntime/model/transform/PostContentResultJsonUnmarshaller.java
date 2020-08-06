@@ -40,6 +40,16 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
                 context.setCurrentHeader("x-amz-lex-intent-name");
                 postContentResult.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
             }
+            if (context.getHeader("x-amz-lex-nlu-intent-confidence") != null) {
+                context.setCurrentHeader("x-amz-lex-nlu-intent-confidence");
+                postContentResult.setNluIntentConfidence(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(
+                        context));
+            }
+            if (context.getHeader("x-amz-lex-alternative-intents") != null) {
+                context.setCurrentHeader("x-amz-lex-alternative-intents");
+                postContentResult.setAlternativeIntents(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(
+                        context));
+            }
             if (context.getHeader("x-amz-lex-slots") != null) {
                 context.setCurrentHeader("x-amz-lex-slots");
                 postContentResult.setSlots(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(context));
@@ -72,6 +82,10 @@ public class PostContentResultJsonUnmarshaller implements Unmarshaller<PostConte
             if (context.getHeader("x-amz-lex-input-transcript") != null) {
                 context.setCurrentHeader("x-amz-lex-input-transcript");
                 postContentResult.setInputTranscript(context.getUnmarshaller(String.class).unmarshall(context));
+            }
+            if (context.getHeader("x-amz-lex-bot-version") != null) {
+                context.setCurrentHeader("x-amz-lex-bot-version");
+                postContentResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
             }
             if (context.getHeader("x-amz-lex-session-id") != null) {
                 context.setCurrentHeader("x-amz-lex-session-id");

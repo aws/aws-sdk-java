@@ -34,6 +34,10 @@ public class PutBotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> INTENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("intents").build();
+    private static final MarshallingInfo<Boolean> ENABLEMODELIMPROVEMENTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableModelImprovements").build();
+    private static final MarshallingInfo<Double> NLUINTENTCONFIDENCETHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nluIntentConfidenceThreshold").build();
     private static final MarshallingInfo<StructuredPojo> CLARIFICATIONPROMPT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clarificationPrompt").build();
     private static final MarshallingInfo<StructuredPojo> ABORTSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -76,6 +80,8 @@ public class PutBotRequestMarshaller {
             protocolMarshaller.marshall(putBotRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(putBotRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(putBotRequest.getIntents(), INTENTS_BINDING);
+            protocolMarshaller.marshall(putBotRequest.getEnableModelImprovements(), ENABLEMODELIMPROVEMENTS_BINDING);
+            protocolMarshaller.marshall(putBotRequest.getNluIntentConfidenceThreshold(), NLUINTENTCONFIDENCETHRESHOLD_BINDING);
             protocolMarshaller.marshall(putBotRequest.getClarificationPrompt(), CLARIFICATIONPROMPT_BINDING);
             protocolMarshaller.marshall(putBotRequest.getAbortStatement(), ABORTSTATEMENT_BINDING);
             protocolMarshaller.marshall(putBotRequest.getIdleSessionTTLInSeconds(), IDLESESSIONTTLINSECONDS_BINDING);

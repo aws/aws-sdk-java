@@ -39,7 +39,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
     private String publicIp;
     /**
      * <p>
-     * The location that the IP address is released from.
+     * The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses.
      * </p>
      * <p>
      * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
@@ -156,7 +156,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The location that the IP address is released from.
+     * The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses.
      * </p>
      * <p>
      * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
@@ -172,7 +172,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      * </note>
      * 
      * @param networkBorderGroup
-     *        The location that the IP address is released from.</p>
+     *        The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *        addresses.</p>
      *        <p>
      *        If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code>
      *        error. For more information, see <a
@@ -192,7 +193,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The location that the IP address is released from.
+     * The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses.
      * </p>
      * <p>
      * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
@@ -207,7 +208,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * </note>
      * 
-     * @return The location that the IP address is released from.</p>
+     * @return The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *         addresses.</p>
      *         <p>
      *         If you provide an incorrect network border group, you will receive an
      *         <code>InvalidAddress.NotFound</code> error. For more information, see <a
@@ -227,7 +229,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The location that the IP address is released from.
+     * The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses.
      * </p>
      * <p>
      * If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code> error.
@@ -243,7 +245,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest implements Se
      * </note>
      * 
      * @param networkBorderGroup
-     *        The location that the IP address is released from.</p>
+     *        The set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *        addresses.</p>
      *        <p>
      *        If you provide an incorrect network border group, you will receive an <code>InvalidAddress.NotFound</code>
      *        error. For more information, see <a

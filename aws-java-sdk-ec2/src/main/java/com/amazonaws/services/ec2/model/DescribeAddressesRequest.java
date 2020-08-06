@@ -53,7 +53,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * where AWS advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -74,7 +75,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>public-ip</code> - The Elastic IP address.
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      * </p>
      * </li>
      * <li>
@@ -138,7 +139,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * where AWS advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -159,7 +161,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>public-ip</code> - The Elastic IP address.
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      * </p>
      * </li>
      * <li>
@@ -203,7 +205,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-border-group</code> - The location from where the IP address is advertised.
+     *         <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
+     *         from where AWS advertises IP addresses.
      *         </p>
      *         </li>
      *         <li>
@@ -225,7 +228,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *         </li>
      *         <li>
      *         <p>
-     *         <code>public-ip</code> - The Elastic IP address.
+     *         <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      *         </p>
      *         </li>
      *         <li>
@@ -279,7 +282,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * where AWS advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -300,7 +304,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>public-ip</code> - The Elastic IP address.
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      * </p>
      * </li>
      * <li>
@@ -345,7 +349,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-border-group</code> - The location from where the IP address is advertised.
+     *        <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
+     *        from where AWS advertises IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -366,7 +371,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>public-ip</code> - The Elastic IP address.
+     *        <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -422,7 +427,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * where AWS advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -443,7 +449,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>public-ip</code> - The Elastic IP address.
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      * </p>
      * </li>
      * <li>
@@ -493,7 +499,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-border-group</code> - The location from where the IP address is advertised.
+     *        <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
+     *        from where AWS advertises IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -514,7 +521,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>public-ip</code> - The Elastic IP address.
+     *        <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      *        </p>
      *        </li>
      *        <li>
@@ -572,7 +579,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>network-border-group</code> - The location from where the IP address is advertised.
+     * <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones from
+     * where AWS advertises IP addresses.
      * </p>
      * </li>
      * <li>
@@ -593,7 +601,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
-     * <code>public-ip</code> - The Elastic IP address.
+     * <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      * </p>
      * </li>
      * <li>
@@ -638,7 +646,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-border-group</code> - The location from where the IP address is advertised.
+     *        <code>network-border-group</code> - A unique set of Availability Zones, Local Zones, or Wavelength Zones
+     *        from where AWS advertises IP addresses.
      *        </p>
      *        </li>
      *        <li>
@@ -659,7 +668,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      *        </li>
      *        <li>
      *        <p>
-     *        <code>public-ip</code> - The Elastic IP address.
+     *        <code>public-ip</code> - The Elastic IP address, or the carrier IP address.
      *        </p>
      *        </li>
      *        <li>

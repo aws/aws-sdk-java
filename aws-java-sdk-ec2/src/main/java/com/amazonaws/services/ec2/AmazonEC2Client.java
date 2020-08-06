@@ -697,6 +697,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP Addresses</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
+     * <p>
+     * You can allocate a carrier IP address which is a public IP address from a telecommunication carrier, to a network
+     * interface which resides in a subnet in a Wavelength Zone (for example an EC2 instance).
+     * </p>
      * 
      * @param allocateAddressRequest
      * @return Result of the AllocateAddress operation returned by the service.
@@ -999,8 +1003,9 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Associates an Elastic IP address with an instance or a network interface. Before you can use an Elastic IP
-     * address, you must allocate it to your account.
+     * Associates an Elastic IP address, or carrier IP address (for instances that are in subnets in Wavelength Zones)
+     * with an instance or a network interface. Before you can use an Elastic IP address, you must allocate it to your
+     * account.
      * </p>
      * <p>
      * An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For more information, see <a
@@ -1018,6 +1023,10 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * with the primary IP address. If the Elastic IP address is already associated with a different instance or a
      * network interface, you get an error unless you allow reassociation. You cannot associate an Elastic IP address
      * with an instance or network interface that has an existing Elastic IP address.
+     * </p>
+     * <p>
+     * [Subnets in Wavelength Zones] You can associate an IP address from the telecommunication carrier to the instance
+     * or network interface.
      * </p>
      * <p>
      * You cannot associate an Elastic IP address with an interface in a different network border group.
@@ -2908,6 +2917,61 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCapacityReservationResult> responseHandler = new StaxResponseHandler<CreateCapacityReservationResult>(
                     new CreateCapacityReservationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a carrier gateway. For more information about carrier gateways, see <a href=
+     * "https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway"
+     * >Carrier gateways</a> in the <i>AWS Wavelength Developer Guide</i>.
+     * </p>
+     * 
+     * @param createCarrierGatewayRequest
+     * @return Result of the CreateCarrierGateway operation returned by the service.
+     * @sample AmazonEC2.CreateCarrierGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCarrierGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateCarrierGatewayResult createCarrierGateway(CreateCarrierGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCarrierGateway(request);
+    }
+
+    @SdkInternalApi
+    final CreateCarrierGatewayResult executeCreateCarrierGateway(CreateCarrierGatewayRequest createCarrierGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCarrierGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCarrierGatewayRequest> request = null;
+        Response<CreateCarrierGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCarrierGatewayRequestMarshaller().marshall(super.beforeMarshalling(createCarrierGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCarrierGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateCarrierGatewayResult> responseHandler = new StaxResponseHandler<CreateCarrierGatewayResult>(
+                    new CreateCarrierGatewayResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6354,6 +6418,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Deletes a carrier gateway.
+     * </p>
+     * <important>
+     * <p>
+     * If you do not delete the route that contains the carrier gateway as the Target, the route is a blackhole route.
+     * For information about how to delete a route, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteRoute.html">DeleteRoute</a>.
+     * </p>
+     * </important>
+     * 
+     * @param deleteCarrierGatewayRequest
+     * @return Result of the DeleteCarrierGateway operation returned by the service.
+     * @sample AmazonEC2.DeleteCarrierGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteCarrierGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteCarrierGatewayResult deleteCarrierGateway(DeleteCarrierGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteCarrierGateway(request);
+    }
+
+    @SdkInternalApi
+    final DeleteCarrierGatewayResult executeDeleteCarrierGateway(DeleteCarrierGatewayRequest deleteCarrierGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteCarrierGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteCarrierGatewayRequest> request = null;
+        Response<DeleteCarrierGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteCarrierGatewayRequestMarshaller().marshall(super.beforeMarshalling(deleteCarrierGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCarrierGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteCarrierGatewayResult> responseHandler = new StaxResponseHandler<DeleteCarrierGatewayResult>(
+                    new DeleteCarrierGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified Client VPN endpoint. You must disassociate all target networks before you can delete a
      * Client VPN endpoint.
      * </p>
@@ -9532,14 +9656,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Describes the Availability Zones and Local Zones that are available to you. If there is an event impacting an
-     * Availability Zone or Local Zone, you can use this request to view the state and any provided messages for that
-     * Availability Zone or Local Zone.
+     * Describes the Availability Zones, Local Zones, and Wavelength Zones that are available to you. If there is an
+     * event impacting a zone, you can use this request to view the state and any provided messages for that zone.
      * </p>
      * <p>
-     * For more information about Availability Zones and Local Zones, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions and
-     * Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information about Availability Zones, Local Zones, and Wavelength Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions, Zones
+     * and Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeAvailabilityZonesRequest
@@ -9761,6 +9884,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeCapacityReservationsResult> responseHandler = new StaxResponseHandler<DescribeCapacityReservationsResult>(
                     new DescribeCapacityReservationsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more of your carrier gateways.
+     * </p>
+     * 
+     * @param describeCarrierGatewaysRequest
+     * @return Result of the DescribeCarrierGateways operation returned by the service.
+     * @sample AmazonEC2.DescribeCarrierGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCarrierGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeCarrierGatewaysResult describeCarrierGateways(DescribeCarrierGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCarrierGateways(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCarrierGatewaysResult executeDescribeCarrierGateways(DescribeCarrierGatewaysRequest describeCarrierGatewaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCarrierGatewaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCarrierGatewaysRequest> request = null;
+        Response<DescribeCarrierGatewaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCarrierGatewaysRequestMarshaller().marshall(super.beforeMarshalling(describeCarrierGatewaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCarrierGateways");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeCarrierGatewaysResult> responseHandler = new StaxResponseHandler<DescribeCarrierGatewaysResult>(
+                    new DescribeCarrierGatewaysResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -19415,7 +19591,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Enables or disables an Availability Zone group for your account.
+     * Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">

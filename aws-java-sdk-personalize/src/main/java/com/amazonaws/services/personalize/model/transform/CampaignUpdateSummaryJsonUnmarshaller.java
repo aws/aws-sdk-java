@@ -56,6 +56,10 @@ public class CampaignUpdateSummaryJsonUnmarshaller implements Unmarshaller<Campa
                     context.nextToken();
                     campaignUpdateSummary.setMinProvisionedTPS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("campaignConfig", targetDepth)) {
+                    context.nextToken();
+                    campaignUpdateSummary.setCampaignConfig(CampaignConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     campaignUpdateSummary.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

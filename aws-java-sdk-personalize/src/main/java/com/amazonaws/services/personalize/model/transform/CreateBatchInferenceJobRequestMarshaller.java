@@ -41,6 +41,8 @@ public class CreateBatchInferenceJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobOutput").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<StructuredPojo> BATCHINFERENCEJOBCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchInferenceJobConfig").build();
 
     private static final CreateBatchInferenceJobRequestMarshaller instance = new CreateBatchInferenceJobRequestMarshaller();
 
@@ -65,6 +67,7 @@ public class CreateBatchInferenceJobRequestMarshaller {
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getJobInput(), JOBINPUT_BINDING);
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getJobOutput(), JOBOUTPUT_BINDING);
             protocolMarshaller.marshall(createBatchInferenceJobRequest.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(createBatchInferenceJobRequest.getBatchInferenceJobConfig(), BATCHINFERENCEJOBCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

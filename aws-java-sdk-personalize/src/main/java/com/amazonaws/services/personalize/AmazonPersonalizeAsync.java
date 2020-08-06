@@ -621,7 +621,8 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source.
+     * Management (IAM) role that has permission to read from the data source, as Amazon Personalize makes a copy of
+     * your data and processes it in an internal AWS system.
      * </p>
      * <important>
      * <p>
@@ -680,7 +681,8 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source.
+     * Management (IAM) role that has permission to read from the data source, as Amazon Personalize makes a copy of
+     * your data and processes it in an internal AWS system.
      * </p>
      * <important>
      * <p>
@@ -891,7 +893,8 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
-     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * Creates a recommendation filter. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param createFilterRequest
@@ -904,7 +907,8 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
-     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * Creates a recommendation filter. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param createFilterRequest

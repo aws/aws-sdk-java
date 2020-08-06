@@ -52,6 +52,16 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                     context.nextToken();
                     postTextResult.setIntentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("nluIntentConfidence", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setNluIntentConfidence(IntentConfidenceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("alternativeIntents", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setAlternativeIntents(new ListUnmarshaller<PredictedIntent>(PredictedIntentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
                     postTextResult.setSlots(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
@@ -89,6 +99,10 @@ public class PostTextResultJsonUnmarshaller implements Unmarshaller<PostTextResu
                 if (context.testExpression("sessionId", targetDepth)) {
                     context.nextToken();
                     postTextResult.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("botVersion", targetDepth)) {
+                    context.nextToken();
+                    postTextResult.setBotVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

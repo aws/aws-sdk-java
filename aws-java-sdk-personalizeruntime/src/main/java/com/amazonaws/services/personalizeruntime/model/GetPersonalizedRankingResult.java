@@ -29,6 +29,12 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<PredictedItem> personalizedRanking;
+    /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     */
+    private String recommendationId;
 
     /**
      * <p>
@@ -101,6 +107,46 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The ID of the recommendation.
+     */
+
+    public void setRecommendationId(String recommendationId) {
+        this.recommendationId = recommendationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     * 
+     * @return The ID of the recommendation.
+     */
+
+    public String getRecommendationId() {
+        return this.recommendationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The ID of the recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPersonalizedRankingResult withRecommendationId(String recommendationId) {
+        setRecommendationId(recommendationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +159,9 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPersonalizedRanking() != null)
-            sb.append("PersonalizedRanking: ").append(getPersonalizedRanking());
+            sb.append("PersonalizedRanking: ").append(getPersonalizedRanking()).append(",");
+        if (getRecommendationId() != null)
+            sb.append("RecommendationId: ").append(getRecommendationId());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +180,10 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getPersonalizedRanking() != null && other.getPersonalizedRanking().equals(this.getPersonalizedRanking()) == false)
             return false;
+        if (other.getRecommendationId() == null ^ this.getRecommendationId() == null)
+            return false;
+        if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +193,7 @@ public class GetPersonalizedRankingResult extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPersonalizedRanking() == null) ? 0 : getPersonalizedRanking().hashCode());
+        hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         return hashCode;
     }
 

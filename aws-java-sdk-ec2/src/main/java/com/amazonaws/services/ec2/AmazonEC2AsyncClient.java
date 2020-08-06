@@ -1758,6 +1758,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCarrierGatewayResult> createCarrierGatewayAsync(CreateCarrierGatewayRequest request) {
+
+        return createCarrierGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCarrierGatewayResult> createCarrierGatewayAsync(final CreateCarrierGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCarrierGatewayRequest, CreateCarrierGatewayResult> asyncHandler) {
+        final CreateCarrierGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCarrierGatewayResult>() {
+            @Override
+            public CreateCarrierGatewayResult call() throws Exception {
+                CreateCarrierGatewayResult result = null;
+
+                try {
+                    result = executeCreateCarrierGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClientVpnEndpointResult> createClientVpnEndpointAsync(CreateClientVpnEndpointRequest request) {
 
         return createClientVpnEndpointAsync(request, null);
@@ -3557,6 +3590,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeCreateVpnGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCarrierGatewayResult> deleteCarrierGatewayAsync(DeleteCarrierGatewayRequest request) {
+
+        return deleteCarrierGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCarrierGatewayResult> deleteCarrierGatewayAsync(final DeleteCarrierGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCarrierGatewayRequest, DeleteCarrierGatewayResult> asyncHandler) {
+        final DeleteCarrierGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCarrierGatewayResult>() {
+            @Override
+            public DeleteCarrierGatewayResult call() throws Exception {
+                DeleteCarrierGatewayResult result = null;
+
+                try {
+                    result = executeDeleteCarrierGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -5679,6 +5745,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDescribeCapacityReservations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCarrierGatewaysResult> describeCarrierGatewaysAsync(DescribeCarrierGatewaysRequest request) {
+
+        return describeCarrierGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeCarrierGatewaysResult> describeCarrierGatewaysAsync(final DescribeCarrierGatewaysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeCarrierGatewaysRequest, DescribeCarrierGatewaysResult> asyncHandler) {
+        final DescribeCarrierGatewaysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeCarrierGatewaysResult>() {
+            @Override
+            public DescribeCarrierGatewaysResult call() throws Exception {
+                DescribeCarrierGatewaysResult result = null;
+
+                try {
+                    result = executeDescribeCarrierGateways(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

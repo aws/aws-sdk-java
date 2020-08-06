@@ -364,7 +364,8 @@ public interface AmazonPersonalize {
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source.
+     * Management (IAM) role that has permission to read from the data source, as Amazon Personalize makes a copy of
+     * your data and processes it in an internal AWS system.
      * </p>
      * <important>
      * <p>
@@ -513,7 +514,8 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
-     * Creates a recommendation filter. For more information, see Using Filters with Amazon Personalize.
+     * Creates a recommendation filter. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param createFilterRequest
@@ -745,6 +747,8 @@ public interface AmazonPersonalize {
      *         Provide a valid value for the field or parameter.
      * @throws ResourceNotFoundException
      *         Could not find the specified resource.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
      * @throws ResourceInUseException
      *         The specified resource is in use.
      * @sample AmazonPersonalize.CreateSolutionVersion
@@ -863,6 +867,8 @@ public interface AmazonPersonalize {
      *         Provide a valid value for the field or parameter.
      * @throws ResourceNotFoundException
      *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
      * @sample AmazonPersonalize.DeleteFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
      *      Documentation</a>

@@ -47,7 +47,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
     private String vpcId;
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block
      * to this location.
      * </p>
      * <p>
@@ -216,7 +216,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block
      * to this location.
      * </p>
      * <p>
@@ -227,7 +227,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
      * </p>
      * 
      * @param ipv6CidrBlockNetworkBorderGroup
-     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR
+     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR
      *        block to this location.</p>
      *        <p>
      *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
@@ -242,7 +242,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block
      * to this location.
      * </p>
      * <p>
@@ -253,7 +253,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
      * </p>
      * 
      * @return The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the
-     *         CiDR block to this location.</p>
+     *         CIDR block to this location.</p>
      *         <p>
      *         You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.
      *         </p>
@@ -267,7 +267,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR block
+     * The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR block
      * to this location.
      * </p>
      * <p>
@@ -278,7 +278,7 @@ public class AssociateVpcCidrBlockRequest extends AmazonWebServiceRequest implem
      * </p>
      * 
      * @param ipv6CidrBlockNetworkBorderGroup
-     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CiDR
+     *        The name of the location from which we advertise the IPV6 CIDR block. Use this parameter to limit the CIDR
      *        block to this location.</p>
      *        <p>
      *        You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this parameter.

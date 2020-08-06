@@ -43,6 +43,11 @@ public class InstanceNetworkInterfaceAssociationStaxUnmarshaller implements Unma
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("carrierIp", targetDepth)) {
+                    instanceNetworkInterfaceAssociation.setCarrierIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ipOwnerId", targetDepth)) {
                     instanceNetworkInterfaceAssociation.setIpOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

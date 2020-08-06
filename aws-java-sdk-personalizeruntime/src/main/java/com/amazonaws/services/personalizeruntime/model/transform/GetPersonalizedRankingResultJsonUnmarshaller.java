@@ -54,6 +54,10 @@ public class GetPersonalizedRankingResultJsonUnmarshaller implements Unmarshalle
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("recommendationId", targetDepth)) {
+                    context.nextToken();
+                    getPersonalizedRankingResult.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -71,6 +71,12 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     */
+    private BatchInferenceJobConfig batchInferenceJobConfig;
 
     /**
      * <p>
@@ -377,6 +383,46 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        The configuration details of a batch inference job.
+     */
+
+    public void setBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        this.batchInferenceJobConfig = batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     * 
+     * @return The configuration details of a batch inference job.
+     */
+
+    public BatchInferenceJobConfig getBatchInferenceJobConfig() {
+        return this.batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        The configuration details of a batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBatchInferenceJobRequest withBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        setBatchInferenceJobConfig(batchInferenceJobConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -401,7 +447,9 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
         if (getJobOutput() != null)
             sb.append("JobOutput: ").append(getJobOutput()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getBatchInferenceJobConfig() != null)
+            sb.append("BatchInferenceJobConfig: ").append(getBatchInferenceJobConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -444,6 +492,10 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getBatchInferenceJobConfig() == null ^ this.getBatchInferenceJobConfig() == null)
+            return false;
+        if (other.getBatchInferenceJobConfig() != null && other.getBatchInferenceJobConfig().equals(this.getBatchInferenceJobConfig()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +511,7 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getJobInput() == null) ? 0 : getJobInput().hashCode());
         hashCode = prime * hashCode + ((getJobOutput() == null) ? 0 : getJobOutput().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobConfig() == null) ? 0 : getBatchInferenceJobConfig().hashCode());
         return hashCode;
     }
 

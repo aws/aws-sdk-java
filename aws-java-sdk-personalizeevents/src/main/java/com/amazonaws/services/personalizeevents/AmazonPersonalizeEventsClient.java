@@ -50,7 +50,10 @@ import com.amazonaws.services.personalizeevents.model.transform.*;
  * Client for accessing Amazon Personalize Events. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * <p/>
+ * <p>
+ * Amazon Personalize can consume real-time user event data, such as <i>stream</i> or <i>click</i> data, and use it for
+ * model training either alone or combined with historical data. For more information see <a>recording-events</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -128,7 +131,7 @@ public class AmazonPersonalizeEventsClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Records user interaction event data.
+     * Records user interaction event data. For more information see <a>event-record-api</a>.
      * </p>
      * 
      * @param putEventsRequest

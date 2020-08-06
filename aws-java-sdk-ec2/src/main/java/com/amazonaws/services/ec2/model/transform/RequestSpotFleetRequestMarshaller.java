@@ -350,6 +350,12 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         StringUtils.fromString(spotFleetLaunchSpecificationNetworkInterfacesListValue.getSubnetId()));
                             }
 
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                                        StringUtils.fromBoolean(spotFleetLaunchSpecificationNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                            }
+
                             if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getInterfaceType() != null) {
                                 request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
                                         + networkInterfacesListIndex + ".InterfaceType",

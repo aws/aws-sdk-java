@@ -84,6 +84,15 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
     private String localGatewayId;
     /**
      * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     */
+    private String carrierGatewayId;
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      */
@@ -484,6 +493,61 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        The ID of the carrier gateway.</p>
+     *        <p>
+     *        You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     */
+
+    public void setCarrierGatewayId(String carrierGatewayId) {
+        this.carrierGatewayId = carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     * 
+     * @return The ID of the carrier gateway.</p>
+     *         <p>
+     *         You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     */
+
+    public String getCarrierGatewayId() {
+        return this.carrierGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the carrier gateway.
+     * </p>
+     * <p>
+     * You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * </p>
+     * 
+     * @param carrierGatewayId
+     *        The ID of the carrier gateway.</p>
+     *        <p>
+     *        You can only use this option when the VPC contains a subnet which is associated with a Wavelength Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRouteRequest withCarrierGatewayId(String carrierGatewayId) {
+        setCarrierGatewayId(carrierGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a network interface.
      * </p>
      * 
@@ -643,6 +707,8 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
         if (getLocalGatewayId() != null)
             sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
+        if (getCarrierGatewayId() != null)
+            sb.append("CarrierGatewayId: ").append(getCarrierGatewayId()).append(",");
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getRouteTableId() != null)
@@ -699,6 +765,10 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getLocalGatewayId() != null && other.getLocalGatewayId().equals(this.getLocalGatewayId()) == false)
             return false;
+        if (other.getCarrierGatewayId() == null ^ this.getCarrierGatewayId() == null)
+            return false;
+        if (other.getCarrierGatewayId() != null && other.getCarrierGatewayId().equals(this.getCarrierGatewayId()) == false)
+            return false;
         if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null)
             return false;
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false)
@@ -728,6 +798,7 @@ public class CreateRouteRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getNatGatewayId() == null) ? 0 : getNatGatewayId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getCarrierGatewayId() == null) ? 0 : getCarrierGatewayId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode());
         hashCode = prime * hashCode + ((getVpcPeeringConnectionId() == null) ? 0 : getVpcPeeringConnectionId().hashCode());

@@ -62,6 +62,14 @@ public class PutBotResultJsonUnmarshaller implements Unmarshaller<PutBotResult, 
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("enableModelImprovements", targetDepth)) {
+                    context.nextToken();
+                    putBotResult.setEnableModelImprovements(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("nluIntentConfidenceThreshold", targetDepth)) {
+                    context.nextToken();
+                    putBotResult.setNluIntentConfidenceThreshold(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("clarificationPrompt", targetDepth)) {
                     context.nextToken();
                     putBotResult.setClarificationPrompt(PromptJsonUnmarshaller.getInstance().unmarshall(context));

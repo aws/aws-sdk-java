@@ -77,6 +77,11 @@ public class AllocateAddressResultStaxUnmarshaller implements Unmarshaller<Alloc
                     allocateAddressResult.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("carrierIp", targetDepth)) {
+                    allocateAddressResult.setCarrierIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return allocateAddressResult;

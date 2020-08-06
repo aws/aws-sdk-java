@@ -121,6 +121,11 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     continue;
                 }
 
+                if (context.testExpression("AssociateCarrierIpAddress", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setAssociateCarrierIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("InterfaceType", targetDepth)) {
                     instanceNetworkInterfaceSpecification.setInterfaceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

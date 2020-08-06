@@ -42,6 +42,8 @@ public class CampaignUpdateSummary implements Serializable, Cloneable, Structure
      * </p>
      */
     private Integer minProvisionedTPS;
+
+    private CampaignConfig campaignConfig;
     /**
      * <p>
      * The status of the campaign update.
@@ -165,6 +167,32 @@ public class CampaignUpdateSummary implements Serializable, Cloneable, Structure
 
     public CampaignUpdateSummary withMinProvisionedTPS(Integer minProvisionedTPS) {
         setMinProvisionedTPS(minProvisionedTPS);
+        return this;
+    }
+
+    /**
+     * @param campaignConfig
+     */
+
+    public void setCampaignConfig(CampaignConfig campaignConfig) {
+        this.campaignConfig = campaignConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public CampaignConfig getCampaignConfig() {
+        return this.campaignConfig;
+    }
+
+    /**
+     * @param campaignConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CampaignUpdateSummary withCampaignConfig(CampaignConfig campaignConfig) {
+        setCampaignConfig(campaignConfig);
         return this;
     }
 
@@ -431,6 +459,8 @@ public class CampaignUpdateSummary implements Serializable, Cloneable, Structure
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
         if (getMinProvisionedTPS() != null)
             sb.append("MinProvisionedTPS: ").append(getMinProvisionedTPS()).append(",");
+        if (getCampaignConfig() != null)
+            sb.append("CampaignConfig: ").append(getCampaignConfig()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFailureReason() != null)
@@ -461,6 +491,10 @@ public class CampaignUpdateSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getMinProvisionedTPS() != null && other.getMinProvisionedTPS().equals(this.getMinProvisionedTPS()) == false)
             return false;
+        if (other.getCampaignConfig() == null ^ this.getCampaignConfig() == null)
+            return false;
+        if (other.getCampaignConfig() != null && other.getCampaignConfig().equals(this.getCampaignConfig()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -487,6 +521,7 @@ public class CampaignUpdateSummary implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getMinProvisionedTPS() == null) ? 0 : getMinProvisionedTPS().hashCode());
+        hashCode = prime * hashCode + ((getCampaignConfig() == null) ? 0 : getCampaignConfig().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());

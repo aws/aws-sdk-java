@@ -46,6 +46,11 @@ public class LaunchTemplateInstanceNetworkInterfaceSpecificationStaxUnmarshaller
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("associateCarrierIpAddress", targetDepth)) {
+                    launchTemplateInstanceNetworkInterfaceSpecification.setAssociateCarrierIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("associatePublicIpAddress", targetDepth)) {
                     launchTemplateInstanceNetworkInterfaceSpecification.setAssociatePublicIpAddress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

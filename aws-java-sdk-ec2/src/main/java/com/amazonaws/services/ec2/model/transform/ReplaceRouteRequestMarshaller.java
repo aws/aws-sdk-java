@@ -80,6 +80,10 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
             request.addParameter("LocalGatewayId", StringUtils.fromString(replaceRouteRequest.getLocalGatewayId()));
         }
 
+        if (replaceRouteRequest.getCarrierGatewayId() != null) {
+            request.addParameter("CarrierGatewayId", StringUtils.fromString(replaceRouteRequest.getCarrierGatewayId()));
+        }
+
         if (replaceRouteRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(replaceRouteRequest.getNetworkInterfaceId()));
         }

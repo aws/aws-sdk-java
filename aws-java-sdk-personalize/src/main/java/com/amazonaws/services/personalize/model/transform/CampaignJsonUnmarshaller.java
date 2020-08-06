@@ -64,6 +64,10 @@ public class CampaignJsonUnmarshaller implements Unmarshaller<Campaign, JsonUnma
                     context.nextToken();
                     campaign.setMinProvisionedTPS(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("campaignConfig", targetDepth)) {
+                    context.nextToken();
+                    campaign.setCampaignConfig(CampaignConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     campaign.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

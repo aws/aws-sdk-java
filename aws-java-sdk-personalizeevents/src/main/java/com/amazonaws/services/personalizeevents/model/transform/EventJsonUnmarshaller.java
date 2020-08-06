@@ -56,6 +56,14 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                     context.nextToken();
                     event.setEventType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("eventValue", targetDepth)) {
+                    context.nextToken();
+                    event.setEventValue(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
+                if (context.testExpression("itemId", targetDepth)) {
+                    context.nextToken();
+                    event.setItemId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("properties", targetDepth)) {
                     context.nextToken();
                     event.setProperties(context.getUnmarshaller(String.class, JsonUnmarshallerContext.UnmarshallerType.JSON_VALUE).unmarshall(context));
@@ -63,6 +71,16 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 if (context.testExpression("sentAt", targetDepth)) {
                     context.nextToken();
                     event.setSentAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("recommendationId", targetDepth)) {
+                    context.nextToken();
+                    event.setRecommendationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("impression", targetDepth)) {
+                    context.nextToken();
+                    event.setImpression(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

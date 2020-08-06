@@ -80,6 +80,10 @@ public class BatchInferenceJobJsonUnmarshaller implements Unmarshaller<BatchInfe
                     context.nextToken();
                     batchInferenceJob.setJobOutput(BatchInferenceJobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("batchInferenceJobConfig", targetDepth)) {
+                    context.nextToken();
+                    batchInferenceJob.setBatchInferenceJobConfig(BatchInferenceJobConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     batchInferenceJob.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

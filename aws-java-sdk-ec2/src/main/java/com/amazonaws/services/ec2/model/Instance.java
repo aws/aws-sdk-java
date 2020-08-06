@@ -119,7 +119,10 @@ public class Instance implements Serializable, Cloneable {
     private String publicDnsName;
     /**
      * <p>
-     * The public IPv4 address assigned to the instance, if applicable.
+     * The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.
+     * </p>
+     * <p>
+     * A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      * </p>
      */
     private String publicIpAddress;
@@ -1032,11 +1035,16 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The public IPv4 address assigned to the instance, if applicable.
+     * The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.
+     * </p>
+     * <p>
+     * A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      * </p>
      * 
      * @param publicIpAddress
-     *        The public IPv4 address assigned to the instance, if applicable.
+     *        The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+     *        <p>
+     *        A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      */
 
     public void setPublicIpAddress(String publicIpAddress) {
@@ -1045,10 +1053,15 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The public IPv4 address assigned to the instance, if applicable.
+     * The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.
+     * </p>
+     * <p>
+     * A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      * </p>
      * 
-     * @return The public IPv4 address assigned to the instance, if applicable.
+     * @return The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+     *         <p>
+     *         A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      */
 
     public String getPublicIpAddress() {
@@ -1057,11 +1070,16 @@ public class Instance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The public IPv4 address assigned to the instance, if applicable.
+     * The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.
+     * </p>
+     * <p>
+     * A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      * </p>
      * 
      * @param publicIpAddress
-     *        The public IPv4 address assigned to the instance, if applicable.
+     *        The public IPv4 address, or the Carrier IP address assigned to the instance, if applicable.</p>
+     *        <p>
+     *        A Carrier IP address only applies to an instance launched in a subnet associated with a Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

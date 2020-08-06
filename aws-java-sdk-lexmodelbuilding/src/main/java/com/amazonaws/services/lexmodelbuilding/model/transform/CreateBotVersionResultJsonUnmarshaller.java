@@ -110,6 +110,10 @@ public class CreateBotVersionResultJsonUnmarshaller implements Unmarshaller<Crea
                     context.nextToken();
                     createBotVersionResult.setChildDirected(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("enableModelImprovements", targetDepth)) {
+                    context.nextToken();
+                    createBotVersionResult.setEnableModelImprovements(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("detectSentiment", targetDepth)) {
                     context.nextToken();
                     createBotVersionResult.setDetectSentiment(context.getUnmarshaller(Boolean.class).unmarshall(context));

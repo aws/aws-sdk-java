@@ -114,6 +114,11 @@ public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmars
                     address.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("carrierIp", targetDepth)) {
+                    address.setCarrierIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return address;

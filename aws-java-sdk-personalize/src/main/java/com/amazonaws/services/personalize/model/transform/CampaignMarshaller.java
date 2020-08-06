@@ -35,6 +35,8 @@ public class CampaignMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("solutionVersionArn").build();
     private static final MarshallingInfo<Integer> MINPROVISIONEDTPS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minProvisionedTPS").build();
+    private static final MarshallingInfo<StructuredPojo> CAMPAIGNCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("campaignConfig").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,6 +68,7 @@ public class CampaignMarshaller {
             protocolMarshaller.marshall(campaign.getCampaignArn(), CAMPAIGNARN_BINDING);
             protocolMarshaller.marshall(campaign.getSolutionVersionArn(), SOLUTIONVERSIONARN_BINDING);
             protocolMarshaller.marshall(campaign.getMinProvisionedTPS(), MINPROVISIONEDTPS_BINDING);
+            protocolMarshaller.marshall(campaign.getCampaignConfig(), CAMPAIGNCONFIG_BINDING);
             protocolMarshaller.marshall(campaign.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(campaign.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(campaign.getCreationDateTime(), CREATIONDATETIME_BINDING);

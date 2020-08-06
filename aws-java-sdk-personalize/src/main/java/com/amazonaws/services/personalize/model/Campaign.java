@@ -55,6 +55,12 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
     private Integer minProvisionedTPS;
     /**
      * <p>
+     * The configuration details of a campaign.
+     * </p>
+     */
+    private CampaignConfig campaignConfig;
+    /**
+     * <p>
      * The status of the campaign.
      * </p>
      * <p>
@@ -252,6 +258,46 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
 
     public Campaign withMinProvisionedTPS(Integer minProvisionedTPS) {
         setMinProvisionedTPS(minProvisionedTPS);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     * 
+     * @param campaignConfig
+     *        The configuration details of a campaign.
+     */
+
+    public void setCampaignConfig(CampaignConfig campaignConfig) {
+        this.campaignConfig = campaignConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     * 
+     * @return The configuration details of a campaign.
+     */
+
+    public CampaignConfig getCampaignConfig() {
+        return this.campaignConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     * 
+     * @param campaignConfig
+     *        The configuration details of a campaign.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Campaign withCampaignConfig(CampaignConfig campaignConfig) {
+        setCampaignConfig(campaignConfig);
         return this;
     }
 
@@ -548,6 +594,8 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
         if (getMinProvisionedTPS() != null)
             sb.append("MinProvisionedTPS: ").append(getMinProvisionedTPS()).append(",");
+        if (getCampaignConfig() != null)
+            sb.append("CampaignConfig: ").append(getCampaignConfig()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFailureReason() != null)
@@ -588,6 +636,10 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMinProvisionedTPS() != null && other.getMinProvisionedTPS().equals(this.getMinProvisionedTPS()) == false)
             return false;
+        if (other.getCampaignConfig() == null ^ this.getCampaignConfig() == null)
+            return false;
+        if (other.getCampaignConfig() != null && other.getCampaignConfig().equals(this.getCampaignConfig()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -620,6 +672,7 @@ public class Campaign implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCampaignArn() == null) ? 0 : getCampaignArn().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getMinProvisionedTPS() == null) ? 0 : getMinProvisionedTPS().hashCode());
+        hashCode = prime * hashCode + ((getCampaignConfig() == null) ? 0 : getCampaignConfig().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());

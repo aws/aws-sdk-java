@@ -46,7 +46,8 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
     private VpcCidrBlockState ipv6CidrBlockState;
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      * </p>
      */
     private String networkBorderGroup;
@@ -179,11 +180,13 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      * </p>
      * 
      * @param networkBorderGroup
-     *        The name of the location from which we advertise the IPV6 CIDR block.
+     *        The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+     *        advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      */
 
     public void setNetworkBorderGroup(String networkBorderGroup) {
@@ -192,10 +195,12 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      * </p>
      * 
-     * @return The name of the location from which we advertise the IPV6 CIDR block.
+     * @return The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+     *         advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      */
 
     public String getNetworkBorderGroup() {
@@ -204,11 +209,13 @@ public class VpcIpv6CidrBlockAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which we advertise the IPV6 CIDR block.
+     * The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     * addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      * </p>
      * 
      * @param networkBorderGroup
-     *        The name of the location from which we advertise the IPV6 CIDR block.
+     *        The name of the unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS
+     *        advertises IP addresses, for example, <code>us-east-1-wl1-bos-wlz-1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

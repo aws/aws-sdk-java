@@ -138,6 +138,13 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     private Boolean childDirected;
     /**
      * <p>
+     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
+     * indicates that the bot is using the new model, otherwise, false.
+     * </p>
+     */
+    private Boolean enableModelImprovements;
+    /**
+     * <p>
      * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
      * </p>
      */
@@ -1042,6 +1049,66 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
+     * indicates that the bot is using the new model, otherwise, false.
+     * </p>
+     * 
+     * @param enableModelImprovements
+     *        Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
+     *        True indicates that the bot is using the new model, otherwise, false.
+     */
+
+    public void setEnableModelImprovements(Boolean enableModelImprovements) {
+        this.enableModelImprovements = enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
+     * indicates that the bot is using the new model, otherwise, false.
+     * </p>
+     * 
+     * @return Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
+     *         True indicates that the bot is using the new model, otherwise, false.
+     */
+
+    public Boolean getEnableModelImprovements() {
+        return this.enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
+     * indicates that the bot is using the new model, otherwise, false.
+     * </p>
+     * 
+     * @param enableModelImprovements
+     *        Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
+     *        True indicates that the bot is using the new model, otherwise, false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotVersionResult withEnableModelImprovements(Boolean enableModelImprovements) {
+        setEnableModelImprovements(enableModelImprovements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
+     * indicates that the bot is using the new model, otherwise, false.
+     * </p>
+     * 
+     * @return Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
+     *         True indicates that the bot is using the new model, otherwise, false.
+     */
+
+    public Boolean isEnableModelImprovements() {
+        return this.enableModelImprovements;
+    }
+
+    /**
+     * <p>
      * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
      * </p>
      * 
@@ -1138,6 +1205,8 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
             sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getEnableModelImprovements() != null)
+            sb.append("EnableModelImprovements: ").append(getEnableModelImprovements()).append(",");
         if (getDetectSentiment() != null)
             sb.append("DetectSentiment: ").append(getDetectSentiment());
         sb.append("}");
@@ -1214,6 +1283,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getEnableModelImprovements() == null ^ this.getEnableModelImprovements() == null)
+            return false;
+        if (other.getEnableModelImprovements() != null && other.getEnableModelImprovements().equals(this.getEnableModelImprovements()) == false)
+            return false;
         if (other.getDetectSentiment() == null ^ this.getDetectSentiment() == null)
             return false;
         if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
@@ -1241,6 +1314,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getEnableModelImprovements() == null) ? 0 : getEnableModelImprovements().hashCode());
         hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         return hashCode;
     }

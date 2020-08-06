@@ -25,7 +25,10 @@ import java.util.concurrent.ExecutorService;
  * object representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <p/>
+ * <p>
+ * Amazon Personalize can consume real-time user event data, such as <i>stream</i> or <i>click</i> data, and use it for
+ * model training either alone or combined with historical data. For more information see <a>recording-events</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

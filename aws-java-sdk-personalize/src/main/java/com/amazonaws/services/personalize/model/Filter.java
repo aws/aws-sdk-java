@@ -73,8 +73,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      * </p>
      * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with Amazon
-     * Personalize.
+     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      */
     private String filterExpression;
@@ -334,8 +334,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      * </p>
      * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with Amazon
-     * Personalize.
+     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param filterExpression
@@ -345,8 +345,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      *        </p>
      *        <p>
-     *        Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with Amazon
-     *        Personalize.
+     *        Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *        Personalize</a>.
      */
 
     public void setFilterExpression(String filterExpression) {
@@ -362,8 +363,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      * </p>
      * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with Amazon
-     * Personalize.
+     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @return Specifies the type of item interactions to filter out of recommendation results. The filter expression
@@ -372,8 +373,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *         <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      *         </p>
      *         <p>
-     *         Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with
-     *         Amazon Personalize.
+     *         Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *         Personalize</a>.
      */
 
     public String getFilterExpression() {
@@ -389,8 +391,8 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      * </p>
      * <p>
-     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with Amazon
-     * Personalize.
+     * Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.
      * </p>
      * 
      * @param filterExpression
@@ -400,8 +402,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <code>EXCLUDE itemId WHERE INTERACTIONS.event_type in ("EVENT_TYPE")</code>
      *        </p>
      *        <p>
-     *        Where "EVENT_TYPE" is the type of event to filter out. For more information, see Using Filters with Amazon
-     *        Personalize.
+     *        Where "EVENT_TYPE" is the type of event to filter out. For more information, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon
+     *        Personalize</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

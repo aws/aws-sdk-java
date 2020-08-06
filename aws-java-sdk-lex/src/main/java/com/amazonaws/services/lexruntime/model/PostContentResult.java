@@ -37,6 +37,27 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String intentName;
     /**
      * <p>
+     * Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the
+     * user's intent. The score is between 0.0 and 1.0.
+     * </p>
+     * <p>
+     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
+     * Lex NLU.
+     * </p>
+     */
+    private String nluIntentConfidence;
+    /**
+     * <p>
+     * One to four alternative intents that may be applicable to the user's intent.
+     * </p>
+     * <p>
+     * Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's
+     * intent. The intents are sorted by the confidence score.
+     * </p>
+     */
+    private String alternativeIntents;
+    /**
+     * <p>
      * Map of zero or more intent slots (name/value pairs) Amazon Lex detected from the user input during the
      * conversation. The field is base-64 encoded.
      * </p>
@@ -59,7 +80,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String sessionAttributes;
     /**
      * <p>
-     * The sentiment expressed in and utterance.
+     * The sentiment expressed in an utterance.
      * </p>
      * <p>
      * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
@@ -205,6 +226,22 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.io.InputStream audioStream;
     /**
      * <p>
+     * The version of the bot that responded to the conversation. You can use this information to help determine if one
+     * version of a bot is performing better than another version.
+     * </p>
+     * <p>
+     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
+     * improvement is due to changes to the bot or changes to the NLU.
+     * </p>
+     * <p>
+     * For more information about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     * </p>
+     */
+    private String botVersion;
+    /**
+     * <p>
      * The unique identifier for the session.
      * </p>
      */
@@ -287,6 +324,174 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     public PostContentResult withIntentName(String intentName) {
         setIntentName(intentName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the
+     * user's intent. The score is between 0.0 and 1.0.
+     * </p>
+     * <p>
+     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
+     * Lex NLU.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param nluIntentConfidence
+     *        Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
+     *        matches the user's intent. The score is between 0.0 and 1.0.</p>
+     *        <p>
+     *        The score is a relative score, not an absolute score. The score may change based on improvements to the
+     *        Amazon Lex NLU.
+     */
+
+    public void setNluIntentConfidence(String nluIntentConfidence) {
+        this.nluIntentConfidence = nluIntentConfidence;
+    }
+
+    /**
+     * <p>
+     * Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the
+     * user's intent. The score is between 0.0 and 1.0.
+     * </p>
+     * <p>
+     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
+     * Lex NLU.
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
+     *         matches the user's intent. The score is between 0.0 and 1.0.</p>
+     *         <p>
+     *         The score is a relative score, not an absolute score. The score may change based on improvements to the
+     *         Amazon Lex NLU.
+     */
+
+    public String getNluIntentConfidence() {
+        return this.nluIntentConfidence;
+    }
+
+    /**
+     * <p>
+     * Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that matches the
+     * user's intent. The score is between 0.0 and 1.0.
+     * </p>
+     * <p>
+     * The score is a relative score, not an absolute score. The score may change based on improvements to the Amazon
+     * Lex NLU.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param nluIntentConfidence
+     *        Provides a score that indicates how confident Amazon Lex is that the returned intent is the one that
+     *        matches the user's intent. The score is between 0.0 and 1.0.</p>
+     *        <p>
+     *        The score is a relative score, not an absolute score. The score may change based on improvements to the
+     *        Amazon Lex NLU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentResult withNluIntentConfidence(String nluIntentConfidence) {
+        setNluIntentConfidence(nluIntentConfidence);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One to four alternative intents that may be applicable to the user's intent.
+     * </p>
+     * <p>
+     * Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's
+     * intent. The intents are sorted by the confidence score.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param alternativeIntents
+     *        One to four alternative intents that may be applicable to the user's intent.</p>
+     *        <p>
+     *        Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the
+     *        user's intent. The intents are sorted by the confidence score.
+     */
+
+    public void setAlternativeIntents(String alternativeIntents) {
+        this.alternativeIntents = alternativeIntents;
+    }
+
+    /**
+     * <p>
+     * One to four alternative intents that may be applicable to the user's intent.
+     * </p>
+     * <p>
+     * Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's
+     * intent. The intents are sorted by the confidence score.
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return One to four alternative intents that may be applicable to the user's intent.</p>
+     *         <p>
+     *         Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the
+     *         user's intent. The intents are sorted by the confidence score.
+     */
+
+    public String getAlternativeIntents() {
+        return this.alternativeIntents;
+    }
+
+    /**
+     * <p>
+     * One to four alternative intents that may be applicable to the user's intent.
+     * </p>
+     * <p>
+     * Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the user's
+     * intent. The intents are sorted by the confidence score.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param alternativeIntents
+     *        One to four alternative intents that may be applicable to the user's intent.</p>
+     *        <p>
+     *        Each alternative includes a score that indicates how confident Amazon Lex is that the intent matches the
+     *        user's intent. The intents are sorted by the confidence score.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentResult withAlternativeIntents(String alternativeIntents) {
+        setAlternativeIntents(alternativeIntents);
         return this;
     }
 
@@ -469,7 +674,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The sentiment expressed in and utterance.
+     * The sentiment expressed in an utterance.
      * </p>
      * <p>
      * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
@@ -477,7 +682,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param sentimentResponse
-     *        The sentiment expressed in and utterance.</p>
+     *        The sentiment expressed in an utterance.</p>
      *        <p>
      *        When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field
      *        contains the result of the analysis.
@@ -489,14 +694,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The sentiment expressed in and utterance.
+     * The sentiment expressed in an utterance.
      * </p>
      * <p>
      * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
      * the result of the analysis.
      * </p>
      * 
-     * @return The sentiment expressed in and utterance.</p>
+     * @return The sentiment expressed in an utterance.</p>
      *         <p>
      *         When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field
      *         contains the result of the analysis.
@@ -508,7 +713,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The sentiment expressed in and utterance.
+     * The sentiment expressed in an utterance.
      * </p>
      * <p>
      * When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field contains
@@ -516,7 +721,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param sentimentResponse
-     *        The sentiment expressed in and utterance.</p>
+     *        The sentiment expressed in an utterance.</p>
      *        <p>
      *        When the bot is configured to send utterances to Amazon Comprehend for sentiment analysis, this field
      *        contains the result of the analysis.
@@ -1752,6 +1957,103 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
+     * The version of the bot that responded to the conversation. You can use this information to help determine if one
+     * version of a bot is performing better than another version.
+     * </p>
+     * <p>
+     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
+     * improvement is due to changes to the bot or changes to the NLU.
+     * </p>
+     * <p>
+     * For more information about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     * </p>
+     * 
+     * @param botVersion
+     *        The version of the bot that responded to the conversation. You can use this information to help determine
+     *        if one version of a bot is performing better than another version.</p>
+     *        <p>
+     *        If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
+     *        the improvement is due to changes to the bot or changes to the NLU.
+     *        </p>
+     *        <p>
+     *        For more information about enabling the new NLU, see the <a href=
+     *        "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     *        >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     */
+
+    public void setBotVersion(String botVersion) {
+        this.botVersion = botVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the bot that responded to the conversation. You can use this information to help determine if one
+     * version of a bot is performing better than another version.
+     * </p>
+     * <p>
+     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
+     * improvement is due to changes to the bot or changes to the NLU.
+     * </p>
+     * <p>
+     * For more information about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     * </p>
+     * 
+     * @return The version of the bot that responded to the conversation. You can use this information to help determine
+     *         if one version of a bot is performing better than another version.</p>
+     *         <p>
+     *         If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
+     *         the improvement is due to changes to the bot or changes to the NLU.
+     *         </p>
+     *         <p>
+     *         For more information about enabling the new NLU, see the <a href=
+     *         "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     *         >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     */
+
+    public String getBotVersion() {
+        return this.botVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the bot that responded to the conversation. You can use this information to help determine if one
+     * version of a bot is performing better than another version.
+     * </p>
+     * <p>
+     * If you have enabled the new natural language understanding (NLU) model, you can use this to determine if the
+     * improvement is due to changes to the bot or changes to the NLU.
+     * </p>
+     * <p>
+     * For more information about enabling the new NLU, see the <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     * >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     * </p>
+     * 
+     * @param botVersion
+     *        The version of the bot that responded to the conversation. You can use this information to help determine
+     *        if one version of a bot is performing better than another version.</p>
+     *        <p>
+     *        If you have enabled the new natural language understanding (NLU) model, you can use this to determine if
+     *        the improvement is due to changes to the bot or changes to the NLU.
+     *        </p>
+     *        <p>
+     *        For more information about enabling the new NLU, see the <a href=
+     *        "https://docs.aws.amazon.com/lex/latest/dg/API_PutBot.html#lex-PutBot-request-enableModelImprovements"
+     *        >enableModelImprovements</a> parameter of the <code>PutBot</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PostContentResult withBotVersion(String botVersion) {
+        setBotVersion(botVersion);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique identifier for the session.
      * </p>
      * 
@@ -1806,6 +2108,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("ContentType: ").append(getContentType()).append(",");
         if (getIntentName() != null)
             sb.append("IntentName: ").append(getIntentName()).append(",");
+        if (getNluIntentConfidence() != null)
+            sb.append("NluIntentConfidence: ").append(getNluIntentConfidence()).append(",");
+        if (getAlternativeIntents() != null)
+            sb.append("AlternativeIntents: ").append(getAlternativeIntents()).append(",");
         if (getSlots() != null)
             sb.append("Slots: ").append(getSlots()).append(",");
         if (getSessionAttributes() != null)
@@ -1824,6 +2130,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             sb.append("InputTranscript: ").append(getInputTranscript()).append(",");
         if (getAudioStream() != null)
             sb.append("AudioStream: ").append(getAudioStream()).append(",");
+        if (getBotVersion() != null)
+            sb.append("BotVersion: ").append(getBotVersion()).append(",");
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId());
         sb.append("}");
@@ -1847,6 +2155,14 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (other.getIntentName() == null ^ this.getIntentName() == null)
             return false;
         if (other.getIntentName() != null && other.getIntentName().equals(this.getIntentName()) == false)
+            return false;
+        if (other.getNluIntentConfidence() == null ^ this.getNluIntentConfidence() == null)
+            return false;
+        if (other.getNluIntentConfidence() != null && other.getNluIntentConfidence().equals(this.getNluIntentConfidence()) == false)
+            return false;
+        if (other.getAlternativeIntents() == null ^ this.getAlternativeIntents() == null)
+            return false;
+        if (other.getAlternativeIntents() != null && other.getAlternativeIntents().equals(this.getAlternativeIntents()) == false)
             return false;
         if (other.getSlots() == null ^ this.getSlots() == null)
             return false;
@@ -1884,6 +2200,10 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getAudioStream() != null && other.getAudioStream().equals(this.getAudioStream()) == false)
             return false;
+        if (other.getBotVersion() == null ^ this.getBotVersion() == null)
+            return false;
+        if (other.getBotVersion() != null && other.getBotVersion().equals(this.getBotVersion()) == false)
+            return false;
         if (other.getSessionId() == null ^ this.getSessionId() == null)
             return false;
         if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
@@ -1898,6 +2218,8 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
         hashCode = prime * hashCode + ((getIntentName() == null) ? 0 : getIntentName().hashCode());
+        hashCode = prime * hashCode + ((getNluIntentConfidence() == null) ? 0 : getNluIntentConfidence().hashCode());
+        hashCode = prime * hashCode + ((getAlternativeIntents() == null) ? 0 : getAlternativeIntents().hashCode());
         hashCode = prime * hashCode + ((getSlots() == null) ? 0 : getSlots().hashCode());
         hashCode = prime * hashCode + ((getSessionAttributes() == null) ? 0 : getSessionAttributes().hashCode());
         hashCode = prime * hashCode + ((getSentimentResponse() == null) ? 0 : getSentimentResponse().hashCode());
@@ -1907,6 +2229,7 @@ public class PostContentResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getSlotToElicit() == null) ? 0 : getSlotToElicit().hashCode());
         hashCode = prime * hashCode + ((getInputTranscript() == null) ? 0 : getInputTranscript().hashCode());
         hashCode = prime * hashCode + ((getAudioStream() == null) ? 0 : getAudioStream().hashCode());
+        hashCode = prime * hashCode + ((getBotVersion() == null) ? 0 : getBotVersion().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         return hashCode;
     }

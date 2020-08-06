@@ -43,6 +43,8 @@ public class BatchInferenceJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobInput").build();
     private static final MarshallingInfo<StructuredPojo> JOBOUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobOutput").build();
+    private static final MarshallingInfo<StructuredPojo> BATCHINFERENCEJOBCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("batchInferenceJobConfig").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -76,6 +78,7 @@ public class BatchInferenceJobMarshaller {
             protocolMarshaller.marshall(batchInferenceJob.getNumResults(), NUMRESULTS_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getJobInput(), JOBINPUT_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getJobOutput(), JOBOUTPUT_BINDING);
+            protocolMarshaller.marshall(batchInferenceJob.getBatchInferenceJobConfig(), BATCHINFERENCEJOBCONFIG_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(batchInferenceJob.getCreationDateTime(), CREATIONDATETIME_BINDING);

@@ -50,11 +50,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     private String publicIpv4Pool;
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -281,11 +278,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -300,12 +294,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </note>
      * 
      * @param networkBorderGroup
-     *        The location from which the IP address is advertised. Use this parameter to limit the address to this
-     *        location.</p>
-     *        <p>
-     *        A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     *        addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
-     *        </p>
+     *        A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *        addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between
+     *        network border groups.</p>
      *        <p>
      *        Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *        DescribeAvailabilityZones</a> to view the network border groups.
@@ -324,11 +315,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -342,12 +330,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </p>
      * </note>
      * 
-     * @return The location from which the IP address is advertised. Use this parameter to limit the address to this
-     *         location.</p>
-     *         <p>
-     *         A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     *         addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
-     *         </p>
+     * @return A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *         addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between
+     *         network border groups.</p>
      *         <p>
      *         Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *         DescribeAvailabilityZones</a> to view the network border groups.
@@ -366,11 +351,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -385,12 +367,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </note>
      * 
      * @param networkBorderGroup
-     *        The location from which the IP address is advertised. Use this parameter to limit the address to this
-     *        location.</p>
-     *        <p>
-     *        A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     *        addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
-     *        </p>
+     *        A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *        addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between
+     *        network border groups.</p>
      *        <p>
      *        Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *        DescribeAvailabilityZones</a> to view the network border groups.
