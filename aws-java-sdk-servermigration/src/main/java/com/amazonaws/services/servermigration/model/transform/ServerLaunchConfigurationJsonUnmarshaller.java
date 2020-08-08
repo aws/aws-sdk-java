@@ -84,6 +84,18 @@ public class ServerLaunchConfigurationJsonUnmarshaller implements Unmarshaller<S
                     context.nextToken();
                     serverLaunchConfiguration.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("iamInstanceProfileName", targetDepth)) {
+                    context.nextToken();
+                    serverLaunchConfiguration.setIamInstanceProfileName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("configureScript", targetDepth)) {
+                    context.nextToken();
+                    serverLaunchConfiguration.setConfigureScript(S3LocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("configureScriptType", targetDepth)) {
+                    context.nextToken();
+                    serverLaunchConfiguration.setConfigureScriptType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

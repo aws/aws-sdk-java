@@ -32,6 +32,8 @@ public class PutAppLaunchConfigurationRequestMarshaller {
             .marshallLocationName("appId").build();
     private static final MarshallingInfo<String> ROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleName").build();
+    private static final MarshallingInfo<Boolean> AUTOLAUNCH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoLaunch").build();
     private static final MarshallingInfo<List> SERVERGROUPLAUNCHCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverGroupLaunchConfigurations").build();
 
@@ -53,6 +55,7 @@ public class PutAppLaunchConfigurationRequestMarshaller {
         try {
             protocolMarshaller.marshall(putAppLaunchConfigurationRequest.getAppId(), APPID_BINDING);
             protocolMarshaller.marshall(putAppLaunchConfigurationRequest.getRoleName(), ROLENAME_BINDING);
+            protocolMarshaller.marshall(putAppLaunchConfigurationRequest.getAutoLaunch(), AUTOLAUNCH_BINDING);
             protocolMarshaller.marshall(putAppLaunchConfigurationRequest.getServerGroupLaunchConfigurations(), SERVERGROUPLAUNCHCONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -40,7 +40,7 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer maxResults;
     /**
      * <p>
-     * List of <code>VmServerAddress</code> objects
+     * The server addresses.
      * </p>
      */
     private java.util.List<VmServerAddress> vmServerAddressList;
@@ -133,10 +133,10 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of <code>VmServerAddress</code> objects
+     * The server addresses.
      * </p>
      * 
-     * @return List of <code>VmServerAddress</code> objects
+     * @return The server addresses.
      */
 
     public java.util.List<VmServerAddress> getVmServerAddressList() {
@@ -145,11 +145,11 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of <code>VmServerAddress</code> objects
+     * The server addresses.
      * </p>
      * 
      * @param vmServerAddressList
-     *        List of <code>VmServerAddress</code> objects
+     *        The server addresses.
      */
 
     public void setVmServerAddressList(java.util.Collection<VmServerAddress> vmServerAddressList) {
@@ -163,7 +163,7 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of <code>VmServerAddress</code> objects
+     * The server addresses.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,7 +172,7 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param vmServerAddressList
-     *        List of <code>VmServerAddress</code> objects
+     *        The server addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +188,11 @@ public class GetServersRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * List of <code>VmServerAddress</code> objects
+     * The server addresses.
      * </p>
      * 
      * @param vmServerAddressList
-     *        List of <code>VmServerAddress</code> objects
+     *        The server addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

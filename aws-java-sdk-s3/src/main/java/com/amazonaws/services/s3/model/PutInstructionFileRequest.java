@@ -85,7 +85,7 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
         @SuppressWarnings("unchecked")
          Map<String,String> md = matDesc == null
              ? Collections.EMPTY_MAP
-             : Collections.unmodifiableMap(new HashMap<String, String>(matDesc));
+             : Collections.unmodifiableMap(new HashMap<>(matDesc));
         this.matDesc = md;
         this.suffix = suffix;
         this.encryptionMaterials = null;
@@ -336,10 +336,10 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     * 
+     *
      * @param storageClass
      *            The storage class to use when storing the new object.
-     * 
+     *
      * @see #getStorageClass()
      * @see #setStorageClass(String)
      */
@@ -356,13 +356,13 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     * 
+     *
      * @param storageClass
      *            The storage class to use when storing the new object.
-     * 
+     *
      * @return This {@link PutObjectRequest}, enabling additional method calls
      *         to be chained together.
-     * 
+     *
      * @see #getStorageClass()
      * @see #setStorageClass(StorageClass)
      * @see #setStorageClass(String)
@@ -377,23 +377,36 @@ public final class PutInstructionFileRequest extends AmazonWebServiceRequest
      * Creates and returns a {@link PutObjectRequest} for the instruction file
      * with the specified suffix.
      */
+    @Deprecated
     public PutObjectRequest createPutObjectRequest(S3Object s3Object) {
         if (!s3Object.getBucketName().equals(s3ObjectId.getBucket())
         ||  !s3Object.getKey().equals(s3ObjectId.getKey())) {
             throw new IllegalArgumentException("s3Object passed inconsistent with the instruction file being created");
         }
         InstructionFileId ifid= s3ObjectId.instructionFileId(suffix);
-//        ObjectMetadata metadata = s3Object.getObjectMetadata();
         return new PutObjectRequest(ifid.getBucket(), ifid.getKey(), redirectLocation)
             .withAccessControlList(accessControlList)
             .withCannedAcl(cannedAcl)
-//            .withFile(file)
-//            .withInputStream(inputStream)
-// don't want the metadata for the new instruction file
-//            .withMetadata(metadata == null ? null : metadata.clone())
             .withStorageClass(storageClass)
             .withGeneralProgressListener(getGeneralProgressListener())
             .withRequestMetricCollector(getRequestMetricCollector())
             ;
+    }
+
+    /**
+     * Creates and returns a {@link PutObjectRequest} for the instruction file with the specified suffix.
+     */
+    public PutObjectRequest createPutObjectRequest(S3ObjectId objectId) {
+        if (!objectId.getBucket().equals(s3ObjectId.getBucket())
+                    ||  !objectId.getKey().equals(s3ObjectId.getKey())) {
+            throw new IllegalArgumentException("s3Object passed inconsistent with the instruction file being created");
+        }
+        InstructionFileId ifid= s3ObjectId.instructionFileId(suffix);
+        return new PutObjectRequest(ifid.getBucket(), ifid.getKey(), redirectLocation)
+                       .withAccessControlList(accessControlList)
+                       .withCannedAcl(cannedAcl)
+                       .withStorageClass(storageClass)
+                       .withGeneralProgressListener(getGeneralProgressListener())
+                       .withRequestMetricCollector(getRequestMetricCollector());
     }
 }

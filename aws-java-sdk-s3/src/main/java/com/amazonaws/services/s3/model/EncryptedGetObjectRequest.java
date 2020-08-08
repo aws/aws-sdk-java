@@ -78,6 +78,98 @@ public class EncryptedGetObjectRequest extends GetObjectRequest implements Seria
     }
 
     /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public EncryptedGetObjectRequest withRange(long start, long end) {
+        super.withRange(start, end);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public void setRange(long start, long end) {
+        super.setRange(start, end);
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public EncryptedGetObjectRequest withRange(long start) {
+        super.withRange(start);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public void setRange(long start) {
+        super.setRange(start);
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public long[] getRange() {
+        return super.getRange();
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public EncryptedGetObjectRequest withPartNumber(Integer partNumber) {
+        super.withPartNumber(partNumber);
+        return this;
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public void setPartNumber(Integer partNumber) {
+        super.setPartNumber(partNumber);
+    }
+
+    /**
+     * {@inheritDoc}
+     * <p>
+     * Range gets do not provide authenticated encryption properties even when used with an authenticated mode (AES-GCM).
+     */
+    @Deprecated
+    @Override
+    public Integer getPartNumber() {
+        return super.getPartNumber();
+    }
+
+
+    /**
      * Returns the supplemental material description to be used for retrieving
      * the encryption materials.
      * 

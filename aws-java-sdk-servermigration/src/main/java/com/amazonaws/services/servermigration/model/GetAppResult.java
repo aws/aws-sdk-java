@@ -30,13 +30,13 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private AppSummary appSummary;
     /**
      * <p>
-     * List of server groups belonging to the application.
+     * The server groups that belong to the application.
      * </p>
      */
     private java.util.List<ServerGroup> serverGroups;
     /**
      * <p>
-     * List of tags associated with the application.
+     * The tags associated with the application.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -83,10 +83,10 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of server groups belonging to the application.
+     * The server groups that belong to the application.
      * </p>
      * 
-     * @return List of server groups belonging to the application.
+     * @return The server groups that belong to the application.
      */
 
     public java.util.List<ServerGroup> getServerGroups() {
@@ -95,11 +95,11 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of server groups belonging to the application.
+     * The server groups that belong to the application.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups belonging to the application.
+     *        The server groups that belong to the application.
      */
 
     public void setServerGroups(java.util.Collection<ServerGroup> serverGroups) {
@@ -113,7 +113,7 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of server groups belonging to the application.
+     * The server groups that belong to the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups belonging to the application.
+     *        The server groups that belong to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of server groups belonging to the application.
+     * The server groups that belong to the application.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups belonging to the application.
+     *        The server groups that belong to the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,10 +153,10 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of tags associated with the application.
+     * The tags associated with the application.
      * </p>
      * 
-     * @return List of tags associated with the application.
+     * @return The tags associated with the application.
      */
 
     public java.util.List<Tag> getTags() {
@@ -165,11 +165,11 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of tags associated with the application.
+     * The tags associated with the application.
      * </p>
      * 
      * @param tags
-     *        List of tags associated with the application.
+     *        The tags associated with the application.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -183,7 +183,7 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of tags associated with the application.
+     * The tags associated with the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -192,7 +192,7 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * </p>
      * 
      * @param tags
-     *        List of tags associated with the application.
+     *        The tags associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +208,11 @@ public class GetAppResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * List of tags associated with the application.
+     * The tags associated with the application.
      * </p>
      * 
      * @param tags
-     *        List of tags associated with the application.
+     *        The tags associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -56,6 +56,10 @@ public class GetAppLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     getAppLaunchConfigurationResult.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("autoLaunch", targetDepth)) {
+                    context.nextToken();
+                    getAppLaunchConfigurationResult.setAutoLaunch(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("serverGroupLaunchConfigurations", targetDepth)) {
                     context.nextToken();
                     getAppLaunchConfigurationResult.setServerGroupLaunchConfigurations(new ListUnmarshaller<ServerGroupLaunchConfiguration>(

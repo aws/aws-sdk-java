@@ -29,7 +29,7 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the VM server location.
+     * The VM server location.
      * </p>
      */
     private VmServerAddress vmServerAddress;
@@ -60,11 +60,11 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the VM server location.
+     * The VM server location.
      * </p>
      * 
      * @param vmServerAddress
-     *        Information about the VM server location.
+     *        The VM server location.
      */
 
     public void setVmServerAddress(VmServerAddress vmServerAddress) {
@@ -73,10 +73,10 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the VM server location.
+     * The VM server location.
      * </p>
      * 
-     * @return Information about the VM server location.
+     * @return The VM server location.
      */
 
     public VmServerAddress getVmServerAddress() {
@@ -85,11 +85,11 @@ public class VmServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the VM server location.
+     * The VM server location.
      * </p>
      * 
      * @param vmServerAddress
-     *        Information about the VM server location.
+     *        The VM server location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

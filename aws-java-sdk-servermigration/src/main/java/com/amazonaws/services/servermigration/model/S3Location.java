@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Location of the Amazon S3 object in the customer's account.
+ * Location of an Amazon S3 object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/S3Location" target="_top">AWS API
@@ -30,24 +30,24 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * Amazon S3 bucket key.
+     * The Amazon S3 bucket key.
      * </p>
      */
     private String key;
 
     /**
      * <p>
-     * Amazon S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      * 
      * @param bucket
-     *        Amazon S3 bucket name.
+     *        The Amazon S3 bucket name.
      */
 
     public void setBucket(String bucket) {
@@ -56,10 +56,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      * 
-     * @return Amazon S3 bucket name.
+     * @return The Amazon S3 bucket name.
      */
 
     public String getBucket() {
@@ -68,11 +68,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket name.
+     * The Amazon S3 bucket name.
      * </p>
      * 
      * @param bucket
-     *        Amazon S3 bucket name.
+     *        The Amazon S3 bucket name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket key.
+     * The Amazon S3 bucket key.
      * </p>
      * 
      * @param key
-     *        Amazon S3 bucket key.
+     *        The Amazon S3 bucket key.
      */
 
     public void setKey(String key) {
@@ -96,10 +96,10 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket key.
+     * The Amazon S3 bucket key.
      * </p>
      * 
-     * @return Amazon S3 bucket key.
+     * @return The Amazon S3 bucket key.
      */
 
     public String getKey() {
@@ -108,11 +108,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon S3 bucket key.
+     * The Amazon S3 bucket key.
      * </p>
      * 
      * @param key
-     *        Amazon S3 bucket key.
+     *        The Amazon S3 bucket key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

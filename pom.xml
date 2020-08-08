@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.837-SNAPSHOT</version>
+  <version>1.11.837</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -293,7 +293,7 @@
       <!-- This property is used by SES for it's optional dependency and also in the OSGI build to generate
         the aggregate ZIP artifact -->
       <javax.mail.version>1.4.6</javax.mail.version>
-      <jre.version>1.6</jre.version>
+      <jre.version>1.7</jre.version>
       <httpcomponents.httpclient.version>4.5.9</httpcomponents.httpclient.version>
       <!-- These properties are used by cucumber tests related code -->
       <cucumber.info.cukes.version>1.2.4</cucumber.info.cukes.version>

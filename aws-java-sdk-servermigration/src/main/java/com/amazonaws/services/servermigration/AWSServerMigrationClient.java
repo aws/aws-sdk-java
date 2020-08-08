@@ -50,29 +50,21 @@ import com.amazonaws.services.servermigration.model.transform.*;
  * Client for accessing SMS. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * <fullname>AAWS Sever Migration Service</fullname>
+ * <fullname>AWS Server Migration Service</fullname>
  * <p>
- * This is the <i>AWS Sever Migration Service API Reference</i>. It provides descriptions, syntax, and usage examples
- * for each of the actions and data types for the AWS Sever Migration Service (AWS SMS). The topic for each action shows
- * the Query API request parameters and the XML response. You can also view the XML request elements in the WSDL.
- * </p>
- * <p>
- * Alternatively, you can use one of the AWS SDKs to access an API that's tailored to the programming language or
- * platform that you're using. For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.
- * </p>
- * <p>
- * To learn more about the Server Migration Service, see the following resources:
+ * AWS Server Migration Service (AWS SMS) makes it easier and faster for you to migrate your on-premises workloads to
+ * AWS. To learn more about AWS SMS, see the following resources:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a href="https://aws.amazon.com/server-migration-service/">AWS Sever Migration Service product page</a>
+ * <a href="http://aws.amazon.com/server-migration-service/">AWS Server Migration Service product page</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/server-migration.html">AWS Sever
- * Migration Service User Guide</a>
+ * <a href="https://docs.aws.amazon.com/server-migration-service/latest/userguide/">AWS Server Migration Service User
+ * Guide</a>
  * </p>
  * </li>
  * </ul>
@@ -132,6 +124,9 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoConnectorsAvailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.servermigration.model.transform.NoConnectorsAvailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DryRunOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.DryRunOperationExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.servermigration.model.AWSServerMigrationException.class));
 
     /**
@@ -472,7 +467,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Deletes an existing application. Optionally deletes the launched stack associated with the application and all
+     * Deletes the specified application. Optionally deletes the launched stack associated with the application and all
      * AWS SMS replication jobs for servers in the application.
      * </p>
      * 
@@ -537,7 +532,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Deletes existing launch configuration for an application.
+     * Deletes the launch configuration for the specified application.
      * </p>
      * 
      * @param deleteAppLaunchConfigurationRequest
@@ -603,7 +598,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Deletes existing replication configuration for an application.
+     * Deletes the replication configuration for the specified application.
      * </p>
      * 
      * @param deleteAppReplicationConfigurationRequest
@@ -658,6 +653,73 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAppReplicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteAppReplicationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the validation configuration for the specified application.
+     * </p>
+     * 
+     * @param deleteAppValidationConfigurationRequest
+     * @return Result of the DeleteAppValidationConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.DeleteAppValidationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/DeleteAppValidationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppValidationConfigurationResult deleteAppValidationConfiguration(DeleteAppValidationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppValidationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppValidationConfigurationResult executeDeleteAppValidationConfiguration(
+            DeleteAppValidationConfigurationRequest deleteAppValidationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppValidationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppValidationConfigurationRequest> request = null;
+        Response<DeleteAppValidationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppValidationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAppValidationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppValidationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppValidationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAppValidationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -931,8 +993,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Generates an Amazon CloudFormation template based on the current launch configuration and writes it to an Amazon
-     * S3 object in the customer’s Amazon S3 bucket.
+     * Generates an AWS CloudFormation template based on the current launch configuration and writes it to an Amazon S3
+     * object in the customer’s Amazon S3 bucket.
      * </p>
      * 
      * @param generateTemplateRequest
@@ -996,7 +1058,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Retrieve information about an application.
+     * Retrieve information about the specified application.
      * </p>
      * 
      * @param getAppRequest
@@ -1060,7 +1122,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Retrieves the application launch configuration associated with an application.
+     * Retrieves the application launch configuration associated with the specified application.
      * </p>
      * 
      * @param getAppLaunchConfigurationRequest
@@ -1126,7 +1188,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Retrieves an application replication configuration associatd with an application.
+     * Retrieves the application replication configuration associated with the specified application.
      * </p>
      * 
      * @param getAppReplicationConfigurationRequest
@@ -1180,6 +1242,137 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
             HttpResponseHandler<AmazonWebServiceResponse<GetAppReplicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetAppReplicationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about a configuration for validating an application.
+     * </p>
+     * 
+     * @param getAppValidationConfigurationRequest
+     * @return Result of the GetAppValidationConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GetAppValidationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAppValidationConfigurationResult getAppValidationConfiguration(GetAppValidationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAppValidationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetAppValidationConfigurationResult executeGetAppValidationConfiguration(GetAppValidationConfigurationRequest getAppValidationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAppValidationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAppValidationConfigurationRequest> request = null;
+        Response<GetAppValidationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAppValidationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAppValidationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppValidationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAppValidationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAppValidationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves output from validating an application.
+     * </p>
+     * 
+     * @param getAppValidationOutputRequest
+     * @return Result of the GetAppValidationOutput operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.GetAppValidationOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetAppValidationOutput" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAppValidationOutputResult getAppValidationOutput(GetAppValidationOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAppValidationOutput(request);
+    }
+
+    @SdkInternalApi
+    final GetAppValidationOutputResult executeGetAppValidationOutput(GetAppValidationOutputRequest getAppValidationOutputRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAppValidationOutputRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAppValidationOutputRequest> request = null;
+        Response<GetAppValidationOutputResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAppValidationOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAppValidationOutputRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppValidationOutput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAppValidationOutputResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAppValidationOutputResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1379,6 +1572,12 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      * @throws UnauthorizedOperationException
      *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
      *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
      * @sample AWSServerMigration.GetServers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/GetServers" target="_top">AWS API
      *      Documentation</a>
@@ -1427,8 +1626,72 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Gathers a complete list of on-premises servers. Connectors must be installed and monitoring all servers that you
-     * want to import.
+     * Allows application import from AWS Migration Hub.
+     * </p>
+     * 
+     * @param importAppCatalogRequest
+     * @return Result of the ImportAppCatalog operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.ImportAppCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ImportAppCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ImportAppCatalogResult importAppCatalog(ImportAppCatalogRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportAppCatalog(request);
+    }
+
+    @SdkInternalApi
+    final ImportAppCatalogResult executeImportAppCatalog(ImportAppCatalogRequest importAppCatalogRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importAppCatalogRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportAppCatalogRequest> request = null;
+        Response<ImportAppCatalogResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportAppCatalogRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importAppCatalogRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportAppCatalog");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportAppCatalogResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportAppCatalogResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gathers a complete list of on-premises servers. Connectors must be installed and monitoring all servers to
+     * import.
      * </p>
      * <p>
      * This call returns immediately, but might take additional time to retrieve all the servers.
@@ -1495,7 +1758,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Launches an application stack.
+     * Launches the specified application as a stack in AWS CloudFormation.
      * </p>
      * 
      * @param launchAppRequest
@@ -1559,7 +1822,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Returns a list of summaries for all applications.
+     * Retrieves summaries for all applications.
      * </p>
      * 
      * @param listAppsRequest
@@ -1623,7 +1886,73 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Creates a launch configuration for an application.
+     * Provides information to AWS SMS about whether application validation is successful.
+     * </p>
+     * 
+     * @param notifyAppValidationOutputRequest
+     * @return Result of the NotifyAppValidationOutput operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.NotifyAppValidationOutput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/NotifyAppValidationOutput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public NotifyAppValidationOutputResult notifyAppValidationOutput(NotifyAppValidationOutputRequest request) {
+        request = beforeClientExecution(request);
+        return executeNotifyAppValidationOutput(request);
+    }
+
+    @SdkInternalApi
+    final NotifyAppValidationOutputResult executeNotifyAppValidationOutput(NotifyAppValidationOutputRequest notifyAppValidationOutputRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(notifyAppValidationOutputRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<NotifyAppValidationOutputRequest> request = null;
+        Response<NotifyAppValidationOutputResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new NotifyAppValidationOutputRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(notifyAppValidationOutputRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "NotifyAppValidationOutput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<NotifyAppValidationOutputResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new NotifyAppValidationOutputResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates the launch configuration for the specified application.
      * </p>
      * 
      * @param putAppLaunchConfigurationRequest
@@ -1689,7 +2018,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Creates or updates a replication configuration for an application.
+     * Creates or updates the replication configuration for the specified application.
      * </p>
      * 
      * @param putAppReplicationConfigurationRequest
@@ -1755,7 +2084,73 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Starts replicating an application.
+     * Creates or updates a validation configuration for the specified application.
+     * </p>
+     * 
+     * @param putAppValidationConfigurationRequest
+     * @return Result of the PutAppValidationConfiguration operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.PutAppValidationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/PutAppValidationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAppValidationConfigurationResult putAppValidationConfiguration(PutAppValidationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAppValidationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutAppValidationConfigurationResult executePutAppValidationConfiguration(PutAppValidationConfigurationRequest putAppValidationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAppValidationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAppValidationConfigurationRequest> request = null;
+        Response<PutAppValidationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAppValidationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putAppValidationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppValidationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAppValidationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutAppValidationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts replicating the specified application by creating replication jobs for each server in the application.
      * </p>
      * 
      * @param startAppReplicationRequest
@@ -1819,11 +2214,77 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Starts an on-demand replication run for the specified application.
+     * </p>
+     * 
+     * @param startOnDemandAppReplicationRequest
+     * @return Result of the StartOnDemandAppReplication operation returned by the service.
+     * @throws UnauthorizedOperationException
+     *         You lack permissions needed to perform this operation. Check your IAM policies, and ensure that you are
+     *         using the correct access keys.
+     * @throws InvalidParameterException
+     *         A specified parameter is not valid.
+     * @throws MissingRequiredParameterException
+     *         A required parameter is missing.
+     * @throws InternalErrorException
+     *         An internal error occurred.
+     * @throws OperationNotPermittedException
+     *         This operation is not allowed.
+     * @sample AWSServerMigration.StartOnDemandAppReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandAppReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartOnDemandAppReplicationResult startOnDemandAppReplication(StartOnDemandAppReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartOnDemandAppReplication(request);
+    }
+
+    @SdkInternalApi
+    final StartOnDemandAppReplicationResult executeStartOnDemandAppReplication(StartOnDemandAppReplicationRequest startOnDemandAppReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startOnDemandAppReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartOnDemandAppReplicationRequest> request = null;
+        Response<StartOnDemandAppReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartOnDemandAppReplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startOnDemandAppReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartOnDemandAppReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartOnDemandAppReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartOnDemandAppReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts an on-demand replication run for the specified replication job. This replication run starts immediately.
      * This replication run is in addition to the ones already scheduled.
      * </p>
      * <p>
-     * There is a limit on the number of on-demand replications runs you can request in a 24-hour period.
+     * There is a limit on the number of on-demand replications runs that you can request in a 24-hour period.
      * </p>
      * 
      * @param startOnDemandReplicationRunRequest
@@ -1839,6 +2300,8 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
      *         This operation is not allowed.
      * @throws ReplicationRunLimitExceededException
      *         You have exceeded the number of on-demand replication runs you can request in a 24-hour period.
+     * @throws DryRunOperationException
+     *         The user has the required permissions, so the request would have succeeded, but a dry run was performed.
      * @sample AWSServerMigration.StartOnDemandReplicationRun
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/StartOnDemandReplicationRun"
      *      target="_top">AWS API Documentation</a>
@@ -1889,7 +2352,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Stops replicating an application.
+     * Stops replicating the specified application by deleting the replication job for each server in the application.
      * </p>
      * 
      * @param stopAppReplicationRequest
@@ -1953,7 +2416,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Terminates the stack for an application.
+     * Terminates the stack for the specified application.
      * </p>
      * 
      * @param terminateAppRequest
@@ -2017,7 +2480,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Updates an application.
+     * Updates the specified application.
      * </p>
      * 
      * @param updateAppRequest

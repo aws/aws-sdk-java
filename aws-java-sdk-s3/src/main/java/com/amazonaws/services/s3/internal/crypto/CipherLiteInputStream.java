@@ -17,10 +17,10 @@ package com.amazonaws.services.s3.internal.crypto;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.amazonaws.internal.SdkFilterInputStream;
+import com.amazonaws.services.s3.internal.crypto.v1.S3CryptoScheme;
 import javax.crypto.BadPaddingException;
 import javax.crypto.IllegalBlockSizeException;
-
-import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * @author Hanson Char
@@ -76,7 +76,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         this.bufin = new byte[buffsize];
     }
 
-    protected CipherLiteInputStream(InputStream is) {
+    public CipherLiteInputStream(InputStream is) {
         this(is, CipherLite.Null, DEFAULT_IN_BUFFER_SIZE, false, false);
     }
 

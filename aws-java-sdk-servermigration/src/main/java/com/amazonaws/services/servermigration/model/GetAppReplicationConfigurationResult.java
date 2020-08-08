@@ -26,17 +26,17 @@ public class GetAppReplicationConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Replication configurations associated with server groups in this application.
+     * The replication configurations associated with server groups in this application.
      * </p>
      */
     private java.util.List<ServerGroupReplicationConfiguration> serverGroupReplicationConfigurations;
 
     /**
      * <p>
-     * Replication configurations associated with server groups in this application.
+     * The replication configurations associated with server groups in this application.
      * </p>
      * 
-     * @return Replication configurations associated with server groups in this application.
+     * @return The replication configurations associated with server groups in this application.
      */
 
     public java.util.List<ServerGroupReplicationConfiguration> getServerGroupReplicationConfigurations() {
@@ -45,11 +45,11 @@ public class GetAppReplicationConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Replication configurations associated with server groups in this application.
+     * The replication configurations associated with server groups in this application.
      * </p>
      * 
      * @param serverGroupReplicationConfigurations
-     *        Replication configurations associated with server groups in this application.
+     *        The replication configurations associated with server groups in this application.
      */
 
     public void setServerGroupReplicationConfigurations(java.util.Collection<ServerGroupReplicationConfiguration> serverGroupReplicationConfigurations) {
@@ -63,7 +63,7 @@ public class GetAppReplicationConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Replication configurations associated with server groups in this application.
+     * The replication configurations associated with server groups in this application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +73,7 @@ public class GetAppReplicationConfigurationResult extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param serverGroupReplicationConfigurations
-     *        Replication configurations associated with server groups in this application.
+     *        The replication configurations associated with server groups in this application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class GetAppReplicationConfigurationResult extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Replication configurations associated with server groups in this application.
+     * The replication configurations associated with server groups in this application.
      * </p>
      * 
      * @param serverGroupReplicationConfigurations
-     *        Replication configurations associated with server groups in this application.
+     *        The replication configurations associated with server groups in this application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

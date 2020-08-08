@@ -27,18 +27,18 @@ public class GetAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * ID of the application launch configuration.
+     * The ID of the application.
      * </p>
      */
     private String appId;
 
     /**
      * <p>
-     * ID of the application launch configuration.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application launch configuration.
+     *        The ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -47,10 +47,10 @@ public class GetAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * ID of the application launch configuration.
+     * The ID of the application.
      * </p>
      * 
-     * @return ID of the application launch configuration.
+     * @return The ID of the application.
      */
 
     public String getAppId() {
@@ -59,11 +59,11 @@ public class GetAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * ID of the application launch configuration.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application launch configuration.
+     *        The ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

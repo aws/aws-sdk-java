@@ -27,30 +27,36 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * ID of the application associated with the launch configuration.
+     * The ID of the application.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     * The name of service role in the customer's account that AWS CloudFormation uses to launch the application.
      * </p>
      */
     private String roleName;
     /**
      * <p>
-     * Launch configurations for server groups in the application.
+     * Indicates whether the application is configured to launch automatically after replication is complete.
+     * </p>
+     */
+    private Boolean autoLaunch;
+    /**
+     * <p>
+     * Information about the launch configurations for server groups in the application.
      * </p>
      */
     private java.util.List<ServerGroupLaunchConfiguration> serverGroupLaunchConfigurations;
 
     /**
      * <p>
-     * ID of the application associated with the launch configuration.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application associated with the launch configuration.
+     *        The ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -59,10 +65,10 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * ID of the application associated with the launch configuration.
+     * The ID of the application.
      * </p>
      * 
-     * @return ID of the application associated with the launch configuration.
+     * @return The ID of the application.
      */
 
     public String getAppId() {
@@ -71,11 +77,11 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * ID of the application associated with the launch configuration.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application associated with the launch configuration.
+     *        The ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +92,11 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     * The name of service role in the customer's account that AWS CloudFormation uses to launch the application.
      * </p>
      * 
      * @param roleName
-     *        Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     *        The name of service role in the customer's account that AWS CloudFormation uses to launch the application.
      */
 
     public void setRoleName(String roleName) {
@@ -99,10 +105,11 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     * The name of service role in the customer's account that AWS CloudFormation uses to launch the application.
      * </p>
      * 
-     * @return Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     * @return The name of service role in the customer's account that AWS CloudFormation uses to launch the
+     *         application.
      */
 
     public String getRoleName() {
@@ -111,11 +118,11 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     * The name of service role in the customer's account that AWS CloudFormation uses to launch the application.
      * </p>
      * 
      * @param roleName
-     *        Name of service role in the customer's account that Amazon CloudFormation uses to launch the application.
+     *        The name of service role in the customer's account that AWS CloudFormation uses to launch the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,10 +133,62 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Launch configurations for server groups in the application.
+     * Indicates whether the application is configured to launch automatically after replication is complete.
      * </p>
      * 
-     * @return Launch configurations for server groups in the application.
+     * @param autoLaunch
+     *        Indicates whether the application is configured to launch automatically after replication is complete.
+     */
+
+    public void setAutoLaunch(Boolean autoLaunch) {
+        this.autoLaunch = autoLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the application is configured to launch automatically after replication is complete.
+     * </p>
+     * 
+     * @return Indicates whether the application is configured to launch automatically after replication is complete.
+     */
+
+    public Boolean getAutoLaunch() {
+        return this.autoLaunch;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the application is configured to launch automatically after replication is complete.
+     * </p>
+     * 
+     * @param autoLaunch
+     *        Indicates whether the application is configured to launch automatically after replication is complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutAppLaunchConfigurationRequest withAutoLaunch(Boolean autoLaunch) {
+        setAutoLaunch(autoLaunch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the application is configured to launch automatically after replication is complete.
+     * </p>
+     * 
+     * @return Indicates whether the application is configured to launch automatically after replication is complete.
+     */
+
+    public Boolean isAutoLaunch() {
+        return this.autoLaunch;
+    }
+
+    /**
+     * <p>
+     * Information about the launch configurations for server groups in the application.
+     * </p>
+     * 
+     * @return Information about the launch configurations for server groups in the application.
      */
 
     public java.util.List<ServerGroupLaunchConfiguration> getServerGroupLaunchConfigurations() {
@@ -138,11 +197,11 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Launch configurations for server groups in the application.
+     * Information about the launch configurations for server groups in the application.
      * </p>
      * 
      * @param serverGroupLaunchConfigurations
-     *        Launch configurations for server groups in the application.
+     *        Information about the launch configurations for server groups in the application.
      */
 
     public void setServerGroupLaunchConfigurations(java.util.Collection<ServerGroupLaunchConfiguration> serverGroupLaunchConfigurations) {
@@ -156,7 +215,7 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Launch configurations for server groups in the application.
+     * Information about the launch configurations for server groups in the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -165,7 +224,7 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param serverGroupLaunchConfigurations
-     *        Launch configurations for server groups in the application.
+     *        Information about the launch configurations for server groups in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +240,11 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Launch configurations for server groups in the application.
+     * Information about the launch configurations for server groups in the application.
      * </p>
      * 
      * @param serverGroupLaunchConfigurations
-     *        Launch configurations for server groups in the application.
+     *        Information about the launch configurations for server groups in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,6 +270,8 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
             sb.append("AppId: ").append(getAppId()).append(",");
         if (getRoleName() != null)
             sb.append("RoleName: ").append(getRoleName()).append(",");
+        if (getAutoLaunch() != null)
+            sb.append("AutoLaunch: ").append(getAutoLaunch()).append(",");
         if (getServerGroupLaunchConfigurations() != null)
             sb.append("ServerGroupLaunchConfigurations: ").append(getServerGroupLaunchConfigurations());
         sb.append("}");
@@ -235,6 +296,10 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
+        if (other.getAutoLaunch() == null ^ this.getAutoLaunch() == null)
+            return false;
+        if (other.getAutoLaunch() != null && other.getAutoLaunch().equals(this.getAutoLaunch()) == false)
+            return false;
         if (other.getServerGroupLaunchConfigurations() == null ^ this.getServerGroupLaunchConfigurations() == null)
             return false;
         if (other.getServerGroupLaunchConfigurations() != null
@@ -250,6 +315,7 @@ public class PutAppLaunchConfigurationRequest extends com.amazonaws.AmazonWebSer
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode + ((getAutoLaunch() == null) ? 0 : getAutoLaunch().hashCode());
         hashCode = prime * hashCode + ((getServerGroupLaunchConfigurations() == null) ? 0 : getServerGroupLaunchConfigurations().hashCode());
         return hashCode;
     }

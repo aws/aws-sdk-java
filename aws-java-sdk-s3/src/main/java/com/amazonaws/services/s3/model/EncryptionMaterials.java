@@ -29,6 +29,7 @@ import javax.crypto.SecretKey;
 public class EncryptionMaterials implements Serializable {
     private final KeyPair keyPair;
     private final SecretKey symmetricKey;
+
     private final Map<String, String> desc = new HashMap<String,String>();
 
     /**

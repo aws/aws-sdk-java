@@ -23,7 +23,8 @@ public enum ConnectionType {
     JDBC("JDBC"),
     SFTP("SFTP"),
     MONGODB("MONGODB"),
-    KAFKA("KAFKA");
+    KAFKA("KAFKA"),
+    NETWORK("NETWORK");
 
     private String value;
 

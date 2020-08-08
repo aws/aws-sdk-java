@@ -30,13 +30,13 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      */
     private String replicationJobId;
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      */
     private String serverId;
@@ -64,7 +64,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer frequency;
-    /** <p/> */
+    /**
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
+     */
     private Boolean runOnce;
     /**
      * <p>
@@ -80,7 +84,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
     private String licenseType;
     /**
      * <p>
-     * The name of the IAM role to be used by the Server Migration Service.
+     * The name of the IAM role to be used by AWS SMS.
      * </p>
      */
     private String roleName;
@@ -110,20 +114,20 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Number of recent AMIs to keep in the customer's account for a replication job. By default the value is set to
-     * zero, meaning that all AMIs are kept.
+     * The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set
+     * to zero, meaning that all AMIs are kept.
      * </p>
      */
     private Integer numberOfRecentAmisToKeep;
     /**
      * <p>
-     * Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job should produce encrypted AMIs.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -138,17 +142,17 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      */
     private String kmsKeyId;
@@ -161,11 +165,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
      * @param replicationJobId
-     *        The identifier of the replication job.
+     *        The ID of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -174,10 +178,10 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
-     * @return The identifier of the replication job.
+     * @return The ID of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -186,11 +190,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
      * @param replicationJobId
-     *        The identifier of the replication job.
+     *        The ID of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +205,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
      * @param serverId
-     *        The identifier of the server.
+     *        The ID of the server.
      */
 
     public void setServerId(String serverId) {
@@ -214,10 +218,10 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
-     * @return The identifier of the server.
+     * @return The ID of the server.
      */
 
     public String getServerId() {
@@ -226,11 +230,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
      * @param serverId
-     *        The identifier of the server.
+     *        The ID of the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,9 +437,12 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
      * @param runOnce
+     *        Indicates whether to run the replication job one time.
      */
 
     public void setRunOnce(Boolean runOnce) {
@@ -443,9 +450,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether to run the replication job one time.
      */
 
     public Boolean getRunOnce() {
@@ -453,9 +462,12 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
      * @param runOnce
+     *        Indicates whether to run the replication job one time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,9 +477,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether to run the replication job one time.
      */
 
     public Boolean isRunOnce() {
@@ -589,11 +603,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role to be used by the Server Migration Service.
+     * The name of the IAM role to be used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        The name of the IAM role to be used by the Server Migration Service.
+     *        The name of the IAM role to be used by AWS SMS.
      */
 
     public void setRoleName(String roleName) {
@@ -602,10 +616,10 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role to be used by the Server Migration Service.
+     * The name of the IAM role to be used by AWS SMS.
      * </p>
      * 
-     * @return The name of the IAM role to be used by the Server Migration Service.
+     * @return The name of the IAM role to be used by AWS SMS.
      */
 
     public String getRoleName() {
@@ -614,11 +628,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the IAM role to be used by the Server Migration Service.
+     * The name of the IAM role to be used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        The name of the IAM role to be used by the Server Migration Service.
+     *        The name of the IAM role to be used by AWS SMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,13 +836,13 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of recent AMIs to keep in the customer's account for a replication job. By default the value is set to
-     * zero, meaning that all AMIs are kept.
+     * The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set
+     * to zero, meaning that all AMIs are kept.
      * </p>
      * 
      * @param numberOfRecentAmisToKeep
-     *        Number of recent AMIs to keep in the customer's account for a replication job. By default the value is set
-     *        to zero, meaning that all AMIs are kept.
+     *        The number of recent AMIs to keep in the customer's account for a replication job. By default, the value
+     *        is set to zero, meaning that all AMIs are kept.
      */
 
     public void setNumberOfRecentAmisToKeep(Integer numberOfRecentAmisToKeep) {
@@ -837,12 +851,12 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of recent AMIs to keep in the customer's account for a replication job. By default the value is set to
-     * zero, meaning that all AMIs are kept.
+     * The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set
+     * to zero, meaning that all AMIs are kept.
      * </p>
      * 
-     * @return Number of recent AMIs to keep in the customer's account for a replication job. By default the value is
-     *         set to zero, meaning that all AMIs are kept.
+     * @return The number of recent AMIs to keep in the customer's account for a replication job. By default, the value
+     *         is set to zero, meaning that all AMIs are kept.
      */
 
     public Integer getNumberOfRecentAmisToKeep() {
@@ -851,13 +865,13 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of recent AMIs to keep in the customer's account for a replication job. By default the value is set to
-     * zero, meaning that all AMIs are kept.
+     * The number of recent AMIs to keep in the customer's account for a replication job. By default, the value is set
+     * to zero, meaning that all AMIs are kept.
      * </p>
      * 
      * @param numberOfRecentAmisToKeep
-     *        Number of recent AMIs to keep in the customer's account for a replication job. By default the value is set
-     *        to zero, meaning that all AMIs are kept.
+     *        The number of recent AMIs to keep in the customer's account for a replication job. By default, the value
+     *        is set to zero, meaning that all AMIs are kept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -868,11 +882,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job should produce encrypted AMIs.
      * </p>
      * 
      * @param encrypted
-     *        Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication job should produce encrypted AMIs.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -881,10 +895,10 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job should produce encrypted AMIs.
      * </p>
      * 
-     * @return Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication job should produce encrypted AMIs.
      */
 
     public Boolean getEncrypted() {
@@ -893,11 +907,11 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job should produce encrypted AMIs.
      * </p>
      * 
      * @param encrypted
-     *        Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication job should produce encrypted AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -908,10 +922,10 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job should produce encrypted AMIs.
      * </p>
      * 
-     * @return Whether the replication job should produce encrypted AMIs or not. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication job should produce encrypted AMIs.
      */
 
     public Boolean isEncrypted() {
@@ -920,7 +934,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -935,21 +949,22 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -963,18 +978,18 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS
+     *        is used.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -983,7 +998,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -998,20 +1013,21 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      * 
-     * @return KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     * @return The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *         following: </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1025,18 +1041,18 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key ID
+     *         ARN referring to the KMS key ID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key alias
+     *         ARN referring to the KMS key alias
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *         used.
+     *         If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS
+     *         is used.
      */
 
     public String getKmsKeyId() {
@@ -1045,7 +1061,7 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -1060,21 +1076,22 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following: </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1088,18 +1105,18 @@ public class ReplicationJob implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

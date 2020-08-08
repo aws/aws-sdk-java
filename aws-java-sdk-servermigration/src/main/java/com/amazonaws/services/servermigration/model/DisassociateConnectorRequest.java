@@ -27,18 +27,18 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      */
     private String connectorId;
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      * 
      * @param connectorId
-     *        The identifier of the connector.
+     *        The ID of the connector.
      */
 
     public void setConnectorId(String connectorId) {
@@ -47,10 +47,10 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      * 
-     * @return The identifier of the connector.
+     * @return The ID of the connector.
      */
 
     public String getConnectorId() {
@@ -59,11 +59,11 @@ public class DisassociateConnectorRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      * 
      * @param connectorId
-     *        The identifier of the connector.
+     *        The ID of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

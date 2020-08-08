@@ -23,7 +23,8 @@ public enum ConnectorCapability {
     VSPHERE("VSPHERE"),
     SCVMM("SCVMM"),
     HYPERVMANAGER("HYPERV-MANAGER"),
-    SNAPSHOT_BATCHING("SNAPSHOT_BATCHING");
+    SNAPSHOT_BATCHING("SNAPSHOT_BATCHING"),
+    SMS_OPTIMIZED("SMS_OPTIMIZED");
 
     private String value;
 

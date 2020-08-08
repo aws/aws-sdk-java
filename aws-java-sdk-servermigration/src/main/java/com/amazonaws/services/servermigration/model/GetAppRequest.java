@@ -26,18 +26,18 @@ public class GetAppRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * ID of the application whose information is being retrieved.
+     * The ID of the application.
      * </p>
      */
     private String appId;
 
     /**
      * <p>
-     * ID of the application whose information is being retrieved.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application whose information is being retrieved.
+     *        The ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -46,10 +46,10 @@ public class GetAppRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * ID of the application whose information is being retrieved.
+     * The ID of the application.
      * </p>
      * 
-     * @return ID of the application whose information is being retrieved.
+     * @return The ID of the application.
      */
 
     public String getAppId() {
@@ -58,11 +58,11 @@ public class GetAppRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * ID of the application whose information is being retrieved.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application whose information is being retrieved.
+     *        The ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

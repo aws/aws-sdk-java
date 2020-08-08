@@ -27,24 +27,24 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the application associated with the change set.
+     * The ID of the application associated with the change set.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Format for the change set.
+     * The format for the change set.
      * </p>
      */
     private String changesetFormat;
 
     /**
      * <p>
-     * ID of the application associated with the change set.
+     * The ID of the application associated with the change set.
      * </p>
      * 
      * @param appId
-     *        ID of the application associated with the change set.
+     *        The ID of the application associated with the change set.
      */
 
     public void setAppId(String appId) {
@@ -53,10 +53,10 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the application associated with the change set.
+     * The ID of the application associated with the change set.
      * </p>
      * 
-     * @return ID of the application associated with the change set.
+     * @return The ID of the application associated with the change set.
      */
 
     public String getAppId() {
@@ -65,11 +65,11 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the application associated with the change set.
+     * The ID of the application associated with the change set.
      * </p>
      * 
      * @param appId
-     *        ID of the application associated with the change set.
+     *        The ID of the application associated with the change set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Format for the change set.
+     * The format for the change set.
      * </p>
      * 
      * @param changesetFormat
-     *        Format for the change set.
+     *        The format for the change set.
      * @see OutputFormat
      */
 
@@ -94,10 +94,10 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Format for the change set.
+     * The format for the change set.
      * </p>
      * 
-     * @return Format for the change set.
+     * @return The format for the change set.
      * @see OutputFormat
      */
 
@@ -107,11 +107,11 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Format for the change set.
+     * The format for the change set.
      * </p>
      * 
      * @param changesetFormat
-     *        Format for the change set.
+     *        The format for the change set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */
@@ -123,11 +123,11 @@ public class GenerateChangeSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Format for the change set.
+     * The format for the change set.
      * </p>
      * 
      * @param changesetFormat
-     *        Format for the change set.
+     *        The format for the change set.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */

@@ -36,21 +36,21 @@ import com.amazonaws.services.s3.model.UploadPartResult;
  * non-encrypting S3 client of an S3 encryption client instance.
  */
 public interface S3DirectSpi {
-    public PutObjectResult putObject(PutObjectRequest req);
+    PutObjectResult putObject(PutObjectRequest req);
 
-    public S3Object getObject(GetObjectRequest req);
+    S3Object getObject(GetObjectRequest req);
 
-    public ObjectMetadata getObject(GetObjectRequest req, File dest);
+    ObjectMetadata getObject(GetObjectRequest req, File dest);
 
-    public CompleteMultipartUploadResult completeMultipartUpload(
+    CompleteMultipartUploadResult completeMultipartUpload(
             CompleteMultipartUploadRequest req);
 
-    public InitiateMultipartUploadResult initiateMultipartUpload(
+    InitiateMultipartUploadResult initiateMultipartUpload(
             InitiateMultipartUploadRequest req);
 
-    public UploadPartResult uploadPart(UploadPartRequest req);
+    UploadPartResult uploadPart(UploadPartRequest req);
 
-    public CopyPartResult copyPart(CopyPartRequest req);
+    CopyPartResult copyPart(CopyPartRequest req);
 
-    public void abortMultipartUpload(AbortMultipartUploadRequest req);
+    void abortMultipartUpload(AbortMultipartUploadRequest req);
 }

@@ -22,19 +22,18 @@ import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.Provider;
 
+import com.amazonaws.SdkClientException;
 import javax.crypto.Cipher;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
-
-import com.amazonaws.SdkClientException;
 
 /**
  * Cryptographic scheme for content encrypt/decryption.
  *
  * @author Hanson Char
  */
-abstract class ContentCryptoScheme {
+public abstract class ContentCryptoScheme {
     /**
      * The maximum number of 16-byte blocks that can be encrypted with a
      * GCM cipher.  Note the maximum bit-length of the plaintext is (2^39 - 256),
@@ -44,12 +43,12 @@ abstract class ContentCryptoScheme {
      * Reference: <a href="http://csrc.nist.gov/publications/nistpubs/800-38D/SP-800-38D.pdf">
      * NIST Special Publication 800-38D.</a>.
      */
-    static final long MAX_GCM_BLOCKS = (1L << 32) - 2; // 2^32 - 2
+    public static final long MAX_GCM_BLOCKS = (1L << 32) - 2; // 2^32 - 2
     /**
      * The maximum number of bytes that can be encrypted with a
      * GCM cipher.
      */
-    static final long MAX_GCM_BYTES = MAX_GCM_BLOCKS << 4;
+    public static final long MAX_GCM_BYTES = MAX_GCM_BLOCKS << 4;
     /**
      * The maximum number of bytes that can be securely encrypted per a single key using AES/CBC.
      */
@@ -62,22 +61,22 @@ abstract class ContentCryptoScheme {
     /**
      * Encryption Only (EO) scheme.
      */
-    static final ContentCryptoScheme AES_CBC = new AesCbc();
+    public static final ContentCryptoScheme AES_CBC = new AesCbc();
 
     /**
      * Authenticated Encryption (AE) scheme.
      */
-    static final ContentCryptoScheme AES_GCM = new AesGcm();
+    public static final ContentCryptoScheme AES_GCM = new AesGcm();
 
     /**
      * This is an auxiliary scheme used for range retrieval when object is
      * encrypted via AES/GCM.
      */
     // made package private only for unit testing purposes
-    static final ContentCryptoScheme AES_CTR = new AesCtr();
+    public static final ContentCryptoScheme AES_CTR = new AesCtr();
 
-    abstract String getKeyGeneratorAlgorithm();
-    abstract String getCipherAlgorithm();
+    public abstract String getKeyGeneratorAlgorithm();
+    public abstract String getCipherAlgorithm();
 
     /**
      * Returns the preferred security provider to use for this crypto scheme. Java 6 does not
@@ -85,14 +84,14 @@ abstract class ContentCryptoScheme {
      * buffering all of the ciphertext in memory, so {@code AesGcm} prefers to use the
      * BouncyCastle provider.
      */
-    String getPreferredCipherProvider() { return null; }
-    abstract int getKeyLengthInBits();
-    abstract int getBlockSizeInBytes();
-    abstract int getIVLengthInBytes();
+    public String getPreferredCipherProvider() { return null; }
+    public abstract int getKeyLengthInBits();
+    public abstract int getBlockSizeInBytes();
+    public abstract int getIVLengthInBytes();
 
-    int getTagLengthInBits() { return 0; } // default to zero ie no tag
+    public int getTagLengthInBits() { return 0; } // default to zero ie no tag
 
-    byte[] adjustIV(byte[] iv, long startingBytePos) {
+    public byte[] adjustIV(byte[] iv, long startingBytePos) {
         return iv;
     }
 
@@ -118,7 +117,7 @@ abstract class ContentCryptoScheme {
      * @param blockDelta
      *            the number of blocks (16-byte) to increment
      */
-    static byte[] incrementBlocks(byte[] counter, long blockDelta) {
+    public static byte[] incrementBlocks(byte[] counter, long blockDelta) {
         if (blockDelta == 0)
             return counter;
         if (counter == null || counter.length != 16)
@@ -146,11 +145,11 @@ abstract class ContentCryptoScheme {
     /**
      * Returns the content crypto scheme of the given content encryption algorithm.
      */
-    static ContentCryptoScheme fromCEKAlgo(String cekAlgo) {
+    public static ContentCryptoScheme fromCEKAlgo(String cekAlgo) {
         return fromCEKAlgo(cekAlgo, false);
     }
 
-    static ContentCryptoScheme fromCEKAlgo(String cekAlgo, boolean isRangeGet) {
+    public static ContentCryptoScheme fromCEKAlgo(String cekAlgo, boolean isRangeGet) {
         if (AES_GCM.getCipherAlgorithm().equals(cekAlgo)) {
             return isRangeGet ? AES_CTR : AES_GCM;
         }
@@ -178,8 +177,8 @@ abstract class ContentCryptoScheme {
      *            if this scheme has a preferred provider.
      * @return the cipher lite created and initialized.
      */
-    CipherLite createCipherLite(SecretKey cek, byte[] iv, int cipherMode,
-            Provider provider, boolean alwaysUseProvider) {
+    public CipherLite createCipherLite(SecretKey cek, byte[] iv, int cipherMode,
+                                       Provider provider, boolean alwaysUseProvider) {
 
         try {
             Cipher cipher = createCipher(provider, alwaysUseProvider);
@@ -250,7 +249,7 @@ abstract class ContentCryptoScheme {
      *            such as {@link Cipher#ENCRYPT_MODE}
      * @return the cipher lite created and initialized.
      */
-    CipherLite createCipherLite(SecretKey cek, byte[] iv, int cipherMode)
+    public CipherLite createCipherLite(SecretKey cek, byte[] iv, int cipherMode)
             throws InvalidKeyException, NoSuchAlgorithmException,
             NoSuchProviderException, NoSuchPaddingException,
             InvalidAlgorithmParameterException {
@@ -267,7 +266,7 @@ abstract class ContentCryptoScheme {
     /**
      * A convenient method motivated by KMS.
      */
-    final String getKeySpec() {
+    public final String getKeySpec() {
         return getKeyGeneratorAlgorithm() + "_" + getKeyLengthInBits();
     }
 }

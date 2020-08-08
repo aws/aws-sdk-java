@@ -30,7 +30,7 @@ credentials.
 
 #### Minimum requirements ####
 
-To run the SDK you will need **Java 1.6+**. For more information about the requirements and optimum
+To run the SDK you will need **Java 1.7+**. For more information about the requirements and optimum
 settings for the SDK, please see the [Installing a Java Development Environment][docs-java-env]
 section of the developer guide.
 
@@ -48,7 +48,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.836</version>
+      <version>1.11.837</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>

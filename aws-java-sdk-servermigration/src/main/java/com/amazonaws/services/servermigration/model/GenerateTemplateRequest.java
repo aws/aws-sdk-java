@@ -27,24 +27,24 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ID of the application associated with the Amazon CloudFormation template.
+     * The ID of the application associated with the AWS CloudFormation template.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Format for generating the Amazon CloudFormation template.
+     * The format for generating the AWS CloudFormation template.
      * </p>
      */
     private String templateFormat;
 
     /**
      * <p>
-     * ID of the application associated with the Amazon CloudFormation template.
+     * The ID of the application associated with the AWS CloudFormation template.
      * </p>
      * 
      * @param appId
-     *        ID of the application associated with the Amazon CloudFormation template.
+     *        The ID of the application associated with the AWS CloudFormation template.
      */
 
     public void setAppId(String appId) {
@@ -53,10 +53,10 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ID of the application associated with the Amazon CloudFormation template.
+     * The ID of the application associated with the AWS CloudFormation template.
      * </p>
      * 
-     * @return ID of the application associated with the Amazon CloudFormation template.
+     * @return The ID of the application associated with the AWS CloudFormation template.
      */
 
     public String getAppId() {
@@ -65,11 +65,11 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * ID of the application associated with the Amazon CloudFormation template.
+     * The ID of the application associated with the AWS CloudFormation template.
      * </p>
      * 
      * @param appId
-     *        ID of the application associated with the Amazon CloudFormation template.
+     *        The ID of the application associated with the AWS CloudFormation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Format for generating the Amazon CloudFormation template.
+     * The format for generating the AWS CloudFormation template.
      * </p>
      * 
      * @param templateFormat
-     *        Format for generating the Amazon CloudFormation template.
+     *        The format for generating the AWS CloudFormation template.
      * @see OutputFormat
      */
 
@@ -94,10 +94,10 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Format for generating the Amazon CloudFormation template.
+     * The format for generating the AWS CloudFormation template.
      * </p>
      * 
-     * @return Format for generating the Amazon CloudFormation template.
+     * @return The format for generating the AWS CloudFormation template.
      * @see OutputFormat
      */
 
@@ -107,11 +107,11 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Format for generating the Amazon CloudFormation template.
+     * The format for generating the AWS CloudFormation template.
      * </p>
      * 
      * @param templateFormat
-     *        Format for generating the Amazon CloudFormation template.
+     *        The format for generating the AWS CloudFormation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */
@@ -123,11 +123,11 @@ public class GenerateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Format for generating the Amazon CloudFormation template.
+     * The format for generating the AWS CloudFormation template.
      * </p>
      * 
      * @param templateFormat
-     *        Format for generating the Amazon CloudFormation template.
+     *        The format for generating the AWS CloudFormation template.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OutputFormat
      */

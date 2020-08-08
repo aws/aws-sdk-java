@@ -14,9 +14,19 @@
  */
 package com.amazonaws.services.s3;
 
-import com.amazonaws.SdkClientException;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -29,8 +39,8 @@ import com.amazonaws.services.kms.AWSKMSClient;
 import com.amazonaws.services.s3.internal.MultiFileOutputStream;
 import com.amazonaws.services.s3.internal.PartCreationEvent;
 import com.amazonaws.services.s3.internal.S3Direct;
-import com.amazonaws.services.s3.internal.crypto.CryptoModuleDispatcher;
-import com.amazonaws.services.s3.internal.crypto.S3CryptoModule;
+import com.amazonaws.services.s3.internal.crypto.v1.CryptoModuleDispatcher;
+import com.amazonaws.services.s3.internal.crypto.v1.S3CryptoModule;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
@@ -42,6 +52,7 @@ import com.amazonaws.services.s3.model.EncryptedInitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.EncryptedPutObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
+import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
@@ -61,15 +72,6 @@ import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.util.VersionInfoUtils;
 
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 /**
  * Used to perform client-side encryption for storing data securely in S3. Data
  * encryption is done using a one-time randomly generated content encryption
@@ -77,11 +79,18 @@ import java.util.concurrent.Future;
  * <p>
  * The encryption materials specified in the constructor will be used to
  * protect the CEK which is then stored along side with the S3 object.
+ * <p>
+ * <b>Note:</b> Deprecated in favor of {@link AmazonS3EncryptionClientV2}, which uses only AES/GCM
+ * for content encryption and improved key wrap algorithms.
+ *
+ * @deprecated This feature is in maintenance mode, no new updates will be released.
+ * Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.
  */
+@Deprecated
 public class AmazonS3EncryptionClient extends AmazonS3Client implements
         AmazonS3Encryption {
-    public static final String USER_AGENT = AmazonS3EncryptionClient.class.getName()
-            + "/" + VersionInfoUtils.getVersion();
+    private static final String USER_AGENT_V1 = "S3CryptoV1n/" + VersionInfoUtils.getVersion();
+
     private final S3CryptoModule<?> crypto;
     private final AWSKMS kms;
     /**
@@ -582,7 +591,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
 
     @Override
     public void deleteObject(DeleteObjectRequest req) {
-        req.getRequestClientOptions().appendUserAgent(USER_AGENT);
+        req.getRequestClientOptions().appendUserAgent(USER_AGENT_V1);
         // Delete the object
         super.deleteObject(req);
         // If it exists, delete the instruction file.
@@ -687,45 +696,69 @@ public class AmazonS3EncryptionClient extends AmazonS3Client implements
     private final class S3DirectImpl extends S3Direct {
         @Override
         public PutObjectResult putObject(PutObjectRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.putObject(req);
         }
 
         @Override
         public S3Object getObject(GetObjectRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.getObject(req);
         }
 
         @Override
         public ObjectMetadata getObject(GetObjectRequest req, File dest) {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.getObject(req, dest);
+        }
+
+        @Override
+        public ObjectMetadata getObjectMetadata(GetObjectMetadataRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
+            return AmazonS3EncryptionClient.super.getObjectMetadata(req);
         }
 
         @Override
         public CompleteMultipartUploadResult completeMultipartUpload(
                 CompleteMultipartUploadRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.completeMultipartUpload(req);
         }
 
         @Override
         public InitiateMultipartUploadResult initiateMultipartUpload(
                 InitiateMultipartUploadRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.initiateMultipartUpload(req);
         }
 
         @Override
         public UploadPartResult uploadPart(UploadPartRequest req)
                 throws SdkClientException, AmazonServiceException {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.uploadPart(req);
         }
 
         @Override
         public CopyPartResult copyPart(CopyPartRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
             return AmazonS3EncryptionClient.super.copyPart(req);
         }
 
         @Override
         public void abortMultipartUpload(AbortMultipartUploadRequest req) {
+            appendUserAgent(req, USER_AGENT_V1);
             AmazonS3EncryptionClient.super.abortMultipartUpload(req);
+        }
+
+        /**
+         * Appends a user agent to the request's USER_AGENT_V1 client marker.
+         * This method is intended only for internal use by the AWS SDK.
+         */
+        final <X extends AmazonWebServiceRequest> X appendUserAgent(
+            X request, String userAgent) {
+            request.getRequestClientOptions().appendUserAgent(userAgent);
+            return request;
         }
     }
 

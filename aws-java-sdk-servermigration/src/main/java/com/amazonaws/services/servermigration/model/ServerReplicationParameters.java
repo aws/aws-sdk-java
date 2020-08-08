@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Replication parameters for replicating a server.
+ * The replication parameters for replicating a server.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerReplicationParameters" target="_top">AWS
@@ -30,40 +30,43 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Seed time for creating a replication job for the server.
+     * The seed time for creating a replication job for the server.
      * </p>
      */
     private java.util.Date seedTime;
     /**
      * <p>
-     * Frequency of creating replication jobs for the server.
+     * The frequency of creating replication jobs for the server.
      * </p>
      */
     private Integer frequency;
-    /** <p/> */
+    /**
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
+     */
     private Boolean runOnce;
     /**
      * <p>
-     * License type for creating a replication job for the server.
+     * The license type for creating a replication job for the server.
      * </p>
      */
     private String licenseType;
     /**
      * <p>
-     * Number of recent AMIs to keep when creating a replication job for this server.
+     * The number of recent AMIs to keep when creating a replication job for this server.
      * </p>
      */
     private Integer numberOfRecentAmisToKeep;
     /**
      * <p>
-     * When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      */
     private Boolean encrypted;
     /**
-     * <p/>
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -78,28 +81,28 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * Seed time for creating a replication job for the server.
+     * The seed time for creating a replication job for the server.
      * </p>
      * 
      * @param seedTime
-     *        Seed time for creating a replication job for the server.
+     *        The seed time for creating a replication job for the server.
      */
 
     public void setSeedTime(java.util.Date seedTime) {
@@ -108,10 +111,10 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Seed time for creating a replication job for the server.
+     * The seed time for creating a replication job for the server.
      * </p>
      * 
-     * @return Seed time for creating a replication job for the server.
+     * @return The seed time for creating a replication job for the server.
      */
 
     public java.util.Date getSeedTime() {
@@ -120,11 +123,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Seed time for creating a replication job for the server.
+     * The seed time for creating a replication job for the server.
      * </p>
      * 
      * @param seedTime
-     *        Seed time for creating a replication job for the server.
+     *        The seed time for creating a replication job for the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +138,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Frequency of creating replication jobs for the server.
+     * The frequency of creating replication jobs for the server.
      * </p>
      * 
      * @param frequency
-     *        Frequency of creating replication jobs for the server.
+     *        The frequency of creating replication jobs for the server.
      */
 
     public void setFrequency(Integer frequency) {
@@ -148,10 +151,10 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Frequency of creating replication jobs for the server.
+     * The frequency of creating replication jobs for the server.
      * </p>
      * 
-     * @return Frequency of creating replication jobs for the server.
+     * @return The frequency of creating replication jobs for the server.
      */
 
     public Integer getFrequency() {
@@ -160,11 +163,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Frequency of creating replication jobs for the server.
+     * The frequency of creating replication jobs for the server.
      * </p>
      * 
      * @param frequency
-     *        Frequency of creating replication jobs for the server.
+     *        The frequency of creating replication jobs for the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,9 +177,12 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
      * @param runOnce
+     *        Indicates whether to run the replication job one time.
      */
 
     public void setRunOnce(Boolean runOnce) {
@@ -184,9 +190,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether to run the replication job one time.
      */
 
     public Boolean getRunOnce() {
@@ -194,9 +202,12 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
      * @param runOnce
+     *        Indicates whether to run the replication job one time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,9 +217,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether to run the replication job one time.
      */
 
     public Boolean isRunOnce() {
@@ -217,11 +230,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * License type for creating a replication job for the server.
+     * The license type for creating a replication job for the server.
      * </p>
      * 
      * @param licenseType
-     *        License type for creating a replication job for the server.
+     *        The license type for creating a replication job for the server.
      * @see LicenseType
      */
 
@@ -231,10 +244,10 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * License type for creating a replication job for the server.
+     * The license type for creating a replication job for the server.
      * </p>
      * 
-     * @return License type for creating a replication job for the server.
+     * @return The license type for creating a replication job for the server.
      * @see LicenseType
      */
 
@@ -244,11 +257,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * License type for creating a replication job for the server.
+     * The license type for creating a replication job for the server.
      * </p>
      * 
      * @param licenseType
-     *        License type for creating a replication job for the server.
+     *        The license type for creating a replication job for the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -260,11 +273,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * License type for creating a replication job for the server.
+     * The license type for creating a replication job for the server.
      * </p>
      * 
      * @param licenseType
-     *        License type for creating a replication job for the server.
+     *        The license type for creating a replication job for the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LicenseType
      */
@@ -276,11 +289,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of recent AMIs to keep when creating a replication job for this server.
+     * The number of recent AMIs to keep when creating a replication job for this server.
      * </p>
      * 
      * @param numberOfRecentAmisToKeep
-     *        Number of recent AMIs to keep when creating a replication job for this server.
+     *        The number of recent AMIs to keep when creating a replication job for this server.
      */
 
     public void setNumberOfRecentAmisToKeep(Integer numberOfRecentAmisToKeep) {
@@ -289,10 +302,10 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of recent AMIs to keep when creating a replication job for this server.
+     * The number of recent AMIs to keep when creating a replication job for this server.
      * </p>
      * 
-     * @return Number of recent AMIs to keep when creating a replication job for this server.
+     * @return The number of recent AMIs to keep when creating a replication job for this server.
      */
 
     public Integer getNumberOfRecentAmisToKeep() {
@@ -301,11 +314,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Number of recent AMIs to keep when creating a replication job for this server.
+     * The number of recent AMIs to keep when creating a replication job for this server.
      * </p>
      * 
      * @param numberOfRecentAmisToKeep
-     *        Number of recent AMIs to keep when creating a replication job for this server.
+     *        The number of recent AMIs to keep when creating a replication job for this server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,11 +329,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
      * @param encrypted
-     *        When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication job produces encrypted AMIs.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -329,10 +342,10 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
-     * @return When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication job produces encrypted AMIs.
      */
 
     public Boolean getEncrypted() {
@@ -341,11 +354,11 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
      * @param encrypted
-     *        When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication job produces encrypted AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -356,10 +369,10 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
-     * @return When true, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication job produces encrypted AMIs.
      */
 
     public Boolean isEncrypted() {
@@ -367,9 +380,8 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -384,23 +396,22 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        <p>
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
-     *        </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -414,18 +425,18 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS
+     *        is used.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -433,9 +444,8 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -450,22 +460,21 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      * 
-     * @return <p>
-     *         KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
-     *         </p>
+     * @return The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -479,18 +488,18 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key ID
+     *         ARN referring to the KMS key ID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key alias
+     *         ARN referring to the KMS key alias
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *         used.
+     *         If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS
+     *         is used.
      */
 
     public String getKmsKeyId() {
@@ -498,9 +507,8 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
     }
 
     /**
-     * <p/>
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -515,23 +523,22 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is used.
      * </p>
      * 
      * @param kmsKeyId
-     *        <p>
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
-     *        </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -545,18 +552,18 @@ public class ServerReplicationParameters implements Serializable, Cloneable, Str
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is enabled but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

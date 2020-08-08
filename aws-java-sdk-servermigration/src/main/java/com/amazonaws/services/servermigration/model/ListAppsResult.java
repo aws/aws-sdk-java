@@ -24,7 +24,7 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A list of application summaries.
+     * The application summaries.
      * </p>
      */
     private java.util.List<AppSummary> apps;
@@ -38,10 +38,10 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A list of application summaries.
+     * The application summaries.
      * </p>
      * 
-     * @return A list of application summaries.
+     * @return The application summaries.
      */
 
     public java.util.List<AppSummary> getApps() {
@@ -50,11 +50,11 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A list of application summaries.
+     * The application summaries.
      * </p>
      * 
      * @param apps
-     *        A list of application summaries.
+     *        The application summaries.
      */
 
     public void setApps(java.util.Collection<AppSummary> apps) {
@@ -68,7 +68,7 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A list of application summaries.
+     * The application summaries.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      * 
      * @param apps
-     *        A list of application summaries.
+     *        The application summaries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * A list of application summaries.
+     * The application summaries.
      * </p>
      * 
      * @param apps
-     *        A list of application summaries.
+     *        The application summaries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

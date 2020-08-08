@@ -30,24 +30,24 @@ public class ServerReplicationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Identifier of the server this replication configuration is associated with.
+     * The ID of the server with which this replication configuration is associated.
      * </p>
      */
     private Server server;
     /**
      * <p>
-     * Parameters for replicating the server.
+     * The parameters for replicating the server.
      * </p>
      */
     private ServerReplicationParameters serverReplicationParameters;
 
     /**
      * <p>
-     * Identifier of the server this replication configuration is associated with.
+     * The ID of the server with which this replication configuration is associated.
      * </p>
      * 
      * @param server
-     *        Identifier of the server this replication configuration is associated with.
+     *        The ID of the server with which this replication configuration is associated.
      */
 
     public void setServer(Server server) {
@@ -56,10 +56,10 @@ public class ServerReplicationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Identifier of the server this replication configuration is associated with.
+     * The ID of the server with which this replication configuration is associated.
      * </p>
      * 
-     * @return Identifier of the server this replication configuration is associated with.
+     * @return The ID of the server with which this replication configuration is associated.
      */
 
     public Server getServer() {
@@ -68,11 +68,11 @@ public class ServerReplicationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Identifier of the server this replication configuration is associated with.
+     * The ID of the server with which this replication configuration is associated.
      * </p>
      * 
      * @param server
-     *        Identifier of the server this replication configuration is associated with.
+     *        The ID of the server with which this replication configuration is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ServerReplicationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Parameters for replicating the server.
+     * The parameters for replicating the server.
      * </p>
      * 
      * @param serverReplicationParameters
-     *        Parameters for replicating the server.
+     *        The parameters for replicating the server.
      */
 
     public void setServerReplicationParameters(ServerReplicationParameters serverReplicationParameters) {
@@ -96,10 +96,10 @@ public class ServerReplicationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Parameters for replicating the server.
+     * The parameters for replicating the server.
      * </p>
      * 
-     * @return Parameters for replicating the server.
+     * @return The parameters for replicating the server.
      */
 
     public ServerReplicationParameters getServerReplicationParameters() {
@@ -108,11 +108,11 @@ public class ServerReplicationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Parameters for replicating the server.
+     * The parameters for replicating the server.
      * </p>
      * 
      * @param serverReplicationParameters
-     *        Parameters for replicating the server.
+     *        The parameters for replicating the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

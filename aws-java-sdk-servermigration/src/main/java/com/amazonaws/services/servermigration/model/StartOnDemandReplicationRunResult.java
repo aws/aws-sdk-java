@@ -25,18 +25,18 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      */
     private String replicationRunId;
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
      * @param replicationRunId
-     *        The identifier of the replication run.
+     *        The ID of the replication run.
      */
 
     public void setReplicationRunId(String replicationRunId) {
@@ -45,10 +45,10 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
-     * @return The identifier of the replication run.
+     * @return The ID of the replication run.
      */
 
     public String getReplicationRunId() {
@@ -57,11 +57,11 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
      * @param replicationRunId
-     *        The identifier of the replication run.
+     *        The ID of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

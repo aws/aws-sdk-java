@@ -94,6 +94,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      * already exists.
      * </p>
@@ -118,6 +123,17 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
      * problem persists, contact Customer Support.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a credit
+     * card.
      * </p>
      * </li>
      * </ul>
@@ -504,6 +520,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      * already exists.
      * </p>
@@ -530,6 +551,17 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * problem persists, contact Customer Support.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a credit
+     * card.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -539,6 +571,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
      *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      *        </p>
      *        </li>
      *        <li>
@@ -569,6 +606,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        problem persists, contact Customer Support.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business
+     *        Validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a
+     *        credit card.
+     *        </p>
+     *        </li>
      * @see CreateAccountFailureReason
      */
 
@@ -585,6 +634,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
      * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      * </p>
      * </li>
      * <li>
@@ -615,6 +669,17 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * problem persists, contact Customer Support.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a credit
+     * card.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return If the request failed, a description of the reason for the failure.</p>
@@ -623,6 +688,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         <p>
      *         ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
      *         of accounts in your organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      *         </p>
      *         </li>
      *         <li>
@@ -653,6 +723,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *         the problem persists, contact Customer Support.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business
+     *         Validation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a
+     *         credit card.
+     *         </p>
+     *         </li>
      * @see CreateAccountFailureReason
      */
 
@@ -669,6 +751,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * <p>
      * ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number of
      * accounts in your organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      * </p>
      * </li>
      * <li>
@@ -699,6 +786,17 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * problem persists, contact Customer Support.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a credit
+     * card.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -708,6 +806,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
      *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      *        </p>
      *        </li>
      *        <li>
@@ -736,6 +839,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
      *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business
+     *        Validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a
+     *        credit card.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -760,6 +875,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      * already exists.
      * </p>
@@ -786,6 +906,17 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * problem persists, contact Customer Support.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a credit
+     * card.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -795,6 +926,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
      *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      *        </p>
      *        </li>
      *        <li>
@@ -823,6 +959,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
      *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business
+     *        Validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a
+     *        credit card.
      *        </p>
      *        </li>
      * @see CreateAccountFailureReason
@@ -845,6 +993,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * </li>
      * <li>
      * <p>
+     * CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * EMAIL_ALREADY_EXISTS: The account could not be created because another AWS account with that email address
      * already exists.
      * </p>
@@ -871,6 +1024,17 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      * problem persists, contact Customer Support.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business Validation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a credit
+     * card.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param failureReason
@@ -880,6 +1044,11 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you have reached the limit on the number
      *        of accounts in your organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CONCURRENT_ACCOUNT_MODIFICATION: You already submitted a request with the same information.
      *        </p>
      *        </li>
      *        <li>
@@ -908,6 +1077,18 @@ public class CreateAccountStatus implements Serializable, Cloneable, StructuredP
      *        <p>
      *        INTERNAL_FAILURE: The account could not be created because of an internal failure. Try again later. If the
      *        problem persists, contact Customer Support.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_BUSINESS_VALIDATION: The AWS account that owns your organization has not received Business
+     *        Validation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        MISSING_PAYMENT_INSTRUMENT: You must configure the master account with a valid payment method, such as a
+     *        credit card.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

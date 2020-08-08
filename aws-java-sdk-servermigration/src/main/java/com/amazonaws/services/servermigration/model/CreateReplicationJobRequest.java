@@ -27,7 +27,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      */
     private String serverId;
@@ -43,7 +43,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Integer frequency;
-    /** <p/> */
+    /**
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
+     */
     private Boolean runOnce;
     /**
      * <p>
@@ -65,20 +69,20 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     private String description;
     /**
      * <p>
-     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
-     * and a new AMI is created.
+     * The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a
+     * new AMI is created.
      * </p>
      */
     private Integer numberOfRecentAmisToKeep;
     /**
      * <p>
-     * When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -93,28 +97,29 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
      * @param serverId
-     *        The identifier of the server.
+     *        The ID of the server.
      */
 
     public void setServerId(String serverId) {
@@ -123,10 +128,10 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
-     * @return The identifier of the server.
+     * @return The ID of the server.
      */
 
     public String getServerId() {
@@ -135,11 +140,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
      * @param serverId
-     *        The identifier of the server.
+     *        The ID of the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,9 +234,12 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
      * @param runOnce
+     *        Indicates whether to run the replication job one time.
      */
 
     public void setRunOnce(Boolean runOnce) {
@@ -239,9 +247,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether to run the replication job one time.
      */
 
     public Boolean getRunOnce() {
@@ -249,9 +259,12 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
      * @param runOnce
+     *        Indicates whether to run the replication job one time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,9 +274,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
+     * <p>
+     * Indicates whether to run the replication job one time.
+     * </p>
      * 
-     * @return
+     * @return Indicates whether to run the replication job one time.
      */
 
     public Boolean isRunOnce() {
@@ -425,12 +440,12 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
-     * and a new AMI is created.
+     * The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a
+     * new AMI is created.
      * </p>
      * 
      * @param numberOfRecentAmisToKeep
-     *        The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is
+     *        The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is
      *        reached and a new AMI is created.
      */
 
@@ -440,11 +455,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
-     * and a new AMI is created.
+     * The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a
+     * new AMI is created.
      * </p>
      * 
-     * @return The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is
+     * @return The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is
      *         reached and a new AMI is created.
      */
 
@@ -454,12 +469,12 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is reached
-     * and a new AMI is created.
+     * The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is reached and a
+     * new AMI is created.
      * </p>
      * 
      * @param numberOfRecentAmisToKeep
-     *        The maximum number of SMS-created AMIs to retain. The oldest will be deleted once the maximum number is
+     *        The maximum number of SMS-created AMIs to retain. The oldest is deleted after the maximum number is
      *        reached and a new AMI is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -471,11 +486,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
      * @param encrypted
-     *        When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication job produces encrypted AMIs.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -484,10 +499,10 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
-     * @return When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication job produces encrypted AMIs.
      */
 
     public Boolean getEncrypted() {
@@ -496,11 +511,11 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
      * @param encrypted
-     *        When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication job produces encrypted AMIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -511,10 +526,10 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication job produces encrypted AMIs.
      * </p>
      * 
-     * @return When <i>true</i>, the replication job produces encrypted AMIs. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication job produces encrypted AMIs.
      */
 
     public Boolean isEncrypted() {
@@ -523,7 +538,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -538,21 +553,23 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -566,18 +583,18 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon
+     *        EBS is used.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -586,7 +603,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -601,20 +618,22 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      * 
-     * @return KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     * @return The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -628,18 +647,18 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key ID
+     *         ARN referring to the KMS key ID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key alias
+     *         ARN referring to the KMS key alias
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *         used.
+     *         If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon
+     *         EBS is used.
      */
 
     public String getKmsKeyId() {
@@ -648,7 +667,7 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -663,21 +682,23 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -691,18 +712,18 @@ public class CreateReplicationJobRequest extends com.amazonaws.AmazonWebServiceR
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon
+     *        EBS is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

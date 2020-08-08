@@ -20,6 +20,11 @@ import com.amazonaws.services.kms.AWSKMS;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 
+/**
+ * @deprecated This feature is in maintenance mode, no new updates will be released.
+ * Please see https://docs.aws.amazon.com/general/latest/gr/aws_sdk_cryptography.html for more information.
+ */
+@Deprecated
 public final class AmazonS3EncryptionClientBuilder extends AmazonS3Builder<AmazonS3EncryptionClientBuilder, AmazonS3Encryption> {
     private EncryptionMaterialsProvider encryptionMaterials;
     private CryptoConfiguration cryptoConfig;

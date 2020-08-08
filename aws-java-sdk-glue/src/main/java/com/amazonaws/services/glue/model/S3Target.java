@@ -41,6 +41,13 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> exclusions;
+    /**
+     * <p>
+     * The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual
+     * Private Cloud environment (Amazon VPC).
+     * </p>
+     */
+    private String connectionName;
 
     /**
      * <p>
@@ -161,6 +168,52 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual
+     * Private Cloud environment (Amazon VPC).
+     * </p>
+     * 
+     * @param connectionName
+     *        The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon
+     *        Virtual Private Cloud environment (Amazon VPC).
+     */
+
+    public void setConnectionName(String connectionName) {
+        this.connectionName = connectionName;
+    }
+
+    /**
+     * <p>
+     * The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual
+     * Private Cloud environment (Amazon VPC).
+     * </p>
+     * 
+     * @return The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon
+     *         Virtual Private Cloud environment (Amazon VPC).
+     */
+
+    public String getConnectionName() {
+        return this.connectionName;
+    }
+
+    /**
+     * <p>
+     * The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual
+     * Private Cloud environment (Amazon VPC).
+     * </p>
+     * 
+     * @param connectionName
+     *        The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon
+     *        Virtual Private Cloud environment (Amazon VPC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Target withConnectionName(String connectionName) {
+        setConnectionName(connectionName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -175,7 +228,9 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
         if (getExclusions() != null)
-            sb.append("Exclusions: ").append(getExclusions());
+            sb.append("Exclusions: ").append(getExclusions()).append(",");
+        if (getConnectionName() != null)
+            sb.append("ConnectionName: ").append(getConnectionName());
         sb.append("}");
         return sb.toString();
     }
@@ -198,6 +253,10 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExclusions() != null && other.getExclusions().equals(this.getExclusions()) == false)
             return false;
+        if (other.getConnectionName() == null ^ this.getConnectionName() == null)
+            return false;
+        if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
+            return false;
         return true;
     }
 
@@ -208,6 +267,7 @@ public class S3Target implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getExclusions() == null) ? 0 : getExclusions().hashCode());
+        hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
         return hashCode;
     }
 

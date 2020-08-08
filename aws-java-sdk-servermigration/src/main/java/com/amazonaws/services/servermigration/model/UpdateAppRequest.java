@@ -27,48 +27,48 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * ID of the application to update.
+     * The ID of the application.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * New name of the application.
+     * The new name of the application.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * New description of the application.
+     * The new description of the application.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      */
     private String roleName;
     /**
      * <p>
-     * List of server groups in the application to update.
+     * The server groups in the application to update.
      * </p>
      */
     private java.util.List<ServerGroup> serverGroups;
     /**
      * <p>
-     * List of tags to associate with the application.
+     * The tags to associate with the application.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * ID of the application to update.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application to update.
+     *        The ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -77,10 +77,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * ID of the application to update.
+     * The ID of the application.
      * </p>
      * 
-     * @return ID of the application to update.
+     * @return The ID of the application.
      */
 
     public String getAppId() {
@@ -89,11 +89,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * ID of the application to update.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application to update.
+     *        The ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * New name of the application.
+     * The new name of the application.
      * </p>
      * 
      * @param name
-     *        New name of the application.
+     *        The new name of the application.
      */
 
     public void setName(String name) {
@@ -117,10 +117,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * New name of the application.
+     * The new name of the application.
      * </p>
      * 
-     * @return New name of the application.
+     * @return The new name of the application.
      */
 
     public String getName() {
@@ -129,11 +129,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * New name of the application.
+     * The new name of the application.
      * </p>
      * 
      * @param name
-     *        New name of the application.
+     *        The new name of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * New description of the application.
+     * The new description of the application.
      * </p>
      * 
      * @param description
-     *        New description of the application.
+     *        The new description of the application.
      */
 
     public void setDescription(String description) {
@@ -157,10 +157,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * New description of the application.
+     * The new description of the application.
      * </p>
      * 
-     * @return New description of the application.
+     * @return The new description of the application.
      */
 
     public String getDescription() {
@@ -169,11 +169,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * New description of the application.
+     * The new description of the application.
      * </p>
      * 
      * @param description
-     *        New description of the application.
+     *        The new description of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        Name of the service role in the customer's account used by AWS SMS.
+     *        The name of the service role in the customer's account used by AWS SMS.
      */
 
     public void setRoleName(String roleName) {
@@ -197,10 +197,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      * 
-     * @return Name of the service role in the customer's account used by AWS SMS.
+     * @return The name of the service role in the customer's account used by AWS SMS.
      */
 
     public String getRoleName() {
@@ -209,11 +209,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        Name of the service role in the customer's account used by AWS SMS.
+     *        The name of the service role in the customer's account used by AWS SMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,10 +224,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups in the application to update.
+     * The server groups in the application to update.
      * </p>
      * 
-     * @return List of server groups in the application to update.
+     * @return The server groups in the application to update.
      */
 
     public java.util.List<ServerGroup> getServerGroups() {
@@ -236,11 +236,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups in the application to update.
+     * The server groups in the application to update.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups in the application to update.
+     *        The server groups in the application to update.
      */
 
     public void setServerGroups(java.util.Collection<ServerGroup> serverGroups) {
@@ -254,7 +254,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups in the application to update.
+     * The server groups in the application to update.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +263,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups in the application to update.
+     *        The server groups in the application to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups in the application to update.
+     * The server groups in the application to update.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups in the application to update.
+     *        The server groups in the application to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,10 +294,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to associate with the application.
+     * The tags to associate with the application.
      * </p>
      * 
-     * @return List of tags to associate with the application.
+     * @return The tags to associate with the application.
      */
 
     public java.util.List<Tag> getTags() {
@@ -306,11 +306,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to associate with the application.
+     * The tags to associate with the application.
      * </p>
      * 
      * @param tags
-     *        List of tags to associate with the application.
+     *        The tags to associate with the application.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -324,7 +324,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to associate with the application.
+     * The tags to associate with the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -333,7 +333,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tags
-     *        List of tags to associate with the application.
+     *        The tags to associate with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,11 +349,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to associate with the application.
+     * The tags to associate with the application.
      * </p>
      * 
      * @param tags
-     *        List of tags to associate with the application.
+     *        The tags to associate with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

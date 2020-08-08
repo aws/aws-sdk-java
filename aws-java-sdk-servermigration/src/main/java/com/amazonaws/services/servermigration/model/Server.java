@@ -29,7 +29,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      */
     private String serverId;
@@ -47,7 +47,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     private VmServer vmServer;
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      */
     private String replicationJobId;
@@ -60,11 +60,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
      * @param serverId
-     *        The identifier of the server.
+     *        The ID of the server.
      */
 
     public void setServerId(String serverId) {
@@ -73,10 +73,10 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
-     * @return The identifier of the server.
+     * @return The ID of the server.
      */
 
     public String getServerId() {
@@ -85,11 +85,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the server.
+     * The ID of the server.
      * </p>
      * 
      * @param serverId
-     *        The identifier of the server.
+     *        The ID of the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +213,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
      * @param replicationJobId
-     *        The identifier of the replication job.
+     *        The ID of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -226,10 +226,10 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
-     * @return The identifier of the replication job.
+     * @return The ID of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -238,11 +238,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
      * @param replicationJobId
-     *        The identifier of the replication job.
+     *        The ID of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

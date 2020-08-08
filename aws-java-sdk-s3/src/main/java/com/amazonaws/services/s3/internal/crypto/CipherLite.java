@@ -46,18 +46,18 @@ import javax.crypto.SecretKey;
  *
  * @see GCMCipherLite
  */
-class CipherLite {
+public class CipherLite {
     /**
      * A no-op implementation.
      */
-    static final CipherLite Null = new CipherLite() {
+    public static final CipherLite Null = new CipherLite() {
         @Override
-        CipherLite createAuxiliary(long startingBytePos) {
+        public CipherLite createAuxiliary(long startingBytePos) {
             return this;
         }
 
         @Override
-        CipherLite createInverse() {
+        public CipherLite createInverse() {
             return this;
         }
     };
@@ -84,7 +84,7 @@ class CipherLite {
     /**
      * Recreates a new instance of CipherLite from the current one.
      */
-    CipherLite recreate() {
+    public CipherLite recreate() {
         return scheme.createCipherLite(secreteKey, cipher.getIV(),
                 this.cipherMode, cipher.getProvider(), true);
     }
@@ -93,7 +93,7 @@ class CipherLite {
      * Creates a new instance of CipherLite from the current one, but using
      * the given IV.
      */
-    CipherLite createUsingIV(byte[] iv) {
+    public CipherLite createUsingIV(byte[] iv) {
         return scheme.createCipherLite(secreteKey, iv, this.cipherMode,
                 cipher.getProvider(), true);
     }
@@ -106,7 +106,7 @@ class CipherLite {
      *            the starting byte position of the plaintext. Must be a
      *            multiple of the cipher block size.
      */
-    CipherLite createAuxiliary(long startingBytePos)
+    public CipherLite createAuxiliary(long startingBytePos)
             throws InvalidKeyException, NoSuchAlgorithmException,
             NoSuchProviderException, NoSuchPaddingException,
             InvalidAlgorithmParameterException {
@@ -117,7 +117,7 @@ class CipherLite {
     /**
      * Returns the inverse of the current {@link CipherLite}.
      */
-    CipherLite createInverse() throws InvalidKeyException,
+    public CipherLite createInverse() throws InvalidKeyException,
             NoSuchAlgorithmException, NoSuchProviderException,
             NoSuchPaddingException, InvalidAlgorithmParameterException {
         int inversedMode;
@@ -167,7 +167,7 @@ class CipherLite {
      *                GCM/CCM), and the received authentication tag does not
      *                match the calculated value
      */
-    byte[] doFinal() throws IllegalBlockSizeException,
+    public byte[] doFinal() throws IllegalBlockSizeException,
             BadPaddingException {
         return cipher.doFinal();
     }
@@ -211,7 +211,7 @@ class CipherLite {
      *                received authentication tag does not match the calculated
      *                value
      */
-    byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
+    public byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
             BadPaddingException {
         return cipher.doFinal(input);
     }
@@ -260,7 +260,7 @@ class CipherLite {
      *                received authentication tag does not match the calculated
      *                value
      */
-    byte[] doFinal(byte[] input, int inputOffset, int inputLen)
+    public byte[] doFinal(byte[] input, int inputOffset, int inputLen)
             throws IllegalBlockSizeException, BadPaddingException {
         return cipher.doFinal(input, inputOffset, inputLen);
     }
@@ -293,21 +293,21 @@ class CipherLite {
      *                if the underlying cipher is in a wrong state (e.g., has
      *                not been initialized)
      */
-    byte[] update(byte[] input, int inputOffset, int inputLen) {
+    public byte[] update(byte[] input, int inputOffset, int inputLen) {
         return cipher.update(input, inputOffset, inputLen);
     }
 
     /**
      * Returns the algorithm name of the underlying cipher.
      */
-    final String getCipherAlgorithm() {
+    public final String getCipherAlgorithm() {
         return cipher.getAlgorithm();
     }
 
     /**
      * Returns the provider of the underlying cipher.
      */
-    final Provider getCipherProvider() {
+    public final Provider getCipherProvider() {
         return cipher.getProvider();
     }
 
@@ -319,7 +319,7 @@ class CipherLite {
      * > Java Cryptography Architecture API Specification &amp; Reference </a>
      * for information about standard algorithm names.
      */
-    final String getSecretKeyAlgorithm() {
+    public final String getSecretKeyAlgorithm() {
         return secreteKey.getAlgorithm();
     }
 
@@ -327,11 +327,11 @@ class CipherLite {
      * This method is provided only for testing purposes. The {@link CipherLite}
      * is intended to be used in lieu of the underlying Cipher.
      */
-    final Cipher getCipher() {
+    public final Cipher getCipher() {
         return cipher;
     }
 
-    final ContentCryptoScheme getContentCryptoScheme() {
+    public final ContentCryptoScheme getContentCryptoScheme() {
         return scheme;
     }
 
@@ -346,7 +346,7 @@ class CipherLite {
      * underlying algorithm does not use an IV, or if the IV has not yet
      * been set.
      */
-    final byte[] getIV() {
+    public final byte[] getIV() {
         return cipher.getIV();
     }
 
@@ -356,7 +356,7 @@ class CipherLite {
      * @return the block size (in bytes), or 0 if the underlying algorithm is
      * not a block cipher
      */
-    final int getBlockSize() {
+    public final int getBlockSize() {
         return cipher.getBlockSize();
     }
 
@@ -369,7 +369,7 @@ class CipherLite {
      * and <code>reset</code> methods.  Returns false by default, but subclass
      * may override.
      */
-    boolean markSupported() { return false; }
+    public boolean markSupported() { return false; }
 
     /**
      * Marks the current position in this cipher lite. A subsequent call to the
@@ -388,7 +388,7 @@ class CipherLite {
      *
      * @return the current position marked or -1 if mark/reset is not supported.
      */
-    long mark() { return -1; }
+    public long mark() { return -1; }
 
     /**
      * Repositions this cipher lite to the position at the time the
@@ -412,7 +412,7 @@ class CipherLite {
      * <code>IllegalStateException</code>.</li>
      * </ul>
      */
-    void reset() {
+    public void reset() {
         throw new IllegalStateException("mark/reset not supported");
     }
 

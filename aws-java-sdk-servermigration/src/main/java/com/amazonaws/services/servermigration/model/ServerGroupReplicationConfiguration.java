@@ -30,24 +30,24 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Identifier of the server group this replication configuration is associated with.
+     * The ID of the server group with which this replication configuration is associated.
      * </p>
      */
     private String serverGroupId;
     /**
      * <p>
-     * Replication configuration for servers in the server group.
+     * The replication configuration for servers in the server group.
      * </p>
      */
     private java.util.List<ServerReplicationConfiguration> serverReplicationConfigurations;
 
     /**
      * <p>
-     * Identifier of the server group this replication configuration is associated with.
+     * The ID of the server group with which this replication configuration is associated.
      * </p>
      * 
      * @param serverGroupId
-     *        Identifier of the server group this replication configuration is associated with.
+     *        The ID of the server group with which this replication configuration is associated.
      */
 
     public void setServerGroupId(String serverGroupId) {
@@ -56,10 +56,10 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Identifier of the server group this replication configuration is associated with.
+     * The ID of the server group with which this replication configuration is associated.
      * </p>
      * 
-     * @return Identifier of the server group this replication configuration is associated with.
+     * @return The ID of the server group with which this replication configuration is associated.
      */
 
     public String getServerGroupId() {
@@ -68,11 +68,11 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Identifier of the server group this replication configuration is associated with.
+     * The ID of the server group with which this replication configuration is associated.
      * </p>
      * 
      * @param serverGroupId
-     *        Identifier of the server group this replication configuration is associated with.
+     *        The ID of the server group with which this replication configuration is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Replication configuration for servers in the server group.
+     * The replication configuration for servers in the server group.
      * </p>
      * 
-     * @return Replication configuration for servers in the server group.
+     * @return The replication configuration for servers in the server group.
      */
 
     public java.util.List<ServerReplicationConfiguration> getServerReplicationConfigurations() {
@@ -95,11 +95,11 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Replication configuration for servers in the server group.
+     * The replication configuration for servers in the server group.
      * </p>
      * 
      * @param serverReplicationConfigurations
-     *        Replication configuration for servers in the server group.
+     *        The replication configuration for servers in the server group.
      */
 
     public void setServerReplicationConfigurations(java.util.Collection<ServerReplicationConfiguration> serverReplicationConfigurations) {
@@ -113,7 +113,7 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Replication configuration for servers in the server group.
+     * The replication configuration for servers in the server group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
      * </p>
      * 
      * @param serverReplicationConfigurations
-     *        Replication configuration for servers in the server group.
+     *        The replication configuration for servers in the server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class ServerGroupReplicationConfiguration implements Serializable, Clonea
 
     /**
      * <p>
-     * Replication configuration for servers in the server group.
+     * The replication configuration for servers in the server group.
      * </p>
      * 
      * @param serverReplicationConfigurations
-     *        Replication configuration for servers in the server group.
+     *        The replication configuration for servers in the server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

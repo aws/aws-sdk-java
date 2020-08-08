@@ -24,7 +24,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The unique application IDs.
+     * </p>
+     */
     private java.util.List<String> appIds;
     /**
      * <p>
@@ -34,16 +38,18 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String nextToken;
     /**
      * <p>
-     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
 
     /**
-     * <p/>
+     * <p>
+     * The unique application IDs.
+     * </p>
      * 
-     * @return
+     * @return The unique application IDs.
      */
 
     public java.util.List<String> getAppIds() {
@@ -51,9 +57,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * The unique application IDs.
+     * </p>
      * 
      * @param appIds
+     *        The unique application IDs.
      */
 
     public void setAppIds(java.util.Collection<String> appIds) {
@@ -66,7 +75,9 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * The unique application IDs.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAppIds(java.util.Collection)} or {@link #withAppIds(java.util.Collection)} if you want to override the
@@ -74,6 +85,7 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * 
      * @param appIds
+     *        The unique application IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,9 +100,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     }
 
     /**
-     * <p/>
+     * <p>
+     * The unique application IDs.
+     * </p>
      * 
      * @param appIds
+     *        The unique application IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +156,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. The default value is 50. To retrieve the
+     *        The maximum number of results to return in a single call. The default value is 100. To retrieve the
      *        remaining results, make another call with the returned <code>NextToken</code> value.
      */
 
@@ -156,11 +171,11 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. The default value is 50. To retrieve the
+     * @return The maximum number of results to return in a single call. The default value is 100. To retrieve the
      *         remaining results, make another call with the returned <code>NextToken</code> value.
      */
 
@@ -170,12 +185,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. The default value is 50. To retrieve the remaining
+     * The maximum number of results to return in a single call. The default value is 100. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. The default value is 50. To retrieve the
+     *        The maximum number of results to return in a single call. The default value is 100. To retrieve the
      *        remaining results, make another call with the returned <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

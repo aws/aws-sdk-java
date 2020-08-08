@@ -25,18 +25,18 @@ public class GenerateChangeSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      */
     private S3Location s3Location;
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      * 
      * @param s3Location
-     *        Location of the Amazon S3 object.
+     *        The location of the Amazon S3 object.
      */
 
     public void setS3Location(S3Location s3Location) {
@@ -45,10 +45,10 @@ public class GenerateChangeSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      * 
-     * @return Location of the Amazon S3 object.
+     * @return The location of the Amazon S3 object.
      */
 
     public S3Location getS3Location() {
@@ -57,11 +57,11 @@ public class GenerateChangeSetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      * 
      * @param s3Location
-     *        Location of the Amazon S3 object.
+     *        The location of the Amazon S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

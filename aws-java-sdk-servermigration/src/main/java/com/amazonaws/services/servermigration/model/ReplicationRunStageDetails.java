@@ -30,24 +30,24 @@ public class ReplicationRunStageDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * String describing the current stage of a replication run.
+     * The current stage of a replication run.
      * </p>
      */
     private String stage;
     /**
      * <p>
-     * String describing the progress of the current stage of a replication run.
+     * The progress of the current stage of a replication run.
      * </p>
      */
     private String stageProgress;
 
     /**
      * <p>
-     * String describing the current stage of a replication run.
+     * The current stage of a replication run.
      * </p>
      * 
      * @param stage
-     *        String describing the current stage of a replication run.
+     *        The current stage of a replication run.
      */
 
     public void setStage(String stage) {
@@ -56,10 +56,10 @@ public class ReplicationRunStageDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * String describing the current stage of a replication run.
+     * The current stage of a replication run.
      * </p>
      * 
-     * @return String describing the current stage of a replication run.
+     * @return The current stage of a replication run.
      */
 
     public String getStage() {
@@ -68,11 +68,11 @@ public class ReplicationRunStageDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * String describing the current stage of a replication run.
+     * The current stage of a replication run.
      * </p>
      * 
      * @param stage
-     *        String describing the current stage of a replication run.
+     *        The current stage of a replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ReplicationRunStageDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * String describing the progress of the current stage of a replication run.
+     * The progress of the current stage of a replication run.
      * </p>
      * 
      * @param stageProgress
-     *        String describing the progress of the current stage of a replication run.
+     *        The progress of the current stage of a replication run.
      */
 
     public void setStageProgress(String stageProgress) {
@@ -96,10 +96,10 @@ public class ReplicationRunStageDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * String describing the progress of the current stage of a replication run.
+     * The progress of the current stage of a replication run.
      * </p>
      * 
-     * @return String describing the progress of the current stage of a replication run.
+     * @return The progress of the current stage of a replication run.
      */
 
     public String getStageProgress() {
@@ -108,11 +108,11 @@ public class ReplicationRunStageDetails implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * String describing the progress of the current stage of a replication run.
+     * The progress of the current stage of a replication run.
      * </p>
      * 
      * @param stageProgress
-     *        String describing the progress of the current stage of a replication run.
+     *        The progress of the current stage of a replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

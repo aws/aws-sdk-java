@@ -30,30 +30,30 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Identifier of the server group the launch configuration is associated with.
+     * The ID of the server group with which the launch configuration is associated.
      * </p>
      */
     private String serverGroupId;
     /**
      * <p>
-     * Launch order of servers in the server group.
+     * The launch order of servers in the server group.
      * </p>
      */
     private Integer launchOrder;
     /**
      * <p>
-     * Launch configuration for servers in the server group.
+     * The launch configuration for servers in the server group.
      * </p>
      */
     private java.util.List<ServerLaunchConfiguration> serverLaunchConfigurations;
 
     /**
      * <p>
-     * Identifier of the server group the launch configuration is associated with.
+     * The ID of the server group with which the launch configuration is associated.
      * </p>
      * 
      * @param serverGroupId
-     *        Identifier of the server group the launch configuration is associated with.
+     *        The ID of the server group with which the launch configuration is associated.
      */
 
     public void setServerGroupId(String serverGroupId) {
@@ -62,10 +62,10 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Identifier of the server group the launch configuration is associated with.
+     * The ID of the server group with which the launch configuration is associated.
      * </p>
      * 
-     * @return Identifier of the server group the launch configuration is associated with.
+     * @return The ID of the server group with which the launch configuration is associated.
      */
 
     public String getServerGroupId() {
@@ -74,11 +74,11 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Identifier of the server group the launch configuration is associated with.
+     * The ID of the server group with which the launch configuration is associated.
      * </p>
      * 
      * @param serverGroupId
-     *        Identifier of the server group the launch configuration is associated with.
+     *        The ID of the server group with which the launch configuration is associated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch order of servers in the server group.
+     * The launch order of servers in the server group.
      * </p>
      * 
      * @param launchOrder
-     *        Launch order of servers in the server group.
+     *        The launch order of servers in the server group.
      */
 
     public void setLaunchOrder(Integer launchOrder) {
@@ -102,10 +102,10 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch order of servers in the server group.
+     * The launch order of servers in the server group.
      * </p>
      * 
-     * @return Launch order of servers in the server group.
+     * @return The launch order of servers in the server group.
      */
 
     public Integer getLaunchOrder() {
@@ -114,11 +114,11 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch order of servers in the server group.
+     * The launch order of servers in the server group.
      * </p>
      * 
      * @param launchOrder
-     *        Launch order of servers in the server group.
+     *        The launch order of servers in the server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +129,10 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch configuration for servers in the server group.
+     * The launch configuration for servers in the server group.
      * </p>
      * 
-     * @return Launch configuration for servers in the server group.
+     * @return The launch configuration for servers in the server group.
      */
 
     public java.util.List<ServerLaunchConfiguration> getServerLaunchConfigurations() {
@@ -141,11 +141,11 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch configuration for servers in the server group.
+     * The launch configuration for servers in the server group.
      * </p>
      * 
      * @param serverLaunchConfigurations
-     *        Launch configuration for servers in the server group.
+     *        The launch configuration for servers in the server group.
      */
 
     public void setServerLaunchConfigurations(java.util.Collection<ServerLaunchConfiguration> serverLaunchConfigurations) {
@@ -159,7 +159,7 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch configuration for servers in the server group.
+     * The launch configuration for servers in the server group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +168,7 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
      * </p>
      * 
      * @param serverLaunchConfigurations
-     *        Launch configuration for servers in the server group.
+     *        The launch configuration for servers in the server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class ServerGroupLaunchConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Launch configuration for servers in the server group.
+     * The launch configuration for servers in the server group.
      * </p>
      * 
      * @param serverLaunchConfigurations
-     *        Launch configuration for servers in the server group.
+     *        The launch configuration for servers in the server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

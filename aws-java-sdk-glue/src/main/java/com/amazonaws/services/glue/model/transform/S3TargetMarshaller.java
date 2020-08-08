@@ -32,6 +32,8 @@ public class S3TargetMarshaller {
             .marshallLocationName("Path").build();
     private static final MarshallingInfo<List> EXCLUSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Exclusions").build();
+    private static final MarshallingInfo<String> CONNECTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionName").build();
 
     private static final S3TargetMarshaller instance = new S3TargetMarshaller();
 
@@ -51,6 +53,7 @@ public class S3TargetMarshaller {
         try {
             protocolMarshaller.marshall(s3Target.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(s3Target.getExclusions(), EXCLUSIONS_BINDING);
+            protocolMarshaller.marshall(s3Target.getConnectionName(), CONNECTIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
