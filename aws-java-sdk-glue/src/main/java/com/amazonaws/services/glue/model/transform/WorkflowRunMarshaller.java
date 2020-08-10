@@ -43,6 +43,8 @@ public class WorkflowRunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedOn").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorMessage").build();
     private static final MarshallingInfo<StructuredPojo> STATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Statistics").build();
     private static final MarshallingInfo<StructuredPojo> GRAPH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -71,6 +73,7 @@ public class WorkflowRunMarshaller {
             protocolMarshaller.marshall(workflowRun.getStartedOn(), STARTEDON_BINDING);
             protocolMarshaller.marshall(workflowRun.getCompletedOn(), COMPLETEDON_BINDING);
             protocolMarshaller.marshall(workflowRun.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workflowRun.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(workflowRun.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(workflowRun.getGraph(), GRAPH_BINDING);
         } catch (Exception e) {

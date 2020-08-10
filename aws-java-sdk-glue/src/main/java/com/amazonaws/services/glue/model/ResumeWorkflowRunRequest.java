@@ -39,8 +39,8 @@ public class ResumeWorkflowRunRequest extends com.amazonaws.AmazonWebServiceRequ
     private String runId;
     /**
      * <p>
-     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     * execution attempt in the original run.
+     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run
+     * attempt in the original run.
      * </p>
      */
     private java.util.List<String> nodeIds;
@@ -127,12 +127,12 @@ public class ResumeWorkflowRunRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     * execution attempt in the original run.
+     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run
+     * attempt in the original run.
      * </p>
      * 
-     * @return A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     *         execution attempt in the original run.
+     * @return A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a
+     *         run attempt in the original run.
      */
 
     public java.util.List<String> getNodeIds() {
@@ -141,13 +141,13 @@ public class ResumeWorkflowRunRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     * execution attempt in the original run.
+     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run
+     * attempt in the original run.
      * </p>
      * 
      * @param nodeIds
-     *        A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     *        execution attempt in the original run.
+     *        A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a
+     *        run attempt in the original run.
      */
 
     public void setNodeIds(java.util.Collection<String> nodeIds) {
@@ -161,8 +161,8 @@ public class ResumeWorkflowRunRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     * execution attempt in the original run.
+     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run
+     * attempt in the original run.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,8 +171,8 @@ public class ResumeWorkflowRunRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param nodeIds
-     *        A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     *        execution attempt in the original run.
+     *        A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a
+     *        run attempt in the original run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,13 +188,13 @@ public class ResumeWorkflowRunRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     * execution attempt in the original run.
+     * A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run
+     * attempt in the original run.
      * </p>
      * 
      * @param nodeIds
-     *        A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have an
-     *        execution attempt in the original run.
+     *        A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a
+     *        run attempt in the original run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

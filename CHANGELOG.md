@@ -1,3 +1,16 @@
+# __1.11.838__ __2020-08-10__
+## __AWS Glue__
+  - ### Features
+    - Starting today, you can further control orchestration of your ETL workloads in AWS Glue by specifying the maximum number of concurrent runs for a Glue workflow.
+
+## __AWS Savings Plans__
+  - ### Features
+    - Updates to the list of services supported by this API.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Remove CoIP Auto-Assign feature references.
+
 # __1.11.837__ __2020-08-07__
 ## __AWS Glue__
   - ### Features

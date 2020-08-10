@@ -72,6 +72,13 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     */
+    private String errorMessage;
+    /**
+     * <p>
      * The statistics of the run.
      * </p>
      */
@@ -413,6 +420,52 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     * 
+     * @param errorMessage
+     *        This error message describes any error that may have occurred in starting the workflow run. Currently the
+     *        only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     */
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    /**
+     * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     * 
+     * @return This error message describes any error that may have occurred in starting the workflow run. Currently the
+     *         only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     */
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    /**
+     * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     * 
+     * @param errorMessage
+     *        This error message describes any error that may have occurred in starting the workflow run. Currently the
+     *        only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowRun withErrorMessage(String errorMessage) {
+        setErrorMessage(errorMessage);
+        return this;
+    }
+
+    /**
+     * <p>
      * The statistics of the run.
      * </p>
      * 
@@ -523,6 +576,8 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("CompletedOn: ").append(getCompletedOn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getErrorMessage() != null)
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getStatistics() != null)
             sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getGraph() != null)
@@ -569,6 +624,10 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
+            return false;
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+            return false;
         if (other.getStatistics() == null ^ this.getStatistics() == null)
             return false;
         if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
@@ -592,6 +651,7 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
         hashCode = prime * hashCode + ((getCompletedOn() == null) ? 0 : getCompletedOn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getGraph() == null) ? 0 : getGraph().hashCode());
         return hashCode;

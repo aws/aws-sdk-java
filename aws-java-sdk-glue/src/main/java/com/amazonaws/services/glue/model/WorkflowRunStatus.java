@@ -23,7 +23,8 @@ public enum WorkflowRunStatus {
     RUNNING("RUNNING"),
     COMPLETED("COMPLETED"),
     STOPPING("STOPPING"),
-    STOPPED("STOPPED");
+    STOPPED("STOPPED"),
+    ERROR("ERROR");
 
     private String value;
 

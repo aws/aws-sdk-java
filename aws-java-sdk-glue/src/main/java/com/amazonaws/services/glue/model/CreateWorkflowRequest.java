@@ -49,6 +49,14 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     */
+    private Integer maxConcurrentRuns;
 
     /**
      * <p>
@@ -267,6 +275,58 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     * 
+     * @param maxConcurrentRuns
+     *        You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some
+     *        cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you
+     *        leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+     */
+
+    public void setMaxConcurrentRuns(Integer maxConcurrentRuns) {
+        this.maxConcurrentRuns = maxConcurrentRuns;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     * 
+     * @return You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some
+     *         cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you
+     *         leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+     */
+
+    public Integer getMaxConcurrentRuns() {
+        return this.maxConcurrentRuns;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     * 
+     * @param maxConcurrentRuns
+     *        You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some
+     *        cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you
+     *        leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkflowRequest withMaxConcurrentRuns(Integer maxConcurrentRuns) {
+        setMaxConcurrentRuns(maxConcurrentRuns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,7 +345,9 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDefaultRunProperties() != null)
             sb.append("DefaultRunProperties: ").append(getDefaultRunProperties()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getMaxConcurrentRuns() != null)
+            sb.append("MaxConcurrentRuns: ").append(getMaxConcurrentRuns());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +378,10 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getMaxConcurrentRuns() == null ^ this.getMaxConcurrentRuns() == null)
+            return false;
+        if (other.getMaxConcurrentRuns() != null && other.getMaxConcurrentRuns().equals(this.getMaxConcurrentRuns()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +394,7 @@ public class CreateWorkflowRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultRunProperties() == null) ? 0 : getDefaultRunProperties().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentRuns() == null) ? 0 : getMaxConcurrentRuns().hashCode());
         return hashCode;
     }
 

@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -24623,6 +24623,9 @@
       }, {
         "name" : "AmazonECS",
         "value" : "AmazonECS"
+      }, {
+        "name" : "AmazonEKS",
+        "value" : "AmazonEKS"
       }, {
         "name" : "AWSLambda",
         "value" : "AWSLambda"

@@ -37,6 +37,8 @@ public class CreateWorkflowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRunProperties").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTRUNS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrentRuns").build();
 
     private static final CreateWorkflowRequestMarshaller instance = new CreateWorkflowRequestMarshaller();
 
@@ -58,6 +60,7 @@ public class CreateWorkflowRequestMarshaller {
             protocolMarshaller.marshall(createWorkflowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getDefaultRunProperties(), DEFAULTRUNPROPERTIES_BINDING);
             protocolMarshaller.marshall(createWorkflowRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWorkflowRequest.getMaxConcurrentRuns(), MAXCONCURRENTRUNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

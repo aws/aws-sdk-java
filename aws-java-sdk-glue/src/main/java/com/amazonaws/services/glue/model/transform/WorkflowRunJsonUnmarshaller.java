@@ -77,6 +77,10 @@ public class WorkflowRunJsonUnmarshaller implements Unmarshaller<WorkflowRun, Js
                     context.nextToken();
                     workflowRun.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ErrorMessage", targetDepth)) {
+                    context.nextToken();
+                    workflowRun.setErrorMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Statistics", targetDepth)) {
                     context.nextToken();
                     workflowRun.setStatistics(WorkflowRunStatisticsJsonUnmarshaller.getInstance().unmarshall(context));

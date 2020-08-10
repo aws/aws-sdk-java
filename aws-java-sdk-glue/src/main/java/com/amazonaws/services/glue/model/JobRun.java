@@ -78,7 +78,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date completedOn;
     /**
      * <p>
-     * The current state of the job run.
+     * The current state of the job run. For more information about the statuses of jobs that have terminated
+     * abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job Run
+     * Statuses</a>.
      * </p>
      */
     private String jobRunState;
@@ -572,11 +574,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the job run.
+     * The current state of the job run. For more information about the statuses of jobs that have terminated
+     * abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job Run
+     * Statuses</a>.
      * </p>
      * 
      * @param jobRunState
-     *        The current state of the job run.
+     *        The current state of the job run. For more information about the statuses of jobs that have terminated
+     *        abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job
+     *        Run Statuses</a>.
      * @see JobRunState
      */
 
@@ -586,10 +592,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the job run.
+     * The current state of the job run. For more information about the statuses of jobs that have terminated
+     * abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job Run
+     * Statuses</a>.
      * </p>
      * 
-     * @return The current state of the job run.
+     * @return The current state of the job run. For more information about the statuses of jobs that have terminated
+     *         abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job
+     *         Run Statuses</a>.
      * @see JobRunState
      */
 
@@ -599,11 +609,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the job run.
+     * The current state of the job run. For more information about the statuses of jobs that have terminated
+     * abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job Run
+     * Statuses</a>.
      * </p>
      * 
      * @param jobRunState
-     *        The current state of the job run.
+     *        The current state of the job run. For more information about the statuses of jobs that have terminated
+     *        abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job
+     *        Run Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobRunState
      */
@@ -615,11 +629,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The current state of the job run.
+     * The current state of the job run. For more information about the statuses of jobs that have terminated
+     * abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job Run
+     * Statuses</a>.
      * </p>
      * 
      * @param jobRunState
-     *        The current state of the job run.
+     *        The current state of the job run. For more information about the statuses of jobs that have terminated
+     *        abnormally, see <a href="https://docs.aws.amazon.com/glue/latest/dg/job-run-statuses.html">AWS Glue Job
+     *        Run Statuses</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobRunState
      */

@@ -6558,7 +6558,8 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Restarts any completed nodes in a workflow run and resumes the run execution.
+     * Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected
+     * nodes and all nodes that are downstream from the selected nodes are run.
      * </p>
      * 
      * @param resumeWorkflowRunRequest
