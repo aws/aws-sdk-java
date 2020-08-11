@@ -4287,12 +4287,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            Amazon S3.
      */
     private void populateRequestWithCopyObjectParameters(Request<? extends AmazonWebServiceRequest> request, CopyObjectRequest copyObjectRequest) {
-        String copySourceHeader =
-             "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceBucketName(), true)
-           + "/" + SdkHttpUtils.urlEncode(copyObjectRequest.getSourceKey(), true);
-        if (copyObjectRequest.getSourceVersionId() != null) {
-            copySourceHeader += "?versionId=" + copyObjectRequest.getSourceVersionId();
-        }
+        String copySourceHeader = assembleCopySourceHeader(copyObjectRequest.getSourceBucketName(),
+                                                           copyObjectRequest.getSourceKey(),
+                                                           copyObjectRequest.getSourceVersionId());
+
         request.addHeader("x-amz-copy-source", copySourceHeader);
 
         addDateHeader(request, Headers.COPY_SOURCE_IF_MODIFIED_SINCE,
@@ -4356,13 +4354,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The object containing all the options for copying an object in
      *            Amazon S3.
      */
-    private static void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
-        String copySourceHeader =
-             "/" + SdkHttpUtils.urlEncode(copyPartRequest.getSourceBucketName(), true)
-           + "/" + SdkHttpUtils.urlEncode(copyPartRequest.getSourceKey(), true);
-        if (copyPartRequest.getSourceVersionId() != null) {
-            copySourceHeader += "?versionId=" + copyPartRequest.getSourceVersionId();
-        }
+    private void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
+        String copySourceHeader = assembleCopySourceHeader(copyPartRequest.getSourceBucketName(),
+                                                           copyPartRequest.getSourceKey(),
+                                                           copyPartRequest.getSourceVersionId());
         request.addHeader("x-amz-copy-source", copySourceHeader);
 
         addDateHeader(request, Headers.COPY_SOURCE_IF_MODIFIED_SINCE,
@@ -4383,6 +4378,54 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         // Populate the SSE-C parameters for the destination object
         populateSourceSSE_C(request, copyPartRequest.getSourceSSECustomerKey());
         populateSSE_C(request, copyPartRequest.getDestinationSSECustomerKey());
+    }
+
+    /**
+     * Assemble copy source header (x-amz-copy-source) from copy source bucket name, object key, and version ID.
+     *
+     * @param sourceBucketName copy source bucket name, can either be source bucket name or source access point ARN
+     * @param sourceObjectKey  copy source object key
+     * @param sourceVersionId  copy source version ID, optional.
+     * @return copy source header (x-amz-copy-source)
+     */
+    private String assembleCopySourceHeader(String sourceBucketName, String sourceObjectKey, String sourceVersionId) {
+        if (sourceBucketName == null) {
+            throw new IllegalArgumentException("Copy source bucket name should not be null");
+        }
+
+        if (sourceObjectKey == null) {
+            throw new IllegalArgumentException("Copy source object key should not be null");
+        }
+
+        String copySourceHeader;
+
+        if (isArn(sourceBucketName)) {
+            // The source bucket name appears to be ARN. Parse it as S3 access point ARN and form
+            // object-via-access-point copy source header.
+            Arn resourceArn = Arn.fromString(sourceBucketName);
+            S3Resource s3Resource;
+            try {
+                s3Resource = S3ArnConverter.getInstance().convertArn(resourceArn);
+            } catch (RuntimeException e) {
+                throw new IllegalArgumentException("An ARN was passed as a bucket parameter to an S3 operation, "
+                                                   + "however it does not appear to be a valid S3 access point ARN.", e);
+            }
+            if (!S3ResourceType.ACCESS_POINT.toString().equals(s3Resource.getType())) {
+                throw new IllegalArgumentException("An ARN was passed as a bucket parameter to an S3 operation, "
+                                                      + "however it does not appear to be a valid S3 access point ARN.");
+            }
+
+            copySourceHeader = SdkHttpUtils.urlEncode(sourceBucketName + "/object/" + sourceObjectKey, false);
+        } else {
+            copySourceHeader = "/" + SdkHttpUtils.urlEncode(sourceBucketName, true)
+                    + "/" + SdkHttpUtils.urlEncode(sourceObjectKey, true);
+        }
+
+        if (sourceVersionId != null) {
+            copySourceHeader += "?versionId=" + sourceVersionId;
+        }
+
+        return copySourceHeader;
     }
 
     /**
@@ -5122,6 +5165,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     private boolean isAccessPointArn(String s) {
         return s != null && s.startsWith("arn:") && s.contains(":accesspoint");
+    }
+
+    private boolean isArn(String s) {
+        return s != null && s.startsWith("arn:");
     }
 
     private boolean bucketRegionShouldBeCached(Request<?> request) {

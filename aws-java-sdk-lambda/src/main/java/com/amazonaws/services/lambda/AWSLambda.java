@@ -236,6 +236,11 @@ public interface AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -253,12 +258,14 @@ public interface AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. Default -1 (infinite).
+     * Minimum 60. Maximum 604800.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. Default -1 (infinite).
+     * Minimum 0. Maximum 10000. When infinite, failed records will be retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -1464,12 +1471,14 @@ public interface AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. Default -1 (infinite).
+     * Minimum 60. Maximum 604800.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. Default -1 (infinite).
+     * Minimum 0. Maximum 10000. When infinite, failed records will be retried until the record expires.
      * </p>
      * </li>
      * <li>

@@ -68,7 +68,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private String functionName;
     /**
      * <p>
-     * Disables the event source mapping to pause polling and invocation.
+     * If true, the event source mapping is active. Set to false to pause polling and invocation.
      * </p>
      */
     private Boolean enabled;
@@ -92,6 +92,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
      * </ul>
      */
     private Integer batchSize;
@@ -109,7 +114,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private DestinationConfig destinationConfig;
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      */
     private Integer maximumRecordAgeInSeconds;
@@ -121,7 +126,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Boolean bisectBatchOnFunctionError;
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records will be retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
@@ -386,11 +392,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Disables the event source mapping to pause polling and invocation.
+     * If true, the event source mapping is active. Set to false to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Disables the event source mapping to pause polling and invocation.
+     *        If true, the event source mapping is active. Set to false to pause polling and invocation.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -399,10 +405,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Disables the event source mapping to pause polling and invocation.
+     * If true, the event source mapping is active. Set to false to pause polling and invocation.
      * </p>
      * 
-     * @return Disables the event source mapping to pause polling and invocation.
+     * @return If true, the event source mapping is active. Set to false to pause polling and invocation.
      */
 
     public Boolean getEnabled() {
@@ -411,11 +417,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Disables the event source mapping to pause polling and invocation.
+     * If true, the event source mapping is active. Set to false to pause polling and invocation.
      * </p>
      * 
      * @param enabled
-     *        Disables the event source mapping to pause polling and invocation.
+     *        If true, the event source mapping is active. Set to false to pause polling and invocation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -426,10 +432,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Disables the event source mapping to pause polling and invocation.
+     * If true, the event source mapping is active. Set to false to pause polling and invocation.
      * </p>
      * 
-     * @return Disables the event source mapping to pause polling and invocation.
+     * @return If true, the event source mapping is active. Set to false to pause polling and invocation.
      */
 
     public Boolean isEnabled() {
@@ -456,6 +462,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param batchSize
@@ -474,6 +485,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      */
@@ -502,6 +518,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The maximum number of items to retrieve in a single batch.</p>
@@ -519,6 +540,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
      *         </p>
      *         </li>
      */
@@ -547,6 +573,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param batchSize
@@ -565,6 +596,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon Simple Queue Service</b> - Default 10. Max 10.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> - Default 100. Max 10,000.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -657,11 +693,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     *        (Streams) Discard records older than the specified age. The default value is infinite (-1).
      */
 
     public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
@@ -670,10 +706,10 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      * 
-     * @return (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * @return (Streams) Discard records older than the specified age. The default value is infinite (-1).
      */
 
     public Integer getMaximumRecordAgeInSeconds() {
@@ -682,11 +718,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1).
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     *        (Streams) Discard records older than the specified age. The default value is infinite (-1).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -749,11 +785,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records will be retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) The maximum number of times to retry when the function returns an error.
+     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *        set to infinite (-1), failed records will be retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -762,10 +800,12 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records will be retried until the record expires.
      * </p>
      * 
-     * @return (Streams) The maximum number of times to retry when the function returns an error.
+     * @return (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *         set to infinite (-1), failed records will be retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -774,11 +814,13 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records will be retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) The maximum number of times to retry when the function returns an error.
+     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *        set to infinite (-1), failed records will be retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

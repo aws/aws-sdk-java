@@ -31,7 +31,7 @@ public enum S3ResourceType {
      */
     ACCESS_POINT("accesspoint"),
     /**
-     * A specific S3 object (bucket and key). Implemented by {@link S3ObjectResource}.
+     * A specific S3 object (bucket/access-point and key). Implemented by {@link S3ObjectResource}.
      */
     OBJECT("object");
 

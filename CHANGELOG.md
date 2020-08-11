@@ -1,3 +1,20 @@
+# __1.11.839__ __2020-08-11__
+## __AWS Lambda__
+  - ### Features
+    - Support Managed Streaming for Kafka as an Event Source. Support retry until record expiration for Kinesis and Dynamodb streams event source mappings.
+
+## __AWS Organizations__
+  - ### Features
+    - Minor documentation update for AWS Organizations
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release rolls back the EC2 On-Demand Capacity Reservations (ODCRs) release 1.11.831 published on 2020-07-30, which was deployed in error.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Add support for in-region CopyObject and UploadPartCopy through S3 Access Points
+
 # __1.11.838__ __2020-08-10__
 ## __AWS Glue__
   - ### Features

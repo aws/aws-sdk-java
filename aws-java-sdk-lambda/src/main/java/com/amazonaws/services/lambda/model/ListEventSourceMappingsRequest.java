@@ -45,6 +45,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * </p>
+     * </li>
      * </ul>
      */
     private String eventSourceArn;
@@ -116,6 +121,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -134,6 +144,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      *        </p>
      *        </li>
      */
@@ -162,6 +177,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the event source.</p>
@@ -179,6 +199,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         <li>
      *         <p>
      *         <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      *         </p>
      *         </li>
      */
@@ -207,6 +232,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Simple Queue Service</b> - The ARN of the queue.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -225,6 +255,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <b>Amazon Simple Queue Service</b> - The ARN of the queue.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

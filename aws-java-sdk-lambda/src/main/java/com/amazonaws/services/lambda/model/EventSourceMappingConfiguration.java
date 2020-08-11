@@ -98,6 +98,12 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
     private DestinationConfig destinationConfig;
     /**
      * <p>
+     * (MSK) The name of the Kafka topic.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> topics;
+    /**
+     * <p>
      * (Streams) The maximum age of a record that Lambda sends to a function for processing.
      * </p>
      */
@@ -572,6 +578,79 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
 
     /**
      * <p>
+     * (MSK) The name of the Kafka topic.
+     * </p>
+     * 
+     * @return (MSK) The name of the Kafka topic.
+     */
+
+    public java.util.List<String> getTopics() {
+        if (topics == null) {
+            topics = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return topics;
+    }
+
+    /**
+     * <p>
+     * (MSK) The name of the Kafka topic.
+     * </p>
+     * 
+     * @param topics
+     *        (MSK) The name of the Kafka topic.
+     */
+
+    public void setTopics(java.util.Collection<String> topics) {
+        if (topics == null) {
+            this.topics = null;
+            return;
+        }
+
+        this.topics = new com.amazonaws.internal.SdkInternalList<String>(topics);
+    }
+
+    /**
+     * <p>
+     * (MSK) The name of the Kafka topic.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTopics(java.util.Collection)} or {@link #withTopics(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param topics
+     *        (MSK) The name of the Kafka topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withTopics(String... topics) {
+        if (this.topics == null) {
+            setTopics(new com.amazonaws.internal.SdkInternalList<String>(topics.length));
+        }
+        for (String ele : topics) {
+            this.topics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MSK) The name of the Kafka topic.
+     * </p>
+     * 
+     * @param topics
+     *        (MSK) The name of the Kafka topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventSourceMappingConfiguration withTopics(java.util.Collection<String> topics) {
+        setTopics(topics);
+        return this;
+    }
+
+    /**
+     * <p>
      * (Streams) The maximum age of a record that Lambda sends to a function for processing.
      * </p>
      * 
@@ -736,6 +815,8 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
             sb.append("StateTransitionReason: ").append(getStateTransitionReason()).append(",");
         if (getDestinationConfig() != null)
             sb.append("DestinationConfig: ").append(getDestinationConfig()).append(",");
+        if (getTopics() != null)
+            sb.append("Topics: ").append(getTopics()).append(",");
         if (getMaximumRecordAgeInSeconds() != null)
             sb.append("MaximumRecordAgeInSeconds: ").append(getMaximumRecordAgeInSeconds()).append(",");
         if (getBisectBatchOnFunctionError() != null)
@@ -801,6 +882,10 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
             return false;
         if (other.getDestinationConfig() != null && other.getDestinationConfig().equals(this.getDestinationConfig()) == false)
             return false;
+        if (other.getTopics() == null ^ this.getTopics() == null)
+            return false;
+        if (other.getTopics() != null && other.getTopics().equals(this.getTopics()) == false)
+            return false;
         if (other.getMaximumRecordAgeInSeconds() == null ^ this.getMaximumRecordAgeInSeconds() == null)
             return false;
         if (other.getMaximumRecordAgeInSeconds() != null && other.getMaximumRecordAgeInSeconds().equals(this.getMaximumRecordAgeInSeconds()) == false)
@@ -832,6 +917,7 @@ public class EventSourceMappingConfiguration implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStateTransitionReason() == null) ? 0 : getStateTransitionReason().hashCode());
         hashCode = prime * hashCode + ((getDestinationConfig() == null) ? 0 : getDestinationConfig().hashCode());
+        hashCode = prime * hashCode + ((getTopics() == null) ? 0 : getTopics().hashCode());
         hashCode = prime * hashCode + ((getMaximumRecordAgeInSeconds() == null) ? 0 : getMaximumRecordAgeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
         hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
