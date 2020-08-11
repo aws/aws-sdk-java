@@ -1377,7 +1377,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.5</version>
         <configuration>
           <archive>
             <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
@@ -1404,13 +1403,14 @@
             <Import-Package>!org.junit.*,!org.springframework.*,!org.apache.avalon.*,!org.apache.log.*,!org.aspectj.*,org.apache.http.conn.routing,com.sun.org.apache.xerces.internal.jaxp.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.*;resolution:=optional,com.sun.org.apache.xml.internal.dtm.ref.*;resolution:=optional,com.sun.org.apache.xpath.internal.*;resolution:=optional,javax.mail;resolution:=optional,*</Import-Package>
             <Embed-Dependency>*;scope=compile;inline=true</Embed-Dependency>
             <Embed-Transitive>false</Embed-Transitive>
+            <_removeheaders>Bnd-LastModified</_removeheaders>
           </instructions>
         </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>2.3</version>
+        <version>3.2.3</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -2567,7 +2567,7 @@
                   <!-- Invoke the Assembly plugin to create the ZIP archive -->
                   <plugin>
                       <artifactId>maven-assembly-plugin</artifactId>
-                      <version>2.6</version>
+                      <version>3.2.0</version>
                       <configuration>
                           <descriptors>
                               <descriptor>src/assembly/sdk-zip-archive-assembly.xml</descriptor>
