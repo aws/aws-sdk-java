@@ -217,6 +217,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("DomainIAMRoleName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDomainIAMRoleName()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getReplicaMode() != null) {
+            request.addParameter("ReplicaMode", StringUtils.fromString(createDBInstanceReadReplicaRequest.getReplicaMode()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getSourceRegion() != null) {
             request.addParameter("SourceRegion", StringUtils.fromString(createDBInstanceReadReplicaRequest.getSourceRegion()));
         }

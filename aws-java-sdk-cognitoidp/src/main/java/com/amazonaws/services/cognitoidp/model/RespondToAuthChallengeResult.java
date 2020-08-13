@@ -28,21 +28,25 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      */
     private String challengeName;
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      */
     private String session;
     /**
      * <p>
-     * The challenge parameters. For more information, see .
+     * The challenge parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      */
     private java.util.Map<String, String> challengeParameters;
@@ -55,11 +59,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -69,10 +77,14 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
-     * @return The challenge name. For more information, see .
+     * @return The challenge name. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *         >InitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -82,11 +94,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -98,11 +114,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -112,11 +132,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -128,16 +152,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the or API
-     *        call determines that the caller needs to go through another challenge, they return a session with other
-     *        challenge parameters. This session should be passed as it is to the next
-     *        <code>RespondToAuthChallenge</code> API call.
+     *        The session which should be passed both ways in challenge-response calls to the service. If the caller
+     *        needs to go through another challenge, they return a session with other challenge parameters. This session
+     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public void setSession(String session) {
@@ -146,15 +169,14 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
-     * @return The session which should be passed both ways in challenge-response calls to the service. If the or API
-     *         call determines that the caller needs to go through another challenge, they return a session with other
-     *         challenge parameters. This session should be passed as it is to the next
-     *         <code>RespondToAuthChallenge</code> API call.
+     * @return The session which should be passed both ways in challenge-response calls to the service. If the caller
+     *         needs to go through another challenge, they return a session with other challenge parameters. This
+     *         session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      */
 
     public String getSession() {
@@ -163,16 +185,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The session which should be passed both ways in challenge-response calls to the service. If the or API call
-     * determines that the caller needs to go through another challenge, they return a session with other challenge
-     * parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
+     * The session which should be passed both ways in challenge-response calls to the service. If the caller needs to
+     * go through another challenge, they return a session with other challenge parameters. This session should be
+     * passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * </p>
      * 
      * @param session
-     *        The session which should be passed both ways in challenge-response calls to the service. If the or API
-     *        call determines that the caller needs to go through another challenge, they return a session with other
-     *        challenge parameters. This session should be passed as it is to the next
-     *        <code>RespondToAuthChallenge</code> API call.
+     *        The session which should be passed both ways in challenge-response calls to the service. If the caller
+     *        needs to go through another challenge, they return a session with other challenge parameters. This session
+     *        should be passed as it is to the next <code>RespondToAuthChallenge</code> API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,10 +204,14 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge parameters. For more information, see .
+     * The challenge parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
-     * @return The challenge parameters. For more information, see .
+     * @return The challenge parameters. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *         >InitiateAuth</a>.
      */
 
     public java.util.Map<String, String> getChallengeParameters() {
@@ -195,11 +220,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge parameters. For more information, see .
+     * The challenge parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
      * @param challengeParameters
-     *        The challenge parameters. For more information, see .
+     *        The challenge parameters. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.
      */
 
     public void setChallengeParameters(java.util.Map<String, String> challengeParameters) {
@@ -208,11 +237,15 @@ public class RespondToAuthChallengeResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The challenge parameters. For more information, see .
+     * The challenge parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * 
      * @param challengeParameters
-     *        The challenge parameters. For more information, see .
+     *        The challenge parameters. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

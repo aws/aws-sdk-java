@@ -37,27 +37,37 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * If SourceIdentifier is supplied, SourceType must also be provided.
+     * If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
@@ -148,27 +158,37 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * If SourceIdentifier is supplied, SourceType must also be provided.
+     * If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
@@ -187,27 +207,38 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        If SourceIdentifier is supplied, SourceType must also be provided.
+     *        If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     *        If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     *        If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
+     *        If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
+     *        If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be
+     *        supplied.
      *        </p>
      *        </li>
      *        <li>
@@ -232,27 +263,37 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * If SourceIdentifier is supplied, SourceType must also be provided.
+     * If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
@@ -270,28 +311,38 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         If SourceIdentifier is supplied, SourceType must also be provided.
+     *         If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     *         If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     *         If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be
+     *         If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be
      *         supplied.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
      *         </p>
      *         </li>
      *         <li>
@@ -316,27 +367,37 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * If SourceIdentifier is supplied, SourceType must also be provided.
+     * If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     * If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     * If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
+     * If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
+     * If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be supplied.
      * </p>
      * </li>
      * <li>
@@ -355,27 +416,38 @@ public class DescribeEventsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        If SourceIdentifier is supplied, SourceType must also be provided.
+     *        If <code>SourceIdentifier</code> is supplied, <code>SourceType</code> must also be provided.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBInstance</code>, then a <code>DBInstanceIdentifier</code> must be supplied.
+     *        If the source type is a DB instance, a <code>DBInstanceIdentifier</code> value must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code> must be supplied.
+     *        If the source type is a DB cluster, a <code>DBClusterIdentifier</code> value must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code> must be supplied.
+     *        If the source type is a DB parameter group, a <code>DBParameterGroupName</code> value must be supplied.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code> must be supplied.
+     *        If the source type is a DB security group, a <code>DBSecurityGroupName</code> value must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> value must be supplied.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the source type is a DB cluster snapshot, a <code>DBClusterSnapshotIdentifier</code> value must be
+     *        supplied.
      *        </p>
      *        </li>
      *        <li>

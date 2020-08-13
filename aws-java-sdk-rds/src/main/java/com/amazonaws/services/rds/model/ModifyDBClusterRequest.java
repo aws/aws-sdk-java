@@ -327,6 +327,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      */
     private String domain;
     /**
@@ -2307,10 +2312,19 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param domain
      *        The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the
-     *        cluster from its current domain. The domain must be created prior to this operation.
+     *        cluster from its current domain. The domain must be created prior to this operation. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *        Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -2322,9 +2336,18 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @return The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the
-     *         cluster from its current domain. The domain must be created prior to this operation.
+     *         cluster from its current domain. The domain must be created prior to this operation. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *         Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public String getDomain() {
@@ -2336,10 +2359,19 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param domain
      *        The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the
-     *        cluster from its current domain. The domain must be created prior to this operation.
+     *        cluster from its current domain. The domain must be created prior to this operation. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *        Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

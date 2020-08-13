@@ -204,22 +204,20 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * If <code>MessageAction</code> is not set, the default is to send a welcome message via email or phone (SMS).
      * </p>
-     * <note>
      * <p>
-     * This message is based on a template that you configured in your call to or . This template includes your custom
-     * sign-up instructions and placeholders for user name and temporary password.
+     * This message is based on a template that you configured in your call to create or update a user pool. This
+     * template includes your custom sign-up instructions and placeholders for user name and temporary password.
      * </p>
-     * </note>
      * <p>
-     * Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code> parameter, and
-     * Amazon Cognito will not send any email.
+     * Alternatively, you can call <code>AdminCreateUser</code> with “SUPPRESS” for the <code>MessageAction</code>
+     * parameter, and Amazon Cognito will not send any email.
      * </p>
      * <p>
      * In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change
      * their password.
      * </p>
      * <p>
-     * AdminCreateUser requires developer credentials.
+     * <code>AdminCreateUser</code> requires developer credentials.
      * </p>
      * 
      * @param adminCreateUserRequest
@@ -332,7 +330,9 @@ public interface AWSCognitoIdentityProvider {
      * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
      * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
      * removed. The next time the external user (no longer attached to the previously linked
-     * <code>DestinationUser</code>) signs in, they must create a new user account. See .
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a>.
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -353,10 +353,11 @@ public interface AWSCognitoIdentityProvider {
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
      * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
-     * used for the <code>SourceUser</code> when the identities were originally linked in the call. (If the linking was
-     * done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here).
-     * However, if the user has already signed in, the <code>ProviderAttributeName</code> must be
-     * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * used for the <code>SourceUser</code> when the identities were originally linked using
+     * <code> AdminLinkProviderForUser</code> call. (If the linking was done with <code>ProviderAttributeName</code> set
+     * to <code>Cognito_Subject</code>, the same applies here). However, if the user has already signed in, the
+     * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code>
+     * must be the subject of the SAML assertion.
      * </p>
      * 
      * @param adminDisableProviderForUserRequest
@@ -594,16 +595,17 @@ public interface AWSCognitoIdentityProvider {
      * For example, if there is an existing user with a username and password, this API links that user to a federated
      * user identity, so that when the federated user identity is used, the user signs in as the existing user account.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * The maximum number of federated identities linked to a user is 5.
+     * </p>
+     * </note> <important>
      * <p>
      * Because this API allows a user with an external federated identity to sign in as an existing user in the user
      * pool, it is critical that it only be used with external identity providers and provider attributes that have been
      * trusted by the application owner.
      * </p>
      * </important>
-     * <p>
-     * See also .
-     * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
      * </p>
@@ -938,8 +940,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
-     * configure TOTP software token MFA. To configure either type of MFA, use the <a>AdminSetUserMFAPreference</a>
-     * action instead.
+     * configure TOTP software token MFA. To configure either type of MFA, use <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html"
+     * >AdminSetUserMFAPreference</a> instead.
      * </p>
      * 
      * @param adminSetUserSettingsRequest
@@ -1116,6 +1119,8 @@ public interface AWSCognitoIdentityProvider {
      * 
      * @param associateSoftwareTokenRequest
      * @return Result of the AssociateSoftwareToken operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         This exception is thrown if two or more modifications are happening concurrently.
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
@@ -1907,9 +1912,13 @@ public interface AWSCognitoIdentityProvider {
      * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
      * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method
      * used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more
-     * information, see <a href="">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither
-     * a verified phone number nor a verified email exists, an <code>InvalidParameterException</code> is thrown. To use
-     * the confirmation code for resetting the password, call .
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
+     * User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified phone number nor a verified
+     * email exists, an <code>InvalidParameterException</code> is thrown. To use the confirmation code for resetting the
+     * password, call <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html"
+     * >ConfirmForgotPassword</a>.
      * </p>
      * 
      * @param forgotPasswordRequest
@@ -2661,9 +2670,6 @@ public interface AWSCognitoIdentityProvider {
      * To enable Amazon Cognito advanced security features, update the user pool to include the
      * <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
      * </p>
-     * <p>
-     * See .
-     * </p>
      * 
      * @param setRiskConfigurationRequest
      * @return Result of the SetRiskConfiguration operation returned by the service.
@@ -2789,8 +2795,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
-     * configure TOTP software token MFA. To configure either type of MFA, use the <a>SetUserMFAPreference</a> action
-     * instead.
+     * configure TOTP software token MFA. To configure either type of MFA, use <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html"
+     * >SetUserMFAPreference</a> instead.
      * </p>
      * 
      * @param setUserSettingsRequest
@@ -3183,7 +3190,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Updates the specified user pool with the specified attributes. You can get a list of the current user pool
-     * settings with .
+     * settings using <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html"
+     * >DescribeUserPool</a>.
      * </p>
      * <important>
      * <p>
@@ -3230,7 +3239,9 @@ public interface AWSCognitoIdentityProvider {
     /**
      * <p>
      * Updates the specified user pool app client with the specified attributes. You can get a list of the current user
-     * pool app client settings with .
+     * pool app client settings using <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html"
+     * >DescribeUserPoolClient</a>.
      * </p>
      * <important>
      * <p>

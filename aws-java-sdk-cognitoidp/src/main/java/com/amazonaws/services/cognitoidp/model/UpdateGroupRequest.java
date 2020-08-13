@@ -52,7 +52,9 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String roleArn;
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see .
+     * The new precedence value for the group. For more information about this parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     * >CreateGroup</a>.
      * </p>
      */
     private Integer precedence;
@@ -225,11 +227,15 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see .
+     * The new precedence value for the group. For more information about this parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     * >CreateGroup</a>.
      * </p>
      * 
      * @param precedence
-     *        The new precedence value for the group. For more information about this parameter, see .
+     *        The new precedence value for the group. For more information about this parameter, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     *        >CreateGroup</a>.
      */
 
     public void setPrecedence(Integer precedence) {
@@ -238,10 +244,14 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see .
+     * The new precedence value for the group. For more information about this parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     * >CreateGroup</a>.
      * </p>
      * 
-     * @return The new precedence value for the group. For more information about this parameter, see .
+     * @return The new precedence value for the group. For more information about this parameter, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     *         >CreateGroup</a>.
      */
 
     public Integer getPrecedence() {
@@ -250,11 +260,15 @@ public class UpdateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The new precedence value for the group. For more information about this parameter, see .
+     * The new precedence value for the group. For more information about this parameter, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     * >CreateGroup</a>.
      * </p>
      * 
      * @param precedence
-     *        The new precedence value for the group. For more information about this parameter, see .
+     *        The new precedence value for the group. For more information about this parameter, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_CreateGroup.html"
+     *        >CreateGroup</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

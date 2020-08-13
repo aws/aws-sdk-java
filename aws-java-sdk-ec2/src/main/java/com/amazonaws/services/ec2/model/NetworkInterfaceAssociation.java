@@ -59,6 +59,12 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
     private String publicIp;
     /**
      * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     */
+    private String customerOwnedIp;
+    /**
+     * <p>
      * The carrier IP address associated with the network interface.
      * </p>
      * <p>
@@ -270,6 +276,46 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     * 
+     * @param customerOwnedIp
+     *        The customer-owned IP address associated with the network interface.
+     */
+
+    public void setCustomerOwnedIp(String customerOwnedIp) {
+        this.customerOwnedIp = customerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     * 
+     * @return The customer-owned IP address associated with the network interface.
+     */
+
+    public String getCustomerOwnedIp() {
+        return this.customerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IP address associated with the network interface.
+     * </p>
+     * 
+     * @param customerOwnedIp
+     *        The customer-owned IP address associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAssociation withCustomerOwnedIp(String customerOwnedIp) {
+        setCustomerOwnedIp(customerOwnedIp);
+        return this;
+    }
+
+    /**
+     * <p>
      * The carrier IP address associated with the network interface.
      * </p>
      * <p>
@@ -351,6 +397,8 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
             sb.append("PublicDnsName: ").append(getPublicDnsName()).append(",");
         if (getPublicIp() != null)
             sb.append("PublicIp: ").append(getPublicIp()).append(",");
+        if (getCustomerOwnedIp() != null)
+            sb.append("CustomerOwnedIp: ").append(getCustomerOwnedIp()).append(",");
         if (getCarrierIp() != null)
             sb.append("CarrierIp: ").append(getCarrierIp());
         sb.append("}");
@@ -387,6 +435,10 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
             return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false)
             return false;
+        if (other.getCustomerOwnedIp() == null ^ this.getCustomerOwnedIp() == null)
+            return false;
+        if (other.getCustomerOwnedIp() != null && other.getCustomerOwnedIp().equals(this.getCustomerOwnedIp()) == false)
+            return false;
         if (other.getCarrierIp() == null ^ this.getCarrierIp() == null)
             return false;
         if (other.getCarrierIp() != null && other.getCarrierIp().equals(this.getCarrierIp()) == false)
@@ -404,6 +456,7 @@ public class NetworkInterfaceAssociation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIp() == null) ? 0 : getCustomerOwnedIp().hashCode());
         hashCode = prime * hashCode + ((getCarrierIp() == null) ? 0 : getCarrierIp().hashCode());
         return hashCode;
     }

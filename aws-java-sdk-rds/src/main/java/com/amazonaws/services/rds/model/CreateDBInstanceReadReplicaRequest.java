@@ -496,20 +496,13 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private Boolean deletionProtection;
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -519,6 +512,28 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String replicaMode;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -3801,36 +3816,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -3839,35 +3840,21 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return The Active Directory directory ID to create the DB instance in.</p>
+     * @return The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *         Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *         the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *         </p>
-     *         <p>
-     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *         that connect to the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *         Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -3876,36 +3863,22 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     * </p>
-     * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3951,6 +3924,189 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     public CreateDBInstanceReadReplicaRequest withDomainIAMRoleName(String domainIAMRoleName) {
         setDomainIAMRoleName(domainIAMRoleName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        The open mode of the replica database: mounted or read-only.</p> <note>
+     *        <p>
+     *        This parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload.
+     *        </p>
+     *        <p>
+     *        You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @see ReplicaMode
+     */
+
+    public void setReplicaMode(String replicaMode) {
+        this.replicaMode = replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return The open mode of the replica database: mounted or read-only.</p> <note>
+     *         <p>
+     *         This parameter is only supported for Oracle DB instances.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *         cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit
+     *         information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't
+     *         serve a read-only workload.
+     *         </p>
+     *         <p>
+     *         You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *         Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @see ReplicaMode
+     */
+
+    public String getReplicaMode() {
+        return this.replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        The open mode of the replica database: mounted or read-only.</p> <note>
+     *        <p>
+     *        This parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload.
+     *        </p>
+     *        <p>
+     *        You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public CreateDBInstanceReadReplicaRequest withReplicaMode(String replicaMode) {
+        setReplicaMode(replicaMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of the replica database: mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * </p>
+     * <p>
+     * You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        The open mode of the replica database: mounted or read-only.</p> <note>
+     *        <p>
+     *        This parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload.
+     *        </p>
+     *        <p>
+     *        You can create a combination of mounted and read-only DB replicas for the same primary DB instance. For
+     *        more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public CreateDBInstanceReadReplicaRequest withReplicaMode(ReplicaMode replicaMode) {
+        this.replicaMode = replicaMode.toString();
         return this;
     }
 
@@ -4060,6 +4216,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
             sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getReplicaMode() != null)
+            sb.append("ReplicaMode: ").append(getReplicaMode()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -4198,6 +4356,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getReplicaMode() == null ^ this.getReplicaMode() == null)
+            return false;
+        if (other.getReplicaMode() != null && other.getReplicaMode().equals(this.getReplicaMode()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -4240,6 +4402,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

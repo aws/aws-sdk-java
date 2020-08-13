@@ -141,7 +141,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private S3JobDefinition s3JobDefinition;
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
      * </p>
      */
     private Integer samplingPercentage;
@@ -1071,11 +1071,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, that the job applies when it processes objects.
+     *        The sampling depth, as a percentage, that determines the number of objects that the job processes.
      */
 
     public void setSamplingPercentage(Integer samplingPercentage) {
@@ -1084,10 +1084,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
      * </p>
      * 
-     * @return The sampling depth, as a percentage, that the job applies when it processes objects.
+     * @return The sampling depth, as a percentage, that determines the number of objects that the job processes.
      */
 
     public Integer getSamplingPercentage() {
@@ -1096,11 +1096,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, that the job applies when it processes objects.
+     *        The sampling depth, as a percentage, that determines the number of objects that the job processes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

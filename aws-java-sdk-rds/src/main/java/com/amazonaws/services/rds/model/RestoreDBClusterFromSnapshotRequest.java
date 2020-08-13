@@ -322,7 +322,13 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
-     * operation.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -2336,12 +2342,23 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
-     * operation.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
      *        Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior
-     *        to this operation.
+     *        to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     *        created in an Active Directory Domain.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -2351,11 +2368,22 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
-     * operation.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @return Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior
-     *         to this operation.
+     *         to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can
+     *         be created in an Active Directory Domain.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -2365,12 +2393,23 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior to this
-     * operation.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
      *        Specify the Active Directory directory ID to restore the DB cluster in. The domain must be created prior
-     *        to this operation.
+     *        to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     *        created in an Active Directory Domain.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

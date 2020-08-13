@@ -1440,17 +1440,19 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
      * <p>
-     * You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources
-     * (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you
-     * want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
-     * mydbinstance2 and EventCategories = Availability, Backup.
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of and provide a list
+     * of RDS sources (<code>SourceIds</code>) that triggers the events. You can also provide a list of event categories
+     * (<code>EventCategories</code>) for events that you want to be notified of. For example, you can specify
+     * <code>SourceType</code> = <code>db-instance</code>, <code>SourceIds</code> = <code>mydbinstance1</code>,
+     * <code>mydbinstance2</code> and <code>EventCategories</code> = <code>Availability</code>, <code>Backup</code>.
      * </p>
      * <p>
-     * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
-     * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
-     * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
-     * your RDS sources. If you don't specify either the SourceType or the SourceIdentifier, you are notified of events
-     * generated from all RDS sources belonging to your customer account.
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType</code> =
+     * <code>db-instance</code> and <code>SourceIdentifier</code> = <code>myDBInstance1</code>, you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your RDS
+     * sources. If you don't specify either the SourceType or the <code>SourceIdentifier</code>, you are notified of
+     * events generated from all RDS sources belonging to your customer account.
      * </p>
      * <note>
      * <p>
@@ -1474,17 +1476,19 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
      * <p>
-     * You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources
-     * (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you
-     * want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
-     * mydbinstance2 and EventCategories = Availability, Backup.
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of and provide a list
+     * of RDS sources (<code>SourceIds</code>) that triggers the events. You can also provide a list of event categories
+     * (<code>EventCategories</code>) for events that you want to be notified of. For example, you can specify
+     * <code>SourceType</code> = <code>db-instance</code>, <code>SourceIds</code> = <code>mydbinstance1</code>,
+     * <code>mydbinstance2</code> and <code>EventCategories</code> = <code>Availability</code>, <code>Backup</code>.
      * </p>
      * <p>
-     * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
-     * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
-     * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
-     * your RDS sources. If you don't specify either the SourceType or the SourceIdentifier, you are notified of events
-     * generated from all RDS sources belonging to your customer account.
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType</code> =
+     * <code>db-instance</code> and <code>SourceIdentifier</code> = <code>myDBInstance1</code>, you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your RDS
+     * sources. If you don't specify either the SourceType or the <code>SourceIdentifier</code>, you are notified of
+     * events generated from all RDS sources belonging to your customer account.
      * </p>
      * <note>
      * <p>
@@ -3592,9 +3596,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Displays a list of categories for all event source types, or, if specified, for a specified source type. You can
-     * see a list of the event categories and source types in the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the <i>Amazon
-     * RDS User Guide.</i>
+     * see a list of the event categories and source types in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> in the <i>Amazon RDS
+     * User Guide.</i>
      * </p>
      * 
      * @param describeEventCategoriesRequest
@@ -3608,9 +3612,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Displays a list of categories for all event source types, or, if specified, for a specified source type. You can
-     * see a list of the event categories and source types in the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the <i>Amazon
-     * RDS User Guide.</i>
+     * see a list of the event categories and source types in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> in the <i>Amazon RDS
+     * User Guide.</i>
      * </p>
      * 
      * @param describeEventCategoriesRequest
@@ -3644,10 +3648,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Lists all the subscription descriptions for a customer account. The description for a subscription includes
-     * SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
      * </p>
      * <p>
-     * If you specify a SubscriptionName, lists the description for that subscription.
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
      * </p>
      * 
      * @param describeEventSubscriptionsRequest
@@ -3662,10 +3667,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
     /**
      * <p>
      * Lists all the subscription descriptions for a customer account. The description for a subscription includes
-     * SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
      * </p>
      * <p>
-     * If you specify a SubscriptionName, lists the description for that subscription.
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
      * </p>
      * 
      * @param describeEventSubscriptionsRequest
@@ -3699,9 +3705,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14
-     * days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group
-     * can be obtained by providing the name as a parameter. By default, the past hour of events are returned.
+     * Returns events related to DB instances, DB clusters, DB parameter groups, DB security groups, DB snapshots, and
+     * DB cluster snapshots for the past 14 days. Events specific to a particular DB instances, DB clusters, DB
+     * parameter groups, DB security groups, DB snapshots, and DB cluster snapshots group can be obtained by providing
+     * the name as a parameter. By default, the past hour of events are returned.
      * </p>
      * 
      * @param describeEventsRequest
@@ -3714,9 +3721,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14
-     * days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group
-     * can be obtained by providing the name as a parameter. By default, the past hour of events are returned.
+     * Returns events related to DB instances, DB clusters, DB parameter groups, DB security groups, DB snapshots, and
+     * DB cluster snapshots for the past 14 days. Events specific to a particular DB instances, DB clusters, DB
+     * parameter groups, DB security groups, DB snapshots, and DB cluster snapshots group can be obtained by providing
+     * the name as a parameter. By default, the past hour of events are returned.
      * </p>
      * 
      * @param describeEventsRequest
@@ -5172,9 +5180,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
-     * You can see a list of the event categories for a given SourceType in the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
-     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
+     * You can see a list of the event categories for a given source type (<code>SourceType</code>) in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS
+     * User Guide</i> or by using the <code>DescribeEventCategories</code> operation.
      * </p>
      * 
      * @param modifyEventSubscriptionRequest
@@ -5192,9 +5200,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
-     * You can see a list of the event categories for a given SourceType in the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
-     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
+     * You can see a list of the event categories for a given source type (<code>SourceType</code>) in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS
+     * User Guide</i> or by using the <code>DescribeEventCategories</code> operation.
      * </p>
      * 
      * @param modifyEventSubscriptionRequest
@@ -5832,10 +5840,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
-     * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html"> Migrating Data to
-     * an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized
+     * to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"
+     * > Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -5852,7 +5861,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
      * </p>
      * </note>
      * 
@@ -5866,10 +5875,11 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
-     * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html"> Migrating Data to
-     * an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized
+     * to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"
+     * > Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -5886,7 +5896,7 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
      * </p>
      * </note>
      * 

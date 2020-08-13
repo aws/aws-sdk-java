@@ -215,6 +215,19 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
     /**
      * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     */
+    private String replicaMode;
+    /**
+     * <p>
      * License model information for this DB instance.
      * </p>
      */
@@ -1871,6 +1884,114 @@ public class DBInstance implements Serializable, Cloneable {
 
     public DBInstance withReadReplicaDBClusterIdentifiers(java.util.Collection<String> readReplicaDBClusterIdentifiers) {
         setReadReplicaDBClusterIdentifiers(readReplicaDBClusterIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @param replicaMode
+     *        The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     *        with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *        <p>
+     *        This attribute is only supported in RDS for Oracle.
+     *        </p>
+     * @see ReplicaMode
+     */
+
+    public void setReplicaMode(String replicaMode) {
+        this.replicaMode = replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @return The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *         Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *         <p>
+     *         This attribute is only supported in RDS for Oracle.
+     *         </p>
+     * @see ReplicaMode
+     */
+
+    public String getReplicaMode() {
+        return this.replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @param replicaMode
+     *        The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     *        with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *        <p>
+     *        This attribute is only supported in RDS for Oracle.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public DBInstance withReplicaMode(String replicaMode) {
+        setReplicaMode(replicaMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @param replicaMode
+     *        The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     *        with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *        <p>
+     *        This attribute is only supported in RDS for Oracle.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public DBInstance withReplicaMode(ReplicaMode replicaMode) {
+        this.replicaMode = replicaMode.toString();
         return this;
     }
 
@@ -3966,6 +4087,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("ReadReplicaDBInstanceIdentifiers: ").append(getReadReplicaDBInstanceIdentifiers()).append(",");
         if (getReadReplicaDBClusterIdentifiers() != null)
             sb.append("ReadReplicaDBClusterIdentifiers: ").append(getReadReplicaDBClusterIdentifiers()).append(",");
+        if (getReplicaMode() != null)
+            sb.append("ReplicaMode: ").append(getReplicaMode()).append(",");
         if (getLicenseModel() != null)
             sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getIops() != null)
@@ -4149,6 +4272,10 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getReadReplicaDBClusterIdentifiers() != null
                 && other.getReadReplicaDBClusterIdentifiers().equals(this.getReadReplicaDBClusterIdentifiers()) == false)
             return false;
+        if (other.getReplicaMode() == null ^ this.getReplicaMode() == null)
+            return false;
+        if (other.getReplicaMode() != null && other.getReplicaMode().equals(this.getReplicaMode()) == false)
+            return false;
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
@@ -4317,6 +4444,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReadReplicaSourceDBInstanceIdentifier() == null) ? 0 : getReadReplicaSourceDBInstanceIdentifier().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaDBInstanceIdentifiers() == null) ? 0 : getReadReplicaDBInstanceIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaDBClusterIdentifiers() == null) ? 0 : getReadReplicaDBClusterIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupMemberships() == null) ? 0 : getOptionGroupMemberships().hashCode());

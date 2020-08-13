@@ -52,7 +52,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator.
      * Users will not be able to modify this attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     * <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated using
+     * UpdateUserAttributes.
      * </p>
      */
     private Boolean developerOnlyAttribute;
@@ -215,7 +216,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator.
      * Users will not be able to modify this attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     * <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated using
+     * UpdateUserAttributes.
      * </p>
      * 
      * @param developerOnlyAttribute
@@ -229,7 +231,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      *        <p>
      *        Specifies whether the attribute type is developer only. This attribute can only be modified by an
      *        administrator. Users will not be able to modify this attribute using their access token. For example,
-     *        <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     *        <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated
+     *        using UpdateUserAttributes.
      */
 
     public void setDeveloperOnlyAttribute(Boolean developerOnlyAttribute) {
@@ -248,7 +251,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator.
      * Users will not be able to modify this attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     * <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated using
+     * UpdateUserAttributes.
      * </p>
      * 
      * @return <p>
@@ -261,7 +265,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      *         <p>
      *         Specifies whether the attribute type is developer only. This attribute can only be modified by an
      *         administrator. Users will not be able to modify this attribute using their access token. For example,
-     *         <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     *         <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated
+     *         using UpdateUserAttributes.
      */
 
     public Boolean getDeveloperOnlyAttribute() {
@@ -280,7 +285,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator.
      * Users will not be able to modify this attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     * <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated using
+     * UpdateUserAttributes.
      * </p>
      * 
      * @param developerOnlyAttribute
@@ -294,7 +300,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      *        <p>
      *        Specifies whether the attribute type is developer only. This attribute can only be modified by an
      *        administrator. Users will not be able to modify this attribute using their access token. For example,
-     *        <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     *        <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated
+     *        using UpdateUserAttributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,7 +322,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the attribute type is developer only. This attribute can only be modified by an administrator.
      * Users will not be able to modify this attribute using their access token. For example,
-     * <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     * <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated using
+     * UpdateUserAttributes.
      * </p>
      * 
      * @return <p>
@@ -328,7 +336,8 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      *         <p>
      *         Specifies whether the attribute type is developer only. This attribute can only be modified by an
      *         administrator. Users will not be able to modify this attribute using their access token. For example,
-     *         <code>DeveloperOnlyAttribute</code> can be modified using the API but cannot be updated using the API.
+     *         <code>DeveloperOnlyAttribute</code> can be modified using AdminUpdateUserAttributes but cannot be updated
+     *         using UpdateUserAttributes.
      */
 
     public Boolean isDeveloperOnlyAttribute() {

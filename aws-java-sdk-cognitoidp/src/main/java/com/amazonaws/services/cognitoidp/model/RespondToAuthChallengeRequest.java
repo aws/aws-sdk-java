@@ -36,7 +36,9 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     private String clientId;
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
@@ -202,14 +204,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -221,13 +227,17 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
-     * @return The challenge name. For more information, see .</p>
+     * @return The challenge name. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *         >InitiateAuth</a>.</p>
      *         <p>
      *         <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -239,14 +249,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -260,14 +274,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -279,14 +297,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.

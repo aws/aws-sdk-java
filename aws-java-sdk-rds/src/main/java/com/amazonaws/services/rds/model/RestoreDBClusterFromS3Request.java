@@ -130,10 +130,11 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
     private String dBSubnetGroupName;
     /**
      * <p>
-     * The name of the database engine to be used for the restored DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      */
     private String engine;
@@ -343,7 +344,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>
+     * Example: <code>5.6.40</code>, <code>5.7.28</code>
      * </p>
      */
     private String sourceEngineVersion;
@@ -1141,16 +1142,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the database engine to be used for the restored DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for the restored DB cluster.</p>
+     *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     *        Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     *        5.7-compatible Aurora), and <code>aurora-postgresql</code>
      */
 
     public void setEngine(String engine) {
@@ -1159,15 +1162,17 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the database engine to be used for the restored DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      * 
-     * @return The name of the database engine to be used for the restored DB cluster.</p>
+     * @return The name of the database engine to be used for this DB cluster.</p>
      *         <p>
-     *         Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     *         Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     *         5.7-compatible Aurora), and <code>aurora-postgresql</code>
      */
 
     public String getEngine() {
@@ -1176,16 +1181,18 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the database engine to be used for the restored DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * <p>
-     * Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     * Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     * 5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * </p>
      * 
      * @param engine
-     *        The name of the database engine to be used for the restored DB cluster.</p>
+     *        The name of the database engine to be used for this DB cluster.</p>
      *        <p>
-     *        Valid Values: <code>aurora</code>, <code>aurora-postgresql</code>
+     *        Valid Values: <code>aurora</code> (for MySQL 5.6-compatible Aurora), <code>aurora-mysql</code> (for MySQL
+     *        5.7-compatible Aurora), and <code>aurora-postgresql</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2492,7 +2499,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>
+     * Example: <code>5.6.40</code>, <code>5.7.28</code>
      * </p>
      * 
      * @param sourceEngineVersion
@@ -2501,7 +2508,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        MySQL versions 5.5, 5.6, and 5.7 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.40</code>
+     *        Example: <code>5.6.40</code>, <code>5.7.28</code>
      */
 
     public void setSourceEngineVersion(String sourceEngineVersion) {
@@ -2516,7 +2523,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>
+     * Example: <code>5.6.40</code>, <code>5.7.28</code>
      * </p>
      * 
      * @return The version of the database that the backup files were created from.</p>
@@ -2524,7 +2531,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *         MySQL versions 5.5, 5.6, and 5.7 are supported.
      *         </p>
      *         <p>
-     *         Example: <code>5.6.40</code>
+     *         Example: <code>5.6.40</code>, <code>5.7.28</code>
      */
 
     public String getSourceEngineVersion() {
@@ -2539,7 +2546,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      * MySQL versions 5.5, 5.6, and 5.7 are supported.
      * </p>
      * <p>
-     * Example: <code>5.6.40</code>
+     * Example: <code>5.6.40</code>, <code>5.7.28</code>
      * </p>
      * 
      * @param sourceEngineVersion
@@ -2548,7 +2555,7 @@ public class RestoreDBClusterFromS3Request extends com.amazonaws.AmazonWebServic
      *        MySQL versions 5.5, 5.6, and 5.7 are supported.
      *        </p>
      *        <p>
-     *        Example: <code>5.6.40</code>
+     *        Example: <code>5.6.40</code>, <code>5.7.28</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

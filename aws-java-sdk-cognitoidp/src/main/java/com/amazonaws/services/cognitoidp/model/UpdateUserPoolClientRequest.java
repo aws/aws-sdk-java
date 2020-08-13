@@ -54,6 +54,25 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
     private Integer refreshTokenValidity;
     /**
      * <p>
+     * The time limit, after which the access token is no longer valid and cannot be used.
+     * </p>
+     */
+    private Integer accessTokenValidity;
+    /**
+     * <p>
+     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * </p>
+     */
+    private Integer idTokenValidity;
+    /**
+     * <p>
+     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
+     * and access tokens are hours.
+     * </p>
+     */
+    private TokenValidityUnitsType tokenValidityUnits;
+    /**
+     * <p>
      * The read-only attributes of the user pool.
      * </p>
      */
@@ -226,8 +245,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
+     * Amazon Pinpoint projects within that same region.
      * </p>
      * </note>
      */
@@ -254,51 +274,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are not
      * prevented.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This setting affects the behavior of following APIs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a>AdminInitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>AdminRespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>InitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>RespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmSignUp</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ResendConfirmationCode</a>
      * </p>
      * </li>
      * </ul>
@@ -468,6 +443,132 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
 
     public UpdateUserPoolClientRequest withRefreshTokenValidity(Integer refreshTokenValidity) {
         setRefreshTokenValidity(refreshTokenValidity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time limit, after which the access token is no longer valid and cannot be used.
+     * </p>
+     * 
+     * @param accessTokenValidity
+     *        The time limit, after which the access token is no longer valid and cannot be used.
+     */
+
+    public void setAccessTokenValidity(Integer accessTokenValidity) {
+        this.accessTokenValidity = accessTokenValidity;
+    }
+
+    /**
+     * <p>
+     * The time limit, after which the access token is no longer valid and cannot be used.
+     * </p>
+     * 
+     * @return The time limit, after which the access token is no longer valid and cannot be used.
+     */
+
+    public Integer getAccessTokenValidity() {
+        return this.accessTokenValidity;
+    }
+
+    /**
+     * <p>
+     * The time limit, after which the access token is no longer valid and cannot be used.
+     * </p>
+     * 
+     * @param accessTokenValidity
+     *        The time limit, after which the access token is no longer valid and cannot be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolClientRequest withAccessTokenValidity(Integer accessTokenValidity) {
+        setAccessTokenValidity(accessTokenValidity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * </p>
+     * 
+     * @param idTokenValidity
+     *        The time limit, after which the ID token is no longer valid and cannot be used.
+     */
+
+    public void setIdTokenValidity(Integer idTokenValidity) {
+        this.idTokenValidity = idTokenValidity;
+    }
+
+    /**
+     * <p>
+     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * </p>
+     * 
+     * @return The time limit, after which the ID token is no longer valid and cannot be used.
+     */
+
+    public Integer getIdTokenValidity() {
+        return this.idTokenValidity;
+    }
+
+    /**
+     * <p>
+     * The time limit, after which the ID token is no longer valid and cannot be used.
+     * </p>
+     * 
+     * @param idTokenValidity
+     *        The time limit, after which the ID token is no longer valid and cannot be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolClientRequest withIdTokenValidity(Integer idTokenValidity) {
+        setIdTokenValidity(idTokenValidity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
+     * and access tokens are hours.
+     * </p>
+     * 
+     * @param tokenValidityUnits
+     *        The units in which the validity times are represented in. Default for RefreshToken is days, and default
+     *        for ID and access tokens are hours.
+     */
+
+    public void setTokenValidityUnits(TokenValidityUnitsType tokenValidityUnits) {
+        this.tokenValidityUnits = tokenValidityUnits;
+    }
+
+    /**
+     * <p>
+     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
+     * and access tokens are hours.
+     * </p>
+     * 
+     * @return The units in which the validity times are represented in. Default for RefreshToken is days, and default
+     *         for ID and access tokens are hours.
+     */
+
+    public TokenValidityUnitsType getTokenValidityUnits() {
+        return this.tokenValidityUnits;
+    }
+
+    /**
+     * <p>
+     * The units in which the validity times are represented in. Default for RefreshToken is days, and default for ID
+     * and access tokens are hours.
+     * </p>
+     * 
+     * @param tokenValidityUnits
+     *        The units in which the validity times are represented in. Default for RefreshToken is days, and default
+     *        for ID and access tokens are hours.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateUserPoolClientRequest withTokenValidityUnits(TokenValidityUnitsType tokenValidityUnits) {
+        setTokenValidityUnits(tokenValidityUnits);
         return this;
     }
 
@@ -2084,16 +2185,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
+     * Amazon Pinpoint projects within that same region.
      * </p>
      * </note>
      * 
      * @param analyticsConfiguration
      *        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
      *        <p>
-     *        Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     *        us-east-1 Region, regardless of the region in which the user pool resides.
+     *        In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon
+     *        Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support
+     *        sending events to Amazon Pinpoint projects within that same region.
      *        </p>
      */
 
@@ -2107,15 +2210,17 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
+     * Amazon Pinpoint projects within that same region.
      * </p>
      * </note>
      * 
      * @return The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
      *         <p>
-     *         Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     *         us-east-1 Region, regardless of the region in which the user pool resides.
+     *         In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon
+     *         Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support
+     *         sending events to Amazon Pinpoint projects within that same region.
      *         </p>
      */
 
@@ -2129,16 +2234,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <note>
      * <p>
-     * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     * us-east-1 Region, regardless of the region in which the user pool resides.
+     * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
+     * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
+     * Amazon Pinpoint projects within that same region.
      * </p>
      * </note>
      * 
      * @param analyticsConfiguration
      *        The Amazon Pinpoint analytics configuration for collecting metrics for this user pool.</p> <note>
      *        <p>
-     *        Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia)
-     *        us-east-1 Region, regardless of the region in which the user pool resides.
+     *        In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon
+     *        Pinpoint projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support
+     *        sending events to Amazon Pinpoint projects within that same region.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2173,51 +2280,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * This setting affects the behavior of following APIs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a>AdminInitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>AdminRespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>InitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>RespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmSignUp</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ResendConfirmationCode</a>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
      * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
@@ -2245,51 +2307,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
      *        not prevented.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This setting affects the behavior of following APIs:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <a>AdminInitiateAuth</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>AdminRespondToAuthChallenge</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>InitiateAuth</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>RespondToAuthChallenge</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ForgotPassword</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ConfirmForgotPassword</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ConfirmSignUp</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ResendConfirmationCode</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -2330,51 +2347,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * This setting affects the behavior of following APIs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a>AdminInitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>AdminRespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>InitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>RespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmSignUp</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ResendConfirmationCode</a>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
      * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
@@ -2401,51 +2373,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
      *         not prevented.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         This setting affects the behavior of following APIs:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <a>AdminInitiateAuth</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>AdminRespondToAuthChallenge</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>InitiateAuth</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>RespondToAuthChallenge</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>ForgotPassword</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>ConfirmForgotPassword</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>ConfirmSignUp</a>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <a>ResendConfirmationCode</a>
      *         </p>
      *         </li>
      *         </ul>
@@ -2486,51 +2413,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * This setting affects the behavior of following APIs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a>AdminInitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>AdminRespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>InitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>RespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmSignUp</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ResendConfirmationCode</a>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
      * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
@@ -2558,51 +2440,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
      *        not prevented.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This setting affects the behavior of following APIs:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <a>AdminInitiateAuth</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>AdminRespondToAuthChallenge</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>InitiateAuth</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>RespondToAuthChallenge</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ForgotPassword</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ConfirmForgotPassword</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ConfirmSignUp</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ResendConfirmationCode</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -2645,51 +2482,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * This setting affects the behavior of following APIs:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <a>AdminInitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>AdminRespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>InitiateAuth</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>RespondToAuthChallenge</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmForgotPassword</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ConfirmSignUp</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <a>ResendConfirmationCode</a>
-     * </p>
-     * </li>
-     * </ul>
      * <note>
      * <p>
      * After February 15th 2020, the value of <code>PreventUserExistenceErrors</code> will default to
@@ -2717,51 +2509,6 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        <code>LEGACY</code> - This represents the old behavior of Cognito where user existence related errors are
      *        not prevented.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        This setting affects the behavior of following APIs:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <a>AdminInitiateAuth</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>AdminRespondToAuthChallenge</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>InitiateAuth</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>RespondToAuthChallenge</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ForgotPassword</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ConfirmForgotPassword</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ConfirmSignUp</a>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <a>ResendConfirmationCode</a>
      *        </p>
      *        </li>
      *        </ul>
@@ -2799,6 +2546,12 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("ClientName: ").append(getClientName()).append(",");
         if (getRefreshTokenValidity() != null)
             sb.append("RefreshTokenValidity: ").append(getRefreshTokenValidity()).append(",");
+        if (getAccessTokenValidity() != null)
+            sb.append("AccessTokenValidity: ").append(getAccessTokenValidity()).append(",");
+        if (getIdTokenValidity() != null)
+            sb.append("IdTokenValidity: ").append(getIdTokenValidity()).append(",");
+        if (getTokenValidityUnits() != null)
+            sb.append("TokenValidityUnits: ").append(getTokenValidityUnits()).append(",");
         if (getReadAttributes() != null)
             sb.append("ReadAttributes: ").append(getReadAttributes()).append(",");
         if (getWriteAttributes() != null)
@@ -2852,6 +2605,18 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getRefreshTokenValidity() == null ^ this.getRefreshTokenValidity() == null)
             return false;
         if (other.getRefreshTokenValidity() != null && other.getRefreshTokenValidity().equals(this.getRefreshTokenValidity()) == false)
+            return false;
+        if (other.getAccessTokenValidity() == null ^ this.getAccessTokenValidity() == null)
+            return false;
+        if (other.getAccessTokenValidity() != null && other.getAccessTokenValidity().equals(this.getAccessTokenValidity()) == false)
+            return false;
+        if (other.getIdTokenValidity() == null ^ this.getIdTokenValidity() == null)
+            return false;
+        if (other.getIdTokenValidity() != null && other.getIdTokenValidity().equals(this.getIdTokenValidity()) == false)
+            return false;
+        if (other.getTokenValidityUnits() == null ^ this.getTokenValidityUnits() == null)
+            return false;
+        if (other.getTokenValidityUnits() != null && other.getTokenValidityUnits().equals(this.getTokenValidityUnits()) == false)
             return false;
         if (other.getReadAttributes() == null ^ this.getReadAttributes() == null)
             return false;
@@ -2914,6 +2679,9 @@ public class UpdateUserPoolClientRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getClientId() == null) ? 0 : getClientId().hashCode());
         hashCode = prime * hashCode + ((getClientName() == null) ? 0 : getClientName().hashCode());
         hashCode = prime * hashCode + ((getRefreshTokenValidity() == null) ? 0 : getRefreshTokenValidity().hashCode());
+        hashCode = prime * hashCode + ((getAccessTokenValidity() == null) ? 0 : getAccessTokenValidity().hashCode());
+        hashCode = prime * hashCode + ((getIdTokenValidity() == null) ? 0 : getIdTokenValidity().hashCode());
+        hashCode = prime * hashCode + ((getTokenValidityUnits() == null) ? 0 : getTokenValidityUnits().hashCode());
         hashCode = prime * hashCode + ((getReadAttributes() == null) ? 0 : getReadAttributes().hashCode());
         hashCode = prime * hashCode + ((getWriteAttributes() == null) ? 0 : getWriteAttributes().hashCode());
         hashCode = prime * hashCode + ((getExplicitAuthFlows() == null) ? 0 : getExplicitAuthFlows().hashCode());

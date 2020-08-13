@@ -278,6 +278,10 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             request.addParameter("CertificateRotationRestart", StringUtils.fromBoolean(modifyDBInstanceRequest.getCertificateRotationRestart()));
         }
 
+        if (modifyDBInstanceRequest.getReplicaMode() != null) {
+            request.addParameter("ReplicaMode", StringUtils.fromString(modifyDBInstanceRequest.getReplicaMode()));
+        }
+
         return request;
     }
 

@@ -84,8 +84,8 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      */
     private Integer samplingPercentage;
@@ -101,8 +101,8 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -559,14 +559,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @param samplingPercentage
      *        The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *        percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly
-     *        selects the objects to analyze, up to the specified percentage.
+     *        percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects
+     *        the objects to analyze at random, up to the specified percentage, and analyzes all the data in those
+     *        objects.
      */
 
     public void setSamplingPercentage(Integer samplingPercentage) {
@@ -576,13 +577,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @return The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *         percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie
-     *         randomly selects the objects to analyze, up to the specified percentage.
+     *         percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie
+     *         selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in
+     *         those objects.
      */
 
     public Integer getSamplingPercentage() {
@@ -592,14 +594,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @param samplingPercentage
      *        The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *        percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly
-     *        selects the objects to analyze, up to the specified percentage.
+     *        percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects
+     *        the objects to analyze at random, up to the specified percentage, and analyzes all the data in those
+     *        objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,14 +662,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @return A map of key-value pairs that specifies the tags to associate with the job.</p>
      *         <p>
-     *         A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     *         The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     *         A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *         maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -678,15 +681,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the job.</p>
      *        <p>
-     *        A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     *        The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     *        A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *        maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -698,15 +701,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the job.</p>
      *        <p>
-     *        A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     *        The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     *        A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *        maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

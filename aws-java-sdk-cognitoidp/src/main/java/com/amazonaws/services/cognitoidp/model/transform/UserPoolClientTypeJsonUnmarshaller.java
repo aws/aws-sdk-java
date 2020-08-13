@@ -76,6 +76,18 @@ public class UserPoolClientTypeJsonUnmarshaller implements Unmarshaller<UserPool
                     context.nextToken();
                     userPoolClientType.setRefreshTokenValidity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("AccessTokenValidity", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setAccessTokenValidity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("IdTokenValidity", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setIdTokenValidity(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("TokenValidityUnits", targetDepth)) {
+                    context.nextToken();
+                    userPoolClientType.setTokenValidityUnits(TokenValidityUnitsTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ReadAttributes", targetDepth)) {
                     context.nextToken();
                     userPoolClientType.setReadAttributes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

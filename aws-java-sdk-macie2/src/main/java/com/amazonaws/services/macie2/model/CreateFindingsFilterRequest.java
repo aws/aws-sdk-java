@@ -80,8 +80,8 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -434,15 +434,15 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @return A map of key-value pairs that specifies the tags to associate with the filter.</p>
      *         <p>
-     *         A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an
-     *         associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag
-     *         value is 256 characters.
+     *         A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     *         value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *         characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -454,15 +454,15 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the filter.</p>
      *        <p>
-     *        A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     *        tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *        A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     *        value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
      *        characters.
      */
 
@@ -475,15 +475,15 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the filter.</p>
      *        <p>
-     *        A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     *        tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *        A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     *        value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

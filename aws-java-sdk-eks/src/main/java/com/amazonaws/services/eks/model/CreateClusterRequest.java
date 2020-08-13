@@ -40,8 +40,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String version;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -181,15 +181,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
-     *        other AWS API operations on your behalf. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
+     *        to make calls to AWS API operations on your behalf. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
      *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -200,14 +200,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
-     *         other AWS API operations on your behalf. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
+     *         to make calls to AWS API operations on your behalf. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
      *         Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -218,15 +218,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
-     *        other AWS API operations on your behalf. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
+     *        to make calls to AWS API operations on your behalf. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
      *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.

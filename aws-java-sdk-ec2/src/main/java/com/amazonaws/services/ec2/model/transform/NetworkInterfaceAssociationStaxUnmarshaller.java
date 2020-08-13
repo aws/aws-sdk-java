@@ -68,6 +68,11 @@ public class NetworkInterfaceAssociationStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
 
+                if (context.testExpression("customerOwnedIp", targetDepth)) {
+                    networkInterfaceAssociation.setCustomerOwnedIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("carrierIp", targetDepth)) {
                     networkInterfaceAssociation.setCarrierIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

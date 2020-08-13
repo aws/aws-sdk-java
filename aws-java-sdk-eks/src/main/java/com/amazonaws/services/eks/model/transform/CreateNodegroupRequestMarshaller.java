@@ -56,6 +56,8 @@ public class CreateNodegroupRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> RELEASEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -89,6 +91,7 @@ public class CreateNodegroupRequestMarshaller {
             protocolMarshaller.marshall(createNodegroupRequest.getLabels(), LABELS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createNodegroupRequest.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getReleaseVersion(), RELEASEVERSION_BINDING);
         } catch (Exception e) {

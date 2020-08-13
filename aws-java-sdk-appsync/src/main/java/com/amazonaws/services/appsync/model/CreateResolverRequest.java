@@ -57,6 +57,10 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
+     * <p>
+     * VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL
+     * request and response mapping templates are required.
+     * </p>
      */
     private String requestMappingTemplate;
     /**
@@ -273,12 +277,20 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
+     * <p>
+     * VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL
+     * request and response mapping templates are required.
+     * </p>
      * 
      * @param requestMappingTemplate
      *        The mapping template to be used for requests.</p>
      *        <p>
      *        A resolver uses a request mapping template to convert a GraphQL expression into a format that a data
      *        source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
+     *        </p>
+     *        <p>
+     *        VTL request mapping templates are optional when using a Lambda data source. For all other data sources,
+     *        VTL request and response mapping templates are required.
      */
 
     public void setRequestMappingTemplate(String requestMappingTemplate) {
@@ -293,11 +305,19 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
+     * <p>
+     * VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL
+     * request and response mapping templates are required.
+     * </p>
      * 
      * @return The mapping template to be used for requests.</p>
      *         <p>
      *         A resolver uses a request mapping template to convert a GraphQL expression into a format that a data
      *         source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
+     *         </p>
+     *         <p>
+     *         VTL request mapping templates are optional when using a Lambda data source. For all other data sources,
+     *         VTL request and response mapping templates are required.
      */
 
     public String getRequestMappingTemplate() {
@@ -312,12 +332,20 @@ public class CreateResolverRequest extends com.amazonaws.AmazonWebServiceRequest
      * A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can
      * understand. Mapping templates are written in Apache Velocity Template Language (VTL).
      * </p>
+     * <p>
+     * VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL
+     * request and response mapping templates are required.
+     * </p>
      * 
      * @param requestMappingTemplate
      *        The mapping template to be used for requests.</p>
      *        <p>
      *        A resolver uses a request mapping template to convert a GraphQL expression into a format that a data
      *        source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).
+     *        </p>
+     *        <p>
+     *        VTL request mapping templates are optional when using a Lambda data source. For all other data sources,
+     *        VTL request and response mapping templates are required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

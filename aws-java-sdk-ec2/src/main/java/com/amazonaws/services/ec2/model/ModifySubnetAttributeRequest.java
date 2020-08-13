@@ -51,6 +51,26 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
      * </p>
      */
     private String subnetId;
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
+     * subnet should be assigned a customer-owned IPv4 address.
+     * </p>
+     * <p>
+     * When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     * <code>CustomerOwnedIpv4Pool</code>.
+     * </p>
+     */
+    private Boolean mapCustomerOwnedIpOnLaunch;
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * <p>
+     * You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     * </p>
+     */
+    private String customerOwnedIpv4Pool;
 
     /**
      * <p>
@@ -253,6 +273,149 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
+     * subnet should be assigned a customer-owned IPv4 address.
+     * </p>
+     * <p>
+     * When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     * <code>CustomerOwnedIpv4Pool</code>.
+     * </p>
+     * 
+     * @param mapCustomerOwnedIpOnLaunch
+     *        Specify <code>true</code> to indicate that network interfaces attached to instances created in the
+     *        specified subnet should be assigned a customer-owned IPv4 address.</p>
+     *        <p>
+     *        When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     *        <code>CustomerOwnedIpv4Pool</code>.
+     */
+
+    public void setMapCustomerOwnedIpOnLaunch(Boolean mapCustomerOwnedIpOnLaunch) {
+        this.mapCustomerOwnedIpOnLaunch = mapCustomerOwnedIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
+     * subnet should be assigned a customer-owned IPv4 address.
+     * </p>
+     * <p>
+     * When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     * <code>CustomerOwnedIpv4Pool</code>.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to indicate that network interfaces attached to instances created in the
+     *         specified subnet should be assigned a customer-owned IPv4 address.</p>
+     *         <p>
+     *         When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     *         <code>CustomerOwnedIpv4Pool</code>.
+     */
+
+    public Boolean getMapCustomerOwnedIpOnLaunch() {
+        return this.mapCustomerOwnedIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
+     * subnet should be assigned a customer-owned IPv4 address.
+     * </p>
+     * <p>
+     * When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     * <code>CustomerOwnedIpv4Pool</code>.
+     * </p>
+     * 
+     * @param mapCustomerOwnedIpOnLaunch
+     *        Specify <code>true</code> to indicate that network interfaces attached to instances created in the
+     *        specified subnet should be assigned a customer-owned IPv4 address.</p>
+     *        <p>
+     *        When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     *        <code>CustomerOwnedIpv4Pool</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySubnetAttributeRequest withMapCustomerOwnedIpOnLaunch(Boolean mapCustomerOwnedIpOnLaunch) {
+        setMapCustomerOwnedIpOnLaunch(mapCustomerOwnedIpOnLaunch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to indicate that network interfaces attached to instances created in the specified
+     * subnet should be assigned a customer-owned IPv4 address.
+     * </p>
+     * <p>
+     * When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     * <code>CustomerOwnedIpv4Pool</code>.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to indicate that network interfaces attached to instances created in the
+     *         specified subnet should be assigned a customer-owned IPv4 address.</p>
+     *         <p>
+     *         When this value is <code>true</code>, you must specify the customer-owned IP pool using
+     *         <code>CustomerOwnedIpv4Pool</code>.
+     */
+
+    public Boolean isMapCustomerOwnedIpOnLaunch() {
+        return this.mapCustomerOwnedIpOnLaunch;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * <p>
+     * You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        The customer-owned IPv4 address pool associated with the subnet.</p>
+     *        <p>
+     *        You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     */
+
+    public void setCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        this.customerOwnedIpv4Pool = customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * <p>
+     * You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     * </p>
+     * 
+     * @return The customer-owned IPv4 address pool associated with the subnet.</p>
+     *         <p>
+     *         You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     */
+
+    public String getCustomerOwnedIpv4Pool() {
+        return this.customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * The customer-owned IPv4 address pool associated with the subnet.
+     * </p>
+     * <p>
+     * You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        The customer-owned IPv4 address pool associated with the subnet.</p>
+     *        <p>
+     *        You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySubnetAttributeRequest withCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        setCustomerOwnedIpv4Pool(customerOwnedIpv4Pool);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -280,7 +443,11 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
         if (getMapPublicIpOnLaunch() != null)
             sb.append("MapPublicIpOnLaunch: ").append(getMapPublicIpOnLaunch()).append(",");
         if (getSubnetId() != null)
-            sb.append("SubnetId: ").append(getSubnetId());
+            sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getMapCustomerOwnedIpOnLaunch() != null)
+            sb.append("MapCustomerOwnedIpOnLaunch: ").append(getMapCustomerOwnedIpOnLaunch()).append(",");
+        if (getCustomerOwnedIpv4Pool() != null)
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -307,6 +474,14 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getMapCustomerOwnedIpOnLaunch() == null ^ this.getMapCustomerOwnedIpOnLaunch() == null)
+            return false;
+        if (other.getMapCustomerOwnedIpOnLaunch() != null && other.getMapCustomerOwnedIpOnLaunch().equals(this.getMapCustomerOwnedIpOnLaunch()) == false)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() == null ^ this.getCustomerOwnedIpv4Pool() == null)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -318,6 +493,8 @@ public class ModifySubnetAttributeRequest extends AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getAssignIpv6AddressOnCreation() == null) ? 0 : getAssignIpv6AddressOnCreation().hashCode());
         hashCode = prime * hashCode + ((getMapPublicIpOnLaunch() == null) ? 0 : getMapPublicIpOnLaunch().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getMapCustomerOwnedIpOnLaunch() == null) ? 0 : getMapCustomerOwnedIpOnLaunch().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
         return hashCode;
     }
 

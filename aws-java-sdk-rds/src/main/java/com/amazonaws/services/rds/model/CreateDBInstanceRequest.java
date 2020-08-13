@@ -48,6 +48,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -66,6 +71,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * Must contain 1 to 64 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -92,7 +102,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -1142,21 +1152,13 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String kmsKeyId;
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -1857,6 +1859,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -1875,6 +1882,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * Must contain 1 to 64 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -1901,7 +1913,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -1980,6 +1992,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Can't be a word reserved by the specified database engine
      *        </p>
      *        </li>
@@ -1998,6 +2015,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Must contain 1 to 64 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2024,8 +2046,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *        (0-9).
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2110,6 +2131,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -2128,6 +2154,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * Must contain 1 to 64 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2154,7 +2185,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2232,6 +2263,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
+     *         Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Can't be a word reserved by the specified database engine
      *         </p>
      *         </li>
@@ -2250,6 +2286,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         Must contain 1 to 64 letters or numbers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *         </p>
      *         </li>
      *         <li>
@@ -2276,8 +2317,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *         (0-9).
+     *         Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *         </p>
      *         </li>
      *         <li>
@@ -2362,6 +2402,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -2380,6 +2425,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <li>
      * <p>
      * Must contain 1 to 64 letters or numbers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2406,7 +2456,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2485,6 +2535,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Can't be a word reserved by the specified database engine
      *        </p>
      *        </li>
@@ -2503,6 +2558,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Must contain 1 to 64 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2529,8 +2589,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *        (0-9).
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -8870,38 +8929,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *        Oracle DB instances can be created in an Active Directory Domain.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -8910,37 +8953,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *         Oracle DB instances can be created in an Active Directory Domain.</p>
+     * @return The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *         Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *         <p>
-     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *         that connect to the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *         Guide</i>.
-     *         </p>
-     *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *         the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -8949,38 +8976,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *        Oracle DB instances can be created in an Active Directory Domain.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

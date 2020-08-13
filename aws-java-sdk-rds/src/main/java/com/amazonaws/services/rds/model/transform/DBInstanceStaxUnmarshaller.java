@@ -195,6 +195,11 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("ReplicaMode", targetDepth)) {
+                    dBInstance.setReplicaMode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("LicenseModel", targetDepth)) {
                     dBInstance.setLicenseModel(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

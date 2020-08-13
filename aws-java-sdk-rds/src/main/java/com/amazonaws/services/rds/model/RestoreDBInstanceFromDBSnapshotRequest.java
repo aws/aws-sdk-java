@@ -331,21 +331,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior to this
-     * operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an Active Directory
-     * Domain.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -2493,39 +2485,23 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior to this
-     * operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an Active Directory
-     * Domain.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
      *        Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior
-     *        to this operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an
-     *        Active Directory Domain. </p>
+     *        to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     *        created in an Active Directory Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -2535,38 +2511,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior to this
-     * operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an Active Directory
-     * Domain.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @return Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior
-     *         to this operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an
-     *         Active Directory Domain. </p>
+     *         to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can
+     *         be created in an Active Directory Domain.</p>
      *         <p>
-     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *         that connect to the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *         Guide</i>.
-     *         </p>
-     *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *         the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -2576,39 +2536,23 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior to this
-     * operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an Active Directory
-     * Domain.
+     * operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an
+     * Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
      *        Specify the Active Directory directory ID to restore the DB instance in. The domain must be created prior
-     *        to this operation. Currently, only Microsoft SQL Server and Oracle DB instances can be created in an
-     *        Active Directory Domain. </p>
+     *        to this operation. Currently, only MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be
+     *        created in an Active Directory Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

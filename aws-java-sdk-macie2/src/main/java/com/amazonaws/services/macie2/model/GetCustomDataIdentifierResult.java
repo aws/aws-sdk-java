@@ -57,14 +57,15 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
-     * by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     * by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.
      * </p>
      */
     private java.util.List<String> ignoreWords;
     /**
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
-     * (maximumMatchDistance) of the regular expression to match.
+     * (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * </p>
      */
     private java.util.List<String> keywords;
@@ -319,11 +320,13 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
-     * by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     * by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *         matched by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     *         Ignore words are case sensitive.
      */
 
     public java.util.List<String> getIgnoreWords() {
@@ -333,12 +336,14 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
-     * by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     * by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.
      * </p>
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
-     *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore
+     *        words are case sensitive.
      */
 
     public void setIgnoreWords(java.util.Collection<String> ignoreWords) {
@@ -353,7 +358,8 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
-     * by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     * by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -363,7 +369,8 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
-     *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore
+     *        words are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,12 +387,14 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
-     * by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     * by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore words are case
+     * sensitive.
      * </p>
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
-     *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it.
+     *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. Ignore
+     *        words are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +406,11 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
-     * (maximumMatchDistance) of the regular expression to match.
+     * (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (keywords), one of which must be within proximity
-     *         (maximumMatchDistance) of the regular expression to match.
+     *         (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      */
 
     public java.util.List<String> getKeywords() {
@@ -411,12 +420,12 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
-     * (maximumMatchDistance) of the regular expression to match.
+     * (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
-     *        (maximumMatchDistance) of the regular expression to match.
+     *        (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      */
 
     public void setKeywords(java.util.Collection<String> keywords) {
@@ -431,7 +440,7 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
-     * (maximumMatchDistance) of the regular expression to match.
+     * (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -441,7 +450,7 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
-     *        (maximumMatchDistance) of the regular expression to match.
+     *        (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,12 +467,12 @@ public class GetCustomDataIdentifierResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
-     * (maximumMatchDistance) of the regular expression to match.
+     * (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
-     *        (maximumMatchDistance) of the regular expression to match.
+     *        (maximumMatchDistance) of the regular expression to match. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

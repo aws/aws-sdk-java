@@ -65,6 +65,8 @@ public class NodegroupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("diskSize").build();
     private static final MarshallingInfo<StructuredPojo> HEALTH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("health").build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -102,6 +104,7 @@ public class NodegroupMarshaller {
             protocolMarshaller.marshall(nodegroup.getResources(), RESOURCES_BINDING);
             protocolMarshaller.marshall(nodegroup.getDiskSize(), DISKSIZE_BINDING);
             protocolMarshaller.marshall(nodegroup.getHealth(), HEALTH_BINDING);
+            protocolMarshaller.marshall(nodegroup.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
             protocolMarshaller.marshall(nodegroup.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

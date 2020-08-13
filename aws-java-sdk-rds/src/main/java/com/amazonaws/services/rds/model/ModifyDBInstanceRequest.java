@@ -515,21 +515,13 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
-     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain.
+     * from its current domain. The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -807,6 +799,25 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      */
     private Boolean certificateRotationRestart;
+    /**
+     * <p>
+     * A value that sets the open mode of a replica database to either mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String replicaMode;
 
     /**
      * Default constructor for ModifyDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -4019,39 +4030,24 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
-     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain.
+     * from its current domain. The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
      *        The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the
      *        instance from its current domain. The domain must be created prior to this operation. Currently, only
-     *        Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain. </p>
+     *        MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory
+     *        Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -4061,38 +4057,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
-     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain.
+     * from its current domain. The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @return The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the
      *         instance from its current domain. The domain must be created prior to this operation. Currently, only
-     *         Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain. </p>
+     *         MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory
+     *         Domain.</p>
      *         <p>
-     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *         that connect to the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *         Guide</i>.
-     *         </p>
-     *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *         the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -4102,39 +4083,24 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the instance
-     * from its current domain. The domain must be created prior to this operation. Currently, only Microsoft SQL Server
-     * and Oracle DB instances can be created in an Active Directory Domain.
+     * from its current domain. The domain must be created prior to this operation. Currently, only MySQL, Microsoft SQL
+     * Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
      *        The Active Directory directory ID to move the DB instance to. Specify <code>none</code> to remove the
      *        instance from its current domain. The domain must be created prior to this operation. Currently, only
-     *        Microsoft SQL Server and Oracle DB instances can be created in an Active Directory Domain. </p>
+     *        MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory
+     *        Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6087,6 +6053,161 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A value that sets the open mode of a replica database to either mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+     *        <p>
+     *        Currently, this parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @see ReplicaMode
+     */
+
+    public void setReplicaMode(String replicaMode) {
+        this.replicaMode = replicaMode;
+    }
+
+    /**
+     * <p>
+     * A value that sets the open mode of a replica database to either mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+     *         <p>
+     *         Currently, this parameter is only supported for Oracle DB instances.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *         cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit
+     *         information to the mounted replica. Because it doesn't accept user connections, a mounted replica can't
+     *         serve a read-only workload. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *         Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @see ReplicaMode
+     */
+
+    public String getReplicaMode() {
+        return this.replicaMode;
+    }
+
+    /**
+     * <p>
+     * A value that sets the open mode of a replica database to either mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+     *        <p>
+     *        Currently, this parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public ModifyDBInstanceRequest withReplicaMode(String replicaMode) {
+        setReplicaMode(replicaMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that sets the open mode of a replica database to either mounted or read-only.
+     * </p>
+     * <note>
+     * <p>
+     * Currently, this parameter is only supported for Oracle DB instances.
+     * </p>
+     * </note>
+     * <p>
+     * Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     * cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information to the
+     * mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a read-only workload.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param replicaMode
+     *        A value that sets the open mode of a replica database to either mounted or read-only.</p> <note>
+     *        <p>
+     *        Currently, this parameter is only supported for Oracle DB instances.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Mounted DB replicas are included in Oracle Enterprise Edition. The main use case for mounted replicas is
+     *        cross-Region disaster recovery. The primary database doesn't use Active Data Guard to transmit information
+     *        to the mounted replica. Because it doesn't accept user connections, a mounted replica can't serve a
+     *        read-only workload. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *        Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public ModifyDBInstanceRequest withReplicaMode(ReplicaMode replicaMode) {
+        this.replicaMode = replicaMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6181,7 +6302,9 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getMaxAllocatedStorage() != null)
             sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
         if (getCertificateRotationRestart() != null)
-            sb.append("CertificateRotationRestart: ").append(getCertificateRotationRestart());
+            sb.append("CertificateRotationRestart: ").append(getCertificateRotationRestart()).append(",");
+        if (getReplicaMode() != null)
+            sb.append("ReplicaMode: ").append(getReplicaMode());
         sb.append("}");
         return sb.toString();
     }
@@ -6367,6 +6490,10 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCertificateRotationRestart() != null && other.getCertificateRotationRestart().equals(this.getCertificateRotationRestart()) == false)
             return false;
+        if (other.getReplicaMode() == null ^ this.getReplicaMode() == null)
+            return false;
+        if (other.getReplicaMode() != null && other.getReplicaMode().equals(this.getReplicaMode()) == false)
+            return false;
         return true;
     }
 
@@ -6417,6 +6544,7 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getCertificateRotationRestart() == null) ? 0 : getCertificateRotationRestart().hashCode());
+        hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
         return hashCode;
     }
 

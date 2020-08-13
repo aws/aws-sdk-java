@@ -42,7 +42,9 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
     private String clientId;
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      */
     private String challengeName;
@@ -236,11 +238,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -250,10 +256,14 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
-     * @return The challenge name. For more information, see .
+     * @return The challenge name. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *         >AdminInitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -263,11 +273,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -279,11 +293,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -293,11 +311,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */

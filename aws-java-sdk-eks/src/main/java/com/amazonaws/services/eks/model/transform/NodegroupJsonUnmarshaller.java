@@ -125,6 +125,10 @@ public class NodegroupJsonUnmarshaller implements Unmarshaller<Nodegroup, JsonUn
                     context.nextToken();
                     nodegroup.setHealth(NodegroupHealthJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("launchTemplate", targetDepth)) {
+                    context.nextToken();
+                    nodegroup.setLaunchTemplate(LaunchTemplateSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     nodegroup.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
