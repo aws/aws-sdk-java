@@ -45,7 +45,7 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
-     * You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
      * Automatic Daily Backups</a>.
      * </p>
@@ -162,14 +162,14 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
-     * You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
      * Automatic Daily Backups</a>.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
-     *        backups. You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     *        backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      *        with Automatic Daily Backups</a>.
      */
@@ -181,13 +181,13 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
-     * You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
      * Automatic Daily Backups</a>.
      * </p>
      * 
      * @return The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
-     *         backups. You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     *         backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      *         with Automatic Daily Backups</a>.
      */
@@ -199,14 +199,14 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
-     * You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
      * Automatic Daily Backups</a>.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
-     *        backups. You can retain automatic daily backups for a maximum of 35 days. For more information, see <a
+     *        backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
      *        with Automatic Daily Backups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

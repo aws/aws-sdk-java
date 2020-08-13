@@ -35,6 +35,8 @@ public class EnvironmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionType").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> OWNERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class EnvironmentMarshaller {
             protocolMarshaller.marshall(environment.getName(), NAME_BINDING);
             protocolMarshaller.marshall(environment.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(environment.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(environment.getConnectionType(), CONNECTIONTYPE_BINDING);
             protocolMarshaller.marshall(environment.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(environment.getOwnerArn(), OWNERARN_BINDING);
             protocolMarshaller.marshall(environment.getLifecycle(), LIFECYCLE_BINDING);

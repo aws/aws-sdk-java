@@ -31,7 +31,7 @@ public class ListThingsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<ThingAttribute> things;
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListThingsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token used to get the next set of results. Will not be returned if operation has returned all results.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,11 @@ public class ListThingsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      * 
-     * @return The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * @return The token used to get the next set of results. Will not be returned if operation has returned all
+     *         results.
      */
 
     public String getNextToken() {
@@ -133,11 +134,11 @@ public class ListThingsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     * The token used to get the next set of results. Will not be returned if operation has returned all results.
      * </p>
      * 
      * @param nextToken
-     *        The token used to get the next set of results, or <b>null</b> if there are no additional results.
+     *        The token used to get the next set of results. Will not be returned if operation has returned all results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

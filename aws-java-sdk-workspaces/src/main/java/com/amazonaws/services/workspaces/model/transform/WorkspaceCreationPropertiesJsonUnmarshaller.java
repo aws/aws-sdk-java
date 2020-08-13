@@ -48,6 +48,10 @@ public class WorkspaceCreationPropertiesJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("EnableWorkDocs", targetDepth)) {
+                    context.nextToken();
+                    workspaceCreationProperties.setEnableWorkDocs(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("EnableInternetAccess", targetDepth)) {
                     context.nextToken();
                     workspaceCreationProperties.setEnableInternetAccess(context.getUnmarshaller(Boolean.class).unmarshall(context));

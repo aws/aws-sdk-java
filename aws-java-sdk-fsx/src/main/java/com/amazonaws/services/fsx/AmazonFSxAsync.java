@@ -119,7 +119,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
-     * is <i>not</i> linked to a data respository.
+     * is <i>not</i> linked to an Amazon S3 data respository.
      * </p>
      * </li>
      * </ul>
@@ -189,7 +189,7 @@ public interface AmazonFSxAsync extends AmazonFSx {
      * </li>
      * <li>
      * <p>
-     * is <i>not</i> linked to a data respository.
+     * is <i>not</i> linked to an Amazon S3 data respository.
      * </p>
      * </li>
      * </ul>

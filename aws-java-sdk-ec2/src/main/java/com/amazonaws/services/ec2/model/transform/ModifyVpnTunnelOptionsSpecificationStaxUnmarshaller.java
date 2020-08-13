@@ -50,6 +50,11 @@ public class ModifyVpnTunnelOptionsSpecificationStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("TunnelInsideIpv6Cidr", targetDepth)) {
+                    modifyVpnTunnelOptionsSpecification.setTunnelInsideIpv6Cidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PreSharedKey", targetDepth)) {
                     modifyVpnTunnelOptionsSpecification.setPreSharedKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

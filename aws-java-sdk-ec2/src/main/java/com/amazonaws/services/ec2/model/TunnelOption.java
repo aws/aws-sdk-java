@@ -34,10 +34,16 @@ public class TunnelOption implements Serializable, Cloneable {
     private String outsideIpAddress;
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      */
     private String tunnelInsideCidr;
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     */
+    private String tunnelInsideIpv6Cidr;
     /**
      * <p>
      * The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer
@@ -168,11 +174,11 @@ public class TunnelOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      * 
      * @param tunnelInsideCidr
-     *        The range of inside IP addresses for the tunnel.
+     *        The range of inside IPv4 addresses for the tunnel.
      */
 
     public void setTunnelInsideCidr(String tunnelInsideCidr) {
@@ -181,10 +187,10 @@ public class TunnelOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      * 
-     * @return The range of inside IP addresses for the tunnel.
+     * @return The range of inside IPv4 addresses for the tunnel.
      */
 
     public String getTunnelInsideCidr() {
@@ -193,16 +199,56 @@ public class TunnelOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      * 
      * @param tunnelInsideCidr
-     *        The range of inside IP addresses for the tunnel.
+     *        The range of inside IPv4 addresses for the tunnel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TunnelOption withTunnelInsideCidr(String tunnelInsideCidr) {
         setTunnelInsideCidr(tunnelInsideCidr);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     * 
+     * @param tunnelInsideIpv6Cidr
+     *        The range of inside IPv6 addresses for the tunnel.
+     */
+
+    public void setTunnelInsideIpv6Cidr(String tunnelInsideIpv6Cidr) {
+        this.tunnelInsideIpv6Cidr = tunnelInsideIpv6Cidr;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     * 
+     * @return The range of inside IPv6 addresses for the tunnel.
+     */
+
+    public String getTunnelInsideIpv6Cidr() {
+        return this.tunnelInsideIpv6Cidr;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     * 
+     * @param tunnelInsideIpv6Cidr
+     *        The range of inside IPv6 addresses for the tunnel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TunnelOption withTunnelInsideIpv6Cidr(String tunnelInsideIpv6Cidr) {
+        setTunnelInsideIpv6Cidr(tunnelInsideIpv6Cidr);
         return this;
     }
 
@@ -1031,6 +1077,8 @@ public class TunnelOption implements Serializable, Cloneable {
             sb.append("OutsideIpAddress: ").append(getOutsideIpAddress()).append(",");
         if (getTunnelInsideCidr() != null)
             sb.append("TunnelInsideCidr: ").append(getTunnelInsideCidr()).append(",");
+        if (getTunnelInsideIpv6Cidr() != null)
+            sb.append("TunnelInsideIpv6Cidr: ").append(getTunnelInsideIpv6Cidr()).append(",");
         if (getPreSharedKey() != null)
             sb.append("PreSharedKey: ").append(getPreSharedKey()).append(",");
         if (getPhase1LifetimeSeconds() != null)
@@ -1080,6 +1128,10 @@ public class TunnelOption implements Serializable, Cloneable {
         if (other.getTunnelInsideCidr() == null ^ this.getTunnelInsideCidr() == null)
             return false;
         if (other.getTunnelInsideCidr() != null && other.getTunnelInsideCidr().equals(this.getTunnelInsideCidr()) == false)
+            return false;
+        if (other.getTunnelInsideIpv6Cidr() == null ^ this.getTunnelInsideIpv6Cidr() == null)
+            return false;
+        if (other.getTunnelInsideIpv6Cidr() != null && other.getTunnelInsideIpv6Cidr().equals(this.getTunnelInsideIpv6Cidr()) == false)
             return false;
         if (other.getPreSharedKey() == null ^ this.getPreSharedKey() == null)
             return false;
@@ -1147,6 +1199,7 @@ public class TunnelOption implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getOutsideIpAddress() == null) ? 0 : getOutsideIpAddress().hashCode());
         hashCode = prime * hashCode + ((getTunnelInsideCidr() == null) ? 0 : getTunnelInsideCidr().hashCode());
+        hashCode = prime * hashCode + ((getTunnelInsideIpv6Cidr() == null) ? 0 : getTunnelInsideIpv6Cidr().hashCode());
         hashCode = prime * hashCode + ((getPreSharedKey() == null) ? 0 : getPreSharedKey().hashCode());
         hashCode = prime * hashCode + ((getPhase1LifetimeSeconds() == null) ? 0 : getPhase1LifetimeSeconds().hashCode());
         hashCode = prime * hashCode + ((getPhase2LifetimeSeconds() == null) ? 0 : getPhase2LifetimeSeconds().hashCode());

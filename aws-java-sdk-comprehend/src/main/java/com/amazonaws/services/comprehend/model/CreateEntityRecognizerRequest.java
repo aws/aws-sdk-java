@@ -62,8 +62,8 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     private String clientRequestToken;
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language. Only English ("en") is currently
-     * supported.
+     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
+     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
      * </p>
      */
     private String languageCode;
@@ -369,13 +369,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language. Only English ("en") is currently
-     * supported.
+     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
+     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language. Only English ("en") is
-     *        currently supported.
+     *        You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
+     *        ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
+     *        same language.
      * @see LanguageCode
      */
 
@@ -385,12 +386,13 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language. Only English ("en") is currently
-     * supported.
+     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
+     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
      * </p>
      * 
-     * @return The language of the input documents. All documents must be in the same language. Only English ("en") is
-     *         currently supported.
+     * @return You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
+     *         ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
+     *         same language.
      * @see LanguageCode
      */
 
@@ -400,13 +402,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language. Only English ("en") is currently
-     * supported.
+     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
+     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language. Only English ("en") is
-     *        currently supported.
+     *        You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
+     *        ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
+     *        same language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -418,13 +421,14 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language of the input documents. All documents must be in the same language. Only English ("en") is currently
-     * supported.
+     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
+     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        The language of the input documents. All documents must be in the same language. Only English ("en") is
-     *        currently supported.
+     *        You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
+     *        ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
+     *        same language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

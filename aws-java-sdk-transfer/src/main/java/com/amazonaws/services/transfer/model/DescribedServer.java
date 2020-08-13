@@ -19,10 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes
- * the following: the server Amazon Resource Name (ARN), the certificate ARN (if the FTPS protocol was selected), the
- * endpoint type and details, the authentication configuration and type, the logging role, the file transfer protocol or
- * protocols, the server ID and state, and assigned tags or metadata.
+ * Describes the properties of a file transfer protocol-enabled server that was specified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedServer" target="_top">AWS API
@@ -33,7 +30,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      * </p>
      */
     private String arn;
@@ -115,6 +112,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> protocols;
     /**
      * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     */
+    private String securityPolicyName;
+    /**
+     * <p>
      * Specifies the unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
      * </p>
      */
@@ -149,12 +152,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      * </p>
      * 
      * @param arn
-     *        Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be
-     *        described.
+     *        Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      */
 
     public void setArn(String arn) {
@@ -163,11 +165,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      * </p>
      * 
-     * @return Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be
-     *         described.
+     * @return Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      */
 
     public String getArn() {
@@ -176,12 +177,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      * </p>
      * 
      * @param arn
-     *        Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be
-     *        described.
+     *        Specifies the unique Amazon Resource Name (ARN) of the file transfer protocol-enabled server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -858,6 +858,46 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     */
+
+    public void setSecurityPolicyName(String securityPolicyName) {
+        this.securityPolicyName = securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @return Specifies the name of the security policy that is attached to the server.
+     */
+
+    public String getSecurityPolicyName() {
+        return this.securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withSecurityPolicyName(String securityPolicyName) {
+        setSecurityPolicyName(securityPolicyName);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
      * </p>
      * 
@@ -1168,6 +1208,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
         if (getProtocols() != null)
             sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getSecurityPolicyName() != null)
+            sb.append("SecurityPolicyName: ").append(getSecurityPolicyName()).append(",");
         if (getServerId() != null)
             sb.append("ServerId: ").append(getServerId()).append(",");
         if (getState() != null)
@@ -1226,6 +1268,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
+        if (other.getSecurityPolicyName() == null ^ this.getSecurityPolicyName() == null)
+            return false;
+        if (other.getSecurityPolicyName() != null && other.getSecurityPolicyName().equals(this.getSecurityPolicyName()) == false)
+            return false;
         if (other.getServerId() == null ^ this.getServerId() == null)
             return false;
         if (other.getServerId() != null && other.getServerId().equals(this.getServerId()) == false)
@@ -1259,6 +1305,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicyName() == null) ? 0 : getSecurityPolicyName().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

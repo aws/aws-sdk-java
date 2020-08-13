@@ -27,7 +27,7 @@ import com.amazonaws.services.transfer.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol
  * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
  * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
  * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
@@ -189,6 +189,30 @@ public interface AWSTransfer {
 
     /**
      * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @return Result of the DescribeSecurityPolicy operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSecurityPolicyResult describeSecurityPolicy(DescribeSecurityPolicyRequest describeSecurityPolicyRequest);
+
+    /**
+     * <p>
      * Describes a file transfer protocol-enabled server that you specify by passing the <code>ServerId</code>
      * parameter.
      * </p>
@@ -270,6 +294,27 @@ public interface AWSTransfer {
      *      API Documentation</a>
      */
     ImportSshPublicKeyResult importSshPublicKey(ImportSshPublicKeyRequest importSshPublicKeyRequest);
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @return Result of the ListSecurityPolicies operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @sample AWSTransfer.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListSecurityPoliciesResult listSecurityPolicies(ListSecurityPoliciesRequest listSecurityPoliciesRequest);
 
     /**
      * <p>

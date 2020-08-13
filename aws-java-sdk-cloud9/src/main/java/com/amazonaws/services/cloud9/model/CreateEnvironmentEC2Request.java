@@ -82,6 +82,12 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     */
+    private String connectionType;
 
     /**
      * <p>
@@ -485,6 +491,65 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment.
+     * @see ConnectionType
+     */
+
+    public void setConnectionType(String connectionType) {
+        this.connectionType = connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @return The connection type used for connecting to an Amazon EC2 environment.
+     * @see ConnectionType
+     */
+
+    public String getConnectionType() {
+        return this.connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public CreateEnvironmentEC2Request withConnectionType(String connectionType) {
+        setConnectionType(connectionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public CreateEnvironmentEC2Request withConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -511,7 +576,9 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         if (getOwnerArn() != null)
             sb.append("OwnerArn: ").append(getOwnerArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getConnectionType() != null)
+            sb.append("ConnectionType: ").append(getConnectionType());
         sb.append("}");
         return sb.toString();
     }
@@ -558,6 +625,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getConnectionType() == null ^ this.getConnectionType() == null)
+            return false;
+        if (other.getConnectionType() != null && other.getConnectionType().equals(this.getConnectionType()) == false)
+            return false;
         return true;
     }
 
@@ -574,6 +645,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAutomaticStopTimeMinutes() == null) ? 0 : getAutomaticStopTimeMinutes().hashCode());
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConnectionType() == null) ? 0 : getConnectionType().hashCode());
         return hashCode;
     }
 

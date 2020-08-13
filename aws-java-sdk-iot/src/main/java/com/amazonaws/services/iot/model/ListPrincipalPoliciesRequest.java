@@ -27,7 +27,9 @@ public class ListPrincipalPoliciesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      */
     private String principal;
@@ -52,11 +54,16 @@ public class ListPrincipalPoliciesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      */
 
     public void setPrincipal(String principal) {
@@ -65,10 +72,15 @@ public class ListPrincipalPoliciesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
-     * @return The principal.
+     * @return The principal. Valid principals are CertificateArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *         (<i>region</i>:<i>id</i>).
      */
 
     public String getPrincipal() {
@@ -77,11 +89,16 @@ public class ListPrincipalPoliciesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The principal.
+     * The principal. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param principal
-     *        The principal.
+     *        The principal. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

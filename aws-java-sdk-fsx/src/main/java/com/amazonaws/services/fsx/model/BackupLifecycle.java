@@ -24,6 +24,7 @@ public enum BackupLifecycle {
 
     AVAILABLE("AVAILABLE"),
     CREATING("CREATING"),
+    TRANSFERRING("TRANSFERRING"),
     DELETED("DELETED"),
     FAILED("FAILED");
 

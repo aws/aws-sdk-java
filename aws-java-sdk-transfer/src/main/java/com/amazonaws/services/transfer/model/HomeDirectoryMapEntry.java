@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents an object that contains entries and a targets for <code>HomeDirectoryMappings</code>.
+ * Represents an object that contains entries and targets for <code>HomeDirectoryMappings</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/HomeDirectoryMapEntry" target="_top">AWS API

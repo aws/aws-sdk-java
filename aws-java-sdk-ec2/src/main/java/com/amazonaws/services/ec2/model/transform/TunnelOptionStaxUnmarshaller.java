@@ -55,6 +55,11 @@ public class TunnelOptionStaxUnmarshaller implements Unmarshaller<TunnelOption, 
                     continue;
                 }
 
+                if (context.testExpression("tunnelInsideIpv6Cidr", targetDepth)) {
+                    tunnelOption.setTunnelInsideIpv6Cidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("preSharedKey", targetDepth)) {
                     tunnelOption.setPreSharedKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

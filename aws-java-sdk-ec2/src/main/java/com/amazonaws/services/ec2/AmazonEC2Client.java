@@ -6223,8 +6223,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection type is <code>ipsec.1</code>.
+     * Creates a VPN connection between an existing virtual private gateway or transit gateway and a customer gateway.
+     * The supported connection type is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -6233,7 +6233,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <important>
      * <p>
      * We strongly recommend that you use HTTPS when calling this operation because the response contains sensitive
-     * cryptographic information for configuring your customer gateway.
+     * cryptographic information for configuring your customer gateway device.
      * </p>
      * </important>
      * <p>

@@ -2213,6 +2213,8 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
      *         One or more parameter values are not valid.
      * @throws ResourceNotFoundException
      *         The resource could not be found.
+     * @throws OperationNotSupportedException
+     *         This operation is not supported.
      * @sample AmazonWorkspaces.ModifyWorkspaceCreationProperties
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties"
      *      target="_top">AWS API Documentation</a>

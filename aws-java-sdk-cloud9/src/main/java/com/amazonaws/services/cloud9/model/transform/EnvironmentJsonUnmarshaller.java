@@ -64,6 +64,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectionType", targetDepth)) {
+                    context.nextToken();
+                    environment.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     environment.setArn(context.getUnmarshaller(String.class).unmarshall(context));

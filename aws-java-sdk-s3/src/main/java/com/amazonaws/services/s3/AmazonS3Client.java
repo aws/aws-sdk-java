@@ -4664,15 +4664,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String authority = super.endpoint.getAuthority();
         if (Constants.S3_HOSTNAME.equals(authority)) {
             return Region.US_Standard;
-        } else {
-            Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
-            if (m.matches()) {
-                return Region.fromValue(m.group(1));
-            } else {
-                throw new IllegalStateException(
-                    "S3 client with invalid S3 endpoint configured: " + authority);
-            }
         }
+
+        Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
+        if (m.matches()) {
+            return Region.fromValue(m.group(1));
+        }
+
+        String signerRegion = getSignerRegion();
+        if (signerRegion != null) {
+            return Region.fromValue(signerRegion);
+        }
+
+        throw new IllegalStateException("Unable to determine region from configured S3 endpoint (" + authority +
+                                        ") or signing region.");
     }
 
     @Override
@@ -4681,13 +4686,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if(Constants.S3_HOSTNAME.equals(authority)) {
             return "us-east-1";
         }
+
         Matcher m = Region.S3_REGIONAL_ENDPOINT_PATTERN.matcher(authority);
-        try {
-            m.matches();
-            return RegionUtils.getRegion(m.group(1)).getName();
-        } catch (Exception e) {
-            throw new IllegalStateException("No valid region has been specified. Unable to return region name", e);
+        if (m.matches()) {
+            try {
+                return RegionUtils.getRegion(m.group(1)).getName();
+            } catch (Exception e) {
+                throw new IllegalStateException("No valid region has been specified. Unable to return region name.", e);
+            }
         }
+
+        String signerRegion = getSignerRegion();
+        if (signerRegion != null) {
+            return signerRegion;
+        }
+
+        throw new IllegalStateException("Unable to determine region from configured S3 endpoint (" + authority +
+                                        ") or signing region.");
     }
 
     private static boolean isRegionFipsEnabled(String regionName) {

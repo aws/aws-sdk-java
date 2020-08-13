@@ -55,6 +55,10 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
                 request.addParameter("TunnelOptions.TunnelInsideCidr", StringUtils.fromString(tunnelOptions.getTunnelInsideCidr()));
             }
 
+            if (tunnelOptions.getTunnelInsideIpv6Cidr() != null) {
+                request.addParameter("TunnelOptions.TunnelInsideIpv6Cidr", StringUtils.fromString(tunnelOptions.getTunnelInsideIpv6Cidr()));
+            }
+
             if (tunnelOptions.getPreSharedKey() != null) {
                 request.addParameter("TunnelOptions.PreSharedKey", StringUtils.fromString(tunnelOptions.getPreSharedKey()));
             }

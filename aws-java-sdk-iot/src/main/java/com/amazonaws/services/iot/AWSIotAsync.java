@@ -560,6 +560,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Creates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param createAuditSuppressionRequest
+     * @return A Java Future containing the result of the CreateAuditSuppression operation returned by the service.
+     * @sample AWSIotAsync.CreateAuditSuppression
+     */
+    java.util.concurrent.Future<CreateAuditSuppressionResult> createAuditSuppressionAsync(CreateAuditSuppressionRequest createAuditSuppressionRequest);
+
+    /**
+     * <p>
+     * Creates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param createAuditSuppressionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAuditSuppression operation returned by the service.
+     * @sample AWSIotAsyncHandler.CreateAuditSuppression
+     */
+    java.util.concurrent.Future<CreateAuditSuppressionResult> createAuditSuppressionAsync(CreateAuditSuppressionRequest createAuditSuppressionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAuditSuppressionRequest, CreateAuditSuppressionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an authorizer.
      * </p>
      * 
@@ -906,8 +933,10 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
-     * action can apply only one type of change.
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain
+     * types of mitigation actions can be applied to specific check names. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+     * actions</a>. Each mitigation action can apply only one type of change.
      * </p>
      * 
      * @param createMitigationActionRequest
@@ -918,8 +947,10 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
-     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
-     * action can apply only one type of change.
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain
+     * types of mitigation actions can be applied to specific check names. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+     * actions</a>. Each mitigation action can apply only one type of change.
      * </p>
      * 
      * @param createMitigationActionRequest
@@ -1446,6 +1477,33 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<DeleteAccountAuditConfigurationResult> deleteAccountAuditConfigurationAsync(
             DeleteAccountAuditConfigurationRequest deleteAccountAuditConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountAuditConfigurationRequest, DeleteAccountAuditConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param deleteAuditSuppressionRequest
+     * @return A Java Future containing the result of the DeleteAuditSuppression operation returned by the service.
+     * @sample AWSIotAsync.DeleteAuditSuppression
+     */
+    java.util.concurrent.Future<DeleteAuditSuppressionResult> deleteAuditSuppressionAsync(DeleteAuditSuppressionRequest deleteAuditSuppressionRequest);
+
+    /**
+     * <p>
+     * Deletes a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param deleteAuditSuppressionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAuditSuppression operation returned by the service.
+     * @sample AWSIotAsyncHandler.DeleteAuditSuppression
+     */
+    java.util.concurrent.Future<DeleteAuditSuppressionResult> deleteAuditSuppressionAsync(DeleteAuditSuppressionRequest deleteAuditSuppressionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAuditSuppressionRequest, DeleteAuditSuppressionResult> asyncHandler);
 
     /**
      * <p>
@@ -2370,6 +2428,33 @@ public interface AWSIotAsync extends AWSIot {
     java.util.concurrent.Future<DescribeAuditMitigationActionsTaskResult> describeAuditMitigationActionsTaskAsync(
             DescribeAuditMitigationActionsTaskRequest describeAuditMitigationActionsTaskRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAuditMitigationActionsTaskRequest, DescribeAuditMitigationActionsTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param describeAuditSuppressionRequest
+     * @return A Java Future containing the result of the DescribeAuditSuppression operation returned by the service.
+     * @sample AWSIotAsync.DescribeAuditSuppression
+     */
+    java.util.concurrent.Future<DescribeAuditSuppressionResult> describeAuditSuppressionAsync(DescribeAuditSuppressionRequest describeAuditSuppressionRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param describeAuditSuppressionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAuditSuppression operation returned by the service.
+     * @sample AWSIotAsyncHandler.DescribeAuditSuppression
+     */
+    java.util.concurrent.Future<DescribeAuditSuppressionResult> describeAuditSuppressionAsync(DescribeAuditSuppressionRequest describeAuditSuppressionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAuditSuppressionRequest, DescribeAuditSuppressionResult> asyncHandler);
 
     /**
      * <p>
@@ -3806,6 +3891,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Lists your Device Defender audit listings.
+     * </p>
+     * 
+     * @param listAuditSuppressionsRequest
+     * @return A Java Future containing the result of the ListAuditSuppressions operation returned by the service.
+     * @sample AWSIotAsync.ListAuditSuppressions
+     */
+    java.util.concurrent.Future<ListAuditSuppressionsResult> listAuditSuppressionsAsync(ListAuditSuppressionsRequest listAuditSuppressionsRequest);
+
+    /**
+     * <p>
+     * Lists your Device Defender audit listings.
+     * </p>
+     * 
+     * @param listAuditSuppressionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAuditSuppressions operation returned by the service.
+     * @sample AWSIotAsyncHandler.ListAuditSuppressions
+     */
+    java.util.concurrent.Future<ListAuditSuppressionsResult> listAuditSuppressionsAsync(ListAuditSuppressionsRequest listAuditSuppressionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAuditSuppressionsRequest, ListAuditSuppressionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Device Defender audits that have been performed during a given time period.
      * </p>
      * 
@@ -4882,6 +4994,13 @@ public interface AWSIotAsync extends AWSIot {
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
      * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
      * </p>
+     * <note>
+     * <p>
+     * You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also
+     * not be charged if no attributes or pagination token was provided in request and no pagination token and no
+     * results were returned.
+     * </p>
+     * </note>
      * 
      * @param listThingsRequest
      *        The input for the ListThings operation.
@@ -4896,6 +5015,13 @@ public interface AWSIotAsync extends AWSIot {
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
      * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
      * </p>
+     * <note>
+     * <p>
+     * You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also
+     * not be charged if no attributes or pagination token was provided in request and no pagination token and no
+     * results were returned.
+     * </p>
+     * </note>
      * 
      * @param listThingsRequest
      *        The input for the ListThings operation.
@@ -5859,6 +5985,33 @@ public interface AWSIotAsync extends AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param updateAuditSuppressionRequest
+     * @return A Java Future containing the result of the UpdateAuditSuppression operation returned by the service.
+     * @sample AWSIotAsync.UpdateAuditSuppression
+     */
+    java.util.concurrent.Future<UpdateAuditSuppressionResult> updateAuditSuppressionAsync(UpdateAuditSuppressionRequest updateAuditSuppressionRequest);
+
+    /**
+     * <p>
+     * Updates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param updateAuditSuppressionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAuditSuppression operation returned by the service.
+     * @sample AWSIotAsyncHandler.UpdateAuditSuppression
+     */
+    java.util.concurrent.Future<UpdateAuditSuppressionResult> updateAuditSuppressionAsync(UpdateAuditSuppressionRequest updateAuditSuppressionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAuditSuppressionRequest, UpdateAuditSuppressionResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an authorizer.
      * </p>
      * 
@@ -5945,11 +6098,12 @@ public interface AWSIotAsync extends AWSIot {
      * Updates the status of the specified certificate. This operation is idempotent.
      * </p>
      * <p>
-     * Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices,
-     * but these devices will be unable to reconnect.
+     * Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to AWS IoT.
      * </p>
      * <p>
-     * The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.
+     * Within a few minutes of updating a certificate from the ACTIVE state to any other state, AWS IoT disconnects all
+     * devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state
+     * to reconnect.
      * </p>
      * 
      * @param updateCertificateRequest
@@ -5964,11 +6118,12 @@ public interface AWSIotAsync extends AWSIot {
      * Updates the status of the specified certificate. This operation is idempotent.
      * </p>
      * <p>
-     * Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices,
-     * but these devices will be unable to reconnect.
+     * Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to AWS IoT.
      * </p>
      * <p>
-     * The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.
+     * Within a few minutes of updating a certificate from the ACTIVE state to any other state, AWS IoT disconnects all
+     * devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state
+     * to reconnect.
      * </p>
      * 
      * @param updateCertificateRequest

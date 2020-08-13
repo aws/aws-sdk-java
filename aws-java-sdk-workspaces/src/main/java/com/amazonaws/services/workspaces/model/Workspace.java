@@ -84,7 +84,9 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     private String errorCode;
     /**
      * <p>
-     * The name of the WorkSpace, as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a
+     * WorkSpace</a>.
      * </p>
      */
     private String computerName;
@@ -515,11 +517,16 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the WorkSpace, as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a
+     * WorkSpace</a>.
      * </p>
      * 
      * @param computerName
-     *        The name of the WorkSpace, as seen by the operating system.
+     *        The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a
+     *        WorkSpace</a>.
      */
 
     public void setComputerName(String computerName) {
@@ -528,10 +535,15 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the WorkSpace, as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a
+     * WorkSpace</a>.
      * </p>
      * 
-     * @return The name of the WorkSpace, as seen by the operating system.
+     * @return The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch
+     *         a WorkSpace</a>.
      */
 
     public String getComputerName() {
@@ -540,11 +552,16 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the WorkSpace, as seen by the operating system.
+     * The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a
+     * WorkSpace</a>.
      * </p>
      * 
      * @param computerName
-     *        The name of the WorkSpace, as seen by the operating system.
+     *        The name of the WorkSpace, as seen by the operating system. The format of this name varies. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/launch-workspaces-tutorials.html"> Launch a
+     *        WorkSpace</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

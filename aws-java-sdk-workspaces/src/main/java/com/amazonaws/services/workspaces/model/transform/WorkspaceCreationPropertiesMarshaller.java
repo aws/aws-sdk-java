@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WorkspaceCreationPropertiesMarshaller {
 
+    private static final MarshallingInfo<Boolean> ENABLEWORKDOCS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableWorkDocs").build();
     private static final MarshallingInfo<Boolean> ENABLEINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableInternetAccess").build();
     private static final MarshallingInfo<String> DEFAULTOU_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class WorkspaceCreationPropertiesMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(workspaceCreationProperties.getEnableWorkDocs(), ENABLEWORKDOCS_BINDING);
             protocolMarshaller.marshall(workspaceCreationProperties.getEnableInternetAccess(), ENABLEINTERNETACCESS_BINDING);
             protocolMarshaller.marshall(workspaceCreationProperties.getDefaultOu(), DEFAULTOU_BINDING);
             protocolMarshaller.marshall(workspaceCreationProperties.getCustomSecurityGroupId(), CUSTOMSECURITYGROUPID_BINDING);

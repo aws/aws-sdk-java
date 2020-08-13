@@ -88,6 +88,10 @@ public class CreateFileSystemLustreConfigurationJsonUnmarshaller implements Unma
                     context.nextToken();
                     createFileSystemLustreConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DriveCacheType", targetDepth)) {
+                    context.nextToken();
+                    createFileSystemLustreConfiguration.setDriveCacheType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

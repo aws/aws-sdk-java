@@ -64,7 +64,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If using
      * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
      * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
      * sure that the end of the key name ends in a '/' for it to be considered a folder.
@@ -130,9 +130,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a
-     * hyphen.
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
+     * The user name can't start with a hyphen, period, and at sign.
      * </p>
      */
     private String userName;
@@ -308,7 +308,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If using
      * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
      * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
      * sure that the end of the key name ends in a '/' for it to be considered a folder.
@@ -332,7 +332,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <note>
      *         <p>
      *         If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     *         workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory.
+     *         workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory.
      *         If using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the
      *         put-object operation. For example, you use the following:
      *         <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of
@@ -363,7 +363,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If using
      * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
      * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
      * sure that the end of the key name ends in a '/' for it to be considered a folder.
@@ -388,7 +388,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     *        workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If
+     *        workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If
      *        using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object
      *        operation. For example, you use the following:
      *        <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the
@@ -424,7 +424,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If using
      * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
      * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
      * sure that the end of the key name ends in a '/' for it to be considered a folder.
@@ -454,7 +454,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     *        workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If
+     *        workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If
      *        using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object
      *        operation. For example, you use the following:
      *        <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the
@@ -492,7 +492,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     * workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If using
+     * workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If using
      * the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object operation. For
      * example, you use the following: <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make
      * sure that the end of the key name ends in a '/' for it to be considered a folder.
@@ -517,7 +517,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        If the target of a logical directory entry does not exist in Amazon S3, the entry will be ignored. As a
-     *        workaround, you can use the Amazon S3 api to create 0 byte objects as place holders for your directory. If
+     *        workaround, you can use the Amazon S3 API to create 0 byte objects as place holders for your directory. If
      *        using the CLI, use the <code>s3api</code> call instead of <code>s3</code> so you can use the put-object
      *        operation. For example, you use the following:
      *        <code>aws s3api put-object --bucket bucketname --key path/to/folder/</code>. Make sure that the end of the
@@ -916,16 +916,16 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a
-     * hyphen.
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
+     * The user name can't start with a hyphen, period, and at sign.
      * </p>
      * 
      * @param userName
      *        A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     *        specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32
-     *        characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name
-     *        can't start with a hyphen.
+     *        specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
+     *        characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period
+     *        '.', and at sign '@'. The user name can't start with a hyphen, period, and at sign.
      */
 
     public void setUserName(String userName) {
@@ -935,15 +935,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a
-     * hyphen.
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
+     * The user name can't start with a hyphen, period, and at sign.
      * </p>
      * 
      * @return A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     *         specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32
-     *         characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name
-     *         can't start with a hyphen.
+     *         specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
+     *         characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period
+     *         '.', and at sign '@'. The user name can't start with a hyphen, period, and at sign.
      */
 
     public String getUserName() {
@@ -953,16 +953,16 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32 characters
-     * long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a
-     * hyphen.
+     * specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100 characters
+     * long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at sign '@'.
+     * The user name can't start with a hyphen, period, and at sign.
      * </p>
      * 
      * @param userName
      *        A unique string that identifies a user and is associated with a file transfer protocol-enabled server as
-     *        specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 32
-     *        characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name
-     *        can't start with a hyphen.
+     *        specified by the <code>ServerId</code>. This user name must be a minimum of 3 and a maximum of 100
+     *        characters long. The following are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period
+     *        '.', and at sign '@'. The user name can't start with a hyphen, period, and at sign.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

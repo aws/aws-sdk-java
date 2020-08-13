@@ -1,3 +1,36 @@
+# __1.11.840__ __2020-08-12__
+## __AWS Cloud9__
+  - ### Features
+    - Add ConnectionType input parameter to CreateEnvironmentEC2 endpoint. New parameter enables creation of environments with SSM connection.
+
+## __AWS IoT__
+  - ### Features
+    - Audit finding suppressions: Device Defender enables customers to turn off non-compliant findings for specific resources on a per check basis.
+
+## __AWS Lambda__
+  - ### Features
+    - Support for creating Lambda Functions using 'java8.al2' and 'provided.al2'
+
+## __AWS Transfer Family__
+  - ### Features
+    - Adds security policies to control cryptographic algorithms advertised by your server, additional characters in usernames and length increase, and FIPS compliant endpoints in the US and Canada regions.
+
+## __Amazon Comprehend__
+  - ### Features
+    - Amazon Comprehend Custom Entity Recognition now supports Spanish, German, French, Italian and Portuguese and up to 25 entity types per model.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Introduces support for IPv6-in-IPv4 IPsec tunnels. A user can now send traffic from their on-premise IPv6 network to AWS VPCs that have IPv6 support enabled.
+
+## __Amazon FSx__
+  - ### Features
+    - This release adds the capability to create persistent file systems for throughput-intensive workloads using Hard Disk Drive (HDD) storage and an optional read-only Solid-State Drive (SSD) cache.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Adds optional EnableWorkDocs property to WorkspaceCreationProperties in the ModifyWorkspaceCreationProperties API
+
 # __1.11.839__ __2020-08-11__
 ## __AWS Lambda__
   - ### Features

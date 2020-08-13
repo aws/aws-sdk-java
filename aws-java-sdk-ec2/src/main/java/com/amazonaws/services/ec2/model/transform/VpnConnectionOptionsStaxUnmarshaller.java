@@ -55,6 +55,11 @@ public class VpnConnectionOptionsStaxUnmarshaller implements Unmarshaller<VpnCon
                     continue;
                 }
 
+                if (context.testExpression("tunnelInsideIpVersion", targetDepth)) {
+                    vpnConnectionOptions.setTunnelInsideIpVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tunnelOptionSet", targetDepth)) {
                     vpnConnectionOptions.withTunnelOptions(new ArrayList<TunnelOption>());
                     continue;

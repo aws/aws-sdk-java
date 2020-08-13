@@ -114,6 +114,11 @@ public class AbstractAWSIot implements AWSIot {
     }
 
     @Override
+    public CreateAuditSuppressionResult createAuditSuppression(CreateAuditSuppressionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAuthorizerResult createAuthorizer(CreateAuthorizerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -235,6 +240,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DeleteAccountAuditConfigurationResult deleteAccountAuditConfiguration(DeleteAccountAuditConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAuditSuppressionResult deleteAuditSuppression(DeleteAuditSuppressionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -385,6 +395,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public DescribeAuditMitigationActionsTaskResult describeAuditMitigationActionsTask(DescribeAuditMitigationActionsTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAuditSuppressionResult describeAuditSuppression(DescribeAuditSuppressionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -631,6 +646,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public ListAuditMitigationActionsTasksResult listAuditMitigationActionsTasks(ListAuditMitigationActionsTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAuditSuppressionsResult listAuditSuppressions(ListAuditSuppressionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -968,6 +988,11 @@ public class AbstractAWSIot implements AWSIot {
 
     @Override
     public UpdateAccountAuditConfigurationResult updateAccountAuditConfiguration(UpdateAccountAuditConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAuditSuppressionResult updateAuditSuppression(UpdateAuditSuppressionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

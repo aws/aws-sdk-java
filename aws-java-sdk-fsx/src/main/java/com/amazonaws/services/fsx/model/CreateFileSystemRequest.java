@@ -51,13 +51,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      * </p>
      * </li>
      * </ul>
@@ -256,13 +256,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      * </p>
      * </li>
      * </ul>
@@ -290,14 +290,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400
-     *        GiB, and increments of 2400 GiB.
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     *        increments of 2.4 TiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     *        GiB.
+     *        For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      *        </p>
      *        </li>
      *        </ul>
@@ -331,13 +330,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      * </p>
      * </li>
      * </ul>
@@ -364,14 +363,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB,
-     *         2400 GiB, and increments of 2400 GiB.
+     *         For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     *         increments of 2.4 TiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     *         GiB.
+     *         For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      *         </p>
      *         </li>
      *         </ul>
@@ -405,13 +403,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400 GiB,
-     * and increments of 2400 GiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     * increments of 2.4 TiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      * </p>
      * </li>
      * </ul>
@@ -439,14 +437,13 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1200 GiB, 2400
-     *        GiB, and increments of 2400 GiB.
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
+     *        increments of 2.4 TiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
-     *        GiB.
+     *        For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
      *        </p>
      *        </li>
      *        </ul>

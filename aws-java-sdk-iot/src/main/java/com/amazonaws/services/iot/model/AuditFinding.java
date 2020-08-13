@@ -86,6 +86,12 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String reasonForNonComplianceCode;
+    /**
+     * <p>
+     * Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     */
+    private Boolean isSuppressed;
 
     /**
      * <p>
@@ -543,6 +549,58 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     * 
+     * @param isSuppressed
+     *        Indicates whether the audit finding was suppressed or not during reporting.
+     */
+
+    public void setIsSuppressed(Boolean isSuppressed) {
+        this.isSuppressed = isSuppressed;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     * 
+     * @return Indicates whether the audit finding was suppressed or not during reporting.
+     */
+
+    public Boolean getIsSuppressed() {
+        return this.isSuppressed;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     * 
+     * @param isSuppressed
+     *        Indicates whether the audit finding was suppressed or not during reporting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuditFinding withIsSuppressed(Boolean isSuppressed) {
+        setIsSuppressed(isSuppressed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the audit finding was suppressed or not during reporting.
+     * </p>
+     * 
+     * @return Indicates whether the audit finding was suppressed or not during reporting.
+     */
+
+    public Boolean isSuppressed() {
+        return this.isSuppressed;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -573,7 +631,9 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
         if (getReasonForNonCompliance() != null)
             sb.append("ReasonForNonCompliance: ").append(getReasonForNonCompliance()).append(",");
         if (getReasonForNonComplianceCode() != null)
-            sb.append("ReasonForNonComplianceCode: ").append(getReasonForNonComplianceCode());
+            sb.append("ReasonForNonComplianceCode: ").append(getReasonForNonComplianceCode()).append(",");
+        if (getIsSuppressed() != null)
+            sb.append("IsSuppressed: ").append(getIsSuppressed());
         sb.append("}");
         return sb.toString();
     }
@@ -628,6 +688,10 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReasonForNonComplianceCode() != null && other.getReasonForNonComplianceCode().equals(this.getReasonForNonComplianceCode()) == false)
             return false;
+        if (other.getIsSuppressed() == null ^ this.getIsSuppressed() == null)
+            return false;
+        if (other.getIsSuppressed() != null && other.getIsSuppressed().equals(this.getIsSuppressed()) == false)
+            return false;
         return true;
     }
 
@@ -646,6 +710,7 @@ public class AuditFinding implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRelatedResources() == null) ? 0 : getRelatedResources().hashCode());
         hashCode = prime * hashCode + ((getReasonForNonCompliance() == null) ? 0 : getReasonForNonCompliance().hashCode());
         hashCode = prime * hashCode + ((getReasonForNonComplianceCode() == null) ? 0 : getReasonForNonComplianceCode().hashCode());
+        hashCode = prime * hashCode + ((getIsSuppressed() == null) ? 0 : getIsSuppressed().hashCode());
         return hashCode;
     }
 

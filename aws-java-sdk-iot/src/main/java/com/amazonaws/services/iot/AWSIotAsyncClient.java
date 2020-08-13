@@ -778,6 +778,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAuditSuppressionResult> createAuditSuppressionAsync(CreateAuditSuppressionRequest request) {
+
+        return createAuditSuppressionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAuditSuppressionResult> createAuditSuppressionAsync(final CreateAuditSuppressionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAuditSuppressionRequest, CreateAuditSuppressionResult> asyncHandler) {
+        final CreateAuditSuppressionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAuditSuppressionResult>() {
+            @Override
+            public CreateAuditSuppressionResult call() throws Exception {
+                CreateAuditSuppressionResult result = null;
+
+                try {
+                    result = executeCreateAuditSuppression(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAuthorizerResult> createAuthorizerAsync(CreateAuthorizerRequest request) {
 
         return createAuthorizerAsync(request, null);
@@ -1591,6 +1624,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDeleteAccountAuditConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAuditSuppressionResult> deleteAuditSuppressionAsync(DeleteAuditSuppressionRequest request) {
+
+        return deleteAuditSuppressionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAuditSuppressionResult> deleteAuditSuppressionAsync(final DeleteAuditSuppressionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAuditSuppressionRequest, DeleteAuditSuppressionResult> asyncHandler) {
+        final DeleteAuditSuppressionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAuditSuppressionResult>() {
+            @Override
+            public DeleteAuditSuppressionResult call() throws Exception {
+                DeleteAuditSuppressionResult result = null;
+
+                try {
+                    result = executeDeleteAuditSuppression(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2587,6 +2653,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeDescribeAuditMitigationActionsTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAuditSuppressionResult> describeAuditSuppressionAsync(DescribeAuditSuppressionRequest request) {
+
+        return describeAuditSuppressionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAuditSuppressionResult> describeAuditSuppressionAsync(final DescribeAuditSuppressionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAuditSuppressionRequest, DescribeAuditSuppressionResult> asyncHandler) {
+        final DescribeAuditSuppressionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAuditSuppressionResult>() {
+            @Override
+            public DescribeAuditSuppressionResult call() throws Exception {
+                DescribeAuditSuppressionResult result = null;
+
+                try {
+                    result = executeDescribeAuditSuppression(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4213,6 +4312,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListAuditMitigationActionsTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAuditSuppressionsResult> listAuditSuppressionsAsync(ListAuditSuppressionsRequest request) {
+
+        return listAuditSuppressionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAuditSuppressionsResult> listAuditSuppressionsAsync(final ListAuditSuppressionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAuditSuppressionsRequest, ListAuditSuppressionsResult> asyncHandler) {
+        final ListAuditSuppressionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAuditSuppressionsResult>() {
+            @Override
+            public ListAuditSuppressionsResult call() throws Exception {
+                ListAuditSuppressionsResult result = null;
+
+                try {
+                    result = executeListAuditSuppressions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6438,6 +6570,39 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeUpdateAccountAuditConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuditSuppressionResult> updateAuditSuppressionAsync(UpdateAuditSuppressionRequest request) {
+
+        return updateAuditSuppressionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAuditSuppressionResult> updateAuditSuppressionAsync(final UpdateAuditSuppressionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAuditSuppressionRequest, UpdateAuditSuppressionResult> asyncHandler) {
+        final UpdateAuditSuppressionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAuditSuppressionResult>() {
+            @Override
+            public UpdateAuditSuppressionResult call() throws Exception {
+                UpdateAuditSuppressionResult result = null;
+
+                try {
+                    result = executeUpdateAuditSuppression(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

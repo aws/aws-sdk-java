@@ -60,7 +60,9 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      */
     private Integer perUnitStorageThroughput;
@@ -89,6 +91,17 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * </p>
      */
     private Boolean copyTagsToBackups;
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     */
+    private String driveCacheType;
 
     /**
      * <p>
@@ -318,14 +331,18 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      * 
      * @param perUnitStorageThroughput
      *        Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte
      *        of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      *        PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     *        types. Valid values are 50, 100, 200.
+     *        types. </p>
+     *        <p>
+     *        Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      */
 
     public void setPerUnitStorageThroughput(Integer perUnitStorageThroughput) {
@@ -337,13 +354,17 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      * 
      * @return Per unit storage throughput represents the megabytes per second of read or write throughput per 1
      *         tebibyte of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      *         PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     *         types. Valid values are 50, 100, 200.
+     *         types. </p>
+     *         <p>
+     *         Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      */
 
     public Integer getPerUnitStorageThroughput() {
@@ -355,14 +376,18 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
      * Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte of
      * storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      * PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment types.
-     * Valid values are 50, 100, 200.
+     * </p>
+     * <p>
+     * Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * </p>
      * 
      * @param perUnitStorageThroughput
      *        Per unit storage throughput represents the megabytes per second of read or write throughput per 1 tebibyte
      *        of storage provisioned. File system throughput capacity is equal to Storage capacity (TiB) *
      *        PerUnitStorageThroughput (MB/s/TiB). This option is only valid for <code>PERSISTENT_1</code> deployment
-     *        types. Valid values are 50, 100, 200.
+     *        types. </p>
+     *        <p>
+     *        Valid values for SSD storage: 50, 100, 200. Valid values for HDD storage: 12, 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -575,6 +600,105 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @param driveCacheType
+     *        The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *        This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for
+     *        frequently accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     *        </p>
+     *        <p>
+     *        This parameter is required when <code>StorageType</code> is set to HDD.
+     * @see DriveCacheType
+     */
+
+    public void setDriveCacheType(String driveCacheType) {
+        this.driveCacheType = driveCacheType;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @return The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *         This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance
+     *         for frequently accessed files and allows 20% of the total storage capacity of the file system to be
+     *         cached. </p>
+     *         <p>
+     *         This parameter is required when <code>StorageType</code> is set to HDD.
+     * @see DriveCacheType
+     */
+
+    public String getDriveCacheType() {
+        return this.driveCacheType;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @param driveCacheType
+     *        The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *        This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for
+     *        frequently accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     *        </p>
+     *        <p>
+     *        This parameter is required when <code>StorageType</code> is set to HDD.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DriveCacheType
+     */
+
+    public LustreFileSystemConfiguration withDriveCacheType(String driveCacheType) {
+        setDriveCacheType(driveCacheType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices. This
+     * parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for frequently
+     * accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     * </p>
+     * <p>
+     * This parameter is required when <code>StorageType</code> is set to HDD.
+     * </p>
+     * 
+     * @param driveCacheType
+     *        The type of drive cache used by PERSISTENT_1 file systems that are provisioned with HDD storage devices.
+     *        This parameter is required when storage type is HDD. Set to <code>READ</code>, improve the performance for
+     *        frequently accessed files and allows 20% of the total storage capacity of the file system to be cached.
+     *        </p>
+     *        <p>
+     *        This parameter is required when <code>StorageType</code> is set to HDD.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DriveCacheType
+     */
+
+    public LustreFileSystemConfiguration withDriveCacheType(DriveCacheType driveCacheType) {
+        this.driveCacheType = driveCacheType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -601,7 +725,9 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         if (getAutomaticBackupRetentionDays() != null)
             sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
         if (getCopyTagsToBackups() != null)
-            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getDriveCacheType() != null)
+            sb.append("DriveCacheType: ").append(getDriveCacheType());
         sb.append("}");
         return sb.toString();
     }
@@ -649,6 +775,10 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
             return false;
         if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
             return false;
+        if (other.getDriveCacheType() == null ^ this.getDriveCacheType() == null)
+            return false;
+        if (other.getDriveCacheType() != null && other.getDriveCacheType().equals(this.getDriveCacheType()) == false)
+            return false;
         return true;
     }
 
@@ -665,6 +795,7 @@ public class LustreFileSystemConfiguration implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getDriveCacheType() == null) ? 0 : getDriveCacheType().hashCode());
         return hashCode;
     }
 

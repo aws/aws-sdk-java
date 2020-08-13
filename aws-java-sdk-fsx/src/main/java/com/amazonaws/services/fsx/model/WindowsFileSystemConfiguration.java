@@ -137,7 +137,7 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      */
     private Integer automaticBackupRetentionDays;
@@ -965,12 +965,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *        retain automatic backups for a maximum of 35 days.
+     *        retain automatic backups for a maximum of 90 days.
      */
 
     public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
@@ -980,11 +980,11 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      * 
      * @return The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *         retain automatic backups for a maximum of 35 days.
+     *         retain automatic backups for a maximum of 90 days.
      */
 
     public Integer getAutomaticBackupRetentionDays() {
@@ -994,12 +994,12 @@ public class WindowsFileSystemConfiguration implements Serializable, Cloneable, 
     /**
      * <p>
      * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * automatic backups for a maximum of 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *        retain automatic backups for a maximum of 35 days.
+     *        retain automatic backups for a maximum of 90 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

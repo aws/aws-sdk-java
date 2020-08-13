@@ -495,6 +495,27 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Creates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param createAuditSuppressionRequest
+     * @return Result of the CreateAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreateAuditSuppression
+     */
+    CreateAuditSuppressionResult createAuditSuppression(CreateAuditSuppressionRequest createAuditSuppressionRequest);
+
+    /**
+     * <p>
      * Creates an authorizer.
      * </p>
      * 
@@ -741,8 +762,10 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
-     * action can apply only one type of change.
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain
+     * types of mitigation actions can be applied to specific check names. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+     * actions</a>. Each mitigation action can apply only one type of change.
      * </p>
      * 
      * @param createMitigationActionRequest
@@ -1170,6 +1193,23 @@ public interface AWSIot {
      * @sample AWSIot.DeleteAccountAuditConfiguration
      */
     DeleteAccountAuditConfigurationResult deleteAccountAuditConfiguration(DeleteAccountAuditConfigurationRequest deleteAccountAuditConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param deleteAuditSuppressionRequest
+     * @return Result of the DeleteAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteAuditSuppression
+     */
+    DeleteAuditSuppressionResult deleteAuditSuppression(DeleteAuditSuppressionRequest deleteAuditSuppressionRequest);
 
     /**
      * <p>
@@ -1877,6 +1917,25 @@ public interface AWSIot {
      */
     DescribeAuditMitigationActionsTaskResult describeAuditMitigationActionsTask(
             DescribeAuditMitigationActionsTaskRequest describeAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param describeAuditSuppressionRequest
+     * @return Result of the DescribeAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuditSuppression
+     */
+    DescribeAuditSuppressionResult describeAuditSuppression(DescribeAuditSuppressionRequest describeAuditSuppressionRequest);
 
     /**
      * <p>
@@ -2963,6 +3022,23 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists your Device Defender audit listings.
+     * </p>
+     * 
+     * @param listAuditSuppressionsRequest
+     * @return Result of the ListAuditSuppressions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditSuppressions
+     */
+    ListAuditSuppressionsResult listAuditSuppressions(ListAuditSuppressionsRequest listAuditSuppressionsRequest);
+
+    /**
+     * <p>
      * Lists the Device Defender audits that have been performed during a given time period.
      * </p>
      * 
@@ -3730,6 +3806,13 @@ public interface AWSIot {
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
      * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
      * </p>
+     * <note>
+     * <p>
+     * You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also
+     * not be charged if no attributes or pagination token was provided in request and no pagination token and no
+     * results were returned.
+     * </p>
+     * </note>
      * 
      * @param listThingsRequest
      *        The input for the ListThings operation.
@@ -4458,6 +4541,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param updateAuditSuppressionRequest
+     * @return Result of the UpdateAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateAuditSuppression
+     */
+    UpdateAuditSuppressionResult updateAuditSuppression(UpdateAuditSuppressionRequest updateAuditSuppressionRequest);
+
+    /**
+     * <p>
      * Updates an authorizer.
      * </p>
      * 
@@ -4532,11 +4634,12 @@ public interface AWSIot {
      * Updates the status of the specified certificate. This operation is idempotent.
      * </p>
      * <p>
-     * Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices,
-     * but these devices will be unable to reconnect.
+     * Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to AWS IoT.
      * </p>
      * <p>
-     * The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.
+     * Within a few minutes of updating a certificate from the ACTIVE state to any other state, AWS IoT disconnects all
+     * devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state
+     * to reconnect.
      * </p>
      * 
      * @param updateCertificateRequest

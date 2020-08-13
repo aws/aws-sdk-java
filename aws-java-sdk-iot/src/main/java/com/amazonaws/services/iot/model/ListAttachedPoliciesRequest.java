@@ -22,7 +22,9 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      */
     private String target;
@@ -47,11 +49,16 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param target
-     *        The group or principal for which the policies will be listed.
+     *        The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      */
 
     public void setTarget(String target) {
@@ -60,10 +67,15 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
-     * @return The group or principal for which the policies will be listed.
+     * @return The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *         (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *         (<i>region</i>:<i>id</i>).
      */
 
     public String getTarget() {
@@ -72,11 +84,16 @@ public class ListAttachedPoliciesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The group or principal for which the policies will be listed.
+     * The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     * (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
      * </p>
      * 
      * @param target
-     *        The group or principal for which the policies will be listed.
+     *        The group or principal for which the policies will be listed. Valid principals are CertificateArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn
+     *        (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId
+     *        (<i>region</i>:<i>id</i>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

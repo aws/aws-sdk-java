@@ -51,7 +51,7 @@ import com.amazonaws.services.transfer.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol
  * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
  * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
  * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
@@ -499,6 +499,71 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @return Result of the DescribeSecurityPolicy operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeSecurityPolicyResult describeSecurityPolicy(DescribeSecurityPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSecurityPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSecurityPolicyResult executeDescribeSecurityPolicy(DescribeSecurityPolicyRequest describeSecurityPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSecurityPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSecurityPolicyRequest> request = null;
+        Response<DescribeSecurityPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSecurityPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSecurityPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSecurityPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSecurityPolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeSecurityPolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes a file transfer protocol-enabled server that you specify by passing the <code>ServerId</code>
      * parameter.
      * </p>
@@ -691,6 +756,67 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
             HttpResponseHandler<AmazonWebServiceResponse<ImportSshPublicKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportSshPublicKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @return Result of the ListSecurityPolicies operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @sample AWSTransfer.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSecurityPoliciesResult listSecurityPolicies(ListSecurityPoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSecurityPolicies(request);
+    }
+
+    @SdkInternalApi
+    final ListSecurityPoliciesResult executeListSecurityPolicies(ListSecurityPoliciesRequest listSecurityPoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSecurityPoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSecurityPoliciesRequest> request = null;
+        Response<ListSecurityPoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSecurityPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSecurityPoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Transfer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityPolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSecurityPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSecurityPoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -27,6 +27,7 @@ public enum Runtime {
     Nodejs10X("nodejs10.x"),
     Nodejs12X("nodejs12.x"),
     Java8("java8"),
+    Java8Al2("java8.al2"),
     Java11("java11"),
     Python27("python2.7"),
     Python36("python3.6"),
@@ -40,7 +41,8 @@ public enum Runtime {
     Go1X("go1.x"),
     Ruby25("ruby2.5"),
     Ruby27("ruby2.7"),
-    Provided("provided");
+    Provided("provided"),
+    ProvidedAl2("provided.al2");
 
     private String value;
 

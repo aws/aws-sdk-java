@@ -53,6 +53,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public DescribeSecurityPolicyResult describeSecurityPolicy(DescribeSecurityPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeServerResult describeServer(DescribeServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public ImportSshPublicKeyResult importSshPublicKey(ImportSshPublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSecurityPoliciesResult listSecurityPolicies(ListSecurityPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

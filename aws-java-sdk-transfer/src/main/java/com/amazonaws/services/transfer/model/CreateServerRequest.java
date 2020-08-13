@@ -175,7 +175,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -192,6 +192,12 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      */
     private java.util.List<String> protocols;
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     */
+    private String securityPolicyName;
     /**
      * <p>
      * Key-value pairs that can be used to group and search for file transfer protocol-enabled servers.
@@ -1057,7 +1063,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1095,7 +1101,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <note>
      *         <p>
      *         If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *         which will be used to identify your server when clients connect to it over FTPS.
+     *         which will be used to identify your file transfer protocol-enabled server when clients connect to it over
+     *         FTPS.
      *         </p>
      *         <p>
      *         If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1142,7 +1149,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1181,7 +1188,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
+     *        FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1233,7 +1241,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1277,7 +1285,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
+     *        FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1331,7 +1340,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1370,7 +1379,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
+     *        FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1419,7 +1429,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <note>
      * <p>
      * If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM) which will
-     * be used to identify your server when clients connect to it over FTPS.
+     * be used to identify your file transfer protocol-enabled server when clients connect to it over FTPS.
      * </p>
      * <p>
      * If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1458,7 +1468,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <note>
      *        <p>
      *        If you select <code>FTPS</code>, you must choose a certificate stored in AWS Certificate Manager (ACM)
-     *        which will be used to identify your server when clients connect to it over FTPS.
+     *        which will be used to identify your file transfer protocol-enabled server when clients connect to it over
+     *        FTPS.
      *        </p>
      *        <p>
      *        If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then the
@@ -1487,6 +1498,46 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         } else {
             getProtocols().addAll(protocolsCopy);
         }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     */
+
+    public void setSecurityPolicyName(String securityPolicyName) {
+        this.securityPolicyName = securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @return Specifies the name of the security policy that is attached to the server.
+     */
+
+    public String getSecurityPolicyName() {
+        return this.securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServerRequest withSecurityPolicyName(String securityPolicyName) {
+        setSecurityPolicyName(securityPolicyName);
         return this;
     }
 
@@ -1588,6 +1639,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
         if (getProtocols() != null)
             sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getSecurityPolicyName() != null)
+            sb.append("SecurityPolicyName: ").append(getSecurityPolicyName()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1636,6 +1689,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
+        if (other.getSecurityPolicyName() == null ^ this.getSecurityPolicyName() == null)
+            return false;
+        if (other.getSecurityPolicyName() != null && other.getSecurityPolicyName().equals(this.getSecurityPolicyName()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1656,6 +1713,7 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicyName() == null) ? 0 : getSecurityPolicyName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

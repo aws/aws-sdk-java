@@ -26,7 +26,7 @@ import com.amazonaws.services.transfer.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol
  * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
  * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
  * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
@@ -237,6 +237,43 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @return A Java Future containing the result of the DescribeSecurityPolicy operation returned by the service.
+     * @sample AWSTransferAsync.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest describeSecurityPolicyRequest);
+
+    /**
+     * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSecurityPolicy operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest describeSecurityPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityPolicyRequest, DescribeSecurityPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a file transfer protocol-enabled server that you specify by passing the <code>ServerId</code>
      * parameter.
      * </p>
@@ -357,6 +394,37 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<ImportSshPublicKeyResult> importSshPublicKeyAsync(ImportSshPublicKeyRequest importSshPublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<ImportSshPublicKeyRequest, ImportSshPublicKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @return A Java Future containing the result of the ListSecurityPolicies operation returned by the service.
+     * @sample AWSTransferAsync.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest listSecurityPoliciesRequest);
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSecurityPolicies operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest listSecurityPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityPoliciesRequest, ListSecurityPoliciesResult> asyncHandler);
 
     /**
      * <p>

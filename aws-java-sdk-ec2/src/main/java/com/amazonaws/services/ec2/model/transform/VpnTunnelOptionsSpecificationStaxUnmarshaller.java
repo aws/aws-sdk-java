@@ -50,6 +50,11 @@ public class VpnTunnelOptionsSpecificationStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("TunnelInsideIpv6Cidr", targetDepth)) {
+                    vpnTunnelOptionsSpecification.setTunnelInsideIpv6Cidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PreSharedKey", targetDepth)) {
                     vpnTunnelOptionsSpecification.setPreSharedKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

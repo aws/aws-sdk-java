@@ -34,9 +34,9 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer maxResults;
     /**
      * <p>
-     * When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code> parameter
-     * is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     * continue listing additional file transfer protocol-enabled servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional file transfer protocol-enabled servers.
      * </p>
      */
     private String nextToken;
@@ -89,13 +89,13 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code> parameter
-     * is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     * continue listing additional file transfer protocol-enabled servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional file transfer protocol-enabled servers.
      * </p>
      * 
      * @param nextToken
-     *        When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code>
+     *        When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
      *        parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a
      *        subsequent command to continue listing additional file transfer protocol-enabled servers.
      */
@@ -106,12 +106,12 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code> parameter
-     * is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     * continue listing additional file transfer protocol-enabled servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional file transfer protocol-enabled servers.
      * </p>
      * 
-     * @return When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code>
+     * @return When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
      *         parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a
      *         subsequent command to continue listing additional file transfer protocol-enabled servers.
      */
@@ -122,13 +122,13 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code> parameter
-     * is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     * continue listing additional file transfer protocol-enabled servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional file transfer protocol-enabled servers.
      * </p>
      * 
      * @param nextToken
-     *        When additional results are obtained from the<code>ListServers</code> command, a <code>NextToken</code>
+     *        When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
      *        parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a
      *        subsequent command to continue listing additional file transfer protocol-enabled servers.
      * @return Returns a reference to this object so that method calls can be chained together.

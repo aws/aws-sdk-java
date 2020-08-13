@@ -101,7 +101,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      */
     private Integer automaticBackupRetentionDays;
@@ -642,12 +642,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this
-     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35
+     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 90
      *        days.
      */
 
@@ -658,11 +658,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      * 
      * @return The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this
-     *         value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35
+     *         value to 0 disables the creation of automatic backups. The maximum retention period for backups is 90
      *         days.
      */
 
@@ -673,12 +673,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this
-     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35
+     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 90
      *        days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

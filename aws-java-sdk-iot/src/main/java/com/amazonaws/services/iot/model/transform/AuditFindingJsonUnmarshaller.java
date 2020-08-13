@@ -90,6 +90,10 @@ public class AuditFindingJsonUnmarshaller implements Unmarshaller<AuditFinding, 
                     context.nextToken();
                     auditFinding.setReasonForNonComplianceCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("isSuppressed", targetDepth)) {
+                    context.nextToken();
+                    auditFinding.setIsSuppressed(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

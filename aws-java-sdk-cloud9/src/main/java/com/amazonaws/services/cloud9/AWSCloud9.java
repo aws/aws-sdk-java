@@ -375,6 +375,8 @@ public interface AWSCloud9 {
      *         An internal server error occurred.
      * @throws BadRequestException
      *         The target request is invalid.
+     * @throws ConcurrentAccessException
+     *         A concurrent access issue occurred.
      * @sample AWSCloud9.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -394,6 +396,8 @@ public interface AWSCloud9 {
      *         An internal server error occurred.
      * @throws BadRequestException
      *         The target request is invalid.
+     * @throws ConcurrentAccessException
+     *         A concurrent access issue occurred.
      * @sample AWSCloud9.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/UntagResource" target="_top">AWS API
      *      Documentation</a>

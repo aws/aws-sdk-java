@@ -80,6 +80,10 @@ public class LustreFileSystemConfigurationJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     lustreFileSystemConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("DriveCacheType", targetDepth)) {
+                    context.nextToken();
+                    lustreFileSystemConfiguration.setDriveCacheType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

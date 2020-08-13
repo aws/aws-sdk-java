@@ -93,6 +93,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest request) {
+
+        return describeSecurityPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityPolicyRequest, DescribeSecurityPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServerResult> describeServerAsync(DescribeServerRequest request) {
 
         return describeServerAsync(request, null);
@@ -127,6 +140,19 @@ public class AbstractAWSTransferAsync extends AbstractAWSTransfer implements AWS
     @Override
     public java.util.concurrent.Future<ImportSshPublicKeyResult> importSshPublicKeyAsync(ImportSshPublicKeyRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportSshPublicKeyRequest, ImportSshPublicKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest request) {
+
+        return listSecurityPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityPoliciesRequest, ListSecurityPoliciesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -44,6 +44,8 @@ public class CreateServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingRole").build();
     private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Protocols").build();
+    private static final MarshallingInfo<String> SECURITYPOLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityPolicyName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -71,6 +73,7 @@ public class CreateServerRequestMarshaller {
             protocolMarshaller.marshall(createServerRequest.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getLoggingRole(), LOGGINGROLE_BINDING);
             protocolMarshaller.marshall(createServerRequest.getProtocols(), PROTOCOLS_BINDING);
+            protocolMarshaller.marshall(createServerRequest.getSecurityPolicyName(), SECURITYPOLICYNAME_BINDING);
             protocolMarshaller.marshall(createServerRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

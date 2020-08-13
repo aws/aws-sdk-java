@@ -86,6 +86,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("SecurityPolicyName", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setSecurityPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ServerId", targetDepth)) {
                     context.nextToken();
                     describedServer.setServerId(context.getUnmarshaller(String.class).unmarshall(context));

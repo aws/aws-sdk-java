@@ -44,6 +44,8 @@ public class CreateEnvironmentEC2RequestMarshaller {
             .marshallLocationName("ownerArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionType").build();
 
     private static final CreateEnvironmentEC2RequestMarshaller instance = new CreateEnvironmentEC2RequestMarshaller();
 
@@ -69,6 +71,7 @@ public class CreateEnvironmentEC2RequestMarshaller {
             protocolMarshaller.marshall(createEnvironmentEC2Request.getAutomaticStopTimeMinutes(), AUTOMATICSTOPTIMEMINUTES_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getOwnerArn(), OWNERARN_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createEnvironmentEC2Request.getConnectionType(), CONNECTIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

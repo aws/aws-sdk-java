@@ -43,6 +43,8 @@ public class LustreFileSystemConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomaticBackupRetentionDays").build();
     private static final MarshallingInfo<Boolean> COPYTAGSTOBACKUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTagsToBackups").build();
+    private static final MarshallingInfo<String> DRIVECACHETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DriveCacheType").build();
 
     private static final LustreFileSystemConfigurationMarshaller instance = new LustreFileSystemConfigurationMarshaller();
 
@@ -68,6 +70,7 @@ public class LustreFileSystemConfigurationMarshaller {
             protocolMarshaller.marshall(lustreFileSystemConfiguration.getDailyAutomaticBackupStartTime(), DAILYAUTOMATICBACKUPSTARTTIME_BINDING);
             protocolMarshaller.marshall(lustreFileSystemConfiguration.getAutomaticBackupRetentionDays(), AUTOMATICBACKUPRETENTIONDAYS_BINDING);
             protocolMarshaller.marshall(lustreFileSystemConfiguration.getCopyTagsToBackups(), COPYTAGSTOBACKUPS_BINDING);
+            protocolMarshaller.marshall(lustreFileSystemConfiguration.getDriveCacheType(), DRIVECACHETYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

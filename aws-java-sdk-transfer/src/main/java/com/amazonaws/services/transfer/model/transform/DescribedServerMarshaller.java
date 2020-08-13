@@ -46,6 +46,8 @@ public class DescribedServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingRole").build();
     private static final MarshallingInfo<List> PROTOCOLS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Protocols").build();
+    private static final MarshallingInfo<String> SECURITYPOLICYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityPolicyName").build();
     private static final MarshallingInfo<String> SERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ServerId").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -80,6 +82,7 @@ public class DescribedServerMarshaller {
             protocolMarshaller.marshall(describedServer.getIdentityProviderType(), IDENTITYPROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(describedServer.getLoggingRole(), LOGGINGROLE_BINDING);
             protocolMarshaller.marshall(describedServer.getProtocols(), PROTOCOLS_BINDING);
+            protocolMarshaller.marshall(describedServer.getSecurityPolicyName(), SECURITYPOLICYNAME_BINDING);
             protocolMarshaller.marshall(describedServer.getServerId(), SERVERID_BINDING);
             protocolMarshaller.marshall(describedServer.getState(), STATE_BINDING);
             protocolMarshaller.marshall(describedServer.getTags(), TAGS_BINDING);

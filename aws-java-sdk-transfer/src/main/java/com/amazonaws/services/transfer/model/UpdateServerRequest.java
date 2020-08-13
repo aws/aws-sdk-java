@@ -182,6 +182,12 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<String> protocols;
     /**
      * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     */
+    private String securityPolicyName;
+    /**
+     * <p>
      * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
      * assigned to.
      * </p>
@@ -1375,6 +1381,46 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     */
+
+    public void setSecurityPolicyName(String securityPolicyName) {
+        this.securityPolicyName = securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @return Specifies the name of the security policy that is attached to the server.
+     */
+
+    public String getSecurityPolicyName() {
+        return this.securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServerRequest withSecurityPolicyName(String securityPolicyName) {
+        setSecurityPolicyName(securityPolicyName);
+        return this;
+    }
+
+    /**
+     * <p>
      * A system-assigned unique identifier for a file transfer protocol-enabled server instance that the user account is
      * assigned to.
      * </p>
@@ -1445,6 +1491,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
         if (getProtocols() != null)
             sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getSecurityPolicyName() != null)
+            sb.append("SecurityPolicyName: ").append(getSecurityPolicyName()).append(",");
         if (getServerId() != null)
             sb.append("ServerId: ").append(getServerId());
         sb.append("}");
@@ -1489,6 +1537,10 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
+        if (other.getSecurityPolicyName() == null ^ this.getSecurityPolicyName() == null)
+            return false;
+        if (other.getSecurityPolicyName() != null && other.getSecurityPolicyName().equals(this.getSecurityPolicyName()) == false)
+            return false;
         if (other.getServerId() == null ^ this.getServerId() == null)
             return false;
         if (other.getServerId() != null && other.getServerId().equals(this.getServerId()) == false)
@@ -1508,6 +1560,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getIdentityProviderDetails() == null) ? 0 : getIdentityProviderDetails().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicyName() == null) ? 0 : getSecurityPolicyName().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         return hashCode;
     }

@@ -66,6 +66,12 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     */
+    private String connectionType;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the environment.
      * </p>
      */
@@ -356,6 +362,65 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment.
+     * @see ConnectionType
+     */
+
+    public void setConnectionType(String connectionType) {
+        this.connectionType = connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @return The connection type used for connecting to an Amazon EC2 environment.
+     * @see ConnectionType
+     */
+
+    public String getConnectionType() {
+        return this.connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public Environment withConnectionType(String connectionType) {
+        setConnectionType(connectionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public Environment withConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the environment.
      * </p>
      * 
@@ -494,6 +559,8 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getConnectionType() != null)
+            sb.append("ConnectionType: ").append(getConnectionType()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getOwnerArn() != null)
@@ -530,6 +597,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getConnectionType() == null ^ this.getConnectionType() == null)
+            return false;
+        if (other.getConnectionType() != null && other.getConnectionType().equals(this.getConnectionType()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -554,6 +625,7 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getConnectionType() == null) ? 0 : getConnectionType().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());

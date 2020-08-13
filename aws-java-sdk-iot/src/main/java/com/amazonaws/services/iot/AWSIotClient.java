@@ -1381,6 +1381,68 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Creates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param createAuditSuppressionRequest
+     * @return Result of the CreateAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreateAuditSuppression
+     */
+    @Override
+    public CreateAuditSuppressionResult createAuditSuppression(CreateAuditSuppressionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAuditSuppression(request);
+    }
+
+    @SdkInternalApi
+    final CreateAuditSuppressionResult executeCreateAuditSuppression(CreateAuditSuppressionRequest createAuditSuppressionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAuditSuppressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAuditSuppressionRequest> request = null;
+        Response<CreateAuditSuppressionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAuditSuppressionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAuditSuppressionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAuditSuppression");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAuditSuppressionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAuditSuppressionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an authorizer.
      * </p>
      * 
@@ -1955,8 +2017,10 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
-     * action can apply only one type of change.
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain
+     * types of mitigation actions can be applied to specific check names. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+     * actions</a>. Each mitigation action can apply only one type of change.
      * </p>
      * 
      * @param createMitigationActionRequest
@@ -3069,6 +3133,64 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<DeleteAccountAuditConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteAccountAuditConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param deleteAuditSuppressionRequest
+     * @return Result of the DeleteAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteAuditSuppression
+     */
+    @Override
+    public DeleteAuditSuppressionResult deleteAuditSuppression(DeleteAuditSuppressionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAuditSuppression(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAuditSuppressionResult executeDeleteAuditSuppression(DeleteAuditSuppressionRequest deleteAuditSuppressionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAuditSuppressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAuditSuppressionRequest> request = null;
+        Response<DeleteAuditSuppressionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAuditSuppressionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAuditSuppressionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAuditSuppression");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAuditSuppressionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAuditSuppressionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4995,6 +5117,67 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAuditMitigationActionsTaskResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeAuditMitigationActionsTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param describeAuditSuppressionRequest
+     * @return Result of the DescribeAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuditSuppression
+     */
+    @Override
+    public DescribeAuditSuppressionResult describeAuditSuppression(DescribeAuditSuppressionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAuditSuppression(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAuditSuppressionResult executeDescribeAuditSuppression(DescribeAuditSuppressionRequest describeAuditSuppressionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAuditSuppressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAuditSuppressionRequest> request = null;
+        Response<DescribeAuditSuppressionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAuditSuppressionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAuditSuppressionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAuditSuppression");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAuditSuppressionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAuditSuppressionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8079,6 +8262,64 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Lists your Device Defender audit listings.
+     * </p>
+     * 
+     * @param listAuditSuppressionsRequest
+     * @return Result of the ListAuditSuppressions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditSuppressions
+     */
+    @Override
+    public ListAuditSuppressionsResult listAuditSuppressions(ListAuditSuppressionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAuditSuppressions(request);
+    }
+
+    @SdkInternalApi
+    final ListAuditSuppressionsResult executeListAuditSuppressions(ListAuditSuppressionsRequest listAuditSuppressionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAuditSuppressionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAuditSuppressionsRequest> request = null;
+        Response<ListAuditSuppressionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAuditSuppressionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAuditSuppressionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAuditSuppressions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAuditSuppressionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListAuditSuppressionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the Device Defender audits that have been performed during a given time period.
      * </p>
      * 
@@ -10312,6 +10553,13 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
      * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
      * </p>
+     * <note>
+     * <p>
+     * You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also
+     * not be charged if no attributes or pagination token was provided in request and no pagination token and no
+     * results were returned.
+     * </p>
+     * </note>
      * 
      * @param listThingsRequest
      *        The input for the ListThings operation.
@@ -12307,6 +12555,66 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param updateAuditSuppressionRequest
+     * @return Result of the UpdateAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateAuditSuppression
+     */
+    @Override
+    public UpdateAuditSuppressionResult updateAuditSuppression(UpdateAuditSuppressionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAuditSuppression(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAuditSuppressionResult executeUpdateAuditSuppression(UpdateAuditSuppressionRequest updateAuditSuppressionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAuditSuppressionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAuditSuppressionRequest> request = null;
+        Response<UpdateAuditSuppressionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAuditSuppressionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAuditSuppressionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuditSuppression");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAuditSuppressionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAuditSuppressionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an authorizer.
      * </p>
      * 
@@ -12501,11 +12809,12 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * Updates the status of the specified certificate. This operation is idempotent.
      * </p>
      * <p>
-     * Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices,
-     * but these devices will be unable to reconnect.
+     * Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to AWS IoT.
      * </p>
      * <p>
-     * The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.
+     * Within a few minutes of updating a certificate from the ACTIVE state to any other state, AWS IoT disconnects all
+     * devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state
+     * to reconnect.
      * </p>
      * 
      * @param updateCertificateRequest

@@ -26,7 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol
  * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
  * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
  * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
@@ -245,6 +245,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest request) {
+
+        return describeSecurityPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(final DescribeSecurityPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSecurityPolicyRequest, DescribeSecurityPolicyResult> asyncHandler) {
+        final DescribeSecurityPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSecurityPolicyResult>() {
+            @Override
+            public DescribeSecurityPolicyResult call() throws Exception {
+                DescribeSecurityPolicyResult result = null;
+
+                try {
+                    result = executeDescribeSecurityPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServerResult> describeServerAsync(DescribeServerRequest request) {
 
         return describeServerAsync(request, null);
@@ -328,6 +361,39 @@ public class AWSTransferAsyncClient extends AWSTransferClient implements AWSTran
 
                 try {
                     result = executeImportSshPublicKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest request) {
+
+        return listSecurityPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(final ListSecurityPoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSecurityPoliciesRequest, ListSecurityPoliciesResult> asyncHandler) {
+        final ListSecurityPoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSecurityPoliciesResult>() {
+            @Override
+            public ListSecurityPoliciesResult call() throws Exception {
+                ListSecurityPoliciesResult result = null;
+
+                try {
+                    result = executeListSecurityPolicies(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

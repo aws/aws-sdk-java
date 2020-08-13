@@ -41,6 +41,12 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
     private Boolean staticRoutesOnly;
     /**
      * <p>
+     * Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     */
+    private String tunnelInsideIpVersion;
+    /**
+     * <p>
      * Indicates the VPN tunnel options.
      * </p>
      */
@@ -160,6 +166,65 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * 
+     * @param tunnelInsideIpVersion
+     *        Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * @see TunnelInsideIpVersion
+     */
+
+    public void setTunnelInsideIpVersion(String tunnelInsideIpVersion) {
+        this.tunnelInsideIpVersion = tunnelInsideIpVersion;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * 
+     * @return Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * @see TunnelInsideIpVersion
+     */
+
+    public String getTunnelInsideIpVersion() {
+        return this.tunnelInsideIpVersion;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * 
+     * @param tunnelInsideIpVersion
+     *        Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TunnelInsideIpVersion
+     */
+
+    public VpnConnectionOptions withTunnelInsideIpVersion(String tunnelInsideIpVersion) {
+        setTunnelInsideIpVersion(tunnelInsideIpVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * 
+     * @param tunnelInsideIpVersion
+     *        Indicates whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TunnelInsideIpVersion
+     */
+
+    public VpnConnectionOptions withTunnelInsideIpVersion(TunnelInsideIpVersion tunnelInsideIpVersion) {
+        this.tunnelInsideIpVersion = tunnelInsideIpVersion.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Indicates the VPN tunnel options.
      * </p>
      * 
@@ -247,6 +312,8 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
             sb.append("EnableAcceleration: ").append(getEnableAcceleration()).append(",");
         if (getStaticRoutesOnly() != null)
             sb.append("StaticRoutesOnly: ").append(getStaticRoutesOnly()).append(",");
+        if (getTunnelInsideIpVersion() != null)
+            sb.append("TunnelInsideIpVersion: ").append(getTunnelInsideIpVersion()).append(",");
         if (getTunnelOptions() != null)
             sb.append("TunnelOptions: ").append(getTunnelOptions());
         sb.append("}");
@@ -271,6 +338,10 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
             return false;
         if (other.getStaticRoutesOnly() != null && other.getStaticRoutesOnly().equals(this.getStaticRoutesOnly()) == false)
             return false;
+        if (other.getTunnelInsideIpVersion() == null ^ this.getTunnelInsideIpVersion() == null)
+            return false;
+        if (other.getTunnelInsideIpVersion() != null && other.getTunnelInsideIpVersion().equals(this.getTunnelInsideIpVersion()) == false)
+            return false;
         if (other.getTunnelOptions() == null ^ this.getTunnelOptions() == null)
             return false;
         if (other.getTunnelOptions() != null && other.getTunnelOptions().equals(this.getTunnelOptions()) == false)
@@ -285,6 +356,7 @@ public class VpnConnectionOptions implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getEnableAcceleration() == null) ? 0 : getEnableAcceleration().hashCode());
         hashCode = prime * hashCode + ((getStaticRoutesOnly() == null) ? 0 : getStaticRoutesOnly().hashCode());
+        hashCode = prime * hashCode + ((getTunnelInsideIpVersion() == null) ? 0 : getTunnelInsideIpVersion().hashCode());
         hashCode = prime * hashCode + ((getTunnelOptions() == null) ? 0 : getTunnelOptions().hashCode());
         return hashCode;
     }

@@ -64,6 +64,10 @@ public class AuditCheckDetailsJsonUnmarshaller implements Unmarshaller<AuditChec
                     context.nextToken();
                     auditCheckDetails.setNonCompliantResourcesCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("suppressedNonCompliantResourcesCount", targetDepth)) {
+                    context.nextToken();
+                    auditCheckDetails.setSuppressedNonCompliantResourcesCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("errorCode", targetDepth)) {
                     context.nextToken();
                     auditCheckDetails.setErrorCode(context.getUnmarshaller(String.class).unmarshall(context));
