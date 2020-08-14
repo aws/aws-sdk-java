@@ -27,8 +27,8 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      */
     private String workforceName;
@@ -53,13 +53,13 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      * 
      * @param workforceName
-     *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     *        The name of the private workforce that you want to update. You can find your workforce name by using the
+     *        operation.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -68,12 +68,12 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      * 
-     * @return The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *         automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     * @return The name of the private workforce that you want to update. You can find your workforce name by using the
+     *         operation.
      */
 
     public String getWorkforceName() {
@@ -82,13 +82,13 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      * 
      * @param workforceName
-     *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     *        The name of the private workforce that you want to update. You can find your workforce name by using the
+     *        operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

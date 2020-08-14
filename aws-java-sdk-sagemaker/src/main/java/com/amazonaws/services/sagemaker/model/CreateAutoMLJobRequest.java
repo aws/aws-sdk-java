@@ -27,7 +27,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      * </p>
      */
     private String autoMLJobName;
@@ -52,8 +52,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     private String problemType;
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot infers
+     * whether to minimize or maximize it. If a metric is not specified, the most commonly used ObjectiveMetric for
+     * problem type is automaically selected.
      * </p>
      */
     private AutoMLJobObjective autoMLJobObjective;
@@ -65,14 +66,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     private AutoMLJobConfig autoMLJobConfig;
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training a model. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      */
     private Boolean generateCandidateDefinitionsOnly;
@@ -85,11 +86,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      * </p>
      * 
      * @param autoMLJobName
-     *        Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     *        Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -98,10 +99,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      * </p>
      * 
-     * @return Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * @return Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      */
 
     public String getAutoMLJobName() {
@@ -110,11 +111,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      * </p>
      * 
      * @param autoMLJobName
-     *        Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     *        Identifies an Autopilot job. Must be unique to your account and is case-insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -302,13 +303,15 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot infers
+     * whether to minimize or maximize it. If a metric is not specified, the most commonly used ObjectiveMetric for
+     * problem type is automaically selected.
      * </p>
      * 
      * @param autoMLJobObjective
-     *        Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this
-     *        is not provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     *        Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     *        infers whether to minimize or maximize it. If a metric is not specified, the most commonly used
+     *        ObjectiveMetric for problem type is automaically selected.
      */
 
     public void setAutoMLJobObjective(AutoMLJobObjective autoMLJobObjective) {
@@ -317,12 +320,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot infers
+     * whether to minimize or maximize it. If a metric is not specified, the most commonly used ObjectiveMetric for
+     * problem type is automaically selected.
      * </p>
      * 
-     * @return Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this
-     *         is not provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * @return Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and
+     *         Autopilot infers whether to minimize or maximize it. If a metric is not specified, the most commonly used
+     *         ObjectiveMetric for problem type is automaically selected.
      */
 
     public AutoMLJobObjective getAutoMLJobObjective() {
@@ -331,13 +336,15 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot infers
+     * whether to minimize or maximize it. If a metric is not specified, the most commonly used ObjectiveMetric for
+     * problem type is automaically selected.
      * </p>
      * 
      * @param autoMLJobObjective
-     *        Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this
-     *        is not provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     *        Defines the objective of a an AutoML job. You provide a <a>AutoMLJobObjective$MetricName</a> and Autopilot
+     *        infers whether to minimize or maximize it. If a metric is not specified, the most commonly used
+     *        ObjectiveMetric for problem type is automaically selected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +395,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that will be used to access the data.
+     *        The ARN of the role that is used to access the data.
      */
 
     public void setRoleArn(String roleArn) {
@@ -401,10 +408,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      * 
-     * @return The ARN of the role that will be used to access the data.
+     * @return The ARN of the role that is used to access the data.
      */
 
     public String getRoleArn() {
@@ -413,11 +420,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that will be used to access the data.
+     *        The ARN of the role that is used to access the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,12 +435,12 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training a model. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
      * @param generateCandidateDefinitionsOnly
-     *        This will generate possible candidates without training a model. A candidate is a combination of data
+     *        Generates possible candidates without training a model. A candidate is a combination of data
      *        preprocessors, algorithms, and algorithm parameter settings.
      */
 
@@ -443,11 +450,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training a model. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
-     * @return This will generate possible candidates without training a model. A candidate is a combination of data
+     * @return Generates possible candidates without training a model. A candidate is a combination of data
      *         preprocessors, algorithms, and algorithm parameter settings.
      */
 
@@ -457,12 +464,12 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training a model. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
      * @param generateCandidateDefinitionsOnly
-     *        This will generate possible candidates without training a model. A candidate is a combination of data
+     *        Generates possible candidates without training a model. A candidate is a combination of data
      *        preprocessors, algorithms, and algorithm parameter settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -474,11 +481,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training a model. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
-     * @return This will generate possible candidates without training a model. A candidate is a combination of data
+     * @return Generates possible candidates without training a model. A candidate is a combination of data
      *         preprocessors, algorithms, and algorithm parameter settings.
      */
 

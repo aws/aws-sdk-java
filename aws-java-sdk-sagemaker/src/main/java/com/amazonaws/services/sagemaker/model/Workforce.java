@@ -56,7 +56,7 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      */
     private SourceIpConfig sourceIpConfig;
@@ -223,13 +223,13 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      * 
      * @param sourceIpConfig
      *        A list of one to ten IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
-     *        workforce allow list.
+     *        workforce allow list. By default, a workforce isn't restricted to specific IP addresses.
      */
 
     public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
@@ -240,12 +240,12 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      * 
      * @return A list of one to ten IP address ranges (<a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
-     *         workforce allow list.
+     *         workforce allow list. By default, a workforce isn't restricted to specific IP addresses.
      */
 
     public SourceIpConfig getSourceIpConfig() {
@@ -256,13 +256,13 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      * 
      * @param sourceIpConfig
      *        A list of one to ten IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
-     *        workforce allow list.
+     *        workforce allow list. By default, a workforce isn't restricted to specific IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

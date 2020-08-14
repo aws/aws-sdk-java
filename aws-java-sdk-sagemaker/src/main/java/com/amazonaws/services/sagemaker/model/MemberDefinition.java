@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines the Amazon Cognito user group that is part of a work team.
+ * Defines an Amazon Cognito or your own OIDC IdP user group that is part of a work team.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/MemberDefinition" target="_top">AWS API

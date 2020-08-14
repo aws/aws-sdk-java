@@ -131,6 +131,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -152,6 +182,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -289,7 +349,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
      * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
      * creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates
-     * the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -299,6 +359,17 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String iamRoleArn;
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     */
+    private String streamView;
 
     /**
      * <p>
@@ -607,6 +678,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -628,6 +729,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -712,6 +843,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -733,6 +894,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -823,6 +1014,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -844,6 +1065,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -927,6 +1178,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         stream.memory.z1d.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.3xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.6xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         stream.graphics-design.large
      *         </p>
      *         </li>
@@ -948,6 +1229,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.16xlarge
      *         </p>
      *         </li>
      *         <li>
@@ -1038,6 +1349,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -1059,6 +1400,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -1143,6 +1514,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -1164,6 +1565,36 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -2085,7 +2516,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
      * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
      * creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates
-     * the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -2098,7 +2529,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS
      *        Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      *        The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     *        credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.</p>
+     *        credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
@@ -2115,7 +2546,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
      * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
      * creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates
-     * the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -2127,7 +2558,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * @return The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS
      *         Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      *         The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     *         credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.</p>
+     *         credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
@@ -2144,7 +2575,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
      * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
      * creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and creates
-     * the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -2157,7 +2588,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      *        The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS
      *        Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      *        The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     *        credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.</p>
+     *        credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/using-iam-roles-to-grant-permissions-to-applications-scripts-streaming-instances.html"
@@ -2168,6 +2599,129 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     public Fleet withIamRoleArn(String iamRoleArn) {
         setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @see StreamView
+     */
+
+    public void setStreamView(String streamView) {
+        this.streamView = streamView;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @return The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *         <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *         <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *         displays.</p>
+     *         <p>
+     *         The default value is <code>APP</code>.
+     * @see StreamView
+     */
+
+    public String getStreamView() {
+        return this.streamView;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StreamView
+     */
+
+    public Fleet withStreamView(String streamView) {
+        setStreamView(streamView);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @see StreamView
+     */
+
+    public void setStreamView(StreamView streamView) {
+        withStreamView(streamView);
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StreamView
+     */
+
+    public Fleet withStreamView(StreamView streamView) {
+        this.streamView = streamView.toString();
         return this;
     }
 
@@ -2220,7 +2774,9 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (getIdleDisconnectTimeoutInSeconds() != null)
             sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds()).append(",");
         if (getIamRoleArn() != null)
-            sb.append("IamRoleArn: ").append(getIamRoleArn());
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
+        if (getStreamView() != null)
+            sb.append("StreamView: ").append(getStreamView());
         sb.append("}");
         return sb.toString();
     }
@@ -2312,6 +2868,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
             return false;
+        if (other.getStreamView() == null ^ this.getStreamView() == null)
+            return false;
+        if (other.getStreamView() != null && other.getStreamView().equals(this.getStreamView()) == false)
+            return false;
         return true;
     }
 
@@ -2339,6 +2899,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getStreamView() == null) ? 0 : getStreamView().hashCode());
         return hashCode;
     }
 

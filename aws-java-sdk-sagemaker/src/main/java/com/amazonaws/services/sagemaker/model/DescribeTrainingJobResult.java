@@ -172,7 +172,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1039,7 +1039,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1157,7 +1157,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *        <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *        </p>
      *        </li>
      *        <li>
@@ -1280,7 +1280,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1397,7 +1397,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *         <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *         </p>
      *         </li>
      *         <li>
@@ -1520,7 +1520,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1638,7 +1638,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *        <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *        </p>
      *        </li>
      *        <li>
@@ -1763,7 +1763,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1881,7 +1881,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *        <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *        </p>
      *        </li>
      *        <li>

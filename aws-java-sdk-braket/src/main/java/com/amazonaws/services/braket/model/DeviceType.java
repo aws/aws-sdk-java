@@ -20,8 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DeviceType {
 
-    OFFLINE("OFFLINE"),
-    ONLINE("ONLINE");
+    QPU("QPU"),
+    SIMULATOR("SIMULATOR");
 
     private String value;
 

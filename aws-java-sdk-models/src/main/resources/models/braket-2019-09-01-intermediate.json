@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -2445,11 +2445,11 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "QPU",
-        "value" : "QPU"
+        "name" : "OFFLINE",
+        "value" : "OFFLINE"
       }, {
-        "name" : "SIMULATOR",
-        "value" : "SIMULATOR"
+        "name" : "ONLINE",
+        "value" : "ONLINE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.braket.enum.DeviceStatus",
@@ -3235,11 +3235,11 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "OFFLINE",
-        "value" : "OFFLINE"
+        "name" : "QPU",
+        "value" : "QPU"
       }, {
-        "name" : "ONLINE",
-        "value" : "ONLINE"
+        "name" : "SIMULATOR",
+        "value" : "SIMULATOR"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.braket.enum.DeviceType",

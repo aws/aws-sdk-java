@@ -23,7 +23,8 @@ public enum AutoMLMetricEnum {
     Accuracy("Accuracy"),
     MSE("MSE"),
     F1("F1"),
-    F1macro("F1macro");
+    F1macro("F1macro"),
+    AUC("AUC");
 
     private String value;
 

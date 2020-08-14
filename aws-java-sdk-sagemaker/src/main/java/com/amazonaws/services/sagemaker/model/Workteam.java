@@ -36,7 +36,13 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     private String workteamName;
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      */
     private java.util.List<MemberDefinition> memberDefinitions;
@@ -131,10 +137,21 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * 
-     * @return The Amazon Cognito user groups that make up the work team.
+     * @return A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *         up the work team. </p>
+     *         <p>
+     *         Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *         workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *         using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      */
 
     public java.util.List<MemberDefinition> getMemberDefinitions() {
@@ -143,11 +160,22 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * 
      * @param memberDefinitions
-     *        The Amazon Cognito user groups that make up the work team.
+     *        A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *        up the work team. </p>
+     *        <p>
+     *        Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *        workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *        using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      */
 
     public void setMemberDefinitions(java.util.Collection<MemberDefinition> memberDefinitions) {
@@ -161,7 +189,13 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -170,7 +204,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param memberDefinitions
-     *        The Amazon Cognito user groups that make up the work team.
+     *        A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *        up the work team. </p>
+     *        <p>
+     *        Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *        workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *        using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +225,22 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Cognito user groups that make up the work team.
+     * A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make up the
+     * work team.
+     * </p>
+     * <p>
+     * Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private workforces
+     * created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created using your own OIDC
+     * identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * </p>
      * 
      * @param memberDefinitions
-     *        The Amazon Cognito user groups that make up the work team.
+     *        A list of <code>MemberDefinition</code> objects that contains objects that identify the workers that make
+     *        up the work team. </p>
+     *        <p>
+     *        Workforces can be created using Amazon Cognito or your own OIDC Identity Provider (IdP). For private
+     *        workforces created using Amazon Cognito use <code>CognitoMemberDefinition</code>. For workforces created
+     *        using your own OIDC identity provider (IdP) use <code>OidcMemberDefinition</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

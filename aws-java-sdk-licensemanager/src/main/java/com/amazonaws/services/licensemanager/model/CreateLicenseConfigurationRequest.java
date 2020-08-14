@@ -58,13 +58,14 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
     private Boolean licenseCountHardLimit;
     /**
      * <p>
-     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules vary
-     * by dimension.
+     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+     * vary by dimension, as follows.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code>
+     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code>
      * </p>
      * </li>
      * <li>
@@ -76,8 +77,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     * <code>minimumSockets</code>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code>
      * </p>
      * </li>
      * <li>
@@ -87,6 +88,12 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     * <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     * <code>True</code> and <code>False</code>.
+     * </p>
      */
     private java.util.List<String> licenseRules;
     /**
@@ -343,13 +350,14 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules vary
-     * by dimension.
+     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+     * vary by dimension, as follows.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code>
+     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code>
      * </p>
      * </li>
      * <li>
@@ -361,8 +369,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     * <code>minimumSockets</code>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code>
      * </p>
      * </li>
      * <li>
@@ -372,14 +380,20 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     * <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     * <code>True</code> and <code>False</code>.
+     * </p>
      * 
-     * @return License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available
-     *         rules vary by dimension.</p>
+     * @return License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available
+     *         rules vary by dimension, as follows.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> |
-     *         <code>minimumCores</code>
+     *         <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *         <code>maximumCores</code> | <code>minimumCores</code>
      *         </p>
      *         </li>
      *         <li>
@@ -391,8 +405,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     *         <code>minimumSockets</code>
+     *         <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *         <code>maximumSockets</code> | <code>minimumSockets</code>
      *         </p>
      *         </li>
      *         <li>
@@ -401,6 +415,12 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *         <code>maximumVcpus</code> | <code>minimumVcpus</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values
+     *         for <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     *         <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     *         <code>True</code> and <code>False</code>.
      */
 
     public java.util.List<String> getLicenseRules() {
@@ -409,13 +429,14 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules vary
-     * by dimension.
+     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+     * vary by dimension, as follows.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code>
+     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code>
      * </p>
      * </li>
      * <li>
@@ -427,8 +448,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     * <code>minimumSockets</code>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code>
      * </p>
      * </li>
      * <li>
@@ -438,15 +459,21 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     * <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     * <code>True</code> and <code>False</code>.
+     * </p>
      * 
      * @param licenseRules
-     *        License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules
-     *        vary by dimension.</p>
+     *        License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available
+     *        rules vary by dimension, as follows.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> |
-     *        <code>minimumCores</code>
+     *        <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *        <code>maximumCores</code> | <code>minimumCores</code>
      *        </p>
      *        </li>
      *        <li>
@@ -458,8 +485,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     *        <code>minimumSockets</code>
+     *        <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *        <code>maximumSockets</code> | <code>minimumSockets</code>
      *        </p>
      *        </li>
      *        <li>
@@ -468,6 +495,12 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *        <code>maximumVcpus</code> | <code>minimumVcpus</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     *        <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     *        <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     *        <code>True</code> and <code>False</code>.
      */
 
     public void setLicenseRules(java.util.Collection<String> licenseRules) {
@@ -481,13 +514,14 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules vary
-     * by dimension.
+     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+     * vary by dimension, as follows.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code>
+     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code>
      * </p>
      * </li>
      * <li>
@@ -499,8 +533,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     * <code>minimumSockets</code>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code>
      * </p>
      * </li>
      * <li>
@@ -511,19 +545,25 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * </ul>
      * <p>
+     * The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     * <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     * <code>True</code> and <code>False</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLicenseRules(java.util.Collection)} or {@link #withLicenseRules(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param licenseRules
-     *        License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules
-     *        vary by dimension.</p>
+     *        License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available
+     *        rules vary by dimension, as follows.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> |
-     *        <code>minimumCores</code>
+     *        <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *        <code>maximumCores</code> | <code>minimumCores</code>
      *        </p>
      *        </li>
      *        <li>
@@ -535,8 +575,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     *        <code>minimumSockets</code>
+     *        <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *        <code>maximumSockets</code> | <code>minimumSockets</code>
      *        </p>
      *        </li>
      *        <li>
@@ -545,6 +585,12 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *        <code>maximumVcpus</code> | <code>minimumVcpus</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     *        <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     *        <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     *        <code>True</code> and <code>False</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,13 +606,14 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules vary
-     * by dimension.
+     * License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available rules
+     * vary by dimension, as follows.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> | <code>minimumCores</code>
+     * <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code>
      * </p>
      * </li>
      * <li>
@@ -578,8 +625,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     * <code>minimumSockets</code>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code>
      * </p>
      * </li>
      * <li>
@@ -589,15 +636,21 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     * <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     * <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     * <code>True</code> and <code>False</code>.
+     * </p>
      * 
      * @param licenseRules
-     *        License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). Available rules
-     *        vary by dimension.</p>
+     *        License rules. The syntax is #name=value (for example, #allowedTenancy=EC2-DedicatedHost). The available
+     *        rules vary by dimension, as follows.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>maximumCores</code> |
-     *        <code>minimumCores</code>
+     *        <code>Cores</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *        <code>maximumCores</code> | <code>minimumCores</code>
      *        </p>
      *        </li>
      *        <li>
@@ -609,8 +662,8 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>maximumSockets</code> |
-     *        <code>minimumSockets</code>
+     *        <code>Sockets</code> dimension: <code>allowedTenancy</code> | <code>licenseAffinityToHost</code> |
+     *        <code>maximumSockets</code> | <code>minimumSockets</code>
      *        </p>
      *        </li>
      *        <li>
@@ -619,6 +672,12 @@ public class CreateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      *        <code>maximumVcpus</code> | <code>minimumVcpus</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The unit for <code>licenseAffinityToHost</code> is days and the range is 1 to 180. The possible values for
+     *        <code>allowedTenancy</code> are <code>EC2-Default</code>, <code>EC2-DedicatedHost</code>, and
+     *        <code>EC2-DedicatedInstance</code>. The possible values for <code>honorVcpuOptimization</code> are
+     *        <code>True</code> and <code>False</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

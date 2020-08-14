@@ -30,13 +30,16 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Resource type. The value is <code>SSM_MANAGED</code>.
+     * Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * Product information filters. The following filters and logical operators are supported:
+     * Product information filters.
+     * </p>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>SSM_MANAGED</code>:
      * </p>
      * <ul>
      * <li>
@@ -67,8 +70,27 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and
-     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     * Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are:
+     * <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> |
+     * <code>olap</code>.
      * </p>
      * </li>
      * </ul>
@@ -77,11 +99,11 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Resource type. The value is <code>SSM_MANAGED</code>.
+     * Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      * </p>
      * 
      * @param resourceType
-     *        Resource type. The value is <code>SSM_MANAGED</code>.
+     *        Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -90,10 +112,10 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Resource type. The value is <code>SSM_MANAGED</code>.
+     * Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      * </p>
      * 
-     * @return Resource type. The value is <code>SSM_MANAGED</code>.
+     * @return Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      */
 
     public String getResourceType() {
@@ -102,11 +124,11 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Resource type. The value is <code>SSM_MANAGED</code>.
+     * Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      * </p>
      * 
      * @param resourceType
-     *        Resource type. The value is <code>SSM_MANAGED</code>.
+     *        Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,7 +139,10 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Product information filters. The following filters and logical operators are supported:
+     * Product information filters.
+     * </p>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>SSM_MANAGED</code>:
      * </p>
      * <ul>
      * <li>
@@ -148,13 +173,36 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and
-     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     * Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are:
+     * <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> |
+     * <code>olap</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Product information filters. The following filters and logical operators are supported:</p>
+     * @return Product information filters.</p>
+     *         <p>
+     *         The following filters and logical operators are supported when the resource type is
+     *         <code>SSM_MANAGED</code>:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -186,8 +234,27 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      *         <li>
      *         <p>
      *         <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code>
-     *         and <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *         and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      *         <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>
+     *         . Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     *         <code>oracle-se2</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values
+     *         are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> |
+     *         <code>ols</code> | <code>olap</code>.
      *         </p>
      *         </li>
      */
@@ -198,7 +265,10 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Product information filters. The following filters and logical operators are supported:
+     * Product information filters.
+     * </p>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>SSM_MANAGED</code>:
      * </p>
      * <ul>
      * <li>
@@ -229,14 +299,37 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and
-     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     * Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are:
+     * <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> |
+     * <code>olap</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param productInformationFilterList
-     *        Product information filters. The following filters and logical operators are supported:</p>
+     *        Product information filters.</p>
+     *        <p>
+     *        The following filters and logical operators are supported when the resource type is
+     *        <code>SSM_MANAGED</code>:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -268,8 +361,27 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code>
-     *        and <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *        and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      *        <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     *        Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     *        <code>oracle-se2</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values
+     *        are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> |
+     *        <code>ols</code> | <code>olap</code>.
      *        </p>
      *        </li>
      */
@@ -285,7 +397,10 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Product information filters. The following filters and logical operators are supported:
+     * Product information filters.
+     * </p>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>SSM_MANAGED</code>:
      * </p>
      * <ul>
      * <li>
@@ -316,8 +431,27 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and
-     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     * Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are:
+     * <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> |
+     * <code>olap</code>.
      * </p>
      * </li>
      * </ul>
@@ -328,7 +462,11 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param productInformationFilterList
-     *        Product information filters. The following filters and logical operators are supported:</p>
+     *        Product information filters.</p>
+     *        <p>
+     *        The following filters and logical operators are supported when the resource type is
+     *        <code>SSM_MANAGED</code>:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -360,8 +498,27 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code>
-     *        and <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *        and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      *        <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     *        Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     *        <code>oracle-se2</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values
+     *        are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> |
+     *        <code>ols</code> | <code>olap</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -379,7 +536,10 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Product information filters. The following filters and logical operators are supported:
+     * Product information filters.
+     * </p>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>SSM_MANAGED</code>:
      * </p>
      * <ul>
      * <li>
@@ -410,14 +570,37 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      * <li>
      * <p>
      * <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code> and
-     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     * <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      * <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     * Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     * <code>oracle-se2</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values are:
+     * <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> | <code>ols</code> |
+     * <code>olap</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param productInformationFilterList
-     *        Product information filters. The following filters and logical operators are supported:</p>
+     *        Product information filters.</p>
+     *        <p>
+     *        The following filters and logical operators are supported when the resource type is
+     *        <code>SSM_MANAGED</code>:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -449,8 +632,27 @@ public class ProductInformation implements Serializable, Cloneable, StructuredPo
      *        <li>
      *        <p>
      *        <code>License Included</code> - The type of license included. Logical operators are <code>EQUALS</code>
-     *        and <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code> |
+     *        and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code> |
      *        <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following filters and logical operators are supported when the resource type is <code>RDS</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Engine Edition</code> - The edition of the database engine. Logical operator is <code>EQUALS</code>.
+     *        Possible values are: <code>oracle-ee</code> | <code>oracle-se</code> | <code>oracle-se1</code> |
+     *        <code>oracle-se2</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>. Possible values
+     *        are: <code>data guard</code> | <code>diagnostic pack sqlt</code> | <code>tuning pack sqlt</code> |
+     *        <code>ols</code> | <code>olap</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

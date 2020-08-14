@@ -63,8 +63,8 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
     private Integer maxResults;
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      */
     private String nextToken;
@@ -368,13 +368,13 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was truncated, you will receive this token. Use it in your next request to
-     *        receive the next set of results.
+     *        If the previous response was truncated, you receive this token. Use it in your next request to receive the
+     *        next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -383,12 +383,12 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      * 
-     * @return If the previous response was truncated, you will receive this token. Use it in your next request to
-     *         receive the next set of results.
+     * @return If the previous response was truncated, you receive this token. Use it in your next request to receive
+     *         the next set of results.
      */
 
     public String getNextToken() {
@@ -397,13 +397,13 @@ public class ListCandidatesForAutoMLJobRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was truncated, you will receive this token. Use it in your next request to
-     *        receive the next set of results.
+     *        If the previous response was truncated, you receive this token. Use it in your next request to receive the
+     *        next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

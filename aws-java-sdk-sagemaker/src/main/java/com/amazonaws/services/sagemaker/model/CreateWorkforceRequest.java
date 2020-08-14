@@ -39,8 +39,10 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
     private CognitoConfig cognitoConfig;
     /**
      * <p>
-     * Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     * <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     * Use this parameter to configure a private workforce using your own OIDC Identity Provider.
+     * </p>
+     * <p>
+     * Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      * </p>
      */
     private OidcConfig oidcConfig;
@@ -135,13 +137,16 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     * <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     * Use this parameter to configure a private workforce using your own OIDC Identity Provider.
+     * </p>
+     * <p>
+     * Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      * </p>
      * 
      * @param oidcConfig
-     *        Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     *        <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     *        Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
+     *        <p>
+     *        Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      */
 
     public void setOidcConfig(OidcConfig oidcConfig) {
@@ -150,12 +155,15 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     * <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     * Use this parameter to configure a private workforce using your own OIDC Identity Provider.
+     * </p>
+     * <p>
+     * Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      * </p>
      * 
-     * @return Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     *         <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     * @return Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
+     *         <p>
+     *         Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      */
 
     public OidcConfig getOidcConfig() {
@@ -164,13 +172,16 @@ public class CreateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     * <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     * Use this parameter to configure a private workforce using your own OIDC Identity Provider.
+     * </p>
+     * <p>
+     * Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      * </p>
      * 
      * @param oidcConfig
-     *        Use this parameter to configure a private workforce using your own OIDC Identity Provider. Do not use
-     *        <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+     *        Use this parameter to configure a private workforce using your own OIDC Identity Provider.</p>
+     *        <p>
+     *        Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

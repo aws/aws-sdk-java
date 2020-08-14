@@ -131,6 +131,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -152,6 +182,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -183,7 +243,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -553,6 +613,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -574,6 +664,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -658,6 +778,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -679,6 +829,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -769,6 +949,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -790,6 +1000,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -873,6 +1113,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
+     *         stream.memory.z1d.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.3xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.6xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         stream.graphics-design.large
      *         </p>
      *         </li>
@@ -894,6 +1164,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.16xlarge
      *         </p>
      *         </li>
      *         <li>
@@ -984,6 +1284,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -1005,6 +1335,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -1089,6 +1449,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -1110,6 +1500,36 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -1199,7 +1619,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1212,7 +1632,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *        The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
      *        the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      *        to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
-     *        temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *        temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the
      *        instance.</p>
      *        <p>
      *        For more information, see <a href=
@@ -1230,7 +1650,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1242,7 +1662,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * @return The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
      *         the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      *         to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
-     *         temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *         temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the
      *         instance.</p>
      *         <p>
      *         For more information, see <a href=
@@ -1260,7 +1680,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
      * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
      * operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
-     * creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1273,7 +1693,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
      *        The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
      *        the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      *        to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
-     *        temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *        temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the
      *        instance.</p>
      *        <p>
      *        For more information, see <a href=

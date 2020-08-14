@@ -39,7 +39,8 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
     private String licenseConfigurationStatus;
     /**
      * <p>
-     * New license rules.
+     * New license rule. The only rule that you can add after you create a license configuration is
+     * licenseAffinityToHost.
      * </p>
      */
     private java.util.List<String> licenseRules;
@@ -175,10 +176,12 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * New license rules.
+     * New license rule. The only rule that you can add after you create a license configuration is
+     * licenseAffinityToHost.
      * </p>
      * 
-     * @return New license rules.
+     * @return New license rule. The only rule that you can add after you create a license configuration is
+     *         licenseAffinityToHost.
      */
 
     public java.util.List<String> getLicenseRules() {
@@ -187,11 +190,13 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * New license rules.
+     * New license rule. The only rule that you can add after you create a license configuration is
+     * licenseAffinityToHost.
      * </p>
      * 
      * @param licenseRules
-     *        New license rules.
+     *        New license rule. The only rule that you can add after you create a license configuration is
+     *        licenseAffinityToHost.
      */
 
     public void setLicenseRules(java.util.Collection<String> licenseRules) {
@@ -205,7 +210,8 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * New license rules.
+     * New license rule. The only rule that you can add after you create a license configuration is
+     * licenseAffinityToHost.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +220,8 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param licenseRules
-     *        New license rules.
+     *        New license rule. The only rule that you can add after you create a license configuration is
+     *        licenseAffinityToHost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +237,13 @@ public class UpdateLicenseConfigurationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * New license rules.
+     * New license rule. The only rule that you can add after you create a license configuration is
+     * licenseAffinityToHost.
      * </p>
      * 
      * @param licenseRules
-     *        New license rules.
+     *        New license rule. The only rule that you can add after you create a license configuration is
+     *        licenseAffinityToHost.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

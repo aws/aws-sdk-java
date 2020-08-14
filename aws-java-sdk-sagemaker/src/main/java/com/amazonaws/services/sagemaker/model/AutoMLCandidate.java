@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AutoPilot job will return recommendations, or candidates. Each candidate has futher details about the steps
- * involed, and the status.
+ * An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involed,
+ * and the status.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidate" target="_top">AWS API

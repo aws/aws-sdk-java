@@ -60,7 +60,7 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
     private java.util.Date creationTime;
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      */
     private java.util.Date endTime;
@@ -72,7 +72,7 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of a job.
      * </p>
      */
     private String failureReason;
@@ -317,11 +317,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      * 
      * @param endTime
-     *        The end time.
+     *        The end time of an AutoML job.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -330,10 +330,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      * 
-     * @return The end time.
+     * @return The end time of an AutoML job.
      */
 
     public java.util.Date getEndTime() {
@@ -342,11 +342,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      * 
      * @param endTime
-     *        The end time.
+     *        The end time of an AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +397,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of a job.
      * </p>
      * 
      * @param failureReason
-     *        The failure reason.
+     *        The failure reason of a job.
      */
 
     public void setFailureReason(String failureReason) {
@@ -410,10 +410,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of a job.
      * </p>
      * 
-     * @return The failure reason.
+     * @return The failure reason of a job.
      */
 
     public String getFailureReason() {
@@ -422,11 +422,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of a job.
      * </p>
      * 
      * @param failureReason
-     *        The failure reason.
+     *        The failure reason of a job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

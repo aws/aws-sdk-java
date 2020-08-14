@@ -58,6 +58,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
+     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     */
+    private ImageConfig imageConfig;
+    /**
+     * <p>
      * Whether the container hosts a single model or multiple models.
      * </p>
      */
@@ -270,6 +279,65 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     public ContainerDefinition withImage(String image) {
         setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
+     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     * 
+     * @param imageConfig
+     *        Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
+     *        Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html"
+     *        >Use a Private Docker Registry for Real-Time Inference Containers</a>
+     */
+
+    public void setImageConfig(ImageConfig imageConfig) {
+        this.imageConfig = imageConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
+     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     * 
+     * @return Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon
+     *         Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     *         Private Docker Registry for Real-Time Inference Containers</a>
+     */
+
+    public ImageConfig getImageConfig() {
+        return this.imageConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
+     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     * 
+     * @param imageConfig
+     *        Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
+     *        Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html"
+     *        >Use a Private Docker Registry for Real-Time Inference Containers</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withImageConfig(ImageConfig imageConfig) {
+        setImageConfig(imageConfig);
         return this;
     }
 
@@ -614,6 +682,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("ContainerHostname: ").append(getContainerHostname()).append(",");
         if (getImage() != null)
             sb.append("Image: ").append(getImage()).append(",");
+        if (getImageConfig() != null)
+            sb.append("ImageConfig: ").append(getImageConfig()).append(",");
         if (getMode() != null)
             sb.append("Mode: ").append(getMode()).append(",");
         if (getModelDataUrl() != null)
@@ -644,6 +714,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
             return false;
+        if (other.getImageConfig() == null ^ this.getImageConfig() == null)
+            return false;
+        if (other.getImageConfig() != null && other.getImageConfig().equals(this.getImageConfig()) == false)
+            return false;
         if (other.getMode() == null ^ this.getMode() == null)
             return false;
         if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
@@ -670,6 +744,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getContainerHostname() == null) ? 0 : getContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getImageConfig() == null) ? 0 : getImageConfig().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getModelDataUrl() == null) ? 0 : getModelDataUrl().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());

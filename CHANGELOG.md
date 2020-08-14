@@ -1,3 +1,24 @@
+# __1.11.842__ __2020-08-14__
+## __AWS License Manager__
+  - ### Features
+    - This release includes ability to enforce license assignment rules with EC2 Dedicated Hosts.
+
+## __Amazon AppStream__
+  - ### Features
+    - Adds support for the Desktop View feature
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - New C5ad instances featuring AMD's 2nd Generation EPYC processors, offering up to 96 vCPUs, 192 GiB of instance memory, 3.8 TB of NVMe based SSD instance storage, and 20 Gbps in Network bandwidth
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker now supports 1) creating real-time inference endpoints using model container images from Docker registries in customers' VPC 2) AUC(Area under the curve) as AutoPilot objective metric
+
+## __Braket__
+  - ### Features
+    - Fixing bug in our SDK model where device status and device type had been flipped.
+
 # __1.11.841__ __2020-08-13__
 ## __AWS AppSync__
   - ### Features

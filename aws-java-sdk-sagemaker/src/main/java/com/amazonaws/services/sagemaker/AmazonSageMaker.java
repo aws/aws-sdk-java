@@ -143,18 +143,17 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an AutoPilot job.
+     * Creates an Autopilot job.
      * </p>
      * <p>
-     * After you run an AutoPilot job, you can find the best performing model by calling , and then deploy that model by
-     * following the steps described in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step 6.1: Deploy the Model to Amazon
-     * SageMaker Hosting Services</a>.
+     * Find the best performing model after you run an Autopilot job by calling . Deploy that model by following the
+     * steps described in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/ex1-deploy-model.html">Step 6.1:
+     * Deploy the Model to Amazon SageMaker Hosting Services</a>.
      * </p>
      * <p>
-     * For information about how to use AutoPilot, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Use AutoPilot to
-     * Automate Model Development</a>.
+     * For information about how to use Autopilot, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html"> Automate Model
+     * Development with Amazon SageMaker Autopilot</a>.
      * </p>
      * 
      * @param createAutoMLJobRequest
@@ -1066,11 +1065,11 @@ public interface AmazonSageMaker {
     /**
      * <p>
      * Use this operation to create a workforce. This operation will return an error if a workforce already exists in
-     * the AWS Region that you specify. You can only create one workforce in each AWS Region.
+     * the AWS Region that you specify. You can only create one workforce in each AWS Region per AWS account.
      * </p>
      * <p>
-     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use the API
-     * operation to delete the existing workforce and then use this operation to create a new workforce.
+     * If you want to create a new workforce in an AWS Region where a workforce already exists, use the API operation to
+     * delete the existing workforce and then use <code>CreateWorkforce</code> to create a new workforce.
      * </p>
      * <p>
      * To create a private workforce using Amazon Cognito, you must specify a Cognito user pool in
@@ -1081,9 +1080,10 @@ public interface AmazonSageMaker {
      * </p>
      * <p>
      * To create a private workforce using your own OIDC Identity Provider (IdP), specify your IdP configuration in
-     * <code>OidcConfig</code>. You must create a OIDC IdP workforce using this API operation. For more information, see
-     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html"> Create a
-     * Private Workforce (OIDC IdP)</a>.
+     * <code>OidcConfig</code>. Your OIDC IdP must support <i>groups</i> because groups are used by Ground Truth and
+     * Amazon A2I to create work teams. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html"> Create a Private
+     * Workforce (OIDC IdP)</a>.
      * </p>
      * 
      * @param createWorkforceRequest
@@ -1429,9 +1429,16 @@ public interface AmazonSageMaker {
      * Use this operation to delete a workforce.
      * </p>
      * <p>
-     * If you want to create a new workforce in an AWS Region where the a workforce already exists, use this operation
-     * to delete the existing workforce and then use to create a new workforce.
+     * If you want to create a new workforce in an AWS Region where a workforce already exists, use this operation to
+     * delete the existing workforce and then use to create a new workforce.
      * </p>
+     * <important>
+     * <p>
+     * If a private workforce contains one or more work teams, you must use the operation to delete all work teams
+     * before you delete the workforce. If you try to delete a workforce that contains one or more work teams, you will
+     * recieve a <code>ResourceInUse</code> error.
+     * </p>
+     * </important>
      * 
      * @param deleteWorkforceRequest
      * @return Result of the DeleteWorkforce operation returned by the service.
@@ -2352,8 +2359,8 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a list of work teams that you have defined in a region. The list may be empty if no work team satisfies the
-     * filter specified in the <code>NameContains</code> parameter.
+     * Gets a list of private work teams that you have defined in a region. The list may be empty if no work team
+     * satisfies the filter specified in the <code>NameContains</code> parameter.
      * </p>
      * 
      * @param listWorkteamsRequest
@@ -2816,19 +2823,34 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Restricts access to tasks assigned to workers in the specified workforce to those within specific ranges of IP
-     * addresses. You specify allowed IP addresses by creating a list of up to ten <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.
+     * Use this operation to update your workforce. You can use this operation to require that workers use specific IP
+     * addresses to work on tasks and to update your OpenID Connect (OIDC) Identity Provider (IdP) workforce
+     * configuration.
      * </p>
      * <p>
-     * By default, a workforce isn't restricted to specific IP addresses. If you specify a range of IP addresses,
-     * workers who attempt to access tasks using any IP address outside the specified range are denied access and get a
-     * <code>Not Found</code> error message on the worker portal. After restricting access with this operation, you can
-     * see the allowed IP values for a private workforce with the operation.
+     * Use <code>SourceIpConfig</code> to restrict worker access to tasks to a specific range of IP addresses. You
+     * specify allowed IP addresses by creating a list of up to ten <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>. By default, a workforce isn't
+     * restricted to specific IP addresses. If you specify a range of IP addresses, workers who attempt to access tasks
+     * using any IP address outside the specified range are denied and get a <code>Not Found</code> error message on the
+     * worker portal.
+     * </p>
+     * <p>
+     * Use <code>OidcConfig</code> to update the configuration of a workforce created using your own OIDC IdP.
      * </p>
      * <important>
      * <p>
-     * This operation applies only to private workforces.
+     * You can only update your OIDC IdP configuration when there are no work teams associated with your workforce. You
+     * can delete work teams using the operation.
+     * </p>
+     * </important>
+     * <p>
+     * After restricting access to a range of IP addresses or updating your OIDC IdP configuration with this operation,
+     * you can view details about your update workforce using the operation.
+     * </p>
+     * <important>
+     * <p>
+     * This operation only applies to private workforces.
      * </p>
      * </important>
      * 
