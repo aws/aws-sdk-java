@@ -68,7 +68,21 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a customization for the Amazon QuickSight subscription associated with your AWS account.
+     * Creates Amazon QuickSight customizations the current AWS Region. Currently, you can add a custom default theme by
+     * using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To
+     * further customize QuickSight by removing QuickSight sample assets and videos for all new users, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a>
+     * in the Amazon QuickSight User Guide.
+     * </p>
+     * <p>
+     * You can create customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace always override customizations that apply to an AWS account. To
+     * find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * <p>
+     * Before you add a theme as the namespace default, make sure that you first share the theme with the namespace. If
+     * you don't share it with the namespace, the theme won't be visible to your users even if you use this API
+     * operation to make it the default theme.
      * </p>
      * 
      * @param createAccountCustomizationRequest
@@ -82,7 +96,21 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a customization for the Amazon QuickSight subscription associated with your AWS account.
+     * Creates Amazon QuickSight customizations the current AWS Region. Currently, you can add a custom default theme by
+     * using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To
+     * further customize QuickSight by removing QuickSight sample assets and videos for all new users, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a>
+     * in the Amazon QuickSight User Guide.
+     * </p>
+     * <p>
+     * You can create customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace always override customizations that apply to an AWS account. To
+     * find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * <p>
+     * Before you add a theme as the namespace default, make sure that you first share the theme with the namespace. If
+     * you don't share it with the namespace, the theme won't be visible to your users even if you use this API
+     * operation to make it the default theme.
      * </p>
      * 
      * @param createAccountCustomizationRequest
@@ -101,14 +129,44 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a> API operation.
+     * Creates an analysis in Amazon QuickSight.
+     * </p>
+     * 
+     * @param createAnalysisRequest
+     * @return A Java Future containing the result of the CreateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(CreateAnalysisRequest createAnalysisRequest);
+
+    /**
+     * <p>
+     * Creates an analysis in Amazon QuickSight.
+     * </p>
+     * 
+     * @param createAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(CreateAnalysisRequest createAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAnalysisRequest, CreateAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a> </code> API
+     * operation.
      * </p>
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
-     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
-     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
-     * template that exists in a different AWS account.
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have
+     * the correct permissions, you can create a dashboard from a template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -121,14 +179,13 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the <a>CreateTemplate</a> API operation.
+     * Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a> </code> API
+     * operation.
      * </p>
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
-     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
-     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
-     * template that exists in a different AWS account.
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have
+     * the correct permissions, you can create a dashboard from a template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -563,7 +620,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes customizations for the QuickSight subscription on your AWS account.
+     * Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS Account and QuickSight
+     * namespace.
      * </p>
      * 
      * @param deleteAccountCustomizationRequest
@@ -577,7 +635,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes customizations for the QuickSight subscription on your AWS account.
+     * Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS Account and QuickSight
+     * namespace.
      * </p>
      * 
      * @param deleteAccountCustomizationRequest
@@ -593,6 +652,61 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(
             DeleteAccountCustomizationRequest deleteAccountCustomizationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountCustomizationRequest, DeleteAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can
+     * restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. QuickSight
+     * attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the
+     * end of the recovery window, QuickSight deletes the analysis permanently.
+     * </p>
+     * <p>
+     * At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
+     * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API
+     * until it's deleted, so you can describe it but you can't make a template from it.
+     * </p>
+     * <p>
+     * An analysis that's scheduled for deletion isn't accessible in the QuickSight console. To access it in the
+     * console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.
+     * </p>
+     * 
+     * @param deleteAnalysisRequest
+     * @return A Java Future containing the result of the DeleteAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(DeleteAnalysisRequest deleteAnalysisRequest);
+
+    /**
+     * <p>
+     * Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can
+     * restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. QuickSight
+     * attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the
+     * end of the recovery window, QuickSight deletes the analysis permanently.
+     * </p>
+     * <p>
+     * At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
+     * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API
+     * until it's deleted, so you can describe it but you can't make a template from it.
+     * </p>
+     * <p>
+     * An analysis that's scheduled for deletion isn't accessible in the QuickSight console. To access it in the
+     * console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.
+     * </p>
+     * 
+     * @param deleteAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(DeleteAnalysisRequest deleteAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnalysisRequest, DeleteAnalysisResult> asyncHandler);
 
     /**
      * <p>
@@ -658,7 +772,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
+     * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
+     * source.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -671,7 +786,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
+     * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
+     * source.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -786,7 +902,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
      * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
-     * assets, you use the APIs for the relevant asset.
+     * assets, you use the API operations for the relevant asset.
      * </p>
      * 
      * @param deleteNamespaceRequest
@@ -801,7 +917,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
      * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
-     * assets, you use the APIs for the relevant asset.
+     * assets, you use the API operations for the relevant asset.
      * </p>
      * 
      * @param deleteNamespaceRequest
@@ -1011,8 +1127,72 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes the customizations associated with your AWS account.
+     * Describes the customizations associated with the provided AWS account and Amazon QuickSight namespace in an AWS
+     * Region. The QuickSight console evaluates which customizations to apply by running this API operation with the
+     * <code>Resolved</code> flag included.
      * </p>
+     * <p>
+     * To determine what customizations display when you run this command, it can help to visualize the relationship of
+     * the entities involved.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the potential to use all of
+     * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose one AWS Region to use as your home
+     * region. That's where your free SPICE capacity is located. You can use QuickSight in any supported AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once, QuickSight acts as a
+     * separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US
+     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any AWS Region, unless they are
+     * constrained to a namespace.
+     * </p>
+     * <p>
+     * To run the command in a different AWS Region, you change your region settings. If you're using the AWS CLI, you
+     * can use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line
+     * options</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Run <code>aws configure</code> to change your default AWS Region. Use Enter to key the same settings for your
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources,
+     * datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also
+     * be part of the same namespace. People who share a namespace are completely isolated from users and assets in
+     * other namespaces, even if they are in the same AWS account and AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations can apply to an
+     * AWS account or to a namespace. Settings that you apply to a namespace override settings that you apply to an AWS
+     * Account. All settings are isolated to a single AWS Region. To apply them in other AWS Regions, run the
+     * <code>CreateAccountCustomization</code> command in each AWS Region where you want to apply the same
+     * customizations.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeAccountCustomizationRequest
      * @return A Java Future containing the result of the DescribeAccountCustomization operation returned by the
@@ -1026,8 +1206,72 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Describes the customizations associated with your AWS account.
+     * Describes the customizations associated with the provided AWS account and Amazon QuickSight namespace in an AWS
+     * Region. The QuickSight console evaluates which customizations to apply by running this API operation with the
+     * <code>Resolved</code> flag included.
      * </p>
+     * <p>
+     * To determine what customizations display when you run this command, it can help to visualize the relationship of
+     * the entities involved.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the potential to use all of
+     * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose one AWS Region to use as your home
+     * region. That's where your free SPICE capacity is located. You can use QuickSight in any supported AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once, QuickSight acts as a
+     * separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US
+     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any AWS Region, unless they are
+     * constrained to a namespace.
+     * </p>
+     * <p>
+     * To run the command in a different AWS Region, you change your region settings. If you're using the AWS CLI, you
+     * can use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line
+     * options</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Run <code>aws configure</code> to change your default AWS Region. Use Enter to key the same settings for your
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources,
+     * datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also
+     * be part of the same namespace. People who share a namespace are completely isolated from users and assets in
+     * other namespaces, even if they are in the same AWS account and AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations can apply to an
+     * AWS account or to a namespace. Settings that you apply to a namespace override settings that you apply to an AWS
+     * Account. All settings are isolated to a single AWS Region. To apply them in other AWS Regions, run the
+     * <code>CreateAccountCustomization</code> command in each AWS Region where you want to apply the same
+     * customizations.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeAccountCustomizationRequest
      * @param asyncHandler
@@ -1074,6 +1318,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest describeAccountSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a summary of the metadata for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisRequest
+     * @return A Java Future containing the result of the DescribeAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisResult> describeAnalysisAsync(DescribeAnalysisRequest describeAnalysisRequest);
+
+    /**
+     * <p>
+     * Provides a summary of the metadata for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisResult> describeAnalysisAsync(DescribeAnalysisRequest describeAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnalysisRequest, DescribeAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisPermissionsRequest
+     * @return A Java Future containing the result of the DescribeAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(
+            DescribeAnalysisPermissionsRequest describeAnalysisPermissionsRequest);
+
+    /**
+     * <p>
+     * Provides the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(
+            DescribeAnalysisPermissionsRequest describeAnalysisPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnalysisPermissionsRequest, DescribeAnalysisPermissionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1624,8 +1932,9 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a URL and authorization code that you can embed in your web server code. Before you use this command,
-     * make sure that you have configured the dashboards and permissions.
+     * Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard
+     * in your web server code. Before you use this command, make sure that you have configured the dashboards and
+     * permissions.
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
@@ -1655,10 +1964,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
-     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -1671,8 +1978,9 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a URL and authorization code that you can embed in your web server code. Before you use this command,
-     * make sure that you have configured the dashboards and permissions.
+     * Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard
+     * in your web server code. Before you use this command, make sure that you have configured the dashboards and
+     * permissions.
      * </p>
      * <p>
      * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
@@ -1702,10 +2010,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
-     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i> .
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -1723,8 +2029,29 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a session URL and authorization code that you can embed in your web server code.
+     * Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your
+     * web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows
+     * users to create data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight
+     * console need belong to the author or admin security cohort. If you want to restrict permissions to some of these
+     * features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code> API operation.
+     * Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached.
+     * For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding the
+     * Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
+     * >Customizing Access to the Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getSessionEmbedUrlRequest
      * @return A Java Future containing the result of the GetSessionEmbedUrl operation returned by the service.
@@ -1736,8 +2063,29 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a session URL and authorization code that you can embed in your web server code.
+     * Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your
+     * web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows
+     * users to create data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight
+     * console need belong to the author or admin security cohort. If you want to restrict permissions to some of these
+     * features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code> API operation.
+     * Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached.
+     * For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding the
+     * Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
+     * >Customizing Access to the Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getSessionEmbedUrlRequest
      * @param asyncHandler
@@ -1751,6 +2099,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<GetSessionEmbedUrlResult> getSessionEmbedUrlAsync(GetSessionEmbedUrlRequest getSessionEmbedUrlRequest,
             com.amazonaws.handlers.AsyncHandler<GetSessionEmbedUrlRequest, GetSessionEmbedUrlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists Amazon QuickSight analyses that exist in the specified AWS account.
+     * </p>
+     * 
+     * @param listAnalysesRequest
+     * @return A Java Future containing the result of the ListAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalysesResult> listAnalysesAsync(ListAnalysesRequest listAnalysesRequest);
+
+    /**
+     * <p>
+     * Lists Amazon QuickSight analyses that exist in the specified AWS account.
+     * </p>
+     * 
+     * @param listAnalysesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalysesResult> listAnalysesAsync(ListAnalysesRequest listAnalysesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAnalysesRequest, ListAnalysesResult> asyncHandler);
 
     /**
      * <p>
@@ -2388,7 +2767,69 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Searchs for dashboards that belong to a user.
+     * Restores an analysis.
+     * </p>
+     * 
+     * @param restoreAnalysisRequest
+     * @return A Java Future containing the result of the RestoreAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.RestoreAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreAnalysisResult> restoreAnalysisAsync(RestoreAnalysisRequest restoreAnalysisRequest);
+
+    /**
+     * <p>
+     * Restores an analysis.
+     * </p>
+     * 
+     * @param restoreAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.RestoreAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreAnalysisResult> restoreAnalysisAsync(RestoreAnalysisRequest restoreAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreAnalysisRequest, RestoreAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches for analyses that belong to the user specified in the filter.
+     * </p>
+     * 
+     * @param searchAnalysesRequest
+     * @return A Java Future containing the result of the SearchAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsync.SearchAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchAnalysesResult> searchAnalysesAsync(SearchAnalysesRequest searchAnalysesRequest);
+
+    /**
+     * <p>
+     * Searches for analyses that belong to the user specified in the filter.
+     * </p>
+     * 
+     * @param searchAnalysesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.SearchAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchAnalysesResult> searchAnalysesAsync(SearchAnalysesRequest searchAnalysesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchAnalysesRequest, SearchAnalysesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches for dashboards that belong to a user.
      * </p>
      * 
      * @param searchDashboardsRequest
@@ -2401,7 +2842,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Searchs for dashboards that belong to a user.
+     * Searches for dashboards that belong to a user.
      * </p>
      * 
      * @param searchDashboardsRequest
@@ -2537,7 +2978,13 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates customizations associated with the QuickSight subscription on your AWS account.
+     * Updates Amazon QuickSight customizations the current AWS Region. Currently, the only customization you can use is
+     * a theme.
+     * </p>
+     * <p>
+     * You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace override customizations that apply to an AWS account. To find
+     * out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
      * </p>
      * 
      * @param updateAccountCustomizationRequest
@@ -2551,7 +2998,13 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates customizations associated with the QuickSight subscription on your AWS account.
+     * Updates Amazon QuickSight customizations the current AWS Region. Currently, the only customization you can use is
+     * a theme.
+     * </p>
+     * <p>
+     * You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace override customizations that apply to an AWS account. To find
+     * out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
      * </p>
      * 
      * @param updateAccountCustomizationRequest
@@ -2570,7 +3023,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the settings for the Amazon QuickSight subscription in your AWS Account.
+     * Updates the Amazon QuickSight settings in your AWS Account.
      * </p>
      * 
      * @param updateAccountSettingsRequest
@@ -2583,7 +3036,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Updates the settings for the Amazon QuickSight subscription in your AWS Account.
+     * Updates the Amazon QuickSight settings in your AWS Account.
      * </p>
      * 
      * @param updateAccountSettingsRequest
@@ -2598,6 +3051,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest updateAccountSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an analysis in Amazon QuickSight
+     * </p>
+     * 
+     * @param updateAnalysisRequest
+     * @return A Java Future containing the result of the UpdateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisResult> updateAnalysisAsync(UpdateAnalysisRequest updateAnalysisRequest);
+
+    /**
+     * <p>
+     * Updates an analysis in Amazon QuickSight
+     * </p>
+     * 
+     * @param updateAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisResult> updateAnalysisAsync(UpdateAnalysisRequest updateAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnalysisRequest, UpdateAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param updateAnalysisPermissionsRequest
+     * @return A Java Future containing the result of the UpdateAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisPermissionsResult> updateAnalysisPermissionsAsync(
+            UpdateAnalysisPermissionsRequest updateAnalysisPermissionsRequest);
+
+    /**
+     * <p>
+     * Updates the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param updateAnalysisPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisPermissionsResult> updateAnalysisPermissionsAsync(
+            UpdateAnalysisPermissionsRequest updateAnalysisPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnalysisPermissionsRequest, UpdateAnalysisPermissionsResult> asyncHandler);
 
     /**
      * <p>

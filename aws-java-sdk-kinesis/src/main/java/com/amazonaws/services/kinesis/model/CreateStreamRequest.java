@@ -41,9 +41,6 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The number of shards that the stream will use. The throughput of the stream is a function of the number of
      * shards; more shards are required for greater provisioned throughput.
      * </p>
-     * <p>
-     * DefaultShardLimit;
-     * </p>
      */
     private Integer shardCount;
 
@@ -107,15 +104,10 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The number of shards that the stream will use. The throughput of the stream is a function of the number of
      * shards; more shards are required for greater provisioned throughput.
      * </p>
-     * <p>
-     * DefaultShardLimit;
-     * </p>
      * 
      * @param shardCount
      *        The number of shards that the stream will use. The throughput of the stream is a function of the number of
-     *        shards; more shards are required for greater provisioned throughput.</p>
-     *        <p>
-     *        DefaultShardLimit;
+     *        shards; more shards are required for greater provisioned throughput.
      */
 
     public void setShardCount(Integer shardCount) {
@@ -127,14 +119,9 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The number of shards that the stream will use. The throughput of the stream is a function of the number of
      * shards; more shards are required for greater provisioned throughput.
      * </p>
-     * <p>
-     * DefaultShardLimit;
-     * </p>
      * 
      * @return The number of shards that the stream will use. The throughput of the stream is a function of the number
-     *         of shards; more shards are required for greater provisioned throughput.</p>
-     *         <p>
-     *         DefaultShardLimit;
+     *         of shards; more shards are required for greater provisioned throughput.
      */
 
     public Integer getShardCount() {
@@ -146,15 +133,10 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The number of shards that the stream will use. The throughput of the stream is a function of the number of
      * shards; more shards are required for greater provisioned throughput.
      * </p>
-     * <p>
-     * DefaultShardLimit;
-     * </p>
      * 
      * @param shardCount
      *        The number of shards that the stream will use. The throughput of the stream is a function of the number of
-     *        shards; more shards are required for greater provisioned throughput.</p>
-     *        <p>
-     *        DefaultShardLimit;
+     *        shards; more shards are required for greater provisioned throughput.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

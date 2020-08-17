@@ -37,7 +37,9 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of
      * the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you can use to hide
      * the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more
-     * information, see the <a>CrlConfiguration</a> structure.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * structure.
      * </p>
      */
     private RevocationConfiguration revocationConfiguration;
@@ -49,21 +51,17 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     private String certificateAuthorityType;
     /**
      * <p>
-     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
-     * times with the same idempotency token within a five minute period, ACM Private CA recognizes that you are
-     * requesting only one certificate. As a result, ACM Private CA issues only one. If you change the idempotency token
-     * for each call, however, ACM Private CA recognizes that you are requesting multiple certificates.
+     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. For a
+     * given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same token, ACM
+     * Private CA returns the ARN of the existing CA and takes no further action. If you change the idempotency token
+     * across multiple calls, ACM Private CA creates a unique CA for each unique token.
      * </p>
      */
     private String idempotencyToken;
     /**
      * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
-     * For information using tags with
-     * </p>
-     * <p>
-     * IAM to manage permissions, see <a
+     * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -121,14 +119,18 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of
      * the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you can use to hide
      * the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more
-     * information, see the <a>CrlConfiguration</a> structure.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * structure.
      * </p>
      * 
      * @param revocationConfiguration
      *        Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the
      *        name of the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you can
      *        use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     *        certificate. For more information, see the <a>CrlConfiguration</a> structure.
+     *        certificate. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html"
+     *        >CrlConfiguration</a> structure.
      */
 
     public void setRevocationConfiguration(RevocationConfiguration revocationConfiguration) {
@@ -140,13 +142,17 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of
      * the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you can use to hide
      * the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more
-     * information, see the <a>CrlConfiguration</a> structure.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * structure.
      * </p>
      * 
      * @return Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the
      *         name of the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you
      *         can use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     *         certificate. For more information, see the <a>CrlConfiguration</a> structure.
+     *         certificate. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html"
+     *         >CrlConfiguration</a> structure.
      */
 
     public RevocationConfiguration getRevocationConfiguration() {
@@ -158,14 +164,18 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of
      * the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you can use to hide
      * the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA certificate. For more
-     * information, see the <a>CrlConfiguration</a> structure.
+     * information, see the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html">CrlConfiguration</a>
+     * structure.
      * </p>
      * 
      * @param revocationConfiguration
      *        Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the
      *        name of the S3 bucket to which ACM Private CA will write the CRL, and an optional CNAME alias that you can
      *        use to hide the name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
-     *        certificate. For more information, see the <a>CrlConfiguration</a> structure.
+     *        certificate. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CrlConfiguration.html"
+     *        >CrlConfiguration</a> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,20 +245,17 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
-     * times with the same idempotency token within a five minute period, ACM Private CA recognizes that you are
-     * requesting only one certificate. As a result, ACM Private CA issues only one. If you change the idempotency token
-     * for each call, however, ACM Private CA recognizes that you are requesting multiple certificates.
+     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. For a
+     * given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same token, ACM
+     * Private CA returns the ARN of the existing CA and takes no further action. If you change the idempotency token
+     * across multiple calls, ACM Private CA creates a unique CA for each unique token.
      * </p>
      * 
      * @param idempotencyToken
      *        Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     *        Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
-     *        multiple times with the same idempotency token within a five minute period, ACM Private CA recognizes that
-     *        you are requesting only one certificate. As a result, ACM Private CA issues only one. If you change the
-     *        idempotency token for each call, however, ACM Private CA recognizes that you are requesting multiple
-     *        certificates.
+     *        For a given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same
+     *        token, ACM Private CA returns the ARN of the existing CA and takes no further action. If you change the
+     *        idempotency token across multiple calls, ACM Private CA creates a unique CA for each unique token.
      */
 
     public void setIdempotencyToken(String idempotencyToken) {
@@ -257,19 +264,16 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
-     * times with the same idempotency token within a five minute period, ACM Private CA recognizes that you are
-     * requesting only one certificate. As a result, ACM Private CA issues only one. If you change the idempotency token
-     * for each call, however, ACM Private CA recognizes that you are requesting multiple certificates.
+     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. For a
+     * given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same token, ACM
+     * Private CA returns the ARN of the existing CA and takes no further action. If you change the idempotency token
+     * across multiple calls, ACM Private CA creates a unique CA for each unique token.
      * </p>
      * 
      * @return Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     *         Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
-     *         multiple times with the same idempotency token within a five minute period, ACM Private CA recognizes
-     *         that you are requesting only one certificate. As a result, ACM Private CA issues only one. If you change
-     *         the idempotency token for each call, however, ACM Private CA recognizes that you are requesting multiple
-     *         certificates.
+     *         For a given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same
+     *         token, ACM Private CA returns the ARN of the existing CA and takes no further action. If you change the
+     *         idempotency token across multiple calls, ACM Private CA creates a unique CA for each unique token.
      */
 
     public String getIdempotencyToken() {
@@ -278,20 +282,17 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     * Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple
-     * times with the same idempotency token within a five minute period, ACM Private CA recognizes that you are
-     * requesting only one certificate. As a result, ACM Private CA issues only one. If you change the idempotency token
-     * for each call, however, ACM Private CA recognizes that you are requesting multiple certificates.
+     * Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>. For a
+     * given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same token, ACM
+     * Private CA returns the ARN of the existing CA and takes no further action. If you change the idempotency token
+     * across multiple calls, ACM Private CA creates a unique CA for each unique token.
      * </p>
      * 
      * @param idempotencyToken
      *        Alphanumeric string that can be used to distinguish between calls to <b>CreateCertificateAuthority</b>.
-     *        Idempotency tokens time out after five minutes. Therefore, if you call <b>CreateCertificateAuthority</b>
-     *        multiple times with the same idempotency token within a five minute period, ACM Private CA recognizes that
-     *        you are requesting only one certificate. As a result, ACM Private CA issues only one. If you change the
-     *        idempotency token for each call, however, ACM Private CA recognizes that you are requesting multiple
-     *        certificates.
+     *        For a given token, ACM Private CA creates exactly one CA. If you issue a subsequent call using the same
+     *        token, ACM Private CA returns the ARN of the existing CA and takes no further action. If you change the
+     *        idempotency token across multiple calls, ACM Private CA creates a unique CA for each unique token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -303,18 +304,13 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
-     * For information using tags with
-     * </p>
-     * <p>
-     * IAM to manage permissions, see <a
+     * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
      * 
      * @return Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
-     *         private CA. For information using tags with </p>
-     *         <p>
-     *         IAM to manage permissions, see <a
+     *         private CA. For information using tags with IAM to manage permissions, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *         Tags</a>.
      */
@@ -326,19 +322,14 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
-     * For information using tags with
-     * </p>
-     * <p>
-     * IAM to manage permissions, see <a
+     * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
      * 
      * @param tags
      *        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
-     *        private CA. For information using tags with </p>
-     *        <p>
-     *        IAM to manage permissions, see <a
+     *        private CA. For information using tags with IAM to manage permissions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      */
@@ -355,10 +346,7 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
-     * For information using tags with
-     * </p>
-     * <p>
-     * IAM to manage permissions, see <a
+     * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -370,9 +358,7 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * 
      * @param tags
      *        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
-     *        private CA. For information using tags with </p>
-     *        <p>
-     *        IAM to manage permissions, see <a
+     *        private CA. For information using tags with IAM to manage permissions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -391,19 +377,14 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     /**
      * <p>
      * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
-     * For information using tags with
-     * </p>
-     * <p>
-     * IAM to manage permissions, see <a
+     * For information using tags with IAM to manage permissions, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
      * 
      * @param tags
      *        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
-     *        private CA. For information using tags with </p>
-     *        <p>
-     *        IAM to manage permissions, see <a
+     *        private CA. For information using tags with IAM to manage permissions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

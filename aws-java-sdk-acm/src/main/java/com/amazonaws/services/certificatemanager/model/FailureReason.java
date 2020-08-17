@@ -35,6 +35,7 @@ public enum FailureReason {
     PCA_INVALID_ARGS("PCA_INVALID_ARGS"),
     PCA_INVALID_DURATION("PCA_INVALID_DURATION"),
     PCA_ACCESS_DENIED("PCA_ACCESS_DENIED"),
+    SLR_NOT_FOUND("SLR_NOT_FOUND"),
     OTHER("OTHER");
 
     private String value;

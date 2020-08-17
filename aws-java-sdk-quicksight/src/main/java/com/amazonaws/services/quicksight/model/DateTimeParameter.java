@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Date time parameter.
+ * A date-time parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DateTimeParameter" target="_top">AWS API
@@ -30,24 +30,24 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the date-time parameter.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Values.
+     * The values for the date-time parameter.
      * </p>
      */
     private java.util.List<java.util.Date> values;
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the date-time parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for the date-time parameter.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the date-time parameter.
      * </p>
      * 
-     * @return A display name for the dataset.
+     * @return A display name for the date-time parameter.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the date-time parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for the date-time parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Values.
+     * The values for the date-time parameter.
      * </p>
      * 
-     * @return Values.
+     * @return The values for the date-time parameter.
      */
 
     public java.util.List<java.util.Date> getValues() {
@@ -95,11 +95,11 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Values.
+     * The values for the date-time parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the date-time parameter.
      */
 
     public void setValues(java.util.Collection<java.util.Date> values) {
@@ -113,7 +113,7 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Values.
+     * The values for the date-time parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the date-time parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class DateTimeParameter implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Values.
+     * The values for the date-time parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the date-time parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

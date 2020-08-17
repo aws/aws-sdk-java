@@ -12,6 +12,9 @@
  */
 
 /**
+ * <note>
+ * <p/>
+ * </note>
  * <p>
  * This is the <i>ACM Private CA API Reference</i>. It provides descriptions, syntax, and usage examples for each of the
  * actions and data types involved in creating and managing private certificate authorities (CA) for your organization.
@@ -23,9 +26,9 @@
  * </p>
  * <note>
  * <p>
- * Each ACM Private CA API action has a throttling limit which determines the number of times the action can be called
- * per second. For more information, see <a
- * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in ACM
+ * Each ACM Private CA API action has a quota that determines the number of times the action can be called per second.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Quotas in ACM
  * Private CA</a> in the ACM Private CA user guide.
  * </p>
  * </note>

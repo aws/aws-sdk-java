@@ -33,14 +33,16 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
     private String awsAccountId;
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you want to describe QuickSight customizations for.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The status of the creation of the customization. This is an asynchronous process. A status of
-     * <code>CREATED</code> means that your customization is ready to use.
+     * The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     * customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to
+     * identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to
+     * reveal customizations that are configured at different levels.
      * </p>
      */
     private Boolean resolved;
@@ -87,11 +89,11 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you want to describe QuickSight customizations for.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the customization that you're describing.
+     *        The QuickSight namespace that you want to describe QuickSight customizations for.
      */
 
     public void setNamespace(String namespace) {
@@ -100,10 +102,10 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you want to describe QuickSight customizations for.
      * </p>
      * 
-     * @return The namespace associated with the customization that you're describing.
+     * @return The QuickSight namespace that you want to describe QuickSight customizations for.
      */
 
     public String getNamespace() {
@@ -112,11 +114,11 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you want to describe QuickSight customizations for.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the customization that you're describing.
+     *        The QuickSight namespace that you want to describe QuickSight customizations for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +129,17 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the creation of the customization. This is an asynchronous process. A status of
-     * <code>CREATED</code> means that your customization is ready to use.
+     * The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     * customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to
+     * identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to
+     * reveal customizations that are configured at different levels.
      * </p>
      * 
      * @param resolved
-     *        The status of the creation of the customization. This is an asynchronous process. A status of
-     *        <code>CREATED</code> means that your customization is ready to use.
+     *        The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     *        customizations is returned. You can add this flag to your command to use the same view that QuickSight
+     *        uses to identify which customizations to apply to the console. Omit this flag, or set it to
+     *        <code>no-resolved</code>, to reveal customizations that are configured at different levels.
      */
 
     public void setResolved(Boolean resolved) {
@@ -142,12 +148,16 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the creation of the customization. This is an asynchronous process. A status of
-     * <code>CREATED</code> means that your customization is ready to use.
+     * The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     * customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to
+     * identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to
+     * reveal customizations that are configured at different levels.
      * </p>
      * 
-     * @return The status of the creation of the customization. This is an asynchronous process. A status of
-     *         <code>CREATED</code> means that your customization is ready to use.
+     * @return The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     *         customizations is returned. You can add this flag to your command to use the same view that QuickSight
+     *         uses to identify which customizations to apply to the console. Omit this flag, or set it to
+     *         <code>no-resolved</code>, to reveal customizations that are configured at different levels.
      */
 
     public Boolean getResolved() {
@@ -156,13 +166,17 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the creation of the customization. This is an asynchronous process. A status of
-     * <code>CREATED</code> means that your customization is ready to use.
+     * The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     * customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to
+     * identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to
+     * reveal customizations that are configured at different levels.
      * </p>
      * 
      * @param resolved
-     *        The status of the creation of the customization. This is an asynchronous process. A status of
-     *        <code>CREATED</code> means that your customization is ready to use.
+     *        The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     *        customizations is returned. You can add this flag to your command to use the same view that QuickSight
+     *        uses to identify which customizations to apply to the console. Omit this flag, or set it to
+     *        <code>no-resolved</code>, to reveal customizations that are configured at different levels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,12 +187,16 @@ public class DescribeAccountCustomizationRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The status of the creation of the customization. This is an asynchronous process. A status of
-     * <code>CREATED</code> means that your customization is ready to use.
+     * The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     * customizations is returned. You can add this flag to your command to use the same view that QuickSight uses to
+     * identify which customizations to apply to the console. Omit this flag, or set it to <code>no-resolved</code>, to
+     * reveal customizations that are configured at different levels.
      * </p>
      * 
-     * @return The status of the creation of the customization. This is an asynchronous process. A status of
-     *         <code>CREATED</code> means that your customization is ready to use.
+     * @return The <code>Resolved</code> flag works with the other parameters to determine which view of QuickSight
+     *         customizations is returned. You can add this flag to your command to use the same view that QuickSight
+     *         uses to identify which customizations to apply to the console. Omit this flag, or set it to
+     *         <code>no-resolved</code>, to reveal customizations that are configured at different levels.
      */
 
     public Boolean isResolved() {

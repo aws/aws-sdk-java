@@ -86,7 +86,7 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
     private Boolean hasMoreShards;
     /**
      * <p>
-     * The current retention period, in hours.
+     * The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      * </p>
      */
     private Integer retentionPeriodHours;
@@ -691,11 +691,11 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current retention period, in hours.
+     * The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      * </p>
      * 
      * @param retentionPeriodHours
-     *        The current retention period, in hours.
+     *        The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      */
 
     public void setRetentionPeriodHours(Integer retentionPeriodHours) {
@@ -704,10 +704,10 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current retention period, in hours.
+     * The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      * </p>
      * 
-     * @return The current retention period, in hours.
+     * @return The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      */
 
     public Integer getRetentionPeriodHours() {
@@ -716,11 +716,11 @@ public class StreamDescription implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The current retention period, in hours.
+     * The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      * </p>
      * 
      * @param retentionPeriodHours
-     *        The current retention period, in hours.
+     *        The current retention period, in hours. Minimum value of 24. Maximum value of 168.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

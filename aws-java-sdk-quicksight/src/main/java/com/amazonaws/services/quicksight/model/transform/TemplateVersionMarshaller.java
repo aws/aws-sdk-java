@@ -42,6 +42,8 @@ public class TemplateVersionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<String> SOURCEENTITYARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceEntityArn").build();
+    private static final MarshallingInfo<String> THEMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ThemeArn").build();
 
     private static final TemplateVersionMarshaller instance = new TemplateVersionMarshaller();
 
@@ -66,6 +68,7 @@ public class TemplateVersionMarshaller {
             protocolMarshaller.marshall(templateVersion.getDataSetConfigurations(), DATASETCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(templateVersion.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(templateVersion.getSourceEntityArn(), SOURCEENTITYARN_BINDING);
+            protocolMarshaller.marshall(templateVersion.getThemeArn(), THEMEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

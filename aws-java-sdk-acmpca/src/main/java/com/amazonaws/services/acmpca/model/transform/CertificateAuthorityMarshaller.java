@@ -29,6 +29,8 @@ public class CertificateAuthorityMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<String> OWNERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerAccount").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTSTATECHANGEAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -69,6 +71,7 @@ public class CertificateAuthorityMarshaller {
 
         try {
             protocolMarshaller.marshall(certificateAuthority.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(certificateAuthority.getOwnerAccount(), OWNERACCOUNT_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getLastStateChangeAt(), LASTSTATECHANGEAT_BINDING);
             protocolMarshaller.marshall(certificateAuthority.getType(), TYPE_BINDING);

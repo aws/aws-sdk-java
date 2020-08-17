@@ -46,6 +46,12 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
      * </p>
      */
     private LaunchConfig launchConfig;
+    /**
+     * <p>
+     * A list of world configurations.
+     * </p>
+     */
+    private java.util.List<WorldConfig> worldConfigs;
 
     /**
      * <p>
@@ -168,6 +174,76 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * A list of world configurations.
+     * </p>
+     * 
+     * @return A list of world configurations.
+     */
+
+    public java.util.List<WorldConfig> getWorldConfigs() {
+        return worldConfigs;
+    }
+
+    /**
+     * <p>
+     * A list of world configurations.
+     * </p>
+     * 
+     * @param worldConfigs
+     *        A list of world configurations.
+     */
+
+    public void setWorldConfigs(java.util.Collection<WorldConfig> worldConfigs) {
+        if (worldConfigs == null) {
+            this.worldConfigs = null;
+            return;
+        }
+
+        this.worldConfigs = new java.util.ArrayList<WorldConfig>(worldConfigs);
+    }
+
+    /**
+     * <p>
+     * A list of world configurations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setWorldConfigs(java.util.Collection)} or {@link #withWorldConfigs(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param worldConfigs
+     *        A list of world configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationApplicationConfig withWorldConfigs(WorldConfig... worldConfigs) {
+        if (this.worldConfigs == null) {
+            setWorldConfigs(new java.util.ArrayList<WorldConfig>(worldConfigs.length));
+        }
+        for (WorldConfig ele : worldConfigs) {
+            this.worldConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of world configurations.
+     * </p>
+     * 
+     * @param worldConfigs
+     *        A list of world configurations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationApplicationConfig withWorldConfigs(java.util.Collection<WorldConfig> worldConfigs) {
+        setWorldConfigs(worldConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +260,9 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
         if (getApplicationVersion() != null)
             sb.append("ApplicationVersion: ").append(getApplicationVersion()).append(",");
         if (getLaunchConfig() != null)
-            sb.append("LaunchConfig: ").append(getLaunchConfig());
+            sb.append("LaunchConfig: ").append(getLaunchConfig()).append(",");
+        if (getWorldConfigs() != null)
+            sb.append("WorldConfigs: ").append(getWorldConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +289,10 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
             return false;
         if (other.getLaunchConfig() != null && other.getLaunchConfig().equals(this.getLaunchConfig()) == false)
             return false;
+        if (other.getWorldConfigs() == null ^ this.getWorldConfigs() == null)
+            return false;
+        if (other.getWorldConfigs() != null && other.getWorldConfigs().equals(this.getWorldConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +304,7 @@ public class SimulationApplicationConfig implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getApplication() == null) ? 0 : getApplication().hashCode());
         hashCode = prime * hashCode + ((getApplicationVersion() == null) ? 0 : getApplicationVersion().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfig() == null) ? 0 : getLaunchConfig().hashCode());
+        hashCode = prime * hashCode + ((getWorldConfigs() == null) ? 0 : getWorldConfigs().hashCode());
         return hashCode;
     }
 

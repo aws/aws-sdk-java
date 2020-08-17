@@ -1,3 +1,32 @@
+# __1.11.844__ __2020-08-17__
+## __AWS Certificate Manager__
+  - ### Features
+    - ACM provides support for the new Private CA feature Cross-account CA sharing. ACM users can issue certificates signed by a private CA belonging to another account where the CA was shared with them.
+
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - ACM Private CA is launching cross-account support. This allows customers to share their private CAs with other accounts, AWS Organizations, and organizational units to issue end-entity certificates.
+
+## __AWS RoboMaker__
+  - ### Features
+    - This release introduces RoboMaker Simulation WorldForge, a capability that automatically generates one or more simulation worlds.
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This feature adds support for pushing and pulling Open Container Initiative (OCI) artifacts.
+
+## __Amazon Kinesis__
+  - ### Features
+    - Introducing ShardFilter for ListShards API to filter the shards using a position in the stream, and ChildShards support for GetRecords and SubscribeToShard API to discover children shards on shard end
+
+## __Amazon QuickSight__
+  - ### Features
+    - Amazon QuickSight now supports programmatic creation and management of analyses with new APIs.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds support for HTTP Desync Mitigation in Application Load Balancers.
+
 # __1.11.842__ __2020-08-14__
 ## __AWS License Manager__
   - ### Features

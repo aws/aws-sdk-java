@@ -54,6 +54,11 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
     }
 
     @Override
+    public DeletePolicyResult deletePolicy(DeletePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCertificateAuthorityResult describeCertificateAuthority(DescribeCertificateAuthorityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,11 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
     }
 
     @Override
+    public GetPolicyResult getPolicy(GetPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportCertificateAuthorityCertificateResult importCertificateAuthorityCertificate(ImportCertificateAuthorityCertificateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -100,6 +110,11 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
 
     @Override
     public ListTagsResult listTags(ListTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutPolicyResult putPolicy(PutPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

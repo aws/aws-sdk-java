@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous
- * call to <a>ListCertificateAuthorities</a>.
+ * call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">
+ * ListCertificateAuthorities</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

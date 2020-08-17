@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The private CA is in a state during which a report or certificate cannot be generated.
+ * The state of the private CA does not allow this action to occur.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

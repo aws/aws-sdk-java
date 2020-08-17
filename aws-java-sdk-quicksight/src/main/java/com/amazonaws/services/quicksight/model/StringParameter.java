@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * String parameter.
+ * A string parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StringParameter" target="_top">AWS API
@@ -30,24 +30,24 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for a string parameter.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Values.
+     * The values of a string parameter.
      * </p>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for a string parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for a string parameter.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for a string parameter.
      * </p>
      * 
-     * @return A display name for the dataset.
+     * @return A display name for a string parameter.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for a string parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for a string parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Values.
+     * The values of a string parameter.
      * </p>
      * 
-     * @return Values.
+     * @return The values of a string parameter.
      */
 
     public java.util.List<String> getValues() {
@@ -95,11 +95,11 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Values.
+     * The values of a string parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values of a string parameter.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -113,7 +113,7 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Values.
+     * The values of a string parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values of a string parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class StringParameter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Values.
+     * The values of a string parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values of a string parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

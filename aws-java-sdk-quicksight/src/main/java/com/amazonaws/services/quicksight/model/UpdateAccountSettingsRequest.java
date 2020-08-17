@@ -27,7 +27,7 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the QuickSight settings that you want to list.
      * </p>
      */
     private String awsAccountId;
@@ -40,18 +40,19 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
     private String defaultNamespace;
     /**
      * <p>
-     * Email address used to send notifications regarding administration of QuickSight.
+     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
+     * subscription.
      * </p>
      */
     private String notificationEmail;
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the QuickSight settings that you want to list.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     *        The ID for the AWS account that contains the QuickSight settings that you want to list.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -60,10 +61,10 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the QuickSight settings that you want to list.
      * </p>
      * 
-     * @return The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * @return The ID for the AWS account that contains the QuickSight settings that you want to list.
      */
 
     public String getAwsAccountId() {
@@ -72,11 +73,11 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the QuickSight settings that you want to list.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     *        The ID for the AWS account that contains the QuickSight settings that you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +137,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Email address used to send notifications regarding administration of QuickSight.
+     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
+     * subscription.
      * </p>
      * 
      * @param notificationEmail
-     *        Email address used to send notifications regarding administration of QuickSight.
+     *        The email address that you want QuickSight to send notifications to regarding your AWS account or
+     *        QuickSight subscription.
      */
 
     public void setNotificationEmail(String notificationEmail) {
@@ -149,10 +152,12 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Email address used to send notifications regarding administration of QuickSight.
+     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
+     * subscription.
      * </p>
      * 
-     * @return Email address used to send notifications regarding administration of QuickSight.
+     * @return The email address that you want QuickSight to send notifications to regarding your AWS account or
+     *         QuickSight subscription.
      */
 
     public String getNotificationEmail() {
@@ -161,11 +166,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Email address used to send notifications regarding administration of QuickSight.
+     * The email address that you want QuickSight to send notifications to regarding your AWS account or QuickSight
+     * subscription.
      * </p>
      * 
      * @param notificationEmail
-     *        Email address used to send notifications regarding administration of QuickSight.
+     *        The email address that you want QuickSight to send notifications to regarding your AWS account or
+     *        QuickSight subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -62,6 +62,12 @@ public class GetRecordsResultJsonUnmarshaller implements Unmarshaller<GetRecords
                     context.nextToken();
                     getRecordsResult.setMillisBehindLatest(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("ChildShards", targetDepth)) {
+                    context.nextToken();
+                    getRecordsResult.setChildShards(new ListUnmarshaller<ChildShard>(ChildShardJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,14 +27,48 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight session that you're embedding.
+     * The ID for the AWS account associated with your QuickSight subscription.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The entry point for the embedded session.
+     * The URL you use to access the embedded session. The entry point URL is constrained to the following paths:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/analyses</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/dashboards</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/favorites</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the
+     * QuickSight console URL of the dashboard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     * QuickSight console URL of the analysis
+     * </p>
+     * </li>
+     * </ul>
      */
     private String entryPoint;
     /**
@@ -46,10 +80,10 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
-     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
-     * of the following:
+     * can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to
+     * be authenticated as one of the following:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
      * Active Directory (AD) users or group members
@@ -63,20 +97,23 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation.
+     * or IAM federation
      * </p>
      * </li>
-     * </ul>
+     * </ol>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      */
     private String userArn;
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight session that you're embedding.
+     * The ID for the AWS account associated with your QuickSight subscription.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight session that you're embedding.
+     *        The ID for the AWS account associated with your QuickSight subscription.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -85,10 +122,10 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight session that you're embedding.
+     * The ID for the AWS account associated with your QuickSight subscription.
      * </p>
      * 
-     * @return The ID for the AWS account that contains the QuickSight session that you're embedding.
+     * @return The ID for the AWS account associated with your QuickSight subscription.
      */
 
     public String getAwsAccountId() {
@@ -97,11 +134,11 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight session that you're embedding.
+     * The ID for the AWS account associated with your QuickSight subscription.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight session that you're embedding.
+     *        The ID for the AWS account associated with your QuickSight subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,11 +149,79 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The entry point for the embedded session.
+     * The URL you use to access the embedded session. The entry point URL is constrained to the following paths:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/analyses</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/dashboards</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/favorites</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the
+     * QuickSight console URL of the dashboard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     * QuickSight console URL of the analysis
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entryPoint
-     *        The entry point for the embedded session.
+     *        The URL you use to access the embedded session. The entry point URL is constrained to the following
+     *        paths:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/start</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/start/analyses</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/start/dashboards</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/start/favorites</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from
+     *        the QuickSight console URL of the dashboard
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     *        QuickSight console URL of the analysis
+     *        </p>
+     *        </li>
      */
 
     public void setEntryPoint(String entryPoint) {
@@ -125,10 +230,78 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The entry point for the embedded session.
+     * The URL you use to access the embedded session. The entry point URL is constrained to the following paths:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/analyses</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/dashboards</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/favorites</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the
+     * QuickSight console URL of the dashboard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     * QuickSight console URL of the analysis
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The entry point for the embedded session.
+     * @return The URL you use to access the embedded session. The entry point URL is constrained to the following
+     *         paths:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/start</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/start/analyses</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/start/dashboards</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/start/favorites</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from
+     *         the QuickSight console URL of the dashboard
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     *         QuickSight console URL of the analysis
+     *         </p>
+     *         </li>
      */
 
     public String getEntryPoint() {
@@ -137,11 +310,79 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The entry point for the embedded session.
+     * The URL you use to access the embedded session. The entry point URL is constrained to the following paths:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/start</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/analyses</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/dashboards</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/start/favorites</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from the
+     * QuickSight console URL of the dashboard
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     * QuickSight console URL of the analysis
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param entryPoint
-     *        The entry point for the embedded session.
+     *        The URL you use to access the embedded session. The entry point URL is constrained to the following
+     *        paths:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/start</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/start/analyses</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/start/dashboards</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/start/favorites</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/dashboards/<i>DashboardId</i> </code> - where <code>DashboardId</code> is the actual ID key from
+     *        the QuickSight console URL of the dashboard
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/analyses/<i>AnalysisId</i> </code> - where <code>AnalysisId</code> is the actual ID key from the
+     *        QuickSight console URL of the analysis
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,10 +434,10 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
-     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
-     * of the following:
+     * can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to
+     * be authenticated as one of the following:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
      * Active Directory (AD) users or group members
@@ -210,16 +451,19 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation.
+     * or IAM federation
      * </p>
      * </li>
-     * </ul>
+     * </ol>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @param userArn
      *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
-     *        type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
-     *        authenticated as one of the following:</p>
-     *        <ul>
+     *        type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
+     *        admins). They need to be authenticated as one of the following:</p>
+     *        <ol>
      *        <li>
      *        <p>
      *        Active Directory (AD) users or group members
@@ -233,9 +477,12 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     *        Connect, or IAM federation.
+     *        Connect, or IAM federation
      *        </p>
      *        </li>
+     *        </ol>
+     *        <p>
+     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      */
 
     public void setUserArn(String userArn) {
@@ -245,10 +492,10 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
-     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
-     * of the following:
+     * can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to
+     * be authenticated as one of the following:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
      * Active Directory (AD) users or group members
@@ -262,15 +509,18 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation.
+     * or IAM federation
      * </p>
      * </li>
-     * </ul>
+     * </ol>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @return The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
-     *         type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
-     *         authenticated as one of the following:</p>
-     *         <ul>
+     *         type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
+     *         admins). They need to be authenticated as one of the following:</p>
+     *         <ol>
      *         <li>
      *         <p>
      *         Active Directory (AD) users or group members
@@ -284,9 +534,12 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     *         Connect, or IAM federation.
+     *         Connect, or IAM federation
      *         </p>
      *         </li>
+     *         </ol>
+     *         <p>
+     *         Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      */
 
     public String getUserArn() {
@@ -296,10 +549,10 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
-     * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
-     * of the following:
+     * can use this for any type of Amazon QuickSight users in your account (readers, authors, or admins). They need to
+     * be authenticated as one of the following:
      * </p>
-     * <ul>
+     * <ol>
      * <li>
      * <p>
      * Active Directory (AD) users or group members
@@ -313,16 +566,19 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID Connect,
-     * or IAM federation.
+     * or IAM federation
      * </p>
      * </li>
-     * </ul>
+     * </ol>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @param userArn
      *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
-     *        type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
-     *        authenticated as one of the following:</p>
-     *        <ul>
+     *        type. You can use this for any type of Amazon QuickSight users in your account (readers, authors, or
+     *        admins). They need to be authenticated as one of the following:</p>
+     *        <ol>
      *        <li>
      *        <p>
      *        Active Directory (AD) users or group members
@@ -336,9 +592,12 @@ public class GetSessionEmbedUrlRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        IAM users and IAM role-based sessions authenticated through Federated Single Sign-On using SAML, OpenID
-     *        Connect, or IAM federation.
+     *        Connect, or IAM federation
      *        </p>
      *        </li>
+     *        </ol>
+     *        <p>
+     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

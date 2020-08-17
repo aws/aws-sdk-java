@@ -316,9 +316,10 @@ public interface AmazonElasticLoadBalancing {
      * Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.
      * </p>
      * <p>
-     * Rules are evaluated in priority order, from the lowest value to the highest value. When the conditions for a rule
-     * are met, its actions are performed. If the conditions for no rules are met, the actions for the default rule are
-     * performed. For more information, see <a href=
+     * Each rule consists of a priority, one or more actions, and one or more conditions. Rules are evaluated in
+     * priority order, from the lowest value to the highest value. When the conditions for a rule are met, its actions
+     * are performed. If the conditions for no rules are met, the actions for the default rule are performed. For more
+     * information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#listener-rules"
      * >Listener Rules</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
@@ -456,6 +457,9 @@ public interface AmazonElasticLoadBalancing {
     /**
      * <p>
      * Deletes the specified rule.
+     * </p>
+     * <p>
+     * You can't delete the default rule.
      * </p>
      * 
      * @param deleteRuleRequest

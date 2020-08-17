@@ -25,6 +25,9 @@ import java.util.concurrent.ExecutorService;
  * the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive notification when
  * an asynchronous operation completes.
  * <p>
+ * <note>
+ * <p/>
+ * </note>
  * <p>
  * This is the <i>ACM Private CA API Reference</i>. It provides descriptions, syntax, and usage examples for each of the
  * actions and data types involved in creating and managing private certificate authorities (CA) for your organization.
@@ -36,9 +39,9 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <note>
  * <p>
- * Each ACM Private CA API action has a throttling limit which determines the number of times the action can be called
- * per second. For more information, see <a
- * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits in ACM
+ * Each ACM Private CA API action has a quota that determines the number of times the action can be called per second.
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Quotas in ACM
  * Private CA</a> in the ACM Private CA user guide.
  * </p>
  * </note>
@@ -255,6 +258,39 @@ public class AWSACMPCAAsyncClient extends AWSACMPCAClient implements AWSACMPCAAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(DeletePolicyRequest request) {
+
+        return deletePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePolicyResult> deletePolicyAsync(final DeletePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePolicyRequest, DeletePolicyResult> asyncHandler) {
+        final DeletePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePolicyResult>() {
+            @Override
+            public DeletePolicyResult call() throws Exception {
+                DeletePolicyResult result = null;
+
+                try {
+                    result = executeDeletePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCertificateAuthorityResult> describeCertificateAuthorityAsync(DescribeCertificateAuthorityRequest request) {
 
         return describeCertificateAuthorityAsync(request, null);
@@ -424,6 +460,39 @@ public class AWSACMPCAAsyncClient extends AWSACMPCAClient implements AWSACMPCAAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request) {
+
+        return getPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(final GetPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPolicyRequest, GetPolicyResult> asyncHandler) {
+        final GetPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPolicyResult>() {
+            @Override
+            public GetPolicyResult call() throws Exception {
+                GetPolicyResult result = null;
+
+                try {
+                    result = executeGetPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportCertificateAuthorityCertificateResult> importCertificateAuthorityCertificateAsync(
             ImportCertificateAuthorityCertificateRequest request) {
 
@@ -575,6 +644,39 @@ public class AWSACMPCAAsyncClient extends AWSACMPCAClient implements AWSACMPCAAs
 
                 try {
                     result = executeListTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPolicyResult> putPolicyAsync(PutPolicyRequest request) {
+
+        return putPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutPolicyResult> putPolicyAsync(final PutPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutPolicyRequest, PutPolicyResult> asyncHandler) {
+        final PutPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutPolicyResult>() {
+            @Override
+            public PutPolicyResult call() throws Exception {
+                PutPolicyResult result = null;
+
+                try {
+                    result = executePutPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

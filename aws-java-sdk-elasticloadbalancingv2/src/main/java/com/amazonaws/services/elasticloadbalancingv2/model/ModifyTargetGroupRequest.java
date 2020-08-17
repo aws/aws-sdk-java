@@ -94,7 +94,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer unhealthyThresholdCount;
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target. The
+     * possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299"). The default is 200.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
@@ -603,15 +605,18 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target. The
+     * possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299"). The default is 200.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param matcher
-     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
-     *        target.</p>
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *        The possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a
+     *        range of values (for example, "200-299"). The default is 200.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      */
@@ -622,14 +627,17 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target. The
+     * possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299"). The default is 200.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
-     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
-     *         target.</p>
+     * @return [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *         The possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a
+     *         range of values (for example, "200-299"). The default is 200.</p>
      *         <p>
      *         With Network Load Balancers, you can't modify this setting.
      */
@@ -640,15 +648,18 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     * [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target. The
+     * possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a range of
+     * values (for example, "200-299"). The default is 200.
      * </p>
      * <p>
      * With Network Load Balancers, you can't modify this setting.
      * </p>
      * 
      * @param matcher
-     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a
-     *        target.</p>
+     *        [HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.
+     *        The possible values are from 200 to 499. You can specify multiple values (for example, "200,202") or a
+     *        range of values (for example, "200-299"). The default is 200.</p>
      *        <p>
      *        With Network Load Balancers, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.

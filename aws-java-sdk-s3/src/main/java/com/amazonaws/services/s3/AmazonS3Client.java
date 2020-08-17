@@ -4767,12 +4767,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                                    + "override.");
             }
 
-            if (isRegionFipsEnabled(getRegionName())) {
-                throw new IllegalArgumentException("An access point ARN cannot be passed as a bucket parameter to an S3"
-                                                   + " operation if the S3 client has been configured with a FIPS"
-                                                   + " enabled region.");
-            }
-
             if (clientOptions.isAccelerateModeEnabled()) {
                 throw new IllegalArgumentException("An access point ARN cannot be passed as a bucket parameter to an S3 "
                                                    + "operation if the S3 client has been configured with accelerate mode"
@@ -4787,14 +4781,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
             S3AccessPointResource s3EndpointResource = (S3AccessPointResource) s3Resource;
             com.amazonaws.regions.Region clientRegion = RegionUtils.getRegion(getRegionName());
-            validateS3ResourceArn(resourceArn, clientRegion);
+            String trimmedArnRegion = removeFipsIfNeeded(s3EndpointResource.getRegion());
+            validateS3ResourceArn(resourceArn, clientRegion, trimmedArnRegion);
+
+            boolean fipsRegionProvided = isFipsRegionProvided(clientRegion.getName(), s3EndpointResource.getRegion(), useArnRegion());
             endpoint = S3AccessPointBuilder.create()
                                            .withAccessPointName(s3EndpointResource.getAccessPointName())
                                            .withAccountId(s3EndpointResource.getAccountId())
-                                           .withRegion(s3EndpointResource.getRegion())
+                                           .withRegion(trimmedArnRegion)
                                            .withProtocol(clientConfiguration.getProtocol().toString())
                                            .withDomain(clientRegion.getDomain())
                                            .withDualstackEnabled(clientOptions.isDualstackEnabled())
+                                           .withFipsEnabled(fipsRegionProvided)
                                            .toURI();
             signingRegion = s3EndpointResource.getRegion();
 
@@ -4821,7 +4819,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return request;
     }
 
-    private void validateS3ResourceArn(Arn resourceArn, com.amazonaws.regions.Region clientRegion) {
+    private void validateS3ResourceArn(Arn resourceArn, com.amazonaws.regions.Region clientRegion, String trimmedArnRegion) {
         String clientPartition = (clientRegion == null) ? null : clientRegion.getPartition();
 
         if (clientPartition == null || !clientPartition.equals(resourceArn.getPartition())) {
@@ -4832,13 +4830,35 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         if (!clientOptions.isForceGlobalBucketAccessEnabled() && !useArnRegion()) {
-            if (!clientRegion.getName().equals(resourceArn.getRegion())) {
+            if (!removeFipsIfNeeded(clientRegion.getName()).equals(trimmedArnRegion)) {
                 throw new IllegalArgumentException("The region field of the ARN being passed as a bucket parameter to an "
                         + "S3 operation does not match the region the client was configured "
                         + "with. Provided region: '" + resourceArn.getRegion() + "'; client "
                         + "region: '" + clientRegion.getName() + "'.");
             }
         }
+    }
+
+    private String removeFipsIfNeeded(String region) {
+        if (region.startsWith("fips-")) {
+            return region.replace("fips-", "");
+        }
+
+        if (region.endsWith("-fips")) {
+            return region.replace("-fips", "");
+        }
+        return region;
+    }
+
+    /**
+     * Returns whether a FIPS pseudo region is provided.
+     */
+    private static boolean isFipsRegionProvided(String clientRegion, String arnRegion, boolean useArnRegion) {
+        if (useArnRegion) {
+            return isRegionFipsEnabled(arnRegion);
+        }
+
+        return isRegionFipsEnabled(clientRegion);
     }
 
     private boolean useArnRegion() {

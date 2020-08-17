@@ -27,18 +27,18 @@ public class DescribeAccountSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the settings that you want to list.
      * </p>
      */
     private String awsAccountId;
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the settings that you want to list.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     *        The ID for the AWS account that contains the settings that you want to list.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -47,10 +47,10 @@ public class DescribeAccountSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the settings that you want to list.
      * </p>
      * 
-     * @return The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * @return The ID for the AWS account that contains the settings that you want to list.
      */
 
     public String getAwsAccountId() {
@@ -59,11 +59,11 @@ public class DescribeAccountSettingsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     * The ID for the AWS account that contains the settings that you want to list.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that contains the QuickSight namespaces that you want to list.
+     *        The ID for the AWS account that contains the settings that you want to list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

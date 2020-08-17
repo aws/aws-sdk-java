@@ -37,6 +37,8 @@ public class ListShardsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<java.util.Date> STREAMCREATIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamCreationTimestamp").timestampFormat("unixTimestampInMillis").build();
+    private static final MarshallingInfo<StructuredPojo> SHARDFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShardFilter").build();
 
     private static final ListShardsRequestMarshaller instance = new ListShardsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListShardsRequestMarshaller {
             protocolMarshaller.marshall(listShardsRequest.getExclusiveStartShardId(), EXCLUSIVESTARTSHARDID_BINDING);
             protocolMarshaller.marshall(listShardsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listShardsRequest.getStreamCreationTimestamp(), STREAMCREATIONTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(listShardsRequest.getShardFilter(), SHARDFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

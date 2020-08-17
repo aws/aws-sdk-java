@@ -40,6 +40,13 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Use this parameter to filter the returned set of certificate authorities based on their owner. The default is
+     * SELF.
+     * </p>
+     */
+    private String resourceOwner;
 
     /**
      * <p>
@@ -146,6 +153,73 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Use this parameter to filter the returned set of certificate authorities based on their owner. The default is
+     * SELF.
+     * </p>
+     * 
+     * @param resourceOwner
+     *        Use this parameter to filter the returned set of certificate authorities based on their owner. The default
+     *        is SELF.
+     * @see ResourceOwner
+     */
+
+    public void setResourceOwner(String resourceOwner) {
+        this.resourceOwner = resourceOwner;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to filter the returned set of certificate authorities based on their owner. The default is
+     * SELF.
+     * </p>
+     * 
+     * @return Use this parameter to filter the returned set of certificate authorities based on their owner. The
+     *         default is SELF.
+     * @see ResourceOwner
+     */
+
+    public String getResourceOwner() {
+        return this.resourceOwner;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to filter the returned set of certificate authorities based on their owner. The default is
+     * SELF.
+     * </p>
+     * 
+     * @param resourceOwner
+     *        Use this parameter to filter the returned set of certificate authorities based on their owner. The default
+     *        is SELF.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceOwner
+     */
+
+    public ListCertificateAuthoritiesRequest withResourceOwner(String resourceOwner) {
+        setResourceOwner(resourceOwner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to filter the returned set of certificate authorities based on their owner. The default is
+     * SELF.
+     * </p>
+     * 
+     * @param resourceOwner
+     *        Use this parameter to filter the returned set of certificate authorities based on their owner. The default
+     *        is SELF.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceOwner
+     */
+
+    public ListCertificateAuthoritiesRequest withResourceOwner(ResourceOwner resourceOwner) {
+        this.resourceOwner = resourceOwner.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -160,7 +234,9 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getResourceOwner() != null)
+            sb.append("ResourceOwner: ").append(getResourceOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -183,6 +259,10 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getResourceOwner() == null ^ this.getResourceOwner() == null)
+            return false;
+        if (other.getResourceOwner() != null && other.getResourceOwner().equals(this.getResourceOwner()) == false)
+            return false;
         return true;
     }
 
@@ -193,6 +273,7 @@ public class ListCertificateAuthoritiesRequest extends com.amazonaws.AmazonWebSe
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwner() == null) ? 0 : getResourceOwner().hashCode());
         return hashCode;
     }
 

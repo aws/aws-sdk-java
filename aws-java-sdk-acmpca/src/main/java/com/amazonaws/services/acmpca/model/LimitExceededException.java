@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An ACM Private CA limit has been exceeded. See the exception message returned to determine the limit that was
+ * An ACM Private CA quota has been exceeded. See the exception message returned to determine the quota that was
  * exceeded.
  * </p>
  */

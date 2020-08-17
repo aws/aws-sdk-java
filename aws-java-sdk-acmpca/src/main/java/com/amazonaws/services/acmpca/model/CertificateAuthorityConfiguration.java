@@ -22,7 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains configuration information for your private certificate authority (CA). This includes information about the
  * class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also
  * includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must
- * specify this information when you call the <a>CreateCertificateAuthority</a> action.
+ * specify this information when you call the <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+ * >CreateCertificateAuthority</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration"
@@ -41,6 +43,10 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
     /**
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
+     * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
      * </p>
      */
     private String signingAlgorithm;
@@ -122,9 +128,16 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        Name of the algorithm your private CA uses to sign certificate requests.
+     *        Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *        certificates when they are issued.
      * @see SigningAlgorithm
      */
 
@@ -136,8 +149,15 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
-     * @return Name of the algorithm your private CA uses to sign certificate requests.
+     * @return Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *         <p>
+     *         This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *         certificates when they are issued.
      * @see SigningAlgorithm
      */
 
@@ -149,9 +169,16 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        Name of the algorithm your private CA uses to sign certificate requests.
+     *        Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *        certificates when they are issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -165,9 +192,16 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        Name of the algorithm your private CA uses to sign certificate requests.
+     *        Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *        certificates when they are issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */

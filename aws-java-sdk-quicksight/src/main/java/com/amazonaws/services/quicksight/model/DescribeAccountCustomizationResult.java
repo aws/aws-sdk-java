@@ -25,19 +25,19 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the AWS account that you're describing.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you're describing.
      * </p>
      */
     private String namespace;
     /**
      * <p>
-     * The customizations associated with QuickSight.
+     * The QuickSight customizations that exist in the current AWS Region.
      * </p>
      */
     private AccountCustomization accountCustomization;
@@ -56,11 +56,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the AWS account that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to describe QuickSight customizations for.
+     *        The ID for the AWS account that you're describing.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -69,10 +69,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the AWS account that you're describing.
      * </p>
      * 
-     * @return The ID for the AWS account that you want to describe QuickSight customizations for.
+     * @return The ID for the AWS account that you're describing.
      */
 
     public String getAwsAccountId() {
@@ -81,11 +81,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The ID for the AWS account that you want to describe QuickSight customizations for.
+     * The ID for the AWS account that you're describing.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to describe QuickSight customizations for.
+     *        The ID for the AWS account that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you're describing.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the customization that you're describing.
+     *        The QuickSight namespace that you're describing.
      */
 
     public void setNamespace(String namespace) {
@@ -109,10 +109,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you're describing.
      * </p>
      * 
-     * @return The namespace associated with the customization that you're describing.
+     * @return The QuickSight namespace that you're describing.
      */
 
     public String getNamespace() {
@@ -121,11 +121,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The namespace associated with the customization that you're describing.
+     * The QuickSight namespace that you're describing.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the customization that you're describing.
+     *        The QuickSight namespace that you're describing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The customizations associated with QuickSight.
+     * The QuickSight customizations that exist in the current AWS Region.
      * </p>
      * 
      * @param accountCustomization
-     *        The customizations associated with QuickSight.
+     *        The QuickSight customizations that exist in the current AWS Region.
      */
 
     public void setAccountCustomization(AccountCustomization accountCustomization) {
@@ -149,10 +149,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The customizations associated with QuickSight.
+     * The QuickSight customizations that exist in the current AWS Region.
      * </p>
      * 
-     * @return The customizations associated with QuickSight.
+     * @return The QuickSight customizations that exist in the current AWS Region.
      */
 
     public AccountCustomization getAccountCustomization() {
@@ -161,11 +161,11 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The customizations associated with QuickSight.
+     * The QuickSight customizations that exist in the current AWS Region.
      * </p>
      * 
      * @param accountCustomization
-     *        The customizations associated with QuickSight.
+     *        The QuickSight customizations that exist in the current AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

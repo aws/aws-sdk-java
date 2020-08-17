@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Decimal parameter.
+ * A decimal parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DecimalParameter" target="_top">AWS API
@@ -30,24 +30,24 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the decimal parameter.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Values.
+     * The values for the decimal parameter.
      * </p>
      */
     private java.util.List<Double> values;
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the decimal parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for the decimal parameter.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the decimal parameter.
      * </p>
      * 
-     * @return A display name for the dataset.
+     * @return A display name for the decimal parameter.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A display name for the dataset.
+     * A display name for the decimal parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        A display name for the decimal parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the decimal parameter.
      * </p>
      * 
-     * @return Values.
+     * @return The values for the decimal parameter.
      */
 
     public java.util.List<Double> getValues() {
@@ -95,11 +95,11 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the decimal parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the decimal parameter.
      */
 
     public void setValues(java.util.Collection<Double> values) {
@@ -113,7 +113,7 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the decimal parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the decimal parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class DecimalParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the decimal parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the decimal parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

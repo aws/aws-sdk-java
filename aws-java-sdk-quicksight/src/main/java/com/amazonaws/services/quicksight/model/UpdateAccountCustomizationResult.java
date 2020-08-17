@@ -37,7 +37,7 @@ public class UpdateAccountCustomizationResult extends com.amazonaws.AmazonWebSer
     private String namespace;
     /**
      * <p>
-     * The customizations associated with your QuickSight subscription.
+     * The QuickSight customizations you're updating in the current AWS Region.
      * </p>
      */
     private AccountCustomization accountCustomization;
@@ -136,11 +136,11 @@ public class UpdateAccountCustomizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The customizations associated with your QuickSight subscription.
+     * The QuickSight customizations you're updating in the current AWS Region.
      * </p>
      * 
      * @param accountCustomization
-     *        The customizations associated with your QuickSight subscription.
+     *        The QuickSight customizations you're updating in the current AWS Region.
      */
 
     public void setAccountCustomization(AccountCustomization accountCustomization) {
@@ -149,10 +149,10 @@ public class UpdateAccountCustomizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The customizations associated with your QuickSight subscription.
+     * The QuickSight customizations you're updating in the current AWS Region.
      * </p>
      * 
-     * @return The customizations associated with your QuickSight subscription.
+     * @return The QuickSight customizations you're updating in the current AWS Region.
      */
 
     public AccountCustomization getAccountCustomization() {
@@ -161,11 +161,11 @@ public class UpdateAccountCustomizationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The customizations associated with your QuickSight subscription.
+     * The QuickSight customizations you're updating in the current AWS Region.
      * </p>
      * 
      * @param accountCustomization
-     *        The customizations associated with your QuickSight subscription.
+     *        The QuickSight customizations you're updating in the current AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

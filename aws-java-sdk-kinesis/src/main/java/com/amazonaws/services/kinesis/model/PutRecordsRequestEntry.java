@@ -32,7 +32,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * <p>
      * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
      * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
-     * maximum record size (1 MB).
+     * maximum record size (1 MiB).
      * </p>
      */
     private java.nio.ByteBuffer data;
@@ -59,7 +59,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * <p>
      * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
      * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
-     * maximum record size (1 MB).
+     * maximum record size (1 MiB).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -75,7 +75,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * @param data
      *        The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
      *        blob (the payload before base64-encoding) is added to the partition key size, the total size must not
-     *        exceed the maximum record size (1 MB).
+     *        exceed the maximum record size (1 MiB).
      */
 
     public void setData(java.nio.ByteBuffer data) {
@@ -86,7 +86,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * <p>
      * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
      * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
-     * maximum record size (1 MB).
+     * maximum record size (1 MiB).
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -98,7 +98,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * 
      * @return The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
      *         blob (the payload before base64-encoding) is added to the partition key size, the total size must not
-     *         exceed the maximum record size (1 MB).
+     *         exceed the maximum record size (1 MiB).
      */
 
     public java.nio.ByteBuffer getData() {
@@ -109,7 +109,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * <p>
      * The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data blob
      * (the payload before base64-encoding) is added to the partition key size, the total size must not exceed the
-     * maximum record size (1 MB).
+     * maximum record size (1 MiB).
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -125,7 +125,7 @@ public class PutRecordsRequestEntry implements Serializable, Cloneable, Structur
      * @param data
      *        The data blob to put into the record, which is base64-encoded when the blob is serialized. When the data
      *        blob (the payload before base64-encoding) is added to the partition key size, the total size must not
-     *        exceed the maximum record size (1 MB).
+     *        exceed the maximum record size (1 MiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

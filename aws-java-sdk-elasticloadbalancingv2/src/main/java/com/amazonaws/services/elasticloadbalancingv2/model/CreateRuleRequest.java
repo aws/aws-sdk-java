@@ -33,9 +33,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String listenerArn;
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions. Each rule can optionally include up to one of each of the following conditions:
+     * <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>
+     * . Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code>
+     * and <code>query-string</code>.
      * </p>
      */
     private java.util.List<RuleCondition> conditions;
@@ -116,15 +117,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions. Each rule can optionally include up to one of each of the following conditions:
+     * <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>
+     * . Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code>
+     * and <code>query-string</code>.
      * </p>
      * 
-     * @return The conditions. Each rule can include zero or one of the following conditions:
+     * @return The conditions. Each rule can optionally include up to one of each of the following conditions:
      *         <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *         <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *         <code>query-string</code>.
+     *         <code>source-ip</code>. Each rule can also optionally include one or more of each of the following
+     *         conditions: <code>http-header</code> and <code>query-string</code>.
      */
 
     public java.util.List<RuleCondition> getConditions() {
@@ -133,16 +135,17 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions. Each rule can optionally include up to one of each of the following conditions:
+     * <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>
+     * . Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code>
+     * and <code>query-string</code>.
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        The conditions. Each rule can optionally include up to one of each of the following conditions:
      *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *        <code>query-string</code>.
+     *        <code>source-ip</code>. Each rule can also optionally include one or more of each of the following
+     *        conditions: <code>http-header</code> and <code>query-string</code>.
      */
 
     public void setConditions(java.util.Collection<RuleCondition> conditions) {
@@ -156,9 +159,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions. Each rule can optionally include up to one of each of the following conditions:
+     * <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>
+     * . Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code>
+     * and <code>query-string</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,10 +171,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        The conditions. Each rule can optionally include up to one of each of the following conditions:
      *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *        <code>query-string</code>.
+     *        <code>source-ip</code>. Each rule can also optionally include one or more of each of the following
+     *        conditions: <code>http-header</code> and <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,16 +190,17 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions. Each rule can optionally include up to one of each of the following conditions:
+     * <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>
+     * . Each rule can also optionally include one or more of each of the following conditions: <code>http-header</code>
+     * and <code>query-string</code>.
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each rule can include zero or one of the following conditions:
+     *        The conditions. Each rule can optionally include up to one of each of the following conditions:
      *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *        <code>query-string</code>.
+     *        <code>source-ip</code>. Each rule can also optionally include one or more of each of the following
+     *        conditions: <code>http-header</code> and <code>query-string</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

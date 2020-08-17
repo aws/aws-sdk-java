@@ -47,7 +47,7 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
      * The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code>
      * means that your namespace is ready to use. If an error occurs, it indicates if the process is
      * <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error
-     * message for follow-up actions.
+     * message for follow-up tasks.
      * </p>
      */
     private String creationStatus;
@@ -202,14 +202,14 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
      * The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code>
      * means that your namespace is ready to use. If an error occurs, it indicates if the process is
      * <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error
-     * message for follow-up actions.
+     * message for follow-up tasks.
      * </p>
      * 
      * @param creationStatus
      *        The status of the creation of the namespace. This is an asynchronous process. A status of
      *        <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the
      *        process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error,
-     *        refer to the error message for follow-up actions.
+     *        refer to the error message for follow-up tasks.
      * @see NamespaceStatus
      */
 
@@ -222,13 +222,13 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
      * The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code>
      * means that your namespace is ready to use. If an error occurs, it indicates if the process is
      * <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error
-     * message for follow-up actions.
+     * message for follow-up tasks.
      * </p>
      * 
      * @return The status of the creation of the namespace. This is an asynchronous process. A status of
      *         <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the
      *         process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error,
-     *         refer to the error message for follow-up actions.
+     *         refer to the error message for follow-up tasks.
      * @see NamespaceStatus
      */
 
@@ -241,14 +241,14 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
      * The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code>
      * means that your namespace is ready to use. If an error occurs, it indicates if the process is
      * <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error
-     * message for follow-up actions.
+     * message for follow-up tasks.
      * </p>
      * 
      * @param creationStatus
      *        The status of the creation of the namespace. This is an asynchronous process. A status of
      *        <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the
      *        process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error,
-     *        refer to the error message for follow-up actions.
+     *        refer to the error message for follow-up tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NamespaceStatus
      */
@@ -263,14 +263,14 @@ public class CreateNamespaceResult extends com.amazonaws.AmazonWebServiceResult<
      * The status of the creation of the namespace. This is an asynchronous process. A status of <code>CREATED</code>
      * means that your namespace is ready to use. If an error occurs, it indicates if the process is
      * <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error, refer to the error
-     * message for follow-up actions.
+     * message for follow-up tasks.
      * </p>
      * 
      * @param creationStatus
      *        The status of the creation of the namespace. This is an asynchronous process. A status of
      *        <code>CREATED</code> means that your namespace is ready to use. If an error occurs, it indicates if the
      *        process is <code>retryable</code> or <code>non-retryable</code>. In the case of a non-retryable error,
-     *        refer to the error message for follow-up actions.
+     *        refer to the error message for follow-up tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NamespaceStatus
      */

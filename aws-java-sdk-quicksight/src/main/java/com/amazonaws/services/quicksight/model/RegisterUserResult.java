@@ -25,7 +25,7 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name.
+     * The user's user name.
      * </p>
      */
     private User user;
@@ -51,11 +51,11 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name.
+     * The user's user name.
      * </p>
      * 
      * @param user
-     *        The user name.
+     *        The user's user name.
      */
 
     public void setUser(User user) {
@@ -64,10 +64,10 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name.
+     * The user's user name.
      * </p>
      * 
-     * @return The user name.
+     * @return The user's user name.
      */
 
     public User getUser() {
@@ -76,11 +76,11 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The user name.
+     * The user's user name.
      * </p>
      * 
      * @param user
-     *        The user name.
+     *        The user's user name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

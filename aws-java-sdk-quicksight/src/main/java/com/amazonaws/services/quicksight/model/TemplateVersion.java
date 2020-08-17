@@ -36,13 +36,13 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date createdTime;
     /**
      * <p>
-     * Errors associated with the template.
+     * Errors associated with this template version.
      * </p>
      */
     private java.util.List<TemplateError> errors;
     /**
      * <p>
-     * The version number of the template.
+     * The version number of the template version.
      * </p>
      */
     private Long versionNumber;
@@ -54,8 +54,8 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
     private String status;
     /**
      * <p>
-     * Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the template
-     * should be bound to new datasets matching the same schema described through this API. .
+     * Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to
+     * new datasets matching the same schema described through this API operation.
      * </p>
      */
     private java.util.List<DataSetConfiguration> dataSetConfigurations;
@@ -67,10 +67,16 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
     private String description;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      * </p>
      */
     private String sourceEntityArn;
+    /**
+     * <p>
+     * The ARN of the theme associated with this version of the template.
+     * </p>
+     */
+    private String themeArn;
 
     /**
      * <p>
@@ -114,10 +120,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Errors associated with the template.
+     * Errors associated with this template version.
      * </p>
      * 
-     * @return Errors associated with the template.
+     * @return Errors associated with this template version.
      */
 
     public java.util.List<TemplateError> getErrors() {
@@ -126,11 +132,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Errors associated with the template.
+     * Errors associated with this template version.
      * </p>
      * 
      * @param errors
-     *        Errors associated with the template.
+     *        Errors associated with this template version.
      */
 
     public void setErrors(java.util.Collection<TemplateError> errors) {
@@ -144,7 +150,7 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Errors associated with the template.
+     * Errors associated with this template version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,7 +159,7 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param errors
-     *        Errors associated with the template.
+     *        Errors associated with this template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,11 +175,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Errors associated with the template.
+     * Errors associated with this template version.
      * </p>
      * 
      * @param errors
-     *        Errors associated with the template.
+     *        Errors associated with this template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +190,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The version number of the template.
+     * The version number of the template version.
      * </p>
      * 
      * @param versionNumber
-     *        The version number of the template.
+     *        The version number of the template version.
      */
 
     public void setVersionNumber(Long versionNumber) {
@@ -197,10 +203,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The version number of the template.
+     * The version number of the template version.
      * </p>
      * 
-     * @return The version number of the template.
+     * @return The version number of the template version.
      */
 
     public Long getVersionNumber() {
@@ -209,11 +215,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The version number of the template.
+     * The version number of the template version.
      * </p>
      * 
      * @param versionNumber
-     *        The version number of the template.
+     *        The version number of the template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,12 +289,12 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the template
-     * should be bound to new datasets matching the same schema described through this API. .
+     * Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to
+     * new datasets matching the same schema described through this API operation.
      * </p>
      * 
-     * @return Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the
-     *         template should be bound to new datasets matching the same schema described through this API. .
+     * @return Schema of the dataset identified by the placeholder. Any dashboard created from this template should be
+     *         bound to new datasets matching the same schema described through this API operation.
      */
 
     public java.util.List<DataSetConfiguration> getDataSetConfigurations() {
@@ -297,13 +303,13 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the template
-     * should be bound to new datasets matching the same schema described through this API. .
+     * Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to
+     * new datasets matching the same schema described through this API operation.
      * </p>
      * 
      * @param dataSetConfigurations
-     *        Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the
-     *        template should be bound to new datasets matching the same schema described through this API. .
+     *        Schema of the dataset identified by the placeholder. Any dashboard created from this template should be
+     *        bound to new datasets matching the same schema described through this API operation.
      */
 
     public void setDataSetConfigurations(java.util.Collection<DataSetConfiguration> dataSetConfigurations) {
@@ -317,8 +323,8 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the template
-     * should be bound to new datasets matching the same schema described through this API. .
+     * Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to
+     * new datasets matching the same schema described through this API operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -327,8 +333,8 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param dataSetConfigurations
-     *        Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the
-     *        template should be bound to new datasets matching the same schema described through this API. .
+     *        Schema of the dataset identified by the placeholder. Any dashboard created from this template should be
+     *        bound to new datasets matching the same schema described through this API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -344,13 +350,13 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the template
-     * should be bound to new datasets matching the same schema described through this API. .
+     * Schema of the dataset identified by the placeholder. Any dashboard created from this template should be bound to
+     * new datasets matching the same schema described through this API operation.
      * </p>
      * 
      * @param dataSetConfigurations
-     *        Schema of the dataset identified by the placeholder. The idea is that any dashboard created from the
-     *        template should be bound to new datasets matching the same schema described through this API. .
+     *        Schema of the dataset identified by the placeholder. Any dashboard created from this template should be
+     *        bound to new datasets matching the same schema described through this API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,11 +407,11 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      * </p>
      * 
      * @param sourceEntityArn
-     *        The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     *        The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      */
 
     public void setSourceEntityArn(String sourceEntityArn) {
@@ -414,10 +420,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     * @return The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      */
 
     public String getSourceEntityArn() {
@@ -426,16 +432,56 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     * The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      * </p>
      * 
      * @param sourceEntityArn
-     *        The Amazon Resource Name (ARN) of the analysis or template which was used to create this template.
+     *        The Amazon Resource Name (ARN) of an analysis or template that was used to create this template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TemplateVersion withSourceEntityArn(String sourceEntityArn) {
         setSourceEntityArn(sourceEntityArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the theme associated with this version of the template.
+     * </p>
+     * 
+     * @param themeArn
+     *        The ARN of the theme associated with this version of the template.
+     */
+
+    public void setThemeArn(String themeArn) {
+        this.themeArn = themeArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the theme associated with this version of the template.
+     * </p>
+     * 
+     * @return The ARN of the theme associated with this version of the template.
+     */
+
+    public String getThemeArn() {
+        return this.themeArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the theme associated with this version of the template.
+     * </p>
+     * 
+     * @param themeArn
+     *        The ARN of the theme associated with this version of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TemplateVersion withThemeArn(String themeArn) {
+        setThemeArn(themeArn);
         return this;
     }
 
@@ -464,7 +510,9 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getSourceEntityArn() != null)
-            sb.append("SourceEntityArn: ").append(getSourceEntityArn());
+            sb.append("SourceEntityArn: ").append(getSourceEntityArn()).append(",");
+        if (getThemeArn() != null)
+            sb.append("ThemeArn: ").append(getThemeArn());
         sb.append("}");
         return sb.toString();
     }
@@ -507,6 +555,10 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSourceEntityArn() != null && other.getSourceEntityArn().equals(this.getSourceEntityArn()) == false)
             return false;
+        if (other.getThemeArn() == null ^ this.getThemeArn() == null)
+            return false;
+        if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
+            return false;
         return true;
     }
 
@@ -522,6 +574,7 @@ public class TemplateVersion implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDataSetConfigurations() == null) ? 0 : getDataSetConfigurations().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSourceEntityArn() == null) ? 0 : getSourceEntityArn().hashCode());
+        hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
         return hashCode;
     }
 

@@ -137,8 +137,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group
-     * protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     * <code>instance</code> - Targets are specified by instance ID. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -948,8 +947,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group
-     * protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     * <code>instance</code> - Targets are specified by instance ID. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -972,8 +970,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target
-     *        group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     *        <code>instance</code> - Targets are specified by instance ID. This is the default value.
      *        </p>
      *        </li>
      *        <li>
@@ -1003,8 +1000,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group
-     * protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     * <code>instance</code> - Targets are specified by instance ID. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -1026,8 +1022,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target
-     *         group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     *         <code>instance</code> - Targets are specified by instance ID. This is the default value.
      *         </p>
      *         </li>
      *         <li>
@@ -1058,8 +1053,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group
-     * protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     * <code>instance</code> - Targets are specified by instance ID. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -1082,8 +1076,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target
-     *        group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     *        <code>instance</code> - Targets are specified by instance ID. This is the default value.
      *        </p>
      *        </li>
      *        <li>
@@ -1115,8 +1108,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group
-     * protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     * <code>instance</code> - Targets are specified by instance ID. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -1139,8 +1131,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target
-     *        group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     *        <code>instance</code> - Targets are specified by instance ID. This is the default value.
      *        </p>
      *        </li>
      *        <li>
@@ -1170,8 +1161,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * <ul>
      * <li>
      * <p>
-     * <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target group
-     * protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     * <code>instance</code> - Targets are specified by instance ID. This is the default value.
      * </p>
      * </li>
      * <li>
@@ -1194,8 +1184,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>instance</code> - Targets are specified by instance ID. This is the default value. If the target
-     *        group protocol is UDP or TCP_UDP, the target type must be <code>instance</code>.
+     *        <code>instance</code> - Targets are specified by instance ID. This is the default value.
      *        </p>
      *        </li>
      *        <li>

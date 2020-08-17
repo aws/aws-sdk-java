@@ -82,6 +82,14 @@ public class ImageDetailJsonUnmarshaller implements Unmarshaller<ImageDetail, Js
                     context.nextToken();
                     imageDetail.setImageScanFindingsSummary(ImageScanFindingsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("imageManifestMediaType", targetDepth)) {
+                    context.nextToken();
+                    imageDetail.setImageManifestMediaType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("artifactMediaType", targetDepth)) {
+                    context.nextToken();
+                    imageDetail.setArtifactMediaType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

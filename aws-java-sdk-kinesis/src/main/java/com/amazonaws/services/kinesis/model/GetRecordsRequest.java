@@ -38,7 +38,7 @@ public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater
-     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is 10,000.
      * </p>
      */
     private Integer limit;
@@ -92,12 +92,13 @@ public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater
-     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is 10,000.
      * </p>
      * 
      * @param limit
      *        The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is
-     *        greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     *        greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is
+     *        10,000.
      */
 
     public void setLimit(Integer limit) {
@@ -107,11 +108,12 @@ public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater
-     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is 10,000.
      * </p>
      * 
      * @return The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is
-     *         greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     *         greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is
+     *         10,000.
      */
 
     public Integer getLimit() {
@@ -121,12 +123,13 @@ public class GetRecordsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater
-     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     * than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is 10,000.
      * </p>
      * 
      * @param limit
      *        The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is
-     *        greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>.
+     *        greater than 10,000, <a>GetRecords</a> throws <code>InvalidArgumentException</code>. The default value is
+     *        10,000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

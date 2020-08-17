@@ -27,8 +27,9 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be
-     * of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a>. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -50,18 +51,32 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
+     * <p>
+     * Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be
+     * rejected.
+     * </p>
      */
     private java.nio.ByteBuffer csr;
     /**
      * <p>
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * </p>
      */
     private String signingAlgorithm;
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
+     * </p>
+     * <p>
+     * Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the
+     * CA hierarchy.
      * </p>
      * <p>
      * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
@@ -69,7 +84,57 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/RootCACertificate/V1
      * </p>
      * </li>
      * <li>
@@ -92,11 +157,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -106,7 +166,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     private String templateArn;
     /**
      * <p>
-     * The type of the validity period.
+     * Information describing the validity period of the certificate.
+     * </p>
+     * <p>
+     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
+     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * </p>
+     * <p>
+     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
      * </p>
      */
     private Validity validity;
@@ -123,16 +190,18 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be
-     * of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a>. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This
-     *        must be of the form:</p>
+     *        The Amazon Resource Name (ARN) that was returned when you called <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *        >CreateCertificateAuthority</a>. This must be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
@@ -143,15 +212,17 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be
-     * of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a>. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This
-     *         must be of the form:</p>
+     * @return The Amazon Resource Name (ARN) that was returned when you called <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *         >CreateCertificateAuthority</a>. This must be of the form:</p>
      *         <p>
      *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
@@ -162,16 +233,18 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This must be
-     * of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a>. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Name (ARN) that was returned when you called <a>CreateCertificateAuthority</a>. This
-     *        must be of the form:</p>
+     *        The Amazon Resource Name (ARN) that was returned when you called <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *        >CreateCertificateAuthority</a>. This must be of the form:</p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -198,6 +271,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
      * <p>
+     * Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be
+     * rejected.
+     * </p>
+     * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
      * Users of the SDK should not perform Base64 encoding on this field.
      * </p>
@@ -220,6 +297,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
+     *        </p>
+     *        <p>
+     *        Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request
+     *        will be rejected.
      */
 
     public void setCsr(java.nio.ByteBuffer csr) {
@@ -242,6 +323,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
      * </p>
      * <p>
+     * Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be
+     * rejected.
+     * </p>
+     * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
      * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
      * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
@@ -260,6 +345,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
+     *         </p>
+     *         <p>
+     *         Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request
+     *         will be rejected.
      */
 
     public java.nio.ByteBuffer getCsr() {
@@ -280,6 +369,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
+     * </p>
+     * <p>
+     * Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request will be
+     * rejected.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -304,6 +397,10 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048 -days -365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code>
+     *        </p>
+     *        <p>
+     *        Note: A CSR must provide either a <i>subject name</i> or a <i>subject alternative name</i> or the request
+     *        will be rejected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,9 +413,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        The name of the algorithm that will be used to sign the certificate to be issued.
+     *        The name of the algorithm that will be used to sign the certificate to be issued. </p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
      * @see SigningAlgorithm
      */
 
@@ -330,8 +432,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * </p>
      * 
-     * @return The name of the algorithm that will be used to sign the certificate to be issued.
+     * @return The name of the algorithm that will be used to sign the certificate to be issued. </p>
+     *         <p>
+     *         This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a
+     *         CSR.
      * @see SigningAlgorithm
      */
 
@@ -343,9 +451,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        The name of the algorithm that will be used to sign the certificate to be issued.
+     *        The name of the algorithm that will be used to sign the certificate to be issued. </p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -359,9 +472,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the algorithm that will be used to sign the certificate to be issued.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        The name of the algorithm that will be used to sign the certificate to be issued.
+     *        The name of the algorithm that will be used to sign the certificate to be issued. </p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign a CSR.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -374,7 +492,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
+     * </p>
+     * <p>
+     * Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the
+     * CA hierarchy.
      * </p>
      * <p>
      * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
@@ -382,7 +507,57 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/RootCACertificate/V1
      * </p>
      * </li>
      * <li>
@@ -405,11 +580,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -418,14 +588,71 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param templateArn
      *        Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
-     *        provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.</p>
+     *        provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
+     *        certificates, you should choose the shortest path length that meets your needs. The path length is
+     *        indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+     *        <p>
+     *        Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents
+     *        in the CA hierarchy.
+     *        </p>
      *        <p>
      *        The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
+     *        arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/RootCACertificate/V1
      *        </p>
      *        </li>
      *        <li>
@@ -448,11 +675,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/RootCACertificate/V1
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a
@@ -466,7 +688,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
+     * </p>
+     * <p>
+     * Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the
+     * CA hierarchy.
      * </p>
      * <p>
      * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
@@ -474,7 +703,57 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/RootCACertificate/V1
      * </p>
      * </li>
      * <li>
@@ -497,11 +776,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -509,14 +783,71 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
-     *         provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.</p>
+     *         provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
+     *         certificates, you should choose the shortest path length that meets your needs. The path length is
+     *         indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+     *         <p>
+     *         Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its
+     *         parents in the CA hierarchy.
+     *         </p>
      *         <p>
      *         The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
+     *         arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         arn:aws:acm-pca:::template/RootCACertificate/V1
      *         </p>
      *         </li>
      *         <li>
@@ -539,11 +870,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *         arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         arn:aws:acm-pca:::template/RootCACertificate/V1
-     *         </p>
-     *         </li>
      *         </ul>
      *         <p>
      *         For more information, see <a
@@ -557,7 +883,14 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Specifies a custom configuration template to use when issuing a certificate. If this parameter is not provided,
-     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.
+     * ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA certificates, you should
+     * choose the shortest path length that meets your needs. The path length is indicated by the PathLen<i>N</i>
+     * portion of the ARN, where <i>N</i> is the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.
+     * </p>
+     * <p>
+     * Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents in the
+     * CA hierarchy.
      * </p>
      * <p>
      * The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
@@ -565,7 +898,57 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * arn:aws:acm-pca:::template/RootCACertificate/V1
      * </p>
      * </li>
      * <li>
@@ -588,11 +971,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * arn:aws:acm-pca:::template/RootCACertificate/V1
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * For more information, see <a
@@ -601,14 +979,71 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param templateArn
      *        Specifies a custom configuration template to use when issuing a certificate. If this parameter is not
-     *        provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template.</p>
+     *        provided, ACM Private CA defaults to the <code>EndEntityCertificate/V1</code> template. For CA
+     *        certificates, you should choose the shortest path length that meets your needs. The path length is
+     *        indicated by the PathLen<i>N</i> portion of the ARN, where <i>N</i> is the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaTerms.html#terms-cadepth">CA depth</a>.</p>
+     *        <p>
+     *        Note: The CA depth configured on a subordinate CA certificate must not exceed the limit set by its parents
+     *        in the CA hierarchy.
+     *        </p>
      *        <p>
      *        The following service-owned <code>TemplateArn</code> values are supported by ACM Private CA:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
+     *        arn:aws:acm-pca:::template/CodeSigningCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/CodeSigningCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        arn:aws:acm-pca:::template/EndEntityCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityClientAuthCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/EndEntityServerAuthCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/OCSPSigningCertificate/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/OCSPSigningCertificate_CSRPassthrough/V1
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        arn:aws:acm-pca:::template/RootCACertificate/V1
      *        </p>
      *        </li>
      *        <li>
@@ -631,11 +1066,6 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
      *        arn:aws:acm-pca:::template/SubordinateCACertificate_PathLen3/V1
      *        </p>
      *        </li>
-     *        <li>
-     *        <p>
-     *        arn:aws:acm-pca:::template/RootCACertificate/V1
-     *        </p>
-     *        </li>
      *        </ul>
      *        <p>
      *        For more information, see <a
@@ -650,11 +1080,26 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the validity period.
+     * Information describing the validity period of the certificate.
+     * </p>
+     * <p>
+     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
+     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * </p>
+     * <p>
+     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
      * </p>
      * 
      * @param validity
-     *        The type of the validity period.
+     *        Information describing the validity period of the certificate.</p>
+     *        <p>
+     *        When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and
+     *        time minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60
+     *        minutes or less.
+     *        </p>
+     *        <p>
+     *        The validity period configured on a certificate must not exceed the limit set by its parents in the CA
+     *        hierarchy.
      */
 
     public void setValidity(Validity validity) {
@@ -663,10 +1108,25 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the validity period.
+     * Information describing the validity period of the certificate.
+     * </p>
+     * <p>
+     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
+     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * </p>
+     * <p>
+     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
      * </p>
      * 
-     * @return The type of the validity period.
+     * @return Information describing the validity period of the certificate.</p>
+     *         <p>
+     *         When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and
+     *         time minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60
+     *         minutes or less.
+     *         </p>
+     *         <p>
+     *         The validity period configured on a certificate must not exceed the limit set by its parents in the CA
+     *         hierarchy.
      */
 
     public Validity getValidity() {
@@ -675,11 +1135,26 @@ public class IssueCertificateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of the validity period.
+     * Information describing the validity period of the certificate.
+     * </p>
+     * <p>
+     * When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and time
+     * minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60 minutes or less.
+     * </p>
+     * <p>
+     * The validity period configured on a certificate must not exceed the limit set by its parents in the CA hierarchy.
      * </p>
      * 
      * @param validity
-     *        The type of the validity period.
+     *        Information describing the validity period of the certificate.</p>
+     *        <p>
+     *        When issuing a certificate, ACM Private CA sets the "Not Before" date in the validity field to date and
+     *        time minus 60 minutes. This is intended to compensate for time inconsistencies across systems of 60
+     *        minutes or less.
+     *        </p>
+     *        <p>
+     *        The validity period configured on a certificate must not exceed the limit set by its parents in the CA
+     *        hierarchy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

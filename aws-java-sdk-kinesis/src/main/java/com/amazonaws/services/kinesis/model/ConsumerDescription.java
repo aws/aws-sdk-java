@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object that represents the details of a registered consumer.
+ * An object that represents the details of a registered consumer. This type of object is returned by
+ * <a>DescribeStreamConsumer</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ConsumerDescription" target="_top">AWS API

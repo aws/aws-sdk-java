@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The S3 bucket policy is not valid. The policy must give ACM Private CA rights to read from and write to the bucket
- * and find the bucket location.
+ * The resource policy is invalid or is missing a required statement. For general information about IAM policy and
+ * statement structure, see <a href=
+ * "https://docs.aws.amazon.com/https:/docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json"
+ * >Overview of JSON Policies</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

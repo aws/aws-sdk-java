@@ -49,7 +49,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
     private String principal;
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      */
     private java.util.List<String> actions;
@@ -171,10 +171,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * 
-     * @return The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * @return The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>
+     *         .
      */
 
     public java.util.List<String> getActions() {
@@ -183,11 +184,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     *        The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      */
 
     public void setActions(java.util.Collection<String> actions) {
@@ -201,7 +202,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -210,7 +211,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     *        The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -226,11 +227,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     *        The IAM action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

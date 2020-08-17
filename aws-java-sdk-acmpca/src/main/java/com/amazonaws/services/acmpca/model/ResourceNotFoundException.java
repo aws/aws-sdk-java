@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
+ * A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

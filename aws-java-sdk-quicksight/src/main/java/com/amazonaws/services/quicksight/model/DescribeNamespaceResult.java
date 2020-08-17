@@ -27,8 +27,8 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
      * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API lists the namespace error types and messages
-     * associated with the creation process.
+     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
+     * messages associated with the creation process.
      * </p>
      */
     private NamespaceInfoV2 namespace;
@@ -49,15 +49,15 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
      * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API lists the namespace error types and messages
-     * associated with the creation process.
+     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
+     * messages associated with the creation process.
      * </p>
      * 
      * @param namespace
      *        The information about the namespace that you're describing. The response includes the namespace ARN, name,
      *        AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces
-     *        that are in the process of being created. For incomplete namespaces, this API lists the namespace error
-     *        types and messages associated with the creation process.
+     *        that are in the process of being created. For incomplete namespaces, this API operation lists the
+     *        namespace error types and messages associated with the creation process.
      */
 
     public void setNamespace(NamespaceInfoV2 namespace) {
@@ -68,14 +68,14 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
      * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API lists the namespace error types and messages
-     * associated with the creation process.
+     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
+     * messages associated with the creation process.
      * </p>
      * 
      * @return The information about the namespace that you're describing. The response includes the namespace ARN,
      *         name, AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also works for
-     *         namespaces that are in the process of being created. For incomplete namespaces, this API lists the
-     *         namespace error types and messages associated with the creation process.
+     *         namespaces that are in the process of being created. For incomplete namespaces, this API operation lists
+     *         the namespace error types and messages associated with the creation process.
      */
 
     public NamespaceInfoV2 getNamespace() {
@@ -86,15 +86,15 @@ public class DescribeNamespaceResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * The information about the namespace that you're describing. The response includes the namespace ARN, name, AWS
      * Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces that are in
-     * the process of being created. For incomplete namespaces, this API lists the namespace error types and messages
-     * associated with the creation process.
+     * the process of being created. For incomplete namespaces, this API operation lists the namespace error types and
+     * messages associated with the creation process.
      * </p>
      * 
      * @param namespace
      *        The information about the namespace that you're describing. The response includes the namespace ARN, name,
      *        AWS Region, creation status, and identity store. <code>DescribeNamespace</code> also works for namespaces
-     *        that are in the process of being created. For incomplete namespaces, this API lists the namespace error
-     *        types and messages associated with the creation process.
+     *        that are in the process of being created. For incomplete namespaces, this API operation lists the
+     *        namespace error types and messages associated with the creation process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

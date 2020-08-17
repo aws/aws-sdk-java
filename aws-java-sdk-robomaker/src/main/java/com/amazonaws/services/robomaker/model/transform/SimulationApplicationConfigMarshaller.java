@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class SimulationApplicationConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationVersion").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchConfig").build();
+    private static final MarshallingInfo<List> WORLDCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("worldConfigs").build();
 
     private static final SimulationApplicationConfigMarshaller instance = new SimulationApplicationConfigMarshaller();
 
@@ -53,6 +56,7 @@ public class SimulationApplicationConfigMarshaller {
             protocolMarshaller.marshall(simulationApplicationConfig.getApplication(), APPLICATION_BINDING);
             protocolMarshaller.marshall(simulationApplicationConfig.getApplicationVersion(), APPLICATIONVERSION_BINDING);
             protocolMarshaller.marshall(simulationApplicationConfig.getLaunchConfig(), LAUNCHCONFIG_BINDING);
+            protocolMarshaller.marshall(simulationApplicationConfig.getWorldConfigs(), WORLDCONFIGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

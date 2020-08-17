@@ -41,7 +41,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers,
  * and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see
- * the <a href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User
+ * the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User
  * Guide</a>.
  * </p>
  * <p>

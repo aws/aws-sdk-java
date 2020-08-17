@@ -31,9 +31,10 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<Fleet> fleetDetails;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the results
-     * of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      */
     private String nextToken;
@@ -110,16 +111,18 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the results
-     * of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the
-     *        results of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to
-     *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *        return.
+     *        If the previous paginated request did not return all of the remaining results, the response object's
+     *        <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *        <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code>
+     *        parameter. If there are no remaining results, the previous response object's NextToken parameter is set to
+     *        null.
      */
 
     public void setNextToken(String nextToken) {
@@ -128,15 +131,17 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the results
-     * of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      * 
-     * @return The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the
-     *         results of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to
-     *         retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *         return.
+     * @return If the previous paginated request did not return all of the remaining results, the response object's
+     *         <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *         <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code>
+     *         parameter. If there are no remaining results, the previous response object's NextToken parameter is set
+     *         to null.
      */
 
     public String getNextToken() {
@@ -145,16 +150,18 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the results
-     * of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next
-     * page of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListDeploymentJobs</code> request. When the
-     *        results of a <code>ListFleets</code> request exceed <code>maxResults</code>, this value can be used to
-     *        retrieve the next page of results. This value is <code>null</code> when there are no more results to
-     *        return.
+     *        If the previous paginated request did not return all of the remaining results, the response object's
+     *        <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *        <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code>
+     *        parameter. If there are no remaining results, the previous response object's NextToken parameter is set to
+     *        null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

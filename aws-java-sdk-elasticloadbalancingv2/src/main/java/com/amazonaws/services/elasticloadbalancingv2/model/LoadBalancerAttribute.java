@@ -71,6 +71,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might
+     * pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>,
+     * and <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
      * default is <code>false</code>.
@@ -149,6 +156,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might
+     * pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>,
+     * and <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
      * default is <code>false</code>.
@@ -213,6 +227,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that
+     *        might pose a security risk to your application. The possible values are <code>monitor</code>,
+     *        <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -291,6 +312,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might
+     * pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>,
+     * and <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
      * default is <code>false</code>.
@@ -354,6 +382,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *         seconds. The default is 60 seconds.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that
+     *         might pose a security risk to your application. The possible values are <code>monitor</code>,
+     *         <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -432,6 +467,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that might
+     * pose a security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>,
+     * and <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether HTTP headers with invalid header
      * fields are removed by the load balancer (<code>true</code>) or routed to targets (<code>false</code>). The
      * default is <code>false</code>.
@@ -496,6 +538,13 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
      *        seconds. The default is 60 seconds.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer handles requests that
+     *        might pose a security risk to your application. The possible values are <code>monitor</code>,
+     *        <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.
      *        </p>
      *        </li>
      *        <li>

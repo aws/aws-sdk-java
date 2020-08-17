@@ -71,7 +71,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
      * </p>
      * </li>
      * <li>
@@ -162,7 +162,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
      * </p>
      * </li>
      * <li>
@@ -243,8 +243,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
      *        target receives an increasing share of the traffic to the target group. After this time period ends, the
-     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     *        disabled by default.
+     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     *        seconds (disabled).
      *        </p>
      *        </li>
      *        <li>
@@ -332,7 +332,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
      * </p>
      * </li>
      * <li>
@@ -413,8 +413,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <p>
      *         <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
      *         target receives an increasing share of the traffic to the target group. After this time period ends, the
-     *         target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     *         disabled by default.
+     *         target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     *         seconds (disabled).
      *         </p>
      *         </li>
      *         <li>
@@ -502,7 +502,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered target
      * receives an increasing share of the traffic to the target group. After this time period ends, the target receives
-     * its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is disabled by default.
+     * its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
      * </p>
      * </li>
      * <li>
@@ -583,8 +583,8 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>slow_start.duration_seconds</code> - The time period, in seconds, during which a newly registered
      *        target receives an increasing share of the traffic to the target group. After this time period ends, the
-     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). Slow start mode is
-     *        disabled by default.
+     *        target receives its full share of traffic. The range is 30-900 seconds (15 minutes). The default is 0
+     *        seconds (disabled).
      *        </p>
      *        </li>
      *        <li>

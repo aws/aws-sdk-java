@@ -53,7 +53,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      */
     private java.util.List<ResourcePermission> permissions;
@@ -100,7 +103,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
@@ -291,11 +294,16 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * 
      * @return A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *         permissions with principal and action information.
+     *         permissions by providing a list of IAM action information for each principal ARN. </p>
+     *         <p>
+     *         To specify no permissions, omit the permissions list.
      */
 
     public java.util.List<ResourcePermission> getPermissions() {
@@ -305,12 +313,17 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * 
      * @param permissions
      *        A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *        permissions with principal and action information.
+     *        permissions by providing a list of IAM action information for each principal ARN. </p>
+     *        <p>
+     *        To specify no permissions, omit the permissions list.
      */
 
     public void setPermissions(java.util.Collection<ResourcePermission> permissions) {
@@ -325,7 +338,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -335,7 +351,9 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param permissions
      *        A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *        permissions with principal and action information.
+     *        permissions by providing a list of IAM action information for each principal ARN. </p>
+     *        <p>
+     *        To specify no permissions, omit the permissions list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,12 +370,17 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * 
      * @param permissions
      *        A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *        permissions with principal and action information.
+     *        permissions by providing a list of IAM action information for each principal ARN. </p>
+     *        <p>
+     *        To specify no permissions, omit the permissions list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -586,7 +609,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
@@ -612,7 +635,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't
      *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
@@ -644,7 +667,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
@@ -669,7 +692,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li>
      *         <p>
      *         <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     *         <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *         <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't
      *         enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *         </p>
      *         </li>
@@ -701,7 +724,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
@@ -727,7 +750,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't
      *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>

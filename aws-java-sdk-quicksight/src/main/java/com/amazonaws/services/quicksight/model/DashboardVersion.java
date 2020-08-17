@@ -36,13 +36,13 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     private java.util.Date createdTime;
     /**
      * <p>
-     * Errors.
+     * Errors associated with this dashboard version.
      * </p>
      */
     private java.util.List<DashboardError> errors;
     /**
      * <p>
-     * Version number.
+     * Version number for this version of the dashboard.
      * </p>
      */
     private Long versionNumber;
@@ -66,7 +66,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     private String sourceEntityArn;
     /**
      * <p>
-     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.
      * </p>
      */
     private java.util.List<String> dataSetArns;
@@ -76,6 +76,12 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The ARN of the theme associated with a version of the dashboard.
+     * </p>
+     */
+    private String themeArn;
 
     /**
      * <p>
@@ -119,10 +125,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Errors.
+     * Errors associated with this dashboard version.
      * </p>
      * 
-     * @return Errors.
+     * @return Errors associated with this dashboard version.
      */
 
     public java.util.List<DashboardError> getErrors() {
@@ -131,11 +137,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Errors.
+     * Errors associated with this dashboard version.
      * </p>
      * 
      * @param errors
-     *        Errors.
+     *        Errors associated with this dashboard version.
      */
 
     public void setErrors(java.util.Collection<DashboardError> errors) {
@@ -149,7 +155,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Errors.
+     * Errors associated with this dashboard version.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,7 +164,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param errors
-     *        Errors.
+     *        Errors associated with this dashboard version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +180,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Errors.
+     * Errors associated with this dashboard version.
      * </p>
      * 
      * @param errors
-     *        Errors.
+     *        Errors associated with this dashboard version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +195,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Version number.
+     * Version number for this version of the dashboard.
      * </p>
      * 
      * @param versionNumber
-     *        Version number.
+     *        Version number for this version of the dashboard.
      */
 
     public void setVersionNumber(Long versionNumber) {
@@ -202,10 +208,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Version number.
+     * Version number for this version of the dashboard.
      * </p>
      * 
-     * @return Version number.
+     * @return Version number for this version of the dashboard.
      */
 
     public Long getVersionNumber() {
@@ -214,11 +220,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Version number.
+     * Version number for this version of the dashboard.
      * </p>
      * 
      * @param versionNumber
-     *        Version number.
+     *        Version number for this version of the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,10 +374,11 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.
      * </p>
      * 
-     * @return The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * @return The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the
+     *         dashboard.
      */
 
     public java.util.List<String> getDataSetArns() {
@@ -380,11 +387,12 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.
      * </p>
      * 
      * @param dataSetArns
-     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the
+     *        dashboard.
      */
 
     public void setDataSetArns(java.util.Collection<String> dataSetArns) {
@@ -398,7 +406,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -407,7 +415,8 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param dataSetArns
-     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the
+     *        dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -423,11 +432,12 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     * The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the dashboard.
      * </p>
      * 
      * @param dataSetArns
-     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with a version of the dashboard.
+     *        The Amazon Resource Numbers (ARNs) for the datasets that are associated with this version of the
+     *        dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,6 +487,46 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The ARN of the theme associated with a version of the dashboard.
+     * </p>
+     * 
+     * @param themeArn
+     *        The ARN of the theme associated with a version of the dashboard.
+     */
+
+    public void setThemeArn(String themeArn) {
+        this.themeArn = themeArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the theme associated with a version of the dashboard.
+     * </p>
+     * 
+     * @return The ARN of the theme associated with a version of the dashboard.
+     */
+
+    public String getThemeArn() {
+        return this.themeArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the theme associated with a version of the dashboard.
+     * </p>
+     * 
+     * @param themeArn
+     *        The ARN of the theme associated with a version of the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersion withThemeArn(String themeArn) {
+        setThemeArn(themeArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -503,7 +553,9 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         if (getDataSetArns() != null)
             sb.append("DataSetArns: ").append(getDataSetArns()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getThemeArn() != null)
+            sb.append("ThemeArn: ").append(getThemeArn());
         sb.append("}");
         return sb.toString();
     }
@@ -550,6 +602,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getThemeArn() == null ^ this.getThemeArn() == null)
+            return false;
+        if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
+            return false;
         return true;
     }
 
@@ -566,6 +622,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getSourceEntityArn() == null) ? 0 : getSourceEntityArn().hashCode());
         hashCode = prime * hashCode + ((getDataSetArns() == null) ? 0 : getDataSetArns().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
         return hashCode;
     }
 

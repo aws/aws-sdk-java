@@ -32,7 +32,7 @@ public class ComputeResponse implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation
      * unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume
-     * up to the maximim value provided.
+     * up to the maximim value provided. The default is 15.
      * </p>
      */
     private Integer simulationUnitLimit;
@@ -41,13 +41,13 @@ public class ComputeResponse implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation
      * unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume
-     * up to the maximim value provided.
+     * up to the maximim value provided. The default is 15.
      * </p>
      * 
      * @param simulationUnitLimit
      *        The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied
      *        simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU
-     *        utilization you consume up to the maximim value provided.
+     *        utilization you consume up to the maximim value provided. The default is 15.
      */
 
     public void setSimulationUnitLimit(Integer simulationUnitLimit) {
@@ -58,12 +58,12 @@ public class ComputeResponse implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation
      * unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume
-     * up to the maximim value provided.
+     * up to the maximim value provided. The default is 15.
      * </p>
      * 
      * @return The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied
      *         simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU
-     *         utilization you consume up to the maximim value provided.
+     *         utilization you consume up to the maximim value provided. The default is 15.
      */
 
     public Integer getSimulationUnitLimit() {
@@ -74,13 +74,13 @@ public class ComputeResponse implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied simulation
      * unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU utilization you consume
-     * up to the maximim value provided.
+     * up to the maximim value provided. The default is 15.
      * </p>
      * 
      * @param simulationUnitLimit
      *        The simulation unit limit. Your simulation is allocated CPU and memory proportional to the supplied
      *        simulation unit limit. A simulation unit is 1 vcpu and 2GB of memory. You are only billed for the SU
-     *        utilization you consume up to the maximim value provided.
+     *        utilization you consume up to the maximim value provided. The default is 15.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

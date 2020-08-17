@@ -27,10 +27,13 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must be of the form:
+     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action. This must be of the form:
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can
-     * get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     * get a private CA's ARN by running the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action.
      * </p>
      */
     private String certificateAuthorityArn;
@@ -52,17 +55,23 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must be of the form:
+     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action. This must be of the form:
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can
-     * get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     * get a private CA's ARN by running the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action.
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     *        <a>ListCertificateAuthorities</a> action. This must be of the form:
+     *        The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">
+     *        ListCertificateAuthorities</a> action. This must be of the form:
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You
-     *        can get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     *        can get a private CA's ARN by running the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     *        >ListCertificateAuthorities</a> action.
      */
 
     public void setCertificateAuthorityArn(String certificateAuthorityArn) {
@@ -71,16 +80,22 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must be of the form:
+     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action. This must be of the form:
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can
-     * get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     * get a private CA's ARN by running the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action.
      * </p>
      * 
-     * @return The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     *         <a>ListCertificateAuthorities</a> action. This must be of the form:
+     * @return The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">
+     *         ListCertificateAuthorities</a> action. This must be of the form:
      *         <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
-     *         You can get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     *         You can get a private CA's ARN by running the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     *         >ListCertificateAuthorities</a> action.
      */
 
     public String getCertificateAuthorityArn() {
@@ -89,17 +104,23 @@ public class ListPermissionsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     * <a>ListCertificateAuthorities</a> action. This must be of the form:
+     * The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action. This must be of the form:
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You can
-     * get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     * get a private CA's ARN by running the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     * >ListCertificateAuthorities</a> action.
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the
-     *        <a>ListCertificateAuthorities</a> action. This must be of the form:
+     *        The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN by calling the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">
+     *        ListCertificateAuthorities</a> action. This must be of the form:
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code> You
-     *        can get a private CA's ARN by running the <a>ListCertificateAuthorities</a> action.
+     *        can get a private CA's ARN by running the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html"
+     *        >ListCertificateAuthorities</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

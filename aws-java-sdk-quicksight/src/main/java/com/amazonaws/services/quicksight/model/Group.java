@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A <i>group</i> in Amazon QuickSight consists of a set of users. You can use groups to make it easier to manage access
- * and security. Currently, an Amazon QuickSight subscription can't contain more than 500 Amazon QuickSight groups.
+ * and security.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Group" target="_top">AWS API

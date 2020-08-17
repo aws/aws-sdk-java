@@ -52,6 +52,10 @@ public class CertificateAuthorityJsonUnmarshaller implements Unmarshaller<Certif
                     context.nextToken();
                     certificateAuthority.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OwnerAccount", targetDepth)) {
+                    context.nextToken();
+                    certificateAuthority.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     certificateAuthority.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

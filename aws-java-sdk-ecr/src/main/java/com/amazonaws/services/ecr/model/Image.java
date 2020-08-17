@@ -53,7 +53,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String imageManifest;
     /**
      * <p>
-     * The media type associated with the image manifest.
+     * The manifest media type of the image.
      * </p>
      */
     private String imageManifestMediaType;
@@ -220,11 +220,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The media type associated with the image manifest.
+     * The manifest media type of the image.
      * </p>
      * 
      * @param imageManifestMediaType
-     *        The media type associated with the image manifest.
+     *        The manifest media type of the image.
      */
 
     public void setImageManifestMediaType(String imageManifestMediaType) {
@@ -233,10 +233,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The media type associated with the image manifest.
+     * The manifest media type of the image.
      * </p>
      * 
-     * @return The media type associated with the image manifest.
+     * @return The manifest media type of the image.
      */
 
     public String getImageManifestMediaType() {
@@ -245,11 +245,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The media type associated with the image manifest.
+     * The manifest media type of the image.
      * </p>
      * 
      * @param imageManifestMediaType
-     *        The media type associated with the image manifest.
+     *        The manifest media type of the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

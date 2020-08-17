@@ -60,7 +60,7 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
     private String identityStore;
     /**
      * <p>
-     * An error that occured when the namespace was created.
+     * An error that occurred when the namespace was created.
      * </p>
      */
     private NamespaceError namespaceError;
@@ -305,11 +305,11 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An error that occured when the namespace was created.
+     * An error that occurred when the namespace was created.
      * </p>
      * 
      * @param namespaceError
-     *        An error that occured when the namespace was created.
+     *        An error that occurred when the namespace was created.
      */
 
     public void setNamespaceError(NamespaceError namespaceError) {
@@ -318,10 +318,10 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An error that occured when the namespace was created.
+     * An error that occurred when the namespace was created.
      * </p>
      * 
-     * @return An error that occured when the namespace was created.
+     * @return An error that occurred when the namespace was created.
      */
 
     public NamespaceError getNamespaceError() {
@@ -330,11 +330,11 @@ public class NamespaceInfoV2 implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An error that occured when the namespace was created.
+     * An error that occurred when the namespace was created.
      * </p>
      * 
      * @param namespaceError
-     *        An error that occured when the namespace was created.
+     *        An error that occurred when the namespace was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

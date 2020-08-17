@@ -38,6 +38,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public CreateAnalysisResult createAnalysis(CreateAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDashboardResult createDashboard(CreateDashboardRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DeleteAccountCustomizationResult deleteAccountCustomization(DeleteAccountCustomizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAnalysisResult deleteAnalysis(DeleteAnalysisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -174,6 +184,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAnalysisResult describeAnalysis(DescribeAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAnalysisPermissionsResult describeAnalysisPermissions(DescribeAnalysisPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -269,6 +289,11 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public GetSessionEmbedUrlResult getSessionEmbedUrl(GetSessionEmbedUrlRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAnalysesResult listAnalyses(ListAnalysesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -373,6 +398,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
     }
 
     @Override
+    public RestoreAnalysisResult restoreAnalysis(RestoreAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchAnalysesResult searchAnalyses(SearchAnalysesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SearchDashboardsResult searchDashboards(SearchDashboardsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -394,6 +429,16 @@ public class AbstractAmazonQuickSight implements AmazonQuickSight {
 
     @Override
     public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnalysisResult updateAnalysis(UpdateAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnalysisPermissionsResult updateAnalysisPermissions(UpdateAnalysisPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

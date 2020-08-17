@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This data type is reserved.
+ * Information about additional load balancer attributes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/AdditionalAttribute"
@@ -28,24 +28,59 @@ public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * The name of the attribute.
      * </p>
+     * <p>
+     * The following attribute is supported.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a
+     * security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and
+     * <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String key;
     /**
      * <p>
-     * This parameter is reserved.
+     * This value of the attribute.
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * This parameter is reserved.
+     * The name of the attribute.
      * </p>
+     * <p>
+     * The following attribute is supported.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a
+     * security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and
+     * <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        This parameter is reserved.
+     *        The name of the attribute.</p>
+     *        <p>
+     *        The following attribute is supported.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might
+     *        pose a security risk to your application. The possible values are <code>monitor</code>,
+     *        <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setKey(String key) {
@@ -54,10 +89,33 @@ public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * The name of the attribute.
      * </p>
+     * <p>
+     * The following attribute is supported.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a
+     * security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and
+     * <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return This parameter is reserved.
+     * @return The name of the attribute.</p>
+     *         <p>
+     *         The following attribute is supported.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might
+     *         pose a security risk to your application. The possible values are <code>monitor</code>,
+     *         <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getKey() {
@@ -66,11 +124,34 @@ public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * The name of the attribute.
      * </p>
+     * <p>
+     * The following attribute is supported.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might pose a
+     * security risk to your application. The possible values are <code>monitor</code>, <code>defensive</code>, and
+     * <code>strictest</code>. The default is <code>defensive</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
-     *        This parameter is reserved.
+     *        The name of the attribute.</p>
+     *        <p>
+     *        The following attribute is supported.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>elb.http.desyncmitigationmode</code> - Determines how the load balancer handles requests that might
+     *        pose a security risk to your application. The possible values are <code>monitor</code>,
+     *        <code>defensive</code>, and <code>strictest</code>. The default is <code>defensive</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +162,11 @@ public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * This value of the attribute.
      * </p>
      * 
      * @param value
-     *        This parameter is reserved.
+     *        This value of the attribute.
      */
 
     public void setValue(String value) {
@@ -94,10 +175,10 @@ public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * This value of the attribute.
      * </p>
      * 
-     * @return This parameter is reserved.
+     * @return This value of the attribute.
      */
 
     public String getValue() {
@@ -106,11 +187,11 @@ public class AdditionalAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * This value of the attribute.
      * </p>
      * 
      * @param value
-     *        This parameter is reserved.
+     *        This value of the attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

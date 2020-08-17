@@ -30,13 +30,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name associated with the QuickSight subscription in your AWS account.
+     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
+     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
      * </p>
      */
     private String accountName;
     /**
      * <p>
-     * The edition of QuickSight that you're currently subscribed to.
+     * The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * </p>
      */
     private String edition;
@@ -55,11 +56,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name associated with the QuickSight subscription in your AWS account.
+     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
+     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
      * </p>
      * 
      * @param accountName
-     *        The name associated with the QuickSight subscription in your AWS account.
+     *        The "account name" you provided for the QuickSight subscription in your AWS account. You create this name
+     *        when you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users
+     *        sign in.
      */
 
     public void setAccountName(String accountName) {
@@ -68,10 +72,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name associated with the QuickSight subscription in your AWS account.
+     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
+     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
      * </p>
      * 
-     * @return The name associated with the QuickSight subscription in your AWS account.
+     * @return The "account name" you provided for the QuickSight subscription in your AWS account. You create this name
+     *         when you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users
+     *         sign in.
      */
 
     public String getAccountName() {
@@ -80,11 +87,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The name associated with the QuickSight subscription in your AWS account.
+     * The "account name" you provided for the QuickSight subscription in your AWS account. You create this name when
+     * you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users sign in.
      * </p>
      * 
      * @param accountName
-     *        The name associated with the QuickSight subscription in your AWS account.
+     *        The "account name" you provided for the QuickSight subscription in your AWS account. You create this name
+     *        when you sign up for QuickSight. It is unique in all of AWS and it appears only in the console when users
+     *        sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +105,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The edition of QuickSight that you're currently subscribed to.
+     * The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * </p>
      * 
      * @param edition
-     *        The edition of QuickSight that you're currently subscribed to.
+     *        The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * @see Edition
      */
 
@@ -109,10 +119,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The edition of QuickSight that you're currently subscribed to.
+     * The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * </p>
      * 
-     * @return The edition of QuickSight that you're currently subscribed to.
+     * @return The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * @see Edition
      */
 
@@ -122,11 +132,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The edition of QuickSight that you're currently subscribed to.
+     * The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * </p>
      * 
      * @param edition
-     *        The edition of QuickSight that you're currently subscribed to.
+     *        The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Edition
      */
@@ -138,11 +148,11 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The edition of QuickSight that you're currently subscribed to.
+     * The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * </p>
      * 
      * @param edition
-     *        The edition of QuickSight that you're currently subscribed to.
+     *        The edition of QuickSight that you're currently subscribed to: Enterprise edition or Standard edition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Edition
      */

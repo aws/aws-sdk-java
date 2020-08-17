@@ -85,6 +85,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      */
     private String userArn;
 
@@ -399,6 +402,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @param userArn
      *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
@@ -421,6 +427,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *        Connect, or IAM federation.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      */
 
     public void setUserArn(String userArn) {
@@ -451,6 +460,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @return The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
      *         type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
@@ -472,6 +484,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *         Connect, or IAM federation.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      */
 
     public String getUserArn() {
@@ -502,6 +517,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @param userArn
      *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
@@ -524,6 +542,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *        Connect, or IAM federation.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

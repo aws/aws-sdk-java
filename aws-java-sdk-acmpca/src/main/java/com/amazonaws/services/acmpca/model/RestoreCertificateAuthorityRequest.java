@@ -27,8 +27,9 @@ public class RestoreCertificateAuthorityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -38,16 +39,18 @@ public class RestoreCertificateAuthorityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *        action. This must be of the form: </p>
+     *        The Amazon Resource Name (ARN) that was returned when you called the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *        >CreateCertificateAuthority</a> action. This must be of the form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
@@ -58,15 +61,17 @@ public class RestoreCertificateAuthorityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *         action. This must be of the form: </p>
+     * @return The Amazon Resource Name (ARN) that was returned when you called the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *         >CreateCertificateAuthority</a> action. This must be of the form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
@@ -77,16 +82,18 @@ public class RestoreCertificateAuthorityRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *        action. This must be of the form: </p>
+     *        The Amazon Resource Name (ARN) that was returned when you called the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *        >CreateCertificateAuthority</a> action. This must be of the form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.

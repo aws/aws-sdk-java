@@ -27,24 +27,24 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from.
+     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The namespace associated with the customization that you're deleting.
+     * The QuickSight namespace that you're deleting the customizations from.
      * </p>
      */
     private String namespace;
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from.
+     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to delete QuickSight customizations from.
+     *        The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -53,10 +53,10 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from.
+     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      * </p>
      * 
-     * @return The ID for the AWS account that you want to delete QuickSight customizations from.
+     * @return The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      */
 
     public String getAwsAccountId() {
@@ -65,11 +65,11 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID for the AWS account that you want to delete QuickSight customizations from.
+     * The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      * </p>
      * 
      * @param awsAccountId
-     *        The ID for the AWS account that you want to delete QuickSight customizations from.
+     *        The ID for the AWS account that you want to delete QuickSight customizations from in this AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The namespace associated with the customization that you're deleting.
+     * The QuickSight namespace that you're deleting the customizations from.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the customization that you're deleting.
+     *        The QuickSight namespace that you're deleting the customizations from.
      */
 
     public void setNamespace(String namespace) {
@@ -93,10 +93,10 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The namespace associated with the customization that you're deleting.
+     * The QuickSight namespace that you're deleting the customizations from.
      * </p>
      * 
-     * @return The namespace associated with the customization that you're deleting.
+     * @return The QuickSight namespace that you're deleting the customizations from.
      */
 
     public String getNamespace() {
@@ -105,11 +105,11 @@ public class DeleteAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The namespace associated with the customization that you're deleting.
+     * The QuickSight namespace that you're deleting the customizations from.
      * </p>
      * 
      * @param namespace
-     *        The namespace associated with the customization that you're deleting.
+     *        The QuickSight namespace that you're deleting the customizations from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

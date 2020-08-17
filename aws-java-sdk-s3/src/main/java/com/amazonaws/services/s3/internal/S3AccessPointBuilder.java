@@ -35,6 +35,7 @@ public class S3AccessPointBuilder {
     private String accountId;
     private String protocol;
     private String domain;
+    private Boolean fipsEnabled;
 
     /**
      * Create a new instance of this builder class.
@@ -52,6 +53,18 @@ public class S3AccessPointBuilder {
 
     public S3AccessPointBuilder withDualstackEnabled(Boolean dualstackEnabled) {
         setDualstackEnabled(dualstackEnabled);
+        return this;
+    }
+
+    /**
+     * Enable fips in endpoint.
+     */
+    public void setFipsEnabled(Boolean fipsEnabled) {
+        this.fipsEnabled = fipsEnabled;
+    }
+
+    public S3AccessPointBuilder withFipsEnabled(Boolean fipsEnabled) {
+        this.fipsEnabled = fipsEnabled;
         return this;
     }
 
@@ -123,8 +136,10 @@ public class S3AccessPointBuilder {
         validateHostnameCompliant(accessPointName, "accessPointName");
 
         String dualStackSegment = Boolean.TRUE.equals(dualstackEnabled) ? ".dualstack" : "";
-        String uriString = String.format("%s://%s-%s.s3-accesspoint%s.%s.%s", protocol, accessPointName, accountId,
-                                         dualStackSegment, region, domain);
+
+        String fipsSegment = Boolean.TRUE.equals(fipsEnabled) ? "fips-" : "";
+        String uriString = String.format("%s://%s-%s.s3-accesspoint%s.%s%s.%s", protocol, accessPointName, accountId,
+                                         dualStackSegment, fipsSegment, region, domain);
         return URI.create(uriString);
     }
 

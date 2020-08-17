@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an
  * analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to
- * replace the dataset associated with the analysis. You can use templates to create dashboards by replacing dataset
+ * replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset
  * placeholders with datasets that follow the same schema that was used to create the source analysis and template.
  * </p>
  * <p>
