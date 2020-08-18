@@ -152,7 +152,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
-     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      */
     private String namespaceType;
@@ -189,7 +189,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
@@ -202,7 +202,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>.
      * </p>
      * </li>
      * </ul>
@@ -931,7 +931,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
-     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
@@ -972,7 +972,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * @see ArtifactNamespace
      */
 
@@ -1020,7 +1020,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
-     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * 
      * @return Along with <code>path</code> and <code>name</code>, the pattern that AWS CodeBuild uses to determine the
@@ -1060,7 +1060,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set
      *         to <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output
-     *         artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *         artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * @see ArtifactNamespace
      */
 
@@ -1108,7 +1108,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
-     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
@@ -1149,7 +1149,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactNamespace
      */
@@ -1199,7 +1199,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
-     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
@@ -1240,7 +1240,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * @see ArtifactNamespace
      */
 
@@ -1288,7 +1288,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is stored
-     * in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * 
      * @param namespaceType
@@ -1329,7 +1329,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        For example, if <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
-     *        stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ArtifactNamespace
      */
@@ -1372,7 +1372,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
@@ -1385,7 +1385,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>.
      * </p>
      * </li>
      * </ul>
@@ -1421,7 +1421,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1435,7 +1435,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     *        <code>MyArtifacts/<i>build-ID</i> </code>.
+     *        <code>MyArtifacts/&lt;build-ID&gt;</code>.
      *        </p>
      *        </li>
      */
@@ -1477,7 +1477,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
@@ -1490,7 +1490,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>.
      * </p>
      * </li>
      * </ul>
@@ -1525,7 +1525,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *         <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *         artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *         artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -1539,7 +1539,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *         <p>
      *         If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *         <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     *         <code>MyArtifacts/<i>build-ID</i> </code>.
+     *         <code>MyArtifacts/&lt;build-ID&gt;</code>.
      *         </p>
      *         </li>
      */
@@ -1581,7 +1581,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output artifact is
-     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     * stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      * </p>
      * </li>
      * <li>
@@ -1594,7 +1594,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      * <p>
      * If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      * <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     * <code>MyArtifacts/<i>build-ID</i> </code>.
+     * <code>MyArtifacts/&lt;build-ID&gt;</code>.
      * </p>
      * </li>
      * </ul>
@@ -1630,7 +1630,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to <code>MyArtifact.zip</code>, then the output
-     *        artifact is stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.
+     *        artifact is stored in <code>MyArtifacts/&lt;build-ID&gt;/MyArtifact.zip</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -1644,7 +1644,7 @@ public class ProjectArtifacts implements Serializable, Cloneable, StructuredPojo
      *        <p>
      *        If <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code> is set to
      *        <code>BUILD_ID</code>, and <code>name</code> is set to "<code>/</code>", the output artifact is stored in
-     *        <code>MyArtifacts/<i>build-ID</i> </code>.
+     *        <code>MyArtifacts/&lt;build-ID&gt;</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

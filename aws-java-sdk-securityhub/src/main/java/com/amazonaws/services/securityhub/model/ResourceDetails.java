@@ -90,6 +90,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsEc2VpcDetails awsEc2Vpc;
     /**
      * <p>
+     * Details about an Elastic IP address.
+     * </p>
+     */
+    private AwsEc2EipDetails awsEc2Eip;
+    /**
+     * <p>
      * Details about a load balancer.
      * </p>
      */
@@ -114,10 +120,34 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsS3ObjectDetails awsS3Object;
     /**
      * <p>
+     * Details about a Secrets Manager secret.
+     * </p>
+     */
+    private AwsSecretsManagerSecretDetails awsSecretsManagerSecret;
+    /**
+     * <p>
      * Details about an IAM access key related to a finding.
      * </p>
      */
     private AwsIamAccessKeyDetails awsIamAccessKey;
+    /**
+     * <p>
+     * Details about an IAM user.
+     * </p>
+     */
+    private AwsIamUserDetails awsIamUser;
+    /**
+     * <p>
+     * Details about an IAM permissions policy.
+     * </p>
+     */
+    private AwsIamPolicyDetails awsIamPolicy;
+    /**
+     * <p>
+     * Details about a DynamoDB table.
+     * </p>
+     */
+    private AwsDynamoDbTableDetails awsDynamoDbTable;
     /**
      * <p>
      * Details about an IAM role.
@@ -144,7 +174,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     private AwsLambdaLayerVersionDetails awsLambdaLayerVersion;
     /**
      * <p>
-     * Details for an Amazon RDS database instance.
+     * Details about an Amazon RDS database instance.
      * </p>
      */
     private AwsRdsDbInstanceDetails awsRdsDbInstance;
@@ -166,6 +196,24 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsWafWebAclDetails awsWafWebAcl;
+    /**
+     * <p>
+     * Details about an Amazon RDS database snapshot.
+     * </p>
+     */
+    private AwsRdsDbSnapshotDetails awsRdsDbSnapshot;
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster snapshot.
+     * </p>
+     */
+    private AwsRdsDbClusterSnapshotDetails awsRdsDbClusterSnapshot;
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster.
+     * </p>
+     */
+    private AwsRdsDbClusterDetails awsRdsDbCluster;
     /**
      * <p>
      * Details about a container resource related to a finding.
@@ -517,6 +565,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details about an Elastic IP address.
+     * </p>
+     * 
+     * @param awsEc2Eip
+     *        Details about an Elastic IP address.
+     */
+
+    public void setAwsEc2Eip(AwsEc2EipDetails awsEc2Eip) {
+        this.awsEc2Eip = awsEc2Eip;
+    }
+
+    /**
+     * <p>
+     * Details about an Elastic IP address.
+     * </p>
+     * 
+     * @return Details about an Elastic IP address.
+     */
+
+    public AwsEc2EipDetails getAwsEc2Eip() {
+        return this.awsEc2Eip;
+    }
+
+    /**
+     * <p>
+     * Details about an Elastic IP address.
+     * </p>
+     * 
+     * @param awsEc2Eip
+     *        Details about an Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2Eip(AwsEc2EipDetails awsEc2Eip) {
+        setAwsEc2Eip(awsEc2Eip);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about a load balancer.
      * </p>
      * 
@@ -677,6 +765,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * Details about a Secrets Manager secret.
+     * </p>
+     * 
+     * @param awsSecretsManagerSecret
+     *        Details about a Secrets Manager secret.
+     */
+
+    public void setAwsSecretsManagerSecret(AwsSecretsManagerSecretDetails awsSecretsManagerSecret) {
+        this.awsSecretsManagerSecret = awsSecretsManagerSecret;
+    }
+
+    /**
+     * <p>
+     * Details about a Secrets Manager secret.
+     * </p>
+     * 
+     * @return Details about a Secrets Manager secret.
+     */
+
+    public AwsSecretsManagerSecretDetails getAwsSecretsManagerSecret() {
+        return this.awsSecretsManagerSecret;
+    }
+
+    /**
+     * <p>
+     * Details about a Secrets Manager secret.
+     * </p>
+     * 
+     * @param awsSecretsManagerSecret
+     *        Details about a Secrets Manager secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsSecretsManagerSecret(AwsSecretsManagerSecretDetails awsSecretsManagerSecret) {
+        setAwsSecretsManagerSecret(awsSecretsManagerSecret);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about an IAM access key related to a finding.
      * </p>
      * 
@@ -712,6 +840,126 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsIamAccessKey(AwsIamAccessKeyDetails awsIamAccessKey) {
         setAwsIamAccessKey(awsIamAccessKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM user.
+     * </p>
+     * 
+     * @param awsIamUser
+     *        Details about an IAM user.
+     */
+
+    public void setAwsIamUser(AwsIamUserDetails awsIamUser) {
+        this.awsIamUser = awsIamUser;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM user.
+     * </p>
+     * 
+     * @return Details about an IAM user.
+     */
+
+    public AwsIamUserDetails getAwsIamUser() {
+        return this.awsIamUser;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM user.
+     * </p>
+     * 
+     * @param awsIamUser
+     *        Details about an IAM user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsIamUser(AwsIamUserDetails awsIamUser) {
+        setAwsIamUser(awsIamUser);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM permissions policy.
+     * </p>
+     * 
+     * @param awsIamPolicy
+     *        Details about an IAM permissions policy.
+     */
+
+    public void setAwsIamPolicy(AwsIamPolicyDetails awsIamPolicy) {
+        this.awsIamPolicy = awsIamPolicy;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM permissions policy.
+     * </p>
+     * 
+     * @return Details about an IAM permissions policy.
+     */
+
+    public AwsIamPolicyDetails getAwsIamPolicy() {
+        return this.awsIamPolicy;
+    }
+
+    /**
+     * <p>
+     * Details about an IAM permissions policy.
+     * </p>
+     * 
+     * @param awsIamPolicy
+     *        Details about an IAM permissions policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsIamPolicy(AwsIamPolicyDetails awsIamPolicy) {
+        setAwsIamPolicy(awsIamPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about a DynamoDB table.
+     * </p>
+     * 
+     * @param awsDynamoDbTable
+     *        Details about a DynamoDB table.
+     */
+
+    public void setAwsDynamoDbTable(AwsDynamoDbTableDetails awsDynamoDbTable) {
+        this.awsDynamoDbTable = awsDynamoDbTable;
+    }
+
+    /**
+     * <p>
+     * Details about a DynamoDB table.
+     * </p>
+     * 
+     * @return Details about a DynamoDB table.
+     */
+
+    public AwsDynamoDbTableDetails getAwsDynamoDbTable() {
+        return this.awsDynamoDbTable;
+    }
+
+    /**
+     * <p>
+     * Details about a DynamoDB table.
+     * </p>
+     * 
+     * @param awsDynamoDbTable
+     *        Details about a DynamoDB table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsDynamoDbTable(AwsDynamoDbTableDetails awsDynamoDbTable) {
+        setAwsDynamoDbTable(awsDynamoDbTable);
         return this;
     }
 
@@ -877,11 +1125,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an Amazon RDS database instance.
+     * Details about an Amazon RDS database instance.
      * </p>
      * 
      * @param awsRdsDbInstance
-     *        Details for an Amazon RDS database instance.
+     *        Details about an Amazon RDS database instance.
      */
 
     public void setAwsRdsDbInstance(AwsRdsDbInstanceDetails awsRdsDbInstance) {
@@ -890,10 +1138,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an Amazon RDS database instance.
+     * Details about an Amazon RDS database instance.
      * </p>
      * 
-     * @return Details for an Amazon RDS database instance.
+     * @return Details about an Amazon RDS database instance.
      */
 
     public AwsRdsDbInstanceDetails getAwsRdsDbInstance() {
@@ -902,11 +1150,11 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Details for an Amazon RDS database instance.
+     * Details about an Amazon RDS database instance.
      * </p>
      * 
      * @param awsRdsDbInstance
-     *        Details for an Amazon RDS database instance.
+     *        Details about an Amazon RDS database instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1032,6 +1280,126 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsWafWebAcl(AwsWafWebAclDetails awsWafWebAcl) {
         setAwsWafWebAcl(awsWafWebAcl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database snapshot.
+     * </p>
+     * 
+     * @param awsRdsDbSnapshot
+     *        Details about an Amazon RDS database snapshot.
+     */
+
+    public void setAwsRdsDbSnapshot(AwsRdsDbSnapshotDetails awsRdsDbSnapshot) {
+        this.awsRdsDbSnapshot = awsRdsDbSnapshot;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database snapshot.
+     * </p>
+     * 
+     * @return Details about an Amazon RDS database snapshot.
+     */
+
+    public AwsRdsDbSnapshotDetails getAwsRdsDbSnapshot() {
+        return this.awsRdsDbSnapshot;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database snapshot.
+     * </p>
+     * 
+     * @param awsRdsDbSnapshot
+     *        Details about an Amazon RDS database snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsRdsDbSnapshot(AwsRdsDbSnapshotDetails awsRdsDbSnapshot) {
+        setAwsRdsDbSnapshot(awsRdsDbSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster snapshot.
+     * </p>
+     * 
+     * @param awsRdsDbClusterSnapshot
+     *        Details about an Amazon RDS database cluster snapshot.
+     */
+
+    public void setAwsRdsDbClusterSnapshot(AwsRdsDbClusterSnapshotDetails awsRdsDbClusterSnapshot) {
+        this.awsRdsDbClusterSnapshot = awsRdsDbClusterSnapshot;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster snapshot.
+     * </p>
+     * 
+     * @return Details about an Amazon RDS database cluster snapshot.
+     */
+
+    public AwsRdsDbClusterSnapshotDetails getAwsRdsDbClusterSnapshot() {
+        return this.awsRdsDbClusterSnapshot;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster snapshot.
+     * </p>
+     * 
+     * @param awsRdsDbClusterSnapshot
+     *        Details about an Amazon RDS database cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsRdsDbClusterSnapshot(AwsRdsDbClusterSnapshotDetails awsRdsDbClusterSnapshot) {
+        setAwsRdsDbClusterSnapshot(awsRdsDbClusterSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster.
+     * </p>
+     * 
+     * @param awsRdsDbCluster
+     *        Details about an Amazon RDS database cluster.
+     */
+
+    public void setAwsRdsDbCluster(AwsRdsDbClusterDetails awsRdsDbCluster) {
+        this.awsRdsDbCluster = awsRdsDbCluster;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster.
+     * </p>
+     * 
+     * @return Details about an Amazon RDS database cluster.
+     */
+
+    public AwsRdsDbClusterDetails getAwsRdsDbCluster() {
+        return this.awsRdsDbCluster;
+    }
+
+    /**
+     * <p>
+     * Details about an Amazon RDS database cluster.
+     * </p>
+     * 
+     * @param awsRdsDbCluster
+     *        Details about an Amazon RDS database cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsRdsDbCluster(AwsRdsDbClusterDetails awsRdsDbCluster) {
+        setAwsRdsDbCluster(awsRdsDbCluster);
         return this;
     }
 
@@ -1264,6 +1632,8 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsEc2Volume: ").append(getAwsEc2Volume()).append(",");
         if (getAwsEc2Vpc() != null)
             sb.append("AwsEc2Vpc: ").append(getAwsEc2Vpc()).append(",");
+        if (getAwsEc2Eip() != null)
+            sb.append("AwsEc2Eip: ").append(getAwsEc2Eip()).append(",");
         if (getAwsElbv2LoadBalancer() != null)
             sb.append("AwsElbv2LoadBalancer: ").append(getAwsElbv2LoadBalancer()).append(",");
         if (getAwsElasticsearchDomain() != null)
@@ -1272,8 +1642,16 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsS3Bucket: ").append(getAwsS3Bucket()).append(",");
         if (getAwsS3Object() != null)
             sb.append("AwsS3Object: ").append(getAwsS3Object()).append(",");
+        if (getAwsSecretsManagerSecret() != null)
+            sb.append("AwsSecretsManagerSecret: ").append(getAwsSecretsManagerSecret()).append(",");
         if (getAwsIamAccessKey() != null)
             sb.append("AwsIamAccessKey: ").append(getAwsIamAccessKey()).append(",");
+        if (getAwsIamUser() != null)
+            sb.append("AwsIamUser: ").append(getAwsIamUser()).append(",");
+        if (getAwsIamPolicy() != null)
+            sb.append("AwsIamPolicy: ").append(getAwsIamPolicy()).append(",");
+        if (getAwsDynamoDbTable() != null)
+            sb.append("AwsDynamoDbTable: ").append(getAwsDynamoDbTable()).append(",");
         if (getAwsIamRole() != null)
             sb.append("AwsIamRole: ").append(getAwsIamRole()).append(",");
         if (getAwsKmsKey() != null)
@@ -1290,6 +1668,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsSqsQueue: ").append(getAwsSqsQueue()).append(",");
         if (getAwsWafWebAcl() != null)
             sb.append("AwsWafWebAcl: ").append(getAwsWafWebAcl()).append(",");
+        if (getAwsRdsDbSnapshot() != null)
+            sb.append("AwsRdsDbSnapshot: ").append(getAwsRdsDbSnapshot()).append(",");
+        if (getAwsRdsDbClusterSnapshot() != null)
+            sb.append("AwsRdsDbClusterSnapshot: ").append(getAwsRdsDbClusterSnapshot()).append(",");
+        if (getAwsRdsDbCluster() != null)
+            sb.append("AwsRdsDbCluster: ").append(getAwsRdsDbCluster()).append(",");
         if (getContainer() != null)
             sb.append("Container: ").append(getContainer()).append(",");
         if (getOther() != null)
@@ -1341,6 +1725,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsEc2Vpc() != null && other.getAwsEc2Vpc().equals(this.getAwsEc2Vpc()) == false)
             return false;
+        if (other.getAwsEc2Eip() == null ^ this.getAwsEc2Eip() == null)
+            return false;
+        if (other.getAwsEc2Eip() != null && other.getAwsEc2Eip().equals(this.getAwsEc2Eip()) == false)
+            return false;
         if (other.getAwsElbv2LoadBalancer() == null ^ this.getAwsElbv2LoadBalancer() == null)
             return false;
         if (other.getAwsElbv2LoadBalancer() != null && other.getAwsElbv2LoadBalancer().equals(this.getAwsElbv2LoadBalancer()) == false)
@@ -1357,9 +1745,25 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsS3Object() != null && other.getAwsS3Object().equals(this.getAwsS3Object()) == false)
             return false;
+        if (other.getAwsSecretsManagerSecret() == null ^ this.getAwsSecretsManagerSecret() == null)
+            return false;
+        if (other.getAwsSecretsManagerSecret() != null && other.getAwsSecretsManagerSecret().equals(this.getAwsSecretsManagerSecret()) == false)
+            return false;
         if (other.getAwsIamAccessKey() == null ^ this.getAwsIamAccessKey() == null)
             return false;
         if (other.getAwsIamAccessKey() != null && other.getAwsIamAccessKey().equals(this.getAwsIamAccessKey()) == false)
+            return false;
+        if (other.getAwsIamUser() == null ^ this.getAwsIamUser() == null)
+            return false;
+        if (other.getAwsIamUser() != null && other.getAwsIamUser().equals(this.getAwsIamUser()) == false)
+            return false;
+        if (other.getAwsIamPolicy() == null ^ this.getAwsIamPolicy() == null)
+            return false;
+        if (other.getAwsIamPolicy() != null && other.getAwsIamPolicy().equals(this.getAwsIamPolicy()) == false)
+            return false;
+        if (other.getAwsDynamoDbTable() == null ^ this.getAwsDynamoDbTable() == null)
+            return false;
+        if (other.getAwsDynamoDbTable() != null && other.getAwsDynamoDbTable().equals(this.getAwsDynamoDbTable()) == false)
             return false;
         if (other.getAwsIamRole() == null ^ this.getAwsIamRole() == null)
             return false;
@@ -1393,6 +1797,18 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsWafWebAcl() != null && other.getAwsWafWebAcl().equals(this.getAwsWafWebAcl()) == false)
             return false;
+        if (other.getAwsRdsDbSnapshot() == null ^ this.getAwsRdsDbSnapshot() == null)
+            return false;
+        if (other.getAwsRdsDbSnapshot() != null && other.getAwsRdsDbSnapshot().equals(this.getAwsRdsDbSnapshot()) == false)
+            return false;
+        if (other.getAwsRdsDbClusterSnapshot() == null ^ this.getAwsRdsDbClusterSnapshot() == null)
+            return false;
+        if (other.getAwsRdsDbClusterSnapshot() != null && other.getAwsRdsDbClusterSnapshot().equals(this.getAwsRdsDbClusterSnapshot()) == false)
+            return false;
+        if (other.getAwsRdsDbCluster() == null ^ this.getAwsRdsDbCluster() == null)
+            return false;
+        if (other.getAwsRdsDbCluster() != null && other.getAwsRdsDbCluster().equals(this.getAwsRdsDbCluster()) == false)
+            return false;
         if (other.getContainer() == null ^ this.getContainer() == null)
             return false;
         if (other.getContainer() != null && other.getContainer().equals(this.getContainer()) == false)
@@ -1417,11 +1833,16 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsEc2SecurityGroup() == null) ? 0 : getAwsEc2SecurityGroup().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Volume() == null) ? 0 : getAwsEc2Volume().hashCode());
         hashCode = prime * hashCode + ((getAwsEc2Vpc() == null) ? 0 : getAwsEc2Vpc().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2Eip() == null) ? 0 : getAwsEc2Eip().hashCode());
         hashCode = prime * hashCode + ((getAwsElbv2LoadBalancer() == null) ? 0 : getAwsElbv2LoadBalancer().hashCode());
         hashCode = prime * hashCode + ((getAwsElasticsearchDomain() == null) ? 0 : getAwsElasticsearchDomain().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Bucket() == null) ? 0 : getAwsS3Bucket().hashCode());
         hashCode = prime * hashCode + ((getAwsS3Object() == null) ? 0 : getAwsS3Object().hashCode());
+        hashCode = prime * hashCode + ((getAwsSecretsManagerSecret() == null) ? 0 : getAwsSecretsManagerSecret().hashCode());
         hashCode = prime * hashCode + ((getAwsIamAccessKey() == null) ? 0 : getAwsIamAccessKey().hashCode());
+        hashCode = prime * hashCode + ((getAwsIamUser() == null) ? 0 : getAwsIamUser().hashCode());
+        hashCode = prime * hashCode + ((getAwsIamPolicy() == null) ? 0 : getAwsIamPolicy().hashCode());
+        hashCode = prime * hashCode + ((getAwsDynamoDbTable() == null) ? 0 : getAwsDynamoDbTable().hashCode());
         hashCode = prime * hashCode + ((getAwsIamRole() == null) ? 0 : getAwsIamRole().hashCode());
         hashCode = prime * hashCode + ((getAwsKmsKey() == null) ? 0 : getAwsKmsKey().hashCode());
         hashCode = prime * hashCode + ((getAwsLambdaFunction() == null) ? 0 : getAwsLambdaFunction().hashCode());
@@ -1430,6 +1851,9 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsSnsTopic() == null) ? 0 : getAwsSnsTopic().hashCode());
         hashCode = prime * hashCode + ((getAwsSqsQueue() == null) ? 0 : getAwsSqsQueue().hashCode());
         hashCode = prime * hashCode + ((getAwsWafWebAcl() == null) ? 0 : getAwsWafWebAcl().hashCode());
+        hashCode = prime * hashCode + ((getAwsRdsDbSnapshot() == null) ? 0 : getAwsRdsDbSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getAwsRdsDbClusterSnapshot() == null) ? 0 : getAwsRdsDbClusterSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getAwsRdsDbCluster() == null) ? 0 : getAwsRdsDbCluster().hashCode());
         hashCode = prime * hashCode + ((getContainer() == null) ? 0 : getContainer().hashCode());
         hashCode = prime * hashCode + ((getOther() == null) ? 0 : getOther().hashCode());
         return hashCode;

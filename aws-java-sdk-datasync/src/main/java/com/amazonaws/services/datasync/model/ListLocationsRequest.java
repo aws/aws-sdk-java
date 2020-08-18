@@ -41,6 +41,8 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
     private String nextToken;
 
+    private java.util.List<LocationFilter> filters;
+
     /**
      * <p>
      * The maximum number of locations to return.
@@ -122,6 +124,58 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<LocationFilter> getFilters() {
+        return filters;
+    }
+
+    /**
+     * @param filters
+     */
+
+    public void setFilters(java.util.Collection<LocationFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new java.util.ArrayList<LocationFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListLocationsRequest withFilters(LocationFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new java.util.ArrayList<LocationFilter>(filters.length));
+        }
+        for (LocationFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param filters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListLocationsRequest withFilters(java.util.Collection<LocationFilter> filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +190,9 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +215,10 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +229,7 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

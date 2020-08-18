@@ -1,4 +1,29 @@
-# __1.11.844__ __2020-08-17__
+# __1.11.845__ __2020-08-18__
+## __AWS CodeBuild__
+  - ### Features
+    - Documentation updates for codebuild
+
+## __AWS DataSync__
+  - ### Features
+    - DataSync support for filters as input arguments to the ListTasks and ListLocations API calls.
+
+## __AWS SSO Identity Store__
+  - ### Features
+    - AWS Single Sign-On (SSO) Identity Store service provides an interface to retrieve all of your users and groups. It enables entitlement management per user or group for AWS SSO and other IDPs.
+
+## __AWS SecurityHub__
+  - ### Features
+    - New details for DynamoDB tables, Elastic IP addresses, IAM policies and users, RDS DB clusters and snapshots, and Secrets Manager secrets. Added details for AWS KMS keys and RDS DB instances.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Adding the option to use a service linked role to publish events to Pinpoint.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - This release includes new APIs to allow customers to add or remove email addresses from their account-level suppression list in bulk.
+
+# __1.11.844__ __2020-08-18__
 ## __AWS Certificate Manager__
   - ### Features
     - ACM provides support for the new Private CA feature Cross-account CA sharing. ACM users can issue certificates signed by a private CA belonging to another account where the CA was shared with them.

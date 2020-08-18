@@ -491,6 +491,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Creates an import job for a data destination.
+     * </p>
+     * 
+     * @param createImportJobRequest
+     *        Represents a request to create an import job from a data source for a data destination.
+     * @return A Java Future containing the result of the CreateImportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.CreateImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest createImportJobRequest);
+
+    /**
+     * <p>
+     * Creates an import job for a data destination.
+     * </p>
+     * 
+     * @param createImportJobRequest
+     *        Represents a request to create an import job from a data source for a data destination.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateImportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.CreateImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest createImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateImportJobRequest, CreateImportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an existing configuration set.
      * </p>
      * <p>
@@ -1461,6 +1494,39 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
 
     /**
      * <p>
+     * Provides information about an import job.
+     * </p>
+     * 
+     * @param getImportJobRequest
+     *        Represents a request for information about an import job using the import job ID.
+     * @return A Java Future containing the result of the GetImportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest getImportJobRequest);
+
+    /**
+     * <p>
+     * Provides information about an import job.
+     * </p>
+     * 
+     * @param getImportJobRequest
+     *        Represents a request for information about an import job using the import job ID.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetImportJob operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest getImportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves information about a specific email address that's on the suppression list for your account.
      * </p>
      * 
@@ -1790,6 +1856,41 @@ public interface AmazonSimpleEmailServiceV2Async extends AmazonSimpleEmailServic
      */
     java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest listEmailTemplatesRequest,
             com.amazonaws.handlers.AsyncHandler<ListEmailTemplatesRequest, ListEmailTemplatesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all of the import jobs.
+     * </p>
+     * 
+     * @param listImportJobsRequest
+     *        Represents a request to list all of the import jobs for a data destination within the specified maximum
+     *        number of import jobs.
+     * @return A Java Future containing the result of the ListImportJobs operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2Async.ListImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest listImportJobsRequest);
+
+    /**
+     * <p>
+     * Lists all of the import jobs.
+     * </p>
+     * 
+     * @param listImportJobsRequest
+     *        Represents a request to list all of the import jobs for a data destination within the specified maximum
+     *        number of import jobs.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListImportJobs operation returned by the service.
+     * @sample AmazonSimpleEmailServiceV2AsyncHandler.ListImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest listImportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListImportJobsRequest, ListImportJobsResult> asyncHandler);
 
     /**
      * <p>

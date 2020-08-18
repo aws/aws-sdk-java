@@ -68,6 +68,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public CreateImportJobResult createImportJob(CreateImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteConfigurationSetResult deleteConfigurationSet(DeleteConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -178,6 +183,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public GetImportJobResult getImportJob(GetImportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSuppressedDestinationResult getSuppressedDestination(GetSuppressedDestinationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +224,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public ListEmailTemplatesResult listEmailTemplates(ListEmailTemplatesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImportJobsResult listImportJobs(ListImportJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

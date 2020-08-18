@@ -52,6 +52,10 @@ public class AnalyticsConfigurationTypeJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     analyticsConfigurationType.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ApplicationArn", targetDepth)) {
+                    context.nextToken();
+                    analyticsConfigurationType.setApplicationArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
                     analyticsConfigurationType.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

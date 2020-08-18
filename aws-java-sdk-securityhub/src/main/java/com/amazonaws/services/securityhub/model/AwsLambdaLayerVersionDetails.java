@@ -48,7 +48,12 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
     private java.util.List<String> compatibleRuntimes;
     /**
      * <p>
-     * The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     * Indicates when the version was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String createdDate;
@@ -209,11 +214,20 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     * Indicates when the version was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdDate
-     *        The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     *        Indicates when the version was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreatedDate(String createdDate) {
@@ -222,10 +236,19 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     * Indicates when the version was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     * @return Indicates when the version was created.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getCreatedDate() {
@@ -234,11 +257,20 @@ public class AwsLambdaLayerVersionDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     * Indicates when the version was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdDate
-     *        The date that the version was created, in ISO 8601 format. For example, 2018-11-27T15:10:45.123+0000.
+     *        Indicates when the version was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

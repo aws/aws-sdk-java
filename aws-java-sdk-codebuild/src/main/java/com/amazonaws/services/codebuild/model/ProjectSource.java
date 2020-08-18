@@ -88,7 +88,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -99,13 +99,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -672,7 +672,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -683,13 +683,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -733,7 +733,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
      *        source code and the buildspec file (for example,
-     *        <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     *        <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -744,13 +744,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        The path to the ZIP file that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The path to the folder that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      *        </p>
      *        </li>
      *        </ul>
@@ -802,7 +802,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -813,13 +813,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -862,7 +862,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
      *         source code and the buildspec file (for example,
-     *         <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     *         <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -873,13 +873,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         The path to the ZIP file that contains the source code (for example,
-     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *         <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         The path to the folder that contains the source code (for example,
-     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *         <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      *         </p>
      *         </li>
      *         </ul>
@@ -931,7 +931,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
@@ -942,13 +942,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -992,7 +992,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
      *        source code and the buildspec file (for example,
-     *        <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     *        <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1003,13 +1003,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        The path to the ZIP file that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The path to the folder that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      *        </p>
      *        </li>
      *        </ul>

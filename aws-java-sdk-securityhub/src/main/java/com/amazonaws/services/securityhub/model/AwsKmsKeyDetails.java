@@ -36,7 +36,12 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
     private String aWSAccountId;
     /**
      * <p>
-     * The date and time when the CMK was created.
+     * Indicates when the CMK was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private Double creationDate;
@@ -75,6 +80,12 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String origin;
+    /**
+     * <p>
+     * A description of the key.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
@@ -118,11 +129,20 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time when the CMK was created.
+     * Indicates when the CMK was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param creationDate
-     *        The date and time when the CMK was created.
+     *        Indicates when the CMK was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreationDate(Double creationDate) {
@@ -131,10 +151,19 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time when the CMK was created.
+     * Indicates when the CMK was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time when the CMK was created.
+     * @return Indicates when the CMK was created.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public Double getCreationDate() {
@@ -143,11 +172,20 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The date and time when the CMK was created.
+     * Indicates when the CMK was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param creationDate
-     *        The date and time when the CMK was created.
+     *        Indicates when the CMK was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,6 +418,46 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A description of the key.
+     * </p>
+     * 
+     * @param description
+     *        A description of the key.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * A description of the key.
+     * </p>
+     * 
+     * @return A description of the key.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * A description of the key.
+     * </p>
+     * 
+     * @param description
+     *        A description of the key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsKmsKeyDetails withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -402,7 +480,9 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
         if (getKeyState() != null)
             sb.append("KeyState: ").append(getKeyState()).append(",");
         if (getOrigin() != null)
-            sb.append("Origin: ").append(getOrigin());
+            sb.append("Origin: ").append(getOrigin()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -441,6 +521,10 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getOrigin() != null && other.getOrigin().equals(this.getOrigin()) == false)
             return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +539,7 @@ public class AwsKmsKeyDetails implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getKeyManager() == null) ? 0 : getKeyManager().hashCode());
         hashCode = prime * hashCode + ((getKeyState() == null) ? 0 : getKeyState().hashCode());
         hashCode = prime * hashCode + ((getOrigin() == null) ? 0 : getOrigin().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

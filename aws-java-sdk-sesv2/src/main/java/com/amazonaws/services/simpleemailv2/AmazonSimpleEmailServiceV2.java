@@ -348,6 +348,26 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Creates an import job for a data destination.
+     * </p>
+     * 
+     * @param createImportJobRequest
+     *        Represents a request to create an import job from a data source for a data destination.
+     * @return Result of the CreateImportJob operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.CreateImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateImportJobResult createImportJob(CreateImportJobRequest createImportJobRequest);
+
+    /**
+     * <p>
      * Delete an existing configuration set.
      * </p>
      * <p>
@@ -902,6 +922,26 @@ public interface AmazonSimpleEmailServiceV2 {
 
     /**
      * <p>
+     * Provides information about an import job.
+     * </p>
+     * 
+     * @param getImportJobRequest
+     *        Represents a request for information about an import job using the import job ID.
+     * @return Result of the GetImportJob operation returned by the service.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @sample AmazonSimpleEmailServiceV2.GetImportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetImportJob" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetImportJobResult getImportJob(GetImportJobRequest getImportJobRequest);
+
+    /**
+     * <p>
      * Retrieves information about a specific email address that's on the suppression list for your account.
      * </p>
      * 
@@ -1078,6 +1118,25 @@ public interface AmazonSimpleEmailServiceV2 {
      *      Documentation</a>
      */
     ListEmailTemplatesResult listEmailTemplates(ListEmailTemplatesRequest listEmailTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists all of the import jobs.
+     * </p>
+     * 
+     * @param listImportJobsRequest
+     *        Represents a request to list all of the import jobs for a data destination within the specified maximum
+     *        number of import jobs.
+     * @return Result of the ListImportJobs operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonSimpleEmailServiceV2.ListImportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListImportJobs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListImportJobsResult listImportJobs(ListImportJobsRequest listImportJobsRequest);
 
     /**
      * <p>

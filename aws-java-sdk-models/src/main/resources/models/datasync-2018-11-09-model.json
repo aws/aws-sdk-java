@@ -1414,6 +1414,12 @@
         "FIPS"
       ]
     },
+    "FilterAttributeValue":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^[0-9a-zA-Z_\\ \\-\\:\\*\\.\\\\/\\?-]*$"
+    },
     "FilterList":{
       "type":"list",
       "member":{"shape":"FilterRule"},
@@ -1444,6 +1450,10 @@
       "type":"string",
       "max":409600,
       "pattern":"^[^\\x00]+$"
+    },
+    "FilterValues":{
+      "type":"list",
+      "member":{"shape":"FilterAttributeValue"}
     },
     "FsxFilesystemArn":{
       "type":"string",
@@ -1532,7 +1542,8 @@
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>An opaque string that indicates the position at which to begin the next list of locations.</p>"
-        }
+        },
+        "Filters":{"shape":"LocationFilters"}
       },
       "documentation":"<p>ListLocationsRequest</p>"
     },
@@ -1625,7 +1636,8 @@
         "NextToken":{
           "shape":"NextToken",
           "documentation":"<p>An opaque string that indicates the position at which to begin the next list of tasks.</p>"
-        }
+        },
+        "Filters":{"shape":"TaskFilters"}
       },
       "documentation":"<p>ListTasksRequest</p>"
     },
@@ -1647,6 +1659,31 @@
       "type":"string",
       "max":128,
       "pattern":"^arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b):datasync:[a-z\\-0-9]+:[0-9]{12}:location/loc-[0-9a-z]{17}$"
+    },
+    "LocationFilter":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Values",
+        "Operator"
+      ],
+      "members":{
+        "Name":{"shape":"LocationFilterName"},
+        "Values":{"shape":"FilterValues"},
+        "Operator":{"shape":"Operator"}
+      }
+    },
+    "LocationFilterName":{
+      "type":"string",
+      "enum":[
+        "LocationUri",
+        "LocationType",
+        "CreationTime"
+      ]
+    },
+    "LocationFilters":{
+      "type":"list",
+      "member":{"shape":"LocationFilter"}
     },
     "LocationList":{
       "type":"list",
@@ -1772,6 +1809,21 @@
         }
       },
       "documentation":"<p>A list of Amazon Resource Names (ARNs) of agents to use for a Network File System (NFS) location.</p>"
+    },
+    "Operator":{
+      "type":"string",
+      "enum":[
+        "Equals",
+        "NotEquals",
+        "In",
+        "LessThanOrEqual",
+        "LessThan",
+        "GreaterThanOrEqual",
+        "GreaterThan",
+        "Contains",
+        "NotContains",
+        "BeginsWith"
+      ]
     },
     "Options":{
       "type":"structure",
@@ -2160,6 +2212,30 @@
         "SUCCESS",
         "ERROR"
       ]
+    },
+    "TaskFilter":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Values",
+        "Operator"
+      ],
+      "members":{
+        "Name":{"shape":"TaskFilterName"},
+        "Values":{"shape":"FilterValues"},
+        "Operator":{"shape":"Operator"}
+      }
+    },
+    "TaskFilterName":{
+      "type":"string",
+      "enum":[
+        "LocationId",
+        "CreationTime"
+      ]
+    },
+    "TaskFilters":{
+      "type":"list",
+      "member":{"shape":"TaskFilter"}
     },
     "TaskList":{
       "type":"list",

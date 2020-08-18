@@ -21,7 +21,9 @@ import javax.annotation.Generated;
 public enum StringFilterComparison {
 
     EQUALS("EQUALS"),
-    PREFIX("PREFIX");
+    PREFIX("PREFIX"),
+    NOT_EQUALS("NOT_EQUALS"),
+    PREFIX_NOT_EQUALS("PREFIX_NOT_EQUALS");
 
     private String value;
 

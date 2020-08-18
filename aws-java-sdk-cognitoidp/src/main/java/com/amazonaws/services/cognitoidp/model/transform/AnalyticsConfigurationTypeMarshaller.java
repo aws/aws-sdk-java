@@ -29,6 +29,8 @@ public class AnalyticsConfigurationTypeMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<String> APPLICATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationArn").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +55,7 @@ public class AnalyticsConfigurationTypeMarshaller {
 
         try {
             protocolMarshaller.marshall(analyticsConfigurationType.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(analyticsConfigurationType.getApplicationArn(), APPLICATIONARN_BINDING);
             protocolMarshaller.marshall(analyticsConfigurationType.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(analyticsConfigurationType.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(analyticsConfigurationType.getUserDataShared(), USERDATASHARED_BINDING);

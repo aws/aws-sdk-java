@@ -81,29 +81,47 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     private java.util.List<String> types;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String firstObservedAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String lastObservedAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential security
-     * issue that a finding captured.
+     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String createdAt;
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * Indicates when the security-findings provider last updated the finding record.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String updatedAt;
@@ -595,13 +613,22 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *        potential security issue that a finding captured.
+     *        Indicates when the security-findings provider first observed the potential security issue that a finding
+     *        captured.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setFirstObservedAt(String firstObservedAt) {
@@ -610,12 +637,21 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *         potential security issue that a finding captured.
+     * @return Indicates when the security-findings provider first observed the potential security issue that a finding
+     *         captured.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getFirstObservedAt() {
@@ -624,13 +660,22 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the potential
-     * security issue that a finding captured.
+     * Indicates when the security-findings provider first observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param firstObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider first observed the
-     *        potential security issue that a finding captured.
+     *        Indicates when the security-findings provider first observed the potential security issue that a finding
+     *        captured.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,13 +686,22 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *        the potential security issue that a finding captured.
+     *        Indicates when the security-findings provider most recently observed the potential security issue that a
+     *        finding captured.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setLastObservedAt(String lastObservedAt) {
@@ -656,12 +710,21 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *         the potential security issue that a finding captured.
+     * @return Indicates when the security-findings provider most recently observed the potential security issue that a
+     *         finding captured.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getLastObservedAt() {
@@ -670,13 +733,22 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed the
-     * potential security issue that a finding captured.
+     * Indicates when the security-findings provider most recently observed the potential security issue that a finding
+     * captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param lastObservedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider most recently observed
-     *        the potential security issue that a finding captured.
+     *        Indicates when the security-findings provider most recently observed the potential security issue that a
+     *        finding captured.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,13 +759,21 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential security
-     * issue that a finding captured.
+     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential
-     *        security issue that a finding captured.
+     *        Indicates when the security-findings provider created the potential security issue that a finding
+     *        captured.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -702,12 +782,20 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential security
-     * issue that a finding captured.
+     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential
-     *         security issue that a finding captured.
+     * @return Indicates when the security-findings provider created the potential security issue that a finding
+     *         captured.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getCreatedAt() {
@@ -716,13 +804,21 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential security
-     * issue that a finding captured.
+     * Indicates when the security-findings provider created the potential security issue that a finding captured.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider created the potential
-     *        security issue that a finding captured.
+     *        Indicates when the security-findings provider created the potential security issue that a finding
+     *        captured.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -733,13 +829,20 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * Indicates when the security-findings provider last updated the finding record.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     *        record.
+     *        Indicates when the security-findings provider last updated the finding record.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -748,12 +851,19 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * Indicates when the security-findings provider last updated the finding record.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the
-     *         finding record.
+     * @return Indicates when the security-findings provider last updated the finding record.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getUpdatedAt() {
@@ -762,13 +872,20 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     * record.
+     * Indicates when the security-findings provider last updated the finding record.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param updatedAt
-     *        An ISO8601-formatted timestamp that indicates when the security-findings provider last updated the finding
-     *        record.
+     *        Indicates when the security-findings provider last updated the finding record.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

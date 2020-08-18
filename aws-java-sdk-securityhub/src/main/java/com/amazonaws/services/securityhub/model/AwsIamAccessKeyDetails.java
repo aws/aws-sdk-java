@@ -47,7 +47,12 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
     private String status;
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String createdAt;
@@ -192,11 +197,20 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        The creation date/time of the IAM access key related to a finding.
+     *        Indicates when the IAM access key was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -205,10 +219,19 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The creation date/time of the IAM access key related to a finding.
+     * @return Indicates when the IAM access key was created.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getCreatedAt() {
@@ -217,11 +240,20 @@ public class AwsIamAccessKeyDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The creation date/time of the IAM access key related to a finding.
+     * Indicates when the IAM access key was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        The creation date/time of the IAM access key related to a finding.
+     *        Indicates when the IAM access key was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

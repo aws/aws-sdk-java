@@ -80,6 +80,10 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsEc2Vpc(AwsEc2VpcDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsEc2Eip", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2Eip(AwsEc2EipDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsElbv2LoadBalancer", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsElbv2LoadBalancer(AwsElbv2LoadBalancerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -96,9 +100,25 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsS3Object(AwsS3ObjectDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsSecretsManagerSecret", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsSecretsManagerSecret(AwsSecretsManagerSecretDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsIamAccessKey", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsIamAccessKey(AwsIamAccessKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsIamUser", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsIamUser(AwsIamUserDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsIamPolicy", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsIamPolicy(AwsIamPolicyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsDynamoDbTable", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsDynamoDbTable(AwsDynamoDbTableDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsIamRole", targetDepth)) {
                     context.nextToken();
@@ -131,6 +151,18 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 if (context.testExpression("AwsWafWebAcl", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsWafWebAcl(AwsWafWebAclDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsRdsDbSnapshot", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsRdsDbSnapshot(AwsRdsDbSnapshotDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsRdsDbClusterSnapshot", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsRdsDbClusterSnapshot(AwsRdsDbClusterSnapshotDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsRdsDbCluster", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsRdsDbCluster(AwsRdsDbClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Container", targetDepth)) {
                     context.nextToken();

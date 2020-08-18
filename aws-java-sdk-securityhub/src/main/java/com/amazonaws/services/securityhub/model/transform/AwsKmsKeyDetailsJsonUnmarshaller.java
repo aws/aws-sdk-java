@@ -72,6 +72,10 @@ public class AwsKmsKeyDetailsJsonUnmarshaller implements Unmarshaller<AwsKmsKeyD
                     context.nextToken();
                     awsKmsKeyDetails.setOrigin(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Description", targetDepth)) {
+                    context.nextToken();
+                    awsKmsKeyDetails.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

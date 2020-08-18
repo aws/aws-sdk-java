@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MapFilterComparison {
 
-    EQUALS("EQUALS");
+    EQUALS("EQUALS"),
+    NOT_EQUALS("NOT_EQUALS");
 
     private String value;
 

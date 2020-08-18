@@ -36,7 +36,12 @@ public class AwsIamRoleDetails implements Serializable, Cloneable, StructuredPoj
     private String assumeRolePolicyDocument;
     /**
      * <p>
-     * The date and time, in ISO 8601 date-time format, when the role was created.
+     * Indicates when the role was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String createDate;
@@ -107,11 +112,20 @@ public class AwsIamRoleDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date and time, in ISO 8601 date-time format, when the role was created.
+     * Indicates when the role was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createDate
-     *        The date and time, in ISO 8601 date-time format, when the role was created.
+     *        Indicates when the role was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreateDate(String createDate) {
@@ -120,10 +134,19 @@ public class AwsIamRoleDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date and time, in ISO 8601 date-time format, when the role was created.
+     * Indicates when the role was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time, in ISO 8601 date-time format, when the role was created.
+     * @return Indicates when the role was created.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getCreateDate() {
@@ -132,11 +155,20 @@ public class AwsIamRoleDetails implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date and time, in ISO 8601 date-time format, when the role was created.
+     * Indicates when the role was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createDate
-     *        The date and time, in ISO 8601 date-time format, when the role was created.
+     *        Indicates when the role was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

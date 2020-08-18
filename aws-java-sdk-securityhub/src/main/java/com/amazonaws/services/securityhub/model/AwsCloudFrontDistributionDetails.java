@@ -42,7 +42,12 @@ public class AwsCloudFrontDistributionDetails implements Serializable, Cloneable
     private String eTag;
     /**
      * <p>
-     * The date and time that the distribution was last modified.
+     * Indicates when that the distribution was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String lastModifiedTime;
@@ -153,11 +158,20 @@ public class AwsCloudFrontDistributionDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date and time that the distribution was last modified.
+     * Indicates when that the distribution was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the distribution was last modified.
+     *        Indicates when that the distribution was last modified.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setLastModifiedTime(String lastModifiedTime) {
@@ -166,10 +180,19 @@ public class AwsCloudFrontDistributionDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date and time that the distribution was last modified.
+     * Indicates when that the distribution was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time that the distribution was last modified.
+     * @return Indicates when that the distribution was last modified.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getLastModifiedTime() {
@@ -178,11 +201,20 @@ public class AwsCloudFrontDistributionDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date and time that the distribution was last modified.
+     * Indicates when that the distribution was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the distribution was last modified.
+     *        Indicates when that the distribution was last modified.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

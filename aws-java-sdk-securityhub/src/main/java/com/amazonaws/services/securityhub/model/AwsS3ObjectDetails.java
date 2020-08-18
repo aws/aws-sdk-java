@@ -30,7 +30,12 @@ public class AwsS3ObjectDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the object was last modified.
+     * Indicates when the object was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String lastModified;
@@ -69,11 +74,20 @@ public class AwsS3ObjectDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the object was last modified.
+     * Indicates when the object was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param lastModified
-     *        The date and time when the object was last modified.
+     *        Indicates when the object was last modified.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setLastModified(String lastModified) {
@@ -82,10 +96,19 @@ public class AwsS3ObjectDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the object was last modified.
+     * Indicates when the object was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time when the object was last modified.
+     * @return Indicates when the object was last modified.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getLastModified() {
@@ -94,11 +117,20 @@ public class AwsS3ObjectDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the object was last modified.
+     * Indicates when the object was last modified.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param lastModified
-     *        The date and time when the object was last modified.
+     *        Indicates when the object was last modified.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

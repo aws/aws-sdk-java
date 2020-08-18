@@ -136,6 +136,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest request) {
+
+        return createImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateImportJobRequest, CreateImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest request) {
 
         return deleteConfigurationSetAsync(request, null);
@@ -434,6 +447,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     }
 
     @Override
+    public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request) {
+
+        return getImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest request) {
 
         return getSuppressedDestinationAsync(request, null);
@@ -537,6 +563,19 @@ public class AbstractAmazonSimpleEmailServiceV2Async extends AbstractAmazonSimpl
     @Override
     public java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEmailTemplatesRequest, ListEmailTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest request) {
+
+        return listImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImportJobsRequest, ListImportJobsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
