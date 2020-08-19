@@ -133,7 +133,7 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      */
     private String mediumChangerType;
@@ -549,13 +549,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *        <p>
-     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      */
 
     public void setMediumChangerType(String mediumChangerType) {
@@ -567,12 +567,12 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @return The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *         <p>
-     *         Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     *         Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      */
 
     public String getMediumChangerType() {
@@ -584,13 +584,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * The value that indicates the type of medium changer to use for tape gateway. This field is optional.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @param mediumChangerType
      *        The value that indicates the type of medium changer to use for tape gateway. This field is optional.</p>
      *        <p>
-     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

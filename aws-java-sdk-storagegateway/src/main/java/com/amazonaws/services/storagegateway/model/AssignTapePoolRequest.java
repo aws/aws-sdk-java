@@ -42,6 +42,18 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String poolId;
+    /**
+     * <p>
+     * Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>,
+     * the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This
+     * parameter is set to true by default for calls from the console.
+     * </p>
+     * <p>
+     * Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     */
+    private Boolean bypassGovernanceRetention;
 
     /**
      * <p>
@@ -154,6 +166,106 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>,
+     * the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This
+     * parameter is set to true by default for calls from the console.
+     * </p>
+     * <p>
+     * Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     * 
+     * @param bypassGovernanceRetention
+     *        Set permissions to bypass governance retention. If the lock type of the archived tape is
+     *        <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and
+     *        the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the
+     *        user to bypass the retention lock. This parameter is set to true by default for calls from the
+     *        console.</p>
+     *        <p>
+     *        Valid values: <code>TRUE</code> | <code>FALSE</code>
+     */
+
+    public void setBypassGovernanceRetention(Boolean bypassGovernanceRetention) {
+        this.bypassGovernanceRetention = bypassGovernanceRetention;
+    }
+
+    /**
+     * <p>
+     * Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>,
+     * the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This
+     * parameter is set to true by default for calls from the console.
+     * </p>
+     * <p>
+     * Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     * 
+     * @return Set permissions to bypass governance retention. If the lock type of the archived tape is
+     *         <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and
+     *         the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the
+     *         user to bypass the retention lock. This parameter is set to true by default for calls from the
+     *         console.</p>
+     *         <p>
+     *         Valid values: <code>TRUE</code> | <code>FALSE</code>
+     */
+
+    public Boolean getBypassGovernanceRetention() {
+        return this.bypassGovernanceRetention;
+    }
+
+    /**
+     * <p>
+     * Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>,
+     * the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This
+     * parameter is set to true by default for calls from the console.
+     * </p>
+     * <p>
+     * Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     * 
+     * @param bypassGovernanceRetention
+     *        Set permissions to bypass governance retention. If the lock type of the archived tape is
+     *        <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and
+     *        the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the
+     *        user to bypass the retention lock. This parameter is set to true by default for calls from the
+     *        console.</p>
+     *        <p>
+     *        Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssignTapePoolRequest withBypassGovernanceRetention(Boolean bypassGovernanceRetention) {
+        setBypassGovernanceRetention(bypassGovernanceRetention);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set permissions to bypass governance retention. If the lock type of the archived tape is <code>Governance</code>,
+     * the tape's archived age is not older than <code>RetentionLockInDays</code>, and the user does not already have
+     * <code>BypassGovernanceRetention</code>, setting this to TRUE enables the user to bypass the retention lock. This
+     * parameter is set to true by default for calls from the console.
+     * </p>
+     * <p>
+     * Valid values: <code>TRUE</code> | <code>FALSE</code>
+     * </p>
+     * 
+     * @return Set permissions to bypass governance retention. If the lock type of the archived tape is
+     *         <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>, and
+     *         the user does not already have <code>BypassGovernanceRetention</code>, setting this to TRUE enables the
+     *         user to bypass the retention lock. This parameter is set to true by default for calls from the
+     *         console.</p>
+     *         <p>
+     *         Valid values: <code>TRUE</code> | <code>FALSE</code>
+     */
+
+    public Boolean isBypassGovernanceRetention() {
+        return this.bypassGovernanceRetention;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -168,7 +280,9 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getTapeARN() != null)
             sb.append("TapeARN: ").append(getTapeARN()).append(",");
         if (getPoolId() != null)
-            sb.append("PoolId: ").append(getPoolId());
+            sb.append("PoolId: ").append(getPoolId()).append(",");
+        if (getBypassGovernanceRetention() != null)
+            sb.append("BypassGovernanceRetention: ").append(getBypassGovernanceRetention());
         sb.append("}");
         return sb.toString();
     }
@@ -191,6 +305,10 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
             return false;
+        if (other.getBypassGovernanceRetention() == null ^ this.getBypassGovernanceRetention() == null)
+            return false;
+        if (other.getBypassGovernanceRetention() != null && other.getBypassGovernanceRetention().equals(this.getBypassGovernanceRetention()) == false)
+            return false;
         return true;
     }
 
@@ -201,6 +319,7 @@ public class AssignTapePoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
         hashCode = prime * hashCode + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
         hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
+        hashCode = prime * hashCode + ((getBypassGovernanceRetention() == null) ? 0 : getBypassGovernanceRetention().hashCode());
         return hashCode;
     }
 

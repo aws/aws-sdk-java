@@ -225,6 +225,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTapePoolResult> createTapePoolAsync(CreateTapePoolRequest request) {
+
+        return createTapePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapePoolResult> createTapePoolAsync(CreateTapePoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTapePoolRequest, CreateTapePoolResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(CreateTapeWithBarcodeRequest request) {
 
         return createTapeWithBarcodeAsync(request, null);
@@ -352,6 +365,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
     @Override
     public java.util.concurrent.Future<DeleteTapeArchiveResult> deleteTapeArchiveAsync(DeleteTapeArchiveRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTapeArchiveRequest, DeleteTapeArchiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTapePoolResult> deleteTapePoolAsync(DeleteTapePoolRequest request) {
+
+        return deleteTapePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTapePoolResult> deleteTapePoolAsync(DeleteTapePoolRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTapePoolRequest, DeleteTapePoolResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -778,6 +804,19 @@ public class AbstractAWSStorageGatewayAsync extends AbstractAWSStorageGateway im
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         return listTagsForResourceAsync(new ListTagsForResourceRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapePoolsResult> listTapePoolsAsync(ListTapePoolsRequest request) {
+
+        return listTapePoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapePoolsResult> listTapePoolsAsync(ListTapePoolsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTapePoolsRequest, ListTapePoolsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

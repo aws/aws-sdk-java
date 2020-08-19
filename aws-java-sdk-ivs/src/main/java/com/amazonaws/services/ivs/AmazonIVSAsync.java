@@ -125,14 +125,21 @@ import com.amazonaws.services.ivs.model.*;
  * <li>
  * <p>
  * Channel — Stores configuration data related to your live stream. You first create a channel and then use the
- * channel’s stream key to start your live stream. See the <a>Channel</a> endpoints for more information.
+ * channel’s stream key to start your live stream. See the Channel endpoints for more information.
  * </p>
  * </li>
  * <li>
  * <p>
  * Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
- * streaming. See the <a>StreamKey</a> endpoints for more information. <i> <b>Treat the stream key like a secret, since
- * it allows anyone to stream to the channel.</b> </i>
+ * streaming. See the StreamKey endpoints for more information. <i> <b>Treat the stream key like a secret, since it
+ * allows anyone to stream to the channel.</b> </i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key
+ * encryption. A playback key pair is the public-private pair of keys used to sign and validate the
+ * playback-authorization token. See the PlaybackKeyPair endpoints for more information.
  * </p>
  * </li>
  * </ul>
@@ -152,13 +159,10 @@ import com.amazonaws.services.ivs.model.*;
  * </p>
  * <p>
  * The Amazon IVS API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
- * <a>ListTagsForResource</a>. The following resources support tagging: Channels and Stream Keys.
+ * <a>ListTagsForResource</a>. The following resources support tagging: Channels, Stream Keys, and Playback Key Pairs.
  * </p>
  * <p>
- * <b>API Endpoints</b>
- * </p>
- * <p>
- * <a>Channel</a>:
+ * <b>Channel Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -195,7 +199,7 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <a>StreamKey</a>:
+ * <b>StreamKey Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -225,7 +229,7 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <a>Stream</a>:
+ * <b>Stream Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -253,7 +257,37 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS Tags</a>:
+ * <b>PlaybackKeyPair Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
+ * grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
+ * tokens, to grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
+ * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>AWS Tags Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -443,6 +477,39 @@ public interface AmazonIVSAsync extends AmazonIVS {
 
     /**
      * <p>
+     * Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s
+     * <code>privateKey</code>.
+     * </p>
+     * 
+     * @param deletePlaybackKeyPairRequest
+     * @return A Java Future containing the result of the DeletePlaybackKeyPair operation returned by the service.
+     * @sample AmazonIVSAsync.DeletePlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePlaybackKeyPairResult> deletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest deletePlaybackKeyPairRequest);
+
+    /**
+     * <p>
+     * Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s
+     * <code>privateKey</code>.
+     * </p>
+     * 
+     * @param deletePlaybackKeyPairRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeletePlaybackKeyPair operation returned by the service.
+     * @sample AmazonIVSAsyncHandler.DeletePlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeletePlaybackKeyPairResult> deletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest deletePlaybackKeyPairRequest,
+            com.amazonaws.handlers.AsyncHandler<DeletePlaybackKeyPairRequest, DeletePlaybackKeyPairResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the stream key for the specified ARN, so it can no longer be used to stream.
      * </p>
      * 
@@ -502,6 +569,41 @@ public interface AmazonIVSAsync extends AmazonIVS {
      */
     java.util.concurrent.Future<GetChannelResult> getChannelAsync(GetChannelRequest getChannelRequest,
             com.amazonaws.handlers.AsyncHandler<GetChannelRequest, GetChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a specified playback authorization key pair and returns the <code>arn</code> and <code>fingerprint</code>.
+     * The <code>privateKey</code> held by the caller can be used to generate viewer authorization tokens, to grant
+     * viewers access to authorized channels.
+     * </p>
+     * 
+     * @param getPlaybackKeyPairRequest
+     * @return A Java Future containing the result of the GetPlaybackKeyPair operation returned by the service.
+     * @sample AmazonIVSAsync.GetPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest getPlaybackKeyPairRequest);
+
+    /**
+     * <p>
+     * Gets a specified playback authorization key pair and returns the <code>arn</code> and <code>fingerprint</code>.
+     * The <code>privateKey</code> held by the caller can be used to generate viewer authorization tokens, to grant
+     * viewers access to authorized channels.
+     * </p>
+     * 
+     * @param getPlaybackKeyPairRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPlaybackKeyPair operation returned by the service.
+     * @sample AmazonIVSAsyncHandler.GetPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest getPlaybackKeyPairRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPlaybackKeyPairRequest, GetPlaybackKeyPairResult> asyncHandler);
 
     /**
      * <p>
@@ -567,6 +669,41 @@ public interface AmazonIVSAsync extends AmazonIVS {
 
     /**
      * <p>
+     * Imports the public portion of a new key pair and returns its <code>arn</code> and <code>fingerprint</code>. The
+     * <code>privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access to
+     * authorized channels.
+     * </p>
+     * 
+     * @param importPlaybackKeyPairRequest
+     * @return A Java Future containing the result of the ImportPlaybackKeyPair operation returned by the service.
+     * @sample AmazonIVSAsync.ImportPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportPlaybackKeyPairResult> importPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest importPlaybackKeyPairRequest);
+
+    /**
+     * <p>
+     * Imports the public portion of a new key pair and returns its <code>arn</code> and <code>fingerprint</code>. The
+     * <code>privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access to
+     * authorized channels.
+     * </p>
+     * 
+     * @param importPlaybackKeyPairRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportPlaybackKeyPair operation returned by the service.
+     * @sample AmazonIVSAsyncHandler.ImportPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportPlaybackKeyPairResult> importPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest importPlaybackKeyPairRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportPlaybackKeyPairRequest, ImportPlaybackKeyPairResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets summary information about all channels in your account, in the AWS region where the API request is
      * processed. This list can be filtered to match a specified string.
      * </p>
@@ -597,6 +734,37 @@ public interface AmazonIVSAsync extends AmazonIVS {
      */
     java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets summary information about playback key pairs.
+     * </p>
+     * 
+     * @param listPlaybackKeyPairsRequest
+     * @return A Java Future containing the result of the ListPlaybackKeyPairs operation returned by the service.
+     * @sample AmazonIVSAsync.ListPlaybackKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest listPlaybackKeyPairsRequest);
+
+    /**
+     * <p>
+     * Gets summary information about playback key pairs.
+     * </p>
+     * 
+     * @param listPlaybackKeyPairsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPlaybackKeyPairs operation returned by the service.
+     * @sample AmazonIVSAsyncHandler.ListPlaybackKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest listPlaybackKeyPairsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPlaybackKeyPairsRequest, ListPlaybackKeyPairsResult> asyncHandler);
 
     /**
      * <p>

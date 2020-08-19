@@ -1,3 +1,28 @@
+# __1.11.846__ __2020-08-19__
+## __AWS Lake Formation__
+  - ### Features
+    - Adding additional field in ListPermissions API response to return RAM resource share ARN if a resource were shared through AWS RAM service.
+
+## __AWS Organizations__
+  - ### Features
+    - Minor documentation updates for AWS Organizations
+
+## __AWS Service Catalog__
+  - ### Features
+    - Enhance SearchProvisionedProducts API to allow queries using productName and provisioningArtifactName. Added lastProvisioningRecordId and lastSuccessfulRecordId to Read ProvisionedProduct APIs
+
+## __AWS Storage Gateway__
+  - ### Features
+    - Added WORM, tape retention lock, and custom pool features for virtual tapes.
+
+## __Amazon Interactive Video Service__
+  - ### Features
+    - Amazon Interactive Video Service (IVS) now offers customers the ability to create private channels, allowing customers to restrict their streams by channel or viewer.
+
+## __Amazon Transcribe Streaming Service__
+  - ### Features
+    - Amazon Transcribe and Amazon Transcribe Medical now enable you to identify different speakers in your real-time streams with speaker identification.
+
 # __1.11.845__ __2020-08-18__
 ## __AWS CodeBuild__
   - ### Features

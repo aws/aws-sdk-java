@@ -45,6 +45,10 @@ public class ProvisionedProductDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
     private static final MarshallingInfo<String> LASTRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRecordId").build();
+    private static final MarshallingInfo<String> LASTPROVISIONINGRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastProvisioningRecordId").build();
+    private static final MarshallingInfo<String> LASTSUCCESSFULPROVISIONINGRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulProvisioningRecordId").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -75,6 +79,8 @@ public class ProvisionedProductDetailMarshaller {
             protocolMarshaller.marshall(provisionedProductDetail.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getLastRecordId(), LASTRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getLastProvisioningRecordId(), LASTPROVISIONINGRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getLastSuccessfulProvisioningRecordId(), LASTSUCCESSFULPROVISIONINGRECORDID_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getProductId(), PRODUCTID_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
         } catch (Exception e) {

@@ -88,6 +88,18 @@ public class TapeJsonUnmarshaller implements Unmarshaller<Tape, JsonUnmarshaller
                     context.nextToken();
                     tape.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Worm", targetDepth)) {
+                    context.nextToken();
+                    tape.setWorm(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("RetentionStartDate", targetDepth)) {
+                    context.nextToken();
+                    tape.setRetentionStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PoolEntryDate", targetDepth)) {
+                    context.nextToken();
+                    tape.setPoolEntryDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

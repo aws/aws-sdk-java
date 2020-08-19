@@ -40,6 +40,8 @@ public class CreateTapeWithBarcodeRequestMarshaller {
             .marshallLocationName("KMSKey").build();
     private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PoolId").build();
+    private static final MarshallingInfo<Boolean> WORM_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Worm").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -65,6 +67,7 @@ public class CreateTapeWithBarcodeRequestMarshaller {
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getKMSEncrypted(), KMSENCRYPTED_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getKMSKey(), KMSKEY_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getPoolId(), POOLID_BINDING);
+            protocolMarshaller.marshall(createTapeWithBarcodeRequest.getWorm(), WORM_BINDING);
             protocolMarshaller.marshall(createTapeWithBarcodeRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

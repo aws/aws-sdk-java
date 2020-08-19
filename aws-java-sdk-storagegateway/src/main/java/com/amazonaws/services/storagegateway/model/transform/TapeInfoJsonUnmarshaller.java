@@ -72,6 +72,14 @@ public class TapeInfoJsonUnmarshaller implements Unmarshaller<TapeInfo, JsonUnma
                     context.nextToken();
                     tapeInfo.setPoolId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("RetentionStartDate", targetDepth)) {
+                    context.nextToken();
+                    tapeInfo.setRetentionStartDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PoolEntryDate", targetDepth)) {
+                    context.nextToken();
+                    tapeInfo.setPoolEntryDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

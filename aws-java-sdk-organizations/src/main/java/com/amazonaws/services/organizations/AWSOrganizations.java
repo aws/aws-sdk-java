@@ -7494,14 +7494,10 @@ public interface AWSOrganizations {
      * You can leave an organization as a member account only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
      * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
-     * collected. For each account that you want to make standalone, you must do the following steps:
+     * collected. For each account that you want to make standalone, you must perform the following steps. If any of the
+     * steps are already completed for this account, that step doesn't appear.
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * Accept the end user license agreement (EULA)
-     * </p>
-     * </li>
      * <li>
      * <p>
      * Choose a support plan
@@ -11538,11 +11534,11 @@ public interface AWSOrganizations {
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
      * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
-     * collected. For an account that you want to make standalone, you must accept the end user license agreement
-     * (EULA), choose a support plan, provide and verify the required contact information, and provide a current payment
-     * method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the
-     * account isn't attached to an organization. To remove an account that doesn't yet have this information, you must
-     * sign in as the member account and follow the steps at <a href=
+     * collected. For an account that you want to make standalone, you must choose a support plan, provide and verify
+     * the required contact information, and provide a current payment method. AWS uses the payment method to charge for
+     * any billable (not free tier) AWS activity that occurs while the account isn't attached to an organization. To
+     * remove an account that doesn't yet have this information, you must sign in as the member account and follow the
+     * steps at <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide.</i>

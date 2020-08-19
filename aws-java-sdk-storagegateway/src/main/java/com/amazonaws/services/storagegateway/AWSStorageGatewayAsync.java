@@ -67,7 +67,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas:</a>
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>:
  * Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
@@ -753,7 +753,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
-     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using an SMB
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using an SMB
      * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
@@ -781,7 +781,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
-     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using an SMB
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using an SMB
      * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
@@ -819,16 +819,17 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
      * (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS)
      * volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad
-     * hoc basis. This API enables you to take ad-hoc snapshot. For more information, see <a
+     * hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a snapshot schedule</a>.
      * </p>
      * <p>
-     * In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also
-     * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
-     * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
-     * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot. This operation is only supported in stored and cached volume gateway type.
+     * In the <code>CreateSnapshot</code> request, you identify the volume by providing its Amazon Resource Name (ARN).
+     * You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified
+     * volume, the snapshot and description appears in the AWS Storage Gateway console. In response, AWS Storage Gateway
+     * returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you
+     * want to create a volume from a snapshot. This operation is only supported in stored and cached volume gateway
+     * type.
      * </p>
      * <note>
      * <p>
@@ -872,16 +873,17 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
      * (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store (EBS)
      * volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad
-     * hoc basis. This API enables you to take ad-hoc snapshot. For more information, see <a
+     * hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
      * >Editing a snapshot schedule</a>.
      * </p>
      * <p>
-     * In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also
-     * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
-     * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
-     * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot. This operation is only supported in stored and cached volume gateway type.
+     * In the <code>CreateSnapshot</code> request, you identify the volume by providing its Amazon Resource Name (ARN).
+     * You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified
+     * volume, the snapshot and description appears in the AWS Storage Gateway console. In response, AWS Storage Gateway
+     * returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you
+     * want to create a volume from a snapshot. This operation is only supported in stored and cached volume gateway
+     * type.
      * </p>
      * <note>
      * <p>
@@ -1011,7 +1013,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * gateway volume, then any existing data on the disk is erased.
      * </p>
      * <p>
-     * In the request you must specify the gateway and the disk information on which you are creating the volume. In
+     * In the request, you must specify the gateway and the disk information on which you are creating the volume. In
      * response, the gateway creates the volume and returns volume information such as the volume Amazon Resource Name
      * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
      * </p>
@@ -1061,7 +1063,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * gateway volume, then any existing data on the disk is erased.
      * </p>
      * <p>
-     * In the request you must specify the gateway and the disk information on which you are creating the volume. In
+     * In the request, you must specify the gateway and the disk information on which you are creating the volume. In
      * response, the gateway creates the volume and returns volume information such as the volume Amazon Resource Name
      * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
      * </p>
@@ -1108,8 +1110,41 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Creates a new custom tape pool. You can use custom tape pool to enable tape retention lock on tapes that are
+     * archived in the custom pool.
+     * </p>
+     * 
+     * @param createTapePoolRequest
+     * @return A Java Future containing the result of the CreateTapePool operation returned by the service.
+     * @sample AWSStorageGatewayAsync.CreateTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTapePoolResult> createTapePoolAsync(CreateTapePoolRequest createTapePoolRequest);
+
+    /**
+     * <p>
+     * Creates a new custom tape pool. You can use custom tape pool to enable tape retention lock on tapes that are
+     * archived in the custom pool.
+     * </p>
+     * 
+     * @param createTapePoolRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTapePool operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.CreateTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTapePoolResult> createTapePoolAsync(CreateTapePoolRequest createTapePoolRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTapePoolRequest, CreateTapePoolResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
-     * barcode is unique and can not be reused if it has already been used on a tape. This applies to barcodes used on
+     * barcode is unique and cannot be reused if it has already been used on a tape. This applies to barcodes used on
      * deleted tapes. This operation is only supported in the tape gateway type.
      * </p>
      * <note>
@@ -1131,7 +1166,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A
-     * barcode is unique and can not be reused if it has already been used on a tape. This applies to barcodes used on
+     * barcode is unique and cannot be reused if it has already been used on a tape. This applies to barcodes used on
      * deleted tapes. This operation is only supported in the tape gateway type.
      * </p>
      * <note>
@@ -1452,7 +1487,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing up your
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing up your
      * volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its Amazon
      * Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
@@ -1479,7 +1514,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/storagegatewaylatest/userguide/backing-up-volumes.html">Backing up your
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing up your
      * volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its Amazon
      * Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
@@ -1571,6 +1606,39 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<DeleteTapeArchiveResult> deleteTapeArchiveAsync(DeleteTapeArchiveRequest deleteTapeArchiveRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTapeArchiveRequest, DeleteTapeArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a custom tape pool. A custom tape pool can only be deleted if there are no tapes in the pool and if there
+     * are no automatic tape creation policies that reference the custom tape pool.
+     * </p>
+     * 
+     * @param deleteTapePoolRequest
+     * @return A Java Future containing the result of the DeleteTapePool operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DeleteTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTapePoolResult> deleteTapePoolAsync(DeleteTapePoolRequest deleteTapePoolRequest);
+
+    /**
+     * <p>
+     * Delete a custom tape pool. A custom tape pool can only be deleted if there are no tapes in the pool and if there
+     * are no automatic tape creation policies that reference the custom tape pool.
+     * </p>
+     * 
+     * @param deleteTapePoolRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTapePool operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DeleteTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTapePoolResult> deleteTapePoolAsync(DeleteTapePoolRequest deleteTapePoolRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTapePoolRequest, DeleteTapePoolResult> asyncHandler);
 
     /**
      * <p>
@@ -1671,7 +1739,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth
-     * rate limiting is in effect. This operation is supported for the stored volume, cached volume and tape gateway
+     * rate limiting is in effect. This operation is supported for the stored volume, cached volume, and tape gateway
      * types.
      * </p>
      * <p>
@@ -1693,7 +1761,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth
-     * rate limiting is in effect. This operation is supported for the stored volume, cached volume and tape gateway
+     * rate limiting is in effect. This operation is supported for the stored volume, cached volume, and tape gateway
      * types.
      * </p>
      * <p>
@@ -2764,6 +2832,51 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists custom tape pools. You specify custom tape pools to list by specifying one or more custom tape pool Amazon
+     * Resource Names (ARNs). If you don't specify a custom tape pool ARN, the operation lists all custom tape pools.
+     * </p>
+     * <p>
+     * This operation supports pagination. You can optionally specify the <code>Limit</code> parameter in the body to
+     * limit the number of tape pools in the response. If the number of tape pools returned in the response is
+     * truncated, the response includes a <code>Marker</code> element that you can use in your subsequent request to
+     * retrieve the next set of tape pools.
+     * </p>
+     * 
+     * @param listTapePoolsRequest
+     * @return A Java Future containing the result of the ListTapePools operation returned by the service.
+     * @sample AWSStorageGatewayAsync.ListTapePools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTapePoolsResult> listTapePoolsAsync(ListTapePoolsRequest listTapePoolsRequest);
+
+    /**
+     * <p>
+     * Lists custom tape pools. You specify custom tape pools to list by specifying one or more custom tape pool Amazon
+     * Resource Names (ARNs). If you don't specify a custom tape pool ARN, the operation lists all custom tape pools.
+     * </p>
+     * <p>
+     * This operation supports pagination. You can optionally specify the <code>Limit</code> parameter in the body to
+     * limit the number of tape pools in the response. If the number of tape pools returned in the response is
+     * truncated, the response includes a <code>Marker</code> element that you can use in your subsequent request to
+     * retrieve the next set of tape pools.
+     * </p>
+     * 
+     * @param listTapePoolsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTapePools operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.ListTapePools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTapePoolsResult> listTapePoolsAsync(ListTapePoolsRequest listTapePoolsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTapePoolsRequest, ListTapePoolsResult> asyncHandler);
 
     /**
      * <p>
@@ -3847,7 +3960,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * <note>
      * <p>
-     * For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway
+     * For gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway
      * name. However, changing the name of the gateway has no effect on the gateway's ARN.
      * </p>
      * </note>
@@ -3867,7 +3980,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * <note>
      * <p>
-     * For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway
+     * For gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway
      * name. However, changing the name of the gateway has no effect on the gateway's ARN.
      * </p>
      * </note>

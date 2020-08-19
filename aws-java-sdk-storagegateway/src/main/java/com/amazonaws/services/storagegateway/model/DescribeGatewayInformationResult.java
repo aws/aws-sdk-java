@@ -106,7 +106,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     private String vPCEndpoint;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      */
     private String cloudWatchLogGroupARN;
@@ -746,11 +746,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      * 
      * @param cloudWatchLogGroupARN
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the
      *        gateway.
      */
 
@@ -760,10 +760,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the
      *         gateway.
      */
 
@@ -773,11 +773,11 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the gateway.
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the gateway.
      * </p>
      * 
      * @param cloudWatchLogGroupARN
-     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch Log Group that is used to monitor events in the
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor events in the
      *        gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

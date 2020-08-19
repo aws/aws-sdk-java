@@ -113,6 +113,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public CreateTapePoolResult createTapePool(CreateTapePoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTapeWithBarcodeResult createTapeWithBarcode(CreateTapeWithBarcodeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public DeleteTapeArchiveResult deleteTapeArchive(DeleteTapeArchiveRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTapePoolResult deleteTapePool(DeleteTapePoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -310,6 +320,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     @Override
     public ListTagsForResourceResult listTagsForResource() {
         return listTagsForResource(new ListTagsForResourceRequest());
+    }
+
+    @Override
+    public ListTapePoolsResult listTapePools(ListTapePoolsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

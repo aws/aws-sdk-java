@@ -64,6 +64,12 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String type;
     /**
      * <p>
+     * Whether the channel is authorized. Default: <code>false</code>.
+     * </p>
+     */
+    private Boolean authorized;
+    /**
+     * <p>
      * See <a>Channel$tags</a>.
      * </p>
      */
@@ -377,6 +383,58 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Whether the channel is authorized. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param authorized
+     *        Whether the channel is authorized. Default: <code>false</code>.
+     */
+
+    public void setAuthorized(Boolean authorized) {
+        this.authorized = authorized;
+    }
+
+    /**
+     * <p>
+     * Whether the channel is authorized. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the channel is authorized. Default: <code>false</code>.
+     */
+
+    public Boolean getAuthorized() {
+        return this.authorized;
+    }
+
+    /**
+     * <p>
+     * Whether the channel is authorized. Default: <code>false</code>.
+     * </p>
+     * 
+     * @param authorized
+     *        Whether the channel is authorized. Default: <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateChannelRequest withAuthorized(Boolean authorized) {
+        setAuthorized(authorized);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the channel is authorized. Default: <code>false</code>.
+     * </p>
+     * 
+     * @return Whether the channel is authorized. Default: <code>false</code>.
+     */
+
+    public Boolean isAuthorized() {
+        return this.authorized;
+    }
+
+    /**
+     * <p>
      * See <a>Channel$tags</a>.
      * </p>
      * 
@@ -461,6 +519,8 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("LatencyMode: ").append(getLatencyMode()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getAuthorized() != null)
+            sb.append("Authorized: ").append(getAuthorized()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -489,6 +549,10 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getAuthorized() == null ^ this.getAuthorized() == null)
+            return false;
+        if (other.getAuthorized() != null && other.getAuthorized().equals(this.getAuthorized()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -504,6 +568,7 @@ public class CreateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getLatencyMode() == null) ? 0 : getLatencyMode().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getAuthorized() == null) ? 0 : getAuthorized().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

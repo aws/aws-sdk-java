@@ -126,14 +126,21 @@ import com.amazonaws.services.ivs.model.*;
  * <li>
  * <p>
  * Channel — Stores configuration data related to your live stream. You first create a channel and then use the
- * channel’s stream key to start your live stream. See the <a>Channel</a> endpoints for more information.
+ * channel’s stream key to start your live stream. See the Channel endpoints for more information.
  * </p>
  * </li>
  * <li>
  * <p>
  * Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
- * streaming. See the <a>StreamKey</a> endpoints for more information. <i> <b>Treat the stream key like a secret, since
- * it allows anyone to stream to the channel.</b> </i>
+ * streaming. See the StreamKey endpoints for more information. <i> <b>Treat the stream key like a secret, since it
+ * allows anyone to stream to the channel.</b> </i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key
+ * encryption. A playback key pair is the public-private pair of keys used to sign and validate the
+ * playback-authorization token. See the PlaybackKeyPair endpoints for more information.
  * </p>
  * </li>
  * </ul>
@@ -153,13 +160,10 @@ import com.amazonaws.services.ivs.model.*;
  * </p>
  * <p>
  * The Amazon IVS API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
- * <a>ListTagsForResource</a>. The following resources support tagging: Channels and Stream Keys.
+ * <a>ListTagsForResource</a>. The following resources support tagging: Channels, Stream Keys, and Playback Key Pairs.
  * </p>
  * <p>
- * <b>API Endpoints</b>
- * </p>
- * <p>
- * <a>Channel</a>:
+ * <b>Channel Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -196,7 +200,7 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <a>StreamKey</a>:
+ * <b>StreamKey Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -226,7 +230,7 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <a>Stream</a>:
+ * <b>Stream Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -254,7 +258,37 @@ import com.amazonaws.services.ivs.model.*;
  * </li>
  * </ul>
  * <p>
- * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS Tags</a>:
+ * <b>PlaybackKeyPair Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
+ * grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
+ * tokens, to grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
+ * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>AWS Tags Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -371,6 +405,24 @@ public interface AmazonIVS {
 
     /**
      * <p>
+     * Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s
+     * <code>privateKey</code>.
+     * </p>
+     * 
+     * @param deletePlaybackKeyPairRequest
+     * @return Result of the DeletePlaybackKeyPair operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
+     * @sample AmazonIVS.DeletePlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeletePlaybackKeyPairResult deletePlaybackKeyPair(DeletePlaybackKeyPairRequest deletePlaybackKeyPairRequest);
+
+    /**
+     * <p>
      * Deletes the stream key for the specified ARN, so it can no longer be used to stream.
      * </p>
      * 
@@ -401,6 +453,24 @@ public interface AmazonIVS {
      *      Documentation</a>
      */
     GetChannelResult getChannel(GetChannelRequest getChannelRequest);
+
+    /**
+     * <p>
+     * Gets a specified playback authorization key pair and returns the <code>arn</code> and <code>fingerprint</code>.
+     * The <code>privateKey</code> held by the caller can be used to generate viewer authorization tokens, to grant
+     * viewers access to authorized channels.
+     * </p>
+     * 
+     * @param getPlaybackKeyPairRequest
+     * @return Result of the GetPlaybackKeyPair operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @sample AmazonIVS.GetPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPlaybackKeyPairResult getPlaybackKeyPair(GetPlaybackKeyPairRequest getPlaybackKeyPairRequest);
 
     /**
      * <p>
@@ -437,6 +507,26 @@ public interface AmazonIVS {
 
     /**
      * <p>
+     * Imports the public portion of a new key pair and returns its <code>arn</code> and <code>fingerprint</code>. The
+     * <code>privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access to
+     * authorized channels.
+     * </p>
+     * 
+     * @param importPlaybackKeyPairRequest
+     * @return Result of the ImportPlaybackKeyPair operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws PendingVerificationException
+     * @sample AmazonIVS.ImportPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ImportPlaybackKeyPairResult importPlaybackKeyPair(ImportPlaybackKeyPairRequest importPlaybackKeyPairRequest);
+
+    /**
+     * <p>
      * Gets summary information about all channels in your account, in the AWS region where the API request is
      * processed. This list can be filtered to match a specified string.
      * </p>
@@ -450,6 +540,21 @@ public interface AmazonIVS {
      *      Documentation</a>
      */
     ListChannelsResult listChannels(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * <p>
+     * Gets summary information about playback key pairs.
+     * </p>
+     * 
+     * @param listPlaybackKeyPairsRequest
+     * @return Result of the ListPlaybackKeyPairs operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVS.ListPlaybackKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListPlaybackKeyPairsResult listPlaybackKeyPairs(ListPlaybackKeyPairsRequest listPlaybackKeyPairsRequest);
 
     /**
      * <p>

@@ -48,7 +48,7 @@ public class StreamKey implements Serializable, Cloneable, StructuredPojo {
     private String channelArn;
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -175,10 +175,10 @@ public class StreamKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
-     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * @return Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -187,11 +187,11 @@ public class StreamKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -200,11 +200,11 @@ public class StreamKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     * Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * </p>
      * 
      * @param tags
-     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>
+     *        Array of 1-50 maps, each of the form <code>string:string (key:value)</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

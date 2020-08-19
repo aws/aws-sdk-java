@@ -29,6 +29,8 @@ public class DeleteTapeArchiveRequestMarshaller {
 
     private static final MarshallingInfo<String> TAPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TapeARN").build();
+    private static final MarshallingInfo<Boolean> BYPASSGOVERNANCERETENTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BypassGovernanceRetention").build();
 
     private static final DeleteTapeArchiveRequestMarshaller instance = new DeleteTapeArchiveRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteTapeArchiveRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteTapeArchiveRequest.getTapeARN(), TAPEARN_BINDING);
+            protocolMarshaller.marshall(deleteTapeArchiveRequest.getBypassGovernanceRetention(), BYPASSGOVERNANCERETENTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

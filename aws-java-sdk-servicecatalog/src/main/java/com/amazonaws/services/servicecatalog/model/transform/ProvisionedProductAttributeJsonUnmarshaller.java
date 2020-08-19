@@ -84,6 +84,14 @@ public class ProvisionedProductAttributeJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     provisionedProductAttribute.setLastRecordId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LastProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setLastProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfulProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setLastSuccessfulProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     provisionedProductAttribute.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
@@ -98,9 +106,17 @@ public class ProvisionedProductAttributeJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     provisionedProductAttribute.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProductName", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setProductName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ProvisioningArtifactId", targetDepth)) {
                     context.nextToken();
                     provisionedProductAttribute.setProvisioningArtifactId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisioningArtifactName", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setProvisioningArtifactName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserArn", targetDepth)) {
                     context.nextToken();

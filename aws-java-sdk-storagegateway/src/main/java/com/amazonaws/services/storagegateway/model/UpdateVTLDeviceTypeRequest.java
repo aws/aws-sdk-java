@@ -36,7 +36,7 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      */
     private String deviceType;
@@ -86,13 +86,13 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      */
 
     public void setDeviceType(String deviceType) {
@@ -104,12 +104,12 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @return The type of medium changer you want to select.</p>
      *         <p>
-     *         Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     *         Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      */
 
     public String getDeviceType() {
@@ -121,13 +121,13 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code>
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

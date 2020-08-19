@@ -35,6 +35,8 @@ public class AutomaticTapeCreationRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TapeSizeInBytes").build();
     private static final MarshallingInfo<Integer> MINIMUMNUMTAPES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinimumNumTapes").build();
+    private static final MarshallingInfo<Boolean> WORM_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Worm").build();
 
     private static final AutomaticTapeCreationRuleMarshaller instance = new AutomaticTapeCreationRuleMarshaller();
 
@@ -56,6 +58,7 @@ public class AutomaticTapeCreationRuleMarshaller {
             protocolMarshaller.marshall(automaticTapeCreationRule.getPoolId(), POOLID_BINDING);
             protocolMarshaller.marshall(automaticTapeCreationRule.getTapeSizeInBytes(), TAPESIZEINBYTES_BINDING);
             protocolMarshaller.marshall(automaticTapeCreationRule.getMinimumNumTapes(), MINIMUMNUMTAPES_BINDING);
+            protocolMarshaller.marshall(automaticTapeCreationRule.getWorm(), WORM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

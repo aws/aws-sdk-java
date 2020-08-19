@@ -36,7 +36,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private String volumeARN;
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      */
     private String volumeId;
@@ -77,7 +77,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private Double volumeProgress;
     /**
      * <p>
-     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663.
      * Otherwise, this field is not included.
      * </p>
      */
@@ -90,7 +90,7 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private VolumeiSCSIAttributes volumeiSCSIAttributes;
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      */
     private java.util.Date createdDate;
@@ -166,11 +166,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      * 
      * @param volumeId
-     *        The unique identifier of the volume, e.g. vol-AE4B946D.
+     *        The unique identifier of the volume, e.g., vol-AE4B946D.
      */
 
     public void setVolumeId(String volumeId) {
@@ -179,10 +179,10 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      * 
-     * @return The unique identifier of the volume, e.g. vol-AE4B946D.
+     * @return The unique identifier of the volume, e.g., vol-AE4B946D.
      */
 
     public String getVolumeId() {
@@ -191,11 +191,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      * 
      * @param volumeId
-     *        The unique identifier of the volume, e.g. vol-AE4B946D.
+     *        The unique identifier of the volume, e.g., vol-AE4B946D.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,12 +436,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663.
      * Otherwise, this field is not included.
      * </p>
      * 
      * @param sourceSnapshotId
-     *        If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *        If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.,
      *        snap-78e22663. Otherwise, this field is not included.
      */
 
@@ -451,11 +451,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663.
      * Otherwise, this field is not included.
      * </p>
      * 
-     * @return If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     * @return If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.,
      *         snap-78e22663. Otherwise, this field is not included.
      */
 
@@ -465,12 +465,12 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g. snap-78e22663.
+     * If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g., snap-78e22663.
      * Otherwise, this field is not included.
      * </p>
      * 
      * @param sourceSnapshotId
-     *        If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.
+     *        If the cached volume was created from a snapshot, this field contains the snapshot ID used, e.g.,
      *        snap-78e22663. Otherwise, this field is not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -525,11 +525,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      * 
      * @param createdDate
-     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -538,10 +538,10 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      * 
-     * @return The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * @return The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      */
 
     public java.util.Date getCreatedDate() {
@@ -550,11 +550,11 @@ public class CachediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      * 
      * @param createdDate
-     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

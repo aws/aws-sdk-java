@@ -150,14 +150,21 @@ import com.amazonaws.services.ivs.model.transform.*;
  * <li>
  * <p>
  * Channel — Stores configuration data related to your live stream. You first create a channel and then use the
- * channel’s stream key to start your live stream. See the <a>Channel</a> endpoints for more information.
+ * channel’s stream key to start your live stream. See the Channel endpoints for more information.
  * </p>
  * </li>
  * <li>
  * <p>
  * Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
- * streaming. See the <a>StreamKey</a> endpoints for more information. <i> <b>Treat the stream key like a secret, since
- * it allows anyone to stream to the channel.</b> </i>
+ * streaming. See the StreamKey endpoints for more information. <i> <b>Treat the stream key like a secret, since it
+ * allows anyone to stream to the channel.</b> </i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key
+ * encryption. A playback key pair is the public-private pair of keys used to sign and validate the
+ * playback-authorization token. See the PlaybackKeyPair endpoints for more information.
  * </p>
  * </li>
  * </ul>
@@ -177,13 +184,10 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </p>
  * <p>
  * The Amazon IVS API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
- * <a>ListTagsForResource</a>. The following resources support tagging: Channels and Stream Keys.
+ * <a>ListTagsForResource</a>. The following resources support tagging: Channels, Stream Keys, and Playback Key Pairs.
  * </p>
  * <p>
- * <b>API Endpoints</b>
- * </p>
- * <p>
- * <a>Channel</a>:
+ * <b>Channel Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -220,7 +224,7 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <a>StreamKey</a>:
+ * <b>StreamKey Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -250,7 +254,7 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <a>Stream</a>:
+ * <b>Stream Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -278,7 +282,37 @@ import com.amazonaws.services.ivs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS Tags</a>:
+ * <b>PlaybackKeyPair Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
+ * grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
+ * tokens, to grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
+ * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>AWS Tags Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -685,6 +719,65 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
+     * Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s
+     * <code>privateKey</code>.
+     * </p>
+     * 
+     * @param deletePlaybackKeyPairRequest
+     * @return Result of the DeletePlaybackKeyPair operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
+     * @sample AmazonIVS.DeletePlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeletePlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeletePlaybackKeyPairResult deletePlaybackKeyPair(DeletePlaybackKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePlaybackKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final DeletePlaybackKeyPairResult executeDeletePlaybackKeyPair(DeletePlaybackKeyPairRequest deletePlaybackKeyPairRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePlaybackKeyPairRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePlaybackKeyPairRequest> request = null;
+        Response<DeletePlaybackKeyPairResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePlaybackKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePlaybackKeyPairRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlaybackKeyPair");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePlaybackKeyPairResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeletePlaybackKeyPairResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the stream key for the specified ARN, so it can no longer be used to stream.
      * </p>
      * 
@@ -786,6 +879,64 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
             HttpResponseHandler<AmazonWebServiceResponse<GetChannelResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a specified playback authorization key pair and returns the <code>arn</code> and <code>fingerprint</code>.
+     * The <code>privateKey</code> held by the caller can be used to generate viewer authorization tokens, to grant
+     * viewers access to authorized channels.
+     * </p>
+     * 
+     * @param getPlaybackKeyPairRequest
+     * @return Result of the GetPlaybackKeyPair operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @sample AmazonIVS.GetPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPlaybackKeyPairResult getPlaybackKeyPair(GetPlaybackKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPlaybackKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final GetPlaybackKeyPairResult executeGetPlaybackKeyPair(GetPlaybackKeyPairRequest getPlaybackKeyPairRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPlaybackKeyPairRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPlaybackKeyPairRequest> request = null;
+        Response<GetPlaybackKeyPairResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPlaybackKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPlaybackKeyPairRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlaybackKeyPair");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPlaybackKeyPairResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPlaybackKeyPairResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -911,6 +1062,67 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
     /**
      * <p>
+     * Imports the public portion of a new key pair and returns its <code>arn</code> and <code>fingerprint</code>. The
+     * <code>privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access to
+     * authorized channels.
+     * </p>
+     * 
+     * @param importPlaybackKeyPairRequest
+     * @return Result of the ImportPlaybackKeyPair operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws PendingVerificationException
+     * @sample AmazonIVS.ImportPlaybackKeyPair
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ImportPlaybackKeyPair" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ImportPlaybackKeyPairResult importPlaybackKeyPair(ImportPlaybackKeyPairRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportPlaybackKeyPair(request);
+    }
+
+    @SdkInternalApi
+    final ImportPlaybackKeyPairResult executeImportPlaybackKeyPair(ImportPlaybackKeyPairRequest importPlaybackKeyPairRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importPlaybackKeyPairRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportPlaybackKeyPairRequest> request = null;
+        Response<ImportPlaybackKeyPairResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportPlaybackKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importPlaybackKeyPairRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportPlaybackKeyPair");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportPlaybackKeyPairResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ImportPlaybackKeyPairResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets summary information about all channels in your account, in the AWS region where the API request is
      * processed. This list can be filtered to match a specified string.
      * </p>
@@ -955,6 +1167,61 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets summary information about playback key pairs.
+     * </p>
+     * 
+     * @param listPlaybackKeyPairsRequest
+     * @return Result of the ListPlaybackKeyPairs operation returned by the service.
+     * @throws ValidationException
+     * @throws AccessDeniedException
+     * @sample AmazonIVS.ListPlaybackKeyPairs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListPlaybackKeyPairs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListPlaybackKeyPairsResult listPlaybackKeyPairs(ListPlaybackKeyPairsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPlaybackKeyPairs(request);
+    }
+
+    @SdkInternalApi
+    final ListPlaybackKeyPairsResult executeListPlaybackKeyPairs(ListPlaybackKeyPairsRequest listPlaybackKeyPairsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPlaybackKeyPairsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPlaybackKeyPairsRequest> request = null;
+        Response<ListPlaybackKeyPairsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPlaybackKeyPairsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPlaybackKeyPairsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlaybackKeyPairs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPlaybackKeyPairsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPlaybackKeyPairsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -53,7 +53,7 @@ public class ChapInfo implements Serializable, Cloneable, StructuredPojo {
     private String initiatorName;
     /**
      * <p>
-     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows
+     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows
      * client).
      * </p>
      */
@@ -202,13 +202,13 @@ public class ChapInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows
+     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows
      * client).
      * </p>
      * 
      * @param secretToAuthenticateTarget
-     *        The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows
-     *        client).
+     *        The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g.,
+     *        Windows client).
      */
 
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
@@ -217,11 +217,11 @@ public class ChapInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows
+     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows
      * client).
      * </p>
      * 
-     * @return The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g.
+     * @return The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g.,
      *         Windows client).
      */
 
@@ -231,13 +231,13 @@ public class ChapInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows
+     * The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g., Windows
      * client).
      * </p>
      * 
      * @param secretToAuthenticateTarget
-     *        The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g. Windows
-     *        client).
+     *        The secret key that the target must provide to participate in mutual CHAP with the initiator (e.g.,
+     *        Windows client).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

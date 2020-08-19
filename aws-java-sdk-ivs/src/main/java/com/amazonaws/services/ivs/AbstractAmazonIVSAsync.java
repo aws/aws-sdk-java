@@ -92,6 +92,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePlaybackKeyPairResult> deletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest request) {
+
+        return deletePlaybackKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePlaybackKeyPairResult> deletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeletePlaybackKeyPairRequest, DeletePlaybackKeyPairResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStreamKeyResult> deleteStreamKeyAsync(DeleteStreamKeyRequest request) {
 
         return deleteStreamKeyAsync(request, null);
@@ -113,6 +126,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<GetChannelResult> getChannelAsync(GetChannelRequest request,
             com.amazonaws.handlers.AsyncHandler<GetChannelRequest, GetChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request) {
+
+        return getPlaybackKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPlaybackKeyPairRequest, GetPlaybackKeyPairResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +170,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     }
 
     @Override
+    public java.util.concurrent.Future<ImportPlaybackKeyPairResult> importPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest request) {
+
+        return importPlaybackKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportPlaybackKeyPairResult> importPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest request,
+            com.amazonaws.handlers.AsyncHandler<ImportPlaybackKeyPairRequest, ImportPlaybackKeyPairResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request) {
 
         return listChannelsAsync(request, null);
@@ -152,6 +191,19 @@ public class AbstractAmazonIVSAsync extends AbstractAmazonIVS implements AmazonI
     @Override
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest request) {
+
+        return listPlaybackKeyPairsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPlaybackKeyPairsRequest, ListPlaybackKeyPairsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

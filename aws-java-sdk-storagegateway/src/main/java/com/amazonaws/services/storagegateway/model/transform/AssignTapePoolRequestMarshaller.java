@@ -31,6 +31,8 @@ public class AssignTapePoolRequestMarshaller {
             .marshallLocationName("TapeARN").build();
     private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PoolId").build();
+    private static final MarshallingInfo<Boolean> BYPASSGOVERNANCERETENTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BypassGovernanceRetention").build();
 
     private static final AssignTapePoolRequestMarshaller instance = new AssignTapePoolRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class AssignTapePoolRequestMarshaller {
         try {
             protocolMarshaller.marshall(assignTapePoolRequest.getTapeARN(), TAPEARN_BINDING);
             protocolMarshaller.marshall(assignTapePoolRequest.getPoolId(), POOLID_BINDING);
+            protocolMarshaller.marshall(assignTapePoolRequest.getBypassGovernanceRetention(), BYPASSGOVERNANCERETENTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

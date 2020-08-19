@@ -125,14 +125,21 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * Channel — Stores configuration data related to your live stream. You first create a channel and then use the
- * channel’s stream key to start your live stream. See the <a>Channel</a> endpoints for more information.
+ * channel’s stream key to start your live stream. See the Channel endpoints for more information.
  * </p>
  * </li>
  * <li>
  * <p>
  * Stream key — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize
- * streaming. See the <a>StreamKey</a> endpoints for more information. <i> <b>Treat the stream key like a secret, since
- * it allows anyone to stream to the channel.</b> </i>
+ * streaming. See the StreamKey endpoints for more information. <i> <b>Treat the stream key like a secret, since it
+ * allows anyone to stream to the channel.</b> </i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Playback key pair — Video playback may be restricted using playback-authorization tokens, which use public-key
+ * encryption. A playback key pair is the public-private pair of keys used to sign and validate the
+ * playback-authorization token. See the PlaybackKeyPair endpoints for more information.
  * </p>
  * </li>
  * </ul>
@@ -152,13 +159,10 @@ import java.util.concurrent.ExecutorService;
  * </p>
  * <p>
  * The Amazon IVS API has these tag-related endpoints: <a>TagResource</a>, <a>UntagResource</a>, and
- * <a>ListTagsForResource</a>. The following resources support tagging: Channels and Stream Keys.
+ * <a>ListTagsForResource</a>. The following resources support tagging: Channels, Stream Keys, and Playback Key Pairs.
  * </p>
  * <p>
- * <b>API Endpoints</b>
- * </p>
- * <p>
- * <a>Channel</a>:
+ * <b>Channel Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -195,7 +199,7 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * <a>StreamKey</a>:
+ * <b>StreamKey Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -225,7 +229,7 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * <a>Stream</a>:
+ * <b>Stream Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -253,7 +257,37 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * </ul>
  * <p>
- * <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> AWS Tags</a>:
+ * <b>PlaybackKeyPair Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns its <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to
+ * grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and returns the <code>arn</code> and
+ * <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be used to generate viewer authorization
+ * tokens, to grant viewers access to authorized channels.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListPlaybackKeyPairs</a> — Gets summary information about playback key pairs.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates future viewer tokens
+ * generated using the key pair’s <code>privateKey</code>.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>AWS Tags Endpoints</b>
  * </p>
  * <ul>
  * <li>
@@ -483,6 +517,39 @@ public class AmazonIVSAsyncClient extends AmazonIVSClient implements AmazonIVSAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeletePlaybackKeyPairResult> deletePlaybackKeyPairAsync(DeletePlaybackKeyPairRequest request) {
+
+        return deletePlaybackKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePlaybackKeyPairResult> deletePlaybackKeyPairAsync(final DeletePlaybackKeyPairRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeletePlaybackKeyPairRequest, DeletePlaybackKeyPairResult> asyncHandler) {
+        final DeletePlaybackKeyPairRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeletePlaybackKeyPairResult>() {
+            @Override
+            public DeletePlaybackKeyPairResult call() throws Exception {
+                DeletePlaybackKeyPairResult result = null;
+
+                try {
+                    result = executeDeletePlaybackKeyPair(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteStreamKeyResult> deleteStreamKeyAsync(DeleteStreamKeyRequest request) {
 
         return deleteStreamKeyAsync(request, null);
@@ -533,6 +600,39 @@ public class AmazonIVSAsyncClient extends AmazonIVSClient implements AmazonIVSAs
 
                 try {
                     result = executeGetChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(GetPlaybackKeyPairRequest request) {
+
+        return getPlaybackKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPlaybackKeyPairResult> getPlaybackKeyPairAsync(final GetPlaybackKeyPairRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPlaybackKeyPairRequest, GetPlaybackKeyPairResult> asyncHandler) {
+        final GetPlaybackKeyPairRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPlaybackKeyPairResult>() {
+            @Override
+            public GetPlaybackKeyPairResult call() throws Exception {
+                GetPlaybackKeyPairResult result = null;
+
+                try {
+                    result = executeGetPlaybackKeyPair(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -615,6 +715,39 @@ public class AmazonIVSAsyncClient extends AmazonIVSClient implements AmazonIVSAs
     }
 
     @Override
+    public java.util.concurrent.Future<ImportPlaybackKeyPairResult> importPlaybackKeyPairAsync(ImportPlaybackKeyPairRequest request) {
+
+        return importPlaybackKeyPairAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportPlaybackKeyPairResult> importPlaybackKeyPairAsync(final ImportPlaybackKeyPairRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportPlaybackKeyPairRequest, ImportPlaybackKeyPairResult> asyncHandler) {
+        final ImportPlaybackKeyPairRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportPlaybackKeyPairResult>() {
+            @Override
+            public ImportPlaybackKeyPairResult call() throws Exception {
+                ImportPlaybackKeyPairResult result = null;
+
+                try {
+                    result = executeImportPlaybackKeyPair(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest request) {
 
         return listChannelsAsync(request, null);
@@ -632,6 +765,39 @@ public class AmazonIVSAsyncClient extends AmazonIVSClient implements AmazonIVSAs
 
                 try {
                     result = executeListChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(ListPlaybackKeyPairsRequest request) {
+
+        return listPlaybackKeyPairsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPlaybackKeyPairsResult> listPlaybackKeyPairsAsync(final ListPlaybackKeyPairsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPlaybackKeyPairsRequest, ListPlaybackKeyPairsResult> asyncHandler) {
+        final ListPlaybackKeyPairsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPlaybackKeyPairsResult>() {
+            @Override
+            public ListPlaybackKeyPairsResult call() throws Exception {
+                ListPlaybackKeyPairsResult result = null;
+
+                try {
+                    result = executeListPlaybackKeyPairs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

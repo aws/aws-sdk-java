@@ -39,6 +39,10 @@ public class TapeInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
     private static final MarshallingInfo<String> POOLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PoolId").build();
+    private static final MarshallingInfo<java.util.Date> RETENTIONSTARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetentionStartDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> POOLENTRYDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PoolEntryDate").timestampFormat("unixTimestamp").build();
 
     private static final TapeInfoMarshaller instance = new TapeInfoMarshaller();
 
@@ -62,6 +66,8 @@ public class TapeInfoMarshaller {
             protocolMarshaller.marshall(tapeInfo.getTapeStatus(), TAPESTATUS_BINDING);
             protocolMarshaller.marshall(tapeInfo.getGatewayARN(), GATEWAYARN_BINDING);
             protocolMarshaller.marshall(tapeInfo.getPoolId(), POOLID_BINDING);
+            protocolMarshaller.marshall(tapeInfo.getRetentionStartDate(), RETENTIONSTARTDATE_BINDING);
+            protocolMarshaller.marshall(tapeInfo.getPoolEntryDate(), POOLENTRYDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

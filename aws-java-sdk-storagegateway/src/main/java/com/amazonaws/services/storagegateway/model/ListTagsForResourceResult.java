@@ -28,7 +28,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      */
     private String resourceARN;
@@ -47,11 +47,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     *        The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -60,10 +60,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
-     * @return he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * @return The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      */
 
     public String getResourceARN() {
@@ -72,11 +72,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     * The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * </p>
      * 
      * @param resourceARN
-     *        he Amazon Resource Name (ARN) of the resource for which you want to list tags.
+     *        The Amazon Resource Name (ARN) of the resource for which you want to list tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

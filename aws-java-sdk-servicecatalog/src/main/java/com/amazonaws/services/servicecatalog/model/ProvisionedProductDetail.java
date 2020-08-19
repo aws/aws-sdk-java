@@ -119,6 +119,63 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
     private String lastRecordId;
     /**
      * <p>
+     * The record identifier of the last request performed on this provisioned product of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String lastProvisioningRecordId;
+    /**
+     * <p>
+     * The record identifier of the last successful request performed on this provisioned product of the following
+     * types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String lastSuccessfulProvisioningRecordId;
+    /**
+     * <p>
      * The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
      * </p>
      */
@@ -874,6 +931,353 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * The record identifier of the last request performed on this provisioned product of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lastProvisioningRecordId
+     *        The record identifier of the last request performed on this provisioned product of the following
+     *        types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UpdateProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ExecuteProvisionedProductPlan
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TerminateProvisionedProduct
+     *        </p>
+     *        </li>
+     */
+
+    public void setLastProvisioningRecordId(String lastProvisioningRecordId) {
+        this.lastProvisioningRecordId = lastProvisioningRecordId;
+    }
+
+    /**
+     * <p>
+     * The record identifier of the last request performed on this provisioned product of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The record identifier of the last request performed on this provisioned product of the following
+     *         types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ProvisionedProduct
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UpdateProvisionedProduct
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ExecuteProvisionedProductPlan
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TerminateProvisionedProduct
+     *         </p>
+     *         </li>
+     */
+
+    public String getLastProvisioningRecordId() {
+        return this.lastProvisioningRecordId;
+    }
+
+    /**
+     * <p>
+     * The record identifier of the last request performed on this provisioned product of the following types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lastProvisioningRecordId
+     *        The record identifier of the last request performed on this provisioned product of the following
+     *        types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UpdateProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ExecuteProvisionedProductPlan
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TerminateProvisionedProduct
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionedProductDetail withLastProvisioningRecordId(String lastProvisioningRecordId) {
+        setLastProvisioningRecordId(lastProvisioningRecordId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The record identifier of the last successful request performed on this provisioned product of the following
+     * types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lastSuccessfulProvisioningRecordId
+     *        The record identifier of the last successful request performed on this provisioned product of the
+     *        following types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UpdateProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ExecuteProvisionedProductPlan
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TerminateProvisionedProduct
+     *        </p>
+     *        </li>
+     */
+
+    public void setLastSuccessfulProvisioningRecordId(String lastSuccessfulProvisioningRecordId) {
+        this.lastSuccessfulProvisioningRecordId = lastSuccessfulProvisioningRecordId;
+    }
+
+    /**
+     * <p>
+     * The record identifier of the last successful request performed on this provisioned product of the following
+     * types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The record identifier of the last successful request performed on this provisioned product of the
+     *         following types:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ProvisionedProduct
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UpdateProvisionedProduct
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ExecuteProvisionedProductPlan
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TerminateProvisionedProduct
+     *         </p>
+     *         </li>
+     */
+
+    public String getLastSuccessfulProvisioningRecordId() {
+        return this.lastSuccessfulProvisioningRecordId;
+    }
+
+    /**
+     * <p>
+     * The record identifier of the last successful request performed on this provisioned product of the following
+     * types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UpdateProvisionedProduct
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ExecuteProvisionedProductPlan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TerminateProvisionedProduct
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lastSuccessfulProvisioningRecordId
+     *        The record identifier of the last successful request performed on this provisioned product of the
+     *        following types:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        ProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UpdateProvisionedProduct
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ExecuteProvisionedProductPlan
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TerminateProvisionedProduct
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProvisionedProductDetail withLastSuccessfulProvisioningRecordId(String lastSuccessfulProvisioningRecordId) {
+        setLastSuccessfulProvisioningRecordId(lastSuccessfulProvisioningRecordId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
      * </p>
      * 
@@ -982,6 +1386,10 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
             sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
         if (getLastRecordId() != null)
             sb.append("LastRecordId: ").append(getLastRecordId()).append(",");
+        if (getLastProvisioningRecordId() != null)
+            sb.append("LastProvisioningRecordId: ").append(getLastProvisioningRecordId()).append(",");
+        if (getLastSuccessfulProvisioningRecordId() != null)
+            sb.append("LastSuccessfulProvisioningRecordId: ").append(getLastSuccessfulProvisioningRecordId()).append(",");
         if (getProductId() != null)
             sb.append("ProductId: ").append(getProductId()).append(",");
         if (getProvisioningArtifactId() != null)
@@ -1036,6 +1444,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
             return false;
         if (other.getLastRecordId() != null && other.getLastRecordId().equals(this.getLastRecordId()) == false)
             return false;
+        if (other.getLastProvisioningRecordId() == null ^ this.getLastProvisioningRecordId() == null)
+            return false;
+        if (other.getLastProvisioningRecordId() != null && other.getLastProvisioningRecordId().equals(this.getLastProvisioningRecordId()) == false)
+            return false;
+        if (other.getLastSuccessfulProvisioningRecordId() == null ^ this.getLastSuccessfulProvisioningRecordId() == null)
+            return false;
+        if (other.getLastSuccessfulProvisioningRecordId() != null
+                && other.getLastSuccessfulProvisioningRecordId().equals(this.getLastSuccessfulProvisioningRecordId()) == false)
+            return false;
         if (other.getProductId() == null ^ this.getProductId() == null)
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
@@ -1061,6 +1478,8 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
         hashCode = prime * hashCode + ((getLastRecordId() == null) ? 0 : getLastRecordId().hashCode());
+        hashCode = prime * hashCode + ((getLastProvisioningRecordId() == null) ? 0 : getLastProvisioningRecordId().hashCode());
+        hashCode = prime * hashCode + ((getLastSuccessfulProvisioningRecordId() == null) ? 0 : getLastSuccessfulProvisioningRecordId().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
         return hashCode;

@@ -35,6 +35,8 @@ public class UpdateChannelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latencyMode").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<Boolean> AUTHORIZED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorized").build();
 
     private static final UpdateChannelRequestMarshaller instance = new UpdateChannelRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateChannelRequestMarshaller {
             protocolMarshaller.marshall(updateChannelRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getLatencyMode(), LATENCYMODE_BINDING);
             protocolMarshaller.marshall(updateChannelRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(updateChannelRequest.getAuthorized(), AUTHORIZED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

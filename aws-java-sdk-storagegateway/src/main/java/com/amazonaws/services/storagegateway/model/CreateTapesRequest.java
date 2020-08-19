@@ -107,6 +107,12 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String poolId;
     /**
      * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     */
+    private Boolean worm;
+    /**
+     * <p>
      * A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.
      * </p>
      * <note>
@@ -613,6 +619,62 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @param worm
+     *        Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM)
+     *        tape.
+     */
+
+    public void setWorm(Boolean worm) {
+        this.worm = worm;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many
+     *         (WORM) tape.
+     */
+
+    public Boolean getWorm() {
+        return this.worm;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @param worm
+     *        Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM)
+     *        tape.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTapesRequest withWorm(Boolean worm) {
+        setWorm(worm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many
+     *         (WORM) tape.
+     */
+
+    public Boolean isWorm() {
+        return this.worm;
+    }
+
+    /**
+     * <p>
      * A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.
      * </p>
      * <note>
@@ -760,6 +822,8 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("KMSKey: ").append(getKMSKey()).append(",");
         if (getPoolId() != null)
             sb.append("PoolId: ").append(getPoolId()).append(",");
+        if (getWorm() != null)
+            sb.append("Worm: ").append(getWorm()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -808,6 +872,10 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
             return false;
+        if (other.getWorm() == null ^ this.getWorm() == null)
+            return false;
+        if (other.getWorm() != null && other.getWorm().equals(this.getWorm()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -828,6 +896,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getKMSEncrypted() == null) ? 0 : getKMSEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
+        hashCode = prime * hashCode + ((getWorm() == null) ? 0 : getWorm().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

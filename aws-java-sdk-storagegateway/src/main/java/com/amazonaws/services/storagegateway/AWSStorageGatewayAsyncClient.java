@@ -72,7 +72,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas:</a>
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>:
  * Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
@@ -828,6 +828,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTapePoolResult> createTapePoolAsync(CreateTapePoolRequest request) {
+
+        return createTapePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTapePoolResult> createTapePoolAsync(final CreateTapePoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTapePoolRequest, CreateTapePoolResult> asyncHandler) {
+        final CreateTapePoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTapePoolResult>() {
+            @Override
+            public CreateTapePoolResult call() throws Exception {
+                CreateTapePoolResult result = null;
+
+                try {
+                    result = executeCreateTapePool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTapeWithBarcodeResult> createTapeWithBarcodeAsync(CreateTapeWithBarcodeRequest request) {
 
         return createTapeWithBarcodeAsync(request, null);
@@ -1144,6 +1177,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
 
                 try {
                     result = executeDeleteTapeArchive(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTapePoolResult> deleteTapePoolAsync(DeleteTapePoolRequest request) {
+
+        return deleteTapePoolAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTapePoolResult> deleteTapePoolAsync(final DeleteTapePoolRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTapePoolRequest, DeleteTapePoolResult> asyncHandler) {
+        final DeleteTapePoolRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTapePoolResult>() {
+            @Override
+            public DeleteTapePoolResult call() throws Exception {
+                DeleteTapePoolResult result = null;
+
+                try {
+                    result = executeDeleteTapePool(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2121,6 +2187,39 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient implem
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
 
         return listTagsForResourceAsync(new ListTagsForResourceRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapePoolsResult> listTapePoolsAsync(ListTapePoolsRequest request) {
+
+        return listTapePoolsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTapePoolsResult> listTapePoolsAsync(final ListTapePoolsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTapePoolsRequest, ListTapePoolsResult> asyncHandler) {
+        final ListTapePoolsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTapePoolsResult>() {
+            @Override
+            public ListTapePoolsResult call() throws Exception {
+                ListTapePoolsResult result = null;
+
+                try {
+                    result = executeListTapePools(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override

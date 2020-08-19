@@ -84,6 +84,14 @@ public class ProvisionedProductDetailJsonUnmarshaller implements Unmarshaller<Pr
                     context.nextToken();
                     provisionedProductDetail.setLastRecordId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LastProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductDetail.setLastProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfulProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductDetail.setLastSuccessfulProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ProductId", targetDepth)) {
                     context.nextToken();
                     provisionedProductDetail.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
