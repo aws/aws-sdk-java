@@ -37,6 +37,33 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lifecycle status of the backup.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The backup is fully available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - FSx is creating the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Amazon FSx could not complete the backup.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String lifecycle;
     /**
@@ -61,8 +88,8 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationTime;
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for Windows
-     * file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file system's
+     * data at rest.
      * </p>
      */
     private String kmsKeyId;
@@ -137,9 +164,62 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lifecycle status of the backup.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The backup is fully available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - FSx is creating the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Amazon FSx could not complete the backup.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the backup.
+     *        The lifecycle status of the backup.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The backup is fully available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - FSx is creating the backup.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The backup was deleted is no longer available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Amazon FSx could not complete the backup.
+     *        </p>
+     *        </li>
      * @see BackupLifecycle
      */
 
@@ -151,8 +231,61 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lifecycle status of the backup.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The backup is fully available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - FSx is creating the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Amazon FSx could not complete the backup.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The lifecycle status of the backup.
+     * @return The lifecycle status of the backup.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AVAILABLE</code> - The backup is fully available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATING</code> - FSx is creating the backup.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> - The backup was deleted is no longer available.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - Amazon FSx could not complete the backup.
+     *         </p>
+     *         </li>
      * @see BackupLifecycle
      */
 
@@ -164,9 +297,62 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lifecycle status of the backup.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The backup is fully available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - FSx is creating the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Amazon FSx could not complete the backup.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the backup.
+     *        The lifecycle status of the backup.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The backup is fully available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - FSx is creating the backup.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The backup was deleted is no longer available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Amazon FSx could not complete the backup.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupLifecycle
      */
@@ -180,9 +366,62 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The lifecycle status of the backup.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AVAILABLE</code> - The backup is fully available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATING</code> - FSx is creating the backup.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The backup was deleted is no longer available.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - Amazon FSx could not complete the backup.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lifecycle
-     *        The lifecycle status of the backup.
+     *        The lifecycle status of the backup.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AVAILABLE</code> - The backup is fully available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATING</code> - FSx is creating the backup.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TRANSFERRING</code> - For Lustre file systems only; FSx is transferring the backup to S3.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The backup was deleted is no longer available.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - Amazon FSx could not complete the backup.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupLifecycle
      */
@@ -359,13 +598,13 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for Windows
-     * file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file system's
+     * data at rest.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for
-     *        Windows file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file
+     *        system's data at rest.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -374,12 +613,12 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for Windows
-     * file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file system's
+     * data at rest.
      * </p>
      * 
-     * @return The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for
-     *         Windows file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     * @return The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file
+     *         system's data at rest.
      */
 
     public String getKmsKeyId() {
@@ -388,13 +627,13 @@ public class Backup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for Windows
-     * file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     * The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file system's
+     * data at rest.
      * </p>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this backup of the Amazon FSx for
-     *        Windows file system's data at rest. Amazon FSx for Lustre does not support KMS encryption.
+     *        The ID of the AWS Key Management Service (AWS KMS) key used to encrypt the backup of the Amazon FSx file
+     *        system's data at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

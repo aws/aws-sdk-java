@@ -1,3 +1,16 @@
+# __1.11.847__ __2020-08-20__
+## __Amazon Chime__
+  - ### Features
+    - Documentation updates for chime
+
+## __Amazon FSx__
+  - ### Features
+    - Documentation updates for Amazon FSx
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - Customers can now create Amazon API Gateway HTTP APIs that route requests to AWS AppConfig, Amazon EventBridge, Amazon Kinesis Data Streams, Amazon SQS, and AWS Step Functions.
+
 # __1.11.846__ __2020-08-19__
 ## __AWS Lake Formation__
   - ### Features

@@ -84,6 +84,10 @@ public class IntegrationJsonUnmarshaller implements Unmarshaller<Integration, Js
                     context.nextToken();
                     integration.setIntegrationResponseSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("integrationSubtype", targetDepth)) {
+                    context.nextToken();
+                    integration.setIntegrationSubtype(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("integrationType", targetDepth)) {
                     context.nextToken();
                     integration.setIntegrationType(context.getUnmarshaller(String.class).unmarshall(context));

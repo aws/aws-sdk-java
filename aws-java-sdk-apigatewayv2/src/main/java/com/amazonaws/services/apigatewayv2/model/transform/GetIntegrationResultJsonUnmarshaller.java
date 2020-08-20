@@ -84,6 +84,10 @@ public class GetIntegrationResultJsonUnmarshaller implements Unmarshaller<GetInt
                     context.nextToken();
                     getIntegrationResult.setIntegrationResponseSelectionExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("integrationSubtype", targetDepth)) {
+                    context.nextToken();
+                    getIntegrationResult.setIntegrationSubtype(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("integrationType", targetDepth)) {
                     context.nextToken();
                     getIntegrationResult.setIntegrationType(context.getUnmarshaller(String.class).unmarshall(context));

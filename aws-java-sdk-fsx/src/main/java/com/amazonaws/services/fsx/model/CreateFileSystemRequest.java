@@ -51,13 +51,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     * For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file
+     * systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
      * </p>
      * </li>
      * </ul>
@@ -80,26 +86,30 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer storageCapacity;
     /**
      * <p>
-     * Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     * <code>SSD</code> and <code>HDD</code>.
+     * Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and <code>HDD</code>
+     * .
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment types.
+     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre deployment
+     * types.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system
+     * deployment types.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     * Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      */
     private String storageType;
@@ -256,13 +266,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     * For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file
+     * systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
      * </p>
      * </li>
      * </ul>
@@ -290,13 +306,20 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     *        increments of 2.4 TiB.
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB,
+     *        2400 GiB, and increments of 2400 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     *        For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file
+     *        systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
+     *        GiB.
      *        </p>
      *        </li>
      *        </ul>
@@ -330,13 +353,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     * For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file
+     * systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
      * </p>
      * </li>
      * </ul>
@@ -363,13 +392,20 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     *         increments of 2.4 TiB.
+     *         For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB,
+     *         2400 GiB, and increments of 2400 GiB.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     *         For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB
+     *         file systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
+     *         GiB.
      *         </p>
      *         </li>
      *         </ul>
@@ -403,13 +439,19 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     * increments of 2.4 TiB.
+     * For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB, 2400
+     * GiB, and increments of 2400 GiB.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     * For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file
+     * systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600 GiB.
      * </p>
      * </li>
      * </ul>
@@ -437,13 +479,20 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1</code> deployment types, valid values are 1.2, 2.4, and
-     *        increments of 2.4 TiB.
+     *        For <code>SCRATCH_2</code> and <code>PERSISTENT_1 SSD</code> deployment types, valid values are 1200 GiB,
+     *        2400 GiB, and increments of 2400 GiB.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For <code>SCRATCH_1</code> deployment type, valid values are 1.2, 2.4, and increments of 3.6 TiB.
+     *        For <code>PERSISTENT HDD</code> file systems, valid values are increments of 6000 GiB for 12 MB/s/TiB file
+     *        systems and increments of 1800 GiB for 40 MB/s/TiB file systems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SCRATCH_1</code> deployment type, valid values are 1200 GiB, 2400 GiB, and increments of 3600
+     *        GiB.
      *        </p>
      *        </li>
      *        </ul>
@@ -471,49 +520,56 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     * <code>SSD</code> and <code>HDD</code>.
+     * Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and <code>HDD</code>
+     * .
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment types.
+     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre deployment
+     * types.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system
+     * deployment types.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     * Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param storageType
-     *        Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     *        <code>SSD</code> and <code>HDD</code>.</p>
+     *        Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and
+     *        <code>HDD</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment
-     *        types.
+     *        Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre
+     *        deployment types.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     *        <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *        <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file
+     *        system deployment types.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Default value is <code>SSD</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     *        Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @see StorageType
      */
 
@@ -523,48 +579,55 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     * <code>SSD</code> and <code>HDD</code>.
+     * Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and <code>HDD</code>
+     * .
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment types.
+     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre deployment
+     * types.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system
+     * deployment types.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     * Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
-     * @return Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     *         <code>SSD</code> and <code>HDD</code>.</p>
+     * @return Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and
+     *         <code>HDD</code>.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment
-     *         types.
+     *         Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre
+     *         deployment types.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     *         <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *         <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file
+     *         system deployment types.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         Default value is <code>SSD</code>. For more information, see <a
      *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     *         Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     *         Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     *         Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @see StorageType
      */
 
@@ -574,49 +637,56 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     * <code>SSD</code> and <code>HDD</code>.
+     * Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and <code>HDD</code>
+     * .
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment types.
+     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre deployment
+     * types.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system
+     * deployment types.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     * Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param storageType
-     *        Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     *        <code>SSD</code> and <code>HDD</code>.</p>
+     *        Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and
+     *        <code>HDD</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment
-     *        types.
+     *        Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre
+     *        deployment types.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     *        <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *        <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file
+     *        system deployment types.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Default value is <code>SSD</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     *        Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageType
      */
@@ -628,49 +698,56 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     * <code>SSD</code> and <code>HDD</code>.
+     * Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and <code>HDD</code>
+     * .
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment types.
+     * Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre deployment
+     * types.
      * </p>
      * </li>
      * <li>
      * <p>
      * Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     * <code>MULTI_AZ_1</code> Windows file system deployment types.
+     * <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file system
+     * deployment types.
      * </p>
      * </li>
      * </ul>
      * <p>
      * Default value is <code>SSD</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options"> Storage
-     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     * Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     * Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * </p>
      * 
      * @param storageType
-     *        Sets the storage type for the Amazon FSx for Windows file system you're creating. Valid values are
-     *        <code>SSD</code> and <code>HDD</code>.</p>
+     *        Sets the storage type for the file system you're creating. Valid values are <code>SSD</code> and
+     *        <code>HDD</code>.</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows deployment
-     *        types.
+     *        Set to <code>SSD</code> to use solid state drive storage. SSD is supported on all Windows and Lustre
+     *        deployment types.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        Set to <code>HDD</code> to use hard disk drive storage. HDD is supported on <code>SINGLE_AZ_2</code> and
-     *        <code>MULTI_AZ_1</code> Windows file system deployment types.
+     *        <code>MULTI_AZ_1</code> Windows file system deployment types, and on <code>PERSISTENT</code> Lustre file
+     *        system deployment types.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        Default value is <code>SSD</code>. For more information, see <a
      *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/optimize-fsx-costs.html#storage-type-options">
-     *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i>.
+     *        Storage Type Options</a> in the <i>Amazon FSx for Windows User Guide</i> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html#storage-options">Multiple Storage
+     *        Options</a> in the <i>Amazon FSx for Lustre User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StorageType
      */

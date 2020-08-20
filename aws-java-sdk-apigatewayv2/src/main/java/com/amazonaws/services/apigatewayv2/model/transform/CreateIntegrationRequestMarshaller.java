@@ -43,6 +43,8 @@ public class CreateIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> INTEGRATIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationMethod").build();
+    private static final MarshallingInfo<String> INTEGRATIONSUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationSubtype").build();
     private static final MarshallingInfo<String> INTEGRATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("integrationType").build();
     private static final MarshallingInfo<String> INTEGRATIONURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -85,6 +87,7 @@ public class CreateIntegrationRequestMarshaller {
             protocolMarshaller.marshall(createIntegrationRequest.getCredentialsArn(), CREDENTIALSARN_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getIntegrationMethod(), INTEGRATIONMETHOD_BINDING);
+            protocolMarshaller.marshall(createIntegrationRequest.getIntegrationSubtype(), INTEGRATIONSUBTYPE_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getIntegrationType(), INTEGRATIONTYPE_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getIntegrationUri(), INTEGRATIONURI_BINDING);
             protocolMarshaller.marshall(createIntegrationRequest.getPassthroughBehavior(), PASSTHROUGHBEHAVIOR_BINDING);

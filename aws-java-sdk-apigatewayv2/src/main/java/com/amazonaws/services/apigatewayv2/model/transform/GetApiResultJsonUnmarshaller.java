@@ -52,6 +52,10 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
                     context.nextToken();
                     getApiResult.setApiEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    context.nextToken();
+                    getApiResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("apiId", targetDepth)) {
                     context.nextToken();
                     getApiResult.setApiId(context.getUnmarshaller(String.class).unmarshall(context));

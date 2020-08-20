@@ -31,6 +31,8 @@ public class ApiMarshaller {
 
     private static final MarshallingInfo<String> APIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiEndpoint").build();
+    private static final MarshallingInfo<Boolean> APIGATEWAYMANAGED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiGatewayManaged").build();
     private static final MarshallingInfo<String> APIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> APIKEYSELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -75,6 +77,7 @@ public class ApiMarshaller {
 
         try {
             protocolMarshaller.marshall(api.getApiEndpoint(), APIENDPOINT_BINDING);
+            protocolMarshaller.marshall(api.getApiGatewayManaged(), APIGATEWAYMANAGED_BINDING);
             protocolMarshaller.marshall(api.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(api.getApiKeySelectionExpression(), APIKEYSELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(api.getCorsConfiguration(), CORSCONFIGURATION_BINDING);

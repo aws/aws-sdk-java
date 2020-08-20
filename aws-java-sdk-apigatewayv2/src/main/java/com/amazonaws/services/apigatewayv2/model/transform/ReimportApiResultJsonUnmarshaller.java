@@ -52,6 +52,10 @@ public class ReimportApiResultJsonUnmarshaller implements Unmarshaller<ReimportA
                     context.nextToken();
                     reimportApiResult.setApiEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    context.nextToken();
+                    reimportApiResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("apiId", targetDepth)) {
                     context.nextToken();
                     reimportApiResult.setApiId(context.getUnmarshaller(String.class).unmarshall(context));

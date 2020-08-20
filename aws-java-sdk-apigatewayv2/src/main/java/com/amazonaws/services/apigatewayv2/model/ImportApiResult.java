@@ -27,6 +27,13 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String apiEndpoint;
     /**
      * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     */
+    private Boolean apiGatewayManaged;
+    /**
+     * <p>
      * The API ID.
      * </p>
      */
@@ -153,6 +160,66 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     public ImportApiResult withApiEndpoint(String apiEndpoint) {
         setApiEndpoint(apiEndpoint);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @param apiGatewayManaged
+     *        Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *        Gateway. A managed API can be deleted only through the tooling or service that created it.
+     */
+
+    public void setApiGatewayManaged(Boolean apiGatewayManaged) {
+        this.apiGatewayManaged = apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @return Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *         Gateway. A managed API can be deleted only through the tooling or service that created it.
+     */
+
+    public Boolean getApiGatewayManaged() {
+        return this.apiGatewayManaged;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @param apiGatewayManaged
+     *        Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *        Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportApiResult withApiGatewayManaged(Boolean apiGatewayManaged) {
+        setApiGatewayManaged(apiGatewayManaged);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     * Gateway. A managed API can be deleted only through the tooling or service that created it.
+     * </p>
+     * 
+     * @return Specifies whether an API is managed by API Gateway. You can't update or delete a managed API by using API
+     *         Gateway. A managed API can be deleted only through the tooling or service that created it.
+     */
+
+    public Boolean isApiGatewayManaged() {
+        return this.apiGatewayManaged;
     }
 
     /**
@@ -840,6 +907,8 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         sb.append("{");
         if (getApiEndpoint() != null)
             sb.append("ApiEndpoint: ").append(getApiEndpoint()).append(",");
+        if (getApiGatewayManaged() != null)
+            sb.append("ApiGatewayManaged: ").append(getApiGatewayManaged()).append(",");
         if (getApiId() != null)
             sb.append("ApiId: ").append(getApiId()).append(",");
         if (getApiKeySelectionExpression() != null)
@@ -883,6 +952,10 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         if (other.getApiEndpoint() == null ^ this.getApiEndpoint() == null)
             return false;
         if (other.getApiEndpoint() != null && other.getApiEndpoint().equals(this.getApiEndpoint()) == false)
+            return false;
+        if (other.getApiGatewayManaged() == null ^ this.getApiGatewayManaged() == null)
+            return false;
+        if (other.getApiGatewayManaged() != null && other.getApiGatewayManaged().equals(this.getApiGatewayManaged()) == false)
             return false;
         if (other.getApiId() == null ^ this.getApiId() == null)
             return false;
@@ -945,6 +1018,7 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApiEndpoint() == null) ? 0 : getApiEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getApiGatewayManaged() == null) ? 0 : getApiGatewayManaged().hashCode());
         hashCode = prime * hashCode + ((getApiId() == null) ? 0 : getApiId().hashCode());
         hashCode = prime * hashCode + ((getApiKeySelectionExpression() == null) ? 0 : getApiKeySelectionExpression().hashCode());
         hashCode = prime * hashCode + ((getCorsConfiguration() == null) ? 0 : getCorsConfiguration().hashCode());

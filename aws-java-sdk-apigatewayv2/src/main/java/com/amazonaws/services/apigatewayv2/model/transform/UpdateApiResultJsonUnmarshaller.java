@@ -52,6 +52,10 @@ public class UpdateApiResultJsonUnmarshaller implements Unmarshaller<UpdateApiRe
                     context.nextToken();
                     updateApiResult.setApiEndpoint(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("apiGatewayManaged", targetDepth)) {
+                    context.nextToken();
+                    updateApiResult.setApiGatewayManaged(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("apiId", targetDepth)) {
                     context.nextToken();
                     updateApiResult.setApiId(context.getUnmarshaller(String.class).unmarshall(context));

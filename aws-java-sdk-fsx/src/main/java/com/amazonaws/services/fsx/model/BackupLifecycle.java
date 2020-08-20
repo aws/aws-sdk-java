@@ -18,6 +18,34 @@ import javax.annotation.Generated;
  * <p>
  * The lifecycle status of the backup.
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>AVAILABLE</code> - The backup is fully available.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>CREATING</code> - FSx is creating the new user-intiated backup
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; FSx is backing up the file
+ * system.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DELETED</code> - The backup was deleted is no longer available.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>FAILED</code> - Amazon FSx could not complete the backup.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum BackupLifecycle {
