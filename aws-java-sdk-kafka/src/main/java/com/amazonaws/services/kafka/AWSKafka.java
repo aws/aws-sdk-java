@@ -155,6 +155,35 @@ public interface AWSKafka {
 
     /**
      * <p>
+     * Deletes an MSK Configuration.
+     * </p>
+     * 
+     * @param deleteConfigurationRequest
+     * @return Result of the DeleteConfiguration operation returned by the service.
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @sample AWSKafka.DeleteConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteConfigurationResult deleteConfiguration(DeleteConfigurationRequest deleteConfigurationRequest);
+
+    /**
+     * <p>
      * Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.
      * </p>
      * 
@@ -825,6 +854,43 @@ public interface AWSKafka {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateClusterKafkaVersionResult updateClusterKafkaVersion(UpdateClusterKafkaVersionRequest updateClusterKafkaVersionRequest);
+
+    /**
+     * <p>
+     * Updates an MSK configuration.
+     * </p>
+     * 
+     * @param updateConfigurationRequest
+     * @return Result of the UpdateConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @sample AWSKafka.UpdateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateConfigurationResult updateConfiguration(UpdateConfigurationRequest updateConfigurationRequest);
 
     /**
      * <p>

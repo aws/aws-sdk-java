@@ -38,6 +38,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
     private String filterExpression;
 
+    private java.util.List<Tag> tags;
+
     /**
      * <p>
      * The case-sensitive name of the new group. Default is a reserved name and names must be unique.
@@ -119,6 +121,58 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * @param tags
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tags
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +187,9 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getFilterExpression() != null)
-            sb.append("FilterExpression: ").append(getFilterExpression());
+            sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +212,10 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getFilterExpression() != null && other.getFilterExpression().equals(this.getFilterExpression()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +226,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getFilterExpression() == null) ? 0 : getFilterExpression().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -725,7 +725,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory
      * type is also referred to as deleting a custom inventory schema.
      * </p>
      * 
@@ -739,7 +739,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory
      * type is also referred to as deleting a custom inventory schema.
      * </p>
      * 
@@ -2338,7 +2338,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
      * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
      * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
-     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if
+     * all calendars in the request are open. If one or more calendars in the request are closed, the status returned is
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * For more information about Systems Manager Change Calendar, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
      * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -2357,7 +2365,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
      * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
      * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
-     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if
+     * all calendars in the request are open. If one or more calendars in the request are closed, the status returned is
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * For more information about Systems Manager Change Calendar, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
      * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>

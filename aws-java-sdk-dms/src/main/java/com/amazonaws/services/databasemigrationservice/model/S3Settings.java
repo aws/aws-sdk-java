@@ -30,25 +30,27 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an 3S bucket.
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      */
     private String externalTableDefinition;
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      */
     private String csvRowDelimiter;
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      */
     private String csvDelimiter;
@@ -78,8 +80,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -368,8 +380,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -397,11 +409,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an 3S bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
+     *        enables DMS to write and read objects from an 3S bucket.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -410,10 +424,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an 3S bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used by the service access IAM role.
+     * @return The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
+     *         enables DMS to write and read objects from an 3S bucket.
      */
 
     public String getServiceAccessRoleArn() {
@@ -422,11 +438,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an 3S bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
+     *        enables DMS to write and read objects from an 3S bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,11 +455,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      * 
      * @param externalTableDefinition
-     *        The external table definition.
+     *        Specifies how tables are defined in the S3 source files only.
      */
 
     public void setExternalTableDefinition(String externalTableDefinition) {
@@ -450,10 +468,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      * 
-     * @return The external table definition.
+     * @return Specifies how tables are defined in the S3 source files only.
      */
 
     public String getExternalTableDefinition() {
@@ -462,11 +480,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      * 
      * @param externalTableDefinition
-     *        The external table definition.
+     *        Specifies how tables are defined in the S3 source files only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,12 +495,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      * 
      * @param csvRowDelimiter
-     *        The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>
-     *        ).
+     *        The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage
+     *        return (<code>\n</code>).
      */
 
     public void setCsvRowDelimiter(String csvRowDelimiter) {
@@ -491,11 +510,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      * 
-     * @return The delimiter used to separate rows in the source files. The default is a carriage return (
-     *         <code>\n</code>).
+     * @return The delimiter used to separate rows in the .csv file for both source and target. The default is a
+     *         carriage return (<code>\n</code>).
      */
 
     public String getCsvRowDelimiter() {
@@ -504,12 +524,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      * 
      * @param csvRowDelimiter
-     *        The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>
-     *        ).
+     *        The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage
+     *        return (<code>\n</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,11 +541,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      * 
      * @param csvDelimiter
-     *        The delimiter used to separate columns in the source files. The default is a comma.
+     *        The delimiter used to separate columns in the .csv file for both source and target. The default is a
+     *        comma.
      */
 
     public void setCsvDelimiter(String csvDelimiter) {
@@ -533,10 +555,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      * 
-     * @return The delimiter used to separate columns in the source files. The default is a comma.
+     * @return The delimiter used to separate columns in the .csv file for both source and target. The default is a
+     *         comma.
      */
 
     public String getCsvDelimiter() {
@@ -545,11 +568,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      * 
      * @param csvDelimiter
-     *        The delimiter used to separate columns in the source files. The default is a comma.
+     *        The delimiter used to separate columns in the .csv file for both source and target. The default is a
+     *        comma.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,8 +771,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -811,9 +845,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -881,8 +923,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -944,9 +996,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The type of server-side encryption that you want to use for your data. This encryption type is part of
      *         the endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *         <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *         Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *         use the following actions:</p>
+     *         <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *         <p>
+     *         For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *         <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *         change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *         allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1014,8 +1074,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -1078,9 +1148,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1150,8 +1228,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -1214,9 +1302,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1284,8 +1380,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -1348,9 +1454,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -3211,8 +3325,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3239,8 +3353,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param cdcInsertsAndUpdates
      *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *        the source database are migrated to the .csv or .parquet file. </p>
+     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *        from the source database are migrated to the .csv or .parquet file. </p>
      *        <p>
      *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3271,8 +3385,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3298,8 +3412,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *         the source database are migrated to the .csv or .parquet file. </p>
+     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *         from the source database are migrated to the .csv or .parquet file. </p>
      *         <p>
      *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3330,8 +3444,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3358,8 +3472,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param cdcInsertsAndUpdates
      *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *        the source database are migrated to the .csv or .parquet file. </p>
+     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *        from the source database are migrated to the .csv or .parquet file. </p>
      *        <p>
      *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3392,8 +3506,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3419,8 +3533,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *         the source database are migrated to the .csv or .parquet file. </p>
+     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *         from the source database are migrated to the .csv or .parquet file. </p>
      *         <p>
      *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to

@@ -1,3 +1,36 @@
+# __1.11.848__ __2020-08-24__
+## __AWS Database Migration Service__
+  - ### Features
+    - Added new endpoint settings to include columns with Null and Empty value when using Kinesis and Kafka as target. Added a new endpoint setting to set maximum message size when using Kafka as target.
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - Add traversalDirection to ListAssociatedAssetsRequest and add portal status to ListPortalsResponse
+
+## __AWS Kinesis Video__
+  - ### Features
+    - Upgrade Netty version to '4.1.48.Final'
+
+## __AWS X-Ray__
+  - ### Features
+    - AWS X-Ray now supports tagging on sampling rules and groups.
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation updates for CloudWatch Logs
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release enables customers to use VPC prefix lists in their transit gateway route tables, and it adds support for Provisioned IOPS SSD (io2) EBS volumes.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Add string length constraints to OpsDataAttributeName and OpsFilterValue.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Add UpdateConfiguration and DeleteConfiguration operations.
+
 # __1.11.847__ __2020-08-20__
 ## __Amazon Chime__
   - ### Features

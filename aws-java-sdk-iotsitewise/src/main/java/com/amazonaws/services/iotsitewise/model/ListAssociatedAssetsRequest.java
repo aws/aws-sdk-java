@@ -27,25 +27,47 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the parent asset.
+     * The ID of the asset to query.
      * </p>
      */
     private String assetId;
     /**
      * <p>
-     * The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy ID, use
-     * the <a
+     * The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or
      * <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">
-     * DescribeAssetModel</a> actions.
+     * DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     * <code>traversalDirection</code>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      */
     private String hierarchyId;
+    /**
+     * <p>
+     * The direction to list associated assets. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code>
+     * parameter is required if you choose <code>CHILD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PARENT</code> – The list includes the asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>CHILD</code>
+     * </p>
+     */
+    private String traversalDirection;
     /**
      * <p>
      * The token to be used for the next set of paginated results.
@@ -56,16 +78,19 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The ID of the parent asset.
+     * The ID of the asset to query.
      * </p>
      * 
      * @param assetId
-     *        The ID of the parent asset.
+     *        The ID of the asset to query.
      */
 
     public void setAssetId(String assetId) {
@@ -74,10 +99,10 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the parent asset.
+     * The ID of the asset to query.
      * </p>
      * 
-     * @return The ID of the parent asset.
+     * @return The ID of the asset to query.
      */
 
     public String getAssetId() {
@@ -86,11 +111,11 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID of the parent asset.
+     * The ID of the asset to query.
      * </p>
      * 
      * @param assetId
-     *        The ID of the parent asset.
+     *        The ID of the asset to query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,29 +126,30 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy ID, use
-     * the <a
+     * The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or
      * <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">
-     * DescribeAssetModel</a> actions.
+     * DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     * <code>traversalDirection</code>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
-     *        The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy ID,
-     *        use the <a
+     *        The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the
+     *        <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset
      *        </a> or <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">
-     *        DescribeAssetModel</a> actions.</p>
+     *        DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     *        <code>traversalDirection</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public void setHierarchyId(String hierarchyId) {
@@ -132,28 +158,28 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy ID, use
-     * the <a
+     * The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or
      * <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">
-     * DescribeAssetModel</a> actions.
+     * DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     * <code>traversalDirection</code>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
-     * @return The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy
-     *         ID, use the <a
-     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">
+     * @return The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use
+     *         the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">
      *         DescribeAsset</a> or <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html"
-     *         >DescribeAssetModel</a> actions.</p>
+     *         >DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     *         <code>traversalDirection</code>.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public String getHierarchyId() {
@@ -162,34 +188,218 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy ID, use
-     * the <a
+     * The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or
      * <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">
-     * DescribeAssetModel</a> actions.
+     * DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     * <code>traversalDirection</code>.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param hierarchyId
-     *        The hierarchy ID (of the parent asset model) whose associated assets are returned. To find a hierarchy ID,
-     *        use the <a
+     *        The ID of the hierarchy by which child assets are associated to the asset. To find a hierarchy ID, use the
+     *        <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset
      *        </a> or <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">
-     *        DescribeAssetModel</a> actions.</p>
+     *        DescribeAssetModel</a> operations. This parameter is required if you choose <code>CHILD</code> for
+     *        <code>traversalDirection</code>.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAssociatedAssetsRequest withHierarchyId(String hierarchyId) {
         setHierarchyId(hierarchyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The direction to list associated assets. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code>
+     * parameter is required if you choose <code>CHILD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PARENT</code> – The list includes the asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>CHILD</code>
+     * </p>
+     * 
+     * @param traversalDirection
+     *        The direction to list associated assets. Choose one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHILD</code> – The list includes all child assets associated to the asset. The
+     *        <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PARENT</code> – The list includes the asset's parent asset.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>CHILD</code>
+     * @see TraversalDirection
+     */
+
+    public void setTraversalDirection(String traversalDirection) {
+        this.traversalDirection = traversalDirection;
+    }
+
+    /**
+     * <p>
+     * The direction to list associated assets. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code>
+     * parameter is required if you choose <code>CHILD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PARENT</code> – The list includes the asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>CHILD</code>
+     * </p>
+     * 
+     * @return The direction to list associated assets. Choose one of the following options:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CHILD</code> – The list includes all child assets associated to the asset. The
+     *         <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PARENT</code> – The list includes the asset's parent asset.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>CHILD</code>
+     * @see TraversalDirection
+     */
+
+    public String getTraversalDirection() {
+        return this.traversalDirection;
+    }
+
+    /**
+     * <p>
+     * The direction to list associated assets. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code>
+     * parameter is required if you choose <code>CHILD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PARENT</code> – The list includes the asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>CHILD</code>
+     * </p>
+     * 
+     * @param traversalDirection
+     *        The direction to list associated assets. Choose one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHILD</code> – The list includes all child assets associated to the asset. The
+     *        <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PARENT</code> – The list includes the asset's parent asset.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>CHILD</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TraversalDirection
+     */
+
+    public ListAssociatedAssetsRequest withTraversalDirection(String traversalDirection) {
+        setTraversalDirection(traversalDirection);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The direction to list associated assets. Choose one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CHILD</code> – The list includes all child assets associated to the asset. The <code>hierarchyId</code>
+     * parameter is required if you choose <code>CHILD</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PARENT</code> – The list includes the asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default: <code>CHILD</code>
+     * </p>
+     * 
+     * @param traversalDirection
+     *        The direction to list associated assets. Choose one of the following options:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CHILD</code> – The list includes all child assets associated to the asset. The
+     *        <code>hierarchyId</code> parameter is required if you choose <code>CHILD</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PARENT</code> – The list includes the asset's parent asset.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>CHILD</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TraversalDirection
+     */
+
+    public ListAssociatedAssetsRequest withTraversalDirection(TraversalDirection traversalDirection) {
+        this.traversalDirection = traversalDirection.toString();
         return this;
     }
 
@@ -237,9 +447,14 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 50
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -250,8 +465,13 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.
+     * @return The maximum number of results to be returned per paginated request.</p>
+     *         <p>
+     *         Default: 50
      */
 
     public Integer getMaxResults() {
@@ -262,9 +482,14 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 50
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,6 +514,8 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("AssetId: ").append(getAssetId()).append(",");
         if (getHierarchyId() != null)
             sb.append("HierarchyId: ").append(getHierarchyId()).append(",");
+        if (getTraversalDirection() != null)
+            sb.append("TraversalDirection: ").append(getTraversalDirection()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -315,6 +542,10 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getHierarchyId() != null && other.getHierarchyId().equals(this.getHierarchyId()) == false)
             return false;
+        if (other.getTraversalDirection() == null ^ this.getTraversalDirection() == null)
+            return false;
+        if (other.getTraversalDirection() != null && other.getTraversalDirection().equals(this.getTraversalDirection()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -333,6 +564,7 @@ public class ListAssociatedAssetsRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getAssetId() == null) ? 0 : getAssetId().hashCode());
         hashCode = prime * hashCode + ((getHierarchyId() == null) ? 0 : getHierarchyId().hashCode());
+        hashCode = prime * hashCode + ((getTraversalDirection() == null) ? 0 : getTraversalDirection().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

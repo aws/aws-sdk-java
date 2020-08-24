@@ -380,6 +380,20 @@ public interface AWSXRay {
     GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest);
 
     /**
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     * @sample AWSXRay.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
      * <p>
      * Updates the encryption configuration for X-Ray data.
      * </p>
@@ -503,6 +517,35 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest);
+
+    /**
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     * @throws TooManyTagsException
+     * @sample AWSXRay.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     * @sample AWSXRay.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

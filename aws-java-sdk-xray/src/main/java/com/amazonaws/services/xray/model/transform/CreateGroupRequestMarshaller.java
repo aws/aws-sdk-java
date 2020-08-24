@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.xray.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class CreateGroupRequestMarshaller {
             .marshallLocationName("GroupName").build();
     private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateGroupRequestMarshaller instance = new CreateGroupRequestMarshaller();
 
@@ -50,6 +53,7 @@ public class CreateGroupRequestMarshaller {
         try {
             protocolMarshaller.marshall(createGroupRequest.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(createGroupRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
+            protocolMarshaller.marshall(createGroupRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

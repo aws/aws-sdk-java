@@ -76,6 +76,10 @@ public class PortalSummaryJsonUnmarshaller implements Unmarshaller<PortalSummary
                     context.nextToken();
                     portalSummary.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    portalSummary.setStatus(PortalStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -20,7 +20,9 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MonitorErrorCode {
 
-    INTERNAL_FAILURE("INTERNAL_FAILURE");
+    INTERNAL_FAILURE("INTERNAL_FAILURE"),
+    VALIDATION_ERROR("VALIDATION_ERROR"),
+    LIMIT_EXCEEDED("LIMIT_EXCEEDED");
 
     private String value;
 

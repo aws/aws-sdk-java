@@ -62,7 +62,7 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
     private Long to;
     /**
      * <p>
-     * The name of Amazon S3 bucket to which the log data was exported.
+     * The name of the S3 bucket to which the log data was exported.
      * </p>
      */
     private String destination;
@@ -80,7 +80,7 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
     private ExportTaskStatus status;
     /**
      * <p>
-     * Execution info about the export task.
+     * Execution information about the export task.
      * </p>
      */
     private ExportTaskExecutionInfo executionInfo;
@@ -299,11 +299,11 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of Amazon S3 bucket to which the log data was exported.
+     * The name of the S3 bucket to which the log data was exported.
      * </p>
      * 
      * @param destination
-     *        The name of Amazon S3 bucket to which the log data was exported.
+     *        The name of the S3 bucket to which the log data was exported.
      */
 
     public void setDestination(String destination) {
@@ -312,10 +312,10 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of Amazon S3 bucket to which the log data was exported.
+     * The name of the S3 bucket to which the log data was exported.
      * </p>
      * 
-     * @return The name of Amazon S3 bucket to which the log data was exported.
+     * @return The name of the S3 bucket to which the log data was exported.
      */
 
     public String getDestination() {
@@ -324,11 +324,11 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of Amazon S3 bucket to which the log data was exported.
+     * The name of the S3 bucket to which the log data was exported.
      * </p>
      * 
      * @param destination
-     *        The name of Amazon S3 bucket to which the log data was exported.
+     *        The name of the S3 bucket to which the log data was exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,11 +419,11 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution info about the export task.
+     * Execution information about the export task.
      * </p>
      * 
      * @param executionInfo
-     *        Execution info about the export task.
+     *        Execution information about the export task.
      */
 
     public void setExecutionInfo(ExportTaskExecutionInfo executionInfo) {
@@ -432,10 +432,10 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution info about the export task.
+     * Execution information about the export task.
      * </p>
      * 
-     * @return Execution info about the export task.
+     * @return Execution information about the export task.
      */
 
     public ExportTaskExecutionInfo getExecutionInfo() {
@@ -444,11 +444,11 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution info about the export task.
+     * Execution information about the export task.
      * </p>
      * 
      * @param executionInfo
-     *        Execution info about the export task.
+     *        Execution information about the export task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

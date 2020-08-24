@@ -49,7 +49,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -151,7 +157,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -203,7 +215,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *         ).
+     *         | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>prefix-list-id</code> - The ID of the prefix list.
      *         </p>
      *         </li>
      *         <li>
@@ -265,7 +282,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -318,7 +341,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        ).
+     *        | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
      *        </p>
      *        </li>
      *        <li>
@@ -381,7 +409,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -439,7 +473,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        ).
+     *        | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
      *        </p>
      *        </li>
      *        <li>
@@ -504,7 +543,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -557,7 +602,12 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        ).
+     *        | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
      *        </p>
      *        </li>
      *        <li>

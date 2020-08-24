@@ -639,8 +639,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * After you attach an EBS volume, you must make it available. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making an EBS Volume Available
-     * For Use</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making an EBS volume available
+     * for use</a>.
      * </p>
      * <p>
      * If a volume has an AWS Marketplace product code:
@@ -671,7 +671,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching Amazon EBS
-     * Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param attachVolumeRequest
@@ -1020,7 +1020,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying an Amazon EBS
-     * Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param copySnapshotRequest
@@ -1815,7 +1815,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * You can tag your snapshots during creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -2099,6 +2099,20 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Creates a reference (route) to a prefix list in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param createTransitGatewayPrefixListReferenceRequest
+     * @return Result of the CreateTransitGatewayPrefixListReference operation returned by the service.
+     * @sample AmazonEC2.CreateTransitGatewayPrefixListReference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPrefixListReference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateTransitGatewayPrefixListReferenceResult createTransitGatewayPrefixListReference(
+            CreateTransitGatewayPrefixListReferenceRequest createTransitGatewayPrefixListReferenceRequest);
+
+    /**
+     * <p>
      * Creates a static route for the specified transit gateway route table.
      * </p>
      * 
@@ -2161,13 +2175,13 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * You can tag your volumes during creation. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a>
      * in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating an Amazon EBS
-     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createVolumeRequest
@@ -2796,7 +2810,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting an Amazon EBS
-     * Snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deleteSnapshotRequest
@@ -2961,6 +2975,20 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes a reference (route) to a prefix list in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param deleteTransitGatewayPrefixListReferenceRequest
+     * @return Result of the DeleteTransitGatewayPrefixListReference operation returned by the service.
+     * @sample AmazonEC2.DeleteTransitGatewayPrefixListReference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPrefixListReference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteTransitGatewayPrefixListReferenceResult deleteTransitGatewayPrefixListReference(
+            DeleteTransitGatewayPrefixListReferenceRequest deleteTransitGatewayPrefixListReferenceRequest);
+
+    /**
+     * <p>
      * Deletes the specified route from the specified transit gateway route table.
      * </p>
      * 
@@ -3010,7 +3038,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting an Amazon EBS
-     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param deleteVolumeRequest
@@ -5340,8 +5368,8 @@ public interface AmazonEC2 {
      * status of the volume is <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the
      * status is <code>insufficient-data</code>, then the checks may still be taking place on your volume at the time.
      * We recommend that you retry the request. For more information about volume status, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the Status of
-     * Your Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the status of
+     * your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
      * <i>Events</i>: Reflect the cause of a volume status and may require you to take action. For example, if your
@@ -5421,7 +5449,7 @@ public interface AmazonEC2 {
      * CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon
      * CloudWatch Events User Guide</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-     * Volume Modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeVolumesModificationsRequest
@@ -5730,7 +5758,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching an Amazon EBS
-     * Volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param detachVolumeRequest
@@ -6035,7 +6063,7 @@ public interface AmazonEC2 {
      * After you enable encryption by default, you can no longer launch instances using instance types that do not
      * support encryption. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#EBSEncryption_supported_instances"
-     * >Supported Instance Types</a>.
+     * >Supported instance types</a>.
      * </p>
      * 
      * @param enableEbsEncryptionByDefaultRequest
@@ -6057,8 +6085,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS Fast
-     * Snapshot Restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-fast-snapshot-restore.html">Amazon EBS fast
+     * snapshot restore</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param enableFastSnapshotRestoresRequest
@@ -6509,6 +6537,20 @@ public interface AmazonEC2 {
      */
     GetTransitGatewayMulticastDomainAssociationsResult getTransitGatewayMulticastDomainAssociations(
             GetTransitGatewayMulticastDomainAssociationsRequest getTransitGatewayMulticastDomainAssociationsRequest);
+
+    /**
+     * <p>
+     * Gets information about the prefix list references in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param getTransitGatewayPrefixListReferencesRequest
+     * @return Result of the GetTransitGatewayPrefixListReferences operation returned by the service.
+     * @sample AmazonEC2.GetTransitGatewayPrefixListReferences
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayPrefixListReferences"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTransitGatewayPrefixListReferencesResult getTransitGatewayPrefixListReferences(
+            GetTransitGatewayPrefixListReferencesRequest getTransitGatewayPrefixListReferencesRequest);
 
     /**
      * <p>
@@ -7161,7 +7203,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about modifying snapshot permissions, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-     * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param modifySnapshotAttributeRequest
@@ -7284,6 +7326,34 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the specified transit gateway. When you modify a transit gateway, the modified options are applied to
+     * new transit gateway attachments only. Your existing transit gateway attachments are not modified.
+     * </p>
+     * 
+     * @param modifyTransitGatewayRequest
+     * @return Result of the ModifyTransitGateway operation returned by the service.
+     * @sample AmazonEC2.ModifyTransitGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGateway" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyTransitGatewayResult modifyTransitGateway(ModifyTransitGatewayRequest modifyTransitGatewayRequest);
+
+    /**
+     * <p>
+     * Modifies a reference (route) to a prefix list in a specified transit gateway route table.
+     * </p>
+     * 
+     * @param modifyTransitGatewayPrefixListReferenceRequest
+     * @return Result of the ModifyTransitGatewayPrefixListReference operation returned by the service.
+     * @sample AmazonEC2.ModifyTransitGatewayPrefixListReference
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPrefixListReference"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyTransitGatewayPrefixListReferenceResult modifyTransitGatewayPrefixListReference(
+            ModifyTransitGatewayPrefixListReferenceRequest modifyTransitGatewayPrefixListReferenceRequest);
+
+    /**
+     * <p>
      * Modifies the specified VPC attachment.
      * </p>
      * 
@@ -7301,18 +7371,18 @@ public interface AmazonEC2 {
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you may be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
      * an EBS volume running Linux, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Windows</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
+     * type of an EBS volume on Linux</a>. For more information about modifying an EBS volume running Windows, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
+     * type of an EBS volume on Windows</a>.
      * </p>
      * <p>
      * When you complete a resize operation on your volume, you need to extend the volume's file-system size to take
      * advantage of the new storage capacity. For information about extending a Linux file system, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux"
-     * >Extending a Linux File System</a>. For information about extending a Windows file system, see <a href=
+     * >Extending a Linux file system</a>. For information about extending a Windows file system, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows"
-     * >Extending a Windows File System</a>.
+     * >Extending a Windows file system</a>.
      * </p>
      * <p>
      * You can use CloudWatch Events to check the status of a modification to an EBS volume. For information about
@@ -7320,15 +7390,15 @@ public interface AmazonEC2 {
      * CloudWatch Events User Guide</a>. You can also track the status of a modification using
      * <a>DescribeVolumesModifications</a>. For information about tracking status changes using either method, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring
-     * Volume Modifications</a>.
+     * volume modifications</a>.
      * </p>
      * <p>
      * With previous-generation instance types, resizing an EBS volume may require detaching and reattaching the volume
      * or stopping and restarting the instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Linux</a> and <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the Size, IOPS, or
-     * Type of an EBS Volume on Windows</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
+     * type of an EBS volume on Linux</a> and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
+     * type of an EBS volume on Windows</a>.
      * </p>
      * <p>
      * If you reach the maximum volume modification rate per volume limit, you will need to wait at least six hours
@@ -8304,7 +8374,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information about modifying snapshot permissions, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing
-     * Snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param resetSnapshotAttributeRequest

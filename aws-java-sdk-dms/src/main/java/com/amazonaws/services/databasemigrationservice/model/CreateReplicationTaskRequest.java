@@ -137,10 +137,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      */
     private String cdcStopPosition;
@@ -874,20 +874,20 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public void setCdcStopPosition(String cdcStopPosition) {
@@ -900,19 +900,19 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
      *         time or commit time.</p>
      *         <p>
-     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *         </p>
      *         <p>
-     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *         Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public String getCdcStopPosition() {
@@ -925,20 +925,20 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

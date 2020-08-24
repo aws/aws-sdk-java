@@ -75,6 +75,8 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
      */
     private String roleArn;
 
+    private PortalStatus status;
+
     /**
      * <p>
      * The ID of the portal.
@@ -380,6 +382,32 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param status
+     */
+
+    public void setStatus(PortalStatus status) {
+        this.status = status;
+    }
+
+    /**
+     * @return
+     */
+
+    public PortalStatus getStatus() {
+        return this.status;
+    }
+
+    /**
+     * @param status
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortalSummary withStatus(PortalStatus status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -404,7 +432,9 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdateDate() != null)
             sb.append("LastUpdateDate: ").append(getLastUpdateDate()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -447,6 +477,10 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -462,6 +496,7 @@ public class PortalSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateDate() == null) ? 0 : getLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

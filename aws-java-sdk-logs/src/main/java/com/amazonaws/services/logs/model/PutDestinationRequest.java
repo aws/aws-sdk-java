@@ -39,8 +39,8 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
     private String targetArn;
     /**
      * <p>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord operation on
-     * the destination stream.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code>
+     * operation on the destination stream.
      * </p>
      */
     private String roleArn;
@@ -127,13 +127,13 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord operation on
-     * the destination stream.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code>
+     * operation on the destination stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord
-     *        operation on the destination stream.
+     *        The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis
+     *        <code>PutRecord</code> operation on the destination stream.
      */
 
     public void setRoleArn(String roleArn) {
@@ -142,12 +142,12 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord operation on
-     * the destination stream.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code>
+     * operation on the destination stream.
      * </p>
      * 
-     * @return The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord
-     *         operation on the destination stream.
+     * @return The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis
+     *         <code>PutRecord</code> operation on the destination stream.
      */
 
     public String getRoleArn() {
@@ -156,13 +156,13 @@ public class PutDestinationRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord operation on
-     * the destination stream.
+     * The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis <code>PutRecord</code>
+     * operation on the destination stream.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis PutRecord
-     *        operation on the destination stream.
+     *        The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis
+     *        <code>PutRecord</code> operation on the destination stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

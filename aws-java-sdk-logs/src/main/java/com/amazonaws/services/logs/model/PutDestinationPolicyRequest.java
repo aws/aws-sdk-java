@@ -34,7 +34,7 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      */
     private String accessPolicy;
@@ -82,12 +82,12 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      * 
      * @param accessPolicy
      *        An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     *        destination.
+     *        destination. This can be up to 5120 bytes.
      */
 
     public void setAccessPolicy(String accessPolicy) {
@@ -97,11 +97,11 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      * 
      * @return An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     *         destination.
+     *         destination. This can be up to 5120 bytes.
      */
 
     public String getAccessPolicy() {
@@ -111,12 +111,12 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      * 
      * @param accessPolicy
      *        An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     *        destination.
+     *        destination. This can be up to 5120 bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

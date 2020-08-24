@@ -87,6 +87,12 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RuleLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.xray.model.transform.RuleLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.xray.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.xray.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.xray.model.AWSXRayException.class));
 
     /**
@@ -1178,6 +1184,60 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
     }
 
     /**
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     * @sample AWSXRay.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Updates the encryption configuration for X-Ray data.
      * </p>
@@ -1412,6 +1472,115 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
 
             HttpResponseHandler<AmazonWebServiceResponse<PutTraceSegmentsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutTraceSegmentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     * @throws TooManyTagsException
+     * @sample AWSXRay.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     * @sample AWSXRay.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "XRay");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

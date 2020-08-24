@@ -113,6 +113,11 @@ public class AbstractAWSXRay implements AWSXRay {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutEncryptionConfigResult putEncryptionConfig(PutEncryptionConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,16 @@ public class AbstractAWSXRay implements AWSXRay {
 
     @Override
     public PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

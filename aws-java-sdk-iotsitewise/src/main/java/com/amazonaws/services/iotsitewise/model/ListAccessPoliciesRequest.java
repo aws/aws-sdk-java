@@ -59,6 +59,9 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      */
     private Integer maxResults;
 
@@ -308,9 +311,14 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 50
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -321,8 +329,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.
+     * @return The maximum number of results to be returned per paginated request.</p>
+     *         <p>
+     *         Default: 50
      */
 
     public Integer getMaxResults() {
@@ -333,9 +346,14 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 50
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

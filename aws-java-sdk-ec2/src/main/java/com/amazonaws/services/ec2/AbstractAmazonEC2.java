@@ -480,6 +480,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateTransitGatewayPrefixListReferenceResult createTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTransitGatewayRouteResult createTransitGatewayRoute(CreateTransitGatewayRouteRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -731,6 +736,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteTransitGatewayPeeringAttachmentResult deleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTransitGatewayPrefixListReferenceResult deleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1873,6 +1883,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetTransitGatewayPrefixListReferencesResult getTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTransitGatewayRouteTableAssociationsResult getTransitGatewayRouteTableAssociations(GetTransitGatewayRouteTableAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2056,6 +2071,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyTrafficMirrorSessionResult modifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyTransitGatewayResult modifyTransitGateway(ModifyTransitGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyTransitGatewayPrefixListReferenceResult modifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -31,6 +31,8 @@ public class ListAssociatedAssetsRequestMarshaller {
             .marshallLocationName("assetId").build();
     private static final MarshallingInfo<String> HIERARCHYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("hierarchyId").build();
+    private static final MarshallingInfo<String> TRAVERSALDIRECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("traversalDirection").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -54,6 +56,7 @@ public class ListAssociatedAssetsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listAssociatedAssetsRequest.getAssetId(), ASSETID_BINDING);
             protocolMarshaller.marshall(listAssociatedAssetsRequest.getHierarchyId(), HIERARCHYID_BINDING);
+            protocolMarshaller.marshall(listAssociatedAssetsRequest.getTraversalDirection(), TRAVERSALDIRECTION_BINDING);
             protocolMarshaller.marshall(listAssociatedAssetsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAssociatedAssetsRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

@@ -80,6 +80,14 @@ public class KafkaSettingsJsonUnmarshaller implements Unmarshaller<KafkaSettings
                     context.nextToken();
                     kafkaSettings.setIncludeControlDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("MessageMaxBytes", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setMessageMaxBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeNullAndEmpty", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeNullAndEmpty(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

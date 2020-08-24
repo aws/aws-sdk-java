@@ -174,6 +174,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConfigurationResult> deleteConfigurationAsync(DeleteConfigurationRequest request) {
+
+        return deleteConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationResult> deleteConfigurationAsync(final DeleteConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRequest, DeleteConfigurationResult> asyncHandler) {
+        final DeleteConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteConfigurationResult>() {
+            @Override
+            public DeleteConfigurationResult call() throws Exception {
+                DeleteConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
 
         return describeClusterAsync(request, null);
@@ -819,6 +852,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
 
                 try {
                     result = executeUpdateClusterKafkaVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationResult> updateConfigurationAsync(UpdateConfigurationRequest request) {
+
+        return updateConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationResult> updateConfigurationAsync(final UpdateConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateConfigurationRequest, UpdateConfigurationResult> asyncHandler) {
+        final UpdateConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateConfigurationResult>() {
+            @Override
+            public UpdateConfigurationResult call() throws Exception {
+                UpdateConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

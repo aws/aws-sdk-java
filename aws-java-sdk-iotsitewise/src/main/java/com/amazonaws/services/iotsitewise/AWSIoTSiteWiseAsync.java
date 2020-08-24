@@ -43,7 +43,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-     * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param associateAssetsRequest
@@ -59,7 +59,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating
-     * Assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * assets</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param associateAssetsRequest
@@ -147,7 +147,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value (TQV) data
      * point. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting Data Using the API</a>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a>
      * in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -180,6 +180,12 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <code>{T1, GOOD, V2}</code> replaces the existing TQV.
      * </p>
      * </important>
+     * <p>
+     * AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action"
+     * >BatchPutAssetPropertyValue authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
      * 
      * @param batchPutAssetPropertyValueRequest
      * @return A Java Future containing the result of the BatchPutAssetPropertyValue operation returned by the service.
@@ -194,7 +200,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Sends a list of asset property values to AWS IoT SiteWise. Each value is a timestamp-quality-value (TQV) data
      * point. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting Data Using the API</a>
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a>
      * in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
@@ -227,6 +233,12 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <code>{T1, GOOD, V2}</code> replaces the existing TQV.
      * </p>
      * </important>
+     * <p>
+     * AWS IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry individually. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action"
+     * >BatchPutAssetPropertyValue authorization</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * </p>
      * 
      * @param batchPutAssetPropertyValueRequest
      * @param asyncHandler
@@ -278,7 +290,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Creates an asset from an existing asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating Assets</a> in the
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
      * <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -293,7 +305,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Creates an asset from an existing asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating Assets</a> in the
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the
      * <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -315,7 +327,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Creates an asset model from specified property and hierarchy definitions. You create assets from asset models.
      * With asset models, you can easily create assets of the same type that have standardized definitions. Each asset
      * created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining Asset Models</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -332,7 +344,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Creates an asset model from specified property and hierarchy definitions. You create assets from asset models.
      * With asset models, you can easily create assets of the same type that have standardized definitions. Each asset
      * created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining Asset Models</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -419,9 +431,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. Before you can create a portal, you must configure
-     * AWS Single Sign-On in the current Region. AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For
-     * more information, see <a
+     * Creates a portal, which can contain projects and dashboards. Before you can create a portal, you must enable AWS
+     * Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
      * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
@@ -430,7 +441,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Before you can sign in to a new portal, you must add at least one AWS SSO user or group to that portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
-     * >Adding or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * </note>
      * 
@@ -444,9 +455,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. Before you can create a portal, you must configure
-     * AWS Single Sign-On in the current Region. AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For
-     * more information, see <a
+     * Creates a portal, which can contain projects and dashboards. Before you can create a portal, you must enable AWS
+     * Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
      * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
@@ -455,7 +465,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * Before you can sign in to a new portal, you must add at least one AWS SSO user or group to that portal. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
-     * >Adding or Removing Portal Administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * </note>
      * 
@@ -539,8 +549,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Deletes an asset. This action can't be undone. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -561,8 +571,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Deletes an asset. This action can't be undone. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -591,8 +601,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that
      * contains a property formula expression that depends on the asset model that you want to delete. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param deleteAssetModelRequest
@@ -609,8 +619,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that
      * contains a property formula expression that depends on the asset model that you want to delete. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param deleteAssetModelRequest
@@ -853,7 +863,19 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves information about an asset's property.
+     * Retrieves information about an asset property.
+     * </p>
+     * <note>
+     * <p>
+     * When you call this operation for an attribute property, this response includes the default attribute value that
+     * you define in the asset model. If you update the default value in the model, this operation's response includes
+     * the new default value.
+     * </p>
+     * </note>
+     * <p>
+     * This operation doesn't return the value of the asset property. To get the value of an asset property, use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">
+     * GetAssetPropertyValue</a>.
      * </p>
      * 
      * @param describeAssetPropertyRequest
@@ -866,7 +888,19 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves information about an asset's property.
+     * Retrieves information about an asset property.
+     * </p>
+     * <note>
+     * <p>
+     * When you call this operation for an attribute property, this response includes the default attribute value that
+     * you define in the asset model. If you update the default value in the model, this operation's response includes
+     * the new default value.
+     * </p>
+     * </note>
+     * <p>
+     * This operation doesn't return the value of the asset property. To get the value of an asset property, use <a
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">
+     * GetAssetPropertyValue</a>.
      * </p>
      * 
      * @param describeAssetPropertyRequest
@@ -1117,7 +1151,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-     * Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1151,7 +1185,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets aggregated values for an asset property. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying
-     * Aggregated Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * aggregates</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1190,7 +1224,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets an asset property's current value. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values"
-     * >Querying Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1223,7 +1257,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets an asset property's current value. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values"
-     * >Querying Current Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying current values</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1261,7 +1295,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets the history of an asset property's values. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values"
-     * >Querying Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1296,7 +1330,7 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Gets the history of an asset property's values. For more information, see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values"
-     * >Querying Historical Property Values</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * >Querying historical values</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <p>
      * To identify an asset property, you must specify one of the following:
@@ -1469,9 +1503,23 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of the assets associated to a parent asset (<code>assetId</code>) by a given hierarchy
-     * (<code>hierarchyId</code>).
+     * Retrieves a paginated list of associated assets.
      * </p>
+     * <p>
+     * You can use this operation to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List child assets associated to a parent asset by a hierarchy that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List an asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listAssociatedAssetsRequest
      * @return A Java Future containing the result of the ListAssociatedAssets operation returned by the service.
@@ -1483,9 +1531,23 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of the assets associated to a parent asset (<code>assetId</code>) by a given hierarchy
-     * (<code>hierarchyId</code>).
+     * Retrieves a paginated list of associated assets.
      * </p>
+     * <p>
+     * You can use this operation to do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List child assets associated to a parent asset by a hierarchy that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List an asset's parent asset.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listAssociatedAssetsRequest
      * @param asyncHandler
@@ -1817,8 +1879,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Updates an asset's name. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param updateAssetRequest
@@ -1832,8 +1894,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
     /**
      * <p>
      * Updates an asset's name. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param updateAssetRequest
@@ -1853,8 +1915,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Updates an asset model and all of the assets that were created from the model. Each asset created from the model
      * inherits the updated asset model's property and hierarchy definitions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <important>
      * <p>
@@ -1884,8 +1946,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      * <p>
      * Updates an asset model and all of the assets that were created from the model. Each asset created from the model
      * inherits the updated asset model's property and hierarchy definitions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating Assets
-     * and Models</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets
+     * and models</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * <important>
      * <p>

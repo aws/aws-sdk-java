@@ -54,7 +54,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
      * </p>
      * </li>
      * <li>
@@ -79,7 +80,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
      * </p>
      * </li>
      * <li>
@@ -203,7 +204,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
      * </p>
      * </li>
      * <li>
@@ -228,7 +230,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
      * </p>
      * </li>
      * <li>
@@ -263,8 +265,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 |
-     *         st1).
+     *         <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *         sc1 | st1).
      *         </p>
      *         </li>
      *         <li>
@@ -290,8 +292,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 |
-     *         st1).
+     *         <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1
+     *         | st1).
      *         </p>
      *         </li>
      *         <li>
@@ -336,7 +338,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
      * </p>
      * </li>
      * <li>
@@ -361,7 +364,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
      * </p>
      * </li>
      * <li>
@@ -397,8 +400,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 |
-     *        st1).
+     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *        sc1 | st1).
      *        </p>
      *        </li>
      *        <li>
@@ -424,7 +427,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     *        st1).
      *        </p>
      *        </li>
      *        <li>
@@ -471,7 +475,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
      * </p>
      * </li>
      * <li>
@@ -496,7 +501,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
      * </p>
      * </li>
      * <li>
@@ -537,8 +542,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 |
-     *        st1).
+     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *        sc1 | st1).
      *        </p>
      *        </li>
      *        <li>
@@ -564,7 +569,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     *        st1).
      *        </p>
      *        </li>
      *        <li>
@@ -613,7 +619,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     * st1).
      * </p>
      * </li>
      * <li>
@@ -638,7 +645,7 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     * <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 | st1).
      * </p>
      * </li>
      * <li>
@@ -674,8 +681,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | gp2 | sc1 |
-     *        st1).
+     *        <code>original-volume-type</code> - The original volume type of the volume (standard | io1 | io2 | gp2 |
+     *        sc1 | st1).
      *        </p>
      *        </li>
      *        <li>
@@ -701,7 +708,8 @@ public class DescribeVolumesModificationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | gp2 | sc1 | st1).
+     *        <code>target-volume-type</code> - The target volume type of the volume (standard | io1 | io2 | gp2 | sc1 |
+     *        st1).
      *        </p>
      *        </li>
      *        <li>

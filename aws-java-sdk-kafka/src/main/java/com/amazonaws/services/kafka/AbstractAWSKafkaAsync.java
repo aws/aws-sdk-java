@@ -66,6 +66,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteConfigurationResult> deleteConfigurationAsync(DeleteConfigurationRequest request) {
+
+        return deleteConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConfigurationResult> deleteConfigurationAsync(DeleteConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConfigurationRequest, DeleteConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
 
         return describeClusterAsync(request, null);
@@ -321,6 +334,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<UpdateClusterKafkaVersionResult> updateClusterKafkaVersionAsync(UpdateClusterKafkaVersionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateClusterKafkaVersionRequest, UpdateClusterKafkaVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationResult> updateConfigurationAsync(UpdateConfigurationRequest request) {
+
+        return updateConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConfigurationResult> updateConfigurationAsync(UpdateConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConfigurationRequest, UpdateConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

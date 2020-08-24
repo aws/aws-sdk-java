@@ -263,7 +263,7 @@
         {"shape":"InvalidDeleteInventoryParametersException"},
         {"shape":"InvalidInventoryRequestException"}
       ],
-      "documentation":"<p>Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema.</p>"
+      "documentation":"<p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema.</p>"
     },
     "DeleteMaintenanceWindow":{
       "name":"DeleteMaintenanceWindow",
@@ -888,7 +888,7 @@
         {"shape":"InvalidDocumentType"},
         {"shape":"UnsupportedCalendarException"}
       ],
-      "documentation":"<p>Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you specify a time, <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code> assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html\">AWS Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
+      "documentation":"<p>Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you specify a time, <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code> assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p> <p>If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if all calendars in the request are open. If one or more calendars in the request are closed, the status returned is <code>CLOSED</code>.</p> <p>For more information about Systems Manager Change Calendar, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html\">AWS Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.</p>"
     },
     "GetCommandInvocation":{
       "name":"GetCommandInvocation",
@@ -4397,7 +4397,7 @@
       "members":{
         "TypeName":{
           "shape":"InventoryItemTypeName",
-          "documentation":"<p>The name of the custom inventory type for which you want to delete either all previously collected data, or the inventory type itself. </p>"
+          "documentation":"<p>The name of the custom inventory type for which you want to delete either all previously collected data or the inventory type itself. </p>"
         },
         "SchemaDeleteOption":{
           "shape":"InventorySchemaDeleteOption",
@@ -4408,7 +4408,7 @@
           "documentation":"<p>Use this option to view a summary of the deletion request without deleting any data or the data type. This option is useful when you only want to understand what will be deleted. Once you validate that the data to be deleted is what you intend to delete, you can run the same command without specifying the <code>DryRun</code> option.</p>"
         },
         "ClientToken":{
-          "shape":"ClientToken",
+          "shape":"UUID",
           "documentation":"<p>User-provided idempotency token.</p>",
           "idempotencyToken":true
         }
@@ -4418,7 +4418,7 @@
       "type":"structure",
       "members":{
         "DeletionId":{
-          "shape":"InventoryDeletionId",
+          "shape":"UUID",
           "documentation":"<p>Every <code>DeleteInventory</code> action is assigned a unique ID. This option returns a unique ID. You can use this ID to query the status of a delete operation. This option is useful for ensuring that a delete operation has completed before you begin other actions. </p>"
         },
         "TypeName":{
@@ -5202,7 +5202,7 @@
       "type":"structure",
       "members":{
         "DeletionId":{
-          "shape":"InventoryDeletionId",
+          "shape":"UUID",
           "documentation":"<p>Specify the delete inventory ID for which you want information. This ID was returned by the <code>DeleteInventory</code> action.</p>"
         },
         "NextToken":{
@@ -8357,7 +8357,6 @@
         "number"
       ]
     },
-    "InventoryDeletionId":{"type":"string"},
     "InventoryDeletionLastStatusMessage":{"type":"string"},
     "InventoryDeletionLastStatusUpdateTime":{"type":"timestamp"},
     "InventoryDeletionStartTime":{"type":"timestamp"},
@@ -8372,7 +8371,7 @@
       "type":"structure",
       "members":{
         "DeletionId":{
-          "shape":"InventoryDeletionId",
+          "shape":"UUID",
           "documentation":"<p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>"
         },
         "TypeName":{
@@ -10124,7 +10123,11 @@
       "max":5,
       "min":0
     },
-    "OpsDataAttributeName":{"type":"string"},
+    "OpsDataAttributeName":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
     "OpsDataTypeName":{
       "type":"string",
       "max":100,
@@ -10231,7 +10234,11 @@
         "Exists"
       ]
     },
-    "OpsFilterValue":{"type":"string"},
+    "OpsFilterValue":{
+      "type":"string",
+      "max":256,
+      "min":0
+    },
     "OpsFilterValueList":{
       "type":"list",
       "member":{"shape":"OpsFilterValue"},
@@ -11647,7 +11654,7 @@
         },
         "Value":{
           "shape":"PSParameterValue",
-          "documentation":"<p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p>"
+          "documentation":"<p>The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced parameters have a value limit of 8 KB.</p> <note> <p>Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.</p> </note>"
         },
         "Type":{
           "shape":"ParameterType",
@@ -13396,6 +13403,10 @@
       },
       "documentation":"<p>The size of inventory data has exceeded the total size limit for the resource.</p>",
       "exception":true
+    },
+    "UUID":{
+      "type":"string",
+      "pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
     },
     "UnsupportedCalendarException":{
       "type":"structure",

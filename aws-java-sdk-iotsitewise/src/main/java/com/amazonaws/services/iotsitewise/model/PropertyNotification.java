@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise
  * publishes property value updates to a unique MQTT topic. For more information, see <a
  * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with
- * Other Services</a> in the <i>AWS IoT SiteWise User Guide</i>.
+ * other services</a> in the <i>AWS IoT SiteWise User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PropertyNotification" target="_top">AWS

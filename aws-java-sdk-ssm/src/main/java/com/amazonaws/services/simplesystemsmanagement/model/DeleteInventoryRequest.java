@@ -27,7 +27,7 @@ public class DeleteInventoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the custom inventory type for which you want to delete either all previously collected data, or the
+     * The name of the custom inventory type for which you want to delete either all previously collected data or the
      * inventory type itself.
      * </p>
      */
@@ -66,13 +66,13 @@ public class DeleteInventoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the custom inventory type for which you want to delete either all previously collected data, or the
+     * The name of the custom inventory type for which you want to delete either all previously collected data or the
      * inventory type itself.
      * </p>
      * 
      * @param typeName
-     *        The name of the custom inventory type for which you want to delete either all previously collected data,
-     *        or the inventory type itself.
+     *        The name of the custom inventory type for which you want to delete either all previously collected data or
+     *        the inventory type itself.
      */
 
     public void setTypeName(String typeName) {
@@ -81,11 +81,11 @@ public class DeleteInventoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the custom inventory type for which you want to delete either all previously collected data, or the
+     * The name of the custom inventory type for which you want to delete either all previously collected data or the
      * inventory type itself.
      * </p>
      * 
-     * @return The name of the custom inventory type for which you want to delete either all previously collected data,
+     * @return The name of the custom inventory type for which you want to delete either all previously collected data
      *         or the inventory type itself.
      */
 
@@ -95,13 +95,13 @@ public class DeleteInventoryRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the custom inventory type for which you want to delete either all previously collected data, or the
+     * The name of the custom inventory type for which you want to delete either all previously collected data or the
      * inventory type itself.
      * </p>
      * 
      * @param typeName
-     *        The name of the custom inventory type for which you want to delete either all previously collected data,
-     *        or the inventory type itself.
+     *        The name of the custom inventory type for which you want to delete either all previously collected data or
+     *        the inventory type itself.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

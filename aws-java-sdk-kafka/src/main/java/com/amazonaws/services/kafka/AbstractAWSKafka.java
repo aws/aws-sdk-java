@@ -43,6 +43,11 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public DeleteConfigurationResult deleteConfiguration(DeleteConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeClusterResult describeCluster(DescribeClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +144,11 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public UpdateClusterKafkaVersionResult updateClusterKafkaVersion(UpdateClusterKafkaVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConfigurationResult updateConfiguration(UpdateConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

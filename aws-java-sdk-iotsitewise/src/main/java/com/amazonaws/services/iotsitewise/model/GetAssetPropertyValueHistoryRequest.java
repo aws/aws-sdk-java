@@ -41,8 +41,8 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial
-     * Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
+     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      */
     private String propertyAlias;
@@ -68,6 +68,9 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The chronological sorting order of the requested information.
      * </p>
+     * <p>
+     * Default: <code>ASCENDING</code>
+     * </p>
      */
     private String timeOrdering;
     /**
@@ -79,6 +82,9 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * The maximum number of results to be returned per paginated request.
+     * </p>
+     * <p>
+     * Default: 100
      * </p>
      */
     private Integer maxResults;
@@ -167,15 +173,15 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial
-     * Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
+     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param propertyAlias
      *        The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *        <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *        Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public void setPropertyAlias(String propertyAlias) {
@@ -186,14 +192,14 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial
-     * Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
+     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @return The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *         <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *         Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public String getPropertyAlias() {
@@ -204,15 +210,15 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      * <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping Industrial
-     * Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial
+     * data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
      * @param propertyAlias
      *        The property alias that identifies the property, such as an OPC-UA server data stream path (for example,
      *        <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
-     *        Industrial Data Streams to Asset Properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        industrial data streams to asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -409,9 +415,14 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The chronological sorting order of the requested information.
      * </p>
+     * <p>
+     * Default: <code>ASCENDING</code>
+     * </p>
      * 
      * @param timeOrdering
-     *        The chronological sorting order of the requested information.
+     *        The chronological sorting order of the requested information.</p>
+     *        <p>
+     *        Default: <code>ASCENDING</code>
      * @see TimeOrdering
      */
 
@@ -423,8 +434,13 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The chronological sorting order of the requested information.
      * </p>
+     * <p>
+     * Default: <code>ASCENDING</code>
+     * </p>
      * 
-     * @return The chronological sorting order of the requested information.
+     * @return The chronological sorting order of the requested information.</p>
+     *         <p>
+     *         Default: <code>ASCENDING</code>
      * @see TimeOrdering
      */
 
@@ -436,9 +452,14 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The chronological sorting order of the requested information.
      * </p>
+     * <p>
+     * Default: <code>ASCENDING</code>
+     * </p>
      * 
      * @param timeOrdering
-     *        The chronological sorting order of the requested information.
+     *        The chronological sorting order of the requested information.</p>
+     *        <p>
+     *        Default: <code>ASCENDING</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeOrdering
      */
@@ -452,9 +473,14 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The chronological sorting order of the requested information.
      * </p>
+     * <p>
+     * Default: <code>ASCENDING</code>
+     * </p>
      * 
      * @param timeOrdering
-     *        The chronological sorting order of the requested information.
+     *        The chronological sorting order of the requested information.</p>
+     *        <p>
+     *        Default: <code>ASCENDING</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeOrdering
      */
@@ -508,9 +534,14 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 100
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 100
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -521,8 +552,13 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 100
+     * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.
+     * @return The maximum number of results to be returned per paginated request.</p>
+     *         <p>
+     *         Default: 100
      */
 
     public Integer getMaxResults() {
@@ -533,9 +569,14 @@ public class GetAssetPropertyValueHistoryRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 100
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 100
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

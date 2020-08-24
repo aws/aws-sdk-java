@@ -51,9 +51,9 @@ import com.amazonaws.services.logs.model.transform.*;
  * return until the service call completes.
  * <p>
  * <p>
- * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon EC2 instances, AWS
- * CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch
- * console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
+ * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, AWS CloudTrail,
+ * or other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console,
+ * CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -64,7 +64,7 @@ import com.amazonaws.services.logs.model.transform.*;
  * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs to monitor applications and systems
  * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and
  * send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your
- * log data for monitoring; so, no code changes are required. For example, you can monitor application logs for specific
+ * log data for monitoring so no code changes are required. For example, you can monitor application logs for specific
  * literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a particular
  * position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is
  * found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
@@ -73,7 +73,7 @@ import com.amazonaws.services.logs.model.transform.*;
  * <li>
  * <p>
  * <b>Monitor AWS CloudTrail logged events</b>: You can create alarms in CloudWatch and receive notifications of
- * particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.
+ * particular API activity as captured by CloudTrail. You can use the notification to perform troubleshooting.
  * </p>
  * </li>
  * <li>
@@ -353,20 +353,20 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * This association is stored as long as the data encrypted with the CMK is still within Amazon CloudWatch Logs.
      * This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric CMK with
-     * your log group. For more information, see <a
+     * CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric CMK with your log group. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
      * Asymmetric Keys</a>.
      * </p>
-     * </note>
+     * </important>
      * <p>
-     * Note that it can take up to 5 minutes for this operation to take effect.
+     * It can take up to 5 minutes for this operation to take effect.
      * </p>
      * <p>
-     * If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you will
-     * receive an <code>InvalidParameterException</code> error.
+     * If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you receive
+     * an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param associateKmsKeyRequest
@@ -491,7 +491,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket.
+     * Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket. When
+     * you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to
+     * the S3 bucket that you specify as the destination.
      * </p>
      * <p>
      * This is an asynchronous call. If all the required information is provided, this operation initiates an export
@@ -574,10 +576,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Creates a log group with the specified name.
-     * </p>
-     * <p>
-     * You can create up to 20,000 log groups per account.
+     * Creates a log group with the specified name. You can create up to 20,000 log groups per account.
      * </p>
      * <p>
      * You must use the following guidelines when naming a log group:
@@ -601,22 +600,27 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * </ul>
      * <p>
+     * When you create a log group, by default the log events in the log group never expire. To set a retention policy
+     * so that events expire and are deleted after a specified time, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html"
+     * >PutRetentionPolicy</a>.
+     * </p>
+     * <p>
      * If you associate a AWS Key Management Service (AWS KMS) customer master key (CMK) with the log group, ingested
      * data is encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still
      * within Amazon CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data whenever it is requested.
      * </p>
      * <p>
-     * If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you will
+     * If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you
      * receive an <code>InvalidParameterException</code> error.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * <b>Important:</b> CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with your log
-     * group. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
-     * Asymmetric Keys</a>.
+     * CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with your log group. For more
+     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.
      * </p>
-     * </note>
+     * </important>
      * 
      * @param createLogGroupRequest
      * @return Result of the CreateLogGroup operation returned by the service.
@@ -678,7 +682,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Creates a log stream for the specified log group.
+     * Creates a log stream for the specified log group. A log stream is a sequence of log events that originate from a
+     * single source, such as an application instance or a resource that is being monitored.
      * </p>
      * <p>
      * There is no limit on the number of log streams that you can create for a log group. There is a limit of 50 TPS on
@@ -1009,6 +1014,17 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     /**
+     * <p>
+     * Deletes a saved CloudWatch Logs Insights query definition. A query definition contains details about a saved
+     * CloudWatch Logs Insights query.
+     * </p>
+     * <p>
+     * Each <code>DeleteQueryDefinition</code> operation can delete one query definition.
+     * </p>
+     * <p>
+     * You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to perform this operation.
+     * </p>
+     * 
      * @param deleteQueryDefinitionRequest
      * @return Result of the DeleteQueryDefinition operation returned by the service.
      * @throws InvalidParameterException
@@ -1500,7 +1516,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Lists the specified metric filters. You can list all the metric filters or filter the results by log name,
+     * Lists the specified metric filters. You can list all of the metric filters or filter the results by log name,
      * prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.
      * </p>
      * 
@@ -1562,7 +1578,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Returns a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently
-     * in this account. You can request all queries, or limit it to queries of a specific log group or queries with a
+     * in this account. You can request all queries or limit it to queries of a specific log group or queries with a
      * certain status.
      * </p>
      * 
@@ -1621,6 +1637,14 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     /**
+     * <p>
+     * This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions.
+     * </p>
+     * <p>
+     * You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results to only the query
+     * definitions that have names that start with a certain string.
+     * </p>
+     * 
      * @param describeQueryDefinitionsRequest
      * @return Result of the DescribeQueryDefinitions operation returned by the service.
      * @throws InvalidParameterException
@@ -1872,9 +1896,14 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * filter pattern, a time range, and the name of the log stream.
      * </p>
      * <p>
-     * By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events), or all the
+     * By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the
      * events found within the time range that you specify. If the results include a token, then there are more log
-     * events available, and you can get additional results by specifying the token in a subsequent call.
+     * events available, and you can get additional results by specifying the token in a subsequent call. This operation
+     * can return empty results while there are more log events available through the token.
+     * </p>
+     * <p>
+     * The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch
+     * Logs, and the ID of the <code>PutLogEvents</code> request.
      * </p>
      * 
      * @param filterLogEventsRequest
@@ -1933,11 +1962,12 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Lists log events from the specified log stream. You can list all the log events or filter using a time range.
+     * Lists log events from the specified log stream. You can list all of the log events or filter using a time range.
      * </p>
      * <p>
      * By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log
-     * events). You can get additional log events by specifying one of the tokens in a subsequent call.
+     * events). You can get additional log events by specifying one of the tokens in a subsequent call. This operation
+     * can return empty results while there are more log events available through the token.
      * </p>
      * 
      * @param getLogEventsRequest
@@ -2068,12 +2098,12 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
 
     /**
      * <p>
-     * Retrieves all the fields and values of a single log event. All fields are retrieved, even if the original query
-     * that produced the <code>logRecordPointer</code> retrieved only a subset of fields. Fields are returned as field
-     * name/field value pairs.
+     * Retrieves all of the fields and values of a single log event. All fields are retrieved, even if the original
+     * query that produced the <code>logRecordPointer</code> retrieved only a subset of fields. Fields are returned as
+     * field name/field value pairs.
      * </p>
      * <p>
-     * Additionally, the entire unparsed log event is returned within <code>@message</code>.
+     * The full unparsed log event is returned within <code>@message</code>.
      * </p>
      * 
      * @param getLogRecordRequest
@@ -2137,8 +2167,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Returns the results from the specified query.
      * </p>
      * <p>
-     * Only the fields requested in the query are returned, along with a <code>@ptr</code> field which is the identifier
-     * for the log record. You can use the value of <code>@ptr</code> in a <a
+     * Only the fields requested in the query are returned, along with a <code>@ptr</code> field, which is the
+     * identifier for the log record. You can use the value of <code>@ptr</code> in a <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html"
      * >GetLogRecord</a> operation to get the full log record.
      * </p>
@@ -2282,6 +2312,9 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html"
      * >PutDestinationPolicy</a> after <code>PutDestination</code>.
      * </p>
+     * <p>
+     * To perform a <code>PutDestination</code> operation, you must also have the <code>iam:PassRole</code> permission.
+     * </p>
      * 
      * @param putDestinationRequest
      * @return Result of the PutDestination operation returned by the service.
@@ -2407,7 +2440,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * log stream does not require a sequence token. You can also get the sequence token in the
      * <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>. If you call
      * <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>,
-     * both calls may be successful, or one may be rejected.
+     * both calls might be successful or one might be rejected.
      * </p>
      * <p>
      * The batch of events must satisfy the following constraints:
@@ -2415,7 +2448,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * <ul>
      * <li>
      * <p>
-     * The maximum batch size is 1,048,576 bytes, and this size is calculated as the sum of all event messages in UTF-8,
+     * The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all event messages in UTF-8,
      * plus 26 bytes for each log event.
      * </p>
      * </li>
@@ -2432,7 +2465,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological ordered by their timestamp. The timestamp is the time the
+     * The log events in the batch must be in chronological order by their timestamp. The timestamp is the time the
      * event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In AWS Tools for
      * PowerShell and the AWS SDK for .NET, the timestamp is specified in .NET format: yyyy-mm-ddThh:mm:ss. For example,
      * 2017-09-15T13:45:30.)
@@ -2456,8 +2489,8 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </li>
      * </ul>
      * <p>
-     * If a call to PutLogEvents returns "UnrecognizedClientException" the most likely cause is an invalid AWS access
-     * key ID or secret key.
+     * If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is an invalid
+     * AWS access key ID or secret key.
      * </p>
      * 
      * @param putLogEventsRequest
@@ -2591,6 +2624,23 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     }
 
     /**
+     * <p>
+     * Creates or updates a query definition for CloudWatch Logs Insights. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">Analyzing Log Data with
+     * CloudWatch Logs Insights</a>.
+     * </p>
+     * <p>
+     * To update a query definition, specify its <code>queryDefinitionId</code> in your request. The values of
+     * <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code> are changed to the values that you
+     * specify in your update operation. No current values are retained from the current query definition. For example,
+     * if you update a current query definition that includes log groups, and you don't specify the
+     * <code>logGroupNames</code> parameter in your update operation, the query definition changes to contain no log
+     * groups.
+     * </p>
+     * <p>
+     * You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform this operation.
+     * </p>
+     * 
      * @param putQueryDefinitionRequest
      * @return Result of the PutQueryDefinition operation returned by the service.
      * @throws InvalidParameterException
@@ -2648,7 +2698,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Creates or updates a resource policy allowing other AWS services to put log events to this account, such as
-     * Amazon Route 53. An account can have up to 10 resource policies per region.
+     * Amazon Route 53. An account can have up to 10 resource policies per AWS Region.
      * </p>
      * 
      * @param putResourcePolicyRequest
@@ -2772,7 +2822,11 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * Creates or updates a subscription filter and associates it with the specified log group. Subscription filters
      * allow you to subscribe to a real-time stream of log events ingested through <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
-     * >PutLogEvents</a> and have them delivered to a specific destination. Currently, the supported destinations are:
+     * >PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving
+     * service, they are Base64 encoded and compressed with the gzip format.
+     * </p>
+     * <p>
+     * The following destinations are supported for subscription filters:
      * </p>
      * <ul>
      * <li>
@@ -2801,6 +2855,10 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * There can only be one subscription filter associated with a log group. If you are updating an existing filter,
      * you must specify the correct name in <code>filterName</code>. Otherwise, the call fails because you cannot
      * associate a second filter with a log group.
+     * </p>
+     * <p>
+     * To perform a <code>PutSubscriptionFilter</code> operation, you must also have the <code>iam:PassRole</code>
+     * permission.
      * </p>
      * 
      * @param putSubscriptionFilterRequest
@@ -2865,7 +2923,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
     /**
      * <p>
      * Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group and time range to
-     * query, and the query string to use.
+     * query and the query string to use.
      * </p>
      * <p>
      * For more information, see <a
@@ -2874,7 +2932,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      * </p>
      * <p>
      * Queries time out after 15 minutes of execution. If your queries are timing out, reduce the time range being
-     * searched, or partition your query into a number of queries.
+     * searched or partition your query into a number of queries.
      * </p>
      * 
      * @param startQueryRequest
@@ -2883,7 +2941,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
      *         The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code>
      *         object. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html"
-     *         >QueryCompileError</a>"/&gt;.</p>
+     *         >QueryCompileError</a>.</p>
      *         <p>
      *         For more information about valid query syntax, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs

@@ -23,12 +23,21 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeQueryDefinitionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The list of query definitions that match your request.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<QueryDefinition> queryDefinitions;
 
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The list of query definitions that match your request.
+     * </p>
+     * 
+     * @return The list of query definitions that match your request.
      */
 
     public java.util.List<QueryDefinition> getQueryDefinitions() {
@@ -39,7 +48,12 @@ public class DescribeQueryDefinitionsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The list of query definitions that match your request.
+     * </p>
+     * 
      * @param queryDefinitions
+     *        The list of query definitions that match your request.
      */
 
     public void setQueryDefinitions(java.util.Collection<QueryDefinition> queryDefinitions) {
@@ -53,12 +67,16 @@ public class DescribeQueryDefinitionsResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The list of query definitions that match your request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setQueryDefinitions(java.util.Collection)} or {@link #withQueryDefinitions(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param queryDefinitions
+     *        The list of query definitions that match your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -73,7 +91,12 @@ public class DescribeQueryDefinitionsResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The list of query definitions that match your request.
+     * </p>
+     * 
      * @param queryDefinitions
+     *        The list of query definitions that match your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

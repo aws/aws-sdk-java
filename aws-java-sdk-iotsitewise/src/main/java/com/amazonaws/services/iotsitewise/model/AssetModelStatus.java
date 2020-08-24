@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains current status information for an asset model. For more information, see <a
- * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and Model
- * States</a> in the <i>AWS IoT SiteWise User Guide</i>.
+ * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html">Asset and model
+ * states</a> in the <i>AWS IoT SiteWise User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AssetModelStatus" target="_top">AWS API

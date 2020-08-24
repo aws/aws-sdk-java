@@ -3180,6 +3180,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTransitGatewayPrefixListReferenceResult> createTransitGatewayPrefixListReferenceAsync(
+            CreateTransitGatewayPrefixListReferenceRequest request) {
+
+        return createTransitGatewayPrefixListReferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayPrefixListReferenceResult> createTransitGatewayPrefixListReferenceAsync(
+            final CreateTransitGatewayPrefixListReferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayPrefixListReferenceRequest, CreateTransitGatewayPrefixListReferenceResult> asyncHandler) {
+        final CreateTransitGatewayPrefixListReferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateTransitGatewayPrefixListReferenceResult>() {
+            @Override
+            public CreateTransitGatewayPrefixListReferenceResult call() throws Exception {
+                CreateTransitGatewayPrefixListReferenceResult result = null;
+
+                try {
+                    result = executeCreateTransitGatewayPrefixListReference(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTransitGatewayRouteResult> createTransitGatewayRouteAsync(CreateTransitGatewayRouteRequest request) {
 
         return createTransitGatewayRouteAsync(request, null);
@@ -4848,6 +4883,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeDeleteTransitGatewayPeeringAttachment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayPrefixListReferenceResult> deleteTransitGatewayPrefixListReferenceAsync(
+            DeleteTransitGatewayPrefixListReferenceRequest request) {
+
+        return deleteTransitGatewayPrefixListReferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayPrefixListReferenceResult> deleteTransitGatewayPrefixListReferenceAsync(
+            final DeleteTransitGatewayPrefixListReferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayPrefixListReferenceRequest, DeleteTransitGatewayPrefixListReferenceResult> asyncHandler) {
+        final DeleteTransitGatewayPrefixListReferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteTransitGatewayPrefixListReferenceResult>() {
+            @Override
+            public DeleteTransitGatewayPrefixListReferenceResult call() throws Exception {
+                DeleteTransitGatewayPrefixListReferenceResult result = null;
+
+                try {
+                    result = executeDeleteTransitGatewayPrefixListReference(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -11967,6 +12037,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<GetTransitGatewayPrefixListReferencesResult> getTransitGatewayPrefixListReferencesAsync(
+            GetTransitGatewayPrefixListReferencesRequest request) {
+
+        return getTransitGatewayPrefixListReferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayPrefixListReferencesResult> getTransitGatewayPrefixListReferencesAsync(
+            final GetTransitGatewayPrefixListReferencesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTransitGatewayPrefixListReferencesRequest, GetTransitGatewayPrefixListReferencesResult> asyncHandler) {
+        final GetTransitGatewayPrefixListReferencesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTransitGatewayPrefixListReferencesResult>() {
+            @Override
+            public GetTransitGatewayPrefixListReferencesResult call() throws Exception {
+                GetTransitGatewayPrefixListReferencesResult result = null;
+
+                try {
+                    result = executeGetTransitGatewayPrefixListReferences(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTransitGatewayRouteTableAssociationsResult> getTransitGatewayRouteTableAssociationsAsync(
             GetTransitGatewayRouteTableAssociationsRequest request) {
 
@@ -13170,6 +13275,74 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyTrafficMirrorSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayResult> modifyTransitGatewayAsync(ModifyTransitGatewayRequest request) {
+
+        return modifyTransitGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayResult> modifyTransitGatewayAsync(final ModifyTransitGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyTransitGatewayRequest, ModifyTransitGatewayResult> asyncHandler) {
+        final ModifyTransitGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyTransitGatewayResult>() {
+            @Override
+            public ModifyTransitGatewayResult call() throws Exception {
+                ModifyTransitGatewayResult result = null;
+
+                try {
+                    result = executeModifyTransitGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayPrefixListReferenceResult> modifyTransitGatewayPrefixListReferenceAsync(
+            ModifyTransitGatewayPrefixListReferenceRequest request) {
+
+        return modifyTransitGatewayPrefixListReferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayPrefixListReferenceResult> modifyTransitGatewayPrefixListReferenceAsync(
+            final ModifyTransitGatewayPrefixListReferenceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyTransitGatewayPrefixListReferenceRequest, ModifyTransitGatewayPrefixListReferenceResult> asyncHandler) {
+        final ModifyTransitGatewayPrefixListReferenceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyTransitGatewayPrefixListReferenceResult>() {
+            @Override
+            public ModifyTransitGatewayPrefixListReferenceResult call() throws Exception {
+                ModifyTransitGatewayPrefixListReferenceResult result = null;
+
+                try {
+                    result = executeModifyTransitGatewayPrefixListReference(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

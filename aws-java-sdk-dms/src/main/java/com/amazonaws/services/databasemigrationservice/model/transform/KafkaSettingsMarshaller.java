@@ -43,6 +43,10 @@ public class KafkaSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeTableAlterOperations").build();
     private static final MarshallingInfo<Boolean> INCLUDECONTROLDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeControlDetails").build();
+    private static final MarshallingInfo<Integer> MESSAGEMAXBYTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageMaxBytes").build();
+    private static final MarshallingInfo<Boolean> INCLUDENULLANDEMPTY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeNullAndEmpty").build();
 
     private static final KafkaSettingsMarshaller instance = new KafkaSettingsMarshaller();
 
@@ -68,6 +72,8 @@ public class KafkaSettingsMarshaller {
             protocolMarshaller.marshall(kafkaSettings.getPartitionIncludeSchemaTable(), PARTITIONINCLUDESCHEMATABLE_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getIncludeTableAlterOperations(), INCLUDETABLEALTEROPERATIONS_BINDING);
             protocolMarshaller.marshall(kafkaSettings.getIncludeControlDetails(), INCLUDECONTROLDETAILS_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getMessageMaxBytes(), MESSAGEMAXBYTES_BINDING);
+            protocolMarshaller.marshall(kafkaSettings.getIncludeNullAndEmpty(), INCLUDENULLANDEMPTY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

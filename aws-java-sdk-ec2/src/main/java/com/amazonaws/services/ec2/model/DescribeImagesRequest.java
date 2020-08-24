@@ -68,7 +68,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -344,7 +344,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -517,7 +517,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <li>
      *         <p>
      *         <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *         <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *         <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -704,7 +704,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -878,7 +878,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1067,7 +1067,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -1246,7 +1246,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1437,7 +1437,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -1611,7 +1611,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>

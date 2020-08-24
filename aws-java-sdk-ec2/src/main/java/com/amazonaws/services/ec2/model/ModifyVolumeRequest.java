@@ -56,9 +56,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * The target IOPS rate of the volume.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.
+     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
      * </p>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
@@ -279,9 +279,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * The target IOPS rate of the volume.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.
+     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
      * </p>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
@@ -290,9 +290,10 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param iops
      *        The target IOPS rate of the volume.</p>
      *        <p>
-     *        This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
-     *        >Provisioned IOPS SSD (io1) Volumes</a>.
+     *        This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For
+     *        moreinformation, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     *        Provisioned IOPS SSD (io1 and io2) volumes</a>.
      *        </p>
      *        <p>
      *        Default: If no IOPS value is specified, the existing value is retained.
@@ -307,9 +308,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * The target IOPS rate of the volume.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.
+     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
      * </p>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
@@ -317,9 +318,10 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @return The target IOPS rate of the volume.</p>
      *         <p>
-     *         This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
+     *         This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For
+     *         moreinformation, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
-     *         Provisioned IOPS SSD (io1) Volumes</a>.
+     *         Provisioned IOPS SSD (io1 and io2) volumes</a>.
      *         </p>
      *         <p>
      *         Default: If no IOPS value is specified, the existing value is retained.
@@ -334,9 +336,9 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * The target IOPS rate of the volume.
      * </p>
      * <p>
-     * This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">Provisioned
-     * IOPS SSD (io1) Volumes</a>.
+     * This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For moreinformation,
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     * Provisioned IOPS SSD (io1 and io2) volumes</a>.
      * </p>
      * <p>
      * Default: If no IOPS value is specified, the existing value is retained.
@@ -345,9 +347,10 @@ public class ModifyVolumeRequest extends AmazonWebServiceRequest implements Seri
      * @param iops
      *        The target IOPS rate of the volume.</p>
      *        <p>
-     *        This is only valid for Provisioned IOPS SSD (<code>io1</code>) volumes. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops"
-     *        >Provisioned IOPS SSD (io1) Volumes</a>.
+     *        This is only valid for Provisioned IOPS SSD (<code>io1</code> and <code>io2</code>) volumes. For
+     *        moreinformation, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html#EBSVolumeTypes_piops">
+     *        Provisioned IOPS SSD (io1 and io2) volumes</a>.
      *        </p>
      *        <p>
      *        Default: If no IOPS value is specified, the existing value is retained.

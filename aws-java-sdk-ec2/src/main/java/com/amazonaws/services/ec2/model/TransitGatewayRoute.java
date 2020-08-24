@@ -34,6 +34,12 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
     private String destinationCidrBlock;
     /**
      * <p>
+     * The ID of the prefix list used for destination matches.
+     * </p>
+     */
+    private String prefixListId;
+    /**
+     * <p>
      * The attachments.
      * </p>
      */
@@ -88,6 +94,46 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
 
     public TransitGatewayRoute withDestinationCidrBlock(String destinationCidrBlock) {
         setDestinationCidrBlock(destinationCidrBlock);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list used for destination matches.
+     * </p>
+     * 
+     * @param prefixListId
+     *        The ID of the prefix list used for destination matches.
+     */
+
+    public void setPrefixListId(String prefixListId) {
+        this.prefixListId = prefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list used for destination matches.
+     * </p>
+     * 
+     * @return The ID of the prefix list used for destination matches.
+     */
+
+    public String getPrefixListId() {
+        return this.prefixListId;
+    }
+
+    /**
+     * <p>
+     * The ID of the prefix list used for destination matches.
+     * </p>
+     * 
+     * @param prefixListId
+     *        The ID of the prefix list used for destination matches.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayRoute withPrefixListId(String prefixListId) {
+        setPrefixListId(prefixListId);
         return this;
     }
 
@@ -296,6 +342,8 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
         sb.append("{");
         if (getDestinationCidrBlock() != null)
             sb.append("DestinationCidrBlock: ").append(getDestinationCidrBlock()).append(",");
+        if (getPrefixListId() != null)
+            sb.append("PrefixListId: ").append(getPrefixListId()).append(",");
         if (getTransitGatewayAttachments() != null)
             sb.append("TransitGatewayAttachments: ").append(getTransitGatewayAttachments()).append(",");
         if (getType() != null)
@@ -320,6 +368,10 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
             return false;
         if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false)
             return false;
+        if (other.getPrefixListId() == null ^ this.getPrefixListId() == null)
+            return false;
+        if (other.getPrefixListId() != null && other.getPrefixListId().equals(this.getPrefixListId()) == false)
+            return false;
         if (other.getTransitGatewayAttachments() == null ^ this.getTransitGatewayAttachments() == null)
             return false;
         if (other.getTransitGatewayAttachments() != null && other.getTransitGatewayAttachments().equals(this.getTransitGatewayAttachments()) == false)
@@ -341,6 +393,7 @@ public class TransitGatewayRoute implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getPrefixListId() == null) ? 0 : getPrefixListId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayAttachments() == null) ? 0 : getTransitGatewayAttachments().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

@@ -74,6 +74,10 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                     context.nextToken();
                     configuration.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("state", targetDepth)) {
+                    context.nextToken();
+                    configuration.setState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

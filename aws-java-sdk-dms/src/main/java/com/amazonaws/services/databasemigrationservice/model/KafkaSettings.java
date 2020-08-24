@@ -55,14 +55,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      */
     private Boolean includeTransactionDetails;
     /**
      * <p>
      * Shows the partition value within the Kafka message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      */
     private Boolean includePartitionValue;
@@ -72,7 +72,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
      * is sent from thousands of tables to the same partition, which causes throttling. The default is
-     * <code>False</code>.
+     * <code>false</code>.
      * </p>
      */
     private Boolean partitionIncludeSchemaTable;
@@ -80,17 +80,29 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      */
     private Boolean includeTableAlterOperations;
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kafka message output. The default is <code>False</code>.
+     * Kafka message output. The default is <code>false</code>.
      * </p>
      */
     private Boolean includeControlDetails;
+    /**
+     * <p>
+     * The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     * </p>
+     */
+    private Integer messageMaxBytes;
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     */
+    private Boolean includeNullAndEmpty;
 
     /**
      * <p>
@@ -261,14 +273,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @param includeTransactionDetails
      *        Provides detailed transaction information from the source database. This information includes a commit
      *        timestamp, a log position, and values for <code>transaction_id</code>, previous
      *        <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *        transaction). The default is <code>False</code>.
+     *        transaction). The default is <code>false</code>.
      */
 
     public void setIncludeTransactionDetails(Boolean includeTransactionDetails) {
@@ -279,13 +291,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @return Provides detailed transaction information from the source database. This information includes a commit
      *         timestamp, a log position, and values for <code>transaction_id</code>, previous
      *         <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *         transaction). The default is <code>False</code>.
+     *         transaction). The default is <code>false</code>.
      */
 
     public Boolean getIncludeTransactionDetails() {
@@ -296,14 +308,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @param includeTransactionDetails
      *        Provides detailed transaction information from the source database. This information includes a commit
      *        timestamp, a log position, and values for <code>transaction_id</code>, previous
      *        <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *        transaction). The default is <code>False</code>.
+     *        transaction). The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -316,13 +328,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @return Provides detailed transaction information from the source database. This information includes a commit
      *         timestamp, a log position, and values for <code>transaction_id</code>, previous
      *         <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *         transaction). The default is <code>False</code>.
+     *         transaction). The default is <code>false</code>.
      */
 
     public Boolean isIncludeTransactionDetails() {
@@ -332,12 +344,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows the partition value within the Kafka message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includePartitionValue
      *        Shows the partition value within the Kafka message output, unless the partition type is
-     *        <code>schema-table-type</code>. The default is <code>False</code>.
+     *        <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
     public void setIncludePartitionValue(Boolean includePartitionValue) {
@@ -347,11 +359,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows the partition value within the Kafka message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows the partition value within the Kafka message output, unless the partition type is
-     *         <code>schema-table-type</code>. The default is <code>False</code>.
+     *         <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
     public Boolean getIncludePartitionValue() {
@@ -361,12 +373,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows the partition value within the Kafka message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includePartitionValue
      *        Shows the partition value within the Kafka message output, unless the partition type is
-     *        <code>schema-table-type</code>. The default is <code>False</code>.
+     *        <code>schema-table-type</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,11 +390,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows the partition value within the Kafka message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows the partition value within the Kafka message output, unless the partition type is
-     *         <code>schema-table-type</code>. The default is <code>False</code>.
+     *         <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
     public Boolean isIncludePartitionValue() {
@@ -395,7 +407,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
      * is sent from thousands of tables to the same partition, which causes throttling. The default is
-     * <code>False</code>.
+     * <code>false</code>.
      * </p>
      * 
      * @param partitionIncludeSchemaTable
@@ -403,7 +415,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      *        <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For example,
      *        suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary
      *        key. In this case, the same primary key is sent from thousands of tables to the same partition, which
-     *        causes throttling. The default is <code>False</code>.
+     *        causes throttling. The default is <code>false</code>.
      */
 
     public void setPartitionIncludeSchemaTable(Boolean partitionIncludeSchemaTable) {
@@ -416,14 +428,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
      * is sent from thousands of tables to the same partition, which causes throttling. The default is
-     * <code>False</code>.
+     * <code>false</code>.
      * </p>
      * 
      * @return Prefixes schema and table names to partition values, when the partition type is
      *         <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For
      *         example, suppose that a SysBench schema has thousands of tables and each table has only limited range for
      *         a primary key. In this case, the same primary key is sent from thousands of tables to the same partition,
-     *         which causes throttling. The default is <code>False</code>.
+     *         which causes throttling. The default is <code>false</code>.
      */
 
     public Boolean getPartitionIncludeSchemaTable() {
@@ -436,7 +448,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
      * is sent from thousands of tables to the same partition, which causes throttling. The default is
-     * <code>False</code>.
+     * <code>false</code>.
      * </p>
      * 
      * @param partitionIncludeSchemaTable
@@ -444,7 +456,7 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      *        <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For example,
      *        suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary
      *        key. In this case, the same primary key is sent from thousands of tables to the same partition, which
-     *        causes throttling. The default is <code>False</code>.
+     *        causes throttling. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,14 +471,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * Doing this increases data distribution among Kafka partitions. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
      * is sent from thousands of tables to the same partition, which causes throttling. The default is
-     * <code>False</code>.
+     * <code>false</code>.
      * </p>
      * 
      * @return Prefixes schema and table names to partition values, when the partition type is
      *         <code>primary-key-type</code>. Doing this increases data distribution among Kafka partitions. For
      *         example, suppose that a SysBench schema has thousands of tables and each table has only limited range for
      *         a primary key. In this case, the same primary key is sent from thousands of tables to the same partition,
-     *         which causes throttling. The default is <code>False</code>.
+     *         which causes throttling. The default is <code>false</code>.
      */
 
     public Boolean isPartitionIncludeSchemaTable() {
@@ -477,13 +489,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includeTableAlterOperations
      *        Includes any data definition language (DDL) operations that change the table in the control data, such as
      *        <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     *        <code>rename-column</code>. The default is <code>False</code>.
+     *        <code>rename-column</code>. The default is <code>false</code>.
      */
 
     public void setIncludeTableAlterOperations(Boolean includeTableAlterOperations) {
@@ -494,12 +506,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Includes any data definition language (DDL) operations that change the table in the control data, such as
      *         <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>,
-     *         and <code>rename-column</code>. The default is <code>False</code>.
+     *         and <code>rename-column</code>. The default is <code>false</code>.
      */
 
     public Boolean getIncludeTableAlterOperations() {
@@ -510,13 +522,13 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includeTableAlterOperations
      *        Includes any data definition language (DDL) operations that change the table in the control data, such as
      *        <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     *        <code>rename-column</code>. The default is <code>False</code>.
+     *        <code>rename-column</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,12 +541,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Includes any data definition language (DDL) operations that change the table in the control data, such as
      *         <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>,
-     *         and <code>rename-column</code>. The default is <code>False</code>.
+     *         and <code>rename-column</code>. The default is <code>false</code>.
      */
 
     public Boolean isIncludeTableAlterOperations() {
@@ -544,12 +556,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kafka message output. The default is <code>False</code>.
+     * Kafka message output. The default is <code>false</code>.
      * </p>
      * 
      * @param includeControlDetails
      *        Shows detailed control information for table definition, column definition, and table and column changes
-     *        in the Kafka message output. The default is <code>False</code>.
+     *        in the Kafka message output. The default is <code>false</code>.
      */
 
     public void setIncludeControlDetails(Boolean includeControlDetails) {
@@ -559,11 +571,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kafka message output. The default is <code>False</code>.
+     * Kafka message output. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows detailed control information for table definition, column definition, and table and column changes
-     *         in the Kafka message output. The default is <code>False</code>.
+     *         in the Kafka message output. The default is <code>false</code>.
      */
 
     public Boolean getIncludeControlDetails() {
@@ -573,12 +585,12 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kafka message output. The default is <code>False</code>.
+     * Kafka message output. The default is <code>false</code>.
      * </p>
      * 
      * @param includeControlDetails
      *        Shows detailed control information for table definition, column definition, and table and column changes
-     *        in the Kafka message output. The default is <code>False</code>.
+     *        in the Kafka message output. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -590,15 +602,107 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kafka message output. The default is <code>False</code>.
+     * Kafka message output. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows detailed control information for table definition, column definition, and table and column changes
-     *         in the Kafka message output. The default is <code>False</code>.
+     *         in the Kafka message output. The default is <code>false</code>.
      */
 
     public Boolean isIncludeControlDetails() {
         return this.includeControlDetails;
+    }
+
+    /**
+     * <p>
+     * The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     * </p>
+     * 
+     * @param messageMaxBytes
+     *        The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     */
+
+    public void setMessageMaxBytes(Integer messageMaxBytes) {
+        this.messageMaxBytes = messageMaxBytes;
+    }
+
+    /**
+     * <p>
+     * The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     * </p>
+     * 
+     * @return The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     */
+
+    public Integer getMessageMaxBytes() {
+        return this.messageMaxBytes;
+    }
+
+    /**
+     * <p>
+     * The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     * </p>
+     * 
+     * @param messageMaxBytes
+     *        The maximum size in bytes for records created on the endpoint The default is 1,000,000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withMessageMaxBytes(Integer messageMaxBytes) {
+        setMessageMaxBytes(messageMaxBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param includeNullAndEmpty
+     *        Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     */
+
+    public void setIncludeNullAndEmpty(Boolean includeNullAndEmpty) {
+        this.includeNullAndEmpty = includeNullAndEmpty;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     */
+
+    public Boolean getIncludeNullAndEmpty() {
+        return this.includeNullAndEmpty;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param includeNullAndEmpty
+     *        Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KafkaSettings withIncludeNullAndEmpty(Boolean includeNullAndEmpty) {
+        setIncludeNullAndEmpty(includeNullAndEmpty);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     */
+
+    public Boolean isIncludeNullAndEmpty() {
+        return this.includeNullAndEmpty;
     }
 
     /**
@@ -628,7 +732,11 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         if (getIncludeTableAlterOperations() != null)
             sb.append("IncludeTableAlterOperations: ").append(getIncludeTableAlterOperations()).append(",");
         if (getIncludeControlDetails() != null)
-            sb.append("IncludeControlDetails: ").append(getIncludeControlDetails());
+            sb.append("IncludeControlDetails: ").append(getIncludeControlDetails()).append(",");
+        if (getMessageMaxBytes() != null)
+            sb.append("MessageMaxBytes: ").append(getMessageMaxBytes()).append(",");
+        if (getIncludeNullAndEmpty() != null)
+            sb.append("IncludeNullAndEmpty: ").append(getIncludeNullAndEmpty());
         sb.append("}");
         return sb.toString();
     }
@@ -675,6 +783,14 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIncludeControlDetails() != null && other.getIncludeControlDetails().equals(this.getIncludeControlDetails()) == false)
             return false;
+        if (other.getMessageMaxBytes() == null ^ this.getMessageMaxBytes() == null)
+            return false;
+        if (other.getMessageMaxBytes() != null && other.getMessageMaxBytes().equals(this.getMessageMaxBytes()) == false)
+            return false;
+        if (other.getIncludeNullAndEmpty() == null ^ this.getIncludeNullAndEmpty() == null)
+            return false;
+        if (other.getIncludeNullAndEmpty() != null && other.getIncludeNullAndEmpty().equals(this.getIncludeNullAndEmpty()) == false)
+            return false;
         return true;
     }
 
@@ -691,6 +807,8 @@ public class KafkaSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPartitionIncludeSchemaTable() == null) ? 0 : getPartitionIncludeSchemaTable().hashCode());
         hashCode = prime * hashCode + ((getIncludeTableAlterOperations() == null) ? 0 : getIncludeTableAlterOperations().hashCode());
         hashCode = prime * hashCode + ((getIncludeControlDetails() == null) ? 0 : getIncludeControlDetails().hashCode());
+        hashCode = prime * hashCode + ((getMessageMaxBytes() == null) ? 0 : getMessageMaxBytes().hashCode());
+        hashCode = prime * hashCode + ((getIncludeNullAndEmpty() == null) ? 0 : getIncludeNullAndEmpty().hashCode());
         return hashCode;
     }
 

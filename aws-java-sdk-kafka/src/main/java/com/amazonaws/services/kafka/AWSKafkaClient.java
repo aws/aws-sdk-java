@@ -383,6 +383,75 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
     /**
      * <p>
+     * Deletes an MSK Configuration.
+     * </p>
+     * 
+     * @param deleteConfigurationRequest
+     * @return Result of the DeleteConfiguration operation returned by the service.
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @sample AWSKafka.DeleteConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteConfigurationResult deleteConfiguration(DeleteConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConfigurationResult executeDeleteConfiguration(DeleteConfigurationRequest deleteConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConfigurationRequest> request = null;
+        Response<DeleteConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a description of the MSK cluster whose Amazon Resource Name (ARN) is specified in the request.
      * </p>
      * 
@@ -1858,6 +1927,83 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateClusterKafkaVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateClusterKafkaVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an MSK configuration.
+     * </p>
+     * 
+     * @param updateConfigurationRequest
+     * @return Result of the UpdateConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @sample AWSKafka.UpdateConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateConfiguration" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateConfigurationResult updateConfiguration(UpdateConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateConfigurationResult executeUpdateConfiguration(UpdateConfigurationRequest updateConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateConfigurationRequest> request = null;
+        Response<UpdateConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

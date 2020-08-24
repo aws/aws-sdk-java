@@ -36,7 +36,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      */
@@ -100,7 +100,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -109,7 +109,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      *        formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset
      *        to disassociate. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public void setHierarchyId(String hierarchyId) {
@@ -121,7 +121,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -129,7 +129,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      *         formed that all come from the same asset model. You can use the hierarchy ID to identify the correct
      *         asset to disassociate. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public String getHierarchyId() {
@@ -141,7 +141,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      * The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings of assets to be formed
      * that all come from the same asset model. You can use the hierarchy ID to identify the correct asset to
      * disassociate. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -150,7 +150,7 @@ public class DisassociateAssetsRequest extends com.amazonaws.AmazonWebServiceReq
      *        formed that all come from the same asset model. You can use the hierarchy ID to identify the correct asset
      *        to disassociate. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a lowercase string.
+     * The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -60,7 +60,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class.
+     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
@@ -174,7 +174,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private ReplicationSubnetGroup replicationSubnetGroup;
     /**
      * <p>
-     * The maintenance window times for the replication instance.
+     * The maintenance window times for the replication instance. Any pending upgrades to the replication instance are
+     * performed during this time.
      * </p>
      */
     private String preferredMaintenanceWindow;
@@ -194,6 +195,14 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The engine version number of the replication instance.
+     * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
      * </p>
      */
     private String engineVersion;
@@ -278,7 +287,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a lowercase string.
+     * The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -305,7 +314,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param replicationInstanceIdentifier
-     *        The replication instance identifier. This parameter is stored as a lowercase string.</p>
+     *        The replication instance identifier is a required parameter. This parameter is stored as a lowercase
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -336,7 +346,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a lowercase string.
+     * The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -362,7 +372,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * Example: <code>myrepinstance</code>
      * </p>
      * 
-     * @return The replication instance identifier. This parameter is stored as a lowercase string.</p>
+     * @return The replication instance identifier is a required parameter. This parameter is stored as a lowercase
+     *         string.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -393,7 +404,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The replication instance identifier. This parameter is stored as a lowercase string.
+     * The replication instance identifier is a required parameter. This parameter is stored as a lowercase string.
      * </p>
      * <p>
      * Constraints:
@@ -420,7 +431,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param replicationInstanceIdentifier
-     *        The replication instance identifier. This parameter is stored as a lowercase string.</p>
+     *        The replication instance identifier is a required parameter. This parameter is stored as a lowercase
+     *        string.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -454,7 +466,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class.
+     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
@@ -464,7 +476,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * 
      * @param replicationInstanceClass
      *        The compute and memory capacity of the replication instance as defined for the specified replication
-     *        instance class.</p>
+     *        instance class. It is a required parameter, although a defualt value is pre-selected in the DMS
+     *        console.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
@@ -479,7 +492,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class.
+     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
@@ -488,7 +501,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @return The compute and memory capacity of the replication instance as defined for the specified replication
-     *         instance class.</p>
+     *         instance class. It is a required parameter, although a defualt value is pre-selected in the DMS
+     *         console.</p>
      *         <p>
      *         For more information on the settings and capacities for the available replication instance classes, see
      *         <a href=
@@ -503,7 +517,7 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * The compute and memory capacity of the replication instance as defined for the specified replication instance
-     * class.
+     * class. It is a required parameter, although a defualt value is pre-selected in the DMS console.
      * </p>
      * <p>
      * For more information on the settings and capacities for the available replication instance classes, see <a href=
@@ -513,7 +527,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * 
      * @param replicationInstanceClass
      *        The compute and memory capacity of the replication instance as defined for the specified replication
-     *        instance class.</p>
+     *        instance class. It is a required parameter, although a defualt value is pre-selected in the DMS
+     *        console.</p>
      *        <p>
      *        For more information on the settings and capacities for the available replication instance classes, see <a
      *        href=
@@ -1198,11 +1213,13 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The maintenance window times for the replication instance.
+     * The maintenance window times for the replication instance. Any pending upgrades to the replication instance are
+     * performed during this time.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The maintenance window times for the replication instance.
+     *        The maintenance window times for the replication instance. Any pending upgrades to the replication
+     *        instance are performed during this time.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -1211,10 +1228,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The maintenance window times for the replication instance.
+     * The maintenance window times for the replication instance. Any pending upgrades to the replication instance are
+     * performed during this time.
      * </p>
      * 
-     * @return The maintenance window times for the replication instance.
+     * @return The maintenance window times for the replication instance. Any pending upgrades to the replication
+     *         instance are performed during this time.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -1223,11 +1242,13 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The maintenance window times for the replication instance.
+     * The maintenance window times for the replication instance. Any pending upgrades to the replication instance are
+     * performed during this time.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        The maintenance window times for the replication instance.
+     *        The maintenance window times for the replication instance. Any pending upgrades to the replication
+     *        instance are performed during this time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1340,9 +1361,24 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      * 
      * @param engineVersion
-     *        The engine version number of the replication instance.
+     *        The engine version number of the replication instance.</p>
+     *        <p>
+     *        If an engine version number is not specified when a replication instance is created, the default is the
+     *        latest engine version available.
+     *        </p>
+     *        <p>
+     *        When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     *        <code>true</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1353,8 +1389,23 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      * 
-     * @return The engine version number of the replication instance.
+     * @return The engine version number of the replication instance.</p>
+     *         <p>
+     *         If an engine version number is not specified when a replication instance is created, the default is the
+     *         latest engine version available.
+     *         </p>
+     *         <p>
+     *         When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     *         <code>true</code>.
      */
 
     public String getEngineVersion() {
@@ -1365,9 +1416,24 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      * 
      * @param engineVersion
-     *        The engine version number of the replication instance.
+     *        The engine version number of the replication instance.</p>
+     *        <p>
+     *        If an engine version number is not specified when a replication instance is created, the default is the
+     *        latest engine version available.
+     *        </p>
+     *        <p>
+     *        When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -123,6 +123,10 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
      */
     private String engineVersion;
     /**
@@ -810,9 +814,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
      * 
      * @param engineVersion
-     *        The engine version number of the replication instance.
+     *        The engine version number of the replication instance.</p>
+     *        <p>
+     *        If an engine version number is not specified when a replication instance is created, the default is the
+     *        latest engine version available.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -823,8 +834,15 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
      * 
-     * @return The engine version number of the replication instance.
+     * @return The engine version number of the replication instance.</p>
+     *         <p>
+     *         If an engine version number is not specified when a replication instance is created, the default is the
+     *         latest engine version available.
      */
 
     public String getEngineVersion() {
@@ -835,9 +853,16 @@ public class CreateReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * If an engine version number is not specified when a replication instance is created, the default is the latest
+     * engine version available.
+     * </p>
      * 
      * @param engineVersion
-     *        The engine version number of the replication instance.
+     *        The engine version number of the replication instance.</p>
+     *        <p>
+     *        If an engine version number is not specified when a replication instance is created, the default is the
+     *        latest engine version available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,8 +36,8 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
     private String destinationName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
-     * Kinesis stream).
+     * The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis
+     * stream).
      * </p>
      */
     private String targetArn;
@@ -108,13 +108,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
-     * Kinesis stream).
+     * The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis
+     * stream).
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
-     *        a Kinesis stream).
+     *        The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a
+     *        Kinesis stream).
      */
 
     public void setTargetArn(String targetArn) {
@@ -123,12 +123,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
-     * Kinesis stream).
+     * The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis
+     * stream).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
-     *         a Kinesis stream).
+     * @return The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a
+     *         Kinesis stream).
      */
 
     public String getTargetArn() {
@@ -137,13 +137,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example, a
-     * Kinesis stream).
+     * The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a Kinesis
+     * stream).
      * </p>
      * 
      * @param targetArn
-     *        The Amazon Resource Name (ARN) of the physical target to where the log events are delivered (for example,
-     *        a Kinesis stream).
+     *        The Amazon Resource Name (ARN) of the physical target where the log events are delivered (for example, a
+     *        Kinesis stream).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

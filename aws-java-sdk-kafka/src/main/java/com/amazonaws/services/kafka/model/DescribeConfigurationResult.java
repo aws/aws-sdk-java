@@ -59,6 +59,12 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     */
+    private String state;
 
     /**
      * <p>
@@ -370,6 +376,73 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @param state
+     *        <p>
+     *        The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *        </p>
+     * @see ConfigurationState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @return <p>
+     *         The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *         </p>
+     * @see ConfigurationState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @param state
+     *        <p>
+     *        The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfigurationState
+     */
+
+    public DescribeConfigurationResult withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @param state
+     *        <p>
+     *        The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfigurationState
+     */
+
+    public DescribeConfigurationResult withState(ConfigurationState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +465,9 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
         if (getLatestRevision() != null)
             sb.append("LatestRevision: ").append(getLatestRevision()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -431,6 +506,10 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +524,7 @@ public class DescribeConfigurationResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getKafkaVersions() == null) ? 0 : getKafkaVersions().hashCode());
         hashCode = prime * hashCode + ((getLatestRevision() == null) ? 0 : getLatestRevision().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

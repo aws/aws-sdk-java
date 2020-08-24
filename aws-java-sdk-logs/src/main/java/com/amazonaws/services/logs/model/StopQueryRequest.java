@@ -27,21 +27,18 @@ public class StopQueryRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this ID
-     * number.
+     * The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      * </p>
      */
     private String queryId;
 
     /**
      * <p>
-     * The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this ID
-     * number.
+     * The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      * </p>
      * 
      * @param queryId
-     *        The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this ID
-     *        number.
+     *        The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      */
 
     public void setQueryId(String queryId) {
@@ -50,12 +47,10 @@ public class StopQueryRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this ID
-     * number.
+     * The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      * </p>
      * 
-     * @return The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this
-     *         ID number.
+     * @return The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      */
 
     public String getQueryId() {
@@ -64,13 +59,11 @@ public class StopQueryRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this ID
-     * number.
+     * The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      * </p>
      * 
      * @param queryId
-     *        The ID number of the query to stop. If necessary, you can use <code>DescribeQueries</code> to find this ID
-     *        number.
+     *        The ID number of the query to stop. To find this ID number, use <code>DescribeQueries</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -100,6 +100,12 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      */
     private String value;
     /**
@@ -771,10 +777,20 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      * 
      * @param value
      *        The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
-     *        Advanced parameters have a value limit of 8 KB.
+     *        Advanced parameters have a value limit of 8 KB.</p> <note>
+     *        <p>
+     *        Parameters can't be referenced or nested in the values of other parameters. You can't include
+     *        <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     *        </p>
      */
 
     public void setValue(String value) {
@@ -786,9 +802,19 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      * 
      * @return The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
-     *         Advanced parameters have a value limit of 8 KB.
+     *         Advanced parameters have a value limit of 8 KB.</p> <note>
+     *         <p>
+     *         Parameters can't be referenced or nested in the values of other parameters. You can't include
+     *         <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     *         </p>
      */
 
     public String getValue() {
@@ -800,10 +826,20 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB. Advanced
      * parameters have a value limit of 8 KB.
      * </p>
+     * <note>
+     * <p>
+     * Parameters can't be referenced or nested in the values of other parameters. You can't include <code>{{}}</code>
+     * or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     * </p>
+     * </note>
      * 
      * @param value
      *        The parameter value that you want to add to the system. Standard parameters have a value limit of 4 KB.
-     *        Advanced parameters have a value limit of 8 KB.
+     *        Advanced parameters have a value limit of 8 KB.</p> <note>
+     *        <p>
+     *        Parameters can't be referenced or nested in the values of other parameters. You can't include
+     *        <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter value.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

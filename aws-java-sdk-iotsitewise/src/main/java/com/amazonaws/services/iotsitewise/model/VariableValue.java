@@ -44,7 +44,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
      * therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from
      * the same asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      */
@@ -105,7 +105,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
      * therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from
      * the same asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -117,7 +117,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      *        and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that
      *        come from the same asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public void setHierarchyId(String hierarchyId) {
@@ -133,7 +133,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
      * therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from
      * the same asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -144,7 +144,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      *         model and therefore the same <code>propertyId</code>. For example, you might have separately grouped
      *         assets that come from the same asset model. For more information, see <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *         Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *         hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      */
 
     public String getHierarchyId() {
@@ -160,7 +160,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      * You use a hierarchy ID instead of a model ID because you can have several hierarchies using the same model and
      * therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that come from
      * the same asset model. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset Hierarchies</a> in
+     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in
      * the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
      * 
@@ -172,7 +172,7 @@ public class VariableValue implements Serializable, Cloneable, StructuredPojo {
      *        and therefore the same <code>propertyId</code>. For example, you might have separately grouped assets that
      *        come from the same asset model. For more information, see <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
-     *        Hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     *        hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

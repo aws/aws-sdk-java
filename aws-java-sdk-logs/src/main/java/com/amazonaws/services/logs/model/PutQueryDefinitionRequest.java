@@ -25,16 +25,63 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
+     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * <code>queryDefinitionNamePrefix</code> parameter of <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a>.
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * If you are updating a query definition, use this parameter to specify the ID of the query definition that you
+     * want to update. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * <p>
+     * If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the
+     * new query definition and include it in the response to this operation.
+     * </p>
+     */
     private String queryDefinitionId;
-
+    /**
+     * <p>
+     * Use this parameter to include specific log groups as part of your query definition.
+     * </p>
+     * <p>
+     * If you are updating a query definition and you omit this parameter, then the updated definition will contain no
+     * log groups.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> logGroupNames;
-
+    /**
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     */
     private String queryString;
 
     /**
+     * <p>
+     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
+     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * <code>queryDefinitionNamePrefix</code> parameter of <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a>.
+     * </p>
+     * 
      * @param name
+     *        A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
+     *        them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *        <code>queryDefinitionNamePrefix</code> parameter of <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *        >DescribeQueryDefinitions</a>.
      */
 
     public void setName(String name) {
@@ -42,7 +89,19 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
+     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * <code>queryDefinitionNamePrefix</code> parameter of <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a>.
+     * </p>
+     * 
+     * @return A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
+     *         them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *         <code>queryDefinitionNamePrefix</code> parameter of <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *         >DescribeQueryDefinitions</a>.
      */
 
     public String getName() {
@@ -50,7 +109,20 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
+     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * <code>queryDefinitionNamePrefix</code> parameter of <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a>.
+     * </p>
+     * 
      * @param name
+     *        A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
+     *        them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *        <code>queryDefinitionNamePrefix</code> parameter of <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *        >DescribeQueryDefinitions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +132,25 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * If you are updating a query definition, use this parameter to specify the ID of the query definition that you
+     * want to update. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * <p>
+     * If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the
+     * new query definition and include it in the response to this operation.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        If you are updating a query definition, use this parameter to specify the ID of the query definition that
+     *        you want to update. You can use <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *        >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+     *        <p>
+     *        If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID
+     *        for the new query definition and include it in the response to this operation.
      */
 
     public void setQueryDefinitionId(String queryDefinitionId) {
@@ -68,7 +158,24 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * If you are updating a query definition, use this parameter to specify the ID of the query definition that you
+     * want to update. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * <p>
+     * If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the
+     * new query definition and include it in the response to this operation.
+     * </p>
+     * 
+     * @return If you are updating a query definition, use this parameter to specify the ID of the query definition that
+     *         you want to update. You can use <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *         >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+     *         <p>
+     *         If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID
+     *         for the new query definition and include it in the response to this operation.
      */
 
     public String getQueryDefinitionId() {
@@ -76,7 +183,25 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * If you are updating a query definition, use this parameter to specify the ID of the query definition that you
+     * want to update. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * <p>
+     * If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the
+     * new query definition and include it in the response to this operation.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        If you are updating a query definition, use this parameter to specify the ID of the query definition that
+     *        you want to update. You can use <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *        >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.</p>
+     *        <p>
+     *        If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID
+     *        for the new query definition and include it in the response to this operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +211,18 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * Use this parameter to include specific log groups as part of your query definition.
+     * </p>
+     * <p>
+     * If you are updating a query definition and you omit this parameter, then the updated definition will contain no
+     * log groups.
+     * </p>
+     * 
+     * @return Use this parameter to include specific log groups as part of your query definition.</p>
+     *         <p>
+     *         If you are updating a query definition and you omit this parameter, then the updated definition will
+     *         contain no log groups.
      */
 
     public java.util.List<String> getLogGroupNames() {
@@ -97,7 +233,19 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Use this parameter to include specific log groups as part of your query definition.
+     * </p>
+     * <p>
+     * If you are updating a query definition and you omit this parameter, then the updated definition will contain no
+     * log groups.
+     * </p>
+     * 
      * @param logGroupNames
+     *        Use this parameter to include specific log groups as part of your query definition.</p>
+     *        <p>
+     *        If you are updating a query definition and you omit this parameter, then the updated definition will
+     *        contain no log groups.
      */
 
     public void setLogGroupNames(java.util.Collection<String> logGroupNames) {
@@ -111,12 +259,23 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * Use this parameter to include specific log groups as part of your query definition.
+     * </p>
+     * <p>
+     * If you are updating a query definition and you omit this parameter, then the updated definition will contain no
+     * log groups.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLogGroupNames(java.util.Collection)} or {@link #withLogGroupNames(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param logGroupNames
+     *        Use this parameter to include specific log groups as part of your query definition.</p>
+     *        <p>
+     *        If you are updating a query definition and you omit this parameter, then the updated definition will
+     *        contain no log groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +290,19 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Use this parameter to include specific log groups as part of your query definition.
+     * </p>
+     * <p>
+     * If you are updating a query definition and you omit this parameter, then the updated definition will contain no
+     * log groups.
+     * </p>
+     * 
      * @param logGroupNames
+     *        Use this parameter to include specific log groups as part of your query definition.</p>
+     *        <p>
+     *        If you are updating a query definition and you omit this parameter, then the updated definition will
+     *        contain no log groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,7 +312,16 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     * 
      * @param queryString
+     *        The query string to use for this definition. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *        Insights Query Syntax</a>.
      */
 
     public void setQueryString(String queryString) {
@@ -149,7 +329,15 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * @return
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     * 
+     * @return The query string to use for this definition. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *         Insights Query Syntax</a>.
      */
 
     public String getQueryString() {
@@ -157,7 +345,16 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The query string to use for this definition. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs Insights
+     * Query Syntax</a>.
+     * </p>
+     * 
      * @param queryString
+     *        The query string to use for this definition. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html">CloudWatch Logs
+     *        Insights Query Syntax</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

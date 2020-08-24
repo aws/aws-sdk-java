@@ -1235,6 +1235,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTransitGatewayPrefixListReferenceResult> createTransitGatewayPrefixListReferenceAsync(
+            CreateTransitGatewayPrefixListReferenceRequest request) {
+
+        return createTransitGatewayPrefixListReferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTransitGatewayPrefixListReferenceResult> createTransitGatewayPrefixListReferenceAsync(
+            CreateTransitGatewayPrefixListReferenceRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayPrefixListReferenceRequest, CreateTransitGatewayPrefixListReferenceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTransitGatewayRouteResult> createTransitGatewayRouteAsync(CreateTransitGatewayRouteRequest request) {
 
         return createTransitGatewayRouteAsync(request, null);
@@ -1930,6 +1945,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     public java.util.concurrent.Future<DeleteTransitGatewayPeeringAttachmentResult> deleteTransitGatewayPeeringAttachmentAsync(
             DeleteTransitGatewayPeeringAttachmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayPeeringAttachmentRequest, DeleteTransitGatewayPeeringAttachmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayPrefixListReferenceResult> deleteTransitGatewayPrefixListReferenceAsync(
+            DeleteTransitGatewayPrefixListReferenceRequest request) {
+
+        return deleteTransitGatewayPrefixListReferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTransitGatewayPrefixListReferenceResult> deleteTransitGatewayPrefixListReferenceAsync(
+            DeleteTransitGatewayPrefixListReferenceRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteTransitGatewayPrefixListReferenceRequest, DeleteTransitGatewayPrefixListReferenceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -5448,6 +5478,21 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<GetTransitGatewayPrefixListReferencesResult> getTransitGatewayPrefixListReferencesAsync(
+            GetTransitGatewayPrefixListReferencesRequest request) {
+
+        return getTransitGatewayPrefixListReferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayPrefixListReferencesResult> getTransitGatewayPrefixListReferencesAsync(
+            GetTransitGatewayPrefixListReferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTransitGatewayPrefixListReferencesRequest, GetTransitGatewayPrefixListReferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTransitGatewayRouteTableAssociationsResult> getTransitGatewayRouteTableAssociationsAsync(
             GetTransitGatewayRouteTableAssociationsRequest request) {
 
@@ -5960,6 +6005,34 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     @Override
     public java.util.concurrent.Future<ModifyTrafficMirrorSessionResult> modifyTrafficMirrorSessionAsync(ModifyTrafficMirrorSessionRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyTrafficMirrorSessionRequest, ModifyTrafficMirrorSessionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayResult> modifyTransitGatewayAsync(ModifyTransitGatewayRequest request) {
+
+        return modifyTransitGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayResult> modifyTransitGatewayAsync(ModifyTransitGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyTransitGatewayRequest, ModifyTransitGatewayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayPrefixListReferenceResult> modifyTransitGatewayPrefixListReferenceAsync(
+            ModifyTransitGatewayPrefixListReferenceRequest request) {
+
+        return modifyTransitGatewayPrefixListReferenceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyTransitGatewayPrefixListReferenceResult> modifyTransitGatewayPrefixListReferenceAsync(
+            ModifyTransitGatewayPrefixListReferenceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyTransitGatewayPrefixListReferenceRequest, ModifyTransitGatewayPrefixListReferenceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

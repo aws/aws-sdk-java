@@ -95,6 +95,10 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      */
     private String engineVersion;
     /**
@@ -624,9 +628,16 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      * 
      * @param engineVersion
-     *        The engine version number of the replication instance.
+     *        The engine version number of the replication instance.</p>
+     *        <p>
+     *        When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     *        <code>true</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -637,8 +648,15 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      * 
-     * @return The engine version number of the replication instance.
+     * @return The engine version number of the replication instance.</p>
+     *         <p>
+     *         When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     *         <code>true</code>.
      */
 
     public String getEngineVersion() {
@@ -649,9 +667,16 @@ public class ModifyReplicationInstanceRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The engine version number of the replication instance.
      * </p>
+     * <p>
+     * When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     * <code>true</code>.
+     * </p>
      * 
      * @param engineVersion
-     *        The engine version number of the replication instance.
+     *        The engine version number of the replication instance.</p>
+     *        <p>
+     *        When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code> to
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

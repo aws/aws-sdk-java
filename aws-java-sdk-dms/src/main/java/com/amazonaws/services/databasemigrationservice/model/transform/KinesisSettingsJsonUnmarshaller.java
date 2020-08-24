@@ -80,6 +80,10 @@ public class KinesisSettingsJsonUnmarshaller implements Unmarshaller<KinesisSett
                     context.nextToken();
                     kinesisSettings.setIncludeControlDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("IncludeNullAndEmpty", targetDepth)) {
+                    context.nextToken();
+                    kinesisSettings.setIncludeNullAndEmpty(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
