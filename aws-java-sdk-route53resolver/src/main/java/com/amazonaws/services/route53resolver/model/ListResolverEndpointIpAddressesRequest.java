@@ -27,7 +27,7 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get IP addresses for.
+     * The ID of the Resolver endpoint that you want to get IP addresses for.
      * </p>
      */
     private String resolverEndpointId;
@@ -44,7 +44,7 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
      * For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.
      * </p>
      * <p>
-     * If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
+     * If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
      * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
@@ -53,11 +53,11 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get IP addresses for.
+     * The ID of the Resolver endpoint that you want to get IP addresses for.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to get IP addresses for.
+     *        The ID of the Resolver endpoint that you want to get IP addresses for.
      */
 
     public void setResolverEndpointId(String resolverEndpointId) {
@@ -66,10 +66,10 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get IP addresses for.
+     * The ID of the Resolver endpoint that you want to get IP addresses for.
      * </p>
      * 
-     * @return The ID of the resolver endpoint that you want to get IP addresses for.
+     * @return The ID of the Resolver endpoint that you want to get IP addresses for.
      */
 
     public String getResolverEndpointId() {
@@ -78,11 +78,11 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get IP addresses for.
+     * The ID of the Resolver endpoint that you want to get IP addresses for.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to get IP addresses for.
+     *        The ID of the Resolver endpoint that you want to get IP addresses for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,7 +148,7 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
      * For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.
      * </p>
      * <p>
-     * If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
+     * If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
      * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
@@ -156,7 +156,7 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
      * @param nextToken
      *        For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
      *        <p>
-     *        If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit
+     *        If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit
      *        another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the
      *        next request, specify the value of <code>NextToken</code> from the previous response.
      */
@@ -170,14 +170,14 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
      * For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.
      * </p>
      * <p>
-     * If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
+     * If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
      * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @return For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
      *         <p>
-     *         If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit
+     *         If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit
      *         another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In
      *         the next request, specify the value of <code>NextToken</code> from the previous response.
      */
@@ -191,7 +191,7 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
      * For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.
      * </p>
      * <p>
-     * If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
+     * If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit another
      * <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
@@ -199,7 +199,7 @@ public class ListResolverEndpointIpAddressesRequest extends com.amazonaws.Amazon
      * @param nextToken
      *        For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.</p>
      *        <p>
-     *        If the specified resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit
+     *        If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses, you can submit
      *        another <code>ListResolverEndpointIpAddresses</code> request to get the next group of IP addresses. In the
      *        next request, specify the value of <code>NextToken</code> from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.

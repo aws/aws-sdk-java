@@ -25,7 +25,7 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      */
@@ -33,12 +33,12 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      * 
      * @param resolverRuleAssociation
-     *        Information about the resolver rule association that you specified in a
+     *        Information about the Resolver rule association that you specified in a
      *        <code>GetResolverRuleAssociation</code> request.
      */
 
@@ -48,11 +48,11 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      * 
-     * @return Information about the resolver rule association that you specified in a
+     * @return Information about the Resolver rule association that you specified in a
      *         <code>GetResolverRuleAssociation</code> request.
      */
 
@@ -62,12 +62,12 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      * 
      * @param resolverRuleAssociation
-     *        Information about the resolver rule association that you specified in a
+     *        Information about the Resolver rule association that you specified in a
      *        <code>GetResolverRuleAssociation</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In a <a>CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.
+ * In a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">
+ * CreateResolverRule</a> request, an array of the IPs that you want to forward DNS queries to.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/TargetAddress" target="_top">AWS API

@@ -27,62 +27,41 @@ import com.amazonaws.services.route53resolver.model.*;
  * </p>
  * <p>
  * <p>
- * Here's how you set up to query an Amazon Route 53 private hosted zone from your network:
- * </p>
- * <ol>
- * <li>
- * <p>
- * Connect your network to a VPC using AWS Direct Connect or a VPN.
- * </p>
- * </li>
- * <li>
- * <p>
- * Run the following AWS CLI command to create a Resolver endpoint:
+ * When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver.
+ * By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or ELB load
+ * balancers. Resolver performs recursive lookups against public name servers for all other domain names.
  * </p>
  * <p>
- * <code>create-resolver-endpoint --name [endpoint_name] --direction INBOUND --creator-request-id [unique_string] --security-group-ids [security_group_with_inbound_rules] --ip-addresses SubnetId=[subnet_id] SubnetId=[subnet_id_in_different_AZ]</code>
+ * You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:
  * </p>
  * <p>
- * Note the resolver endpoint ID that appears in the response. You'll use it in step 3.
- * </p>
- * </li>
- * <li>
- * <p>
- * Get the IP addresses for the Resolver endpoints:
+ * <b>Forward DNS queries from resolvers on your network to Route 53 Resolver</b>
  * </p>
  * <p>
- * <code>get-resolver-endpoint --resolver-endpoint-id [resolver_endpoint_id]</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * In your network configuration, define the IP addresses that you got in step 3 as DNS servers.
- * </p>
- * <p>
- * You can now query instance names in your VPCs and the names of records in your private hosted zone.
- * </p>
- * </li>
- * </ol>
- * <p>
- * You can also perform the following operations using the AWS CLI:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>list-resolver-endpoints</code>: List all endpoints. The syntax includes options for pagination and filtering.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>update-resolver-endpoints</code>: Add IP addresses to an endpoint or remove IP addresses from an endpoint.
- * </p>
- * </li>
- * </ul>
- * <p>
- * To delete an endpoint, use the following AWS CLI command:
+ * DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows your DNS resolvers
+ * to easily resolve domain names for AWS resources such as EC2 instances or records in a Route 53 private hosted zone.
+ * For more information, see <a href=
+ * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc"
+ * >How DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver</a> in the <i>Amazon Route 53 Developer
+ * Guide</i>.
  * </p>
  * <p>
- * <code>delete-resolver-endpoint --resolver-endpoint-id [resolver_endpoint_id]</code>
+ * <b>Conditionally forward queries from a VPC to resolvers on your network</b>
+ * </p>
+ * <p>
+ * You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to DNS resolvers on
+ * your network. To forward selected queries, you create Resolver rules that specify the domain names for the DNS
+ * queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network
+ * that you want to forward the queries to. If a query matches multiple rules (example.com, acme.example.com), Resolver
+ * chooses the rule with the most specific match (acme.example.com) and forwards the query to the IP addresses that you
+ * specified in that rule. For more information, see <a href=
+ * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network"
+ * >How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network</a> in the <i>Amazon Route 53 Developer
+ * Guide</i>.
+ * </p>
+ * <p>
+ * Like Amazon VPC, Resolver is regional. In each region where you have VPCs, you can choose whether to forward queries
+ * from your VPCs to your network (outbound queries), from your network to your VPCs (inbound queries), or both.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -98,11 +77,13 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Adds IP addresses to an inbound or an outbound resolver endpoint. If you want to adding more than one IP address,
+     * Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address,
      * submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.
      * </p>
      * <p>
-     * To remove an IP address from an endpoint, see <a>DisassociateResolverEndpointIpAddress</a>.
+     * To remove an IP address from an endpoint, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html"
+     * >DisassociateResolverEndpointIpAddress</a>.
      * </p>
      * 
      * @param associateResolverEndpointIpAddressRequest
@@ -131,10 +112,54 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Associates a resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries
+     * Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that
+     * originate in all of the Amazon VPCs that are associated with a specified query logging configuration. To
+     * associate more than one VPC with a configuration, submit one <code>AssociateResolverQueryLogConfig</code> request
+     * for each VPC.
+     * </p>
+     * <note>
+     * <p>
+     * The VPCs that you associate with a query logging configuration must be in the same Region as the configuration.
+     * </p>
+     * </note>
+     * <p>
+     * To remove a VPC from a query logging configuration, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html"
+     * >DisassociateResolverQueryLogConfig</a>.
+     * </p>
+     * 
+     * @param associateResolverQueryLogConfigRequest
+     * @return Result of the AssociateResolverQueryLogConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceExistsException
+     *         The resource that you tried to create already exists.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.AssociateResolverQueryLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/AssociateResolverQueryLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateResolverQueryLogConfigResult associateResolverQueryLogConfig(AssociateResolverQueryLogConfigRequest associateResolverQueryLogConfigRequest);
+
+    /**
+     * <p>
+     * Associates a Resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries
      * for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the
-     * IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see
-     * <a>CreateResolverRule</a>.
+     * IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html"
+     * >CreateResolverRule</a>.
      * </p>
      * 
      * @param associateResolverRuleRequest
@@ -143,6 +168,8 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws InvalidRequestException
      *         The request is invalid.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
      * @throws InvalidParameterException
      *         One or more parameters in this request are not valid.
      * @throws ResourceUnavailableException
@@ -161,19 +188,17 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Creates a resolver endpoint. There are two types of resolver endpoints, inbound and outbound:
+     * Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * An <i>inbound resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network or
-     * another VPC.
+     * An <i>inbound Resolver endpoint</i> forwards DNS queries to the DNS service for a VPC from your network.
      * </p>
      * </li>
      * <li>
      * <p>
-     * An <i>outbound resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network or
-     * another VPC.
+     * An <i>outbound Resolver endpoint</i> forwards DNS queries from the DNS service for a VPC to your network.
      * </p>
      * </li>
      * </ul>
@@ -202,7 +227,51 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * For DNS queries that originate in your VPCs, specifies which resolver endpoint the queries pass through, one
+     * Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that
+     * originate in your VPCs. Resolver can log queries only for VPCs that are in the same Region as the query logging
+     * configuration.
+     * </p>
+     * <p>
+     * To specify which VPCs you want to log queries for, you use <code>AssociateResolverQueryLogConfig</code>. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html"
+     * >AssociateResolverQueryLogConfig</a>.
+     * </p>
+     * <p>
+     * You can optionally use AWS Resource Access Manager (AWS RAM) to share a query logging configuration with other
+     * AWS accounts. The other accounts can then associate VPCs with the configuration. The query logs that Resolver
+     * creates for a configuration include all DNS queries that originate in all VPCs that are associated with the
+     * configuration.
+     * </p>
+     * 
+     * @param createResolverQueryLogConfigRequest
+     * @return Result of the CreateResolverQueryLogConfig operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws ResourceExistsException
+     *         The resource that you tried to create already exists.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.CreateResolverQueryLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/CreateResolverQueryLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateResolverQueryLogConfigResult createResolverQueryLogConfig(CreateResolverQueryLogConfigRequest createResolverQueryLogConfigRequest);
+
+    /**
+     * <p>
+     * For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one
      * domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.
      * </p>
      * 
@@ -232,19 +301,18 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Deletes a resolver endpoint. The effect of deleting a resolver endpoint depends on whether it's an inbound or an
-     * outbound resolver endpoint:
+     * Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an
+     * outbound Resolver endpoint:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Inbound</b>: DNS queries from your network or another VPC are no longer routed to the DNS service for the
-     * specified VPC.
+     * <b>Inbound</b>: DNS queries from your network are no longer routed to the DNS service for the specified VPC.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network or to another VPC.
+     * <b>Outbound</b>: DNS queries from a VPC are no longer routed to your network.
      * </p>
      * </li>
      * </ul>
@@ -269,8 +337,52 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Deletes a resolver rule. Before you can delete a resolver rule, you must disassociate it from all the VPCs that
-     * you associated the resolver rule with. For more infomation, see <a>DisassociateResolverRule</a>.
+     * Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for
+     * all of the Amazon VPCs that are associated with the configuration. This also applies if the query logging
+     * configuration is shared with other AWS accounts, and the other accounts have associated VPCs with the shared
+     * configuration.
+     * </p>
+     * <p>
+     * Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration.
+     * See <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html"
+     * >DisassociateResolverQueryLogConfig</a>.
+     * </p>
+     * <p>
+     * If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, you must
+     * stop sharing the configuration before you can delete a configuration. The accounts that you shared the
+     * configuration with can first disassociate VPCs that they associated with the configuration, but that's not
+     * necessary. If you stop sharing the configuration, those VPCs are automatically disassociated from the
+     * configuration.
+     * </p>
+     * 
+     * @param deleteResolverQueryLogConfigRequest
+     * @return Result of the DeleteResolverQueryLogConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.DeleteResolverQueryLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DeleteResolverQueryLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteResolverQueryLogConfigResult deleteResolverQueryLogConfig(DeleteResolverQueryLogConfigRequest deleteResolverQueryLogConfigRequest);
+
+    /**
+     * <p>
+     * Deletes a Resolver rule. Before you can delete a Resolver rule, you must disassociate it from all the VPCs that
+     * you associated the Resolver rule with. For more information, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html"
+     * >DisassociateResolverRule</a>.
      * </p>
      * 
      * @param deleteResolverRuleRequest
@@ -293,11 +405,13 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Removes IP addresses from an inbound or an outbound resolver endpoint. If you want to remove more than one IP
+     * Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP
      * address, submit one <code>DisassociateResolverEndpointIpAddress</code> request for each IP address.
      * </p>
      * <p>
-     * To add an IP address to an endpoint, see <a>AssociateResolverEndpointIpAddress</a>.
+     * To add an IP address to an endpoint, see <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html"
+     * >AssociateResolverEndpointIpAddress</a>.
      * </p>
      * 
      * @param disassociateResolverEndpointIpAddressRequest
@@ -324,12 +438,59 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Removes the association between a specified resolver rule and a specified VPC.
+     * Disassociates a VPC from a query logging configuration.
+     * </p>
+     * <note>
+     * <p>
+     * Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration.
+     * If you used Resource Access Manager (RAM) to share a query logging configuration with other accounts, VPCs can be
+     * disassociated from the configuration in the following ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The accounts that you shared the configuration with can disassociate VPCs from the configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can stop sharing the configuration.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
+     * 
+     * @param disassociateResolverQueryLogConfigRequest
+     * @return Result of the DisassociateResolverQueryLogConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.DisassociateResolverQueryLogConfig
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/DisassociateResolverQueryLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateResolverQueryLogConfigResult disassociateResolverQueryLogConfig(
+            DisassociateResolverQueryLogConfigRequest disassociateResolverQueryLogConfigRequest);
+
+    /**
+     * <p>
+     * Removes the association between a specified Resolver rule and a specified VPC.
      * </p>
      * <important>
      * <p>
-     * If you disassociate a resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that
-     * you specified in the resolver rule.
+     * If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the domain name that
+     * you specified in the Resolver rule.
      * </p>
      * </important>
      * 
@@ -351,7 +512,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about a specified resolver endpoint, such as whether it's an inbound or an outbound resolver
+     * Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver
      * endpoint, and the current status of the endpoint.
      * </p>
      * 
@@ -373,8 +534,90 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about a specified resolver rule, such as the domain name that the rule forwards DNS queries for
-     * and the ID of the outbound resolver endpoint that the rule is associated with.
+     * Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the
+     * configuration is logging queries for and the location that logs are sent to.
+     * </p>
+     * 
+     * @param getResolverQueryLogConfigRequest
+     * @return Result of the GetResolverQueryLogConfig operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.GetResolverQueryLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResolverQueryLogConfigResult getResolverQueryLogConfig(GetResolverQueryLogConfigRequest getResolverQueryLogConfigRequest);
+
+    /**
+     * <p>
+     * Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC.
+     * When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that
+     * VPC.
+     * </p>
+     * 
+     * @param getResolverQueryLogConfigAssociationRequest
+     * @return Result of the GetResolverQueryLogConfigAssociation operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource doesn't exist.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.GetResolverQueryLogConfigAssociation
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResolverQueryLogConfigAssociationResult getResolverQueryLogConfigAssociation(
+            GetResolverQueryLogConfigAssociationRequest getResolverQueryLogConfigAssociationRequest);
+
+    /**
+     * <p>
+     * Gets information about a query logging policy. A query logging policy specifies the Resolver query logging
+     * operations and resources that you want to allow another AWS account to be able to use.
+     * </p>
+     * 
+     * @param getResolverQueryLogConfigPolicyRequest
+     * @return Result of the GetResolverQueryLogConfigPolicy operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws UnknownResourceException
+     *         The specified resource doesn't exist.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.GetResolverQueryLogConfigPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/GetResolverQueryLogConfigPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResolverQueryLogConfigPolicyResult getResolverQueryLogConfigPolicy(GetResolverQueryLogConfigPolicyRequest getResolverQueryLogConfigPolicyRequest);
+
+    /**
+     * <p>
+     * Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for
+     * and the ID of the outbound Resolver endpoint that the rule is associated with.
      * </p>
      * 
      * @param getResolverRuleRequest
@@ -395,8 +638,10 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about an association between a specified resolver rule and a VPC. You associate a resolver rule
-     * and a VPC using <a>AssociateResolverRule</a>.
+     * Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule
+     * and a VPC using <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html"
+     * >AssociateResolverRule</a>.
      * </p>
      * 
      * @param getResolverRuleAssociationRequest
@@ -417,7 +662,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets information about a resolver rule policy. A resolver rule policy specifies the Resolver operations and
+     * Gets information about a Resolver rule policy. A Resolver rule policy specifies the Resolver operations and
      * resources that you want to allow another AWS account to be able to use.
      * </p>
      * 
@@ -437,7 +682,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Gets the IP addresses for a specified resolver endpoint.
+     * Gets the IP addresses for a specified Resolver endpoint.
      * </p>
      * 
      * @param listResolverEndpointIpAddressesRequest
@@ -460,7 +705,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Lists all the resolver endpoints that were created using the current AWS account.
+     * Lists all the Resolver endpoints that were created using the current AWS account.
      * </p>
      * 
      * @param listResolverEndpointsRequest
@@ -483,7 +728,62 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Lists the associations that were created between resolver rules and VPCs using the current AWS account.
+     * Lists information about associations between Amazon VPCs and query logging configurations.
+     * </p>
+     * 
+     * @param listResolverQueryLogConfigAssociationsRequest
+     * @return Result of the ListResolverQueryLogConfigAssociations operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws LimitExceededException
+     *         The request caused one or more limits to be exceeded.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.ListResolverQueryLogConfigAssociations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverQueryLogConfigAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResolverQueryLogConfigAssociationsResult listResolverQueryLogConfigAssociations(
+            ListResolverQueryLogConfigAssociationsRequest listResolverQueryLogConfigAssociationsRequest);
+
+    /**
+     * <p>
+     * Lists information about the specified query logging configurations. Each configuration defines where you want
+     * Resolver to save DNS query logs and specifies the VPCs that you want to log queries for.
+     * </p>
+     * 
+     * @param listResolverQueryLogConfigsRequest
+     * @return Result of the ListResolverQueryLogConfigs operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The value that you specified for <code>NextToken</code> in a <code>List</code> request isn't valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws ThrottlingException
+     *         The request was throttled. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.ListResolverQueryLogConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ListResolverQueryLogConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResolverQueryLogConfigsResult listResolverQueryLogConfigs(ListResolverQueryLogConfigsRequest listResolverQueryLogConfigsRequest);
+
+    /**
+     * <p>
+     * Lists the associations that were created between Resolver rules and VPCs using the current AWS account.
      * </p>
      * 
      * @param listResolverRuleAssociationsRequest
@@ -506,7 +806,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Lists the resolver rules that were created using the current AWS account.
+     * Lists the Resolver rules that were created using the current AWS account.
      * </p>
      * 
      * @param listResolverRulesRequest
@@ -554,13 +854,42 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Specifies the Resolver operations and resources that you want to allow another AWS account to be able to use.
+     * Specifies an AWS account that you want to share a query logging configuration with, the query logging
+     * configuration that you want to share, and the operations that you want the account to be able to perform on the
+     * configuration.
+     * </p>
+     * 
+     * @param putResolverQueryLogConfigPolicyRequest
+     * @return Result of the PutResolverQueryLogConfigPolicy operation returned by the service.
+     * @throws InvalidPolicyDocumentException
+     *         The specified Resolver rule policy is invalid.
+     * @throws InvalidParameterException
+     *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws UnknownResourceException
+     *         The specified resource doesn't exist.
+     * @throws InternalServiceErrorException
+     *         We encountered an unknown error. Try again in a few minutes.
+     * @throws AccessDeniedException
+     *         The current account doesn't have the IAM permissions required to perform the specified Resolver
+     *         operation.
+     * @sample AmazonRoute53Resolver.PutResolverQueryLogConfigPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/PutResolverQueryLogConfigPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutResolverQueryLogConfigPolicyResult putResolverQueryLogConfigPolicy(PutResolverQueryLogConfigPolicyRequest putResolverQueryLogConfigPolicyRequest);
+
+    /**
+     * <p>
+     * Specifies an AWS account that you want to share rules with, the Resolver rules that you want to share, and the
+     * operations that you want the account to be able to perform on those rules.
      * </p>
      * 
      * @param putResolverRulePolicyRequest
      * @return Result of the PutResolverRulePolicy operation returned by the service.
      * @throws InvalidPolicyDocumentException
-     *         The specified resolver rule policy is invalid.
+     *         The specified Resolver rule policy is invalid.
      * @throws InvalidParameterException
      *         One or more parameters in this request are not valid.
      * @throws UnknownResourceException
@@ -586,6 +915,8 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws InvalidParameterException
      *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
      * @throws InvalidTagException
      *         The specified tag is invalid.
      * @throws InternalServiceErrorException
@@ -609,6 +940,8 @@ public interface AmazonRoute53Resolver {
      *         The specified resource doesn't exist.
      * @throws InvalidParameterException
      *         One or more parameters in this request are not valid.
+     * @throws InvalidRequestException
+     *         The request is invalid.
      * @throws InternalServiceErrorException
      *         We encountered an unknown error. Try again in a few minutes.
      * @throws ThrottlingException
@@ -621,7 +954,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Updates the name of an inbound or an outbound resolver endpoint.
+     * Updates the name of an inbound or an outbound Resolver endpoint.
      * </p>
      * 
      * @param updateResolverEndpointRequest
@@ -644,7 +977,7 @@ public interface AmazonRoute53Resolver {
 
     /**
      * <p>
-     * Updates settings for a specified resolver rule. <code>ResolverRuleId</code> is required, and all other parameters
+     * Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters
      * are optional. If you don't specify a parameter, it retains its current value.
      * </p>
      * 

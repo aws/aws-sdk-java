@@ -25,18 +25,18 @@ public class GetResolverRuleResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     * Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      * </p>
      */
     private ResolverRule resolverRule;
 
     /**
      * <p>
-     * Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     * Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      * </p>
      * 
      * @param resolverRule
-     *        Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     *        Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      */
 
     public void setResolverRule(ResolverRule resolverRule) {
@@ -45,10 +45,10 @@ public class GetResolverRuleResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     * Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      * </p>
      * 
-     * @return Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     * @return Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      */
 
     public ResolverRule getResolverRule() {
@@ -57,11 +57,11 @@ public class GetResolverRuleResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     * Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      * </p>
      * 
      * @param resolverRule
-     *        Information about the resolver rule that you specified in a <code>GetResolverRule</code> request.
+     *        Information about the Resolver rule that you specified in a <code>GetResolverRule</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

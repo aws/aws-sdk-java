@@ -27,18 +27,18 @@ public class GetResolverRuleAssociationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the resolver rule association that you want to get information about.
+     * The ID of the Resolver rule association that you want to get information about.
      * </p>
      */
     private String resolverRuleAssociationId;
 
     /**
      * <p>
-     * The ID of the resolver rule association that you want to get information about.
+     * The ID of the Resolver rule association that you want to get information about.
      * </p>
      * 
      * @param resolverRuleAssociationId
-     *        The ID of the resolver rule association that you want to get information about.
+     *        The ID of the Resolver rule association that you want to get information about.
      */
 
     public void setResolverRuleAssociationId(String resolverRuleAssociationId) {
@@ -47,10 +47,10 @@ public class GetResolverRuleAssociationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the resolver rule association that you want to get information about.
+     * The ID of the Resolver rule association that you want to get information about.
      * </p>
      * 
-     * @return The ID of the resolver rule association that you want to get information about.
+     * @return The ID of the Resolver rule association that you want to get information about.
      */
 
     public String getResolverRuleAssociationId() {
@@ -59,11 +59,11 @@ public class GetResolverRuleAssociationRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The ID of the resolver rule association that you want to get information about.
+     * The ID of the Resolver rule association that you want to get information about.
      * </p>
      * 
      * @param resolverRuleAssociationId
-     *        The ID of the resolver rule association that you want to get information about.
+     *        The ID of the Resolver rule association that you want to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

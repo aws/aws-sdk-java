@@ -27,18 +27,18 @@ public class GetResolverEndpointRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      */
     private String resolverEndpointId;
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to get information about.
+     *        The ID of the Resolver endpoint that you want to get information about.
      */
 
     public void setResolverEndpointId(String resolverEndpointId) {
@@ -47,10 +47,10 @@ public class GetResolverEndpointRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      * 
-     * @return The ID of the resolver endpoint that you want to get information about.
+     * @return The ID of the Resolver endpoint that you want to get information about.
      */
 
     public String getResolverEndpointId() {
@@ -59,11 +59,11 @@ public class GetResolverEndpointRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to get information about.
+     * The ID of the Resolver endpoint that you want to get information about.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to get information about.
+     *        The ID of the Resolver endpoint that you want to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

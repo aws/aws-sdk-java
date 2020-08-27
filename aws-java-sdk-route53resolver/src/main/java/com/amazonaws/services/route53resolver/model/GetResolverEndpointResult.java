@@ -25,18 +25,18 @@ public class GetResolverEndpointResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      */
     private ResolverEndpoint resolverEndpoint;
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      * 
      * @param resolverEndpoint
-     *        Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     *        Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      */
 
     public void setResolverEndpoint(ResolverEndpoint resolverEndpoint) {
@@ -45,10 +45,10 @@ public class GetResolverEndpointResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      * 
-     * @return Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * @return Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      */
 
     public ResolverEndpoint getResolverEndpoint() {
@@ -57,11 +57,11 @@ public class GetResolverEndpointResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     * Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * </p>
      * 
      * @param resolverEndpoint
-     *        Information about the resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
+     *        Information about the Resolver endpoint that you specified in a <code>GetResolverEndpoint</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

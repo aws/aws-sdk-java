@@ -43,6 +43,21 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateResolverQueryLogConfigResult> associateResolverQueryLogConfigAsync(
+            AssociateResolverQueryLogConfigRequest request) {
+
+        return associateResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateResolverQueryLogConfigResult> associateResolverQueryLogConfigAsync(
+            AssociateResolverQueryLogConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateResolverRuleResult> associateResolverRuleAsync(AssociateResolverRuleRequest request) {
 
         return associateResolverRuleAsync(request, null);
@@ -69,6 +84,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResolverQueryLogConfigResult> createResolverQueryLogConfigAsync(CreateResolverQueryLogConfigRequest request) {
+
+        return createResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResolverQueryLogConfigResult> createResolverQueryLogConfigAsync(CreateResolverQueryLogConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResolverRuleResult> createResolverRuleAsync(CreateResolverRuleRequest request) {
 
         return createResolverRuleAsync(request, null);
@@ -90,6 +118,19 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     @Override
     public java.util.concurrent.Future<DeleteResolverEndpointResult> deleteResolverEndpointAsync(DeleteResolverEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteResolverEndpointRequest, DeleteResolverEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResolverQueryLogConfigResult> deleteResolverQueryLogConfigAsync(DeleteResolverQueryLogConfigRequest request) {
+
+        return deleteResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResolverQueryLogConfigResult> deleteResolverQueryLogConfigAsync(DeleteResolverQueryLogConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +164,21 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateResolverQueryLogConfigResult> disassociateResolverQueryLogConfigAsync(
+            DisassociateResolverQueryLogConfigRequest request) {
+
+        return disassociateResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateResolverQueryLogConfigResult> disassociateResolverQueryLogConfigAsync(
+            DisassociateResolverQueryLogConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateResolverRuleResult> disassociateResolverRuleAsync(DisassociateResolverRuleRequest request) {
 
         return disassociateResolverRuleAsync(request, null);
@@ -144,6 +200,49 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     @Override
     public java.util.concurrent.Future<GetResolverEndpointResult> getResolverEndpointAsync(GetResolverEndpointRequest request,
             com.amazonaws.handlers.AsyncHandler<GetResolverEndpointRequest, GetResolverEndpointResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigResult> getResolverQueryLogConfigAsync(GetResolverQueryLogConfigRequest request) {
+
+        return getResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigResult> getResolverQueryLogConfigAsync(GetResolverQueryLogConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResolverQueryLogConfigRequest, GetResolverQueryLogConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigAssociationResult> getResolverQueryLogConfigAssociationAsync(
+            GetResolverQueryLogConfigAssociationRequest request) {
+
+        return getResolverQueryLogConfigAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigAssociationResult> getResolverQueryLogConfigAssociationAsync(
+            GetResolverQueryLogConfigAssociationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResolverQueryLogConfigAssociationRequest, GetResolverQueryLogConfigAssociationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigPolicyResult> getResolverQueryLogConfigPolicyAsync(
+            GetResolverQueryLogConfigPolicyRequest request) {
+
+        return getResolverQueryLogConfigPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigPolicyResult> getResolverQueryLogConfigPolicyAsync(
+            GetResolverQueryLogConfigPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResolverQueryLogConfigPolicyRequest, GetResolverQueryLogConfigPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -216,6 +315,34 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     }
 
     @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigAssociationsResult> listResolverQueryLogConfigAssociationsAsync(
+            ListResolverQueryLogConfigAssociationsRequest request) {
+
+        return listResolverQueryLogConfigAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigAssociationsResult> listResolverQueryLogConfigAssociationsAsync(
+            ListResolverQueryLogConfigAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResolverQueryLogConfigAssociationsRequest, ListResolverQueryLogConfigAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigsResult> listResolverQueryLogConfigsAsync(ListResolverQueryLogConfigsRequest request) {
+
+        return listResolverQueryLogConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigsResult> listResolverQueryLogConfigsAsync(ListResolverQueryLogConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResolverRuleAssociationsResult> listResolverRuleAssociationsAsync(ListResolverRuleAssociationsRequest request) {
 
         return listResolverRuleAssociationsAsync(request, null);
@@ -250,6 +377,21 @@ public class AbstractAmazonRoute53ResolverAsync extends AbstractAmazonRoute53Res
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResolverQueryLogConfigPolicyResult> putResolverQueryLogConfigPolicyAsync(
+            PutResolverQueryLogConfigPolicyRequest request) {
+
+        return putResolverQueryLogConfigPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResolverQueryLogConfigPolicyResult> putResolverQueryLogConfigPolicyAsync(
+            PutResolverQueryLogConfigPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutResolverQueryLogConfigPolicyRequest, PutResolverQueryLogConfigPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

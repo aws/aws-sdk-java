@@ -98,6 +98,14 @@ public class ResolverRuleJsonUnmarshaller implements Unmarshaller<ResolverRule, 
                     context.nextToken();
                     resolverRule.setShareStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreationTime", targetDepth)) {
+                    context.nextToken();
+                    resolverRule.setCreationTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ModificationTime", targetDepth)) {
+                    context.nextToken();
+                    resolverRule.setModificationTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

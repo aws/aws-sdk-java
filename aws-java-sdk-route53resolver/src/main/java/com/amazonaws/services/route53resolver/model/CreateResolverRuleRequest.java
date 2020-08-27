@@ -41,15 +41,28 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     private String name;
     /**
      * <p>
-     * Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      */
     private String ruleType;
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If
-     * a query matches multiple resolver rules (example.com and www.example.com), outbound DNS queries are routed using
-     * the resolver rule that contains the most specific domain name (www.example.com).
+     * a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using
+     * the Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      */
     private String domainName;
@@ -58,11 +71,14 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
      * addresses with a comma.
      * </p>
+     * <p>
+     * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
+     * </p>
      */
     private java.util.List<TargetAddress> targetIps;
     /**
      * <p>
-     * The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you
+     * The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you
      * specify in <code>TargetIps</code>.
      * </p>
      */
@@ -168,11 +184,37 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
      * @param ruleType
-     *        Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     *        When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *        <code>FORWARD</code>.</p>
+     *        <p>
+     *        When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *        to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *        </p>
+     *        <p>
+     *        For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *        specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *        apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *        </p>
+     *        <p>
+     *        Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *        <code>RuleType</code>.
      * @see RuleTypeOption
      */
 
@@ -182,10 +224,36 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
-     * @return Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * @return When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *         <code>FORWARD</code>.</p>
+     *         <p>
+     *         When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *         to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *         </p>
+     *         <p>
+     *         For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *         specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *         apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *         </p>
+     *         <p>
+     *         Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *         <code>RuleType</code>.
      * @see RuleTypeOption
      */
 
@@ -195,11 +263,37 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
      * @param ruleType
-     *        Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     *        When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *        <code>FORWARD</code>.</p>
+     *        <p>
+     *        When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *        to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *        </p>
+     *        <p>
+     *        For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *        specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *        apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *        </p>
+     *        <p>
+     *        Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *        <code>RuleType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleTypeOption
      */
@@ -211,11 +305,37 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
      * @param ruleType
-     *        Specify <code>FORWARD</code>. Other resolver rule types aren't supported.
+     *        When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *        <code>FORWARD</code>.</p>
+     *        <p>
+     *        When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *        to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *        </p>
+     *        <p>
+     *        For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *        specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *        apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *        </p>
+     *        <p>
+     *        Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *        <code>RuleType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleTypeOption
      */
@@ -228,14 +348,14 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If
-     * a query matches multiple resolver rules (example.com and www.example.com), outbound DNS queries are routed using
-     * the resolver rule that contains the most specific domain name (www.example.com).
+     * a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using
+     * the Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      * 
      * @param domainName
      *        DNS queries for this domain name are forwarded to the IP addresses that you specify in
-     *        <code>TargetIps</code>. If a query matches multiple resolver rules (example.com and www.example.com),
-     *        outbound DNS queries are routed using the resolver rule that contains the most specific domain name
+     *        <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com),
+     *        outbound DNS queries are routed using the Resolver rule that contains the most specific domain name
      *        (www.example.com).
      */
 
@@ -246,13 +366,13 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If
-     * a query matches multiple resolver rules (example.com and www.example.com), outbound DNS queries are routed using
-     * the resolver rule that contains the most specific domain name (www.example.com).
+     * a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using
+     * the Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      * 
      * @return DNS queries for this domain name are forwarded to the IP addresses that you specify in
-     *         <code>TargetIps</code>. If a query matches multiple resolver rules (example.com and www.example.com),
-     *         outbound DNS queries are routed using the resolver rule that contains the most specific domain name
+     *         <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com),
+     *         outbound DNS queries are routed using the Resolver rule that contains the most specific domain name
      *         (www.example.com).
      */
 
@@ -263,14 +383,14 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that you specify in <code>TargetIps</code>. If
-     * a query matches multiple resolver rules (example.com and www.example.com), outbound DNS queries are routed using
-     * the resolver rule that contains the most specific domain name (www.example.com).
+     * a query matches multiple Resolver rules (example.com and www.example.com), outbound DNS queries are routed using
+     * the Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      * 
      * @param domainName
      *        DNS queries for this domain name are forwarded to the IP addresses that you specify in
-     *        <code>TargetIps</code>. If a query matches multiple resolver rules (example.com and www.example.com),
-     *        outbound DNS queries are routed using the resolver rule that contains the most specific domain name
+     *        <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com),
+     *        outbound DNS queries are routed using the Resolver rule that contains the most specific domain name
      *        (www.example.com).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -285,9 +405,14 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
      * addresses with a comma.
      * </p>
+     * <p>
+     * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
+     * </p>
      * 
      * @return The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate
-     *         IP addresses with a comma.
+     *         IP addresses with a comma.</p>
+     *         <p>
+     *         <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      */
 
     public java.util.List<TargetAddress> getTargetIps() {
@@ -299,10 +424,15 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
      * addresses with a comma.
      * </p>
+     * <p>
+     * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
+     * </p>
      * 
      * @param targetIps
      *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a comma.
+     *        addresses with a comma.</p>
+     *        <p>
+     *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      */
 
     public void setTargetIps(java.util.Collection<TargetAddress> targetIps) {
@@ -320,6 +450,9 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * addresses with a comma.
      * </p>
      * <p>
+     * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTargetIps(java.util.Collection)} or {@link #withTargetIps(java.util.Collection)} if you want to
      * override the existing values.
@@ -327,7 +460,9 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @param targetIps
      *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a comma.
+     *        addresses with a comma.</p>
+     *        <p>
+     *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,10 +481,15 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
      * addresses with a comma.
      * </p>
+     * <p>
+     * <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
+     * </p>
      * 
      * @param targetIps
      *        The IPs that you want Resolver to forward DNS queries to. You can specify only IPv4 addresses. Separate IP
-     *        addresses with a comma.
+     *        addresses with a comma.</p>
+     *        <p>
+     *        <code>TargetIps</code> is available only when the value of <code>Rule type</code> is <code>FORWARD</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,12 +500,12 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you
+     * The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you
      * specify in <code>TargetIps</code>.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses
+     *        The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses
      *        that you specify in <code>TargetIps</code>.
      */
 
@@ -375,11 +515,11 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you
+     * The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you
      * specify in <code>TargetIps</code>.
      * </p>
      * 
-     * @return The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses
+     * @return The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses
      *         that you specify in <code>TargetIps</code>.
      */
 
@@ -389,12 +529,12 @@ public class CreateResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses that you
+     * The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses that you
      * specify in <code>TargetIps</code>.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the outbound resolver endpoint that you want to use to route DNS queries to the IP addresses
+     *        The ID of the outbound Resolver endpoint that you want to use to route DNS queries to the IP addresses
      *        that you specify in <code>TargetIps</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

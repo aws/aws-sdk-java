@@ -27,18 +27,18 @@ public class DeleteResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to delete.
+     * The ID of the Resolver rule that you want to delete.
      * </p>
      */
     private String resolverRuleId;
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to delete.
+     * The ID of the Resolver rule that you want to delete.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you want to delete.
+     *        The ID of the Resolver rule that you want to delete.
      */
 
     public void setResolverRuleId(String resolverRuleId) {
@@ -47,10 +47,10 @@ public class DeleteResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to delete.
+     * The ID of the Resolver rule that you want to delete.
      * </p>
      * 
-     * @return The ID of the resolver rule that you want to delete.
+     * @return The ID of the Resolver rule that you want to delete.
      */
 
     public String getResolverRuleId() {
@@ -59,11 +59,11 @@ public class DeleteResolverRuleRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to delete.
+     * The ID of the Resolver rule that you want to delete.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you want to delete.
+     *        The ID of the Resolver rule that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

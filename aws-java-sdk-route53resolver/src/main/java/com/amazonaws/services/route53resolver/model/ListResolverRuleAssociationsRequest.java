@@ -46,7 +46,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
     private String nextToken;
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as resolver rules that are associated with
+     * An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with
      * the same VPC ID.
      * </p>
      * <note>
@@ -180,7 +180,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as resolver rules that are associated with
+     * An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with
      * the same VPC ID.
      * </p>
      * <note>
@@ -191,7 +191,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * </note>
      * 
-     * @return An optional specification to return a subset of resolver rules, such as resolver rules that are
+     * @return An optional specification to return a subset of Resolver rules, such as Resolver rules that are
      *         associated with the same VPC ID.</p> <note>
      *         <p>
      *         If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the
@@ -206,7 +206,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as resolver rules that are associated with
+     * An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with
      * the same VPC ID.
      * </p>
      * <note>
@@ -218,7 +218,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
      * </note>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver rules, such as resolver rules that are associated
+     *        An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated
      *        with the same VPC ID.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the
@@ -238,7 +238,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as resolver rules that are associated with
+     * An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with
      * the same VPC ID.
      * </p>
      * <note>
@@ -255,7 +255,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver rules, such as resolver rules that are associated
+     *        An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated
      *        with the same VPC ID.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the
@@ -277,7 +277,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as resolver rules that are associated with
+     * An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with
      * the same VPC ID.
      * </p>
      * <note>
@@ -289,7 +289,7 @@ public class ListResolverRuleAssociationsRequest extends com.amazonaws.AmazonWeb
      * </note>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver rules, such as resolver rules that are associated
+     *        An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated
      *        with the same VPC ID.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request and specify the

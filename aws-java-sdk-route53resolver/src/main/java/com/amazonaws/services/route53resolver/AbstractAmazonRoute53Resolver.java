@@ -33,12 +33,22 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public AssociateResolverQueryLogConfigResult associateResolverQueryLogConfig(AssociateResolverQueryLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AssociateResolverRuleResult associateResolverRule(AssociateResolverRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateResolverEndpointResult createResolverEndpoint(CreateResolverEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateResolverQueryLogConfigResult createResolverQueryLogConfig(CreateResolverQueryLogConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,6 +63,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public DeleteResolverQueryLogConfigResult deleteResolverQueryLogConfig(DeleteResolverQueryLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResolverRuleResult deleteResolverRule(DeleteResolverRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -63,12 +78,32 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public DisassociateResolverQueryLogConfigResult disassociateResolverQueryLogConfig(DisassociateResolverQueryLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateResolverRuleResult disassociateResolverRule(DisassociateResolverRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetResolverEndpointResult getResolverEndpoint(GetResolverEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResolverQueryLogConfigResult getResolverQueryLogConfig(GetResolverQueryLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResolverQueryLogConfigAssociationResult getResolverQueryLogConfigAssociation(GetResolverQueryLogConfigAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResolverQueryLogConfigPolicyResult getResolverQueryLogConfigPolicy(GetResolverQueryLogConfigPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +133,16 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
     }
 
     @Override
+    public ListResolverQueryLogConfigAssociationsResult listResolverQueryLogConfigAssociations(ListResolverQueryLogConfigAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResolverQueryLogConfigsResult listResolverQueryLogConfigs(ListResolverQueryLogConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListResolverRuleAssociationsResult listResolverRuleAssociations(ListResolverRuleAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,6 +154,11 @@ public class AbstractAmazonRoute53Resolver implements AmazonRoute53Resolver {
 
     @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResolverQueryLogConfigPolicyResult putResolverQueryLogConfigPolicy(PutResolverQueryLogConfigPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

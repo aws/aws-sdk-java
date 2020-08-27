@@ -52,6 +52,10 @@ public class ResolverRuleMarshaller {
             .marshallLocationName("OwnerId").build();
     private static final MarshallingInfo<String> SHARESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareStatus").build();
+    private static final MarshallingInfo<String> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+    private static final MarshallingInfo<String> MODIFICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationTime").build();
 
     private static final ResolverRuleMarshaller instance = new ResolverRuleMarshaller();
 
@@ -81,6 +85,8 @@ public class ResolverRuleMarshaller {
             protocolMarshaller.marshall(resolverRule.getResolverEndpointId(), RESOLVERENDPOINTID_BINDING);
             protocolMarshaller.marshall(resolverRule.getOwnerId(), OWNERID_BINDING);
             protocolMarshaller.marshall(resolverRule.getShareStatus(), SHARESTATUS_BINDING);
+            protocolMarshaller.marshall(resolverRule.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(resolverRule.getModificationTime(), MODIFICATIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

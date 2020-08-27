@@ -25,18 +25,18 @@ public class GetResolverRulePolicyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      */
     private String resolverRulePolicy;
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      * 
      * @param resolverRulePolicy
-     *        Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
+     *        Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
      *        request.
      */
 
@@ -46,10 +46,10 @@ public class GetResolverRulePolicyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      * 
-     * @return Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
+     * @return Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
      *         request.
      */
 
@@ -59,11 +59,11 @@ public class GetResolverRulePolicyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      * 
      * @param resolverRulePolicy
-     *        Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
+     *        Information about the Resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
      *        request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

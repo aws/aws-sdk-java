@@ -27,18 +27,18 @@ public class GetResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule policy that you want to get information about.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule policy that you want to get information about.
      * </p>
      * 
      * @param arn
-     *        The ID of the resolver rule policy that you want to get information about.
+     *        The ID of the Resolver rule policy that you want to get information about.
      */
 
     public void setArn(String arn) {
@@ -47,10 +47,10 @@ public class GetResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule policy that you want to get information about.
      * </p>
      * 
-     * @return The ID of the resolver rule policy that you want to get information about.
+     * @return The ID of the Resolver rule policy that you want to get information about.
      */
 
     public String getArn() {
@@ -59,11 +59,11 @@ public class GetResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule policy that you want to get information about.
      * </p>
      * 
      * @param arn
-     *        The ID of the resolver rule policy that you want to get information about.
+     *        The ID of the Resolver rule policy that you want to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

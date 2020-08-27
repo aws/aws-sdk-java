@@ -33,32 +33,40 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <a>GetResolverEndpoint</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">
+     * GetResolverEndpoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRule</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">
+     * GetResolverRule</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRuleAssociation</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     * >GetResolverRuleAssociation</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverEndpoints</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">
+     * ListResolverEndpoints</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRuleAssociations</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     * >ListResolverRuleAssociations</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRules</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>
      * </p>
      * </li>
      * </ul>
@@ -79,32 +87,40 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <a>GetResolverEndpoint</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">
+     * GetResolverEndpoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRule</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">
+     * GetResolverRule</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRuleAssociation</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     * >GetResolverRuleAssociation</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverEndpoints</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">
+     * ListResolverEndpoints</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRuleAssociations</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     * >ListResolverRuleAssociations</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRules</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>
      * </p>
      * </li>
      * </ul>
@@ -115,32 +131,44 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>GetResolverEndpoint</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *        >GetResolverEndpoint</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>GetResolverRule</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">
+     *        GetResolverRule</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>GetResolverRuleAssociation</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     *        >GetResolverRuleAssociation</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ListResolverEndpoints</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html"
+     *        >ListResolverEndpoints</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ListResolverRuleAssociations</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     *        >ListResolverRuleAssociations</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ListResolverRules</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+     *        >ListResolverRules</a>
      *        </p>
      *        </li>
      */
@@ -157,32 +185,40 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <a>GetResolverEndpoint</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">
+     * GetResolverEndpoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRule</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">
+     * GetResolverRule</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRuleAssociation</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     * >GetResolverRuleAssociation</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverEndpoints</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">
+     * ListResolverEndpoints</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRuleAssociations</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     * >ListResolverRuleAssociations</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRules</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>
      * </p>
      * </li>
      * </ul>
@@ -192,32 +228,44 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <ul>
      *         <li>
      *         <p>
-     *         <a>GetResolverEndpoint</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *         >GetResolverEndpoint</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>GetResolverRule</a>
+     *         <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html"
+     *         >GetResolverRule</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>GetResolverRuleAssociation</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     *         >GetResolverRuleAssociation</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ListResolverEndpoints</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html"
+     *         >ListResolverEndpoints</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ListResolverRuleAssociations</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     *         >ListResolverRuleAssociations</a>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <a>ListResolverRules</a>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+     *         >ListResolverRules</a>
      *         </p>
      *         </li>
      */
@@ -234,32 +282,40 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * <a>GetResolverEndpoint</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">
+     * GetResolverEndpoint</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRule</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">
+     * GetResolverRule</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetResolverRuleAssociation</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     * >GetResolverRuleAssociation</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverEndpoints</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">
+     * ListResolverEndpoints</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRuleAssociations</a>
+     * <a href=
+     * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     * >ListResolverRuleAssociations</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListResolverRules</a>
+     * <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>
      * </p>
      * </li>
      * </ul>
@@ -270,32 +326,44 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
-     *        <a>GetResolverEndpoint</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *        >GetResolverEndpoint</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>GetResolverRule</a>
+     *        <a
+     *        href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">
+     *        GetResolverRule</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>GetResolverRuleAssociation</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRuleAssociation.html"
+     *        >GetResolverRuleAssociation</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ListResolverEndpoints</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html"
+     *        >ListResolverEndpoints</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ListResolverRuleAssociations</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+     *        >ListResolverRuleAssociations</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ListResolverRules</a>
+     *        <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+     *        >ListResolverRules</a>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

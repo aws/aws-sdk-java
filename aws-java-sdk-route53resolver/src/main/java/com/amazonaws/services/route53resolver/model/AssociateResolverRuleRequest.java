@@ -27,33 +27,37 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules, use
-     * <a>ListResolverRules</a>.
+     * The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>.
      * </p>
      */
     private String resolverRuleId;
     /**
      * <p>
-     * A name for the association that you're creating between a resolver rule and a VPC.
+     * A name for the association that you're creating between a Resolver rule and a VPC.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ID of the VPC that you want to associate the resolver rule with.
+     * The ID of the VPC that you want to associate the Resolver rule with.
      * </p>
      */
     private String vPCId;
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules, use
-     * <a>ListResolverRules</a>.
+     * The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules,
-     *        use <a>ListResolverRules</a>.
+     *        The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules,
+     *        use <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+     *        >ListResolverRules</a>.
      */
 
     public void setResolverRuleId(String resolverRuleId) {
@@ -62,12 +66,15 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules, use
-     * <a>ListResolverRules</a>.
+     * The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>.
      * </p>
      * 
-     * @return The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules,
-     *         use <a>ListResolverRules</a>.
+     * @return The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules,
+     *         use <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+     *         >ListResolverRules</a>.
      */
 
     public String getResolverRuleId() {
@@ -76,13 +83,16 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules, use
-     * <a>ListResolverRules</a>.
+     * The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">
+     * ListResolverRules</a>.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you want to associate with the VPC. To list the existing resolver rules,
-     *        use <a>ListResolverRules</a>.
+     *        The ID of the Resolver rule that you want to associate with the VPC. To list the existing Resolver rules,
+     *        use <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+     *        >ListResolverRules</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +103,11 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the association that you're creating between a resolver rule and a VPC.
+     * A name for the association that you're creating between a Resolver rule and a VPC.
      * </p>
      * 
      * @param name
-     *        A name for the association that you're creating between a resolver rule and a VPC.
+     *        A name for the association that you're creating between a Resolver rule and a VPC.
      */
 
     public void setName(String name) {
@@ -106,10 +116,10 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the association that you're creating between a resolver rule and a VPC.
+     * A name for the association that you're creating between a Resolver rule and a VPC.
      * </p>
      * 
-     * @return A name for the association that you're creating between a resolver rule and a VPC.
+     * @return A name for the association that you're creating between a Resolver rule and a VPC.
      */
 
     public String getName() {
@@ -118,11 +128,11 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A name for the association that you're creating between a resolver rule and a VPC.
+     * A name for the association that you're creating between a Resolver rule and a VPC.
      * </p>
      * 
      * @param name
-     *        A name for the association that you're creating between a resolver rule and a VPC.
+     *        A name for the association that you're creating between a Resolver rule and a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +143,11 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the VPC that you want to associate the resolver rule with.
+     * The ID of the VPC that you want to associate the Resolver rule with.
      * </p>
      * 
      * @param vPCId
-     *        The ID of the VPC that you want to associate the resolver rule with.
+     *        The ID of the VPC that you want to associate the Resolver rule with.
      */
 
     public void setVPCId(String vPCId) {
@@ -146,10 +156,10 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the VPC that you want to associate the resolver rule with.
+     * The ID of the VPC that you want to associate the Resolver rule with.
      * </p>
      * 
-     * @return The ID of the VPC that you want to associate the resolver rule with.
+     * @return The ID of the VPC that you want to associate the Resolver rule with.
      */
 
     public String getVPCId() {
@@ -158,11 +168,11 @@ public class AssociateResolverRuleRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the VPC that you want to associate the resolver rule with.
+     * The ID of the VPC that you want to associate the Resolver rule with.
      * </p>
      * 
      * @param vPCId
-     *        The ID of the VPC that you want to associate the resolver rule with.
+     *        The ID of the VPC that you want to associate the Resolver rule with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

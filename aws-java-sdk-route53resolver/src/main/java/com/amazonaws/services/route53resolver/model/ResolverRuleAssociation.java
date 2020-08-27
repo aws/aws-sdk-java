@@ -19,8 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In the response to an <a>AssociateResolverRule</a>, <a>DisassociateResolverRule</a>, or
- * <a>ListResolverRuleAssociations</a> request, information about an association between a resolver rule and a VPC.
+ * In the response to an <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html"
+ * >AssociateResolverRule</a>, <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html"
+ * >DisassociateResolverRule</a>, or <a href=
+ * "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRuleAssociations.html"
+ * >ListResolverRuleAssociations</a> request, provides information about an association between a Resolver rule and a
+ * VPC. The association determines which DNS queries that originate in the VPC are forwarded to your network.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRuleAssociation"
@@ -31,51 +37,55 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit an
-     * <a>AssociateResolverRule</a> request.
+     * The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">
+     * AssociateResolverRule</a> request.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     * The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      * </p>
      */
     private String resolverRuleId;
     /**
      * <p>
-     * The name of an association between a resolver rule and a VPC.
+     * The name of an association between a Resolver rule and a VPC.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The ID of the VPC that you associated the resolver rule with.
+     * The ID of the VPC that you associated the Resolver rule with.
      * </p>
      */
     private String vPCId;
     /**
      * <p>
-     * A code that specifies the current status of the association between a resolver rule and a VPC.
+     * A code that specifies the current status of the association between a Resolver rule and a VPC.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A detailed description of the status of the association between a resolver rule and a VPC.
+     * A detailed description of the status of the association between a Resolver rule and a VPC.
      * </p>
      */
     private String statusMessage;
 
     /**
      * <p>
-     * The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit an
-     * <a>AssociateResolverRule</a> request.
+     * The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">
+     * AssociateResolverRule</a> request.
      * </p>
      * 
      * @param id
-     *        The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit
-     *        an <a>AssociateResolverRule</a> request.
+     *        The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit
+     *        an <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html"
+     *        >AssociateResolverRule</a> request.
      */
 
     public void setId(String id) {
@@ -84,12 +94,15 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit an
-     * <a>AssociateResolverRule</a> request.
+     * The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">
+     * AssociateResolverRule</a> request.
      * </p>
      * 
-     * @return The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit
-     *         an <a>AssociateResolverRule</a> request.
+     * @return The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit
+     *         an <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html"
+     *         >AssociateResolverRule</a> request.
      */
 
     public String getId() {
@@ -98,13 +111,16 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit an
-     * <a>AssociateResolverRule</a> request.
+     * The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit an <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">
+     * AssociateResolverRule</a> request.
      * </p>
      * 
      * @param id
-     *        The ID of the association between a resolver rule and a VPC. Resolver assigns this value when you submit
-     *        an <a>AssociateResolverRule</a> request.
+     *        The ID of the association between a Resolver rule and a VPC. Resolver assigns this value when you submit
+     *        an <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html"
+     *        >AssociateResolverRule</a> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,11 +131,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     * The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     *        The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      */
 
     public void setResolverRuleId(String resolverRuleId) {
@@ -128,10 +144,10 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     * The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      * </p>
      * 
-     * @return The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     * @return The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      */
 
     public String getResolverRuleId() {
@@ -140,11 +156,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     * The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
+     *        The ID of the Resolver rule that you associated with the VPC that is specified by <code>VPCId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +171,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of an association between a resolver rule and a VPC.
+     * The name of an association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param name
-     *        The name of an association between a resolver rule and a VPC.
+     *        The name of an association between a Resolver rule and a VPC.
      */
 
     public void setName(String name) {
@@ -168,10 +184,10 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of an association between a resolver rule and a VPC.
+     * The name of an association between a Resolver rule and a VPC.
      * </p>
      * 
-     * @return The name of an association between a resolver rule and a VPC.
+     * @return The name of an association between a Resolver rule and a VPC.
      */
 
     public String getName() {
@@ -180,11 +196,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The name of an association between a resolver rule and a VPC.
+     * The name of an association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param name
-     *        The name of an association between a resolver rule and a VPC.
+     *        The name of an association between a Resolver rule and a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +211,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the VPC that you associated the resolver rule with.
+     * The ID of the VPC that you associated the Resolver rule with.
      * </p>
      * 
      * @param vPCId
-     *        The ID of the VPC that you associated the resolver rule with.
+     *        The ID of the VPC that you associated the Resolver rule with.
      */
 
     public void setVPCId(String vPCId) {
@@ -208,10 +224,10 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the VPC that you associated the resolver rule with.
+     * The ID of the VPC that you associated the Resolver rule with.
      * </p>
      * 
-     * @return The ID of the VPC that you associated the resolver rule with.
+     * @return The ID of the VPC that you associated the Resolver rule with.
      */
 
     public String getVPCId() {
@@ -220,11 +236,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The ID of the VPC that you associated the resolver rule with.
+     * The ID of the VPC that you associated the Resolver rule with.
      * </p>
      * 
      * @param vPCId
-     *        The ID of the VPC that you associated the resolver rule with.
+     *        The ID of the VPC that you associated the Resolver rule with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +251,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A code that specifies the current status of the association between a resolver rule and a VPC.
+     * A code that specifies the current status of the association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param status
-     *        A code that specifies the current status of the association between a resolver rule and a VPC.
+     *        A code that specifies the current status of the association between a Resolver rule and a VPC.
      * @see ResolverRuleAssociationStatus
      */
 
@@ -249,10 +265,10 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A code that specifies the current status of the association between a resolver rule and a VPC.
+     * A code that specifies the current status of the association between a Resolver rule and a VPC.
      * </p>
      * 
-     * @return A code that specifies the current status of the association between a resolver rule and a VPC.
+     * @return A code that specifies the current status of the association between a Resolver rule and a VPC.
      * @see ResolverRuleAssociationStatus
      */
 
@@ -262,11 +278,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A code that specifies the current status of the association between a resolver rule and a VPC.
+     * A code that specifies the current status of the association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param status
-     *        A code that specifies the current status of the association between a resolver rule and a VPC.
+     *        A code that specifies the current status of the association between a Resolver rule and a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverRuleAssociationStatus
      */
@@ -278,11 +294,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A code that specifies the current status of the association between a resolver rule and a VPC.
+     * A code that specifies the current status of the association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param status
-     *        A code that specifies the current status of the association between a resolver rule and a VPC.
+     *        A code that specifies the current status of the association between a Resolver rule and a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverRuleAssociationStatus
      */
@@ -294,11 +310,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A detailed description of the status of the association between a resolver rule and a VPC.
+     * A detailed description of the status of the association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed description of the status of the association between a resolver rule and a VPC.
+     *        A detailed description of the status of the association between a Resolver rule and a VPC.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -307,10 +323,10 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A detailed description of the status of the association between a resolver rule and a VPC.
+     * A detailed description of the status of the association between a Resolver rule and a VPC.
      * </p>
      * 
-     * @return A detailed description of the status of the association between a resolver rule and a VPC.
+     * @return A detailed description of the status of the association between a Resolver rule and a VPC.
      */
 
     public String getStatusMessage() {
@@ -319,11 +335,11 @@ public class ResolverRuleAssociation implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A detailed description of the status of the association between a resolver rule and a VPC.
+     * A detailed description of the status of the association between a Resolver rule and a VPC.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed description of the status of the association between a resolver rule and a VPC.
+     *        A detailed description of the status of the association between a Resolver rule and a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

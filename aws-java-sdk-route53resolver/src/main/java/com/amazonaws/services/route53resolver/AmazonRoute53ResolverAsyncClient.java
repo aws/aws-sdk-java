@@ -26,62 +26,41 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Here's how you set up to query an Amazon Route 53 private hosted zone from your network:
- * </p>
- * <ol>
- * <li>
- * <p>
- * Connect your network to a VPC using AWS Direct Connect or a VPN.
- * </p>
- * </li>
- * <li>
- * <p>
- * Run the following AWS CLI command to create a Resolver endpoint:
+ * When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver.
+ * By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or ELB load
+ * balancers. Resolver performs recursive lookups against public name servers for all other domain names.
  * </p>
  * <p>
- * <code>create-resolver-endpoint --name [endpoint_name] --direction INBOUND --creator-request-id [unique_string] --security-group-ids [security_group_with_inbound_rules] --ip-addresses SubnetId=[subnet_id] SubnetId=[subnet_id_in_different_AZ]</code>
+ * You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:
  * </p>
  * <p>
- * Note the resolver endpoint ID that appears in the response. You'll use it in step 3.
- * </p>
- * </li>
- * <li>
- * <p>
- * Get the IP addresses for the Resolver endpoints:
+ * <b>Forward DNS queries from resolvers on your network to Route 53 Resolver</b>
  * </p>
  * <p>
- * <code>get-resolver-endpoint --resolver-endpoint-id [resolver_endpoint_id]</code>
- * </p>
- * </li>
- * <li>
- * <p>
- * In your network configuration, define the IP addresses that you got in step 3 as DNS servers.
- * </p>
- * <p>
- * You can now query instance names in your VPCs and the names of records in your private hosted zone.
- * </p>
- * </li>
- * </ol>
- * <p>
- * You can also perform the following operations using the AWS CLI:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>list-resolver-endpoints</code>: List all endpoints. The syntax includes options for pagination and filtering.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>update-resolver-endpoints</code>: Add IP addresses to an endpoint or remove IP addresses from an endpoint.
- * </p>
- * </li>
- * </ul>
- * <p>
- * To delete an endpoint, use the following AWS CLI command:
+ * DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows your DNS resolvers
+ * to easily resolve domain names for AWS resources such as EC2 instances or records in a Route 53 private hosted zone.
+ * For more information, see <a href=
+ * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc"
+ * >How DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver</a> in the <i>Amazon Route 53 Developer
+ * Guide</i>.
  * </p>
  * <p>
- * <code>delete-resolver-endpoint --resolver-endpoint-id [resolver_endpoint_id]</code>
+ * <b>Conditionally forward queries from a VPC to resolvers on your network</b>
+ * </p>
+ * <p>
+ * You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to DNS resolvers on
+ * your network. To forward selected queries, you create Resolver rules that specify the domain names for the DNS
+ * queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network
+ * that you want to forward the queries to. If a query matches multiple rules (example.com, acme.example.com), Resolver
+ * chooses the rule with the most specific match (acme.example.com) and forwards the query to the IP addresses that you
+ * specified in that rule. For more information, see <a href=
+ * "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network"
+ * >How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network</a> in the <i>Amazon Route 53 Developer
+ * Guide</i>.
+ * </p>
+ * <p>
+ * Like Amazon VPC, Resolver is regional. In each region where you have VPCs, you can choose whether to forward queries
+ * from your VPCs to your network (outbound queries), from your network to your VPCs (inbound queries), or both.
  * </p>
  */
 @ThreadSafe
@@ -164,6 +143,41 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateResolverQueryLogConfigResult> associateResolverQueryLogConfigAsync(
+            AssociateResolverQueryLogConfigRequest request) {
+
+        return associateResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateResolverQueryLogConfigResult> associateResolverQueryLogConfigAsync(
+            final AssociateResolverQueryLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateResolverQueryLogConfigRequest, AssociateResolverQueryLogConfigResult> asyncHandler) {
+        final AssociateResolverQueryLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateResolverQueryLogConfigResult>() {
+            @Override
+            public AssociateResolverQueryLogConfigResult call() throws Exception {
+                AssociateResolverQueryLogConfigResult result = null;
+
+                try {
+                    result = executeAssociateResolverQueryLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssociateResolverRuleResult> associateResolverRuleAsync(AssociateResolverRuleRequest request) {
 
         return associateResolverRuleAsync(request, null);
@@ -230,6 +244,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResolverQueryLogConfigResult> createResolverQueryLogConfigAsync(CreateResolverQueryLogConfigRequest request) {
+
+        return createResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateResolverQueryLogConfigResult> createResolverQueryLogConfigAsync(final CreateResolverQueryLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateResolverQueryLogConfigRequest, CreateResolverQueryLogConfigResult> asyncHandler) {
+        final CreateResolverQueryLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateResolverQueryLogConfigResult>() {
+            @Override
+            public CreateResolverQueryLogConfigResult call() throws Exception {
+                CreateResolverQueryLogConfigResult result = null;
+
+                try {
+                    result = executeCreateResolverQueryLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateResolverRuleResult> createResolverRuleAsync(CreateResolverRuleRequest request) {
 
         return createResolverRuleAsync(request, null);
@@ -280,6 +327,39 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeDeleteResolverEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResolverQueryLogConfigResult> deleteResolverQueryLogConfigAsync(DeleteResolverQueryLogConfigRequest request) {
+
+        return deleteResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteResolverQueryLogConfigResult> deleteResolverQueryLogConfigAsync(final DeleteResolverQueryLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteResolverQueryLogConfigRequest, DeleteResolverQueryLogConfigResult> asyncHandler) {
+        final DeleteResolverQueryLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteResolverQueryLogConfigResult>() {
+            @Override
+            public DeleteResolverQueryLogConfigResult call() throws Exception {
+                DeleteResolverQueryLogConfigResult result = null;
+
+                try {
+                    result = executeDeleteResolverQueryLogConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -364,6 +444,41 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateResolverQueryLogConfigResult> disassociateResolverQueryLogConfigAsync(
+            DisassociateResolverQueryLogConfigRequest request) {
+
+        return disassociateResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateResolverQueryLogConfigResult> disassociateResolverQueryLogConfigAsync(
+            final DisassociateResolverQueryLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateResolverQueryLogConfigRequest, DisassociateResolverQueryLogConfigResult> asyncHandler) {
+        final DisassociateResolverQueryLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateResolverQueryLogConfigResult>() {
+            @Override
+            public DisassociateResolverQueryLogConfigResult call() throws Exception {
+                DisassociateResolverQueryLogConfigResult result = null;
+
+                try {
+                    result = executeDisassociateResolverQueryLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateResolverRuleResult> disassociateResolverRuleAsync(DisassociateResolverRuleRequest request) {
 
         return disassociateResolverRuleAsync(request, null);
@@ -414,6 +529,109 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeGetResolverEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigResult> getResolverQueryLogConfigAsync(GetResolverQueryLogConfigRequest request) {
+
+        return getResolverQueryLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigResult> getResolverQueryLogConfigAsync(final GetResolverQueryLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResolverQueryLogConfigRequest, GetResolverQueryLogConfigResult> asyncHandler) {
+        final GetResolverQueryLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResolverQueryLogConfigResult>() {
+            @Override
+            public GetResolverQueryLogConfigResult call() throws Exception {
+                GetResolverQueryLogConfigResult result = null;
+
+                try {
+                    result = executeGetResolverQueryLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigAssociationResult> getResolverQueryLogConfigAssociationAsync(
+            GetResolverQueryLogConfigAssociationRequest request) {
+
+        return getResolverQueryLogConfigAssociationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigAssociationResult> getResolverQueryLogConfigAssociationAsync(
+            final GetResolverQueryLogConfigAssociationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResolverQueryLogConfigAssociationRequest, GetResolverQueryLogConfigAssociationResult> asyncHandler) {
+        final GetResolverQueryLogConfigAssociationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResolverQueryLogConfigAssociationResult>() {
+            @Override
+            public GetResolverQueryLogConfigAssociationResult call() throws Exception {
+                GetResolverQueryLogConfigAssociationResult result = null;
+
+                try {
+                    result = executeGetResolverQueryLogConfigAssociation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigPolicyResult> getResolverQueryLogConfigPolicyAsync(
+            GetResolverQueryLogConfigPolicyRequest request) {
+
+        return getResolverQueryLogConfigPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResolverQueryLogConfigPolicyResult> getResolverQueryLogConfigPolicyAsync(
+            final GetResolverQueryLogConfigPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResolverQueryLogConfigPolicyRequest, GetResolverQueryLogConfigPolicyResult> asyncHandler) {
+        final GetResolverQueryLogConfigPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResolverQueryLogConfigPolicyResult>() {
+            @Override
+            public GetResolverQueryLogConfigPolicyResult call() throws Exception {
+                GetResolverQueryLogConfigPolicyResult result = null;
+
+                try {
+                    result = executeGetResolverQueryLogConfigPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -597,6 +815,74 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
     }
 
     @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigAssociationsResult> listResolverQueryLogConfigAssociationsAsync(
+            ListResolverQueryLogConfigAssociationsRequest request) {
+
+        return listResolverQueryLogConfigAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigAssociationsResult> listResolverQueryLogConfigAssociationsAsync(
+            final ListResolverQueryLogConfigAssociationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResolverQueryLogConfigAssociationsRequest, ListResolverQueryLogConfigAssociationsResult> asyncHandler) {
+        final ListResolverQueryLogConfigAssociationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResolverQueryLogConfigAssociationsResult>() {
+            @Override
+            public ListResolverQueryLogConfigAssociationsResult call() throws Exception {
+                ListResolverQueryLogConfigAssociationsResult result = null;
+
+                try {
+                    result = executeListResolverQueryLogConfigAssociations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigsResult> listResolverQueryLogConfigsAsync(ListResolverQueryLogConfigsRequest request) {
+
+        return listResolverQueryLogConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResolverQueryLogConfigsResult> listResolverQueryLogConfigsAsync(final ListResolverQueryLogConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResolverQueryLogConfigsRequest, ListResolverQueryLogConfigsResult> asyncHandler) {
+        final ListResolverQueryLogConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResolverQueryLogConfigsResult>() {
+            @Override
+            public ListResolverQueryLogConfigsResult call() throws Exception {
+                ListResolverQueryLogConfigsResult result = null;
+
+                try {
+                    result = executeListResolverQueryLogConfigs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListResolverRuleAssociationsResult> listResolverRuleAssociationsAsync(ListResolverRuleAssociationsRequest request) {
 
         return listResolverRuleAssociationsAsync(request, null);
@@ -680,6 +966,41 @@ public class AmazonRoute53ResolverAsyncClient extends AmazonRoute53ResolverClien
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResolverQueryLogConfigPolicyResult> putResolverQueryLogConfigPolicyAsync(
+            PutResolverQueryLogConfigPolicyRequest request) {
+
+        return putResolverQueryLogConfigPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutResolverQueryLogConfigPolicyResult> putResolverQueryLogConfigPolicyAsync(
+            final PutResolverQueryLogConfigPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutResolverQueryLogConfigPolicyRequest, PutResolverQueryLogConfigPolicyResult> asyncHandler) {
+        final PutResolverQueryLogConfigPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutResolverQueryLogConfigPolicyResult>() {
+            @Override
+            public PutResolverQueryLogConfigPolicyResult call() throws Exception {
+                PutResolverQueryLogConfigPolicyResult result = null;
+
+                try {
+                    result = executePutResolverQueryLogConfigPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

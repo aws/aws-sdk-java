@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In an <a>UpdateResolverEndpoint</a> request, information about an IP address to update.
+ * In an <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html"
+ * >UpdateResolverEndpoint</a> request, information about an IP address to update.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressUpdate" target="_top">AWS
@@ -30,15 +32,18 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want to
-     * remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     * <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to
+     * remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      */
     private String ipId;
     /**
      * <p>
-     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     * <a>GetResolverEndpoint</a>.
+     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      */
     private String subnetId;
@@ -51,13 +56,17 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want to
-     * remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     * <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to
+     * remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      * 
      * @param ipId
-     *        <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want
-     *        to remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     *        <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want
+     *        to remove. To get this ID, use <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *        >GetResolverEndpoint</a>.
      */
 
     public void setIpId(String ipId) {
@@ -66,12 +75,16 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want to
-     * remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     * <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to
+     * remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      * 
-     * @return <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want
-     *         to remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     * @return <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want
+     *         to remove. To get this ID, use <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *         >GetResolverEndpoint</a>.
      */
 
     public String getIpId() {
@@ -80,13 +93,17 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want to
-     * remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     * <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want to
+     * remove. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      * 
      * @param ipId
-     *        <i>Only when removing an IP address from a resolver endpoint</i>: The ID of the IP address that you want
-     *        to remove. To get this ID, use <a>GetResolverEndpoint</a>.
+     *        <i>Only when removing an IP address from a Resolver endpoint</i>: The ID of the IP address that you want
+     *        to remove. To get this ID, use <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *        >GetResolverEndpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,13 +114,15 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     * <a>GetResolverEndpoint</a>.
+     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     *        <a>GetResolverEndpoint</a>.
+     *        The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *        >GetResolverEndpoint</a>.
      */
 
     public void setSubnetId(String subnetId) {
@@ -112,12 +131,14 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     * <a>GetResolverEndpoint</a>.
+     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      * 
-     * @return The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     *         <a>GetResolverEndpoint</a>.
+     * @return The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a
+     *         href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *         >GetResolverEndpoint</a>.
      */
 
     public String getSubnetId() {
@@ -126,13 +147,15 @@ public class IpAddressUpdate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     * <a>GetResolverEndpoint</a>.
+     * The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     * >GetResolverEndpoint</a>.
      * </p>
      * 
      * @param subnetId
-     *        The ID of the subnet that includes the IP address that you want to update. To get this ID, use
-     *        <a>GetResolverEndpoint</a>.
+     *        The ID of the subnet that includes the IP address that you want to update. To get this ID, use <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+     *        >GetResolverEndpoint</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

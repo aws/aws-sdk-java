@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified resolver rule policy is invalid.
+ * The specified Resolver rule policy is invalid.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

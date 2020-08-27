@@ -22,8 +22,12 @@ import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.AssumeRoleRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleResult;
+import com.amazonaws.services.securitytoken.model.Tag;
 import com.amazonaws.util.ValidationUtils;
 import java.io.Closeable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.concurrent.Callable;
 
 /**
@@ -69,6 +73,16 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * Scope down policy to limit permissions from the assumed role.
      */
     private final String scopeDownPolicy;
+
+    /**
+     * Tags for the assume role session
+     */
+    private final Collection<Tag> sessionTags;
+
+    /**
+     * Transitive tag keys for the assume role session
+     */
+    private final Collection<String> transitiveTagKeys;
 
     private final Callable<SessionCredentialsHolder> refreshCallable = new Callable<SessionCredentialsHolder>() {
         @Override
@@ -133,7 +147,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
                                                    String roleArn, String roleSessionName,
                                                    ClientConfiguration clientConfiguration) {
         this(new Builder(roleArn, roleSessionName).withLongLivedCredentials(longLivedCredentials)
-                     .withClientConfiguration(clientConfiguration));
+                .withClientConfiguration(clientConfiguration));
     }
 
 
@@ -155,7 +169,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
             String roleSessionName) {
         this(new Builder(roleArn, roleSessionName)
-                     .withLongLivedCredentialsProvider(longLivedCredentialsProvider));
+                .withLongLivedCredentialsProvider(longLivedCredentialsProvider));
     }
 
     /**
@@ -177,8 +191,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
             AWSCredentialsProvider longLivedCredentialsProvider, String roleArn,
             String roleSessionName, ClientConfiguration clientConfiguration) {
         this(new Builder(roleArn, roleSessionName)
-                     .withLongLivedCredentialsProvider(longLivedCredentialsProvider)
-                     .withClientConfiguration(clientConfiguration));
+                .withLongLivedCredentialsProvider(longLivedCredentialsProvider)
+                .withClientConfiguration(clientConfiguration));
     }
 
     private RefreshableTask<SessionCredentialsHolder> createRefreshableTask() {
@@ -230,6 +244,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
 
         this.refreshableTask = createRefreshableTask();
         this.scopeDownPolicy = builder.scopeDownPolicy;
+        this.sessionTags = builder.sessionTags;
+        this.transitiveTagKeys = builder.transitiveTagKeys;
     }
 
     /**
@@ -240,14 +256,14 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
      * @throws IllegalArgumentException if builder configuration is inconsistent
      */
     private static AWSSecurityTokenService buildStsClient(Builder builder) throws
-                                                                           IllegalArgumentException {
+            IllegalArgumentException {
         /**
          * Passing two types of credential interfaces is not permitted
          */
         if (builder.longLivedCredentials != null && builder.longLivedCredentialsProvider != null) {
             throw new IllegalArgumentException(
                     "It is illegal to set both an AWSCredentials and an AWSCredentialsProvider for an " +
-                    STSAssumeRoleSessionCredentialsProvider.class.getName());
+                            STSAssumeRoleSessionCredentialsProvider.class.getName());
         }
 
         AWSCredentialsProvider longLivedCredentialsProvider = null;
@@ -271,7 +287,7 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
                 return new AWSSecurityTokenServiceClient(longLivedCredentialsProvider);
             } else {
                 return new AWSSecurityTokenServiceClient(longLivedCredentialsProvider,
-                                                         builder.clientConfiguration);
+                        builder.clientConfiguration);
             }
         }
     }
@@ -317,6 +333,12 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         if (roleExternalId != null) {
             assumeRoleRequest = assumeRoleRequest.withExternalId(roleExternalId);
         }
+        if(sessionTags != null) {
+            assumeRoleRequest = assumeRoleRequest.withTags(sessionTags);
+        }
+        if(transitiveTagKeys != null) {
+            assumeRoleRequest = assumeRoleRequest.withTransitiveTagKeys(transitiveTagKeys);
+        }
 
         AssumeRoleResult assumeRoleResult = securityTokenService.assumeRole(assumeRoleRequest);
         return new SessionCredentialsHolder(assumeRoleResult.getCredentials());
@@ -349,6 +371,8 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
         private int roleSessionDurationSeconds;
         private String scopeDownPolicy;
         private AWSSecurityTokenService sts;
+        private Collection<Tag> sessionTags;
+        private Collection<String> transitiveTagKeys;
 
         /**
          * @param roleArn         Required roleArn parameter used when starting a session
@@ -434,6 +458,35 @@ public class STSAssumeRoleSessionCredentialsProvider implements AWSSessionCreden
          */
         public Builder withRoleSessionDurationSeconds(int roleSessionDurationSeconds) {
             this.roleSessionDurationSeconds = roleSessionDurationSeconds;
+            return this;
+        }
+
+        /**
+         * Set the tags that is used when creating a new assumed role
+         * session.
+         * @param sessionTags the collection of tags which we want to pass to the assume role request.
+         * @return the itself for chained calls
+         */
+        public Builder withSessionTags(Collection<Tag> sessionTags) {
+            if (sessionTags == null) {
+                this.sessionTags = null;
+                return this;
+            }
+            this.sessionTags = Collections.unmodifiableCollection(new ArrayList<Tag>(sessionTags));
+            return this;
+        }
+
+        /**
+         * Set the transitive tags keys when creating a new assume role session
+         * @param  transitiveTagKeys collection of tags transitive tag keys we want to pass to the assume role request.
+         * @return the itself for chained calls
+         */
+        public Builder withTransitiveTagKeys(Collection<String> transitiveTagKeys) {
+            if (transitiveTagKeys == null) {
+                this.transitiveTagKeys = null;
+                return this;
+            }
+            this.transitiveTagKeys = Collections.unmodifiableCollection(new ArrayList<String>(transitiveTagKeys));
             return this;
         }
 

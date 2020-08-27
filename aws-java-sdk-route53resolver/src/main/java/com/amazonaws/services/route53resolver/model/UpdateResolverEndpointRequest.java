@@ -27,24 +27,24 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to update.
+     * The ID of the Resolver endpoint that you want to update.
      * </p>
      */
     private String resolverEndpointId;
     /**
      * <p>
-     * The name of the resolver endpoint that you want to update.
+     * The name of the Resolver endpoint that you want to update.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to update.
+     * The ID of the Resolver endpoint that you want to update.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to update.
+     *        The ID of the Resolver endpoint that you want to update.
      */
 
     public void setResolverEndpointId(String resolverEndpointId) {
@@ -53,10 +53,10 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to update.
+     * The ID of the Resolver endpoint that you want to update.
      * </p>
      * 
-     * @return The ID of the resolver endpoint that you want to update.
+     * @return The ID of the Resolver endpoint that you want to update.
      */
 
     public String getResolverEndpointId() {
@@ -65,11 +65,11 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to update.
+     * The ID of the Resolver endpoint that you want to update.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to update.
+     *        The ID of the Resolver endpoint that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the resolver endpoint that you want to update.
+     * The name of the Resolver endpoint that you want to update.
      * </p>
      * 
      * @param name
-     *        The name of the resolver endpoint that you want to update.
+     *        The name of the Resolver endpoint that you want to update.
      */
 
     public void setName(String name) {
@@ -93,10 +93,10 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the resolver endpoint that you want to update.
+     * The name of the Resolver endpoint that you want to update.
      * </p>
      * 
-     * @return The name of the resolver endpoint that you want to update.
+     * @return The name of the Resolver endpoint that you want to update.
      */
 
     public String getName() {
@@ -105,11 +105,11 @@ public class UpdateResolverEndpointRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the resolver endpoint that you want to update.
+     * The name of the Resolver endpoint that you want to update.
      * </p>
      * 
      * @param name
-     *        The name of the resolver endpoint that you want to update.
+     *        The name of the Resolver endpoint that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,10 +19,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For queries that originate in your VPC, detailed information about a resolver rule, which specifies how to route DNS
- * queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a
- * <a>CreateResolverRule</a>, <a>DeleteResolverRule</a>, <a>GetResolverRule</a>, <a>ListResolverRules</a>, or
- * <a>UpdateResolverRule</a> request.
+ * For queries that originate in your VPC, detailed information about a Resolver rule, which specifies how to route DNS
+ * queries out of the VPC. The <code>ResolverRule</code> parameter appears in the response to a <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html"
+ * >CreateResolverRule</a>, <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html"
+ * >DeleteResolverRule</a>, <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html"
+ * >GetResolverRule</a>, <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html"
+ * >ListResolverRules</a>, or <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverRule.html"
+ * >UpdateResolverRule</a> request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/ResolverRule" target="_top">AWS API
@@ -33,58 +41,72 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Resolver assigned to the resolver rule when you created it.
+     * The ID that Resolver assigned to the Resolver rule when you created it.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>identifies
+     * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
      * the request and allows failed requests to be retried without the risk of executing the operation twice.
      * </p>
      */
     private String creatorRequestId;
     /**
      * <p>
-     * The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     * The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      * </p>
      */
     private String arn;
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>.
-     * If a query matches multiple resolver rules (example.com and www.example.com), the query is routed using the
-     * resolver rule that contains the most specific domain name (www.example.com).
+     * If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the
+     * Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * A code that specifies the current status of the resolver rule.
+     * A code that specifies the current status of the Resolver rule.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * A detailed description of the status of a resolver rule.
+     * A detailed description of the status of a Resolver rule.
      * </p>
      */
     private String statusMessage;
     /**
      * <p>
-     * This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      */
     private String ruleType;
     /**
      * <p>
-     * The name for the resolver rule, which you specified when you created the resolver rule.
+     * The name for the Resolver rule, which you specified when you created the Resolver rule.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * An array that contains the IP addresses and ports that you want to forward
+     * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
+     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
      * </p>
      */
     private java.util.List<TargetAddress> targetIps;
@@ -107,14 +129,27 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String shareStatus;
+    /**
+     * <p>
+     * The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private String creationTime;
+    /**
+     * <p>
+     * The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time
+     * (UTC).
+     * </p>
+     */
+    private String modificationTime;
 
     /**
      * <p>
-     * The ID that Resolver assigned to the resolver rule when you created it.
+     * The ID that Resolver assigned to the Resolver rule when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that Resolver assigned to the resolver rule when you created it.
+     *        The ID that Resolver assigned to the Resolver rule when you created it.
      */
 
     public void setId(String id) {
@@ -123,10 +158,10 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Resolver assigned to the resolver rule when you created it.
+     * The ID that Resolver assigned to the Resolver rule when you created it.
      * </p>
      * 
-     * @return The ID that Resolver assigned to the resolver rule when you created it.
+     * @return The ID that Resolver assigned to the Resolver rule when you created it.
      */
 
     public String getId() {
@@ -135,11 +170,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID that Resolver assigned to the resolver rule when you created it.
+     * The ID that Resolver assigned to the Resolver rule when you created it.
      * </p>
      * 
      * @param id
-     *        The ID that Resolver assigned to the resolver rule when you created it.
+     *        The ID that Resolver assigned to the Resolver rule when you created it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +185,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>identifies
+     * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
      * the request and allows failed requests to be retried without the risk of executing the operation twice.
      * </p>
      * 
      * @param creatorRequestId
-     *        A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>
+     *        A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
      *        identifies the request and allows failed requests to be retried without the risk of executing the
      *        operation twice.
      */
@@ -166,11 +201,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>identifies
+     * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
      * the request and allows failed requests to be retried without the risk of executing the operation twice.
      * </p>
      * 
-     * @return A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>
+     * @return A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
      *         identifies the request and allows failed requests to be retried without the risk of executing the
      *         operation twice.
      */
@@ -181,12 +216,12 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>identifies
+     * A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code> identifies
      * the request and allows failed requests to be retried without the risk of executing the operation twice.
      * </p>
      * 
      * @param creatorRequestId
-     *        A unique string that you specified when you created the resolver rule. <code>CreatorRequestId</code>
+     *        A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
      *        identifies the request and allows failed requests to be retried without the risk of executing the
      *        operation twice.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -199,11 +234,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     * The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      * </p>
      * 
      * @param arn
-     *        The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     *        The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      */
 
     public void setArn(String arn) {
@@ -212,10 +247,10 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     * The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      * </p>
      * 
-     * @return The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     * @return The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      */
 
     public String getArn() {
@@ -224,11 +259,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     * The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      * </p>
      * 
      * @param arn
-     *        The ARN (Amazon Resource Name) for the resolver rule specified by <code>Id</code>.
+     *        The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,14 +275,14 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>.
-     * If a query matches multiple resolver rules (example.com and www.example.com), the query is routed using the
-     * resolver rule that contains the most specific domain name (www.example.com).
+     * If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the
+     * Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      * 
      * @param domainName
      *        DNS queries for this domain name are forwarded to the IP addresses that are specified in
-     *        <code>TargetIps</code>. If a query matches multiple resolver rules (example.com and www.example.com), the
-     *        query is routed using the resolver rule that contains the most specific domain name (www.example.com).
+     *        <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), the
+     *        query is routed using the Resolver rule that contains the most specific domain name (www.example.com).
      */
 
     public void setDomainName(String domainName) {
@@ -257,13 +292,13 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>.
-     * If a query matches multiple resolver rules (example.com and www.example.com), the query is routed using the
-     * resolver rule that contains the most specific domain name (www.example.com).
+     * If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the
+     * Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      * 
      * @return DNS queries for this domain name are forwarded to the IP addresses that are specified in
-     *         <code>TargetIps</code>. If a query matches multiple resolver rules (example.com and www.example.com), the
-     *         query is routed using the resolver rule that contains the most specific domain name (www.example.com).
+     *         <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), the
+     *         query is routed using the Resolver rule that contains the most specific domain name (www.example.com).
      */
 
     public String getDomainName() {
@@ -273,14 +308,14 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * DNS queries for this domain name are forwarded to the IP addresses that are specified in <code>TargetIps</code>.
-     * If a query matches multiple resolver rules (example.com and www.example.com), the query is routed using the
-     * resolver rule that contains the most specific domain name (www.example.com).
+     * If a query matches multiple Resolver rules (example.com and www.example.com), the query is routed using the
+     * Resolver rule that contains the most specific domain name (www.example.com).
      * </p>
      * 
      * @param domainName
      *        DNS queries for this domain name are forwarded to the IP addresses that are specified in
-     *        <code>TargetIps</code>. If a query matches multiple resolver rules (example.com and www.example.com), the
-     *        query is routed using the resolver rule that contains the most specific domain name (www.example.com).
+     *        <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com and www.example.com), the
+     *        query is routed using the Resolver rule that contains the most specific domain name (www.example.com).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,11 +326,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code that specifies the current status of the resolver rule.
+     * A code that specifies the current status of the Resolver rule.
      * </p>
      * 
      * @param status
-     *        A code that specifies the current status of the resolver rule.
+     *        A code that specifies the current status of the Resolver rule.
      * @see ResolverRuleStatus
      */
 
@@ -305,10 +340,10 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code that specifies the current status of the resolver rule.
+     * A code that specifies the current status of the Resolver rule.
      * </p>
      * 
-     * @return A code that specifies the current status of the resolver rule.
+     * @return A code that specifies the current status of the Resolver rule.
      * @see ResolverRuleStatus
      */
 
@@ -318,11 +353,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code that specifies the current status of the resolver rule.
+     * A code that specifies the current status of the Resolver rule.
      * </p>
      * 
      * @param status
-     *        A code that specifies the current status of the resolver rule.
+     *        A code that specifies the current status of the Resolver rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverRuleStatus
      */
@@ -334,11 +369,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A code that specifies the current status of the resolver rule.
+     * A code that specifies the current status of the Resolver rule.
      * </p>
      * 
      * @param status
-     *        A code that specifies the current status of the resolver rule.
+     *        A code that specifies the current status of the Resolver rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResolverRuleStatus
      */
@@ -350,11 +385,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed description of the status of a resolver rule.
+     * A detailed description of the status of a Resolver rule.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed description of the status of a resolver rule.
+     *        A detailed description of the status of a Resolver rule.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -363,10 +398,10 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed description of the status of a resolver rule.
+     * A detailed description of the status of a Resolver rule.
      * </p>
      * 
-     * @return A detailed description of the status of a resolver rule.
+     * @return A detailed description of the status of a Resolver rule.
      */
 
     public String getStatusMessage() {
@@ -375,11 +410,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A detailed description of the status of a resolver rule.
+     * A detailed description of the status of a Resolver rule.
      * </p>
      * 
      * @param statusMessage
-     *        A detailed description of the status of a resolver rule.
+     *        A detailed description of the status of a Resolver rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,11 +425,37 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
      * @param ruleType
-     *        This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     *        When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *        <code>FORWARD</code>.</p>
+     *        <p>
+     *        When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *        to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *        </p>
+     *        <p>
+     *        For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *        specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *        apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *        </p>
+     *        <p>
+     *        Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *        <code>RuleType</code>.
      * @see RuleTypeOption
      */
 
@@ -404,10 +465,36 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
-     * @return This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * @return When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *         <code>FORWARD</code>.</p>
+     *         <p>
+     *         When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *         to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *         </p>
+     *         <p>
+     *         For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *         specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *         apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *         </p>
+     *         <p>
+     *         Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *         <code>RuleType</code>.
      * @see RuleTypeOption
      */
 
@@ -417,11 +504,37 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
      * @param ruleType
-     *        This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     *        When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *        <code>FORWARD</code>.</p>
+     *        <p>
+     *        When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *        to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *        </p>
+     *        <p>
+     *        For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *        specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *        apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *        </p>
+     *        <p>
+     *        Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *        <code>RuleType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleTypeOption
      */
@@ -433,11 +546,37 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     * When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     * <code>FORWARD</code>.
+     * </p>
+     * <p>
+     * When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver to
+     * process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     * </p>
+     * <p>
+     * For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and specify
+     * <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for apex.example.com, you
+     * create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     * </p>
+     * <p>
+     * Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for <code>RuleType</code>.
      * </p>
      * 
      * @param ruleType
-     *        This value is always <code>FORWARD</code>. Other resolver rule types aren't supported.
+     *        When you want to forward DNS queries for specified domain name to resolvers on your network, specify
+     *        <code>FORWARD</code>.</p>
+     *        <p>
+     *        When you have a forwarding rule to forward DNS queries for a domain to your network and you want Resolver
+     *        to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+     *        </p>
+     *        <p>
+     *        For example, to forward DNS queries for example.com to resolvers on your network, you create a rule and
+     *        specify <code>FORWARD</code> for <code>RuleType</code>. To then have Resolver process queries for
+     *        apex.example.com, you create a rule and specify <code>SYSTEM</code> for <code>RuleType</code>.
+     *        </p>
+     *        <p>
+     *        Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code> for
+     *        <code>RuleType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuleTypeOption
      */
@@ -449,11 +588,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the resolver rule, which you specified when you created the resolver rule.
+     * The name for the Resolver rule, which you specified when you created the Resolver rule.
      * </p>
      * 
      * @param name
-     *        The name for the resolver rule, which you specified when you created the resolver rule.
+     *        The name for the Resolver rule, which you specified when you created the Resolver rule.
      */
 
     public void setName(String name) {
@@ -462,10 +601,10 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the resolver rule, which you specified when you created the resolver rule.
+     * The name for the Resolver rule, which you specified when you created the Resolver rule.
      * </p>
      * 
-     * @return The name for the resolver rule, which you specified when you created the resolver rule.
+     * @return The name for the Resolver rule, which you specified when you created the Resolver rule.
      */
 
     public String getName() {
@@ -474,11 +613,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name for the resolver rule, which you specified when you created the resolver rule.
+     * The name for the Resolver rule, which you specified when you created the Resolver rule.
      * </p>
      * 
      * @param name
-     *        The name for the resolver rule, which you specified when you created the resolver rule.
+     *        The name for the Resolver rule, which you specified when you created the Resolver rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,10 +628,13 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains the IP addresses and ports that you want to forward
+     * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
+     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
      * </p>
      * 
-     * @return An array that contains the IP addresses and ports that you want to forward
+     * @return An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
+     *         Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
+     *         not supported.
      */
 
     public java.util.List<TargetAddress> getTargetIps() {
@@ -501,11 +643,14 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains the IP addresses and ports that you want to forward
+     * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
+     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
      * </p>
      * 
      * @param targetIps
-     *        An array that contains the IP addresses and ports that you want to forward
+     *        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
+     *        Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
+     *        not supported.
      */
 
     public void setTargetIps(java.util.Collection<TargetAddress> targetIps) {
@@ -519,7 +664,8 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains the IP addresses and ports that you want to forward
+     * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
+     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -528,7 +674,9 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param targetIps
-     *        An array that contains the IP addresses and ports that you want to forward
+     *        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
+     *        Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
+     *        not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -544,11 +692,14 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array that contains the IP addresses and ports that you want to forward
+     * An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to. Typically,
+     * these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is not supported.
      * </p>
      * 
      * @param targetIps
-     *        An array that contains the IP addresses and ports that you want to forward
+     *        An array that contains the IP addresses and ports that an outbound endpoint forwards DNS queries to.
+     *        Typically, these are the IP addresses of DNS resolvers on your network. Specify IPv4 addresses. IPv6 is
+     *        not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,6 +859,95 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param creationTime
+     *        The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time
+     *        (UTC).
+     */
+
+    public void setCreationTime(String creationTime) {
+        this.creationTime = creationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time
+     *         (UTC).
+     */
+
+    public String getCreationTime() {
+        return this.creationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param creationTime
+     *        The date and time that the Resolver rule was created, in Unix time format and Coordinated Universal Time
+     *        (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResolverRule withCreationTime(String creationTime) {
+        setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time
+     * (UTC).
+     * </p>
+     * 
+     * @param modificationTime
+     *        The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal
+     *        Time (UTC).
+     */
+
+    public void setModificationTime(String modificationTime) {
+        this.modificationTime = modificationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time
+     * (UTC).
+     * </p>
+     * 
+     * @return The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal
+     *         Time (UTC).
+     */
+
+    public String getModificationTime() {
+        return this.modificationTime;
+    }
+
+    /**
+     * <p>
+     * The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal Time
+     * (UTC).
+     * </p>
+     * 
+     * @param modificationTime
+     *        The date and time that the Resolver rule was last updated, in Unix time format and Coordinated Universal
+     *        Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResolverRule withModificationTime(String modificationTime) {
+        setModificationTime(modificationTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -742,7 +982,11 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
         if (getOwnerId() != null)
             sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getShareStatus() != null)
-            sb.append("ShareStatus: ").append(getShareStatus());
+            sb.append("ShareStatus: ").append(getShareStatus()).append(",");
+        if (getCreationTime() != null)
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getModificationTime() != null)
+            sb.append("ModificationTime: ").append(getModificationTime());
         sb.append("}");
         return sb.toString();
     }
@@ -805,6 +1049,14 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getShareStatus() != null && other.getShareStatus().equals(this.getShareStatus()) == false)
             return false;
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null)
+            return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
+            return false;
+        if (other.getModificationTime() == null ^ this.getModificationTime() == null)
+            return false;
+        if (other.getModificationTime() != null && other.getModificationTime().equals(this.getModificationTime()) == false)
+            return false;
         return true;
     }
 
@@ -825,6 +1077,8 @@ public class ResolverRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResolverEndpointId() == null) ? 0 : getResolverEndpointId().hashCode());
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getShareStatus() == null) ? 0 : getShareStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getModificationTime() == null) ? 0 : getModificationTime().hashCode());
         return hashCode;
     }
 
