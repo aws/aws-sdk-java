@@ -25,21 +25,21 @@ public class SuspendGameServerGroupResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the suspended activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the suspended activity.
      * </p>
      */
     private GameServerGroup gameServerGroup;
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the suspended activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the suspended activity.
      * </p>
      * 
      * @param gameServerGroup
-     *        An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated
-     *        to reflect the suspended activity.
+     *        An object that describes the game server group resource, with the <code>SuspendedActions</code> property
+     *        updated to reflect the suspended activity.
      */
 
     public void setGameServerGroup(GameServerGroup gameServerGroup) {
@@ -48,11 +48,11 @@ public class SuspendGameServerGroupResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the suspended activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the suspended activity.
      * </p>
      * 
-     * @return An object that describes the game server group resource, with the <i>SuspendedActions</i> property
+     * @return An object that describes the game server group resource, with the <code>SuspendedActions</code> property
      *         updated to reflect the suspended activity.
      */
 
@@ -62,13 +62,13 @@ public class SuspendGameServerGroupResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the suspended activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the suspended activity.
      * </p>
      * 
      * @param gameServerGroup
-     *        An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated
-     *        to reflect the suspended activity.
+     *        An object that describes the game server group resource, with the <code>SuspendedActions</code> property
+     *        updated to reflect the suspended activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

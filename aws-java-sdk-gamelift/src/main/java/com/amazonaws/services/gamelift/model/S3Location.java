@@ -33,6 +33,11 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An S3 bucket identifier. This is the name of the S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     * </p>
+     * </note>
      */
     private String bucket;
     /**
@@ -61,9 +66,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An S3 bucket identifier. This is the name of the S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     * </p>
+     * </note>
      * 
      * @param bucket
-     *        An S3 bucket identifier. This is the name of the S3 bucket.
+     *        An S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
+     *        <p>
+     *        GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     *        </p>
      */
 
     public void setBucket(String bucket) {
@@ -74,8 +87,16 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An S3 bucket identifier. This is the name of the S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     * </p>
+     * </note>
      * 
-     * @return An S3 bucket identifier. This is the name of the S3 bucket.
+     * @return An S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
+     *         <p>
+     *         GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     *         </p>
      */
 
     public String getBucket() {
@@ -86,9 +107,17 @@ public class S3Location implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An S3 bucket identifier. This is the name of the S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     * </p>
+     * </note>
      * 
      * @param bucket
-     *        An S3 bucket identifier. This is the name of the S3 bucket.
+     *        An S3 bucket identifier. This is the name of the S3 bucket.</p> <note>
+     *        <p>
+     *        GameLift currently does not support uploading from S3 buckets with names that contain a dot (.).
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

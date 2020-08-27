@@ -3095,7 +3095,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your
      * end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You
-     * must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must
+     * must provide the internet-routable IP address of the customer gateway's external interface. The IP address must
      * be static and can be behind a device performing network address translation (NAT).
      * </p>
      * <p>
@@ -3105,9 +3105,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <note>
      * <p>
-     * Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is
-     * reserved in the <code>us-east-1</code> Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.
+     * Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the exception of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7224 - reserved in the <code>us-east-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 9059 - reserved in the <code>eu-west-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 17943 - reserved in the <code>ap-southeast-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 10124 - reserved in the <code>ap-northeast-1</code> Region
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site
@@ -22311,6 +22332,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyVpnConnectionResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionResult>(
                     new ModifyVpnConnectionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the connection options for your Site-to-Site VPN VPN connection.
+     * </p>
+     * <p>
+     * When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS side do not change, and the
+     * tunnel options do not change. Your VPN connection will be temporarily unavailable for a brief period while the
+     * VPN connection is updated.
+     * </p>
+     * 
+     * @param modifyVpnConnectionOptionsRequest
+     * @return Result of the ModifyVpnConnectionOptions operation returned by the service.
+     * @sample AmazonEC2.ModifyVpnConnectionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyVpnConnectionOptionsResult modifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpnConnectionOptions(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpnConnectionOptionsResult executeModifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest modifyVpnConnectionOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpnConnectionOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpnConnectionOptionsRequest> request = null;
+        Response<ModifyVpnConnectionOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpnConnectionOptionsRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnConnectionOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnConnectionOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpnConnectionOptionsResult> responseHandler = new StaxResponseHandler<ModifyVpnConnectionOptionsResult>(
+                    new ModifyVpnConnectionOptionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

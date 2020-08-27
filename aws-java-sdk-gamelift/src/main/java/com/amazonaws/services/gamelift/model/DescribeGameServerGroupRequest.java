@@ -27,21 +27,18 @@ public class DescribeGameServerGroupRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a> name or
-     * ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
 
     /**
      * <p>
-     * The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a> name or
-     * ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a>
-     *        name or ARN value.
+     *        A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -50,12 +47,10 @@ public class DescribeGameServerGroupRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a> name or
-     * ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
-     * @return The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a>
-     *         name or ARN value.
+     * @return A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      */
 
     public String getGameServerGroupName() {
@@ -64,13 +59,11 @@ public class DescribeGameServerGroupRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a> name or
-     * ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        The unique identifier for the game server group being requested. Use either the <a>GameServerGroup</a>
-     *        name or ARN value.
+     *        A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

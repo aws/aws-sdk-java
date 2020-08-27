@@ -27,41 +27,42 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An identifier for the game server group for the game server you want to list. Use either the
+     * An identifier for the game server group to retrieve a list of game servers from. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
     /**
      * <p>
-     * Indicates how to sort the returned data based on the game servers' custom key sort value. If this parameter is
-     * left empty, the list of game servers is returned in no particular order.
+     * Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to retrieve
+     * oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this parameter is left
+     * empty, game servers are returned in no particular order.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential segments.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
-     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * An identifier for the game server group for the game server you want to list. Use either the
+     * An identifier for the game server group to retrieve a list of game servers from. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group for the game server you want to list. Use either the
+     *        An identifier for the game server group to retrieve a list of game servers from. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -71,11 +72,11 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An identifier for the game server group for the game server you want to list. Use either the
+     * An identifier for the game server group to retrieve a list of game servers from. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
-     * @return An identifier for the game server group for the game server you want to list. Use either the
+     * @return An identifier for the game server group to retrieve a list of game servers from. Use either the
      *         <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -85,12 +86,12 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An identifier for the game server group for the game server you want to list. Use either the
+     * An identifier for the game server group to retrieve a list of game servers from. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group for the game server you want to list. Use either the
+     *        An identifier for the game server group to retrieve a list of game servers from. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -102,13 +103,15 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates how to sort the returned data based on the game servers' custom key sort value. If this parameter is
-     * left empty, the list of game servers is returned in no particular order.
+     * Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to retrieve
+     * oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this parameter is left
+     * empty, game servers are returned in no particular order.
      * </p>
      * 
      * @param sortOrder
-     *        Indicates how to sort the returned data based on the game servers' custom key sort value. If this
-     *        parameter is left empty, the list of game servers is returned in no particular order.
+     *        Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to
+     *        retrieve oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this
+     *        parameter is left empty, game servers are returned in no particular order.
      * @see SortOrder
      */
 
@@ -118,12 +121,14 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates how to sort the returned data based on the game servers' custom key sort value. If this parameter is
-     * left empty, the list of game servers is returned in no particular order.
+     * Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to retrieve
+     * oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this parameter is left
+     * empty, game servers are returned in no particular order.
      * </p>
      * 
-     * @return Indicates how to sort the returned data based on the game servers' custom key sort value. If this
-     *         parameter is left empty, the list of game servers is returned in no particular order.
+     * @return Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to
+     *         retrieve oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this
+     *         parameter is left empty, game servers are returned in no particular order.
      * @see SortOrder
      */
 
@@ -133,13 +138,15 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates how to sort the returned data based on the game servers' custom key sort value. If this parameter is
-     * left empty, the list of game servers is returned in no particular order.
+     * Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to retrieve
+     * oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this parameter is left
+     * empty, game servers are returned in no particular order.
      * </p>
      * 
      * @param sortOrder
-     *        Indicates how to sort the returned data based on the game servers' custom key sort value. If this
-     *        parameter is left empty, the list of game servers is returned in no particular order.
+     *        Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to
+     *        retrieve oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this
+     *        parameter is left empty, game servers are returned in no particular order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -151,13 +158,15 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Indicates how to sort the returned data based on the game servers' custom key sort value. If this parameter is
-     * left empty, the list of game servers is returned in no particular order.
+     * Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to retrieve
+     * oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this parameter is left
+     * empty, game servers are returned in no particular order.
      * </p>
      * 
      * @param sortOrder
-     *        Indicates how to sort the returned data based on the game servers' custom key sort value. If this
-     *        parameter is left empty, the list of game servers is returned in no particular order.
+     *        Indicates how to sort the returned data based on game server registration timestamp. Use ASCENDING to
+     *        retrieve oldest game servers first, or use DESCENDING to retrieve newest game servers first. If this
+     *        parameter is left empty, game servers are returned in no particular order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -170,12 +179,12 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential segments.
      * </p>
      * 
      * @param limit
      *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *        a set of sequential pages.
+     *        a set of sequential segments.
      */
 
     public void setLimit(Integer limit) {
@@ -185,11 +194,11 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential segments.
      * </p>
      * 
      * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *         a set of sequential pages.
+     *         a set of sequential segments.
      */
 
     public Integer getLimit() {
@@ -199,12 +208,12 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential segments.
      * </p>
      * 
      * @param limit
      *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *        a set of sequential pages.
+     *        a set of sequential segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,13 +224,13 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
-     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential segment of results. Use the token returned with
+     *        the previous call to this operation. To start at the beginning of the result set, do not specify a value.
      */
 
     public void setNextToken(String nextToken) {
@@ -230,12 +239,12 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * @return A token that indicates the start of the next sequential segment of results. Use the token returned with
+     *         the previous call to this operation. To start at the beginning of the result set, do not specify a value.
      */
 
     public String getNextToken() {
@@ -244,13 +253,13 @@ public class ListGameServersRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential segment of results. Use the token returned with the
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
-     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential segment of results. Use the token returned with
+     *        the previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

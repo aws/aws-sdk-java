@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum BalancingStrategy {
 
     SPOT_ONLY("SPOT_ONLY"),
-    SPOT_PREFERRED("SPOT_PREFERRED");
+    SPOT_PREFERRED("SPOT_PREFERRED"),
+    ON_DEMAND_ONLY("ON_DEMAND_ONLY");
 
     private String value;
 

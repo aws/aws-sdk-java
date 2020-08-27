@@ -18,6 +18,10 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API
+ * operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
  *      Documentation</a>
@@ -45,7 +49,7 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nodeType;
     /**
      * <p>
-     * The new number of nodes for the cluster.
+     * The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      * </p>
      */
     private Integer numberOfNodes;
@@ -180,11 +184,11 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The new number of nodes for the cluster.
+     * The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      * </p>
      * 
      * @param numberOfNodes
-     *        The new number of nodes for the cluster.
+     *        The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      */
 
     public void setNumberOfNodes(Integer numberOfNodes) {
@@ -193,10 +197,10 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The new number of nodes for the cluster.
+     * The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      * </p>
      * 
-     * @return The new number of nodes for the cluster.
+     * @return The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      */
 
     public Integer getNumberOfNodes() {
@@ -205,11 +209,11 @@ public class ResizeClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The new number of nodes for the cluster.
+     * The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      * </p>
      * 
      * @param numberOfNodes
-     *        The new number of nodes for the cluster.
+     *        The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

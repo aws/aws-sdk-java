@@ -32,6 +32,8 @@ public class HlsGroupSettingsMarshaller {
             .marshallLocationName("adMarkers").build();
     private static final MarshallingInfo<List> ADDITIONALMANIFESTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalManifests").build();
+    private static final MarshallingInfo<String> AUDIOONLYHEADER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioOnlyHeader").build();
     private static final MarshallingInfo<String> BASEURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("baseUrl").build();
     private static final MarshallingInfo<List> CAPTIONLANGUAGEMAPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -97,6 +99,7 @@ public class HlsGroupSettingsMarshaller {
         try {
             protocolMarshaller.marshall(hlsGroupSettings.getAdMarkers(), ADMARKERS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getAdditionalManifests(), ADDITIONALMANIFESTS_BINDING);
+            protocolMarshaller.marshall(hlsGroupSettings.getAudioOnlyHeader(), AUDIOONLYHEADER_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getBaseUrl(), BASEURL_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getCaptionLanguageMappings(), CAPTIONLANGUAGEMAPPINGS_BINDING);
             protocolMarshaller.marshall(hlsGroupSettings.getCaptionLanguageSetting(), CAPTIONLANGUAGESETTING_BINDING);

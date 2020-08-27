@@ -18,6 +18,10 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API
+ * operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster" target="_top">AWS API
  *      Documentation</a>

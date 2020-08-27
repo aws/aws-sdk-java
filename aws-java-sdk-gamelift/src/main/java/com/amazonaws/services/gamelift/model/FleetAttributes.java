@@ -257,7 +257,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> metricGroups;
     /**
      * <p>
-     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * </p>
      */
     private java.util.List<String> stoppedActions;
@@ -1978,10 +1978,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * </p>
      * 
-     * @return List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * @return List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes
+     *         auto-scaling.
      * @see FleetAction
      */
 
@@ -1991,11 +1992,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * </p>
      * 
      * @param stoppedActions
-     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     *        List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * @see FleetAction
      */
 
@@ -2010,7 +2011,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -2019,7 +2020,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param stoppedActions
-     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     *        List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -2036,11 +2037,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * </p>
      * 
      * @param stoppedActions
-     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     *        List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -2052,11 +2053,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     * List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * </p>
      * 
      * @param stoppedActions
-     *        List of fleet actions that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
+     *        List of fleet activity that have been suspended using <a>StopFleetActions</a>. This includes auto-scaling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */

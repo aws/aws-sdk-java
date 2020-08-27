@@ -48,6 +48,10 @@ public class AudioDescriptionJsonUnmarshaller implements Unmarshaller<AudioDescr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("audioChannelTaggingSettings", targetDepth)) {
+                    context.nextToken();
+                    audioDescription.setAudioChannelTaggingSettings(AudioChannelTaggingSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("audioNormalizationSettings", targetDepth)) {
                     context.nextToken();
                     audioDescription.setAudioNormalizationSettings(AudioNormalizationSettingsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -2311,7 +2311,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your
      * end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You
-     * must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must
+     * must provide the internet-routable IP address of the customer gateway's external interface. The IP address must
      * be static and can be behind a device performing network address translation (NAT).
      * </p>
      * <p>
@@ -2321,9 +2321,30 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is
-     * reserved in the <code>us-east-1</code> Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.
+     * Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the exception of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7224 - reserved in the <code>us-east-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 9059 - reserved in the <code>eu-west-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 17943 - reserved in the <code>ap-southeast-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 10124 - reserved in the <code>ap-northeast-1</code> Region
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site
@@ -2350,7 +2371,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your
      * end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You
-     * must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must
+     * must provide the internet-routable IP address of the customer gateway's external interface. The IP address must
      * be static and can be behind a device performing network address translation (NAT).
      * </p>
      * <p>
@@ -2360,9 +2381,30 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <note>
      * <p>
-     * Amazon EC2 supports all 2-byte ASN numbers in the range of 1 - 65534, with the exception of 7224, which is
-     * reserved in the <code>us-east-1</code> Region, and 9059, which is reserved in the <code>eu-west-1</code> Region.
+     * Amazon EC2 supports all 4-byte ASN numbers in the range of 1 - 2147483647, with the exception of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * 7224 - reserved in the <code>us-east-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 9059 - reserved in the <code>eu-west-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 17943 - reserved in the <code>ap-southeast-1</code> Region
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * 10124 - reserved in the <code>ap-northeast-1</code> Region
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * <p>
      * For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS Site-to-Site
@@ -17465,6 +17507,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<ModifyVpnConnectionResult> modifyVpnConnectionAsync(ModifyVpnConnectionRequest modifyVpnConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyVpnConnectionRequest, ModifyVpnConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the connection options for your Site-to-Site VPN VPN connection.
+     * </p>
+     * <p>
+     * When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS side do not change, and the
+     * tunnel options do not change. Your VPN connection will be temporarily unavailable for a brief period while the
+     * VPN connection is updated.
+     * </p>
+     * 
+     * @param modifyVpnConnectionOptionsRequest
+     * @return A Java Future containing the result of the ModifyVpnConnectionOptions operation returned by the service.
+     * @sample AmazonEC2Async.ModifyVpnConnectionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpnConnectionOptionsResult> modifyVpnConnectionOptionsAsync(
+            ModifyVpnConnectionOptionsRequest modifyVpnConnectionOptionsRequest);
+
+    /**
+     * <p>
+     * Modifies the connection options for your Site-to-Site VPN VPN connection.
+     * </p>
+     * <p>
+     * When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS side do not change, and the
+     * tunnel options do not change. Your VPN connection will be temporarily unavailable for a brief period while the
+     * VPN connection is updated.
+     * </p>
+     * 
+     * @param modifyVpnConnectionOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpnConnectionOptions operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVpnConnectionOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnConnectionOptions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpnConnectionOptionsResult> modifyVpnConnectionOptionsAsync(
+            ModifyVpnConnectionOptionsRequest modifyVpnConnectionOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpnConnectionOptionsRequest, ModifyVpnConnectionOptionsResult> asyncHandler);
 
     /**
      * <p>

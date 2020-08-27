@@ -139,8 +139,7 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The type of encryption for the cluster after the resize is complete.
      * </p>
      * <p>
-     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     * <code>Legacy</code> and <code>None</code>.
+     * Possible values are <code>KMS</code> and <code>None</code>.
      * </p>
      */
     private String targetEncryptionType;
@@ -959,15 +958,13 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The type of encryption for the cluster after the resize is complete.
      * </p>
      * <p>
-     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     * <code>Legacy</code> and <code>None</code>.
+     * Possible values are <code>KMS</code> and <code>None</code>.
      * </p>
      * 
      * @param targetEncryptionType
      *        The type of encryption for the cluster after the resize is complete.</p>
      *        <p>
-     *        Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     *        <code>Legacy</code> and <code>None</code>.
+     *        Possible values are <code>KMS</code> and <code>None</code>.
      */
 
     public void setTargetEncryptionType(String targetEncryptionType) {
@@ -979,14 +976,12 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The type of encryption for the cluster after the resize is complete.
      * </p>
      * <p>
-     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     * <code>Legacy</code> and <code>None</code>.
+     * Possible values are <code>KMS</code> and <code>None</code>.
      * </p>
      * 
      * @return The type of encryption for the cluster after the resize is complete.</p>
      *         <p>
-     *         Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     *         <code>Legacy</code> and <code>None</code>.
+     *         Possible values are <code>KMS</code> and <code>None</code>.
      */
 
     public String getTargetEncryptionType() {
@@ -998,15 +993,13 @@ public class DescribeResizeResult extends com.amazonaws.AmazonWebServiceResult<c
      * The type of encryption for the cluster after the resize is complete.
      * </p>
      * <p>
-     * Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     * <code>Legacy</code> and <code>None</code>.
+     * Possible values are <code>KMS</code> and <code>None</code>.
      * </p>
      * 
      * @param targetEncryptionType
      *        The type of encryption for the cluster after the resize is complete.</p>
      *        <p>
-     *        Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are:
-     *        <code>Legacy</code> and <code>None</code>.
+     *        Possible values are <code>KMS</code> and <code>None</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

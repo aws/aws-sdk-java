@@ -1,3 +1,20 @@
+# __1.11.850__ __2020-08-27__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added support for WebM DASH outputs as well as H.264 4:2:2 10-bit output in MOV and MP4.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Introduces support to initiate Internet Key Exchange (IKE) negotiations for VPN connections from AWS. A user can now send the initial IKE message to their Customer Gateway (CGW) from VPN endpoints.
+
+## __Amazon GameLift__
+  - ### Features
+    - GameLift FleetIQ as a standalone feature is now generally available. FleetIQ makes low-cost Spot instances viable for game hosting. Use GameLift FleetIQ with your EC2 Auto Scaling groups.
+
+## __Amazon Redshift__
+  - ### Features
+    - Documentation updates for Amazon Redshift.
+
 # __1.11.849__ __2020-08-26__
 ## __Amazon Appflow__
   - ### Features

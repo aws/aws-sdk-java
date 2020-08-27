@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetAttributes" target="_top">AWS
@@ -46,8 +46,8 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      */
     private String nextToken;
@@ -194,14 +194,14 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
      *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value. This
-     *        parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public void setNextToken(String nextToken) {
@@ -211,13 +211,13 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
-     *         This parameter is ignored when the request specifies one or a list of fleet IDs.
+     *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *         value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public String getNextToken() {
@@ -227,14 +227,14 @@ public class DescribeFleetAttributesRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
      *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value. This
-     *        parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        a previous call to this operation. To start at the beginning of the result set, do not specify a value.
+     *        This parameter is ignored when the request specifies one or a list of fleet IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

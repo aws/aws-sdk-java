@@ -123,6 +123,11 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                                 StringUtils.fromInteger(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutSeconds()));
                     }
 
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutAction() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".DPDTimeoutAction",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutAction()));
+                    }
+
                     com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue> vpnTunnelOptionsSpecificationPhase1EncryptionAlgorithmsList = (com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue>) vpnConnectionOptionsSpecificationTunnelOptionsListValue
                             .getPhase1EncryptionAlgorithms();
                     if (!vpnTunnelOptionsSpecificationPhase1EncryptionAlgorithmsList.isEmpty()
@@ -239,8 +244,29 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                             iKEVersionsListIndex++;
                         }
                     }
+
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getStartupAction() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".StartupAction",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getStartupAction()));
+                    }
                     tunnelOptionsListIndex++;
                 }
+            }
+
+            if (options.getLocalIpv4NetworkCidr() != null) {
+                request.addParameter("Options.LocalIpv4NetworkCidr", StringUtils.fromString(options.getLocalIpv4NetworkCidr()));
+            }
+
+            if (options.getRemoteIpv4NetworkCidr() != null) {
+                request.addParameter("Options.RemoteIpv4NetworkCidr", StringUtils.fromString(options.getRemoteIpv4NetworkCidr()));
+            }
+
+            if (options.getLocalIpv6NetworkCidr() != null) {
+                request.addParameter("Options.LocalIpv6NetworkCidr", StringUtils.fromString(options.getLocalIpv6NetworkCidr()));
+            }
+
+            if (options.getRemoteIpv6NetworkCidr() != null) {
+                request.addParameter("Options.RemoteIpv6NetworkCidr", StringUtils.fromString(options.getRemoteIpv6NetworkCidr()));
             }
         }
 

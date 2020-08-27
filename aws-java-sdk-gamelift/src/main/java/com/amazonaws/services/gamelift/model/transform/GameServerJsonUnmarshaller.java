@@ -72,10 +72,6 @@ public class GameServerJsonUnmarshaller implements Unmarshaller<GameServer, Json
                     context.nextToken();
                     gameServer.setGameServerData(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("CustomSortKey", targetDepth)) {
-                    context.nextToken();
-                    gameServer.setCustomSortKey(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("ClaimStatus", targetDepth)) {
                     context.nextToken();
                     gameServer.setClaimStatus(context.getUnmarshaller(String.class).unmarshall(context));

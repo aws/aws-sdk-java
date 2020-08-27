@@ -27,9 +27,9 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An identifier for the game server group. When claiming a specific game server, this is the game server group
-     * whether the game server is located. When requesting that GameLift FleetIQ locate an available game server, this
-     * is the game server group to search on. You can use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      */
     private String gameServerGroupName;
@@ -42,24 +42,23 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
     private String gameServerId;
     /**
      * <p>
-     * A set of custom game server properties, formatted as a single string value, to be passed to the claimed game
-     * server.
+     * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      */
     private String gameServerData;
 
     /**
      * <p>
-     * An identifier for the game server group. When claiming a specific game server, this is the game server group
-     * whether the game server is located. When requesting that GameLift FleetIQ locate an available game server, this
-     * is the game server group to search on. You can use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group. When claiming a specific game server, this is the game server
-     *        group whether the game server is located. When requesting that GameLift FleetIQ locate an available game
-     *        server, this is the game server group to search on. You can use either the <a>GameServerGroup</a> name or
-     *        ARN value.
+     *        A unique identifier for the game server group where the game server is running. Use either the
+     *        <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     *        identifies where you want GameLift FleetIQ to look for an available game server to claim.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -68,15 +67,14 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An identifier for the game server group. When claiming a specific game server, this is the game server group
-     * whether the game server is located. When requesting that GameLift FleetIQ locate an available game server, this
-     * is the game server group to search on. You can use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      * 
-     * @return An identifier for the game server group. When claiming a specific game server, this is the game server
-     *         group whether the game server is located. When requesting that GameLift FleetIQ locate an available game
-     *         server, this is the game server group to search on. You can use either the <a>GameServerGroup</a> name or
-     *         ARN value.
+     * @return A unique identifier for the game server group where the game server is running. Use either the
+     *         <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     *         identifies where you want GameLift FleetIQ to look for an available game server to claim.
      */
 
     public String getGameServerGroupName() {
@@ -85,16 +83,15 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * An identifier for the game server group. When claiming a specific game server, this is the game server group
-     * whether the game server is located. When requesting that GameLift FleetIQ locate an available game server, this
-     * is the game server group to search on. You can use either the <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     * identifies where you want GameLift FleetIQ to look for an available game server to claim.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group. When claiming a specific game server, this is the game server
-     *        group whether the game server is located. When requesting that GameLift FleetIQ locate an available game
-     *        server, this is the game server group to search on. You can use either the <a>GameServerGroup</a> name or
-     *        ARN value.
+     *        A unique identifier for the game server group where the game server is running. Use either the
+     *        <a>GameServerGroup</a> name or ARN value.. If you are not specifying a game server to claim, this value
+     *        identifies where you want GameLift FleetIQ to look for an available game server to claim.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,13 +148,14 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A set of custom game server properties, formatted as a single string value, to be passed to the claimed game
-     * server.
+     * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @param gameServerData
-     *        A set of custom game server properties, formatted as a single string value, to be passed to the claimed
-     *        game server.
+     *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
+     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
+     *        <a>ClaimGameServer</a>.
      */
 
     public void setGameServerData(String gameServerData) {
@@ -166,12 +164,13 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A set of custom game server properties, formatted as a single string value, to be passed to the claimed game
-     * server.
+     * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
-     * @return A set of custom game server properties, formatted as a single string value, to be passed to the claimed
-     *         game server.
+     * @return A set of custom game server properties, formatted as a single string value. This data is passed to a game
+     *         client or service when it requests information on game servers using <a>ListGameServers</a> or
+     *         <a>ClaimGameServer</a>.
      */
 
     public String getGameServerData() {
@@ -180,13 +179,14 @@ public class ClaimGameServerRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A set of custom game server properties, formatted as a single string value, to be passed to the claimed game
-     * server.
+     * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @param gameServerData
-     *        A set of custom game server properties, formatted as a single string value, to be passed to the claimed
-     *        game server.
+     *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
+     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
+     *        <a>ClaimGameServer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

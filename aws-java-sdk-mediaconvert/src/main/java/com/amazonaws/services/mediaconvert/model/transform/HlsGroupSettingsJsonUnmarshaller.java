@@ -60,6 +60,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("audioOnlyHeader", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setAudioOnlyHeader(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("baseUrl", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setBaseUrl(context.getUnmarshaller(String.class).unmarshall(context));

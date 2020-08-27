@@ -27,66 +27,48 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. You can use either the
+     * A unique identifier for the game server group where the game server is running. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
     /**
      * <p>
-     * A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and must be
-     * unique across all game server groups in your AWS account.
+     * A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and
+     * must be unique across all game server groups in your AWS account.
      * </p>
      */
     private String gameServerId;
     /**
      * <p>
      * The unique identifier for the instance where the game server is running. This ID is available in the instance
-     * metadata.
+     * metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * Information needed to make inbound client connections to the game server. This might include IP address and port,
-     * DNS name, etc.
+     * Information that is needed to make inbound client connections to the game server. This might include the IP
+     * address and port, DNS name, and other information.
      * </p>
      */
     private String connectionInfo;
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      */
     private String gameServerData;
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     */
-    private String customSortKey;
-    /**
-     * <p>
-     * A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs. Tagging
-     * AWS resources are useful for resource management, access management, and cost allocation. For more information,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-     * <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
-     * and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-     * the AWS General Reference for actual tagging limits.
-     * </p>
-     */
-    private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. You can use either the
+     * A unique identifier for the game server group where the game server is running. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group where the game server is running. You can use either the
+     *        A unique identifier for the game server group where the game server is running. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -96,11 +78,11 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. You can use either the
+     * A unique identifier for the game server group where the game server is running. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
-     * @return An identifier for the game server group where the game server is running. You can use either the
+     * @return A unique identifier for the game server group where the game server is running. Use either the
      *         <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -110,12 +92,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. You can use either the
+     * A unique identifier for the game server group where the game server is running. Use either the
      * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group where the game server is running. You can use either the
+     *        A unique identifier for the game server group where the game server is running. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -127,13 +109,13 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and must be
-     * unique across all game server groups in your AWS account.
+     * A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and
+     * must be unique across all game server groups in your AWS account.
      * </p>
      * 
      * @param gameServerId
-     *        A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and
-     *        must be unique across all game server groups in your AWS account.
+     *        A custom string that uniquely identifies the game server to register. Game server IDs are
+     *        developer-defined and must be unique across all game server groups in your AWS account.
      */
 
     public void setGameServerId(String gameServerId) {
@@ -142,12 +124,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and must be
-     * unique across all game server groups in your AWS account.
+     * A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and
+     * must be unique across all game server groups in your AWS account.
      * </p>
      * 
-     * @return A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and
-     *         must be unique across all game server groups in your AWS account.
+     * @return A custom string that uniquely identifies the game server to register. Game server IDs are
+     *         developer-defined and must be unique across all game server groups in your AWS account.
      */
 
     public String getGameServerId() {
@@ -156,13 +138,13 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and must be
-     * unique across all game server groups in your AWS account.
+     * A custom string that uniquely identifies the game server to register. Game server IDs are developer-defined and
+     * must be unique across all game server groups in your AWS account.
      * </p>
      * 
      * @param gameServerId
-     *        A custom string that uniquely identifies the new game server. Game server IDs are developer-defined and
-     *        must be unique across all game server groups in your AWS account.
+     *        A custom string that uniquely identifies the game server to register. Game server IDs are
+     *        developer-defined and must be unique across all game server groups in your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,12 +156,13 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The unique identifier for the instance where the game server is running. This ID is available in the instance
-     * metadata.
+     * metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.
      * </p>
      * 
      * @param instanceId
      *        The unique identifier for the instance where the game server is running. This ID is available in the
-     *        instance metadata.
+     *        instance metadata. EC2 instance IDs use a 17-character format, for example:
+     *        <code>i-1234567890abcdef0</code>.
      */
 
     public void setInstanceId(String instanceId) {
@@ -189,11 +172,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The unique identifier for the instance where the game server is running. This ID is available in the instance
-     * metadata.
+     * metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.
      * </p>
      * 
      * @return The unique identifier for the instance where the game server is running. This ID is available in the
-     *         instance metadata.
+     *         instance metadata. EC2 instance IDs use a 17-character format, for example:
+     *         <code>i-1234567890abcdef0</code>.
      */
 
     public String getInstanceId() {
@@ -203,12 +187,13 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The unique identifier for the instance where the game server is running. This ID is available in the instance
-     * metadata.
+     * metadata. EC2 instance IDs use a 17-character format, for example: <code>i-1234567890abcdef0</code>.
      * </p>
      * 
      * @param instanceId
      *        The unique identifier for the instance where the game server is running. This ID is available in the
-     *        instance metadata.
+     *        instance metadata. EC2 instance IDs use a 17-character format, for example:
+     *        <code>i-1234567890abcdef0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,13 +204,13 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Information needed to make inbound client connections to the game server. This might include IP address and port,
-     * DNS name, etc.
+     * Information that is needed to make inbound client connections to the game server. This might include the IP
+     * address and port, DNS name, and other information.
      * </p>
      * 
      * @param connectionInfo
-     *        Information needed to make inbound client connections to the game server. This might include IP address
-     *        and port, DNS name, etc.
+     *        Information that is needed to make inbound client connections to the game server. This might include the
+     *        IP address and port, DNS name, and other information.
      */
 
     public void setConnectionInfo(String connectionInfo) {
@@ -234,12 +219,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Information needed to make inbound client connections to the game server. This might include IP address and port,
-     * DNS name, etc.
+     * Information that is needed to make inbound client connections to the game server. This might include the IP
+     * address and port, DNS name, and other information.
      * </p>
      * 
-     * @return Information needed to make inbound client connections to the game server. This might include IP address
-     *         and port, DNS name, etc.
+     * @return Information that is needed to make inbound client connections to the game server. This might include the
+     *         IP address and port, DNS name, and other information.
      */
 
     public String getConnectionInfo() {
@@ -248,13 +233,13 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Information needed to make inbound client connections to the game server. This might include IP address and port,
-     * DNS name, etc.
+     * Information that is needed to make inbound client connections to the game server. This might include the IP
+     * address and port, DNS name, and other information.
      * </p>
      * 
      * @param connectionInfo
-     *        Information needed to make inbound client connections to the game server. This might include IP address
-     *        and port, DNS name, etc.
+     *        Information that is needed to make inbound client connections to the game server. This might include the
+     *        IP address and port, DNS name, and other information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,12 +251,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on a game servers using <a>ListGameServers</a> or
+     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
      *        <a>ClaimGameServer</a>.
      */
 
@@ -282,11 +267,11 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @return A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *         client or service when it requests information on a game servers using <a>ListGameServers</a> or
+     *         client or service when it requests information on game servers using <a>ListGameServers</a> or
      *         <a>ClaimGameServer</a>.
      */
 
@@ -297,177 +282,18 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on a game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on a game servers using <a>ListGameServers</a> or
+     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
      *        <a>ClaimGameServer</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RegisterGameServerRequest withGameServerData(String gameServerData) {
         setGameServerData(gameServerData);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     * 
-     * @param customSortKey
-     *        A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-     *        Custom sort keys are developer-defined based on how you want to organize the retrieved game server
-     *        information.
-     */
-
-    public void setCustomSortKey(String customSortKey) {
-        this.customSortKey = customSortKey;
-    }
-
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     * 
-     * @return A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-     *         Custom sort keys are developer-defined based on how you want to organize the retrieved game server
-     *         information.
-     */
-
-    public String getCustomSortKey() {
-        return this.customSortKey;
-    }
-
-    /**
-     * <p>
-     * A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>. Custom
-     * sort keys are developer-defined based on how you want to organize the retrieved game server information.
-     * </p>
-     * 
-     * @param customSortKey
-     *        A game server tag that can be used to request sorted lists of game servers using <a>ListGameServers</a>.
-     *        Custom sort keys are developer-defined based on how you want to organize the retrieved game server
-     *        information.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterGameServerRequest withCustomSortKey(String customSortKey) {
-        setCustomSortKey(customSortKey);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs. Tagging
-     * AWS resources are useful for resource management, access management, and cost allocation. For more information,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-     * <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
-     * and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-     * the AWS General Reference for actual tagging limits.
-     * </p>
-     * 
-     * @return A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs.
-     *         Tagging AWS resources are useful for resource management, access management, and cost allocation. For
-     *         more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
-     *         AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *         <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *         The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
-     */
-
-    public java.util.List<Tag> getTags() {
-        return tags;
-    }
-
-    /**
-     * <p>
-     * A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs. Tagging
-     * AWS resources are useful for resource management, access management, and cost allocation. For more information,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-     * <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
-     * and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-     * the AWS General Reference for actual tagging limits.
-     * </p>
-     * 
-     * @param tags
-     *        A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs.
-     *        Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
-     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-     *        Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
-     */
-
-    public void setTags(java.util.Collection<Tag> tags) {
-        if (tags == null) {
-            this.tags = null;
-            return;
-        }
-
-        this.tags = new java.util.ArrayList<Tag>(tags);
-    }
-
-    /**
-     * <p>
-     * A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs. Tagging
-     * AWS resources are useful for resource management, access management, and cost allocation. For more information,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-     * <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
-     * and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-     * the AWS General Reference for actual tagging limits.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
-     * existing values.
-     * </p>
-     * 
-     * @param tags
-     *        A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs.
-     *        Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
-     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-     *        Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterGameServerRequest withTags(Tag... tags) {
-        if (this.tags == null) {
-            setTags(new java.util.ArrayList<Tag>(tags.length));
-        }
-        for (Tag ele : tags) {
-            this.tags.add(ele);
-        }
-        return this;
-    }
-
-    /**
-     * <p>
-     * A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs. Tagging
-     * AWS resources are useful for resource management, access management, and cost allocation. For more information,
-     * see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS Resources</a> in the
-     * <i>AWS General Reference</i>. Once the resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>,
-     * and <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
-     * the AWS General Reference for actual tagging limits.
-     * </p>
-     * 
-     * @param tags
-     *        A list of labels to assign to the new game server resource. Tags are developer-defined key-value pairs.
-     *        Tagging AWS resources are useful for resource management, access management, and cost allocation. For more
-     *        information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging AWS
-     *        Resources</a> in the <i>AWS General Reference</i>. Once the resource is created, you can use
-     *        <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags.
-     *        The maximum tag limit may be lower than stated. See the AWS General Reference for actual tagging limits.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RegisterGameServerRequest withTags(java.util.Collection<Tag> tags) {
-        setTags(tags);
         return this;
     }
 
@@ -492,11 +318,7 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
         if (getConnectionInfo() != null)
             sb.append("ConnectionInfo: ").append(getConnectionInfo()).append(",");
         if (getGameServerData() != null)
-            sb.append("GameServerData: ").append(getGameServerData()).append(",");
-        if (getCustomSortKey() != null)
-            sb.append("CustomSortKey: ").append(getCustomSortKey()).append(",");
-        if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("GameServerData: ").append(getGameServerData());
         sb.append("}");
         return sb.toString();
     }
@@ -531,14 +353,6 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getGameServerData() != null && other.getGameServerData().equals(this.getGameServerData()) == false)
             return false;
-        if (other.getCustomSortKey() == null ^ this.getCustomSortKey() == null)
-            return false;
-        if (other.getCustomSortKey() != null && other.getCustomSortKey().equals(this.getCustomSortKey()) == false)
-            return false;
-        if (other.getTags() == null ^ this.getTags() == null)
-            return false;
-        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
-            return false;
         return true;
     }
 
@@ -552,8 +366,6 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getConnectionInfo() == null) ? 0 : getConnectionInfo().hashCode());
         hashCode = prime * hashCode + ((getGameServerData() == null) ? 0 : getGameServerData().hashCode());
-        hashCode = prime * hashCode + ((getCustomSortKey() == null) ? 0 : getCustomSortKey().hashCode());
-        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

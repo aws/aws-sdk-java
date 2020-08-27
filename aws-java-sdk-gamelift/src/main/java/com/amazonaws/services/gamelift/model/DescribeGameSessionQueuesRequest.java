@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionQueues" target="_top">AWS
@@ -38,14 +38,14 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential pages. You can request up to 50 results.
      * </p>
      */
     private Integer limit;
     /**
      * <p>
      * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
@@ -131,12 +131,12 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential pages. You can request up to 50 results.
      * </p>
      * 
      * @param limit
      *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *        a set of sequential pages.
+     *        a set of sequential pages. You can request up to 50 results.
      */
 
     public void setLimit(Integer limit) {
@@ -146,11 +146,11 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential pages. You can request up to 50 results.
      * </p>
      * 
      * @return The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *         a set of sequential pages.
+     *         a set of sequential pages. You can request up to 50 results.
      */
 
     public Integer getLimit() {
@@ -160,12 +160,12 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as a set
-     * of sequential pages.
+     * of sequential pages. You can request up to 50 results.
      * </p>
      * 
      * @param limit
      *        The maximum number of results to return. Use this parameter with <code>NextToken</code> to get results as
-     *        a set of sequential pages.
+     *        a set of sequential pages. You can request up to 50 results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,12 +177,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        A token that indicates the start of the next sequential page of results. Use the token that is returned
-     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -192,11 +193,12 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *         value.
      */
 
     public String getNextToken() {
@@ -206,12 +208,13 @@ public class DescribeGameSessionQueuesRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
      *        A token that indicates the start of the next sequential page of results. Use the token that is returned
-     *        with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

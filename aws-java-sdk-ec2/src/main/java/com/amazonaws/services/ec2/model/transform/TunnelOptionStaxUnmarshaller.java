@@ -95,6 +95,11 @@ public class TunnelOptionStaxUnmarshaller implements Unmarshaller<TunnelOption, 
                     continue;
                 }
 
+                if (context.testExpression("dpdTimeoutAction", targetDepth)) {
+                    tunnelOption.setDpdTimeoutAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("phase1EncryptionAlgorithmSet", targetDepth)) {
                     tunnelOption.withPhase1EncryptionAlgorithms(new ArrayList<Phase1EncryptionAlgorithmsListValue>());
                     continue;
@@ -165,6 +170,10 @@ public class TunnelOptionStaxUnmarshaller implements Unmarshaller<TunnelOption, 
                     continue;
                 }
 
+                if (context.testExpression("startupAction", targetDepth)) {
+                    tunnelOption.setStartupAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return tunnelOption;

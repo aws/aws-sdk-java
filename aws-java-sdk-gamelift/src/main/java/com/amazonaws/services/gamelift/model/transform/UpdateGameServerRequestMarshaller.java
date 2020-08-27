@@ -33,8 +33,6 @@ public class UpdateGameServerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerId").build();
     private static final MarshallingInfo<String> GAMESERVERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerData").build();
-    private static final MarshallingInfo<String> CUSTOMSORTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomSortKey").build();
     private static final MarshallingInfo<String> UTILIZATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UtilizationStatus").build();
     private static final MarshallingInfo<String> HEALTHCHECK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -59,7 +57,6 @@ public class UpdateGameServerRequestMarshaller {
             protocolMarshaller.marshall(updateGameServerRequest.getGameServerGroupName(), GAMESERVERGROUPNAME_BINDING);
             protocolMarshaller.marshall(updateGameServerRequest.getGameServerId(), GAMESERVERID_BINDING);
             protocolMarshaller.marshall(updateGameServerRequest.getGameServerData(), GAMESERVERDATA_BINDING);
-            protocolMarshaller.marshall(updateGameServerRequest.getCustomSortKey(), CUSTOMSORTKEY_BINDING);
             protocolMarshaller.marshall(updateGameServerRequest.getUtilizationStatus(), UTILIZATIONSTATUS_BINDING);
             protocolMarshaller.marshall(updateGameServerRequest.getHealthCheck(), HEALTHCHECK_BINDING);
         } catch (Exception e) {

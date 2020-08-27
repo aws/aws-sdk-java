@@ -2190,6 +2190,7 @@ public interface AmazonRedshift {
      * </p>
      * 
      * @param modifyClusterParameterGroupRequest
+     *        Describes a modify cluster parameter group operation.
      * @return Result of the ModifyClusterParameterGroup operation returned by the service.
      * @throws ClusterParameterGroupNotFoundException
      *         The parameter group name does not refer to an existing parameter group.
@@ -2407,6 +2408,8 @@ public interface AmazonRedshift {
      * </p>
      * 
      * @param pauseClusterRequest
+     *        Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code>
+     *        API operation.
      * @return Result of the PauseCluster operation returned by the service.
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
@@ -2508,6 +2511,16 @@ public interface AmazonRedshift {
      * <ul>
      * <li>
      * <p>
+     * dc1.large (if your cluster is in a VPC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * dc1.8xlarge (if your cluster is in a VPC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * dc2.large
      * </p>
      * </li>
@@ -2546,6 +2559,8 @@ public interface AmazonRedshift {
      * </ul>
      * 
      * @param resizeClusterRequest
+     *        Describes a resize cluster operation. For example, a scheduled action to run the
+     *        <code>ResizeCluster</code> API operation.
      * @return Result of the ResizeCluster operation returned by the service.
      * @throws InvalidClusterStateException
      *         The specified cluster is not in the <code>available</code> state.
@@ -2704,6 +2719,8 @@ public interface AmazonRedshift {
      * </p>
      * 
      * @param resumeClusterRequest
+     *        Describes a resume cluster operation. For example, a scheduled action to run the
+     *        <code>ResumeCluster</code> API operation.
      * @return Result of the ResumeCluster operation returned by the service.
      * @throws ClusterNotFoundException
      *         The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.

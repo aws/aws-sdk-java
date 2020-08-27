@@ -99,6 +99,8 @@ public enum GameliftActions implements Action {
     DescribeGameServer("gamelift:DescribeGameServer"),
     /** Action for the DescribeGameServerGroup operation. */
     DescribeGameServerGroup("gamelift:DescribeGameServerGroup"),
+    /** Action for the DescribeGameServerInstances operation. */
+    DescribeGameServerInstances("gamelift:DescribeGameServerInstances"),
     /** Action for the DescribeGameSessionDetails operation. */
     DescribeGameSessionDetails("gamelift:DescribeGameSessionDetails"),
     /** Action for the DescribeGameSessionPlacement operation. */

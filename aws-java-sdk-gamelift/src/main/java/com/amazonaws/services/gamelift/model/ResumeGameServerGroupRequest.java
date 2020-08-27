@@ -27,27 +27,24 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier of the game server group to resume activity on. Use either the <a>GameServerGroup</a> name
-     * or ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
     /**
      * <p>
-     * The action to resume for this game server group.
+     * The activity to resume for this game server group.
      * </p>
      */
     private java.util.List<String> resumeActions;
 
     /**
      * <p>
-     * The unique identifier of the game server group to resume activity on. Use either the <a>GameServerGroup</a> name
-     * or ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        The unique identifier of the game server group to resume activity on. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -56,12 +53,10 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier of the game server group to resume activity on. Use either the <a>GameServerGroup</a> name
-     * or ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
-     * @return The unique identifier of the game server group to resume activity on. Use either the
-     *         <a>GameServerGroup</a> name or ARN value.
+     * @return A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      */
 
     public String getGameServerGroupName() {
@@ -70,13 +65,11 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The unique identifier of the game server group to resume activity on. Use either the <a>GameServerGroup</a> name
-     * or ARN value.
+     * A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        The unique identifier of the game server group to resume activity on. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group. Use either the <a>GameServerGroup</a> name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +80,10 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The action to resume for this game server group.
+     * The activity to resume for this game server group.
      * </p>
      * 
-     * @return The action to resume for this game server group.
+     * @return The activity to resume for this game server group.
      * @see GameServerGroupAction
      */
 
@@ -100,11 +93,11 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The action to resume for this game server group.
+     * The activity to resume for this game server group.
      * </p>
      * 
      * @param resumeActions
-     *        The action to resume for this game server group.
+     *        The activity to resume for this game server group.
      * @see GameServerGroupAction
      */
 
@@ -119,7 +112,7 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The action to resume for this game server group.
+     * The activity to resume for this game server group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +121,7 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param resumeActions
-     *        The action to resume for this game server group.
+     *        The activity to resume for this game server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerGroupAction
      */
@@ -145,11 +138,11 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The action to resume for this game server group.
+     * The activity to resume for this game server group.
      * </p>
      * 
      * @param resumeActions
-     *        The action to resume for this game server group.
+     *        The activity to resume for this game server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerGroupAction
      */
@@ -161,11 +154,11 @@ public class ResumeGameServerGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The action to resume for this game server group.
+     * The activity to resume for this game server group.
      * </p>
      * 
      * @param resumeActions
-     *        The action to resume for this game server group.
+     *        The activity to resume for this game server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerGroupAction
      */

@@ -25,18 +25,21 @@ public class DeleteGameServerGroupResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     * An object that describes the deleted game server group resource, with status updated to
+     * <code>DELETE_SCHEDULED</code>.
      * </p>
      */
     private GameServerGroup gameServerGroup;
 
     /**
      * <p>
-     * An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     * An object that describes the deleted game server group resource, with status updated to
+     * <code>DELETE_SCHEDULED</code>.
      * </p>
      * 
      * @param gameServerGroup
-     *        An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     *        An object that describes the deleted game server group resource, with status updated to
+     *        <code>DELETE_SCHEDULED</code>.
      */
 
     public void setGameServerGroup(GameServerGroup gameServerGroup) {
@@ -45,10 +48,12 @@ public class DeleteGameServerGroupResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     * An object that describes the deleted game server group resource, with status updated to
+     * <code>DELETE_SCHEDULED</code>.
      * </p>
      * 
-     * @return An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     * @return An object that describes the deleted game server group resource, with status updated to
+     *         <code>DELETE_SCHEDULED</code>.
      */
 
     public GameServerGroup getGameServerGroup() {
@@ -57,11 +62,13 @@ public class DeleteGameServerGroupResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     * An object that describes the deleted game server group resource, with status updated to
+     * <code>DELETE_SCHEDULED</code>.
      * </p>
      * 
      * @param gameServerGroup
-     *        An object that describes the deleted game server group resource, with status updated to DELETE_SCHEDULED.
+     *        An object that describes the deleted game server group resource, with status updated to
+     *        <code>DELETE_SCHEDULED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

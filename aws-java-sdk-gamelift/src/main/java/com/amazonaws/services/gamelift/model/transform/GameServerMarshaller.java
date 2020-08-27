@@ -39,8 +39,6 @@ public class GameServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionInfo").build();
     private static final MarshallingInfo<String> GAMESERVERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerData").build();
-    private static final MarshallingInfo<String> CUSTOMSORTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomSortKey").build();
     private static final MarshallingInfo<String> CLAIMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClaimStatus").build();
     private static final MarshallingInfo<String> UTILIZATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,7 +72,6 @@ public class GameServerMarshaller {
             protocolMarshaller.marshall(gameServer.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(gameServer.getConnectionInfo(), CONNECTIONINFO_BINDING);
             protocolMarshaller.marshall(gameServer.getGameServerData(), GAMESERVERDATA_BINDING);
-            protocolMarshaller.marshall(gameServer.getCustomSortKey(), CUSTOMSORTKEY_BINDING);
             protocolMarshaller.marshall(gameServer.getClaimStatus(), CLAIMSTATUS_BINDING);
             protocolMarshaller.marshall(gameServer.getUtilizationStatus(), UTILIZATIONSTATUS_BINDING);
             protocolMarshaller.marshall(gameServer.getRegistrationTime(), REGISTRATIONTIME_BINDING);

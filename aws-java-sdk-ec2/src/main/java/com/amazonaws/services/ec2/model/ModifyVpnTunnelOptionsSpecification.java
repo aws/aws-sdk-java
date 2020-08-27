@@ -173,6 +173,19 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
     private Integer dPDTimeoutSeconds;
     /**
      * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     */
+    private String dPDTimeoutAction;
+    /**
+     * <p>
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
@@ -238,6 +251,20 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IKEVersionsRequestListValue> iKEVersions;
+    /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     */
+    private String startupAction;
 
     /**
      * <p>
@@ -1120,6 +1147,85 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
 
     /**
      * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     * 
+     * @param dPDTimeoutAction
+     *        The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation.
+     *        Specify <code>clear</code> to end the IKE session.</p>
+     *        <p>
+     *        Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>clear</code>
+     */
+
+    public void setDPDTimeoutAction(String dPDTimeoutAction) {
+        this.dPDTimeoutAction = dPDTimeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     * 
+     * @return The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation.
+     *         Specify <code>clear</code> to end the IKE session.</p>
+     *         <p>
+     *         Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>clear</code>
+     */
+
+    public String getDPDTimeoutAction() {
+        return this.dPDTimeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation. Specify
+     * <code>clear</code> to end the IKE session.
+     * </p>
+     * <p>
+     * Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     * </p>
+     * <p>
+     * Default: <code>clear</code>
+     * </p>
+     * 
+     * @param dPDTimeoutAction
+     *        The action to take after DPD timeout occurs. Specify <code>restart</code> to restart the IKE initiation.
+     *        Specify <code>clear</code> to end the IKE session.</p>
+     *        <p>
+     *        Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>clear</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpnTunnelOptionsSpecification withDPDTimeoutAction(String dPDTimeoutAction) {
+        setDPDTimeoutAction(dPDTimeoutAction);
+        return this;
+    }
+
+    /**
+     * <p>
      * One or more encryption algorithms that are permitted for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      * <p>
@@ -1824,6 +1930,91 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     * 
+     * @param startupAction
+     *        The action to take when the establishing the tunnel for the VPN connection. By default, your customer
+     *        gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for
+     *        AWS to initiate the IKE negotiation.</p>
+     *        <p>
+     *        Valid Values: <code>add</code> | <code>start</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>add</code>
+     */
+
+    public void setStartupAction(String startupAction) {
+        this.startupAction = startupAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     * 
+     * @return The action to take when the establishing the tunnel for the VPN connection. By default, your customer
+     *         gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for
+     *         AWS to initiate the IKE negotiation.</p>
+     *         <p>
+     *         Valid Values: <code>add</code> | <code>start</code>
+     *         </p>
+     *         <p>
+     *         Default: <code>add</code>
+     */
+
+    public String getStartupAction() {
+        return this.startupAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the establishing the tunnel for the VPN connection. By default, your customer gateway
+     * device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for AWS to initiate
+     * the IKE negotiation.
+     * </p>
+     * <p>
+     * Valid Values: <code>add</code> | <code>start</code>
+     * </p>
+     * <p>
+     * Default: <code>add</code>
+     * </p>
+     * 
+     * @param startupAction
+     *        The action to take when the establishing the tunnel for the VPN connection. By default, your customer
+     *        gateway device must initiate the IKE negotiation and bring up the tunnel. Specify <code>start</code> for
+     *        AWS to initiate the IKE negotiation.</p>
+     *        <p>
+     *        Valid Values: <code>add</code> | <code>start</code>
+     *        </p>
+     *        <p>
+     *        Default: <code>add</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpnTunnelOptionsSpecification withStartupAction(String startupAction) {
+        setStartupAction(startupAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1853,6 +2044,8 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
             sb.append("ReplayWindowSize: ").append(getReplayWindowSize()).append(",");
         if (getDPDTimeoutSeconds() != null)
             sb.append("DPDTimeoutSeconds: ").append(getDPDTimeoutSeconds()).append(",");
+        if (getDPDTimeoutAction() != null)
+            sb.append("DPDTimeoutAction: ").append(getDPDTimeoutAction()).append(",");
         if (getPhase1EncryptionAlgorithms() != null)
             sb.append("Phase1EncryptionAlgorithms: ").append(getPhase1EncryptionAlgorithms()).append(",");
         if (getPhase2EncryptionAlgorithms() != null)
@@ -1866,7 +2059,9 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
         if (getPhase2DHGroupNumbers() != null)
             sb.append("Phase2DHGroupNumbers: ").append(getPhase2DHGroupNumbers()).append(",");
         if (getIKEVersions() != null)
-            sb.append("IKEVersions: ").append(getIKEVersions());
+            sb.append("IKEVersions: ").append(getIKEVersions()).append(",");
+        if (getStartupAction() != null)
+            sb.append("StartupAction: ").append(getStartupAction());
         sb.append("}");
         return sb.toString();
     }
@@ -1917,6 +2112,10 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
             return false;
         if (other.getDPDTimeoutSeconds() != null && other.getDPDTimeoutSeconds().equals(this.getDPDTimeoutSeconds()) == false)
             return false;
+        if (other.getDPDTimeoutAction() == null ^ this.getDPDTimeoutAction() == null)
+            return false;
+        if (other.getDPDTimeoutAction() != null && other.getDPDTimeoutAction().equals(this.getDPDTimeoutAction()) == false)
+            return false;
         if (other.getPhase1EncryptionAlgorithms() == null ^ this.getPhase1EncryptionAlgorithms() == null)
             return false;
         if (other.getPhase1EncryptionAlgorithms() != null && other.getPhase1EncryptionAlgorithms().equals(this.getPhase1EncryptionAlgorithms()) == false)
@@ -1945,6 +2144,10 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
             return false;
         if (other.getIKEVersions() != null && other.getIKEVersions().equals(this.getIKEVersions()) == false)
             return false;
+        if (other.getStartupAction() == null ^ this.getStartupAction() == null)
+            return false;
+        if (other.getStartupAction() != null && other.getStartupAction().equals(this.getStartupAction()) == false)
+            return false;
         return true;
     }
 
@@ -1962,6 +2165,7 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
         hashCode = prime * hashCode + ((getRekeyFuzzPercentage() == null) ? 0 : getRekeyFuzzPercentage().hashCode());
         hashCode = prime * hashCode + ((getReplayWindowSize() == null) ? 0 : getReplayWindowSize().hashCode());
         hashCode = prime * hashCode + ((getDPDTimeoutSeconds() == null) ? 0 : getDPDTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDPDTimeoutAction() == null) ? 0 : getDPDTimeoutAction().hashCode());
         hashCode = prime * hashCode + ((getPhase1EncryptionAlgorithms() == null) ? 0 : getPhase1EncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getPhase2EncryptionAlgorithms() == null) ? 0 : getPhase2EncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getPhase1IntegrityAlgorithms() == null) ? 0 : getPhase1IntegrityAlgorithms().hashCode());
@@ -1969,6 +2173,7 @@ public class ModifyVpnTunnelOptionsSpecification implements Serializable, Clonea
         hashCode = prime * hashCode + ((getPhase1DHGroupNumbers() == null) ? 0 : getPhase1DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getPhase2DHGroupNumbers() == null) ? 0 : getPhase2DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getIKEVersions() == null) ? 0 : getIKEVersions().hashCode());
+        hashCode = prime * hashCode + ((getStartupAction() == null) ? 0 : getStartupAction().hashCode());
         return hashCode;
     }
 

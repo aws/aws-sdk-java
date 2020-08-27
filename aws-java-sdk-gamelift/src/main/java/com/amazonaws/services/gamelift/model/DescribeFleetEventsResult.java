@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the returned data in response to a request action.
+ * Represents the returned data in response to a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents" target="_top">AWS API
@@ -34,8 +34,8 @@ public class DescribeFleetEventsResult extends com.amazonaws.AmazonWebServiceRes
     private java.util.List<Event> events;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
@@ -112,12 +112,12 @@ public class DescribeFleetEventsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
      *        returned, these results represent the end of the list.
      */
 
@@ -127,12 +127,12 @@ public class DescribeFleetEventsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *         returned, these results represent the end of the list.
+     * @return Token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *         is returned, these results represent the end of the list.
      */
 
     public String getNextToken() {
@@ -141,12 +141,12 @@ public class DescribeFleetEventsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * Token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
+     *        Token that indicates where to resume retrieving results on the next call to this operation. If no token is
      *        returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

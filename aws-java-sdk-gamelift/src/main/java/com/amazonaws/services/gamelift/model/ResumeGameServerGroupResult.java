@@ -25,21 +25,21 @@ public class ResumeGameServerGroupResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the resumed activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the resumed activity.
      * </p>
      */
     private GameServerGroup gameServerGroup;
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the resumed activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the resumed activity.
      * </p>
      * 
      * @param gameServerGroup
-     *        An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated
-     *        to reflect the resumed activity.
+     *        An object that describes the game server group resource, with the <code>SuspendedActions</code> property
+     *        updated to reflect the resumed activity.
      */
 
     public void setGameServerGroup(GameServerGroup gameServerGroup) {
@@ -48,11 +48,11 @@ public class ResumeGameServerGroupResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the resumed activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the resumed activity.
      * </p>
      * 
-     * @return An object that describes the game server group resource, with the <i>SuspendedActions</i> property
+     * @return An object that describes the game server group resource, with the <code>SuspendedActions</code> property
      *         updated to reflect the resumed activity.
      */
 
@@ -62,13 +62,13 @@ public class ResumeGameServerGroupResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated to
-     * reflect the resumed activity.
+     * An object that describes the game server group resource, with the <code>SuspendedActions</code> property updated
+     * to reflect the resumed activity.
      * </p>
      * 
      * @param gameServerGroup
-     *        An object that describes the game server group resource, with the <i>SuspendedActions</i> property updated
-     *        to reflect the resumed activity.
+     *        An object that describes the game server group resource, with the <code>SuspendedActions</code> property
+     *        updated to reflect the resumed activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

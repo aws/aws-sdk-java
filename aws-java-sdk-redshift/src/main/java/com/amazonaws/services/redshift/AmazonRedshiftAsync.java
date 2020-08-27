@@ -3492,6 +3492,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * 
      * @param modifyClusterParameterGroupRequest
+     *        Describes a modify cluster parameter group operation.
      * @return A Java Future containing the result of the ModifyClusterParameterGroup operation returned by the service.
      * @sample AmazonRedshiftAsync.ModifyClusterParameterGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterParameterGroup"
@@ -3511,6 +3512,7 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * 
      * @param modifyClusterParameterGroupRequest
+     *        Describes a modify cluster parameter group operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3802,6 +3804,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * 
      * @param pauseClusterRequest
+     *        Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code>
+     *        API operation.
      * @return A Java Future containing the result of the PauseCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.PauseCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster" target="_top">AWS API
@@ -3815,6 +3819,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * 
      * @param pauseClusterRequest
+     *        Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code>
+     *        API operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3971,6 +3977,16 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <ul>
      * <li>
      * <p>
+     * dc1.large (if your cluster is in a VPC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * dc1.8xlarge (if your cluster is in a VPC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * dc2.large
      * </p>
      * </li>
@@ -4009,6 +4025,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </ul>
      * 
      * @param resizeClusterRequest
+     *        Describes a resize cluster operation. For example, a scheduled action to run the
+     *        <code>ResizeCluster</code> API operation.
      * @return A Java Future containing the result of the ResizeCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.ResizeCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResizeCluster" target="_top">AWS API
@@ -4033,6 +4051,16 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * <ul>
      * <li>
      * <p>
+     * dc1.large (if your cluster is in a VPC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * dc1.8xlarge (if your cluster is in a VPC)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * dc2.large
      * </p>
      * </li>
@@ -4071,6 +4099,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </ul>
      * 
      * @param resizeClusterRequest
+     *        Describes a resize cluster operation. For example, a scheduled action to run the
+     *        <code>ResizeCluster</code> API operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -4201,6 +4231,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * 
      * @param resumeClusterRequest
+     *        Describes a resume cluster operation. For example, a scheduled action to run the
+     *        <code>ResumeCluster</code> API operation.
      * @return A Java Future containing the result of the ResumeCluster operation returned by the service.
      * @sample AmazonRedshiftAsync.ResumeCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeCluster" target="_top">AWS API
@@ -4214,6 +4246,8 @@ public interface AmazonRedshiftAsync extends AmazonRedshift {
      * </p>
      * 
      * @param resumeClusterRequest
+     *        Describes a resume cluster operation. For example, a scheduled action to run the
+     *        <code>ResumeCluster</code> API operation.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

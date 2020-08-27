@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the returned data in response to a request action.
+ * Represents the returned data in response to a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListAliases" target="_top">AWS API
@@ -34,7 +34,7 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.List<Alias> aliases;
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      */
@@ -112,13 +112,13 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *         returned, these results represent the end of the list.
+     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *         is returned, these results represent the end of the list.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListAliasesResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

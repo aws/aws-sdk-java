@@ -55,6 +55,26 @@ public class VpnConnectionOptionsStaxUnmarshaller implements Unmarshaller<VpnCon
                     continue;
                 }
 
+                if (context.testExpression("localIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setLocalIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("remoteIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setRemoteIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("localIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setLocalIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("remoteIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setRemoteIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("tunnelInsideIpVersion", targetDepth)) {
                     vpnConnectionOptions.setTunnelInsideIpVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

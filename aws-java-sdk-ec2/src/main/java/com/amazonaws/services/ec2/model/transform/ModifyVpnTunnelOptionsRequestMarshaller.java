@@ -87,6 +87,10 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
                 request.addParameter("TunnelOptions.DPDTimeoutSeconds", StringUtils.fromInteger(tunnelOptions.getDPDTimeoutSeconds()));
             }
 
+            if (tunnelOptions.getDPDTimeoutAction() != null) {
+                request.addParameter("TunnelOptions.DPDTimeoutAction", StringUtils.fromString(tunnelOptions.getDPDTimeoutAction()));
+            }
+
             com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue> modifyVpnTunnelOptionsSpecificationPhase1EncryptionAlgorithmsList = (com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue>) tunnelOptions
                     .getPhase1EncryptionAlgorithms();
             if (!modifyVpnTunnelOptionsSpecificationPhase1EncryptionAlgorithmsList.isEmpty()
@@ -196,6 +200,10 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
                     }
                     iKEVersionsListIndex++;
                 }
+            }
+
+            if (tunnelOptions.getStartupAction() != null) {
+                request.addParameter("TunnelOptions.StartupAction", StringUtils.fromString(tunnelOptions.getStartupAction()));
             }
         }
 

@@ -31,7 +31,7 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<GameServerGroup> gameServerGroups;
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      */
@@ -109,13 +109,13 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +124,12 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return A token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *         returned, these results represent the end of the list.
+     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *         is returned, these results represent the end of the list.
      */
 
     public String getNextToken() {
@@ -138,13 +138,13 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this action. If no token is
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
      * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

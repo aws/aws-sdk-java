@@ -32,9 +32,10 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
      */
     private Integer aggressiveMode;
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting
-     * to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to
-     * apply filtering, depending on input type and quality.
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      */
     private String postTemporalSharpening;
     /**
@@ -94,14 +95,16 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting
-     * to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to
-     * apply filtering, depending on input type and quality.
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * 
      * @param postTemporalSharpening
-     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this
-     *        setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to
-     *        determine whether to apply filtering, depending on input type and quality.
+     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *        apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *        filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *        bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * @see NoiseFilterPostTemporalSharpening
      */
 
@@ -110,13 +113,15 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting
-     * to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to
-     * apply filtering, depending on input type and quality.
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * 
-     * @return Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this
-     *         setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to
-     *         determine whether to apply filtering, depending on input type and quality.
+     * @return Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *         apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *         filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *         bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * @see NoiseFilterPostTemporalSharpening
      */
 
@@ -125,14 +130,16 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting
-     * to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to
-     * apply filtering, depending on input type and quality.
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * 
      * @param postTemporalSharpening
-     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this
-     *        setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to
-     *        determine whether to apply filtering, depending on input type and quality.
+     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *        apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *        filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *        bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseFilterPostTemporalSharpening
      */
@@ -143,14 +150,16 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting
-     * to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to
-     * apply filtering, depending on input type and quality.
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * 
      * @param postTemporalSharpening
-     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this
-     *        setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to
-     *        determine whether to apply filtering, depending on input type and quality.
+     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *        apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *        filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *        bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NoiseFilterPostTemporalSharpening
      */

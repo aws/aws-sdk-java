@@ -32,80 +32,63 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon GameLift Service</fullname>
  * <p>
- * Amazon GameLift provides a range of multiplayer game hosting solutions. As a fully managed service, GameLift helps
- * you:
+ * GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools for
+ * deploying, operating, and scaling game servers. Built on AWS global computing infrastructure, GameLift helps you
+ * deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your resource usage to
+ * meet player demand.
+ * </p>
+ * <p>
+ * <b>About GameLift solutions</b>
+ * </p>
+ * <p>
+ * Get more information on these GameLift solutions in the <a
+ * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/">Amazon GameLift Developer Guide</a>.
  * </p>
  * <ul>
  * <li>
  * <p>
- * Set up EC2-based computing resources and use GameLift FleetIQ to and deploy your game servers on low-cost, reliable
- * Spot instances.
+ * Managed GameLift -- GameLift offers a fully managed service to set up and maintain computing machines for hosting,
+ * manage game session and player session life cycle, and handle security, storage, and performance tracking. You can
+ * use automatic scaling tools to balance hosting costs against meeting player demand., configure your game session
+ * management to minimize player latency, or add FlexMatch for matchmaking.
  * </p>
  * </li>
  * <li>
  * <p>
- * Track game server availability and route players into game sessions to minimize latency.
+ * Managed GameLift with Realtime Servers – With GameLift Realtime Servers, you can quickly configure and set up game
+ * servers for your game. Realtime Servers provides a game server framework with core Amazon GameLift infrastructure
+ * already built in.
  * </p>
  * </li>
  * <li>
  * <p>
- * Automatically scale your resources to meet player demand and manage costs
- * </p>
- * </li>
- * <li>
- * <p>
- * Optionally add FlexMatch matchmaking.
+ * GameLift FleetIQ – Use GameLift FleetIQ as a standalone feature while managing your own EC2 instances and Auto
+ * Scaling groups for game hosting. GameLift FleetIQ provides optimizations that make low-cost Spot Instances viable for
+ * game hosting.
  * </p>
  * </li>
  * </ul>
  * <p>
- * With GameLift as a managed service, you have the option to deploy your custom game server or use Amazon GameLift
- * Realtime Servers to quickly stand up lightweight game servers for your game. Realtime Servers provides an efficient
- * game server framework with core Amazon GameLift infrastructure already built in.
+ * <b>About this API Reference</b>
  * </p>
  * <p>
- * <b>Now in Public Preview:</b>
- * </p>
- * <p>
- * Use GameLift FleetIQ as a standalone feature with EC2 instances and Auto Scaling groups. GameLift FleetIQ provides
- * optimizations that make low-cost Spot instances viable for game hosting. This extension of GameLift FleetIQ gives you
- * access to these optimizations while managing your EC2 instances and Auto Scaling groups within your own AWS account.
- * </p>
- * <p>
- * <b>Get Amazon GameLift Tools and Resources</b>
- * </p>
- * <p>
- * This reference guide describes the low-level service API for Amazon GameLift and provides links to language-specific
- * SDK reference topics. See also <a
- * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> Amazon GameLift Tools and
- * Resources</a>.
- * </p>
- * <p>
- * <b>API Summary</b>
- * </p>
- * <p>
- * The Amazon GameLift service API includes two key sets of actions:
+ * This reference guide describes the low-level service API for Amazon GameLift. You can find links to language-specific
+ * SDK guides and the AWS CLI reference with each operation and data type topic. Useful links:
  * </p>
  * <ul>
  * <li>
  * <p>
- * Manage game sessions and player access -- Integrate this functionality into game client services in order to create
- * new game sessions, retrieve information on existing game sessions; reserve a player slot in a game session, request
- * matchmaking, etc.
+ * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html">GameLift API operations
+ * listed by tasks</a>
  * </p>
  * </li>
  * <li>
  * <p>
- * Configure and manage game server resources -- Manage your Amazon GameLift hosting resources, including builds,
- * scripts, fleets, queues, and aliases. Set up matchmakers, configure auto-scaling, retrieve game logs, and get hosting
- * and game metrics.
+ * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-components.html"> GameLift tools and
+ * resources</a>
  * </p>
  * </li>
  * </ul>
- * <p>
- * <b> <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html"> Task-based list of
- * API actions</a> </b>
- * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -1538,6 +1521,39 @@ public class AmazonGameLiftAsyncClient extends AmazonGameLiftClient implements A
 
                 try {
                     result = executeDescribeGameServerGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGameServerInstancesResult> describeGameServerInstancesAsync(DescribeGameServerInstancesRequest request) {
+
+        return describeGameServerInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGameServerInstancesResult> describeGameServerInstancesAsync(final DescribeGameServerInstancesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGameServerInstancesRequest, DescribeGameServerInstancesResult> asyncHandler) {
+        final DescribeGameServerInstancesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGameServerInstancesResult>() {
+            @Override
+            public DescribeGameServerInstancesResult call() throws Exception {
+                DescribeGameServerInstancesResult result = null;
+
+                try {
+                    result = executeDescribeGameServerInstances(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

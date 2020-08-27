@@ -38,6 +38,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private java.util.List<HlsAdditionalManifest> additionalManifests;
     /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     */
+    private String audioOnlyHeader;
+    /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest
      * is delivered from a different URL than the main .m3u8 file.
      */
@@ -299,6 +305,73 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     public HlsGroupSettings withAdditionalManifests(java.util.Collection<HlsAdditionalManifest> additionalManifests) {
         setAdditionalManifests(additionalManifests);
+        return this;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @param audioOnlyHeader
+     *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *        remove the audio-only headers from your audio segments.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public void setAudioOnlyHeader(String audioOnlyHeader) {
+        this.audioOnlyHeader = audioOnlyHeader;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @return Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *         Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *         remove the audio-only headers from your audio segments.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public String getAudioOnlyHeader() {
+        return this.audioOnlyHeader;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @param audioOnlyHeader
+     *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *        remove the audio-only headers from your audio segments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public HlsGroupSettings withAudioOnlyHeader(String audioOnlyHeader) {
+        setAudioOnlyHeader(audioOnlyHeader);
+        return this;
+    }
+
+    /**
+     * Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues. Keep the
+     * default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to remove the audio-only
+     * headers from your audio segments.
+     * 
+     * @param audioOnlyHeader
+     *        Ignore this setting unless you are using FairPlay DRM with Verimatrix and you encounter playback issues.
+     *        Keep the default value, Include (INCLUDE), to output audio-only headers. Choose Exclude (EXCLUDE) to
+     *        remove the audio-only headers from your audio segments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsAudioOnlyHeader
+     */
+
+    public HlsGroupSettings withAudioOnlyHeader(HlsAudioOnlyHeader audioOnlyHeader) {
+        this.audioOnlyHeader = audioOnlyHeader.toString();
         return this;
     }
 
@@ -1472,6 +1545,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("AdMarkers: ").append(getAdMarkers()).append(",");
         if (getAdditionalManifests() != null)
             sb.append("AdditionalManifests: ").append(getAdditionalManifests()).append(",");
+        if (getAudioOnlyHeader() != null)
+            sb.append("AudioOnlyHeader: ").append(getAudioOnlyHeader()).append(",");
         if (getBaseUrl() != null)
             sb.append("BaseUrl: ").append(getBaseUrl()).append(",");
         if (getCaptionLanguageMappings() != null)
@@ -1539,6 +1614,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getAdditionalManifests() == null ^ this.getAdditionalManifests() == null)
             return false;
         if (other.getAdditionalManifests() != null && other.getAdditionalManifests().equals(this.getAdditionalManifests()) == false)
+            return false;
+        if (other.getAudioOnlyHeader() == null ^ this.getAudioOnlyHeader() == null)
+            return false;
+        if (other.getAudioOnlyHeader() != null && other.getAudioOnlyHeader().equals(this.getAudioOnlyHeader()) == false)
             return false;
         if (other.getBaseUrl() == null ^ this.getBaseUrl() == null)
             return false;
@@ -1642,6 +1721,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getAdMarkers() == null) ? 0 : getAdMarkers().hashCode());
         hashCode = prime * hashCode + ((getAdditionalManifests() == null) ? 0 : getAdditionalManifests().hashCode());
+        hashCode = prime * hashCode + ((getAudioOnlyHeader() == null) ? 0 : getAudioOnlyHeader().hashCode());
         hashCode = prime * hashCode + ((getBaseUrl() == null) ? 0 : getBaseUrl().hashCode());
         hashCode = prime * hashCode + ((getCaptionLanguageMappings() == null) ? 0 : getCaptionLanguageMappings().hashCode());
         hashCode = prime * hashCode + ((getCaptionLanguageSetting() == null) ? 0 : getCaptionLanguageSetting().hashCode());

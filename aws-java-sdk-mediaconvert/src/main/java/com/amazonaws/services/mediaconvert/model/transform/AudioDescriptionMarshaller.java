@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AudioDescriptionMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> AUDIOCHANNELTAGGINGSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioChannelTaggingSettings").build();
     private static final MarshallingInfo<StructuredPojo> AUDIONORMALIZATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioNormalizationSettings").build();
     private static final MarshallingInfo<String> AUDIOSOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class AudioDescriptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(audioDescription.getAudioChannelTaggingSettings(), AUDIOCHANNELTAGGINGSETTINGS_BINDING);
             protocolMarshaller.marshall(audioDescription.getAudioNormalizationSettings(), AUDIONORMALIZATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(audioDescription.getAudioSourceName(), AUDIOSOURCENAME_BINDING);
             protocolMarshaller.marshall(audioDescription.getAudioType(), AUDIOTYPE_BINDING);

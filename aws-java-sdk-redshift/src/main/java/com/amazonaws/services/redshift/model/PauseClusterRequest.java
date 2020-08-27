@@ -18,6 +18,10 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API
+ * operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseCluster" target="_top">AWS API
  *      Documentation</a>

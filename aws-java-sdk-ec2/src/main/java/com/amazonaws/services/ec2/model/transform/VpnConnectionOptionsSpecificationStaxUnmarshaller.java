@@ -70,6 +70,25 @@ public class VpnConnectionOptionsSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
+                if (context.testExpression("LocalIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setLocalIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RemoteIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setRemoteIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LocalIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setLocalIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RemoteIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptionsSpecification.setRemoteIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnConnectionOptionsSpecification;

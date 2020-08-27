@@ -25,18 +25,18 @@ public class ClaimGameServerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Object that describes the newly claimed game server resource.
+     * Object that describes the newly claimed game server.
      * </p>
      */
     private GameServer gameServer;
 
     /**
      * <p>
-     * Object that describes the newly claimed game server resource.
+     * Object that describes the newly claimed game server.
      * </p>
      * 
      * @param gameServer
-     *        Object that describes the newly claimed game server resource.
+     *        Object that describes the newly claimed game server.
      */
 
     public void setGameServer(GameServer gameServer) {
@@ -45,10 +45,10 @@ public class ClaimGameServerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Object that describes the newly claimed game server resource.
+     * Object that describes the newly claimed game server.
      * </p>
      * 
-     * @return Object that describes the newly claimed game server resource.
+     * @return Object that describes the newly claimed game server.
      */
 
     public GameServer getGameServer() {
@@ -57,11 +57,11 @@ public class ClaimGameServerResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Object that describes the newly claimed game server resource.
+     * Object that describes the newly claimed game server.
      * </p>
      * 
      * @param gameServer
-     *        Object that describes the newly claimed game server resource.
+     *        Object that describes the newly claimed game server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

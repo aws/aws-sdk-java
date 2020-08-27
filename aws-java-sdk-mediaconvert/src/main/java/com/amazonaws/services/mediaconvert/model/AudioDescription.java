@@ -26,6 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     */
+    private AudioChannelTaggingSettings audioChannelTaggingSettings;
     /** Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard. */
     private AudioNormalizationSettings audioNormalizationSettings;
     /**
@@ -92,6 +100,67 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      * end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      */
     private String streamName;
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     * 
+     * @param audioChannelTaggingSettings
+     *        When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel
+     *        layout manually. For example, you would tag the tracks that contain your left, right, and center audio
+     *        with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert
+     *        labels your track as Center (C) by default. To use audio layout tagging, your output must be in a
+     *        QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio
+     *        track to have only one channel.
+     */
+
+    public void setAudioChannelTaggingSettings(AudioChannelTaggingSettings audioChannelTaggingSettings) {
+        this.audioChannelTaggingSettings = audioChannelTaggingSettings;
+    }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     * 
+     * @return When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel
+     *         layout manually. For example, you would tag the tracks that contain your left, right, and center audio
+     *         with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert
+     *         labels your track as Center (C) by default. To use audio layout tagging, your output must be in a
+     *         QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio
+     *         track to have only one channel.
+     */
+
+    public AudioChannelTaggingSettings getAudioChannelTaggingSettings() {
+        return this.audioChannelTaggingSettings;
+    }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     * 
+     * @param audioChannelTaggingSettings
+     *        When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel
+     *        layout manually. For example, you would tag the tracks that contain your left, right, and center audio
+     *        with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert
+     *        labels your track as Center (C) by default. To use audio layout tagging, your output must be in a
+     *        QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio
+     *        track to have only one channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioDescription withAudioChannelTaggingSettings(AudioChannelTaggingSettings audioChannelTaggingSettings) {
+        setAudioChannelTaggingSettings(audioChannelTaggingSettings);
+        return this;
+    }
 
     /**
      * Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
@@ -701,6 +770,8 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudioChannelTaggingSettings() != null)
+            sb.append("AudioChannelTaggingSettings: ").append(getAudioChannelTaggingSettings()).append(",");
         if (getAudioNormalizationSettings() != null)
             sb.append("AudioNormalizationSettings: ").append(getAudioNormalizationSettings()).append(",");
         if (getAudioSourceName() != null)
@@ -735,6 +806,10 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof AudioDescription == false)
             return false;
         AudioDescription other = (AudioDescription) obj;
+        if (other.getAudioChannelTaggingSettings() == null ^ this.getAudioChannelTaggingSettings() == null)
+            return false;
+        if (other.getAudioChannelTaggingSettings() != null && other.getAudioChannelTaggingSettings().equals(this.getAudioChannelTaggingSettings()) == false)
+            return false;
         if (other.getAudioNormalizationSettings() == null ^ this.getAudioNormalizationSettings() == null)
             return false;
         if (other.getAudioNormalizationSettings() != null && other.getAudioNormalizationSettings().equals(this.getAudioNormalizationSettings()) == false)
@@ -783,6 +858,7 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudioChannelTaggingSettings() == null) ? 0 : getAudioChannelTaggingSettings().hashCode());
         hashCode = prime * hashCode + ((getAudioNormalizationSettings() == null) ? 0 : getAudioNormalizationSettings().hashCode());
         hashCode = prime * hashCode + ((getAudioSourceName() == null) ? 0 : getAudioSourceName().hashCode());
         hashCode = prime * hashCode + ((getAudioType() == null) ? 0 : getAudioType().hashCode());

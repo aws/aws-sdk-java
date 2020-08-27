@@ -25,18 +25,18 @@ public class RegisterGameServerResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Object that describes the newly created game server resource.
+     * Object that describes the newly registered game server.
      * </p>
      */
     private GameServer gameServer;
 
     /**
      * <p>
-     * Object that describes the newly created game server resource.
+     * Object that describes the newly registered game server.
      * </p>
      * 
      * @param gameServer
-     *        Object that describes the newly created game server resource.
+     *        Object that describes the newly registered game server.
      */
 
     public void setGameServer(GameServer gameServer) {
@@ -45,10 +45,10 @@ public class RegisterGameServerResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Object that describes the newly created game server resource.
+     * Object that describes the newly registered game server.
      * </p>
      * 
-     * @return Object that describes the newly created game server resource.
+     * @return Object that describes the newly registered game server.
      */
 
     public GameServer getGameServer() {
@@ -57,11 +57,11 @@ public class RegisterGameServerResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Object that describes the newly created game server resource.
+     * Object that describes the newly registered game server.
      * </p>
      * 
      * @param gameServer
-     *        Object that describes the newly created game server resource.
+     *        Object that describes the newly registered game server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

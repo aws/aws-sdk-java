@@ -16,6 +16,10 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API
+ * operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/PauseClusterMessage" target="_top">AWS API
  *      Documentation</a>

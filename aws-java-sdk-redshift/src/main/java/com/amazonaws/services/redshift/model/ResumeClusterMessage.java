@@ -16,6 +16,10 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
+ * <p>
+ * Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API
+ * operation.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ResumeClusterMessage" target="_top">AWS API
  *      Documentation</a>

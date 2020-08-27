@@ -90,6 +90,11 @@ public class ModifyVpnTunnelOptionsSpecificationStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("DPDTimeoutAction", targetDepth)) {
+                    modifyVpnTunnelOptionsSpecification.setDPDTimeoutAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("Phase1EncryptionAlgorithm", targetDepth)) {
                     modifyVpnTunnelOptionsSpecification.withPhase1EncryptionAlgorithms(new ArrayList<Phase1EncryptionAlgorithmsRequestListValue>());
                     continue;
@@ -166,6 +171,10 @@ public class ModifyVpnTunnelOptionsSpecificationStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("StartupAction", targetDepth)) {
+                    modifyVpnTunnelOptionsSpecification.setStartupAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return modifyVpnTunnelOptionsSpecification;
