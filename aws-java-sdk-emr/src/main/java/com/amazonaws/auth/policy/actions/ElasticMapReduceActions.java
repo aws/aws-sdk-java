@@ -43,6 +43,8 @@ public enum ElasticMapReduceActions implements Action {
     DescribeCluster("elasticmapreduce:DescribeCluster"),
     /** Action for the DescribeJobFlows operation. */
     DescribeJobFlows("elasticmapreduce:DescribeJobFlows"),
+    /** Action for the DescribeNotebookExecution operation. */
+    DescribeNotebookExecution("elasticmapreduce:DescribeNotebookExecution"),
     /** Action for the DescribeSecurityConfiguration operation. */
     DescribeSecurityConfiguration("elasticmapreduce:DescribeSecurityConfiguration"),
     /** Action for the DescribeStep operation. */
@@ -61,6 +63,8 @@ public enum ElasticMapReduceActions implements Action {
     ListInstanceGroups("elasticmapreduce:ListInstanceGroups"),
     /** Action for the ListInstances operation. */
     ListInstances("elasticmapreduce:ListInstances"),
+    /** Action for the ListNotebookExecutions operation. */
+    ListNotebookExecutions("elasticmapreduce:ListNotebookExecutions"),
     /** Action for the ListSecurityConfigurations operation. */
     ListSecurityConfigurations("elasticmapreduce:ListSecurityConfigurations"),
     /** Action for the ListSteps operation. */
@@ -89,6 +93,10 @@ public enum ElasticMapReduceActions implements Action {
     SetTerminationProtection("elasticmapreduce:SetTerminationProtection"),
     /** Action for the SetVisibleToAllUsers operation. */
     SetVisibleToAllUsers("elasticmapreduce:SetVisibleToAllUsers"),
+    /** Action for the StartNotebookExecution operation. */
+    StartNotebookExecution("elasticmapreduce:StartNotebookExecution"),
+    /** Action for the StopNotebookExecution operation. */
+    StopNotebookExecution("elasticmapreduce:StopNotebookExecution"),
     /** Action for the TerminateJobFlows operation. */
     TerminateJobFlows("elasticmapreduce:TerminateJobFlows"),
 

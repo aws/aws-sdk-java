@@ -382,6 +382,53 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an
+     * additional cost.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional"
+     * >Viewing additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMonitoringSubscriptionRequest
+     * @return A Java Future containing the result of the CreateMonitoringSubscription operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.CreateMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMonitoringSubscriptionResult> createMonitoringSubscriptionAsync(
+            CreateMonitoringSubscriptionRequest createMonitoringSubscriptionRequest);
+
+    /**
+     * <p>
+     * Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an
+     * additional cost.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional"
+     * >Viewing additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMonitoringSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMonitoringSubscription operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMonitoringSubscriptionResult> createMonitoringSubscriptionAsync(
+            CreateMonitoringSubscriptionRequest createMonitoringSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMonitoringSubscriptionRequest, CreateMonitoringSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an origin request policy.
      * </p>
      * <p>
@@ -948,6 +995,41 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
     java.util.concurrent.Future<DeleteFieldLevelEncryptionProfileResult> deleteFieldLevelEncryptionProfileAsync(
             DeleteFieldLevelEncryptionProfileRequest deleteFieldLevelEncryptionProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFieldLevelEncryptionProfileRequest, DeleteFieldLevelEncryptionProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables additional CloudWatch metrics for the specified CloudFront distribution.
+     * </p>
+     * 
+     * @param deleteMonitoringSubscriptionRequest
+     * @return A Java Future containing the result of the DeleteMonitoringSubscription operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.DeleteMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMonitoringSubscriptionResult> deleteMonitoringSubscriptionAsync(
+            DeleteMonitoringSubscriptionRequest deleteMonitoringSubscriptionRequest);
+
+    /**
+     * <p>
+     * Disables additional CloudWatch metrics for the specified CloudFront distribution.
+     * </p>
+     * 
+     * @param deleteMonitoringSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMonitoringSubscription operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMonitoringSubscriptionResult> deleteMonitoringSubscriptionAsync(
+            DeleteMonitoringSubscriptionRequest deleteMonitoringSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMonitoringSubscriptionRequest, DeleteMonitoringSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -1612,6 +1694,41 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<GetInvalidationResult> getInvalidationAsync(GetInvalidationRequest getInvalidationRequest,
             com.amazonaws.handlers.AsyncHandler<GetInvalidationRequest, GetInvalidationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront
+     * distribution.
+     * </p>
+     * 
+     * @param getMonitoringSubscriptionRequest
+     * @return A Java Future containing the result of the GetMonitoringSubscription operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMonitoringSubscriptionResult> getMonitoringSubscriptionAsync(
+            GetMonitoringSubscriptionRequest getMonitoringSubscriptionRequest);
+
+    /**
+     * <p>
+     * Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront
+     * distribution.
+     * </p>
+     * 
+     * @param getMonitoringSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMonitoringSubscription operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMonitoringSubscriptionResult> getMonitoringSubscriptionAsync(
+            GetMonitoringSubscriptionRequest getMonitoringSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMonitoringSubscriptionRequest, GetMonitoringSubscriptionResult> asyncHandler);
 
     /**
      * <p>

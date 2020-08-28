@@ -39,6 +39,8 @@ public enum CloudFrontActions implements Action {
     CreateFieldLevelEncryptionProfile("cloudfront:CreateFieldLevelEncryptionProfile"),
     /** Action for the CreateInvalidation operation. */
     CreateInvalidation("cloudfront:CreateInvalidation"),
+    /** Action for the CreateMonitoringSubscription operation. */
+    CreateMonitoringSubscription("cloudfront:CreateMonitoringSubscription"),
     /** Action for the CreateOriginRequestPolicy operation. */
     CreateOriginRequestPolicy("cloudfront:CreateOriginRequestPolicy"),
     /** Action for the CreatePublicKey operation. */
@@ -57,6 +59,8 @@ public enum CloudFrontActions implements Action {
     DeleteFieldLevelEncryptionConfig("cloudfront:DeleteFieldLevelEncryptionConfig"),
     /** Action for the DeleteFieldLevelEncryptionProfile operation. */
     DeleteFieldLevelEncryptionProfile("cloudfront:DeleteFieldLevelEncryptionProfile"),
+    /** Action for the DeleteMonitoringSubscription operation. */
+    DeleteMonitoringSubscription("cloudfront:DeleteMonitoringSubscription"),
     /** Action for the DeleteOriginRequestPolicy operation. */
     DeleteOriginRequestPolicy("cloudfront:DeleteOriginRequestPolicy"),
     /** Action for the DeletePublicKey operation. */
@@ -85,6 +89,8 @@ public enum CloudFrontActions implements Action {
     GetFieldLevelEncryptionProfileConfig("cloudfront:GetFieldLevelEncryptionProfileConfig"),
     /** Action for the GetInvalidation operation. */
     GetInvalidation("cloudfront:GetInvalidation"),
+    /** Action for the GetMonitoringSubscription operation. */
+    GetMonitoringSubscription("cloudfront:GetMonitoringSubscription"),
     /** Action for the GetOriginRequestPolicy operation. */
     GetOriginRequestPolicy("cloudfront:GetOriginRequestPolicy"),
     /** Action for the GetOriginRequestPolicyConfig operation. */

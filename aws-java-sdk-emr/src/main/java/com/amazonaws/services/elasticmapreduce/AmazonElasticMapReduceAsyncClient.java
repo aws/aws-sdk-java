@@ -583,6 +583,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNotebookExecutionResult> describeNotebookExecutionAsync(DescribeNotebookExecutionRequest request) {
+
+        return describeNotebookExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNotebookExecutionResult> describeNotebookExecutionAsync(final DescribeNotebookExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeNotebookExecutionRequest, DescribeNotebookExecutionResult> asyncHandler) {
+        final DescribeNotebookExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeNotebookExecutionResult>() {
+            @Override
+            public DescribeNotebookExecutionResult call() throws Exception {
+                DescribeNotebookExecutionResult result = null;
+
+                try {
+                    result = executeDescribeNotebookExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSecurityConfigurationResult> describeSecurityConfigurationAsync(DescribeSecurityConfigurationRequest request) {
 
         return describeSecurityConfigurationAsync(request, null);
@@ -890,6 +923,39 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
 
                 try {
                     result = executeListInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookExecutionsResult> listNotebookExecutionsAsync(ListNotebookExecutionsRequest request) {
+
+        return listNotebookExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookExecutionsResult> listNotebookExecutionsAsync(final ListNotebookExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNotebookExecutionsRequest, ListNotebookExecutionsResult> asyncHandler) {
+        final ListNotebookExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNotebookExecutionsResult>() {
+            @Override
+            public ListNotebookExecutionsResult call() throws Exception {
+                ListNotebookExecutionsResult result = null;
+
+                try {
+                    result = executeListNotebookExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1377,6 +1443,72 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
 
                 try {
                     result = executeSetVisibleToAllUsers(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNotebookExecutionResult> startNotebookExecutionAsync(StartNotebookExecutionRequest request) {
+
+        return startNotebookExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartNotebookExecutionResult> startNotebookExecutionAsync(final StartNotebookExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartNotebookExecutionRequest, StartNotebookExecutionResult> asyncHandler) {
+        final StartNotebookExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartNotebookExecutionResult>() {
+            @Override
+            public StartNotebookExecutionResult call() throws Exception {
+                StartNotebookExecutionResult result = null;
+
+                try {
+                    result = executeStartNotebookExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopNotebookExecutionResult> stopNotebookExecutionAsync(StopNotebookExecutionRequest request) {
+
+        return stopNotebookExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopNotebookExecutionResult> stopNotebookExecutionAsync(final StopNotebookExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopNotebookExecutionRequest, StopNotebookExecutionResult> asyncHandler) {
+        final StopNotebookExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopNotebookExecutionResult>() {
+            @Override
+            public StopNotebookExecutionResult call() throws Exception {
+                StopNotebookExecutionResult result = null;
+
+                try {
+                    result = executeStopNotebookExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

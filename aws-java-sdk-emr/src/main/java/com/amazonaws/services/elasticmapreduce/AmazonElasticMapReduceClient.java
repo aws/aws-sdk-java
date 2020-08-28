@@ -876,6 +876,65 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
+     * Provides details of a notebook execution.
+     * </p>
+     * 
+     * @param describeNotebookExecutionRequest
+     * @return Result of the DescribeNotebookExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DescribeNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeNotebookExecutionResult describeNotebookExecution(DescribeNotebookExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNotebookExecution(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNotebookExecutionResult executeDescribeNotebookExecution(DescribeNotebookExecutionRequest describeNotebookExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNotebookExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNotebookExecutionRequest> request = null;
+        Response<DescribeNotebookExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNotebookExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeNotebookExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotebookExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeNotebookExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeNotebookExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides the details of a security configuration by returning the configuration JSON.
      * </p>
      * 
@@ -1405,6 +1464,66 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status,
+     * time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a
+     * longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.
+     * </p>
+     * 
+     * @param listNotebookExecutionsRequest
+     * @return Result of the ListNotebookExecutions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListNotebookExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListNotebookExecutionsResult listNotebookExecutions(ListNotebookExecutionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNotebookExecutions(request);
+    }
+
+    @SdkInternalApi
+    final ListNotebookExecutionsResult executeListNotebookExecutions(ListNotebookExecutionsRequest listNotebookExecutionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNotebookExecutionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNotebookExecutionsRequest> request = null;
+        Response<ListNotebookExecutionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNotebookExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNotebookExecutionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookExecutions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNotebookExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListNotebookExecutionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2282,6 +2401,122 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
             HttpResponseHandler<AmazonWebServiceResponse<SetVisibleToAllUsersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SetVisibleToAllUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a notebook execution.
+     * </p>
+     * 
+     * @param startNotebookExecutionRequest
+     * @return Result of the StartNotebookExecution operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.StartNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartNotebookExecutionResult startNotebookExecution(StartNotebookExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartNotebookExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartNotebookExecutionResult executeStartNotebookExecution(StartNotebookExecutionRequest startNotebookExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startNotebookExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartNotebookExecutionRequest> request = null;
+        Response<StartNotebookExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartNotebookExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startNotebookExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNotebookExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartNotebookExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartNotebookExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a notebook execution.
+     * </p>
+     * 
+     * @param stopNotebookExecutionRequest
+     * @return Result of the StopNotebookExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.StopNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopNotebookExecutionResult stopNotebookExecution(StopNotebookExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopNotebookExecution(request);
+    }
+
+    @SdkInternalApi
+    final StopNotebookExecutionResult executeStopNotebookExecution(StopNotebookExecutionRequest stopNotebookExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopNotebookExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopNotebookExecutionRequest> request = null;
+        Response<StopNotebookExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopNotebookExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopNotebookExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopNotebookExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopNotebookExecutionResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StopNotebookExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

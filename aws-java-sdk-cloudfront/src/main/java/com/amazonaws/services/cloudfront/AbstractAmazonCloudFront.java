@@ -74,6 +74,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateMonitoringSubscriptionResult createMonitoringSubscription(CreateMonitoringSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateOriginRequestPolicyResult createOriginRequestPolicy(CreateOriginRequestPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -115,6 +120,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public DeleteFieldLevelEncryptionProfileResult deleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMonitoringSubscriptionResult deleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,6 +195,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public GetInvalidationResult getInvalidation(GetInvalidationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetMonitoringSubscriptionResult getMonitoringSubscription(GetMonitoringSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

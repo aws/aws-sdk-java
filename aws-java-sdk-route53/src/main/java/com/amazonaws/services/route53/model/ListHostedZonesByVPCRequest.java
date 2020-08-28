@@ -45,8 +45,8 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is
      * associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code>
-     * element. <code>NextToken</code> contains the hosted zone ID of the first hosted zone that Route 53 will return if
-     * you submit another request.
+     * element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53
+     * will return if you submit another request.
      * </p>
      */
     private String maxItems;
@@ -167,15 +167,15 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is
      * associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code>
-     * element. <code>NextToken</code> contains the hosted zone ID of the first hosted zone that Route 53 will return if
-     * you submit another request.
+     * element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53
+     * will return if you submit another request.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified
      *        VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a
-     *        <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone ID of the first hosted
-     *        zone that Route 53 will return if you submit another request.
+     *        <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the
+     *        first hosted zone that Route 53 will return if you submit another request.
      */
 
     public void setMaxItems(String maxItems) {
@@ -186,14 +186,14 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is
      * associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code>
-     * element. <code>NextToken</code> contains the hosted zone ID of the first hosted zone that Route 53 will return if
-     * you submit another request.
+     * element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53
+     * will return if you submit another request.
      * </p>
      * 
      * @return (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified
      *         VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a
-     *         <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone ID of the first hosted
-     *         zone that Route 53 will return if you submit another request.
+     *         <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the
+     *         first hosted zone that Route 53 will return if you submit another request.
      */
 
     public String getMaxItems() {
@@ -204,15 +204,15 @@ public class ListHostedZonesByVPCRequest extends com.amazonaws.AmazonWebServiceR
      * <p>
      * (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified VPC is
      * associated with more than <code>MaxItems</code> hosted zones, the response includes a <code>NextToken</code>
-     * element. <code>NextToken</code> contains the hosted zone ID of the first hosted zone that Route 53 will return if
-     * you submit another request.
+     * element. <code>NextToken</code> contains an encrypted token that identifies the first hosted zone that Route 53
+     * will return if you submit another request.
      * </p>
      * 
      * @param maxItems
      *        (Optional) The maximum number of hosted zones that you want Amazon Route 53 to return. If the specified
      *        VPC is associated with more than <code>MaxItems</code> hosted zones, the response includes a
-     *        <code>NextToken</code> element. <code>NextToken</code> contains the hosted zone ID of the first hosted
-     *        zone that Route 53 will return if you submit another request.
+     *        <code>NextToken</code> element. <code>NextToken</code> contains an encrypted token that identifies the
+     *        first hosted zone that Route 53 will return if you submit another request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

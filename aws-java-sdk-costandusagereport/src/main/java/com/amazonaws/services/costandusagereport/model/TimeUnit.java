@@ -23,7 +23,8 @@ import javax.annotation.Generated;
 public enum TimeUnit {
 
     HOURLY("HOURLY"),
-    DAILY("DAILY");
+    DAILY("DAILY"),
+    MONTHLY("MONTHLY");
 
     private String value;
 

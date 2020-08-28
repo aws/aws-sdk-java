@@ -36,33 +36,19 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To perform the association, the VPC and the private hosted zone must already exist. Also, you can't convert a
-     * public hosted zone into a private hosted zone.
+     * To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public
+     * hosted zone into a private hosted zone.
      * </p>
-     * </note>
+     * </important> <note>
      * <p>
-     * If you want to associate a VPC that was created by one AWS account with a private hosted zone that was created by
-     * a different account, do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the AWS account that created the private hosted zone to submit a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html"
-     * >CreateVPCAssociationAuthorization</a> request. Then use the account that created the VPC to submit an
+     * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
+     * created by using a different account, the AWS account that created the private hosted zone must first submit a
+     * <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
      * <code>AssociateVPCWithHostedZone</code> request.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a subnet in the VPC was shared with another account, you can use the account that the subnet was shared with
-     * to submit an <code>AssociateVPCWithHostedZone</code> request. For more information about sharing subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working with Shared VPCs</a>.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param associateVPCWithHostedZoneRequest
      *        A complex type that contains information about the request to associate a VPC with a private hosted zone.
@@ -78,33 +64,19 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To perform the association, the VPC and the private hosted zone must already exist. Also, you can't convert a
-     * public hosted zone into a private hosted zone.
+     * To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public
+     * hosted zone into a private hosted zone.
      * </p>
-     * </note>
+     * </important> <note>
      * <p>
-     * If you want to associate a VPC that was created by one AWS account with a private hosted zone that was created by
-     * a different account, do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the AWS account that created the private hosted zone to submit a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html"
-     * >CreateVPCAssociationAuthorization</a> request. Then use the account that created the VPC to submit an
+     * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
+     * created by using a different account, the AWS account that created the private hosted zone must first submit a
+     * <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
      * <code>AssociateVPCWithHostedZone</code> request.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a subnet in the VPC was shared with another account, you can use the account that the subnet was shared with
-     * to submit an <code>AssociateVPCWithHostedZone</code> request. For more information about sharing subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working with Shared VPCs</a>.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param associateVPCWithHostedZoneRequest
      *        A complex type that contains information about the request to associate a VPC with a private hosted zone.
@@ -1697,6 +1669,31 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Deletes a traffic policy.
      * </p>
+     * <p>
+     * When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that it has been deleted.
+     * However, Route 53 never fully deletes the traffic policy. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleted traffic policies aren't listed if you run <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html"
+     * >ListTrafficPolicies</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There's no way to get a list of deleted policies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you retain the ID of the policy, you can get information about the policy, including the traffic policy
+     * document, by running <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteTrafficPolicyRequest
      *        A request to delete a specified traffic policy version.
@@ -1711,6 +1708,31 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Deletes a traffic policy.
      * </p>
+     * <p>
+     * When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that it has been deleted.
+     * However, Route 53 never fully deletes the traffic policy. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleted traffic policies aren't listed if you run <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html"
+     * >ListTrafficPolicies</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There's no way to get a list of deleted policies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you retain the ID of the policy, you can get information about the policy, including the traffic policy
+     * document, by running <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteTrafficPolicyRequest
      *        A request to delete a specified traffic policy version.
@@ -2621,6 +2643,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about a specific traffic policy version.
      * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
+     * </p>
      * 
      * @param getTrafficPolicyRequest
      *        Gets information about a specific traffic policy version.
@@ -2634,6 +2662,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * Gets information about a specific traffic policy version.
+     * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
      * </p>
      * 
      * @param getTrafficPolicyRequest
@@ -3572,6 +3606,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Gets information about the latest version for every traffic policy that is associated with the current AWS
      * account. Policies are listed in the order that they were created in.
      * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>
+     * , see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
+     * </p>
      * 
      * @param listTrafficPoliciesRequest
      *        A complex type that contains the information about the request to list the traffic policies that are
@@ -3587,6 +3627,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about the latest version for every traffic policy that is associated with the current AWS
      * account. Policies are listed in the order that they were created in.
+     * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>
+     * , see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
      * </p>
      * 
      * @param listTrafficPoliciesRequest

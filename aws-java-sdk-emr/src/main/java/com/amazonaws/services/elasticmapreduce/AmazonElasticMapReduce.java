@@ -319,6 +319,23 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Provides details of a notebook execution.
+     * </p>
+     * 
+     * @param describeNotebookExecutionRequest
+     * @return Result of the DescribeNotebookExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DescribeNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNotebookExecutionResult describeNotebookExecution(DescribeNotebookExecutionRequest describeNotebookExecutionRequest);
+
+    /**
+     * <p>
      * Provides the details of a security configuration by returning the configuration JSON.
      * </p>
      * 
@@ -492,6 +509,25 @@ public interface AmazonElasticMapReduce {
      *      API Documentation</a>
      */
     ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest);
+
+    /**
+     * <p>
+     * Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status,
+     * time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a
+     * longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.
+     * </p>
+     * 
+     * @param listNotebookExecutionsRequest
+     * @return Result of the ListNotebookExecutions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListNotebookExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListNotebookExecutionsResult listNotebookExecutions(ListNotebookExecutionsRequest listNotebookExecutionsRequest);
 
     /**
      * <p>
@@ -798,6 +834,40 @@ public interface AmazonElasticMapReduce {
      *      target="_top">AWS API Documentation</a>
      */
     SetVisibleToAllUsersResult setVisibleToAllUsers(SetVisibleToAllUsersRequest setVisibleToAllUsersRequest);
+
+    /**
+     * <p>
+     * Starts a notebook execution.
+     * </p>
+     * 
+     * @param startNotebookExecutionRequest
+     * @return Result of the StartNotebookExecution operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.StartNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartNotebookExecutionResult startNotebookExecution(StartNotebookExecutionRequest startNotebookExecutionRequest);
+
+    /**
+     * <p>
+     * Stops a notebook execution.
+     * </p>
+     * 
+     * @param stopNotebookExecutionRequest
+     * @return Result of the StopNotebookExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.StopNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopNotebookExecutionResult stopNotebookExecution(StopNotebookExecutionRequest stopNotebookExecutionRequest);
 
     /**
      * <p>

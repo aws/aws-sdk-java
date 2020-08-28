@@ -1139,6 +1139,69 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an
+     * additional cost.
+     * </p>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/viewing-cloudfront-metrics.html#monitoring-console.distributions-additional"
+     * >Viewing additional CloudFront distribution metrics</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createMonitoringSubscriptionRequest
+     * @return Result of the CreateMonitoringSubscription operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchDistributionException
+     *         The specified distribution does not exist.
+     * @sample AmazonCloudFront.CreateMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMonitoringSubscriptionResult createMonitoringSubscription(CreateMonitoringSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMonitoringSubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateMonitoringSubscriptionResult executeCreateMonitoringSubscription(CreateMonitoringSubscriptionRequest createMonitoringSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMonitoringSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMonitoringSubscriptionRequest> request = null;
+        Response<CreateMonitoringSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMonitoringSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createMonitoringSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMonitoringSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateMonitoringSubscriptionResult> responseHandler = new StaxResponseHandler<CreateMonitoringSubscriptionResult>(
+                    new CreateMonitoringSubscriptionResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an origin request policy.
      * </p>
      * <p>
@@ -1888,6 +1951,63 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteFieldLevelEncryptionProfileResult> responseHandler = new StaxResponseHandler<DeleteFieldLevelEncryptionProfileResult>(
                     new DeleteFieldLevelEncryptionProfileResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables additional CloudWatch metrics for the specified CloudFront distribution.
+     * </p>
+     * 
+     * @param deleteMonitoringSubscriptionRequest
+     * @return Result of the DeleteMonitoringSubscription operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchDistributionException
+     *         The specified distribution does not exist.
+     * @sample AmazonCloudFront.DeleteMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMonitoringSubscriptionResult deleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMonitoringSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMonitoringSubscriptionResult executeDeleteMonitoringSubscription(DeleteMonitoringSubscriptionRequest deleteMonitoringSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMonitoringSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMonitoringSubscriptionRequest> request = null;
+        Response<DeleteMonitoringSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMonitoringSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteMonitoringSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMonitoringSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteMonitoringSubscriptionResult> responseHandler = new StaxResponseHandler<DeleteMonitoringSubscriptionResult>(
+                    new DeleteMonitoringSubscriptionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2817,6 +2937,64 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<GetInvalidationResult> responseHandler = new StaxResponseHandler<GetInvalidationResult>(
                     new GetInvalidationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets information about whether additional CloudWatch metrics are enabled for the specified CloudFront
+     * distribution.
+     * </p>
+     * 
+     * @param getMonitoringSubscriptionRequest
+     * @return Result of the GetMonitoringSubscription operation returned by the service.
+     * @throws AccessDeniedException
+     *         Access denied.
+     * @throws NoSuchDistributionException
+     *         The specified distribution does not exist.
+     * @sample AmazonCloudFront.GetMonitoringSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetMonitoringSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMonitoringSubscriptionResult getMonitoringSubscription(GetMonitoringSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMonitoringSubscription(request);
+    }
+
+    @SdkInternalApi
+    final GetMonitoringSubscriptionResult executeGetMonitoringSubscription(GetMonitoringSubscriptionRequest getMonitoringSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMonitoringSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMonitoringSubscriptionRequest> request = null;
+        Response<GetMonitoringSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMonitoringSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(getMonitoringSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMonitoringSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetMonitoringSubscriptionResult> responseHandler = new StaxResponseHandler<GetMonitoringSubscriptionResult>(
+                    new GetMonitoringSubscriptionResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

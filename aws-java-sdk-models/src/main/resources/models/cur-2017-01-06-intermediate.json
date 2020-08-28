@@ -268,20 +268,14 @@
       "documentation" : "<p>The region of the S3 bucket that AWS delivers the report into.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "UsEast1",
-        "value" : "us-east-1"
+        "name" : "AfSouth1",
+        "value" : "af-south-1"
       }, {
-        "name" : "UsWest1",
-        "value" : "us-west-1"
+        "name" : "ApEast1",
+        "value" : "ap-east-1"
       }, {
-        "name" : "UsWest2",
-        "value" : "us-west-2"
-      }, {
-        "name" : "EuCentral1",
-        "value" : "eu-central-1"
-      }, {
-        "name" : "EuWest1",
-        "value" : "eu-west-1"
+        "name" : "ApSouth1",
+        "value" : "ap-south-1"
       }, {
         "name" : "ApSoutheast1",
         "value" : "ap-southeast-1"
@@ -292,14 +286,56 @@
         "name" : "ApNortheast1",
         "value" : "ap-northeast-1"
       }, {
-        "name" : "EuNorth1",
-        "value" : "eu-north-1"
+        "name" : "ApNortheast2",
+        "value" : "ap-northeast-2"
       }, {
         "name" : "ApNortheast3",
         "value" : "ap-northeast-3"
       }, {
-        "name" : "ApEast1",
-        "value" : "ap-east-1"
+        "name" : "CaCentral1",
+        "value" : "ca-central-1"
+      }, {
+        "name" : "EuCentral1",
+        "value" : "eu-central-1"
+      }, {
+        "name" : "EuWest1",
+        "value" : "eu-west-1"
+      }, {
+        "name" : "EuWest2",
+        "value" : "eu-west-2"
+      }, {
+        "name" : "EuWest3",
+        "value" : "eu-west-3"
+      }, {
+        "name" : "EuNorth1",
+        "value" : "eu-north-1"
+      }, {
+        "name" : "EuSouth1",
+        "value" : "eu-south-1"
+      }, {
+        "name" : "MeSouth1",
+        "value" : "me-south-1"
+      }, {
+        "name" : "SaEast1",
+        "value" : "sa-east-1"
+      }, {
+        "name" : "UsEast1",
+        "value" : "us-east-1"
+      }, {
+        "name" : "UsEast2",
+        "value" : "us-east-2"
+      }, {
+        "name" : "UsWest1",
+        "value" : "us-west-1"
+      }, {
+        "name" : "UsWest2",
+        "value" : "us-west-2"
+      }, {
+        "name" : "CnNorth1",
+        "value" : "cn-north-1"
+      }, {
+        "name" : "CnNorthwest1",
+        "value" : "cn-northwest-1"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.AWSRegion",
@@ -470,12 +506,12 @@
         "c2jName" : "ReportName",
         "c2jShape" : "ReportName",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReportName",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@return The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
         "getterMethodName" : "getReportName",
         "getterModel" : {
           "returnType" : "String",
@@ -509,7 +545,7 @@
         "marshallingType" : "STRING",
         "name" : "ReportName",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param reportName */",
+        "setterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
         "setterMethodName" : "setReportName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -524,13 +560,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "reportName",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -541,12 +577,12 @@
           "c2jName" : "ReportName",
           "c2jShape" : "ReportName",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReportName",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@return The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
           "getterMethodName" : "getReportName",
           "getterModel" : {
             "returnType" : "String",
@@ -580,7 +616,7 @@
           "marshallingType" : "STRING",
           "name" : "ReportName",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param reportName */",
+          "setterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
           "setterMethodName" : "setReportName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -595,13 +631,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "reportName",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -4429,6 +4465,9 @@
       }, {
         "name" : "DAILY",
         "value" : "DAILY"
+      }, {
+        "name" : "MONTHLY",
+        "value" : "MONTHLY"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.TimeUnit",
