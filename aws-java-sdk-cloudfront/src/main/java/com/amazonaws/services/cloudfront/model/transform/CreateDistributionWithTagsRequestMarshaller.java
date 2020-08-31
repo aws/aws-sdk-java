@@ -477,6 +477,10 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
                                     xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
                                 }
 
+                                if (defaultCacheBehavior.getRealtimeLogConfigArn() != null) {
+                                    xmlWriter.startElement("RealtimeLogConfigArn").value(defaultCacheBehavior.getRealtimeLogConfigArn()).endElement();
+                                }
+
                                 if (defaultCacheBehavior.getCachePolicyId() != null) {
                                     xmlWriter.startElement("CachePolicyId").value(defaultCacheBehavior.getCachePolicyId()).endElement();
                                 }
@@ -758,6 +762,11 @@ public class CreateDistributionWithTagsRequestMarshaller implements Marshaller<R
 
                                         if (cacheBehaviorsItemsListValue.getFieldLevelEncryptionId() != null) {
                                             xmlWriter.startElement("FieldLevelEncryptionId").value(cacheBehaviorsItemsListValue.getFieldLevelEncryptionId())
+                                                    .endElement();
+                                        }
+
+                                        if (cacheBehaviorsItemsListValue.getRealtimeLogConfigArn() != null) {
+                                            xmlWriter.startElement("RealtimeLogConfigArn").value(cacheBehaviorsItemsListValue.getRealtimeLogConfigArn())
                                                     .endElement();
                                         }
 

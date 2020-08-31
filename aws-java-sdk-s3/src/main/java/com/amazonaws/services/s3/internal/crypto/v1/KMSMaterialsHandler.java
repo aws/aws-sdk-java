@@ -14,6 +14,8 @@
  */
 package com.amazonaws.services.s3.internal.crypto.v1;
 
+import static com.amazonaws.services.s3.internal.crypto.CryptoUtils.normalizeContentAlgorithmForValidation;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +29,7 @@ import com.amazonaws.services.s3.model.MaterialsDescriptionProvider;
 public class KMSMaterialsHandler {
 
     public static Map<String, String> createKMSContextMaterialsDescription(Map<String, String> matdesc, String cekAlgo) {
-        matdesc.put(Headers.AWS_CRYPTO_CEK_ALGORITHM, cekAlgo);
+        matdesc.put(Headers.AWS_CRYPTO_CEK_ALGORITHM, normalizeContentAlgorithmForValidation(cekAlgo));
         matdesc.remove(KMSEncryptionMaterials.CUSTOMER_MASTER_KEY_ID);
         return Collections.unmodifiableMap(matdesc);
     }

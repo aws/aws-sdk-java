@@ -44,7 +44,8 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String nextToken;
     /**
      * <p>
-     * Maximum number of results to include in the response.
+     * Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     * <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      * </p>
      */
     private Integer maxResults;
@@ -173,11 +174,13 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Maximum number of results to include in the response.
+     * Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     * <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to include in the response.
+     *        Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     *        <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -186,10 +189,12 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Maximum number of results to include in the response.
+     * Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     * <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      * </p>
      * 
-     * @return Maximum number of results to include in the response.
+     * @return Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     *         <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      */
 
     public Integer getMaxResults() {
@@ -198,11 +203,13 @@ public class ListQueuesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Maximum number of results to include in the response.
+     * Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     * <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of results to include in the response.
+     *        Maximum number of results to include in the response. Value range is 1 to 1000. You must set
+     *        <code>MaxResults</code> to receive a value for <code>NextToken</code> in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

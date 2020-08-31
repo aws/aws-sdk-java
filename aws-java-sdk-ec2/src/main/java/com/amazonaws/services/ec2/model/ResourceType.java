@@ -24,6 +24,7 @@ public enum ResourceType {
     CustomerGateway("customer-gateway"),
     DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
+    EgressOnlyInternetGateway("egress-only-internet-gateway"),
     ElasticIp("elastic-ip"),
     ElasticGpu("elastic-gpu"),
     ExportImageTask("export-image-task"),

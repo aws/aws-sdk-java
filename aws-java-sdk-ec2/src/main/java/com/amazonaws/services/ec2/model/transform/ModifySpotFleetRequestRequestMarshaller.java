@@ -44,6 +44,76 @@ public class ModifySpotFleetRequestRequestMarshaller implements Marshaller<Reque
             request.addParameter("ExcessCapacityTerminationPolicy", StringUtils.fromString(modifySpotFleetRequestRequest.getExcessCapacityTerminationPolicy()));
         }
 
+        com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig> modifySpotFleetRequestRequestLaunchTemplateConfigsList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>) modifySpotFleetRequestRequest
+                .getLaunchTemplateConfigs();
+        if (!modifySpotFleetRequestRequestLaunchTemplateConfigsList.isEmpty() || !modifySpotFleetRequestRequestLaunchTemplateConfigsList.isAutoConstruct()) {
+            int launchTemplateConfigsListIndex = 1;
+
+            for (LaunchTemplateConfig modifySpotFleetRequestRequestLaunchTemplateConfigsListValue : modifySpotFleetRequestRequestLaunchTemplateConfigsList) {
+
+                FleetLaunchTemplateSpecification launchTemplateSpecification = modifySpotFleetRequestRequestLaunchTemplateConfigsListValue
+                        .getLaunchTemplateSpecification();
+                if (launchTemplateSpecification != null) {
+
+                    if (launchTemplateSpecification.getLaunchTemplateId() != null) {
+                        request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".LaunchTemplateSpecification.LaunchTemplateId",
+                                StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateId()));
+                    }
+
+                    if (launchTemplateSpecification.getLaunchTemplateName() != null) {
+                        request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".LaunchTemplateSpecification.LaunchTemplateName",
+                                StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateName()));
+                    }
+
+                    if (launchTemplateSpecification.getVersion() != null) {
+                        request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".LaunchTemplateSpecification.Version",
+                                StringUtils.fromString(launchTemplateSpecification.getVersion()));
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides> launchTemplateConfigOverridesList = (com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides>) modifySpotFleetRequestRequestLaunchTemplateConfigsListValue
+                        .getOverrides();
+                if (!launchTemplateConfigOverridesList.isEmpty() || !launchTemplateConfigOverridesList.isAutoConstruct()) {
+                    int overridesListIndex = 1;
+
+                    for (LaunchTemplateOverrides launchTemplateConfigOverridesListValue : launchTemplateConfigOverridesList) {
+
+                        if (launchTemplateConfigOverridesListValue.getInstanceType() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                    + ".InstanceType", StringUtils.fromString(launchTemplateConfigOverridesListValue.getInstanceType()));
+                        }
+
+                        if (launchTemplateConfigOverridesListValue.getSpotPrice() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".SpotPrice",
+                                    StringUtils.fromString(launchTemplateConfigOverridesListValue.getSpotPrice()));
+                        }
+
+                        if (launchTemplateConfigOverridesListValue.getSubnetId() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".SubnetId",
+                                    StringUtils.fromString(launchTemplateConfigOverridesListValue.getSubnetId()));
+                        }
+
+                        if (launchTemplateConfigOverridesListValue.getAvailabilityZone() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                    + ".AvailabilityZone", StringUtils.fromString(launchTemplateConfigOverridesListValue.getAvailabilityZone()));
+                        }
+
+                        if (launchTemplateConfigOverridesListValue.getWeightedCapacity() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                    + ".WeightedCapacity", StringUtils.fromDouble(launchTemplateConfigOverridesListValue.getWeightedCapacity()));
+                        }
+
+                        if (launchTemplateConfigOverridesListValue.getPriority() != null) {
+                            request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex + ".Priority",
+                                    StringUtils.fromDouble(launchTemplateConfigOverridesListValue.getPriority()));
+                        }
+                        overridesListIndex++;
+                    }
+                }
+                launchTemplateConfigsListIndex++;
+            }
+        }
+
         if (modifySpotFleetRequestRequest.getSpotFleetRequestId() != null) {
             request.addParameter("SpotFleetRequestId", StringUtils.fromString(modifySpotFleetRequestRequest.getSpotFleetRequestId()));
         }

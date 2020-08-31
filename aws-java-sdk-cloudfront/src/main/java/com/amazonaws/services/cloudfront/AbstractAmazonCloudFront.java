@@ -89,6 +89,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CreateRealtimeLogConfigResult createRealtimeLogConfig(CreateRealtimeLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -135,6 +140,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public DeletePublicKeyResult deletePublicKey(DeletePublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRealtimeLogConfigResult deleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,6 +234,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public GetRealtimeLogConfigResult getRealtimeLogConfig(GetRealtimeLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStreamingDistributionResult getStreamingDistribution(GetStreamingDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -259,6 +274,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public ListDistributionsByRealtimeLogConfigResult listDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDistributionsByWebACLIdResult listDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -285,6 +305,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public ListPublicKeysResult listPublicKeys(ListPublicKeysRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRealtimeLogConfigsResult listRealtimeLogConfigs(ListRealtimeLogConfigsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -340,6 +365,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public UpdatePublicKeyResult updatePublicKey(UpdatePublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRealtimeLogConfigResult updateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

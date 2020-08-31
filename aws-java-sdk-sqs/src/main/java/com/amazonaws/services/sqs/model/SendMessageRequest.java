@@ -37,7 +37,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String queueUrl;
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -71,8 +71,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -243,7 +243,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        Queue URLs and names are case-sensitive.
      * @param messageBody
-     *        The message to send. The maximum string size is 256 KB.
+     *        The message to send. The minimum size is one character. The maximum size is 256 KB.
      *        </p>
      *        <important>
      *        <p>
@@ -320,7 +320,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -337,7 +337,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The maximum string size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -357,7 +357,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -373,7 +373,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * 
-     * @return The message to send. The maximum string size is 256 KB.</p> <important>
+     * @return The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
      *         <p>
      *         A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *         </p>
@@ -393,7 +393,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The message to send. The maximum string size is 256 KB.
+     * The message to send. The minimum size is one character. The maximum size is 256 KB.
      * </p>
      * <important>
      * <p>
@@ -410,7 +410,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </important>
      * 
      * @param messageBody
-     *        The message to send. The maximum string size is 256 KB.</p> <important>
+     *        The message to send. The minimum size is one character. The maximum size is 256 KB.</p> <important>
      *        <p>
      *        A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:
      *        </p>
@@ -518,14 +518,14 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -539,15 +539,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -558,15 +558,15 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

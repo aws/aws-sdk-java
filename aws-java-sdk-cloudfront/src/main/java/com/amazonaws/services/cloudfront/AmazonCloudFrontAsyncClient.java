@@ -595,6 +595,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRealtimeLogConfigResult> createRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest request) {
+
+        return createRealtimeLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRealtimeLogConfigResult> createRealtimeLogConfigAsync(final CreateRealtimeLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRealtimeLogConfigRequest, CreateRealtimeLogConfigResult> asyncHandler) {
+        final CreateRealtimeLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRealtimeLogConfigResult>() {
+            @Override
+            public CreateRealtimeLogConfigResult call() throws Exception {
+                CreateRealtimeLogConfigResult result = null;
+
+                try {
+                    result = executeCreateRealtimeLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateStreamingDistributionResult> createStreamingDistributionAsync(CreateStreamingDistributionRequest request) {
 
         return createStreamingDistributionAsync(request, null);
@@ -917,6 +950,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeDeletePublicKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRealtimeLogConfigResult> deleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest request) {
+
+        return deleteRealtimeLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRealtimeLogConfigResult> deleteRealtimeLogConfigAsync(final DeleteRealtimeLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRealtimeLogConfigRequest, DeleteRealtimeLogConfigResult> asyncHandler) {
+        final DeleteRealtimeLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRealtimeLogConfigResult>() {
+            @Override
+            public DeleteRealtimeLogConfigResult call() throws Exception {
+                DeleteRealtimeLogConfigResult result = null;
+
+                try {
+                    result = executeDeleteRealtimeLogConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1502,6 +1568,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetRealtimeLogConfigResult> getRealtimeLogConfigAsync(GetRealtimeLogConfigRequest request) {
+
+        return getRealtimeLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRealtimeLogConfigResult> getRealtimeLogConfigAsync(final GetRealtimeLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRealtimeLogConfigRequest, GetRealtimeLogConfigResult> asyncHandler) {
+        final GetRealtimeLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRealtimeLogConfigResult>() {
+            @Override
+            public GetRealtimeLogConfigResult call() throws Exception {
+                GetRealtimeLogConfigResult result = null;
+
+                try {
+                    result = executeGetRealtimeLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStreamingDistributionResult> getStreamingDistributionAsync(GetStreamingDistributionRequest request) {
 
         return getStreamingDistributionAsync(request, null);
@@ -1740,6 +1839,41 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListDistributionsByRealtimeLogConfigResult> listDistributionsByRealtimeLogConfigAsync(
+            ListDistributionsByRealtimeLogConfigRequest request) {
+
+        return listDistributionsByRealtimeLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDistributionsByRealtimeLogConfigResult> listDistributionsByRealtimeLogConfigAsync(
+            final ListDistributionsByRealtimeLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDistributionsByRealtimeLogConfigRequest, ListDistributionsByRealtimeLogConfigResult> asyncHandler) {
+        final ListDistributionsByRealtimeLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDistributionsByRealtimeLogConfigResult>() {
+            @Override
+            public ListDistributionsByRealtimeLogConfigResult call() throws Exception {
+                ListDistributionsByRealtimeLogConfigResult result = null;
+
+                try {
+                    result = executeListDistributionsByRealtimeLogConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionsByWebACLIdResult> listDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request) {
 
         return listDistributionsByWebACLIdAsync(request, null);
@@ -1926,6 +2060,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeListPublicKeys(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRealtimeLogConfigsResult> listRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest request) {
+
+        return listRealtimeLogConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRealtimeLogConfigsResult> listRealtimeLogConfigsAsync(final ListRealtimeLogConfigsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRealtimeLogConfigsRequest, ListRealtimeLogConfigsResult> asyncHandler) {
+        final ListRealtimeLogConfigsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRealtimeLogConfigsResult>() {
+            @Override
+            public ListRealtimeLogConfigsResult call() throws Exception {
+                ListRealtimeLogConfigsResult result = null;
+
+                try {
+                    result = executeListRealtimeLogConfigs(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2295,6 +2462,39 @@ public class AmazonCloudFrontAsyncClient extends AmazonCloudFrontClient implemen
 
                 try {
                     result = executeUpdatePublicKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRealtimeLogConfigResult> updateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest request) {
+
+        return updateRealtimeLogConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRealtimeLogConfigResult> updateRealtimeLogConfigAsync(final UpdateRealtimeLogConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRealtimeLogConfigRequest, UpdateRealtimeLogConfigResult> asyncHandler) {
+        final UpdateRealtimeLogConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRealtimeLogConfigResult>() {
+            @Override
+            public UpdateRealtimeLogConfigResult call() throws Exception {
+                UpdateRealtimeLogConfigResult result = null;
+
+                try {
+                    result = executeUpdateRealtimeLogConfig(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

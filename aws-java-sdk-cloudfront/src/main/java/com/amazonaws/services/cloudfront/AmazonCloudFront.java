@@ -691,6 +691,38 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a real-time log configuration.
+     * </p>
+     * <p>
+     * After you create a real-time log configuration, you can attach it to one or more cache behaviors to send
+     * real-time log data to the specified Amazon Kinesis data stream.
+     * </p>
+     * <p>
+     * For more information about real-time log configurations, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createRealtimeLogConfigRequest
+     * @return Result of the CreateRealtimeLogConfig operation returned by the service.
+     * @throws RealtimeLogConfigAlreadyExistsException
+     *         A real-time log configuration with this name already exists. You must provide a unique name. To modify an
+     *         existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+     * @throws TooManyRealtimeLogConfigsException
+     *         You have reached the maximum number of real-time log configurations for this AWS account. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.CreateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateRealtimeLogConfigResult createRealtimeLogConfig(CreateRealtimeLogConfigRequest createRealtimeLogConfigRequest);
+
+    /**
+     * <p>
      * Creates a new RTMP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution
      * streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.
      * </p>
@@ -1062,6 +1094,35 @@ public interface AmazonCloudFront {
      *      Documentation</a>
      */
     DeletePublicKeyResult deletePublicKey(DeletePublicKeyRequest deletePublicKeyRequest);
+
+    /**
+     * <p>
+     * Deletes a real-time log configuration.
+     * </p>
+     * <p>
+     * You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your
+     * distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name
+     * (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to delete.
+     * </p>
+     * 
+     * @param deleteRealtimeLogConfigRequest
+     * @return Result of the DeleteRealtimeLogConfig operation returned by the service.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigInUseException
+     *         Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.DeleteRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRealtimeLogConfigResult deleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest deleteRealtimeLogConfigRequest);
 
     /**
      * <p>
@@ -1484,6 +1545,28 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a real-time log configuration.
+     * </p>
+     * <p>
+     * To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN).
+     * You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to get.
+     * </p>
+     * 
+     * @param getRealtimeLogConfigRequest
+     * @return Result of the GetRealtimeLogConfig operation returned by the service.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.GetRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetRealtimeLogConfigResult getRealtimeLogConfig(GetRealtimeLogConfigRequest getRealtimeLogConfigRequest);
+
+    /**
+     * <p>
      * Gets information about a specified RTMP distribution, including the distribution configuration.
      * </p>
      * 
@@ -1636,6 +1719,34 @@ public interface AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of distribution that have a cache behavior that’s associated with the specified real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide
+     * at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list
+     * distributions for.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByRealtimeLogConfigRequest
+     * @return Result of the ListDistributionsByRealtimeLogConfig operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListDistributionsByRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDistributionsByRealtimeLogConfigResult listDistributionsByRealtimeLogConfig(
+            ListDistributionsByRealtimeLogConfigRequest listDistributionsByRealtimeLogConfigRequest);
+
+    /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
      * </p>
      * 
@@ -1749,6 +1860,25 @@ public interface AmazonCloudFront {
      *      Documentation</a>
      */
     ListPublicKeysResult listPublicKeys(ListPublicKeysRequest listPublicKeysRequest);
+
+    /**
+     * <p>
+     * Gets a list of real-time log configurations.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listRealtimeLogConfigsRequest
+     * @return Result of the ListRealtimeLogConfigs operation returned by the service.
+     * @sample AmazonCloudFront.ListRealtimeLogConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRealtimeLogConfigsResult listRealtimeLogConfigs(ListRealtimeLogConfigsRequest listRealtimeLogConfigsRequest);
 
     /**
      * <p>
@@ -2331,6 +2461,48 @@ public interface AmazonCloudFront {
      *      Documentation</a>
      */
     UpdatePublicKeyResult updatePublicKey(UpdatePublicKeyRequest updatePublicKeyRequest);
+
+    /**
+     * <p>
+     * Updates a real-time log configuration.
+     * </p>
+     * <p>
+     * When you update a real-time log configuration, all the parameters are updated with the values provided in the
+     * request. You cannot update some parameters independent of others. To update a real-time log configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the parameters in the real-time log configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration,
+     * including the parameters that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+     * </p>
+     * 
+     * @param updateRealtimeLogConfigRequest
+     * @return Result of the UpdateRealtimeLogConfig operation returned by the service.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.UpdateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateRealtimeLogConfigResult updateRealtimeLogConfig(UpdateRealtimeLogConfigRequest updateRealtimeLogConfigRequest);
 
     /**
      * <p>

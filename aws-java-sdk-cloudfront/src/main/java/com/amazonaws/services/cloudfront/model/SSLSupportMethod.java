@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum SSLSupportMethod {
 
     SniOnly("sni-only"),
-    Vip("vip");
+    Vip("vip"),
+    StaticIp("static-ip");
 
     private String value;
 

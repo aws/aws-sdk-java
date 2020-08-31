@@ -36,7 +36,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     private String selectionName;
     /**
      * <p>
-     * The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for example,
+     * The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      */
@@ -50,7 +50,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      */
     private java.util.List<Condition> listOfTags;
@@ -97,12 +97,12 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for example,
+     * The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for
+     *        The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for
      *        example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
@@ -112,11 +112,11 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for example,
+     * The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
-     * @return The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for
+     * @return The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for
      *         example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
@@ -126,12 +126,12 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for example,
+     * The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for example,
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The ARN of the IAM role that AWS Backup uses to authenticate when restoring the target resource; for
+     *        The ARN of the IAM role that AWS Backup uses to authenticate when backing up the target resource; for
      *        example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -214,11 +214,11 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * 
      * @return An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *         <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *         <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      */
 
     public java.util.List<Condition> getListOfTags() {
@@ -228,12 +228,12 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      */
 
     public void setListOfTags(java.util.Collection<Condition> listOfTags) {
@@ -248,7 +248,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -258,7 +258,7 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,12 +275,12 @@ public class BackupSelection implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     * <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     * <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * </p>
      * 
      * @param listOfTags
      *        An array of conditions used to specify a set of resources to assign to a backup plan; for example,
-     *        <code>"STRINGEQUALS": {"ec2:ResourceTag/Department": "accounting"</code>.
+     *        <code>"StringEquals": {"ec2:ResourceTag/Department": "accounting"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

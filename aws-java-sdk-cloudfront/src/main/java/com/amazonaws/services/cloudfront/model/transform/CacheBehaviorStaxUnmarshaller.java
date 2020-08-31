@@ -88,6 +88,11 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
+                if (context.testExpression("RealtimeLogConfigArn", targetDepth)) {
+                    cacheBehavior.setRealtimeLogConfigArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CachePolicyId", targetDepth)) {
                     cacheBehavior.setCachePolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

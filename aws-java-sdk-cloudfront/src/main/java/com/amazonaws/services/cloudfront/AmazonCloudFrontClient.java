@@ -301,6 +301,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsWithSingleFunctionARNExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BatchTooLargeExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RealtimeLogConfigInUseExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidResponseCodeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FieldLevelEncryptionConfigAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginKeepaliveTimeoutExceptionUnmarshaller());
@@ -315,6 +316,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CachePolicyAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchRealtimeLogConfigExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidProtocolSettingsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyFieldLevelEncryptionProfilesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyOriginCustomHeadersExceptionUnmarshaller());
@@ -323,6 +325,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCertificatesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new QueryArgProfileEmptyExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyRealtimeLogConfigsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidQueryStringParametersExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CNAMEAlreadyExistsExceptionUnmarshaller());
@@ -356,6 +359,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidHeadersForS3OriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new RealtimeLogConfigAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionsAssociatedToOriginRequestPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CannotChangeImmutablePublicKeyFieldsExceptionUnmarshaller());
@@ -1379,6 +1383,78 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Creates a real-time log configuration.
+     * </p>
+     * <p>
+     * After you create a real-time log configuration, you can attach it to one or more cache behaviors to send
+     * real-time log data to the specified Amazon Kinesis data stream.
+     * </p>
+     * <p>
+     * For more information about real-time log configurations, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createRealtimeLogConfigRequest
+     * @return Result of the CreateRealtimeLogConfig operation returned by the service.
+     * @throws RealtimeLogConfigAlreadyExistsException
+     *         A real-time log configuration with this name already exists. You must provide a unique name. To modify an
+     *         existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+     * @throws TooManyRealtimeLogConfigsException
+     *         You have reached the maximum number of real-time log configurations for this AWS account. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html"
+     *         >Quotas</a> (formerly known as limits) in the <i>Amazon CloudFront Developer Guide</i>.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.CreateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateRealtimeLogConfigResult createRealtimeLogConfig(CreateRealtimeLogConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRealtimeLogConfig(request);
+    }
+
+    @SdkInternalApi
+    final CreateRealtimeLogConfigResult executeCreateRealtimeLogConfig(CreateRealtimeLogConfigRequest createRealtimeLogConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRealtimeLogConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRealtimeLogConfigRequest> request = null;
+        Response<CreateRealtimeLogConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(createRealtimeLogConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRealtimeLogConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateRealtimeLogConfigResult> responseHandler = new StaxResponseHandler<CreateRealtimeLogConfigResult>(
+                    new CreateRealtimeLogConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new RTMP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution
      * streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.
      * </p>
@@ -2145,6 +2221,75 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeletePublicKeyResult> responseHandler = new StaxResponseHandler<DeletePublicKeyResult>(
                     new DeletePublicKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a real-time log configuration.
+     * </p>
+     * <p>
+     * You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your
+     * distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name
+     * (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to delete.
+     * </p>
+     * 
+     * @param deleteRealtimeLogConfigRequest
+     * @return Result of the DeleteRealtimeLogConfig operation returned by the service.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws RealtimeLogConfigInUseException
+     *         Cannot delete the real-time log configuration because it is attached to one or more cache behaviors.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.DeleteRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteRealtimeLogConfigResult deleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRealtimeLogConfig(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRealtimeLogConfigResult executeDeleteRealtimeLogConfig(DeleteRealtimeLogConfigRequest deleteRealtimeLogConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRealtimeLogConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRealtimeLogConfigRequest> request = null;
+        Response<DeleteRealtimeLogConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteRealtimeLogConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRealtimeLogConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteRealtimeLogConfigResult> responseHandler = new StaxResponseHandler<DeleteRealtimeLogConfigResult>(
+                    new DeleteRealtimeLogConfigResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3258,6 +3403,68 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a real-time log configuration.
+     * </p>
+     * <p>
+     * To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN).
+     * You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to get.
+     * </p>
+     * 
+     * @param getRealtimeLogConfigRequest
+     * @return Result of the GetRealtimeLogConfig operation returned by the service.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.GetRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetRealtimeLogConfigResult getRealtimeLogConfig(GetRealtimeLogConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetRealtimeLogConfig(request);
+    }
+
+    @SdkInternalApi
+    final GetRealtimeLogConfigResult executeGetRealtimeLogConfig(GetRealtimeLogConfigRequest getRealtimeLogConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getRealtimeLogConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetRealtimeLogConfigRequest> request = null;
+        Response<GetRealtimeLogConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(getRealtimeLogConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRealtimeLogConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetRealtimeLogConfigResult> responseHandler = new StaxResponseHandler<GetRealtimeLogConfigResult>(
+                    new GetRealtimeLogConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets information about a specified RTMP distribution, including the distribution configuration.
      * </p>
      * 
@@ -3693,6 +3900,75 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Gets a list of distribution that have a cache behavior that’s associated with the specified real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide
+     * at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list
+     * distributions for.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByRealtimeLogConfigRequest
+     * @return Result of the ListDistributionsByRealtimeLogConfig operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.ListDistributionsByRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDistributionsByRealtimeLogConfigResult listDistributionsByRealtimeLogConfig(ListDistributionsByRealtimeLogConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDistributionsByRealtimeLogConfig(request);
+    }
+
+    @SdkInternalApi
+    final ListDistributionsByRealtimeLogConfigResult executeListDistributionsByRealtimeLogConfig(
+            ListDistributionsByRealtimeLogConfigRequest listDistributionsByRealtimeLogConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDistributionsByRealtimeLogConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDistributionsByRealtimeLogConfigRequest> request = null;
+        Response<ListDistributionsByRealtimeLogConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDistributionsByRealtimeLogConfigRequestMarshaller().marshall(super
+                        .beforeMarshalling(listDistributionsByRealtimeLogConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByRealtimeLogConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListDistributionsByRealtimeLogConfigResult> responseHandler = new StaxResponseHandler<ListDistributionsByRealtimeLogConfigResult>(
+                    new ListDistributionsByRealtimeLogConfigResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
      * </p>
      * 
@@ -4039,6 +4315,65 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<ListPublicKeysResult> responseHandler = new StaxResponseHandler<ListPublicKeysResult>(
                     new ListPublicKeysResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of real-time log configurations.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listRealtimeLogConfigsRequest
+     * @return Result of the ListRealtimeLogConfigs operation returned by the service.
+     * @sample AmazonCloudFront.ListRealtimeLogConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRealtimeLogConfigsResult listRealtimeLogConfigs(ListRealtimeLogConfigsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRealtimeLogConfigs(request);
+    }
+
+    @SdkInternalApi
+    final ListRealtimeLogConfigsResult executeListRealtimeLogConfigs(ListRealtimeLogConfigsRequest listRealtimeLogConfigsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRealtimeLogConfigsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRealtimeLogConfigsRequest> request = null;
+        Response<ListRealtimeLogConfigsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRealtimeLogConfigsRequestMarshaller().marshall(super.beforeMarshalling(listRealtimeLogConfigsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRealtimeLogConfigs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListRealtimeLogConfigsResult> responseHandler = new StaxResponseHandler<ListRealtimeLogConfigsResult>(
+                    new ListRealtimeLogConfigsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5062,6 +5397,88 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<UpdatePublicKeyResult> responseHandler = new StaxResponseHandler<UpdatePublicKeyResult>(
                     new UpdatePublicKeyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a real-time log configuration.
+     * </p>
+     * <p>
+     * When you update a real-time log configuration, all the parameters are updated with the values provided in the
+     * request. You cannot update some parameters independent of others. To update a real-time log configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the parameters in the real-time log configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration,
+     * including the parameters that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+     * </p>
+     * 
+     * @param updateRealtimeLogConfigRequest
+     * @return Result of the UpdateRealtimeLogConfig operation returned by the service.
+     * @throws NoSuchRealtimeLogConfigException
+     *         The real-time log configuration does not exist.
+     * @throws InvalidArgumentException
+     *         An argument is invalid.
+     * @sample AmazonCloudFront.UpdateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateRealtimeLogConfigResult updateRealtimeLogConfig(UpdateRealtimeLogConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRealtimeLogConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRealtimeLogConfigResult executeUpdateRealtimeLogConfig(UpdateRealtimeLogConfigRequest updateRealtimeLogConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRealtimeLogConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRealtimeLogConfigRequest> request = null;
+        Response<UpdateRealtimeLogConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(updateRealtimeLogConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRealtimeLogConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<UpdateRealtimeLogConfigResult> responseHandler = new StaxResponseHandler<UpdateRealtimeLogConfigResult>(
+                    new UpdateRealtimeLogConfigResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,7 +1,28 @@
+# __1.11.852__ __2020-08-31__
+## __AWS Backup__
+  - ### Features
+    - Documentation updates for Cryo
+
+## __Amazon CloudFront__
+  - ### Features
+    - CloudFront now supports real-time logging for CloudFront distributions. CloudFront real-time logs are more detailed, configurable, and are available in real time.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Amazon EC2 and Spot Fleet now support modification of launch template configs for a running fleet enabling instance type, instance weight, AZ, and AMI updates without losing the current fleet ID.
+
+## __Amazon Simple Queue Service__
+  - ### Features
+    - Documentation updates for SQS.
+
 # __1.11.851__ __2020-08-28__
 ## __AWS Cost and Usage Report Service__
   - ### Features
     - This release add MONTHLY as the new supported TimeUnit for ReportDefinition.
+
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - Fix endpoint discovery cache entries to now be removed from the cache after a fixed TTL to stop the cache filling up over time when credentials are frequently changed. Endpoint discovery cache entries will no longer refresh in background, an active call will be required to replace the timed-out cache entry.
 
 ## __Amazon CloudFront__
   - ### Features

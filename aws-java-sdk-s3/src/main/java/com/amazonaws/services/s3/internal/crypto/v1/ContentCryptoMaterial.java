@@ -19,6 +19,7 @@ import static com.amazonaws.services.s3.model.ExtraMaterialsDescription.NONE;
 import static com.amazonaws.util.BinaryUtils.copyAllBytesFrom;
 import static com.amazonaws.util.Throwables.failure;
 
+import com.amazonaws.services.s3.internal.crypto.CryptoUtils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -361,7 +362,8 @@ final class ContentCryptoMaterial {
             throw new IllegalStateException("Could not find required description in key material: "
                                                 + AWS_CRYPTO_CEK_ALGORITHM);
         }
-        String cekAlgoFromCryptoScheme = context.contentCryptoScheme().getCipherAlgorithm();
+        String cekAlgoFromCryptoScheme =
+            CryptoUtils.normalizeContentAlgorithmForValidation(context.contentCryptoScheme().getCipherAlgorithm());
         if (!cekAlgoFromMaterials.equals(cekAlgoFromCryptoScheme)) {
             throw new IllegalStateException("Algorithm values from materials and metadata/instruction file don't match:"
                                                 + cekAlgoFromMaterials + ", " + cekAlgoFromCryptoScheme);

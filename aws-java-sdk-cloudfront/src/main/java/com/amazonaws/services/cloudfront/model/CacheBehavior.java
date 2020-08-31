@@ -187,6 +187,15 @@ public class CacheBehavior implements Serializable, Cloneable {
     private String fieldLevelEncryptionId;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     */
+    private String realtimeLogConfigArn;
+    /**
+     * <p>
      * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a
      * href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
@@ -1345,6 +1354,64 @@ public class CacheBehavior implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param realtimeLogConfigArn
+     *        The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     *        logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public void setRealtimeLogConfigArn(String realtimeLogConfigArn) {
+        this.realtimeLogConfigArn = realtimeLogConfigArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache
+     *         behavior. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     *         logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     */
+
+    public String getRealtimeLogConfigArn() {
+        return this.realtimeLogConfigArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param realtimeLogConfigArn
+     *        The Amazon Resource Name (ARN) of the real-time log configuration that is attached to this cache behavior.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time
+     *        logs</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CacheBehavior withRealtimeLogConfigArn(String realtimeLogConfigArn) {
+        setRealtimeLogConfigArn(realtimeLogConfigArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique identifier of the cache policy that is attached to this cache behavior. For more information, see <a
      * href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-key-create-cache-policy"
@@ -2039,6 +2106,8 @@ public class CacheBehavior implements Serializable, Cloneable {
             sb.append("LambdaFunctionAssociations: ").append(getLambdaFunctionAssociations()).append(",");
         if (getFieldLevelEncryptionId() != null)
             sb.append("FieldLevelEncryptionId: ").append(getFieldLevelEncryptionId()).append(",");
+        if (getRealtimeLogConfigArn() != null)
+            sb.append("RealtimeLogConfigArn: ").append(getRealtimeLogConfigArn()).append(",");
         if (getCachePolicyId() != null)
             sb.append("CachePolicyId: ").append(getCachePolicyId()).append(",");
         if (getOriginRequestPolicyId() != null)
@@ -2101,6 +2170,10 @@ public class CacheBehavior implements Serializable, Cloneable {
             return false;
         if (other.getFieldLevelEncryptionId() != null && other.getFieldLevelEncryptionId().equals(this.getFieldLevelEncryptionId()) == false)
             return false;
+        if (other.getRealtimeLogConfigArn() == null ^ this.getRealtimeLogConfigArn() == null)
+            return false;
+        if (other.getRealtimeLogConfigArn() != null && other.getRealtimeLogConfigArn().equals(this.getRealtimeLogConfigArn()) == false)
+            return false;
         if (other.getCachePolicyId() == null ^ this.getCachePolicyId() == null)
             return false;
         if (other.getCachePolicyId() != null && other.getCachePolicyId().equals(this.getCachePolicyId()) == false)
@@ -2142,6 +2215,7 @@ public class CacheBehavior implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCompress() == null) ? 0 : getCompress().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionAssociations() == null) ? 0 : getLambdaFunctionAssociations().hashCode());
         hashCode = prime * hashCode + ((getFieldLevelEncryptionId() == null) ? 0 : getFieldLevelEncryptionId().hashCode());
+        hashCode = prime * hashCode + ((getRealtimeLogConfigArn() == null) ? 0 : getRealtimeLogConfigArn().hashCode());
         hashCode = prime * hashCode + ((getCachePolicyId() == null) ? 0 : getCachePolicyId().hashCode());
         hashCode = prime * hashCode + ((getOriginRequestPolicyId() == null) ? 0 : getOriginRequestPolicyId().hashCode());
         hashCode = prime * hashCode + ((getForwardedValues() == null) ? 0 : getForwardedValues().hashCode());

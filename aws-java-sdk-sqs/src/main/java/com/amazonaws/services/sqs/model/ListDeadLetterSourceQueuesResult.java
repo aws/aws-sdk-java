@@ -35,7 +35,8 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
     private com.amazonaws.internal.SdkInternalList<String> queueUrls;
     /**
      * <p>
-     * Pagination token to include in the next request.
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
      * </p>
      */
     private String nextToken;
@@ -123,11 +124,13 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Pagination token to include in the next request.
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token to include in the next request.
+     *        Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *        additional results to request, or if you did not set <code>MaxResults</code> in the request.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,10 +139,12 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Pagination token to include in the next request.
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
      * </p>
      * 
-     * @return Pagination token to include in the next request.
+     * @return Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *         additional results to request, or if you did not set <code>MaxResults</code> in the request.
      */
 
     public String getNextToken() {
@@ -148,11 +153,13 @@ public class ListDeadLetterSourceQueuesResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Pagination token to include in the next request.
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token to include in the next request.
+     *        Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *        additional results to request, or if you did not set <code>MaxResults</code> in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -83,6 +83,11 @@ public class DefaultCacheBehaviorStaxUnmarshaller implements Unmarshaller<Defaul
                     continue;
                 }
 
+                if (context.testExpression("RealtimeLogConfigArn", targetDepth)) {
+                    defaultCacheBehavior.setRealtimeLogConfigArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("CachePolicyId", targetDepth)) {
                     defaultCacheBehavior.setCachePolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

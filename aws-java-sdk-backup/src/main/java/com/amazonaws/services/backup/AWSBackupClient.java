@@ -242,7 +242,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <code>ConditionValue:"finance"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"STRINGEQUALS"</code>
+     * <code>ConditionType:"StringEquals"</code>
      * </p>
      * </li>
      * <li>
@@ -253,7 +253,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <code>ConditionValue:"critical"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"STRINGEQUALS"</code>
+     * <code>ConditionType:"StringEquals"</code>
      * </p>
      * </li>
      * </ul>

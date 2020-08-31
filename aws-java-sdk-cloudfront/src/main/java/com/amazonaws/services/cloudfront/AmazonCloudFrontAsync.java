@@ -563,6 +563,55 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Creates a real-time log configuration.
+     * </p>
+     * <p>
+     * After you create a real-time log configuration, you can attach it to one or more cache behaviors to send
+     * real-time log data to the specified Amazon Kinesis data stream.
+     * </p>
+     * <p>
+     * For more information about real-time log configurations, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createRealtimeLogConfigRequest
+     * @return A Java Future containing the result of the CreateRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsync.CreateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRealtimeLogConfigResult> createRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest createRealtimeLogConfigRequest);
+
+    /**
+     * <p>
+     * Creates a real-time log configuration.
+     * </p>
+     * <p>
+     * After you create a real-time log configuration, you can attach it to one or more cache behaviors to send
+     * real-time log data to the specified Amazon Kinesis data stream.
+     * </p>
+     * <p>
+     * For more information about real-time log configurations, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+     * in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * 
+     * @param createRealtimeLogConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.CreateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRealtimeLogConfigResult> createRealtimeLogConfigAsync(CreateRealtimeLogConfigRequest createRealtimeLogConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRealtimeLogConfigRequest, CreateRealtimeLogConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new RTMP distribution. An RTMP distribution is similar to a web distribution, but an RTMP distribution
      * streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.
      * </p>
@@ -1112,6 +1161,57 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<DeletePublicKeyResult> deletePublicKeyAsync(DeletePublicKeyRequest deletePublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<DeletePublicKeyRequest, DeletePublicKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a real-time log configuration.
+     * </p>
+     * <p>
+     * You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your
+     * distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name
+     * (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to delete.
+     * </p>
+     * 
+     * @param deleteRealtimeLogConfigRequest
+     * @return A Java Future containing the result of the DeleteRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsync.DeleteRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRealtimeLogConfigResult> deleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest deleteRealtimeLogConfigRequest);
+
+    /**
+     * <p>
+     * Deletes a real-time log configuration.
+     * </p>
+     * <p>
+     * You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update your
+     * distributions to remove the real-time log configuration from all cache behaviors, then delete the real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * To delete a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name
+     * (ARN). You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to delete.
+     * </p>
+     * 
+     * @param deleteRealtimeLogConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.DeleteRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRealtimeLogConfigResult> deleteRealtimeLogConfigAsync(DeleteRealtimeLogConfigRequest deleteRealtimeLogConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRealtimeLogConfigRequest, DeleteRealtimeLogConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1908,6 +2008,47 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a real-time log configuration.
+     * </p>
+     * <p>
+     * To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN).
+     * You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to get.
+     * </p>
+     * 
+     * @param getRealtimeLogConfigRequest
+     * @return A Java Future containing the result of the GetRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsync.GetRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRealtimeLogConfigResult> getRealtimeLogConfigAsync(GetRealtimeLogConfigRequest getRealtimeLogConfigRequest);
+
+    /**
+     * <p>
+     * Gets a real-time log configuration.
+     * </p>
+     * <p>
+     * To get a real-time log configuration, you can provide the configuration’s name or its Amazon Resource Name (ARN).
+     * You must provide at least one. If you provide both, CloudFront uses the name to identify the real-time log
+     * configuration to get.
+     * </p>
+     * 
+     * @param getRealtimeLogConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.GetRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetRealtimeLogConfigResult> getRealtimeLogConfigAsync(GetRealtimeLogConfigRequest getRealtimeLogConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetRealtimeLogConfigRequest, GetRealtimeLogConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about a specified RTMP distribution, including the distribution configuration.
      * </p>
      * 
@@ -2199,6 +2340,65 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
+     * Gets a list of distribution that have a cache behavior that’s associated with the specified real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide
+     * at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list
+     * distributions for.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByRealtimeLogConfigRequest
+     * @return A Java Future containing the result of the ListDistributionsByRealtimeLogConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsync.ListDistributionsByRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByRealtimeLogConfigResult> listDistributionsByRealtimeLogConfigAsync(
+            ListDistributionsByRealtimeLogConfigRequest listDistributionsByRealtimeLogConfigRequest);
+
+    /**
+     * <p>
+     * Gets a list of distribution that have a cache behavior that’s associated with the specified real-time log
+     * configuration.
+     * </p>
+     * <p>
+     * You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You must provide
+     * at least one. If you provide both, CloudFront uses the name to identify the real-time log configuration to list
+     * distributions for.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listDistributionsByRealtimeLogConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDistributionsByRealtimeLogConfig operation returned by the
+     *         service.
+     * @sample AmazonCloudFrontAsyncHandler.ListDistributionsByRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDistributionsByRealtimeLogConfigResult> listDistributionsByRealtimeLogConfigAsync(
+            ListDistributionsByRealtimeLogConfigRequest listDistributionsByRealtimeLogConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDistributionsByRealtimeLogConfigRequest, ListDistributionsByRealtimeLogConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * List the distributions that are associated with a specified AWS WAF web ACL.
      * </p>
      * 
@@ -2418,6 +2618,49 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<ListPublicKeysResult> listPublicKeysAsync(ListPublicKeysRequest listPublicKeysRequest,
             com.amazonaws.handlers.AsyncHandler<ListPublicKeysRequest, ListPublicKeysResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of real-time log configurations.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listRealtimeLogConfigsRequest
+     * @return A Java Future containing the result of the ListRealtimeLogConfigs operation returned by the service.
+     * @sample AmazonCloudFrontAsync.ListRealtimeLogConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRealtimeLogConfigsResult> listRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest listRealtimeLogConfigsRequest);
+
+    /**
+     * <p>
+     * Gets a list of real-time log configurations.
+     * </p>
+     * <p>
+     * You can optionally specify the maximum number of items to receive in the response. If the total number of items
+     * in the list exceeds the maximum that you specify, or the default maximum, the response is paginated. To get the
+     * next page of items, send a subsequent request that specifies the <code>NextMarker</code> value from the current
+     * response as the <code>Marker</code> value in the subsequent request.
+     * </p>
+     * 
+     * @param listRealtimeLogConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRealtimeLogConfigs operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.ListRealtimeLogConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListRealtimeLogConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRealtimeLogConfigsResult> listRealtimeLogConfigsAsync(ListRealtimeLogConfigsRequest listRealtimeLogConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRealtimeLogConfigsRequest, ListRealtimeLogConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -3093,6 +3336,87 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      */
     java.util.concurrent.Future<UpdatePublicKeyResult> updatePublicKeyAsync(UpdatePublicKeyRequest updatePublicKeyRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePublicKeyRequest, UpdatePublicKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a real-time log configuration.
+     * </p>
+     * <p>
+     * When you update a real-time log configuration, all the parameters are updated with the values provided in the
+     * request. You cannot update some parameters independent of others. To update a real-time log configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the parameters in the real-time log configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration,
+     * including the parameters that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+     * </p>
+     * 
+     * @param updateRealtimeLogConfigRequest
+     * @return A Java Future containing the result of the UpdateRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsync.UpdateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRealtimeLogConfigResult> updateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest updateRealtimeLogConfigRequest);
+
+    /**
+     * <p>
+     * Updates a real-time log configuration.
+     * </p>
+     * <p>
+     * When you update a real-time log configuration, all the parameters are updated with the values provided in the
+     * request. You cannot update some parameters independent of others. To update a real-time log configuration:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Locally modify the parameters in the real-time log configuration that you want to update.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time log configuration,
+     * including the parameters that you modified and those that you didn’t.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * You cannot update a real-time log configuration’s <code>Name</code> or <code>ARN</code>.
+     * </p>
+     * 
+     * @param updateRealtimeLogConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRealtimeLogConfig operation returned by the service.
+     * @sample AmazonCloudFrontAsyncHandler.UpdateRealtimeLogConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateRealtimeLogConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRealtimeLogConfigResult> updateRealtimeLogConfigAsync(UpdateRealtimeLogConfigRequest updateRealtimeLogConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRealtimeLogConfigRequest, UpdateRealtimeLogConfigResult> asyncHandler);
 
     /**
      * <p>
