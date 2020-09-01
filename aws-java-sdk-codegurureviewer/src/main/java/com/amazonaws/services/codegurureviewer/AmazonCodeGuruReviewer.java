@@ -99,6 +99,32 @@ public interface AmazonCodeGuruReviewer {
 
     /**
      * <p>
+     * Use to create a code review for a repository analysis.
+     * </p>
+     * 
+     * @param createCodeReviewRequest
+     * @return Result of the CreateCodeReview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.CreateCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateCodeReviewResult createCodeReview(CreateCodeReviewRequest createCodeReviewRequest);
+
+    /**
+     * <p>
      * Returns the metadata associated with the code review along with its status.
      * </p>
      * 

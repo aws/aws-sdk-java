@@ -1,3 +1,12 @@
+# __1.11.853__ __2020-09-01__
+## __AWS SecurityHub__
+  - ### Features
+    - Added a PatchSummary object for security findings. The PatchSummary object provides details about the patch compliance status of an instance.
+
+## __Amazon CodeGuru Reviewer__
+  - ### Features
+    - Add support for repository analysis based code reviews
+
 # __1.11.852__ __2020-08-31__
 ## __AWS Backup__
   - ### Features

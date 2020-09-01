@@ -47,8 +47,8 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      */
     private String connectionArn;
@@ -61,8 +61,8 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      */
     private String owner;
@@ -96,9 +96,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru Reviewer
-     * creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews
-     * of code in your repository cannot be triggered.
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      * </p>
      * </note></li>
      * <li>
@@ -226,16 +226,16 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
-     *        >Connection</a> in the <i>AWS CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -247,15 +247,15 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      *         <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
-     *         >Connection</a> in the <i>AWS CodeStar Connections API Reference</i>.
+     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *         <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public String getConnectionArn() {
@@ -267,16 +267,16 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
-     *        >Connection</a> in the <i>AWS CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,14 +328,14 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
-     *        that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
-     *        owns the repository.
+     *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      */
 
     public void setOwner(String owner) {
@@ -345,13 +345,13 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
-     *         that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
-     *         owns the repository.
+     *         that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *         username for the account that owns the repository.
      */
 
     public String getOwner() {
@@ -361,14 +361,14 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
-     *        that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
-     *        owns the repository.
+     *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,9 +460,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru Reviewer
-     * creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews
-     * of code in your repository cannot be triggered.
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      * </p>
      * </note></li>
      * <li>
@@ -508,9 +508,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        </p>
      *        <note>
      *        <p>
-     *        If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru
-     *        Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these
-     *        webhooks, reviews of code in your repository cannot be triggered.
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      *        </p>
      *        </note></li>
      *        <li>
@@ -563,9 +563,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru Reviewer
-     * creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews
-     * of code in your repository cannot be triggered.
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      * </p>
      * </note></li>
      * <li>
@@ -610,9 +610,10 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *         </p>
      *         <note>
      *         <p>
-     *         If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru
-     *         Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these
-     *         webhooks, reviews of code in your repository cannot be triggered.
+     *         If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     *         <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in
+     *         your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in
+     *         your repository cannot be triggered.
      *         </p>
      *         </note></li>
      *         <li>
@@ -665,9 +666,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru Reviewer
-     * creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews
-     * of code in your repository cannot be triggered.
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      * </p>
      * </note></li>
      * <li>
@@ -713,9 +714,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        </p>
      *        <note>
      *        <p>
-     *        If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru
-     *        Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these
-     *        webhooks, reviews of code in your repository cannot be triggered.
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      *        </p>
      *        </note></li>
      *        <li>
@@ -770,9 +771,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      * <note>
      * <p>
-     * If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru Reviewer
-     * creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews
-     * of code in your repository cannot be triggered.
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      * </p>
      * </note></li>
      * <li>
@@ -818,9 +819,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      *        </p>
      *        <note>
      *        <p>
-     *        If your repository <code>ProviderType</code> is <code>GitHub</code> or <code>Bitbucket</code>, CodeGuru
-     *        Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer reviews. If you delete these
-     *        webhooks, reviews of code in your repository cannot be triggered.
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
      *        </p>
      *        </note></li>
      *        <li>

@@ -39,8 +39,8 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      */
     private String connectionArn;
@@ -97,16 +97,16 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
-     *        >Connection</a> in the <i>AWS CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -118,15 +118,15 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      *         <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *         information, see <a
-     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
-     *         >Connection</a> in the <i>AWS CodeStar Connections API Reference</i>.
+     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *         <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public String getConnectionArn() {
@@ -138,16 +138,16 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
      * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a> in
-     * the <i>AWS CodeStar Connections API Reference</i>.
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
      *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
      *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
      *        information, see <a
-     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html"
-     *        >Connection</a> in the <i>AWS CodeStar Connections API Reference</i>.
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

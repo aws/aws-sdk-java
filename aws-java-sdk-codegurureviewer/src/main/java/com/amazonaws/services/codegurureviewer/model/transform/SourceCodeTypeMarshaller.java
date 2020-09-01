@@ -29,6 +29,8 @@ public class SourceCodeTypeMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> COMMITDIFF_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CommitDiff").build();
+    private static final MarshallingInfo<StructuredPojo> REPOSITORYHEAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RepositoryHead").build();
 
     private static final SourceCodeTypeMarshaller instance = new SourceCodeTypeMarshaller();
 
@@ -47,6 +49,7 @@ public class SourceCodeTypeMarshaller {
 
         try {
             protocolMarshaller.marshall(sourceCodeType.getCommitDiff(), COMMITDIFF_BINDING);
+            protocolMarshaller.marshall(sourceCodeType.getRepositoryHead(), REPOSITORYHEAD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

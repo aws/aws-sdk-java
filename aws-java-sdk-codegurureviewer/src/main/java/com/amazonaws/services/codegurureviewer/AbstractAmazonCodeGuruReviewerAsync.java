@@ -41,6 +41,19 @@ public class AbstractAmazonCodeGuruReviewerAsync extends AbstractAmazonCodeGuruR
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCodeReviewResult> createCodeReviewAsync(CreateCodeReviewRequest request) {
+
+        return createCodeReviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCodeReviewResult> createCodeReviewAsync(CreateCodeReviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCodeReviewRequest, CreateCodeReviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCodeReviewResult> describeCodeReviewAsync(DescribeCodeReviewRequest request) {
 
         return describeCodeReviewAsync(request, null);

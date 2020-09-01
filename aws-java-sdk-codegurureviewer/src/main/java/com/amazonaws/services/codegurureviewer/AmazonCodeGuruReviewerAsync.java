@@ -120,6 +120,37 @@ public interface AmazonCodeGuruReviewerAsync extends AmazonCodeGuruReviewer {
 
     /**
      * <p>
+     * Use to create a code review for a repository analysis.
+     * </p>
+     * 
+     * @param createCodeReviewRequest
+     * @return A Java Future containing the result of the CreateCodeReview operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsync.CreateCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCodeReviewResult> createCodeReviewAsync(CreateCodeReviewRequest createCodeReviewRequest);
+
+    /**
+     * <p>
+     * Use to create a code review for a repository analysis.
+     * </p>
+     * 
+     * @param createCodeReviewRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCodeReview operation returned by the service.
+     * @sample AmazonCodeGuruReviewerAsyncHandler.CreateCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCodeReviewResult> createCodeReviewAsync(CreateCodeReviewRequest createCodeReviewRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCodeReviewRequest, CreateCodeReviewResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the metadata associated with the code review along with its status.
      * </p>
      * 

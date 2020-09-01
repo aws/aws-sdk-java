@@ -51,8 +51,8 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      */
     private String owner;
@@ -259,14 +259,14 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
-     *        that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
-     *        owns the repository.
+     *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      */
 
     public void setOwner(String owner) {
@@ -276,13 +276,13 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
-     *         that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
-     *         owns the repository.
+     *         that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *         username for the account that owns the repository.
      */
 
     public String getOwner() {
@@ -292,14 +292,14 @@ public class CodeReviewSummary implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
-     * owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that owns the
-     * repository.
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
      *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
-     *        that owns the repository. For a GitHub or Bitbucket repository, this is the username for the account that
-     *        owns the repository.
+     *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

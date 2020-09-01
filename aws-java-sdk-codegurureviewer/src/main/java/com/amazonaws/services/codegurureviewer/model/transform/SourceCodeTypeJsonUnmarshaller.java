@@ -52,6 +52,10 @@ public class SourceCodeTypeJsonUnmarshaller implements Unmarshaller<SourceCodeTy
                     context.nextToken();
                     sourceCodeType.setCommitDiff(CommitDiffSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("RepositoryHead", targetDepth)) {
+                    context.nextToken();
+                    sourceCodeType.setRepositoryHead(RepositoryHeadSourceCodeTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

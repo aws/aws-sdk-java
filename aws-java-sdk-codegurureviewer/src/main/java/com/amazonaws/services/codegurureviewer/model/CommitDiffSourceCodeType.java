@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The commit diff for the pull request.
+ * A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+ * <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CommitDiffSourceCodeType"
@@ -30,24 +31,24 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the source commit.
+     * The SHA of the source commit used to generate a commit diff.
      * </p>
      */
     private String sourceCommit;
     /**
      * <p>
-     * The SHA of the destination commit.
+     * The SHA of the destination commit used to generate a commit diff.
      * </p>
      */
     private String destinationCommit;
 
     /**
      * <p>
-     * The SHA of the source commit.
+     * The SHA of the source commit used to generate a commit diff.
      * </p>
      * 
      * @param sourceCommit
-     *        The SHA of the source commit.
+     *        The SHA of the source commit used to generate a commit diff.
      */
 
     public void setSourceCommit(String sourceCommit) {
@@ -56,10 +57,10 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the source commit.
+     * The SHA of the source commit used to generate a commit diff.
      * </p>
      * 
-     * @return The SHA of the source commit.
+     * @return The SHA of the source commit used to generate a commit diff.
      */
 
     public String getSourceCommit() {
@@ -68,11 +69,11 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the source commit.
+     * The SHA of the source commit used to generate a commit diff.
      * </p>
      * 
      * @param sourceCommit
-     *        The SHA of the source commit.
+     *        The SHA of the source commit used to generate a commit diff.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +84,11 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the destination commit.
+     * The SHA of the destination commit used to generate a commit diff.
      * </p>
      * 
      * @param destinationCommit
-     *        The SHA of the destination commit.
+     *        The SHA of the destination commit used to generate a commit diff.
      */
 
     public void setDestinationCommit(String destinationCommit) {
@@ -96,10 +97,10 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the destination commit.
+     * The SHA of the destination commit used to generate a commit diff.
      * </p>
      * 
-     * @return The SHA of the destination commit.
+     * @return The SHA of the destination commit used to generate a commit diff.
      */
 
     public String getDestinationCommit() {
@@ -108,11 +109,11 @@ public class CommitDiffSourceCodeType implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The SHA of the destination commit.
+     * The SHA of the destination commit used to generate a commit diff.
      * </p>
      * 
      * @param destinationCommit
-     *        The SHA of the destination commit.
+     *        The SHA of the destination commit used to generate a commit diff.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

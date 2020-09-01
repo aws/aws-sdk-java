@@ -118,6 +118,39 @@ public class AmazonCodeGuruReviewerAsyncClient extends AmazonCodeGuruReviewerCli
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCodeReviewResult> createCodeReviewAsync(CreateCodeReviewRequest request) {
+
+        return createCodeReviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCodeReviewResult> createCodeReviewAsync(final CreateCodeReviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCodeReviewRequest, CreateCodeReviewResult> asyncHandler) {
+        final CreateCodeReviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCodeReviewResult>() {
+            @Override
+            public CreateCodeReviewResult call() throws Exception {
+                CreateCodeReviewResult result = null;
+
+                try {
+                    result = executeCreateCodeReview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeCodeReviewResult> describeCodeReviewAsync(DescribeCodeReviewRequest request) {
 
         return describeCodeReviewAsync(request, null);

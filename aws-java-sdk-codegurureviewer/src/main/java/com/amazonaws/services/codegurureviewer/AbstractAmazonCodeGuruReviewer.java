@@ -33,6 +33,11 @@ public class AbstractAmazonCodeGuruReviewer implements AmazonCodeGuruReviewer {
     }
 
     @Override
+    public CreateCodeReviewResult createCodeReview(CreateCodeReviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeCodeReviewResult describeCodeReview(DescribeCodeReviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

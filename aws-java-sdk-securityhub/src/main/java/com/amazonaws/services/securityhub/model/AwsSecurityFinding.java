@@ -287,6 +287,12 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.List<Vulnerability> vulnerabilities;
+    /**
+     * <p>
+     * Provides an overview of the patch compliance status for an instance against a selected compliance standard.
+     * </p>
+     */
+    private PatchSummary patchSummary;
 
     /**
      * <p>
@@ -2236,6 +2242,49 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides an overview of the patch compliance status for an instance against a selected compliance standard.
+     * </p>
+     * 
+     * @param patchSummary
+     *        Provides an overview of the patch compliance status for an instance against a selected compliance
+     *        standard.
+     */
+
+    public void setPatchSummary(PatchSummary patchSummary) {
+        this.patchSummary = patchSummary;
+    }
+
+    /**
+     * <p>
+     * Provides an overview of the patch compliance status for an instance against a selected compliance standard.
+     * </p>
+     * 
+     * @return Provides an overview of the patch compliance status for an instance against a selected compliance
+     *         standard.
+     */
+
+    public PatchSummary getPatchSummary() {
+        return this.patchSummary;
+    }
+
+    /**
+     * <p>
+     * Provides an overview of the patch compliance status for an instance against a selected compliance standard.
+     * </p>
+     * 
+     * @param patchSummary
+     *        Provides an overview of the patch compliance status for an instance against a selected compliance
+     *        standard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFinding withPatchSummary(PatchSummary patchSummary) {
+        setPatchSummary(patchSummary);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2312,7 +2361,9 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         if (getNote() != null)
             sb.append("Note: ").append(getNote()).append(",");
         if (getVulnerabilities() != null)
-            sb.append("Vulnerabilities: ").append(getVulnerabilities());
+            sb.append("Vulnerabilities: ").append(getVulnerabilities()).append(",");
+        if (getPatchSummary() != null)
+            sb.append("PatchSummary: ").append(getPatchSummary());
         sb.append("}");
         return sb.toString();
     }
@@ -2459,6 +2510,10 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getVulnerabilities() != null && other.getVulnerabilities().equals(this.getVulnerabilities()) == false)
             return false;
+        if (other.getPatchSummary() == null ^ this.getPatchSummary() == null)
+            return false;
+        if (other.getPatchSummary() != null && other.getPatchSummary().equals(this.getPatchSummary()) == false)
+            return false;
         return true;
     }
 
@@ -2500,6 +2555,7 @@ public class AwsSecurityFinding implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRelatedFindings() == null) ? 0 : getRelatedFindings().hashCode());
         hashCode = prime * hashCode + ((getNote() == null) ? 0 : getNote().hashCode());
         hashCode = prime * hashCode + ((getVulnerabilities() == null) ? 0 : getVulnerabilities().hashCode());
+        hashCode = prime * hashCode + ((getPatchSummary() == null) ? 0 : getPatchSummary().hashCode());
         return hashCode;
     }
 
