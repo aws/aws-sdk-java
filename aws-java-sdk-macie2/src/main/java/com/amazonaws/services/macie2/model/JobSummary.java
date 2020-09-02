@@ -53,9 +53,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -265,9 +264,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -299,9 +297,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *        while the job was running, and that change affected the job's access to the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -340,9 +337,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -373,9 +369,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *         might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *         affected the job's access to the bucket.
+     *         CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *         while the job was running, and that change affected the job's access to the bucket.
      *         </p>
      *         </li>
      *         <li>
@@ -414,9 +409,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -448,9 +442,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *        while the job was running, and that change affected the job's access to the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -491,9 +484,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -525,9 +517,8 @@ public class JobSummary implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *        while the job was running, and that change affected the job's access to the bucket.
      *        </p>
      *        </li>
      *        <li>

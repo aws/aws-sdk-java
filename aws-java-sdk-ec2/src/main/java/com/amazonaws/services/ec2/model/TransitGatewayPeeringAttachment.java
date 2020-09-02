@@ -52,7 +52,8 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
     private PeeringAttachmentStatus status;
     /**
      * <p>
-     * The state of the transit gateway peering attachment.
+     * The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     * deprecated.
      * </p>
      */
     private String state;
@@ -231,11 +232,13 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The state of the transit gateway peering attachment.
+     * The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     * deprecated.
      * </p>
      * 
      * @param state
-     *        The state of the transit gateway peering attachment.
+     *        The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     *        deprecated.
      * @see TransitGatewayAttachmentState
      */
 
@@ -245,10 +248,12 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The state of the transit gateway peering attachment.
+     * The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     * deprecated.
      * </p>
      * 
-     * @return The state of the transit gateway peering attachment.
+     * @return The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     *         deprecated.
      * @see TransitGatewayAttachmentState
      */
 
@@ -258,11 +263,13 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The state of the transit gateway peering attachment.
+     * The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     * deprecated.
      * </p>
      * 
      * @param state
-     *        The state of the transit gateway peering attachment.
+     *        The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     *        deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentState
      */
@@ -274,11 +281,13 @@ public class TransitGatewayPeeringAttachment implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The state of the transit gateway peering attachment.
+     * The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     * deprecated.
      * </p>
      * 
      * @param state
-     *        The state of the transit gateway peering attachment.
+     *        The state of the transit gateway peering attachment. Note that the <code>initiating</code> state has been
+     *        deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentState
      */

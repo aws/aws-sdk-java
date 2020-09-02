@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum TransitGatewayAttachmentState {
 
     Initiating("initiating"),
+    InitiatingRequest("initiatingRequest"),
     PendingAcceptance("pendingAcceptance"),
     RollingBack("rollingBack"),
     Pending("pending"),

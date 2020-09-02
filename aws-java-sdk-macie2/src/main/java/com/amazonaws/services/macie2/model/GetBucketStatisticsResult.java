@@ -39,7 +39,7 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that aren't encrypted.
+     * buckets that don't encrypt objects by default.
      * </p>
      */
     private BucketCountByEncryptionType bucketCountByEncryptionType;
@@ -51,35 +51,57 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     private BucketCountBySharedAccessType bucketCountBySharedAccessType;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
-     * file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      */
     private Long classifiableObjectCount;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
+     * use a supported file or storage format and storage class.
+     * </p>
+     */
+    private Long classifiableSizeInBytes;
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * buckets from Amazon S3.
      * </p>
      */
     private java.util.Date lastUpdated;
     /**
      * <p>
-     * The total number of objects in all the buckets.
+     * The total number of objects in the buckets.
      * </p>
      */
     private Long objectCount;
     /**
      * <p>
-     * The total storage size, in bytes, of all the buckets.
+     * The total storage size, in bytes, of the buckets.
      * </p>
      */
     private Long sizeInBytes;
     /**
      * <p>
-     * The total compressed storage size, in bytes, of all the buckets.
+     * The total compressed storage size, in bytes, of the buckets.
      * </p>
      */
     private Long sizeInBytesCompressed;
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     */
+    private ObjectLevelStatistics unclassifiableObjectCount;
+    /**
+     * <p>
+     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     * objects use an unsupported file or storage format or storage class.
+     * </p>
+     */
+    private ObjectLevelStatistics unclassifiableObjectSizeInBytes;
 
     /**
      * <p>
@@ -170,12 +192,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that aren't encrypted.
+     * buckets that don't encrypt objects by default.
      * </p>
      * 
      * @param bucketCountByEncryptionType
      *        The total number of buckets, grouped by server-side encryption type. This object also reports the total
-     *        number of buckets that aren't encrypted.
+     *        number of buckets that don't encrypt objects by default.
      */
 
     public void setBucketCountByEncryptionType(BucketCountByEncryptionType bucketCountByEncryptionType) {
@@ -185,11 +207,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that aren't encrypted.
+     * buckets that don't encrypt objects by default.
      * </p>
      * 
      * @return The total number of buckets, grouped by server-side encryption type. This object also reports the total
-     *         number of buckets that aren't encrypted.
+     *         number of buckets that don't encrypt objects by default.
      */
 
     public BucketCountByEncryptionType getBucketCountByEncryptionType() {
@@ -199,12 +221,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
-     * buckets that aren't encrypted.
+     * buckets that don't encrypt objects by default.
      * </p>
      * 
      * @param bucketCountByEncryptionType
      *        The total number of buckets, grouped by server-side encryption type. This object also reports the total
-     *        number of buckets that aren't encrypted.
+     *        number of buckets that don't encrypt objects by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +277,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
-     * file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file
-     *        format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported
+     *        file or storage format and storage class.
      */
 
     public void setClassifiableObjectCount(Long classifiableObjectCount) {
@@ -270,12 +292,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
-     * file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file
-     *         format, file extension, or content type that Amazon Macie supports.
+     * @return The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported
+     *         file or storage format and storage class.
      */
 
     public Long getClassifiableObjectCount() {
@@ -284,13 +306,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file format,
-     * file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can analyze in all the buckets. These objects use a file
-     *        format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the buckets. These objects use a supported
+     *        file or storage format and storage class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +323,59 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
+     * use a supported file or storage format and storage class.
+     * </p>
+     * 
+     * @param classifiableSizeInBytes
+     *        The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
+     *        objects use a supported file or storage format and storage class.
+     */
+
+    public void setClassifiableSizeInBytes(Long classifiableSizeInBytes) {
+        this.classifiableSizeInBytes = classifiableSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
+     * use a supported file or storage format and storage class.
+     * </p>
+     * 
+     * @return The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
+     *         objects use a supported file or storage format and storage class.
+     */
+
+    public Long getClassifiableSizeInBytes() {
+        return this.classifiableSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These objects
+     * use a supported file or storage format and storage class.
+     * </p>
+     * 
+     * @param classifiableSizeInBytes
+     *        The total storage size, in bytes, of all the objects that Amazon Macie can analyze in the buckets. These
+     *        objects use a supported file or storage format and storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBucketStatisticsResult withClassifiableSizeInBytes(Long classifiableSizeInBytes) {
+        setClassifiableSizeInBytes(classifiableSizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * buckets from Amazon S3.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
+     *        about the buckets from Amazon S3.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -314,10 +384,12 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * buckets from Amazon S3.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
+     *         about the buckets from Amazon S3.
      */
 
     public java.util.Date getLastUpdated() {
@@ -326,11 +398,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * buckets from Amazon S3.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the buckets.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
+     *        about the buckets from Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -341,11 +415,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects in all the buckets.
+     * The total number of objects in the buckets.
      * </p>
      * 
      * @param objectCount
-     *        The total number of objects in all the buckets.
+     *        The total number of objects in the buckets.
      */
 
     public void setObjectCount(Long objectCount) {
@@ -354,10 +428,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects in all the buckets.
+     * The total number of objects in the buckets.
      * </p>
      * 
-     * @return The total number of objects in all the buckets.
+     * @return The total number of objects in the buckets.
      */
 
     public Long getObjectCount() {
@@ -366,11 +440,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total number of objects in all the buckets.
+     * The total number of objects in the buckets.
      * </p>
      * 
      * @param objectCount
-     *        The total number of objects in all the buckets.
+     *        The total number of objects in the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,11 +455,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total storage size, in bytes, of all the buckets.
+     * The total storage size, in bytes, of the buckets.
      * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of all the buckets.
+     *        The total storage size, in bytes, of the buckets.
      */
 
     public void setSizeInBytes(Long sizeInBytes) {
@@ -394,10 +468,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total storage size, in bytes, of all the buckets.
+     * The total storage size, in bytes, of the buckets.
      * </p>
      * 
-     * @return The total storage size, in bytes, of all the buckets.
+     * @return The total storage size, in bytes, of the buckets.
      */
 
     public Long getSizeInBytes() {
@@ -406,11 +480,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total storage size, in bytes, of all the buckets.
+     * The total storage size, in bytes, of the buckets.
      * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of all the buckets.
+     *        The total storage size, in bytes, of the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +495,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of all the buckets.
+     * The total compressed storage size, in bytes, of the buckets.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of all the buckets.
+     *        The total compressed storage size, in bytes, of the buckets.
      */
 
     public void setSizeInBytesCompressed(Long sizeInBytesCompressed) {
@@ -434,10 +508,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of all the buckets.
+     * The total compressed storage size, in bytes, of the buckets.
      * </p>
      * 
-     * @return The total compressed storage size, in bytes, of all the buckets.
+     * @return The total compressed storage size, in bytes, of the buckets.
      */
 
     public Long getSizeInBytesCompressed() {
@@ -446,16 +520,108 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of all the buckets.
+     * The total compressed storage size, in bytes, of the buckets.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of all the buckets.
+     *        The total compressed storage size, in bytes, of the buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetBucketStatisticsResult withSizeInBytesCompressed(Long sizeInBytesCompressed) {
         setSizeInBytesCompressed(sizeInBytesCompressed);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectCount
+     *        The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an
+     *        unsupported file or storage format or storage class.
+     */
+
+    public void setUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
+        this.unclassifiableObjectCount = unclassifiableObjectCount;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     * 
+     * @return The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an
+     *         unsupported file or storage format or storage class.
+     */
+
+    public ObjectLevelStatistics getUnclassifiableObjectCount() {
+        return this.unclassifiableObjectCount;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectCount
+     *        The total number of objects that Amazon Macie can't analyze in the buckets. These objects use an
+     *        unsupported file or storage format or storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBucketStatisticsResult withUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
+        setUnclassifiableObjectCount(unclassifiableObjectCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     * objects use an unsupported file or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectSizeInBytes
+     *        The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     *        objects use an unsupported file or storage format or storage class.
+     */
+
+    public void setUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
+        this.unclassifiableObjectSizeInBytes = unclassifiableObjectSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     * objects use an unsupported file or storage format or storage class.
+     * </p>
+     * 
+     * @return The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets.
+     *         These objects use an unsupported file or storage format or storage class.
+     */
+
+    public ObjectLevelStatistics getUnclassifiableObjectSizeInBytes() {
+        return this.unclassifiableObjectSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     * objects use an unsupported file or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectSizeInBytes
+     *        The total storage size, in bytes, of all the objects that Amazon Macie can't analyze in the buckets. These
+     *        objects use an unsupported file or storage format or storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBucketStatisticsResult withUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
+        setUnclassifiableObjectSizeInBytes(unclassifiableObjectSizeInBytes);
         return this;
     }
 
@@ -481,6 +647,8 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("BucketCountBySharedAccessType: ").append(getBucketCountBySharedAccessType()).append(",");
         if (getClassifiableObjectCount() != null)
             sb.append("ClassifiableObjectCount: ").append(getClassifiableObjectCount()).append(",");
+        if (getClassifiableSizeInBytes() != null)
+            sb.append("ClassifiableSizeInBytes: ").append(getClassifiableSizeInBytes()).append(",");
         if (getLastUpdated() != null)
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getObjectCount() != null)
@@ -488,7 +656,11 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
         if (getSizeInBytes() != null)
             sb.append("SizeInBytes: ").append(getSizeInBytes()).append(",");
         if (getSizeInBytesCompressed() != null)
-            sb.append("SizeInBytesCompressed: ").append(getSizeInBytesCompressed());
+            sb.append("SizeInBytesCompressed: ").append(getSizeInBytesCompressed()).append(",");
+        if (getUnclassifiableObjectCount() != null)
+            sb.append("UnclassifiableObjectCount: ").append(getUnclassifiableObjectCount()).append(",");
+        if (getUnclassifiableObjectSizeInBytes() != null)
+            sb.append("UnclassifiableObjectSizeInBytes: ").append(getUnclassifiableObjectSizeInBytes());
         sb.append("}");
         return sb.toString();
     }
@@ -525,6 +697,10 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getClassifiableObjectCount() != null && other.getClassifiableObjectCount().equals(this.getClassifiableObjectCount()) == false)
             return false;
+        if (other.getClassifiableSizeInBytes() == null ^ this.getClassifiableSizeInBytes() == null)
+            return false;
+        if (other.getClassifiableSizeInBytes() != null && other.getClassifiableSizeInBytes().equals(this.getClassifiableSizeInBytes()) == false)
+            return false;
         if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
             return false;
         if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
@@ -541,6 +717,15 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSizeInBytesCompressed() != null && other.getSizeInBytesCompressed().equals(this.getSizeInBytesCompressed()) == false)
             return false;
+        if (other.getUnclassifiableObjectCount() == null ^ this.getUnclassifiableObjectCount() == null)
+            return false;
+        if (other.getUnclassifiableObjectCount() != null && other.getUnclassifiableObjectCount().equals(this.getUnclassifiableObjectCount()) == false)
+            return false;
+        if (other.getUnclassifiableObjectSizeInBytes() == null ^ this.getUnclassifiableObjectSizeInBytes() == null)
+            return false;
+        if (other.getUnclassifiableObjectSizeInBytes() != null
+                && other.getUnclassifiableObjectSizeInBytes().equals(this.getUnclassifiableObjectSizeInBytes()) == false)
+            return false;
         return true;
     }
 
@@ -554,10 +739,13 @@ public class GetBucketStatisticsResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getBucketCountByEncryptionType() == null) ? 0 : getBucketCountByEncryptionType().hashCode());
         hashCode = prime * hashCode + ((getBucketCountBySharedAccessType() == null) ? 0 : getBucketCountBySharedAccessType().hashCode());
         hashCode = prime * hashCode + ((getClassifiableObjectCount() == null) ? 0 : getClassifiableObjectCount().hashCode());
+        hashCode = prime * hashCode + ((getClassifiableSizeInBytes() == null) ? 0 : getClassifiableSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getObjectCount() == null) ? 0 : getObjectCount().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytesCompressed() == null) ? 0 : getSizeInBytesCompressed().hashCode());
+        hashCode = prime * hashCode + ((getUnclassifiableObjectCount() == null) ? 0 : getUnclassifiableObjectCount().hashCode());
+        hashCode = prime * hashCode + ((getUnclassifiableObjectSizeInBytes() == null) ? 0 : getUnclassifiableObjectSizeInBytes().hashCode());
         return hashCode;
     }
 

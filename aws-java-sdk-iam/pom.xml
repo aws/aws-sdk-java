@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.853</version>
+    <version>1.11.854</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-iam</artifactId>

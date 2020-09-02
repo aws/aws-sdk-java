@@ -44,7 +44,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private String eTag;
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      */
     private String extension;
@@ -198,11 +198,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      * 
      * @param extension
-     *        The file extension of the object. If the object doesn't have a file extension, this value is "".
+     *        The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      */
 
     public void setExtension(String extension) {
@@ -211,10 +211,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      * 
-     * @return The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * @return The file name extension of the object. If the object doesn't have a file name extension, this value is
+     *         "".
      */
 
     public String getExtension() {
@@ -223,11 +224,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      * 
      * @param extension
-     *        The file extension of the object. If the object doesn't have a file extension, this value is "".
+     *        The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

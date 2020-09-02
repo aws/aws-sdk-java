@@ -37,8 +37,8 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
     private String encryptionType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the bucket
+     * or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      * </p>
      */
     private String kmsMasterKeyId;
@@ -112,13 +112,13 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the bucket
+     * or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to
-     *        encrypt the bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     *        The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
+     *        bucket or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      */
 
     public void setKmsMasterKeyId(String kmsMasterKeyId) {
@@ -127,12 +127,12 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the bucket
+     * or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to
-     *         encrypt the bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * @return The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
+     *         bucket or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      */
 
     public String getKmsMasterKeyId() {
@@ -141,13 +141,13 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the bucket
+     * or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to
-     *        encrypt the bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     *        The unique identifier for the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
+     *        bucket or object. This value is null if AWS KMS isn't used to encrypt the bucket or object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

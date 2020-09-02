@@ -40,7 +40,7 @@ public class TransitGatewayRouteTablePropagation implements Serializable, Clonea
     private String resourceId;
     /**
      * <p>
-     * The type of resource.
+     * The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      */
     private String resourceType;
@@ -133,11 +133,11 @@ public class TransitGatewayRouteTablePropagation implements Serializable, Clonea
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @see TransitGatewayAttachmentResourceType
      */
 
@@ -147,10 +147,10 @@ public class TransitGatewayRouteTablePropagation implements Serializable, Clonea
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
-     * @return The type of resource.
+     * @return The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @see TransitGatewayAttachmentResourceType
      */
 
@@ -160,11 +160,11 @@ public class TransitGatewayRouteTablePropagation implements Serializable, Clonea
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentResourceType
      */
@@ -176,11 +176,11 @@ public class TransitGatewayRouteTablePropagation implements Serializable, Clonea
 
     /**
      * <p>
-     * The type of resource.
+     * The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The type of resource.
+     *        The type of resource. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentResourceType
      */

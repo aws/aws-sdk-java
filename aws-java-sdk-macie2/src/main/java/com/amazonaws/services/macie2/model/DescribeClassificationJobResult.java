@@ -49,7 +49,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String description;
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      */
     private Boolean initialRun;
@@ -72,9 +72,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -141,7 +140,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private S3JobDefinition s3JobDefinition;
     /**
      * <p>
-     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      */
     private Integer samplingPercentage;
@@ -357,11 +356,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether the job has run for the first time.
+     *        Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *        created.
      */
 
     public void setInitialRun(Boolean initialRun) {
@@ -370,10 +370,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
-     * @return Specifies whether the job has run for the first time.
+     * @return Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *         created.
      */
 
     public Boolean getInitialRun() {
@@ -382,11 +383,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether the job has run for the first time.
+     *        Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,10 +399,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
-     * @return Specifies whether the job has run for the first time.
+     * @return Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *         created.
      */
 
     public Boolean isInitialRun() {
@@ -494,9 +497,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -528,9 +530,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *        while the job was running, and that change affected the job's access to the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -569,9 +570,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -602,9 +602,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *         <ul>
      *         <li>
      *         <p>
-     *         CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *         might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *         affected the job's access to the bucket.
+     *         CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *         while the job was running, and that change affected the job's access to the bucket.
      *         </p>
      *         </li>
      *         <li>
@@ -643,9 +642,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -677,9 +675,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *        while the job was running, and that change affected the job's access to the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -720,9 +717,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed while the
+     * job was running, and that change affected the job's access to the bucket.
      * </p>
      * </li>
      * <li>
@@ -754,9 +750,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job. A job might also be cancelled if ownership of an S3 bucket changed
+     *        while the job was running, and that change affected the job's access to the bucket.
      *        </p>
      *        </li>
      *        <li>
@@ -1071,11 +1066,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     *        The sampling depth, as a percentage, that determines the percentage of eligible objects that the job
+     *        analyzes.
      */
 
     public void setSamplingPercentage(Integer samplingPercentage) {
@@ -1084,10 +1080,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      * 
-     * @return The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     * @return The sampling depth, as a percentage, that determines the percentage of eligible objects that the job
+     *         analyzes.
      */
 
     public Integer getSamplingPercentage() {
@@ -1096,11 +1093,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, that determines the number of objects that the job processes.
+     *        The sampling depth, as a percentage, that determines the percentage of eligible objects that the job
+     *        analyzes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

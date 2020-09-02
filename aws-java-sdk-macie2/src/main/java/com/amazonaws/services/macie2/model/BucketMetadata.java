@@ -30,7 +30,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      */
     private String accountId;
@@ -54,14 +54,22 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
-     * extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      */
     private Long classifiableObjectCount;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported file or storage format and storage class.
+     * </p>
+     */
+    private Long classifiableSizeInBytes;
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * bucket from Amazon S3.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -100,7 +108,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private ReplicationDetails replicationDetails;
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -116,6 +124,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
      * </p>
      * </li>
      * </ul>
@@ -141,6 +154,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<KeyValuePair> tags;
     /**
      * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     */
+    private ObjectLevelStatistics unclassifiableObjectCount;
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects use
+     * an unsupported file or storage format or storage class.
+     * </p>
+     */
+    private ObjectLevelStatistics unclassifiableObjectSizeInBytes;
+    /**
+     * <p>
      * Specifies whether versioning is enabled for the bucket.
      * </p>
      */
@@ -148,11 +175,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that's associated with the bucket.
+     *        The unique identifier for the AWS account that owns the bucket.
      */
 
     public void setAccountId(String accountId) {
@@ -161,10 +188,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that's associated with the bucket.
+     * @return The unique identifier for the AWS account that owns the bucket.
      */
 
     public String getAccountId() {
@@ -173,11 +200,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that's associated with the bucket.
+     *        The unique identifier for the AWS account that owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,13 +335,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
-     * extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format,
-     *        file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported
+     *        file or storage format and storage class.
      */
 
     public void setClassifiableObjectCount(Long classifiableObjectCount) {
@@ -323,12 +350,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
-     * extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format,
-     *         file extension, or content type that Amazon Macie supports.
+     * @return The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported
+     *         file or storage format and storage class.
      */
 
     public Long getClassifiableObjectCount() {
@@ -337,13 +364,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format, file
-     * extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported file or
+     * storage format and storage class.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a file format,
-     *        file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported
+     *        file or storage format and storage class.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,11 +381,59 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported file or storage format and storage class.
+     * </p>
+     * 
+     * @param classifiableSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
+     *        objects use a supported file or storage format and storage class.
+     */
+
+    public void setClassifiableSizeInBytes(Long classifiableSizeInBytes) {
+        this.classifiableSizeInBytes = classifiableSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported file or storage format and storage class.
+     * </p>
+     * 
+     * @return The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
+     *         objects use a supported file or storage format and storage class.
+     */
+
+    public Long getClassifiableSizeInBytes() {
+        return this.classifiableSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported file or storage format and storage class.
+     * </p>
+     * 
+     * @param classifiableSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
+     *        objects use a supported file or storage format and storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withClassifiableSizeInBytes(Long classifiableSizeInBytes) {
+        setClassifiableSizeInBytes(classifiableSizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * bucket from Amazon S3.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
+     *        about the bucket from Amazon S3.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -367,10 +442,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * bucket from Amazon S3.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
+     *         about the bucket from Amazon S3.
      */
 
     public java.util.Date getLastUpdated() {
@@ -379,11 +456,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data about the
+     * bucket from Amazon S3.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved data
+     *        about the bucket from Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -612,7 +691,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -630,10 +709,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
+     *        <p>
+     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -650,6 +736,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @see SharedAccess
      */
 
@@ -659,7 +751,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -677,9 +769,16 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
+     * @return <p>
+     *         Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -697,6 +796,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *         NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *         </p>
+     *         </li>
+     *         </ul>
      * @see SharedAccess
      */
 
@@ -706,7 +811,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -724,10 +829,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
+     *        <p>
+     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -744,6 +856,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -755,7 +873,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account. Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
@@ -773,10 +891,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account. Valid values are:</p>
+     *        <p>
+     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -793,6 +918,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -954,6 +1085,98 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectCount
+     *        The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an
+     *        unsupported file or storage format or storage class.
+     */
+
+    public void setUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
+        this.unclassifiableObjectCount = unclassifiableObjectCount;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     * 
+     * @return The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an
+     *         unsupported file or storage format or storage class.
+     */
+
+    public ObjectLevelStatistics getUnclassifiableObjectCount() {
+        return this.unclassifiableObjectCount;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an unsupported file
+     * or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectCount
+     *        The total number of objects that Amazon Macie can't analyze in the bucket. These objects use an
+     *        unsupported file or storage format or storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
+        setUnclassifiableObjectCount(unclassifiableObjectCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects use
+     * an unsupported file or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These
+     *        objects use an unsupported file or storage format or storage class.
+     */
+
+    public void setUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
+        this.unclassifiableObjectSizeInBytes = unclassifiableObjectSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects use
+     * an unsupported file or storage format or storage class.
+     * </p>
+     * 
+     * @return The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These
+     *         objects use an unsupported file or storage format or storage class.
+     */
+
+    public ObjectLevelStatistics getUnclassifiableObjectSizeInBytes() {
+        return this.unclassifiableObjectSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects use
+     * an unsupported file or storage format or storage class.
+     * </p>
+     * 
+     * @param unclassifiableObjectSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These
+     *        objects use an unsupported file or storage format or storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
+        setUnclassifiableObjectSizeInBytes(unclassifiableObjectSizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether versioning is enabled for the bucket.
      * </p>
      * 
@@ -1026,6 +1249,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getClassifiableObjectCount() != null)
             sb.append("ClassifiableObjectCount: ").append(getClassifiableObjectCount()).append(",");
+        if (getClassifiableSizeInBytes() != null)
+            sb.append("ClassifiableSizeInBytes: ").append(getClassifiableSizeInBytes()).append(",");
         if (getLastUpdated() != null)
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getObjectCount() != null)
@@ -1046,6 +1271,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("SizeInBytesCompressed: ").append(getSizeInBytesCompressed()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getUnclassifiableObjectCount() != null)
+            sb.append("UnclassifiableObjectCount: ").append(getUnclassifiableObjectCount()).append(",");
+        if (getUnclassifiableObjectSizeInBytes() != null)
+            sb.append("UnclassifiableObjectSizeInBytes: ").append(getUnclassifiableObjectSizeInBytes()).append(",");
         if (getVersioning() != null)
             sb.append("Versioning: ").append(getVersioning());
         sb.append("}");
@@ -1081,6 +1310,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         if (other.getClassifiableObjectCount() == null ^ this.getClassifiableObjectCount() == null)
             return false;
         if (other.getClassifiableObjectCount() != null && other.getClassifiableObjectCount().equals(this.getClassifiableObjectCount()) == false)
+            return false;
+        if (other.getClassifiableSizeInBytes() == null ^ this.getClassifiableSizeInBytes() == null)
+            return false;
+        if (other.getClassifiableSizeInBytes() != null && other.getClassifiableSizeInBytes().equals(this.getClassifiableSizeInBytes()) == false)
             return false;
         if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
             return false;
@@ -1122,6 +1355,15 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUnclassifiableObjectCount() == null ^ this.getUnclassifiableObjectCount() == null)
+            return false;
+        if (other.getUnclassifiableObjectCount() != null && other.getUnclassifiableObjectCount().equals(this.getUnclassifiableObjectCount()) == false)
+            return false;
+        if (other.getUnclassifiableObjectSizeInBytes() == null ^ this.getUnclassifiableObjectSizeInBytes() == null)
+            return false;
+        if (other.getUnclassifiableObjectSizeInBytes() != null
+                && other.getUnclassifiableObjectSizeInBytes().equals(this.getUnclassifiableObjectSizeInBytes()) == false)
+            return false;
         if (other.getVersioning() == null ^ this.getVersioning() == null)
             return false;
         if (other.getVersioning() != null && other.getVersioning().equals(this.getVersioning()) == false)
@@ -1139,6 +1381,7 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBucketCreatedAt() == null) ? 0 : getBucketCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
         hashCode = prime * hashCode + ((getClassifiableObjectCount() == null) ? 0 : getClassifiableObjectCount().hashCode());
+        hashCode = prime * hashCode + ((getClassifiableSizeInBytes() == null) ? 0 : getClassifiableSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getObjectCount() == null) ? 0 : getObjectCount().hashCode());
         hashCode = prime * hashCode + ((getObjectCountByEncryptionType() == null) ? 0 : getObjectCountByEncryptionType().hashCode());
@@ -1149,6 +1392,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytesCompressed() == null) ? 0 : getSizeInBytesCompressed().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUnclassifiableObjectCount() == null) ? 0 : getUnclassifiableObjectCount().hashCode());
+        hashCode = prime * hashCode + ((getUnclassifiableObjectSizeInBytes() == null) ? 0 : getUnclassifiableObjectSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getVersioning() == null) ? 0 : getVersioning().hashCode());
         return hashCode;
     }

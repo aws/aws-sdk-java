@@ -22,7 +22,8 @@ public enum SharedAccess {
 
     EXTERNAL("EXTERNAL"),
     INTERNAL("INTERNAL"),
-    NOT_SHARED("NOT_SHARED");
+    NOT_SHARED("NOT_SHARED"),
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

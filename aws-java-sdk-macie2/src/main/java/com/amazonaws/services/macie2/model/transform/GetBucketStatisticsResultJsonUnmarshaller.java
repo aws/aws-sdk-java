@@ -69,6 +69,10 @@ public class GetBucketStatisticsResultJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     getBucketStatisticsResult.setClassifiableObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("classifiableSizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    getBucketStatisticsResult.setClassifiableSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
                     getBucketStatisticsResult.setLastUpdated(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -84,6 +88,14 @@ public class GetBucketStatisticsResultJsonUnmarshaller implements Unmarshaller<G
                 if (context.testExpression("sizeInBytesCompressed", targetDepth)) {
                     context.nextToken();
                     getBucketStatisticsResult.setSizeInBytesCompressed(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("unclassifiableObjectCount", targetDepth)) {
+                    context.nextToken();
+                    getBucketStatisticsResult.setUnclassifiableObjectCount(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("unclassifiableObjectSizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    getBucketStatisticsResult.setUnclassifiableObjectSizeInBytes(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

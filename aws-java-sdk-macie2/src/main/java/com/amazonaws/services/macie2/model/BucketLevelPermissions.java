@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about bucket-level permissions settings for an S3 bucket.
+ * Provides information about the bucket-level permissions settings for an S3 bucket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketLevelPermissions" target="_top">AWS API

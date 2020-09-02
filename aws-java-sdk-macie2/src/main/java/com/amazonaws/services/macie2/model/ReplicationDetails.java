@@ -38,7 +38,7 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the Amazon Macie organization.
+     * the same Amazon Macie organization.
      * </p>
      */
     private Boolean replicatedExternally;
@@ -105,12 +105,12 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the Amazon Macie organization.
+     * the same Amazon Macie organization.
      * </p>
      * 
      * @param replicatedExternally
      *        Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *        part of the Amazon Macie organization.
+     *        part of the same Amazon Macie organization.
      */
 
     public void setReplicatedExternally(Boolean replicatedExternally) {
@@ -120,11 +120,11 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the Amazon Macie organization.
+     * the same Amazon Macie organization.
      * </p>
      * 
      * @return Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *         part of the Amazon Macie organization.
+     *         part of the same Amazon Macie organization.
      */
 
     public Boolean getReplicatedExternally() {
@@ -134,12 +134,12 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the Amazon Macie organization.
+     * the same Amazon Macie organization.
      * </p>
      * 
      * @param replicatedExternally
      *        Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *        part of the Amazon Macie organization.
+     *        part of the same Amazon Macie organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,11 +151,11 @@ public class ReplicationDetails implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of
-     * the Amazon Macie organization.
+     * the same Amazon Macie organization.
      * </p>
      * 
      * @return Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't
-     *         part of the Amazon Macie organization.
+     *         part of the same Amazon Macie organization.
      */
 
     public Boolean isReplicatedExternally() {

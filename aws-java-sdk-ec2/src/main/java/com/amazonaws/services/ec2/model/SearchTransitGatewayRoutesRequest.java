@@ -49,8 +49,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -157,8 +157,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -214,8 +214,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *         | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *         <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *         <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -282,8 +282,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -340,8 +340,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -409,8 +409,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -472,8 +472,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -543,8 +543,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -601,8 +601,8 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        | <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>

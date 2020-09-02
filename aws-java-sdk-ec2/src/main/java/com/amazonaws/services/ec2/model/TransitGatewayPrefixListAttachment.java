@@ -34,7 +34,7 @@ public class TransitGatewayPrefixListAttachment implements Serializable, Cloneab
     private String transitGatewayAttachmentId;
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      */
     private String resourceType;
@@ -87,11 +87,11 @@ public class TransitGatewayPrefixListAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @see TransitGatewayAttachmentResourceType
      */
 
@@ -101,10 +101,10 @@ public class TransitGatewayPrefixListAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
-     * @return The resource type.
+     * @return The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @see TransitGatewayAttachmentResourceType
      */
 
@@ -114,11 +114,11 @@ public class TransitGatewayPrefixListAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentResourceType
      */
@@ -130,11 +130,11 @@ public class TransitGatewayPrefixListAttachment implements Serializable, Cloneab
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentResourceType
      */

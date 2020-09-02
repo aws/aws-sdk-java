@@ -45,7 +45,7 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String description;
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      */
     private Boolean initialRun;
@@ -259,11 +259,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether to run the job immediately, after it's created.
+     *        Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      */
 
     public void setInitialRun(Boolean initialRun) {
@@ -272,10 +272,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
-     * @return Specifies whether to run the job immediately, after it's created.
+     * @return Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      */
 
     public Boolean getInitialRun() {
@@ -284,11 +284,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether to run the job immediately, after it's created.
+     *        Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,10 +299,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
-     * @return Specifies whether to run the job immediately, after it's created.
+     * @return Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      */
 
     public Boolean isInitialRun() {

@@ -31,7 +31,7 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The name of the attribute to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     * defines as bucket metadata, such as bucketName or accountId.
      * </p>
      */
     private String attributeName;
@@ -47,12 +47,12 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The name of the attribute to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     * defines as bucket metadata, such as bucketName or accountId.
      * </p>
      * 
      * @param attributeName
      *        The name of the attribute to sort the results by. This value can be the name of any property that Amazon
-     *        Macie defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     *        Macie defines as bucket metadata, such as bucketName or accountId.
      */
 
     public void setAttributeName(String attributeName) {
@@ -62,11 +62,11 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The name of the attribute to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     * defines as bucket metadata, such as bucketName or accountId.
      * </p>
      * 
      * @return The name of the attribute to sort the results by. This value can be the name of any property that Amazon
-     *         Macie defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     *         Macie defines as bucket metadata, such as bucketName or accountId.
      */
 
     public String getAttributeName() {
@@ -76,12 +76,12 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The name of the attribute to sort the results by. This value can be the name of any property that Amazon Macie
-     * defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     * defines as bucket metadata, such as bucketName or accountId.
      * </p>
      * 
      * @param attributeName
      *        The name of the attribute to sort the results by. This value can be the name of any property that Amazon
-     *        Macie defines as bucket metadata, such as bucketName, accountId, or lastUpdated.
+     *        Macie defines as bucket metadata, such as bucketName or accountId.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

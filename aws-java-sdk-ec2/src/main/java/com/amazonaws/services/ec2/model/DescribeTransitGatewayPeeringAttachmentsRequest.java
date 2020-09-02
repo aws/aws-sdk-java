@@ -54,9 +54,10 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -176,9 +177,10 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -208,8 +210,9 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *         <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     *         <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *         <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
      *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *         </p>
      *         </li>
@@ -249,9 +252,10 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -282,8 +286,9 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
      *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *        </p>
      *        </li>
@@ -325,9 +330,10 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -363,8 +369,9 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
      *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *        </p>
      *        </li>
@@ -408,9 +415,10 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     * <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     * <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -441,8 +449,9 @@ public class DescribeTransitGatewayPeeringAttachmentsRequest extends AmazonWebSe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the peering attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>state</code> - The state of the peering attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
      *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *        </p>
      *        </li>

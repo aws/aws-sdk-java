@@ -60,15 +60,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -204,15 +205,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -258,15 +260,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *         <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *         <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *         <code>direct-connect-gateway</code> | <code>peering</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *         <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *         <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *         <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -321,15 +324,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -376,15 +380,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *        <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -441,15 +446,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -501,15 +507,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *        <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -568,15 +575,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -623,15 +631,16 @@ public class DescribeTransitGatewayAttachmentsRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *        <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *        </p>
      *        </li>
      *        <li>

@@ -38,6 +38,8 @@ public class BucketMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketName").build();
     private static final MarshallingInfo<Long> CLASSIFIABLEOBJECTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("classifiableObjectCount").build();
+    private static final MarshallingInfo<Long> CLASSIFIABLESIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("classifiableSizeInBytes").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdated").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Long> OBJECTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,10 @@ public class BucketMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sizeInBytesCompressed").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> UNCLASSIFIABLEOBJECTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unclassifiableObjectCount").build();
+    private static final MarshallingInfo<StructuredPojo> UNCLASSIFIABLEOBJECTSIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unclassifiableObjectSizeInBytes").build();
     private static final MarshallingInfo<Boolean> VERSIONING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versioning").build();
 
@@ -82,6 +88,7 @@ public class BucketMetadataMarshaller {
             protocolMarshaller.marshall(bucketMetadata.getBucketCreatedAt(), BUCKETCREATEDAT_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getBucketName(), BUCKETNAME_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getClassifiableObjectCount(), CLASSIFIABLEOBJECTCOUNT_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getClassifiableSizeInBytes(), CLASSIFIABLESIZEINBYTES_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getObjectCount(), OBJECTCOUNT_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getObjectCountByEncryptionType(), OBJECTCOUNTBYENCRYPTIONTYPE_BINDING);
@@ -92,6 +99,8 @@ public class BucketMetadataMarshaller {
             protocolMarshaller.marshall(bucketMetadata.getSizeInBytes(), SIZEINBYTES_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getSizeInBytesCompressed(), SIZEINBYTESCOMPRESSED_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getUnclassifiableObjectCount(), UNCLASSIFIABLEOBJECTCOUNT_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getUnclassifiableObjectSizeInBytes(), UNCLASSIFIABLEOBJECTSIZEINBYTES_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getVersioning(), VERSIONING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

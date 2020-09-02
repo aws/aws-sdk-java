@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum EffectivePermission {
 
     PUBLIC("PUBLIC"),
-    NOT_PUBLIC("NOT_PUBLIC");
+    NOT_PUBLIC("NOT_PUBLIC"),
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

@@ -1,3 +1,12 @@
+# __1.11.854__ __2020-09-02__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds a new transit gateway attachment state and resource type.
+
+## __Amazon Macie 2__
+  - ### Features
+    - This release of the Amazon Macie API introduces additional statistics for the size and count of Amazon S3 objects that Macie can analyze as part of a classification job.
+
 # __1.11.853__ __2020-09-01__
 ## __AWS SecurityHub__
   - ### Features

@@ -44,8 +44,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -122,8 +122,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -142,8 +142,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      *         </li>
      *         <li>
      *         <p>
-     *         <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *         <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *         <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *         <code>direct-connect-gateway</code> | <code>peering</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -172,8 +172,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -193,8 +193,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *        <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -225,8 +225,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -251,8 +251,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *        <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -285,8 +285,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     * <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     * <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     * <code>direct-connect-gateway</code> | <code>peering</code>.
      * </p>
      * </li>
      * <li>
@@ -306,8 +306,8 @@ public class GetTransitGatewayRouteTablePropagationsRequest extends AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>resource-type</code> - The resource type (<code>vpc</code> | <code>vpn</code> |
-     *        <code>direct-connect-gateway</code> | <code>tgw-peering</code>).
+     *        <code>resource-type</code> - The resource type. Valid values are <code>vpc</code> | <code>vpn</code> |
+     *        <code>direct-connect-gateway</code> | <code>peering</code>.
      *        </p>
      *        </li>
      *        <li>
