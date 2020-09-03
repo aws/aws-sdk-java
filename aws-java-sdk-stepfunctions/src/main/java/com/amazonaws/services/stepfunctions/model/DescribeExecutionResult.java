@@ -94,13 +94,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date stopDate;
     /**
      * <p>
-     * The string that contains the JSON input data of the execution.
+     * The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and
+     * are expressed as bytes in UTF-8 encoding.
      * </p>
      */
     private String input;
+
+    private CloudWatchEventsExecutionDataDetails inputDetails;
     /**
      * <p>
-     * The JSON output data of the execution.
+     * The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes
+     * in UTF-8 encoding.
      * </p>
      * <note>
      * <p>
@@ -109,6 +113,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </note>
      */
     private String output;
+
+    private CloudWatchEventsExecutionDataDetails outputDetails;
 
     /**
      * <p>
@@ -580,11 +586,13 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The string that contains the JSON input data of the execution.
+     * The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and
+     * are expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The string that contains the JSON input data of the execution.
+     *        The string that contains the JSON input data of the execution. Length constraints apply to the payload
+     *        size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public void setInput(String input) {
@@ -593,10 +601,12 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The string that contains the JSON input data of the execution.
+     * The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and
+     * are expressed as bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The string that contains the JSON input data of the execution.
+     * @return The string that contains the JSON input data of the execution. Length constraints apply to the payload
+     *         size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public String getInput() {
@@ -605,11 +615,13 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The string that contains the JSON input data of the execution.
+     * The string that contains the JSON input data of the execution. Length constraints apply to the payload size, and
+     * are expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The string that contains the JSON input data of the execution.
+     *        The string that contains the JSON input data of the execution. Length constraints apply to the payload
+     *        size, and are expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -619,8 +631,35 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * @param inputDetails
+     */
+
+    public void setInputDetails(CloudWatchEventsExecutionDataDetails inputDetails) {
+        this.inputDetails = inputDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public CloudWatchEventsExecutionDataDetails getInputDetails() {
+        return this.inputDetails;
+    }
+
+    /**
+     * @param inputDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withInputDetails(CloudWatchEventsExecutionDataDetails inputDetails) {
+        setInputDetails(inputDetails);
+        return this;
+    }
+
+    /**
      * <p>
-     * The JSON output data of the execution.
+     * The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes
+     * in UTF-8 encoding.
      * </p>
      * <note>
      * <p>
@@ -629,7 +668,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </note>
      * 
      * @param output
-     *        The JSON output data of the execution.</p> <note>
+     *        The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as
+     *        bytes in UTF-8 encoding.</p> <note>
      *        <p>
      *        This field is set only if the execution succeeds. If the execution fails, this field is null.
      *        </p>
@@ -641,7 +681,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON output data of the execution.
+     * The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes
+     * in UTF-8 encoding.
      * </p>
      * <note>
      * <p>
@@ -649,7 +690,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * </note>
      * 
-     * @return The JSON output data of the execution.</p> <note>
+     * @return The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as
+     *         bytes in UTF-8 encoding.</p> <note>
      *         <p>
      *         This field is set only if the execution succeeds. If the execution fails, this field is null.
      *         </p>
@@ -661,7 +703,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The JSON output data of the execution.
+     * The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as bytes
+     * in UTF-8 encoding.
      * </p>
      * <note>
      * <p>
@@ -670,7 +713,8 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * </note>
      * 
      * @param output
-     *        The JSON output data of the execution.</p> <note>
+     *        The JSON output data of the execution. Length constraints apply to the payload size, and are expressed as
+     *        bytes in UTF-8 encoding.</p> <note>
      *        <p>
      *        This field is set only if the execution succeeds. If the execution fails, this field is null.
      *        </p>
@@ -679,6 +723,32 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     public DescribeExecutionResult withOutput(String output) {
         setOutput(output);
+        return this;
+    }
+
+    /**
+     * @param outputDetails
+     */
+
+    public void setOutputDetails(CloudWatchEventsExecutionDataDetails outputDetails) {
+        this.outputDetails = outputDetails;
+    }
+
+    /**
+     * @return
+     */
+
+    public CloudWatchEventsExecutionDataDetails getOutputDetails() {
+        return this.outputDetails;
+    }
+
+    /**
+     * @param outputDetails
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withOutputDetails(CloudWatchEventsExecutionDataDetails outputDetails) {
+        setOutputDetails(outputDetails);
         return this;
     }
 
@@ -708,8 +778,12 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
             sb.append("StopDate: ").append(getStopDate()).append(",");
         if (getInput() != null)
             sb.append("Input: ").append("***Sensitive Data Redacted***").append(",");
+        if (getInputDetails() != null)
+            sb.append("InputDetails: ").append(getInputDetails()).append(",");
         if (getOutput() != null)
-            sb.append("Output: ").append("***Sensitive Data Redacted***");
+            sb.append("Output: ").append("***Sensitive Data Redacted***").append(",");
+        if (getOutputDetails() != null)
+            sb.append("OutputDetails: ").append(getOutputDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -752,9 +826,17 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getInputDetails() == null ^ this.getInputDetails() == null)
+            return false;
+        if (other.getInputDetails() != null && other.getInputDetails().equals(this.getInputDetails()) == false)
+            return false;
         if (other.getOutput() == null ^ this.getOutput() == null)
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
+            return false;
+        if (other.getOutputDetails() == null ^ this.getOutputDetails() == null)
+            return false;
+        if (other.getOutputDetails() != null && other.getOutputDetails().equals(this.getOutputDetails()) == false)
             return false;
         return true;
     }
@@ -771,7 +853,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getStopDate() == null) ? 0 : getStopDate().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getInputDetails() == null) ? 0 : getInputDetails().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getOutputDetails() == null) ? 0 : getOutputDetails().hashCode());
         return hashCode;
     }
 

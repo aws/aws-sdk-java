@@ -52,6 +52,10 @@ public class LambdaFunctionSucceededEventDetailsJsonUnmarshaller implements Unma
                     context.nextToken();
                     lambdaFunctionSucceededEventDetails.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("outputDetails", targetDepth)) {
+                    context.nextToken();
+                    lambdaFunctionSucceededEventDetails.setOutputDetails(HistoryEventExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

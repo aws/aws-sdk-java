@@ -36,7 +36,8 @@ public class SendTaskSuccessRequest extends com.amazonaws.AmazonWebServiceReques
     private String taskToken;
     /**
      * <p>
-     * The JSON output of the task.
+     * The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.
      * </p>
      */
     private String output;
@@ -101,11 +102,13 @@ public class SendTaskSuccessRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The JSON output of the task.
+     * The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.
      * </p>
      * 
      * @param output
-     *        The JSON output of the task.
+     *        The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in
+     *        UTF-8 encoding.
      */
 
     public void setOutput(String output) {
@@ -114,10 +117,12 @@ public class SendTaskSuccessRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The JSON output of the task.
+     * The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.
      * </p>
      * 
-     * @return The JSON output of the task.
+     * @return The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in
+     *         UTF-8 encoding.
      */
 
     public String getOutput() {
@@ -126,11 +131,13 @@ public class SendTaskSuccessRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The JSON output of the task.
+     * The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in UTF-8
+     * encoding.
      * </p>
      * 
      * @param output
-     *        The JSON output of the task.
+     *        The JSON output of the task. Length constraints apply to the payload size, and are expressed as bytes in
+     *        UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

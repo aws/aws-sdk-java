@@ -33,6 +33,8 @@ public class TaskSucceededEventDetailsMarshaller {
             .marshallLocationName("resource").build();
     private static final MarshallingInfo<String> OUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("output").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputDetails").build();
 
     private static final TaskSucceededEventDetailsMarshaller instance = new TaskSucceededEventDetailsMarshaller();
 
@@ -53,6 +55,7 @@ public class TaskSucceededEventDetailsMarshaller {
             protocolMarshaller.marshall(taskSucceededEventDetails.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(taskSucceededEventDetails.getResource(), RESOURCE_BINDING);
             protocolMarshaller.marshall(taskSucceededEventDetails.getOutput(), OUTPUT_BINDING);
+            protocolMarshaller.marshall(taskSucceededEventDetails.getOutputDetails(), OUTPUTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

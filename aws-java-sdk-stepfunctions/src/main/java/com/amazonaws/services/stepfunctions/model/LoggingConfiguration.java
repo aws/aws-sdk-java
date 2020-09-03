@@ -36,7 +36,7 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     private String level;
     /**
      * <p>
-     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
+     * Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.
      * </p>
      */
     private Boolean includeExecutionData;
@@ -109,11 +109,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
+     * Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.
      * </p>
      * 
      * @param includeExecutionData
-     *        Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
+     *        Determines whether execution data is included in your log. When set to <code>false</code>, data is
      *        excluded.
      */
 
@@ -123,10 +123,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
+     * Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.
      * </p>
      * 
-     * @return Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
+     * @return Determines whether execution data is included in your log. When set to <code>false</code>, data is
      *         excluded.
      */
 
@@ -136,11 +136,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
+     * Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.
      * </p>
      * 
      * @param includeExecutionData
-     *        Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
+     *        Determines whether execution data is included in your log. When set to <code>false</code>, data is
      *        excluded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -152,10 +152,10 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is excluded.
+     * Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.
      * </p>
      * 
-     * @return Determines whether execution data is included in your log. When set to <code>FALSE</code>, data is
+     * @return Determines whether execution data is included in your log. When set to <code>false</code>, data is
      *         excluded.
      */
 

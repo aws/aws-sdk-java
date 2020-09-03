@@ -57,6 +57,13 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * You can select whether execution data (input or output of a history event) is returned. The default is
+     * <code>true</code>.
+     * </p>
+     */
+    private Boolean includeExecutionData;
 
     /**
      * <p>
@@ -279,6 +286,66 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * You can select whether execution data (input or output of a history event) is returned. The default is
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param includeExecutionData
+     *        You can select whether execution data (input or output of a history event) is returned. The default is
+     *        <code>true</code>.
+     */
+
+    public void setIncludeExecutionData(Boolean includeExecutionData) {
+        this.includeExecutionData = includeExecutionData;
+    }
+
+    /**
+     * <p>
+     * You can select whether execution data (input or output of a history event) is returned. The default is
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return You can select whether execution data (input or output of a history event) is returned. The default is
+     *         <code>true</code>.
+     */
+
+    public Boolean getIncludeExecutionData() {
+        return this.includeExecutionData;
+    }
+
+    /**
+     * <p>
+     * You can select whether execution data (input or output of a history event) is returned. The default is
+     * <code>true</code>.
+     * </p>
+     * 
+     * @param includeExecutionData
+     *        You can select whether execution data (input or output of a history event) is returned. The default is
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetExecutionHistoryRequest withIncludeExecutionData(Boolean includeExecutionData) {
+        setIncludeExecutionData(includeExecutionData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can select whether execution data (input or output of a history event) is returned. The default is
+     * <code>true</code>.
+     * </p>
+     * 
+     * @return You can select whether execution data (input or output of a history event) is returned. The default is
+     *         <code>true</code>.
+     */
+
+    public Boolean isIncludeExecutionData() {
+        return this.includeExecutionData;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +364,9 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
         if (getReverseOrder() != null)
             sb.append("ReverseOrder: ").append(getReverseOrder()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIncludeExecutionData() != null)
+            sb.append("IncludeExecutionData: ").append(getIncludeExecutionData());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +397,10 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getIncludeExecutionData() == null ^ this.getIncludeExecutionData() == null)
+            return false;
+        if (other.getIncludeExecutionData() != null && other.getIncludeExecutionData().equals(this.getIncludeExecutionData()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +413,7 @@ public class GetExecutionHistoryRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getReverseOrder() == null) ? 0 : getReverseOrder().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIncludeExecutionData() == null) ? 0 : getIncludeExecutionData().hashCode());
         return hashCode;
     }
 

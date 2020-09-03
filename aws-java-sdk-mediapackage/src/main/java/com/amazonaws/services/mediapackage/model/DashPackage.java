@@ -74,6 +74,10 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     private StreamSelection streamSelection;
     /** Duration (in seconds) to delay live content before presentation. */
     private Integer suggestedPresentationDelaySeconds;
+    /** Determines the type of UTCTiming included in the Media Presentation Description (MPD) */
+    private String utcTiming;
+    /** Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD */
+    private String utcTimingUri;
 
     /**
      * @return
@@ -749,6 +753,91 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * 
+     * @param utcTiming
+     *        Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * @see UtcTiming
+     */
+
+    public void setUtcTiming(String utcTiming) {
+        this.utcTiming = utcTiming;
+    }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * 
+     * @return Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * @see UtcTiming
+     */
+
+    public String getUtcTiming() {
+        return this.utcTiming;
+    }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * 
+     * @param utcTiming
+     *        Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UtcTiming
+     */
+
+    public DashPackage withUtcTiming(String utcTiming) {
+        setUtcTiming(utcTiming);
+        return this;
+    }
+
+    /**
+     * Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * 
+     * @param utcTiming
+     *        Determines the type of UTCTiming included in the Media Presentation Description (MPD)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UtcTiming
+     */
+
+    public DashPackage withUtcTiming(UtcTiming utcTiming) {
+        this.utcTiming = utcTiming.toString();
+        return this;
+    }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+     * 
+     * @param utcTimingUri
+     *        Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+     */
+
+    public void setUtcTimingUri(String utcTimingUri) {
+        this.utcTimingUri = utcTimingUri;
+    }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+     * 
+     * @return Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+     */
+
+    public String getUtcTimingUri() {
+        return this.utcTimingUri;
+    }
+
+    /**
+     * Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+     * 
+     * @param utcTimingUri
+     *        Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashPackage withUtcTimingUri(String utcTimingUri) {
+        setUtcTimingUri(utcTimingUri);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -785,7 +874,11 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         if (getStreamSelection() != null)
             sb.append("StreamSelection: ").append(getStreamSelection()).append(",");
         if (getSuggestedPresentationDelaySeconds() != null)
-            sb.append("SuggestedPresentationDelaySeconds: ").append(getSuggestedPresentationDelaySeconds());
+            sb.append("SuggestedPresentationDelaySeconds: ").append(getSuggestedPresentationDelaySeconds()).append(",");
+        if (getUtcTiming() != null)
+            sb.append("UtcTiming: ").append(getUtcTiming()).append(",");
+        if (getUtcTimingUri() != null)
+            sb.append("UtcTimingUri: ").append(getUtcTimingUri());
         sb.append("}");
         return sb.toString();
     }
@@ -853,6 +946,14 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         if (other.getSuggestedPresentationDelaySeconds() != null
                 && other.getSuggestedPresentationDelaySeconds().equals(this.getSuggestedPresentationDelaySeconds()) == false)
             return false;
+        if (other.getUtcTiming() == null ^ this.getUtcTiming() == null)
+            return false;
+        if (other.getUtcTiming() != null && other.getUtcTiming().equals(this.getUtcTiming()) == false)
+            return false;
+        if (other.getUtcTimingUri() == null ^ this.getUtcTimingUri() == null)
+            return false;
+        if (other.getUtcTimingUri() != null && other.getUtcTimingUri().equals(this.getUtcTimingUri()) == false)
+            return false;
         return true;
     }
 
@@ -874,6 +975,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSegmentTemplateFormat() == null) ? 0 : getSegmentTemplateFormat().hashCode());
         hashCode = prime * hashCode + ((getStreamSelection() == null) ? 0 : getStreamSelection().hashCode());
         hashCode = prime * hashCode + ((getSuggestedPresentationDelaySeconds() == null) ? 0 : getSuggestedPresentationDelaySeconds().hashCode());
+        hashCode = prime * hashCode + ((getUtcTiming() == null) ? 0 : getUtcTiming().hashCode());
+        hashCode = prime * hashCode + ((getUtcTimingUri() == null) ? 0 : getUtcTimingUri().hashCode());
         return hashCode;
     }
 

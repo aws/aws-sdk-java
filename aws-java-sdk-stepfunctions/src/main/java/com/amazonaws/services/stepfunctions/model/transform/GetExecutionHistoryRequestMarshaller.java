@@ -35,6 +35,8 @@ public class GetExecutionHistoryRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reverseOrder").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<Boolean> INCLUDEEXECUTIONDATA_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeExecutionData").build();
 
     private static final GetExecutionHistoryRequestMarshaller instance = new GetExecutionHistoryRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class GetExecutionHistoryRequestMarshaller {
             protocolMarshaller.marshall(getExecutionHistoryRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(getExecutionHistoryRequest.getReverseOrder(), REVERSEORDER_BINDING);
             protocolMarshaller.marshall(getExecutionHistoryRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(getExecutionHistoryRequest.getIncludeExecutionData(), INCLUDEEXECUTIONDATA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

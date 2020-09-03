@@ -76,9 +76,17 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeExecutionResult.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputDetails", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setInputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("output", targetDepth)) {
                     context.nextToken();
                     describeExecutionResult.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("outputDetails", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setOutputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

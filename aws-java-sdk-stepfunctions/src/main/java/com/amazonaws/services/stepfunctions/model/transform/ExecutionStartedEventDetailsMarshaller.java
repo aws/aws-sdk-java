@@ -29,6 +29,8 @@ public class ExecutionStartedEventDetailsMarshaller {
 
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputDetails").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
 
@@ -49,6 +51,7 @@ public class ExecutionStartedEventDetailsMarshaller {
 
         try {
             protocolMarshaller.marshall(executionStartedEventDetails.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(executionStartedEventDetails.getInputDetails(), INPUTDETAILS_BINDING);
             protocolMarshaller.marshall(executionStartedEventDetails.getRoleArn(), ROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -56,6 +56,10 @@ public class ActivityScheduledEventDetailsJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     activityScheduledEventDetails.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputDetails", targetDepth)) {
+                    context.nextToken();
+                    activityScheduledEventDetails.setInputDetails(HistoryEventExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("timeoutInSeconds", targetDepth)) {
                     context.nextToken();
                     activityScheduledEventDetails.setTimeoutInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));

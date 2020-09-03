@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the API operation.
+ * Contains information about the API action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/AwsApiCallAction" target="_top">AWS API
@@ -48,7 +48,13 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
     private DomainDetails domainDetails;
     /**
      * <p>
-     * The remote IP information of the connection.
+     * The error code of the failed AWS API action.
+     * </p>
+     */
+    private String errorCode;
+    /**
+     * <p>
+     * The remote IP information of the connection that initiated the AWS API call.
      * </p>
      */
     private RemoteIpDetails remoteIpDetails;
@@ -181,11 +187,51 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The remote IP information of the connection.
+     * The error code of the failed AWS API action.
+     * </p>
+     * 
+     * @param errorCode
+     *        The error code of the failed AWS API action.
+     */
+
+    public void setErrorCode(String errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    /**
+     * <p>
+     * The error code of the failed AWS API action.
+     * </p>
+     * 
+     * @return The error code of the failed AWS API action.
+     */
+
+    public String getErrorCode() {
+        return this.errorCode;
+    }
+
+    /**
+     * <p>
+     * The error code of the failed AWS API action.
+     * </p>
+     * 
+     * @param errorCode
+     *        The error code of the failed AWS API action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsApiCallAction withErrorCode(String errorCode) {
+        setErrorCode(errorCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The remote IP information of the connection that initiated the AWS API call.
      * </p>
      * 
      * @param remoteIpDetails
-     *        The remote IP information of the connection.
+     *        The remote IP information of the connection that initiated the AWS API call.
      */
 
     public void setRemoteIpDetails(RemoteIpDetails remoteIpDetails) {
@@ -194,10 +240,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The remote IP information of the connection.
+     * The remote IP information of the connection that initiated the AWS API call.
      * </p>
      * 
-     * @return The remote IP information of the connection.
+     * @return The remote IP information of the connection that initiated the AWS API call.
      */
 
     public RemoteIpDetails getRemoteIpDetails() {
@@ -206,11 +252,11 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The remote IP information of the connection.
+     * The remote IP information of the connection that initiated the AWS API call.
      * </p>
      * 
      * @param remoteIpDetails
-     *        The remote IP information of the connection.
+     *        The remote IP information of the connection that initiated the AWS API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,6 +323,8 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
             sb.append("CallerType: ").append(getCallerType()).append(",");
         if (getDomainDetails() != null)
             sb.append("DomainDetails: ").append(getDomainDetails()).append(",");
+        if (getErrorCode() != null)
+            sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getRemoteIpDetails() != null)
             sb.append("RemoteIpDetails: ").append(getRemoteIpDetails()).append(",");
         if (getServiceName() != null)
@@ -307,6 +355,10 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDomainDetails() != null && other.getDomainDetails().equals(this.getDomainDetails()) == false)
             return false;
+        if (other.getErrorCode() == null ^ this.getErrorCode() == null)
+            return false;
+        if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
+            return false;
         if (other.getRemoteIpDetails() == null ^ this.getRemoteIpDetails() == null)
             return false;
         if (other.getRemoteIpDetails() != null && other.getRemoteIpDetails().equals(this.getRemoteIpDetails()) == false)
@@ -326,6 +378,7 @@ public class AwsApiCallAction implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getApi() == null) ? 0 : getApi().hashCode());
         hashCode = prime * hashCode + ((getCallerType() == null) ? 0 : getCallerType().hashCode());
         hashCode = prime * hashCode + ((getDomainDetails() == null) ? 0 : getDomainDetails().hashCode());
+        hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getRemoteIpDetails() == null) ? 0 : getRemoteIpDetails().hashCode());
         hashCode = prime * hashCode + ((getServiceName() == null) ? 0 : getServiceName().hashCode());
         return hashCode;

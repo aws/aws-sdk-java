@@ -47,7 +47,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * One or more additional attribues associated with the query result.
+     * One or more additional attributes associated with the query result.
      * </p>
      */
     private java.util.List<AdditionalResultAttribute> additionalAttributes;
@@ -84,6 +84,20 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<DocumentAttribute> documentAttributes;
+    /**
+     * <p>
+     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * application.
+     * </p>
+     * <p>
+     * Confidence scores are only returned for results with the <code>Type</code> field set to
+     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
+     * set to <code>DOCUMENT</code>.
+     * </p>
+     */
+    private ScoreAttributes scoreAttributes;
 
     /**
      * <p>
@@ -186,10 +200,10 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attribues associated with the query result.
+     * One or more additional attributes associated with the query result.
      * </p>
      * 
-     * @return One or more additional attribues associated with the query result.
+     * @return One or more additional attributes associated with the query result.
      */
 
     public java.util.List<AdditionalResultAttribute> getAdditionalAttributes() {
@@ -198,11 +212,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attribues associated with the query result.
+     * One or more additional attributes associated with the query result.
      * </p>
      * 
      * @param additionalAttributes
-     *        One or more additional attribues associated with the query result.
+     *        One or more additional attributes associated with the query result.
      */
 
     public void setAdditionalAttributes(java.util.Collection<AdditionalResultAttribute> additionalAttributes) {
@@ -216,7 +230,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attribues associated with the query result.
+     * One or more additional attributes associated with the query result.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -225,7 +239,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param additionalAttributes
-     *        One or more additional attribues associated with the query result.
+     *        One or more additional attributes associated with the query result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +255,11 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One or more additional attribues associated with the query result.
+     * One or more additional attributes associated with the query result.
      * </p>
      * 
      * @param additionalAttributes
-     *        One or more additional attribues associated with the query result.
+     *        One or more additional attributes associated with the query result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -505,6 +519,91 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * application.
+     * </p>
+     * <p>
+     * Confidence scores are only returned for results with the <code>Type</code> field set to
+     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
+     * set to <code>DOCUMENT</code>.
+     * </p>
+     * 
+     * @param scoreAttributes
+     *        Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
+     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     *        <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     *        application.</p>
+     *        <p>
+     *        Confidence scores are only returned for results with the <code>Type</code> field set to
+     *        <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code>
+     *        field is set to <code>DOCUMENT</code>.
+     */
+
+    public void setScoreAttributes(ScoreAttributes scoreAttributes) {
+        this.scoreAttributes = scoreAttributes;
+    }
+
+    /**
+     * <p>
+     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * application.
+     * </p>
+     * <p>
+     * Confidence scores are only returned for results with the <code>Type</code> field set to
+     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
+     * set to <code>DOCUMENT</code>.
+     * </p>
+     * 
+     * @return Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
+     *         result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     *         <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for
+     *         your application.</p>
+     *         <p>
+     *         Confidence scores are only returned for results with the <code>Type</code> field set to
+     *         <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code>
+     *         field is set to <code>DOCUMENT</code>.
+     */
+
+    public ScoreAttributes getScoreAttributes() {
+        return this.scoreAttributes;
+    }
+
+    /**
+     * <p>
+     * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * application.
+     * </p>
+     * <p>
+     * Confidence scores are only returned for results with the <code>Type</code> field set to
+     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
+     * set to <code>DOCUMENT</code>.
+     * </p>
+     * 
+     * @param scoreAttributes
+     *        Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
+     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
+     *        <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     *        application.</p>
+     *        <p>
+     *        Confidence scores are only returned for results with the <code>Type</code> field set to
+     *        <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code>
+     *        field is set to <code>DOCUMENT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryResultItem withScoreAttributes(ScoreAttributes scoreAttributes) {
+        setScoreAttributes(scoreAttributes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -531,7 +630,9 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         if (getDocumentURI() != null)
             sb.append("DocumentURI: ").append(getDocumentURI()).append(",");
         if (getDocumentAttributes() != null)
-            sb.append("DocumentAttributes: ").append(getDocumentAttributes());
+            sb.append("DocumentAttributes: ").append(getDocumentAttributes()).append(",");
+        if (getScoreAttributes() != null)
+            sb.append("ScoreAttributes: ").append(getScoreAttributes());
         sb.append("}");
         return sb.toString();
     }
@@ -578,6 +679,10 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDocumentAttributes() != null && other.getDocumentAttributes().equals(this.getDocumentAttributes()) == false)
             return false;
+        if (other.getScoreAttributes() == null ^ this.getScoreAttributes() == null)
+            return false;
+        if (other.getScoreAttributes() != null && other.getScoreAttributes().equals(this.getScoreAttributes()) == false)
+            return false;
         return true;
     }
 
@@ -594,6 +699,7 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDocumentExcerpt() == null) ? 0 : getDocumentExcerpt().hashCode());
         hashCode = prime * hashCode + ((getDocumentURI() == null) ? 0 : getDocumentURI().hashCode());
         hashCode = prime * hashCode + ((getDocumentAttributes() == null) ? 0 : getDocumentAttributes().hashCode());
+        hashCode = prime * hashCode + ((getScoreAttributes() == null) ? 0 : getScoreAttributes().hashCode());
         return hashCode;
     }
 

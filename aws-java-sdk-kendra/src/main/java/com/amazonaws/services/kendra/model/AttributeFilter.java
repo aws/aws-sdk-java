@@ -77,14 +77,14 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
     private DocumentAttribute equalsTo;
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only appicable to
+     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      */
     private DocumentAttribute containsAll;
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes.This filter is only appicable to
+     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      */
@@ -340,13 +340,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only appicable to
+     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAll
      *        Returns true when a document contains all of the specified document attributes. This filter is only
-     *        appicable to <code>StringListValue</code> metadata.
+     *        applicable to <code>StringListValue</code> metadata.
      */
 
     public void setContainsAll(DocumentAttribute containsAll) {
@@ -355,12 +355,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only appicable to
+     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      * 
      * @return Returns true when a document contains all of the specified document attributes. This filter is only
-     *         appicable to <code>StringListValue</code> metadata.
+     *         applicable to <code>StringListValue</code> metadata.
      */
 
     public DocumentAttribute getContainsAll() {
@@ -369,13 +369,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains all of the specified document attributes. This filter is only appicable to
+     * Returns true when a document contains all of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAll
      *        Returns true when a document contains all of the specified document attributes. This filter is only
-     *        appicable to <code>StringListValue</code> metadata.
+     *        applicable to <code>StringListValue</code> metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,13 +386,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes.This filter is only appicable to
+     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAny
-     *        Returns true when a document contains any of the specified document attributes.This filter is only
-     *        appicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains any of the specified document attributes. This filter is only
+     *        applicable to <code>StringListValue</code> metadata.
      */
 
     public void setContainsAny(DocumentAttribute containsAny) {
@@ -401,12 +401,12 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes.This filter is only appicable to
+     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      * 
-     * @return Returns true when a document contains any of the specified document attributes.This filter is only
-     *         appicable to <code>StringListValue</code> metadata.
+     * @return Returns true when a document contains any of the specified document attributes. This filter is only
+     *         applicable to <code>StringListValue</code> metadata.
      */
 
     public DocumentAttribute getContainsAny() {
@@ -415,13 +415,13 @@ public class AttributeFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Returns true when a document contains any of the specified document attributes.This filter is only appicable to
+     * Returns true when a document contains any of the specified document attributes. This filter is only applicable to
      * <code>StringListValue</code> metadata.
      * </p>
      * 
      * @param containsAny
-     *        Returns true when a document contains any of the specified document attributes.This filter is only
-     *        appicable to <code>StringListValue</code> metadata.
+     *        Returns true when a document contains any of the specified document attributes. This filter is only
+     *        applicable to <code>StringListValue</code> metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

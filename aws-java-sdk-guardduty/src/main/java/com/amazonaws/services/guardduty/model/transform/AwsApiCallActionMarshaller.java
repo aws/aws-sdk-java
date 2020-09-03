@@ -33,6 +33,8 @@ public class AwsApiCallActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("callerType").build();
     private static final MarshallingInfo<StructuredPojo> DOMAINDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainDetails").build();
+    private static final MarshallingInfo<String> ERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("errorCode").build();
     private static final MarshallingInfo<StructuredPojo> REMOTEIPDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remoteIpDetails").build();
     private static final MarshallingInfo<String> SERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,7 @@ public class AwsApiCallActionMarshaller {
             protocolMarshaller.marshall(awsApiCallAction.getApi(), API_BINDING);
             protocolMarshaller.marshall(awsApiCallAction.getCallerType(), CALLERTYPE_BINDING);
             protocolMarshaller.marshall(awsApiCallAction.getDomainDetails(), DOMAINDETAILS_BINDING);
+            protocolMarshaller.marshall(awsApiCallAction.getErrorCode(), ERRORCODE_BINDING);
             protocolMarshaller.marshall(awsApiCallAction.getRemoteIpDetails(), REMOTEIPDETAILS_BINDING);
             protocolMarshaller.marshall(awsApiCallAction.getServiceName(), SERVICENAME_BINDING);
         } catch (Exception e) {

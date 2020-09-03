@@ -52,6 +52,10 @@ public class ExecutionStartedEventDetailsJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     executionStartedEventDetails.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputDetails", targetDepth)) {
+                    context.nextToken();
+                    executionStartedEventDetails.setInputDetails(HistoryEventExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     executionStartedEventDetails.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

@@ -31,6 +31,8 @@ public class StateEnteredEventDetailsMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputDetails").build();
 
     private static final StateEnteredEventDetailsMarshaller instance = new StateEnteredEventDetailsMarshaller();
 
@@ -50,6 +52,7 @@ public class StateEnteredEventDetailsMarshaller {
         try {
             protocolMarshaller.marshall(stateEnteredEventDetails.getName(), NAME_BINDING);
             protocolMarshaller.marshall(stateEnteredEventDetails.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(stateEnteredEventDetails.getInputDetails(), INPUTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -31,6 +31,8 @@ public class ActivityScheduledEventDetailsMarshaller {
             .marshallLocationName("resource").build();
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputDetails").build();
     private static final MarshallingInfo<Long> TIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInSeconds").build();
     private static final MarshallingInfo<Long> HEARTBEATINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -54,6 +56,7 @@ public class ActivityScheduledEventDetailsMarshaller {
         try {
             protocolMarshaller.marshall(activityScheduledEventDetails.getResource(), RESOURCE_BINDING);
             protocolMarshaller.marshall(activityScheduledEventDetails.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(activityScheduledEventDetails.getInputDetails(), INPUTDETAILS_BINDING);
             protocolMarshaller.marshall(activityScheduledEventDetails.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(activityScheduledEventDetails.getHeartbeatInSeconds(), HEARTBEATINSECONDS_BINDING);
         } catch (Exception e) {

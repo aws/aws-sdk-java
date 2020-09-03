@@ -30,7 +30,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database query.
+     * Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when
+     * making a database query.
      * </p>
      * <p>
      * By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
@@ -42,14 +43,16 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      * case.
      * </p>
      * <p>
-     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     * <code>DOUBLE_QUOTES</code>.
      * </p>
      */
     private String queryIdentifiersEnclosingOption;
 
     /**
      * <p>
-     * Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database query.
+     * Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when
+     * making a database query.
      * </p>
      * <p>
      * By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
@@ -61,12 +64,13 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      * case.
      * </p>
      * <p>
-     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     * <code>DOUBLE_QUOTES</code>.
      * </p>
      * 
      * @param queryIdentifiersEnclosingOption
-     *        Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database
-     *        query.</p>
+     *        Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (")
+     *        when making a database query.</p>
      *        <p>
      *        By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
      *        configuration. It does not change the case of identifiers or enclose them in quotes.
@@ -77,7 +81,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        character's case.
      *        </p>
      *        <p>
-     *        For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     *        For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     *        <code>DOUBLE_QUOTES</code>.
      * @see QueryIdentifiersEnclosingOption
      */
 
@@ -87,7 +92,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database query.
+     * Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when
+     * making a database query.
      * </p>
      * <p>
      * By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
@@ -99,11 +105,12 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      * case.
      * </p>
      * <p>
-     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     * <code>DOUBLE_QUOTES</code>.
      * </p>
      * 
-     * @return Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database
-     *         query.</p>
+     * @return Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes
+     *         (") when making a database query.</p>
      *         <p>
      *         By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
      *         configuration. It does not change the case of identifiers or enclose them in quotes.
@@ -114,7 +121,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      *         character's case.
      *         </p>
      *         <p>
-     *         For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     *         For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     *         <code>DOUBLE_QUOTES</code>.
      * @see QueryIdentifiersEnclosingOption
      */
 
@@ -124,7 +132,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database query.
+     * Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when
+     * making a database query.
      * </p>
      * <p>
      * By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
@@ -136,12 +145,13 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      * case.
      * </p>
      * <p>
-     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     * <code>DOUBLE_QUOTES</code>.
      * </p>
      * 
      * @param queryIdentifiersEnclosingOption
-     *        Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database
-     *        query.</p>
+     *        Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (")
+     *        when making a database query.</p>
      *        <p>
      *        By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
      *        configuration. It does not change the case of identifiers or enclose them in quotes.
@@ -152,7 +162,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        character's case.
      *        </p>
      *        <p>
-     *        For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     *        For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     *        <code>DOUBLE_QUOTES</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryIdentifiersEnclosingOption
      */
@@ -164,7 +175,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database query.
+     * Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when
+     * making a database query.
      * </p>
      * <p>
      * By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
@@ -176,12 +188,13 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      * case.
      * </p>
      * <p>
-     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     * For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     * <code>DOUBLE_QUOTES</code>.
      * </p>
      * 
      * @param queryIdentifiersEnclosingOption
-     *        Determines whether Amazon Kendra encloses SQL identifiers in double quotes (") when making a database
-     *        query.</p>
+     *        Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (")
+     *        when making a database query.</p>
      *        <p>
      *        By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source
      *        configuration. It does not change the case of identifiers or enclose them in quotes.
@@ -192,7 +205,8 @@ public class SqlConfiguration implements Serializable, Cloneable, StructuredPojo
      *        character's case.
      *        </p>
      *        <p>
-     *        For MySQL databases, you must enable the <code>ansi_quotes</code> option when you choose this option.
+     *        For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to
+     *        <code>DOUBLE_QUOTES</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryIdentifiersEnclosingOption
      */

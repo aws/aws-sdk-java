@@ -23,6 +23,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * attribute for sorting. The attribute must have the <code>Sortable</code> flag set to <code>true</code>, otherwise
  * Amazon Kendra returns an exception.
  * </p>
+ * <p>
+ * You can sort attributes of the following types.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Date value
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Long value
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * String value
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can't sort attributes of the following type.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * String list value
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SortingConfiguration" target="_top">AWS API
  *      Documentation</a>

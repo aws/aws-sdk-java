@@ -48,7 +48,8 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
     private String region;
     /**
      * <p>
-     * The JSON data passed to the resource referenced in a task state.
+     * The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.
      * </p>
      */
     private String parameters;
@@ -58,6 +59,12 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
      * </p>
      */
     private Long timeoutInSeconds;
+    /**
+     * <p>
+     * The maximum allowed duration between two heartbeats for the task.
+     * </p>
+     */
+    private Long heartbeatInSeconds;
 
     /**
      * <p>
@@ -181,11 +188,13 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The JSON data passed to the resource referenced in a task state.
+     * The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param parameters
-     *        The JSON data passed to the resource referenced in a task state.
+     *        The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload
+     *        size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public void setParameters(String parameters) {
@@ -194,10 +203,12 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The JSON data passed to the resource referenced in a task state.
+     * The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The JSON data passed to the resource referenced in a task state.
+     * @return The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload
+     *         size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public String getParameters() {
@@ -206,11 +217,13 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The JSON data passed to the resource referenced in a task state.
+     * The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload size,
+     * and are expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param parameters
-     *        The JSON data passed to the resource referenced in a task state.
+     *        The JSON data passed to the resource referenced in a task state. Length constraints apply to the payload
+     *        size, and are expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,6 +273,46 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The maximum allowed duration between two heartbeats for the task.
+     * </p>
+     * 
+     * @param heartbeatInSeconds
+     *        The maximum allowed duration between two heartbeats for the task.
+     */
+
+    public void setHeartbeatInSeconds(Long heartbeatInSeconds) {
+        this.heartbeatInSeconds = heartbeatInSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum allowed duration between two heartbeats for the task.
+     * </p>
+     * 
+     * @return The maximum allowed duration between two heartbeats for the task.
+     */
+
+    public Long getHeartbeatInSeconds() {
+        return this.heartbeatInSeconds;
+    }
+
+    /**
+     * <p>
+     * The maximum allowed duration between two heartbeats for the task.
+     * </p>
+     * 
+     * @param heartbeatInSeconds
+     *        The maximum allowed duration between two heartbeats for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskScheduledEventDetails withHeartbeatInSeconds(Long heartbeatInSeconds) {
+        setHeartbeatInSeconds(heartbeatInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +333,9 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
         if (getParameters() != null)
             sb.append("Parameters: ").append("***Sensitive Data Redacted***").append(",");
         if (getTimeoutInSeconds() != null)
-            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds());
+            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
+        if (getHeartbeatInSeconds() != null)
+            sb.append("HeartbeatInSeconds: ").append(getHeartbeatInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +370,10 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
             return false;
         if (other.getTimeoutInSeconds() != null && other.getTimeoutInSeconds().equals(this.getTimeoutInSeconds()) == false)
             return false;
+        if (other.getHeartbeatInSeconds() == null ^ this.getHeartbeatInSeconds() == null)
+            return false;
+        if (other.getHeartbeatInSeconds() != null && other.getHeartbeatInSeconds().equals(this.getHeartbeatInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +387,7 @@ public class TaskScheduledEventDetails implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getHeartbeatInSeconds() == null) ? 0 : getHeartbeatInSeconds().hashCode());
         return hashCode;
     }
 

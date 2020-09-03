@@ -56,6 +56,10 @@ public class LambdaFunctionScheduledEventDetailsJsonUnmarshaller implements Unma
                     context.nextToken();
                     lambdaFunctionScheduledEventDetails.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputDetails", targetDepth)) {
+                    context.nextToken();
+                    lambdaFunctionScheduledEventDetails.setInputDetails(HistoryEventExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("timeoutInSeconds", targetDepth)) {
                     context.nextToken();
                     lambdaFunctionScheduledEventDetails.setTimeoutInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));

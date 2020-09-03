@@ -86,6 +86,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      */
     private String input;
 
@@ -395,6 +398,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      * 
      * @param input
      *        The string that contains the JSON input data for the execution, for example:</p>
@@ -406,6 +412,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If you don't include any JSON input data, you still must include the two braces, for example:
      *        <code>"input": "{}"</code>
      *        </p>
+     *        </note>
+     *        <p>
+     *        Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public void setInput(String input) {
@@ -425,6 +434,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      * 
      * @return The string that contains the JSON input data for the execution, for example:</p>
      *         <p>
@@ -435,6 +447,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         If you don't include any JSON input data, you still must include the two braces, for example:
      *         <code>"input": "{}"</code>
      *         </p>
+     *         </note>
+     *         <p>
+     *         Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public String getInput() {
@@ -454,6 +469,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      * 
      * @param input
      *        The string that contains the JSON input data for the execution, for example:</p>
@@ -465,6 +483,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If you don't include any JSON input data, you still must include the two braces, for example:
      *        <code>"input": "{}"</code>
      *        </p>
+     *        </note>
+     *        <p>
+     *        Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -36,10 +36,17 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
     private String name;
     /**
      * <p>
-     * The string that contains the JSON input data for the state.
+     * The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      */
     private String input;
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     */
+    private HistoryEventExecutionDataDetails inputDetails;
 
     /**
      * <p>
@@ -83,11 +90,13 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The string that contains the JSON input data for the state.
+     * The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The string that contains the JSON input data for the state.
+     *        The string that contains the JSON input data for the state. Length constraints apply to the payload size,
+     *        and are expressed as bytes in UTF-8 encoding.
      */
 
     public void setInput(String input) {
@@ -96,10 +105,12 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The string that contains the JSON input data for the state.
+     * The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The string that contains the JSON input data for the state.
+     * @return The string that contains the JSON input data for the state. Length constraints apply to the payload size,
+     *         and are expressed as bytes in UTF-8 encoding.
      */
 
     public String getInput() {
@@ -108,16 +119,58 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The string that contains the JSON input data for the state.
+     * The string that contains the JSON input data for the state. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The string that contains the JSON input data for the state.
+     *        The string that contains the JSON input data for the state. Length constraints apply to the payload size,
+     *        and are expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StateEnteredEventDetails withInput(String input) {
         setInput(input);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     * 
+     * @param inputDetails
+     *        Contains details about the input for an execution history event.
+     */
+
+    public void setInputDetails(HistoryEventExecutionDataDetails inputDetails) {
+        this.inputDetails = inputDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     * 
+     * @return Contains details about the input for an execution history event.
+     */
+
+    public HistoryEventExecutionDataDetails getInputDetails() {
+        return this.inputDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     * 
+     * @param inputDetails
+     *        Contains details about the input for an execution history event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StateEnteredEventDetails withInputDetails(HistoryEventExecutionDataDetails inputDetails) {
+        setInputDetails(inputDetails);
         return this;
     }
 
@@ -136,7 +189,9 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append("***Sensitive Data Redacted***");
+            sb.append("Input: ").append("***Sensitive Data Redacted***").append(",");
+        if (getInputDetails() != null)
+            sb.append("InputDetails: ").append(getInputDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +214,10 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getInputDetails() == null ^ this.getInputDetails() == null)
+            return false;
+        if (other.getInputDetails() != null && other.getInputDetails().equals(this.getInputDetails()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +228,7 @@ public class StateEnteredEventDetails implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getInputDetails() == null) ? 0 : getInputDetails().hashCode());
         return hashCode;
     }
 

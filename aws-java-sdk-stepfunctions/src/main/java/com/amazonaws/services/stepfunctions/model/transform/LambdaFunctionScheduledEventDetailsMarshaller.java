@@ -31,6 +31,8 @@ public class LambdaFunctionScheduledEventDetailsMarshaller {
             .marshallLocationName("resource").build();
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
+    private static final MarshallingInfo<StructuredPojo> INPUTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputDetails").build();
     private static final MarshallingInfo<Long> TIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInSeconds").build();
 
@@ -52,6 +54,7 @@ public class LambdaFunctionScheduledEventDetailsMarshaller {
         try {
             protocolMarshaller.marshall(lambdaFunctionScheduledEventDetails.getResource(), RESOURCE_BINDING);
             protocolMarshaller.marshall(lambdaFunctionScheduledEventDetails.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(lambdaFunctionScheduledEventDetails.getInputDetails(), INPUTDETAILS_BINDING);
             protocolMarshaller.marshall(lambdaFunctionScheduledEventDetails.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

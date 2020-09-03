@@ -1,3 +1,20 @@
+# __1.11.855__ __2020-09-03__
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - Enables inserting a UTCTiming XML tag in the output manifest of a DASH endpoint which a media player will use to help with time synchronization.
+
+## __AWS Step Functions__
+  - ### Features
+    - This release of the AWS Step Functions SDK introduces support for payloads up to 256KB for Standard and Express workflows
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now returns confidence scores for both 'answer' and 'question and answer' query responses.
+
+## __Amazon GuardDuty__
+  - ### Features
+    - GuardDuty findings triggered by failed events now include the error code name within the AwsApiCallAction section.
+
 # __1.11.854__ __2020-09-02__
 ## __Amazon Elastic Compute Cloud__
   - ### Features
