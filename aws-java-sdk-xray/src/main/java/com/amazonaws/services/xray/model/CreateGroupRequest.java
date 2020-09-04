@@ -37,7 +37,55 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String filterExpression;
-
+    /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the new group or false to disable insights for the new group.
+     * </p>
+     */
+    private InsightsConfiguration insightsConfiguration;
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about
+     * ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -121,7 +169,131 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the new group or false to disable insights for the new group.
+     * </p>
+     * 
+     * @param insightsConfiguration
+     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
+     *        true to enable insights for the new group or false to disable insights for the new group.
+     */
+
+    public void setInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
+        this.insightsConfiguration = insightsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the new group or false to disable insights for the new group.
+     * </p>
+     * 
+     * @return The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
+     *         true to enable insights for the new group or false to disable insights for the new group.
+     */
+
+    public InsightsConfiguration getInsightsConfiguration() {
+        return this.insightsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the new group or false to disable insights for the new group.
+     * </p>
+     * 
+     * @param insightsConfiguration
+     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
+     *        true to enable insights for the new group or false to disable insights for the new group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupRequest withInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
+        setInsightsConfiguration(insightsConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about
+     * ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information
+     *         about ways to use tags, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *         <i>AWS General Reference</i>.</p>
+     *         <p>
+     *         The following restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of user-applied tags per resource: 50
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum tag key length: 128 Unicode characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum tag value length: 256 Unicode characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Tag> getTags() {
@@ -129,7 +301,86 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about
+     * ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information
+     *        about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        </p>
+     *        </li>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -143,12 +394,90 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about
+     * ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information
+     *        about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -163,7 +492,86 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about
+     * ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information
+     *        about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,6 +596,8 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getFilterExpression() != null)
             sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
+        if (getInsightsConfiguration() != null)
+            sb.append("InsightsConfiguration: ").append(getInsightsConfiguration()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -212,6 +622,10 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getFilterExpression() != null && other.getFilterExpression().equals(this.getFilterExpression()) == false)
             return false;
+        if (other.getInsightsConfiguration() == null ^ this.getInsightsConfiguration() == null)
+            return false;
+        if (other.getInsightsConfiguration() != null && other.getInsightsConfiguration().equals(this.getInsightsConfiguration()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -226,6 +640,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getFilterExpression() == null) ? 0 : getFilterExpression().hashCode());
+        hashCode = prime * hashCode + ((getInsightsConfiguration() == null) ? 0 : getInsightsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

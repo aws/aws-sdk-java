@@ -25,12 +25,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     */
     private String resourceARN;
-
+    /**
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results as the value of this parameter to get the next page of results.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param resourceARN
+     *        The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -38,7 +53,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      */
 
     public String getResourceARN() {
@@ -46,7 +65,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param resourceARN
+     *        The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +80,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results as the value of this parameter to get the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value
+     *        returned with the current page of results as the value of this parameter to get the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -64,7 +95,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results as the value of this parameter to get the next page of results.
+     * </p>
+     * 
+     * @return A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value
+     *         returned with the current page of results as the value of this parameter to get the next page of results.
      */
 
     public String getNextToken() {
@@ -72,7 +109,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results as the value of this parameter to get the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value
+     *        returned with the current page of results as the value of this parameter to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

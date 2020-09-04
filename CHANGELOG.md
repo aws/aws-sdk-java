@@ -1,3 +1,16 @@
+# __1.11.856__ __2020-09-04__
+## __AWS X-Ray__
+  - ### Features
+    - Enhancing CreateGroup, UpdateGroup, GetGroup and GetGroups APIs to support configuring X-Ray Insights
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - Documentation-only updates for AWS Systems Manager
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - Adding support for Microsoft Office 2016 and Microsoft Office 2019 in BYOL Images
+
 # __1.11.855__ __2020-09-03__
 ## __AWS Elemental MediaPackage__
   - ### Features

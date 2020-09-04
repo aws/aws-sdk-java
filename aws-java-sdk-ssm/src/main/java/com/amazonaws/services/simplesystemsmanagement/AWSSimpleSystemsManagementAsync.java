@@ -2148,12 +2148,6 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * The following section lists the properties that can be used in filters for each major operating system type:
      * </p>
      * <dl>
-     * <dt>WINDOWS</dt>
-     * <dd>
-     * <p>
-     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-     * </p>
-     * </dd>
      * <dt>AMAZON_LINUX</dt>
      * <dd>
      * <p>
@@ -2166,10 +2160,22 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>UBUNTU</dt>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>DEBIAN</dt>
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>ORACLE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
      * <dt>REDHAT_ENTERPRISE_LINUX</dt>
@@ -2184,10 +2190,16 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>CENTOS</dt>
+     * <dt>UBUNTU</dt>
      * <dd>
      * <p>
-     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
      * </p>
      * </dd>
      * </dl>
@@ -2211,12 +2223,6 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * The following section lists the properties that can be used in filters for each major operating system type:
      * </p>
      * <dl>
-     * <dt>WINDOWS</dt>
-     * <dd>
-     * <p>
-     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-     * </p>
-     * </dd>
      * <dt>AMAZON_LINUX</dt>
      * <dd>
      * <p>
@@ -2229,10 +2235,22 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>UBUNTU</dt>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>DEBIAN</dt>
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>ORACLE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
      * <dt>REDHAT_ENTERPRISE_LINUX</dt>
@@ -2247,10 +2265,16 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>CENTOS</dt>
+     * <dt>UBUNTU</dt>
      * <dd>
      * <p>
-     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
      * </p>
      * </dd>
      * </dl>
@@ -4890,10 +4914,22 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * </ul>
      * <p>
-     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
+     * not modified. If you set <code>Replace</code> to true, then all fields required by the
+     * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't
+     * specified are set to null.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param updateMaintenanceWindowTaskRequest
      * @return A Java Future containing the result of the UpdateMaintenanceWindowTask operation returned by the service.
@@ -4942,10 +4978,22 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * </ul>
      * <p>
-     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
+     * not modified. If you set <code>Replace</code> to true, then all fields required by the
+     * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't
+     * specified are set to null.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param updateMaintenanceWindowTaskRequest
      * @param asyncHandler

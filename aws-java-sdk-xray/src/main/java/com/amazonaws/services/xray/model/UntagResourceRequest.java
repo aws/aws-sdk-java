@@ -25,12 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     */
     private String resourceARN;
-
+    /**
+     * <p>
+     * Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
+     * </p>
+     */
     private java.util.List<String> tagKeys;
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param resourceARN
+     *        The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -38,7 +52,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      */
 
     public String getResourceARN() {
@@ -46,7 +64,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param resourceARN
+     *        The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +79,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @return Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -64,7 +91,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tagKeys
+     *        Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -78,12 +110,16 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagKeys
+     *        Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +134,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tagKeys
+     *        Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -15,7 +15,9 @@ package com.amazonaws.services.xray.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * You have exceeded the maximum number of tags you can apply to this resource.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyTagsException extends com.amazonaws.services.xray.model.AWSXRayException {

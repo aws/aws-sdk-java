@@ -25,18 +25,122 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * For keys, you can specify one or more tags that have been applied to a document.
  * </p>
  * <p>
- * Other valid values include <code>Owner</code>, <code>Name</code>, <code>PlatformTypes</code>,
- * <code>DocumentType</code>, and <code>TargetType</code>.
+ * You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated
+ * values are as follows:
  * </p>
+ * <dl>
+ * <dt>DocumentType</dt>
+ * <dd>
+ * <ul>
+ * <li>
  * <p>
- * Note that only one Owner can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
+ * ApplicationConfiguration
  * </p>
+ * </li>
+ * <li>
  * <p>
- * If you use Name as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to
- * return a list of all documents that begin with <code>Te</code>, run the following command:
+ * ApplicationConfigurationSchema
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Automation
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ChangeCalendar
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Command
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * DeploymentStrategy
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Package
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Policy
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Session
+ * </p>
+ * </li>
+ * </ul>
+ * </dd>
+ * <dt>Owner</dt>
+ * <dd>
+ * <p>
+ * Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Amazon
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Private
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Public
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Self
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * ThirdParty
+ * </p>
+ * </li>
+ * </ul>
+ * </dd>
+ * <dt>PlatformTypes</dt>
+ * <dd>
+ * <ul>
+ * <li>
+ * <p>
+ * Linux
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Windows
+ * </p>
+ * </li>
+ * </ul>
+ * </dd>
+ * </dl>
+ * <p>
+ * <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to
+ * return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with
+ * <code>Te</code>, run the following command:
  * </p>
  * <p>
  * <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
+ * </p>
+ * <p>
+ * You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be
+ * used with this key, see <a
+ * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource
+ * and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
  * </p>
  * <p>
  * If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If
@@ -47,7 +151,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
  * </p>
  * <p>
- * For example, if you created a Key called region and are using the AWS CLI to call the <code>list-documents</code>
+ * For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code>
  * command:
  * </p>
  * <p>

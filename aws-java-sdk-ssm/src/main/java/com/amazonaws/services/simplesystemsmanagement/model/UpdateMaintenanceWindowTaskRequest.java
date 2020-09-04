@@ -106,6 +106,17 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      */
     private MaintenanceWindowTaskInvocationParameters taskInvocationParameters;
     /**
@@ -157,7 +168,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String description;
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      */
@@ -702,10 +713,31 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param taskInvocationParameters
      *        The parameters that the task should use during execution. Populate only the fields that match the task
-     *        type. All other fields should be empty.
+     *        type. All other fields should be empty.</p> <important>
+     *        <p>
+     *        When you update a maintenance window task that has options specified in
+     *        <code>TaskInvocationParameters</code>, you must provide again all the
+     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *        are removed. For example, suppose that when you registered a Run Command task, you specified
+     *        <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     *        and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
+     *        different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     *        <code>NotificationConfig</code> are removed.
+     *        </p>
      */
 
     public void setTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
@@ -717,9 +749,30 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @return The parameters that the task should use during execution. Populate only the fields that match the task
-     *         type. All other fields should be empty.
+     *         type. All other fields should be empty.</p> <important>
+     *         <p>
+     *         When you update a maintenance window task that has options specified in
+     *         <code>TaskInvocationParameters</code>, you must provide again all the
+     *         <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *         are removed. For example, suppose that when you registered a Run Command task, you specified
+     *         <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     *         and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
+     *         different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     *         <code>NotificationConfig</code> are removed.
+     *         </p>
      */
 
     public MaintenanceWindowTaskInvocationParameters getTaskInvocationParameters() {
@@ -731,10 +784,31 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param taskInvocationParameters
      *        The parameters that the task should use during execution. Populate only the fields that match the task
-     *        type. All other fields should be empty.
+     *        type. All other fields should be empty.</p> <important>
+     *        <p>
+     *        When you update a maintenance window task that has options specified in
+     *        <code>TaskInvocationParameters</code>, you must provide again all the
+     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *        are removed. For example, suppose that when you registered a Run Command task, you specified
+     *        <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     *        and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
+     *        different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     *        <code>NotificationConfig</code> are removed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,12 +1122,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *        required for this API request. Optional fields that are not specified are set to null.
      */
 
@@ -1063,11 +1137,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *         required for this API request. Optional fields that are not specified are set to null.
      */
 
@@ -1077,12 +1151,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *        required for this API request. Optional fields that are not specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1094,11 +1168,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *         required for this API request. Optional fields that are not specified are set to null.
      */
 

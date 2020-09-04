@@ -23,12 +23,27 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.
+     * </p>
+     */
     private java.util.List<Tag> tags;
-
+    /**
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results to get the next page of results.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @return A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling
+     *         rule.
      */
 
     public java.util.List<Tag> getTags() {
@@ -36,7 +51,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tags
+     *        A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling
+     *        rule.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -50,12 +71,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling
+     *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,7 +96,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tags
+     *        A list of tags, as key and value pairs, that is associated with the specified X-Ray group or sampling
+     *        rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,7 +112,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results to get the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value
+     *        returned with the current page of results to get the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +127,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results to get the next page of results.
+     * </p>
+     * 
+     * @return A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value
+     *         returned with the current page of results to get the next page of results.
      */
 
     public String getNextToken() {
@@ -96,7 +141,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value returned with
+     * the current page of results to get the next page of results.
+     * </p>
+     * 
      * @param nextToken
+     *        A pagination token. If multiple pages of results are returned, use the <code>NextToken</code> value
+     *        returned with the current page of results to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

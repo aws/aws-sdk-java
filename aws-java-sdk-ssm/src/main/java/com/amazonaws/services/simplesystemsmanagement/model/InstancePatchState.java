@@ -93,13 +93,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer installedPendingRebootCount;
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      */
@@ -147,8 +148,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private java.util.Date operationEndTime;
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      */
     private String operation;
@@ -590,23 +591,24 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
      * @param installedRejectedCount
-     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *        list.</p> <note>
+     *        The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
+     *        Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     *        <code>RejectedPatches</code> list.</p> <note>
      *        <p>
-     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *        InstalledRejectedCount will always be 0 (zero).
+     *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *        value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      *        </p>
      */
 
@@ -616,22 +618,23 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
-     * @return The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *         a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *         list.</p> <note>
+     * @return The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
+     *         Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     *         <code>RejectedPatches</code> list.</p> <note>
      *         <p>
-     *         If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *         InstalledRejectedCount will always be 0 (zero).
+     *         If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *         value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      *         </p>
      */
 
@@ -641,23 +644,24 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
      * @param installedRejectedCount
-     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *        list.</p> <note>
+     *        The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
+     *        Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     *        <code>RejectedPatches</code> list.</p> <note>
      *        <p>
-     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *        InstalledRejectedCount will always be 0 (zero).
+     *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *        value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -939,13 +943,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @see PatchOperationType
      */
 
@@ -955,12 +959,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
-     * @return The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *         (install missing patches).
+     * @return The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *         <code>INSTALL</code> (install missing patches).
      * @see PatchOperationType
      */
 
@@ -970,13 +974,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchOperationType
      */
@@ -988,13 +992,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @see PatchOperationType
      */
 
@@ -1004,13 +1008,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchOperationType
      */

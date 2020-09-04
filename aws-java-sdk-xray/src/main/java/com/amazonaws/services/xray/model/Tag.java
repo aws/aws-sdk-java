@@ -18,18 +18,65 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A map that contains tag keys and tag values to attach to an AWS X-Ray group or sampling rule. For more information
+ * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+ * resources</a> in the <i>AWS General Reference</i>.
+ * </p>
+ * <p>
+ * The following restrictions apply to tags:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Maximum number of user-applied tags per resource: 50
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Tag keys and values are case sensitive.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system tags.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Tag" target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Tag implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum
+     * of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special
+     * characters: <code>+ - = . _ : /</code>
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of
+     * 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters:
+     * <code>+ - = . _ : /</code>
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum
+     * of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special
+     * characters: <code>+ - = . _ : /</code>
+     * </p>
+     * 
      * @param key
+     *        A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a
+     *        maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following
+     *        special characters: <code>+ - = . _ : /</code>
      */
 
     public void setKey(String key) {
@@ -37,7 +84,15 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum
+     * of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special
+     * characters: <code>+ - = . _ : /</code>
+     * </p>
+     * 
+     * @return A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a
+     *         maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following
+     *         special characters: <code>+ - = . _ : /</code>
      */
 
     public String getKey() {
@@ -45,7 +100,16 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a maximum
+     * of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following special
+     * characters: <code>+ - = . _ : /</code>
+     * </p>
+     * 
      * @param key
+     *        A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty. The key can be a
+     *        maximum of 128 characters, and can contain only Unicode letters, numbers, or separators, or the following
+     *        special characters: <code>+ - = . _ : /</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -55,7 +119,16 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of
+     * 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters:
+     * <code>+ - = . _ : /</code>
+     * </p>
+     * 
      * @param value
+     *        An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a
+     *        maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
+     *        special characters: <code>+ - = . _ : /</code>
      */
 
     public void setValue(String value) {
@@ -63,7 +136,15 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of
+     * 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters:
+     * <code>+ - = . _ : /</code>
+     * </p>
+     * 
+     * @return An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a
+     *         maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
+     *         special characters: <code>+ - = . _ : /</code>
      */
 
     public String getValue() {
@@ -71,7 +152,16 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a maximum of
+     * 255 characters, and contain only Unicode letters, numbers, or separators, or the following special characters:
+     * <code>+ - = . _ : /</code>
+     * </p>
+     * 
      * @param value
+     *        An optional tag value, such as <code>Production</code> or <code>test-only</code>. The value can be a
+     *        maximum of 255 characters, and contain only Unicode letters, numbers, or separators, or the following
+     *        special characters: <code>+ - = . _ : /</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

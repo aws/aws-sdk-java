@@ -32,6 +32,8 @@ public class CreateGroupRequestMarshaller {
             .marshallLocationName("GroupName").build();
     private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
+    private static final MarshallingInfo<StructuredPojo> INSIGHTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InsightsConfiguration").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
 
@@ -53,6 +55,7 @@ public class CreateGroupRequestMarshaller {
         try {
             protocolMarshaller.marshall(createGroupRequest.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(createGroupRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
+            protocolMarshaller.marshall(createGroupRequest.getInsightsConfiguration(), INSIGHTSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createGroupRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

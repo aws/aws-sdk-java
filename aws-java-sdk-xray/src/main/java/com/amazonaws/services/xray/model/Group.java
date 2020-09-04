@@ -45,6 +45,13 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String filterExpression;
+    /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the group or false to disable insights for the group.
+     * </p>
+     */
+    private InsightsConfiguration insightsConfiguration;
 
     /**
      * <p>
@@ -167,6 +174,52 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the group or false to disable insights for the group.
+     * </p>
+     * 
+     * @param insightsConfiguration
+     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
+     *        true to enable insights for the group or false to disable insights for the group.
+     */
+
+    public void setInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
+        this.insightsConfiguration = insightsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the group or false to disable insights for the group.
+     * </p>
+     * 
+     * @return The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
+     *         true to enable insights for the group or false to disable insights for the group.
+     */
+
+    public InsightsConfiguration getInsightsConfiguration() {
+        return this.insightsConfiguration;
+    }
+
+    /**
+     * <p>
+     * The structure containing configurations related to insights. The InsightsEnabled boolean can be set to true to
+     * enable insights for the group or false to disable insights for the group.
+     * </p>
+     * 
+     * @param insightsConfiguration
+     *        The structure containing configurations related to insights. The InsightsEnabled boolean can be set to
+     *        true to enable insights for the group or false to disable insights for the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Group withInsightsConfiguration(InsightsConfiguration insightsConfiguration) {
+        setInsightsConfiguration(insightsConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -183,7 +236,9 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
         if (getGroupARN() != null)
             sb.append("GroupARN: ").append(getGroupARN()).append(",");
         if (getFilterExpression() != null)
-            sb.append("FilterExpression: ").append(getFilterExpression());
+            sb.append("FilterExpression: ").append(getFilterExpression()).append(",");
+        if (getInsightsConfiguration() != null)
+            sb.append("InsightsConfiguration: ").append(getInsightsConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +265,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFilterExpression() != null && other.getFilterExpression().equals(this.getFilterExpression()) == false)
             return false;
+        if (other.getInsightsConfiguration() == null ^ this.getInsightsConfiguration() == null)
+            return false;
+        if (other.getInsightsConfiguration() != null && other.getInsightsConfiguration().equals(this.getInsightsConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +280,7 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getGroupARN() == null) ? 0 : getGroupARN().hashCode());
         hashCode = prime * hashCode + ((getFilterExpression() == null) ? 0 : getFilterExpression().hashCode());
+        hashCode = prime * hashCode + ((getInsightsConfiguration() == null) ? 0 : getInsightsConfiguration().hashCode());
         return hashCode;
     }
 

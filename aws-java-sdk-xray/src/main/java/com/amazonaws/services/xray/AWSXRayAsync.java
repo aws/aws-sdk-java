@@ -565,6 +565,10 @@ public interface AWSXRayAsync extends AWSXRay {
             com.amazonaws.handlers.AsyncHandler<GetTraceSummariesRequest, GetTraceSummariesResult> asyncHandler);
 
     /**
+     * <p>
+     * Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
      * @sample AWSXRayAsync.ListTagsForResource
@@ -574,6 +578,10 @@ public interface AWSXRayAsync extends AWSXRay {
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
+     * <p>
+     * Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -829,6 +837,10 @@ public interface AWSXRayAsync extends AWSXRay {
             com.amazonaws.handlers.AsyncHandler<PutTraceSegmentsRequest, PutTraceSegmentsResult> asyncHandler);
 
     /**
+     * <p>
+     * Applies tags to an existing AWS X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @return A Java Future containing the result of the TagResource operation returned by the service.
      * @sample AWSXRayAsync.TagResource
@@ -838,6 +850,10 @@ public interface AWSXRayAsync extends AWSXRay {
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
 
     /**
+     * <p>
+     * Applies tags to an existing AWS X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
@@ -852,6 +868,11 @@ public interface AWSXRayAsync extends AWSXRay {
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
+     * <p>
+     * Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system tags (those with an
+     * <code>aws:</code> prefix).
+     * </p>
+     * 
      * @param untagResourceRequest
      * @return A Java Future containing the result of the UntagResource operation returned by the service.
      * @sample AWSXRayAsync.UntagResource
@@ -861,6 +882,11 @@ public interface AWSXRayAsync extends AWSXRay {
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
 
     /**
+     * <p>
+     * Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system tags (those with an
+     * <code>aws:</code> prefix).
+     * </p>
+     * 
      * @param untagResourceRequest
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an

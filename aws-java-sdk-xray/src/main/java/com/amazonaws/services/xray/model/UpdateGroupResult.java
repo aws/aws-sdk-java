@@ -26,7 +26,7 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * The group that was updated. Contains the name of the group that was updated, the ARN of the group that was
-     * updated, and the updated filter expression assigned to the group.
+     * updated, the updated filter expression, and the updated insight configuration assigned to the group.
      * </p>
      */
     private Group group;
@@ -34,12 +34,12 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * The group that was updated. Contains the name of the group that was updated, the ARN of the group that was
-     * updated, and the updated filter expression assigned to the group.
+     * updated, the updated filter expression, and the updated insight configuration assigned to the group.
      * </p>
      * 
      * @param group
      *        The group that was updated. Contains the name of the group that was updated, the ARN of the group that was
-     *        updated, and the updated filter expression assigned to the group.
+     *        updated, the updated filter expression, and the updated insight configuration assigned to the group.
      */
 
     public void setGroup(Group group) {
@@ -49,11 +49,11 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * The group that was updated. Contains the name of the group that was updated, the ARN of the group that was
-     * updated, and the updated filter expression assigned to the group.
+     * updated, the updated filter expression, and the updated insight configuration assigned to the group.
      * </p>
      * 
      * @return The group that was updated. Contains the name of the group that was updated, the ARN of the group that
-     *         was updated, and the updated filter expression assigned to the group.
+     *         was updated, the updated filter expression, and the updated insight configuration assigned to the group.
      */
 
     public Group getGroup() {
@@ -63,12 +63,12 @@ public class UpdateGroupResult extends com.amazonaws.AmazonWebServiceResult<com.
     /**
      * <p>
      * The group that was updated. Contains the name of the group that was updated, the ARN of the group that was
-     * updated, and the updated filter expression assigned to the group.
+     * updated, the updated filter expression, and the updated insight configuration assigned to the group.
      * </p>
      * 
      * @param group
      *        The group that was updated. Contains the name of the group that was updated, the ARN of the group that was
-     *        updated, and the updated filter expression assigned to the group.
+     *        updated, the updated filter expression, and the updated insight configuration assigned to the group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,12 +25,65 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     */
     private String resourceARN;
-
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more
+     * information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system
+     * tags.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private java.util.List<Tag> tags;
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param resourceARN
+     *        The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      */
 
     public void setResourceARN(String resourceARN) {
@@ -38,7 +91,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      */
 
     public String getResourceARN() {
@@ -46,7 +103,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param resourceARN
+     *        The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +118,88 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more
+     * information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system
+     * tags.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For
+     *         more information about ways to use tags, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *         <i>AWS General Reference</i>.</p>
+     *         <p>
+     *         The following restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of user-applied tags per resource: 50
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum tag key length: 128 Unicode characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum tag value length: 256 Unicode characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete
+     *         system tags.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Tag> getTags() {
@@ -64,7 +207,89 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more
+     * information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system
+     * tags.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For
+     *        more information about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete
+     *        system tags.
+     *        </p>
+     *        </li>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -78,12 +303,93 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more
+     * information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system
+     * tags.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For
+     *        more information about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete
+     *        system tags.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +404,89 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more
+     * information about ways to use tags, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete system
+     * tags.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For
+     *        more information about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use. You cannot edit or delete
+     *        system tags.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -380,6 +380,10 @@ public interface AWSXRay {
     GetTraceSummariesResult getTraceSummaries(GetTraceSummariesRequest getTraceSummariesRequest);
 
     /**
+     * <p>
+     * Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws InvalidRequestException
@@ -387,6 +391,7 @@ public interface AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @throws ResourceNotFoundException
+     *         The resource was not found. Verify that the name or ARN of the resource is correct.
      * @sample AWSXRay.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -519,6 +524,10 @@ public interface AWSXRay {
     PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest);
 
     /**
+     * <p>
+     * Applies tags to an existing AWS X-Ray group or sampling rule.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws InvalidRequestException
@@ -526,7 +535,9 @@ public interface AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @throws ResourceNotFoundException
+     *         The resource was not found. Verify that the name or ARN of the resource is correct.
      * @throws TooManyTagsException
+     *         You have exceeded the maximum number of tags you can apply to this resource.
      * @sample AWSXRay.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -534,6 +545,11 @@ public interface AWSXRay {
     TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
 
     /**
+     * <p>
+     * Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system tags (those with an
+     * <code>aws:</code> prefix).
+     * </p>
+     * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws InvalidRequestException
@@ -541,6 +557,7 @@ public interface AWSXRay {
      * @throws ThrottledException
      *         The request exceeds the maximum number of requests per second.
      * @throws ResourceNotFoundException
+     *         The resource was not found. Verify that the name or ARN of the resource is correct.
      * @sample AWSXRay.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource" target="_top">AWS API
      *      Documentation</a>

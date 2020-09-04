@@ -60,6 +60,10 @@ public class GroupSummaryJsonUnmarshaller implements Unmarshaller<GroupSummary, 
                     context.nextToken();
                     groupSummary.setFilterExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("InsightsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    groupSummary.setInsightsConfiguration(InsightsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

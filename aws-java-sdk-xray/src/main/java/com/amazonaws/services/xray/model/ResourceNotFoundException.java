@@ -15,7 +15,9 @@ package com.amazonaws.services.xray.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The resource was not found. Verify that the name or ARN of the resource is correct.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceNotFoundException extends com.amazonaws.services.xray.model.AWSXRayException {
