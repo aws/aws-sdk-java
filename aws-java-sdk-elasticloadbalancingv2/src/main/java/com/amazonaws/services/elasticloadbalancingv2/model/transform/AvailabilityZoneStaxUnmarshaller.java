@@ -55,6 +55,11 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     continue;
                 }
 
+                if (context.testExpression("OutpostId", targetDepth)) {
+                    availabilityZone.setOutpostId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancerAddresses", targetDepth)) {
                     availabilityZone.withLoadBalancerAddresses(new ArrayList<LoadBalancerAddress>());
                     continue;

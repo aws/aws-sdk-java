@@ -22,7 +22,8 @@ public enum Locale {
 
     EnUS("en-US"),
     EnGB("en-GB"),
-    DeDE("de-DE");
+    DeDE("de-DE"),
+    EnAU("en-AU");
 
     private String value;
 

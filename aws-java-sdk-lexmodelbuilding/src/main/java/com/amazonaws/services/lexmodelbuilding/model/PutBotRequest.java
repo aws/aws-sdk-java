@@ -46,8 +46,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private java.util.List<Intent> intents;
     /**
      * <p>
-     * Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the new NLU
-     * may improve the performance of your bot.
+     * Set to <code>true</code> to enable access to natural language understanding improvements.
      * </p>
      * <p>
      * When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
@@ -56,9 +55,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <p>
      * You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter
-     * to <code>true</code>, your bot will use the new NLU. If you set the parameter to <code>false</code>, your bot
-     * will continue to use the original NLU. If you set the parameter to <code>false</code> after setting it to
-     * <code>true</code>, your bot will return to the original NLU.
+     * to <code>true</code>, your bot has access to accuracy improvements.
      * </p>
      * <p>
      * The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -124,6 +121,31 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <p>
      * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney) (ap-southeast-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EU (Ireland) (eu-west-1)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.
      * </p>
      * <p>
      * For example, suppose a bot is configured with the confidence threshold of 0.80 and the
@@ -203,7 +225,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times.
-     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then aborts the
+     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.
      * </p>
      * <p>
@@ -217,7 +239,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * create the <code>CrustType</code> slot.
      * </p>
      * <p>
-     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is
      * used instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * </p>
@@ -501,8 +523,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the new NLU
-     * may improve the performance of your bot.
+     * Set to <code>true</code> to enable access to natural language understanding improvements.
      * </p>
      * <p>
      * When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
@@ -511,9 +532,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <p>
      * You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter
-     * to <code>true</code>, your bot will use the new NLU. If you set the parameter to <code>false</code>, your bot
-     * will continue to use the original NLU. If you set the parameter to <code>false</code> after setting it to
-     * <code>true</code>, your bot will return to the original NLU.
+     * to <code>true</code>, your bot has access to accuracy improvements.
      * </p>
      * <p>
      * The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -568,8 +587,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </ul>
      * 
      * @param enableModelImprovements
-     *        Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the
-     *        new NLU may improve the performance of your bot. </p>
+     *        Set to <code>true</code> to enable access to natural language understanding improvements. </p>
      *        <p>
      *        When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
      *        <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information,
@@ -577,9 +595,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        </p>
      *        <p>
      *        You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the
-     *        parameter to <code>true</code>, your bot will use the new NLU. If you set the parameter to
-     *        <code>false</code>, your bot will continue to use the original NLU. If you set the parameter to
-     *        <code>false</code> after setting it to <code>true</code>, your bot will return to the original NLU.
+     *        parameter to <code>true</code>, your bot has access to accuracy improvements.
      *        </p>
      *        <p>
      *        The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -640,8 +656,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the new NLU
-     * may improve the performance of your bot.
+     * Set to <code>true</code> to enable access to natural language understanding improvements.
      * </p>
      * <p>
      * When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
@@ -650,9 +665,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <p>
      * You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter
-     * to <code>true</code>, your bot will use the new NLU. If you set the parameter to <code>false</code>, your bot
-     * will continue to use the original NLU. If you set the parameter to <code>false</code> after setting it to
-     * <code>true</code>, your bot will return to the original NLU.
+     * to <code>true</code>, your bot has access to accuracy improvements.
      * </p>
      * <p>
      * The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -706,8 +719,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </li>
      * </ul>
      * 
-     * @return Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the
-     *         new NLU may improve the performance of your bot. </p>
+     * @return Set to <code>true</code> to enable access to natural language understanding improvements. </p>
      *         <p>
      *         When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
      *         <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information,
@@ -715,9 +727,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         </p>
      *         <p>
      *         You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the
-     *         parameter to <code>true</code>, your bot will use the new NLU. If you set the parameter to
-     *         <code>false</code>, your bot will continue to use the original NLU. If you set the parameter to
-     *         <code>false</code> after setting it to <code>true</code>, your bot will return to the original NLU.
+     *         parameter to <code>true</code>, your bot has access to accuracy improvements.
      *         </p>
      *         <p>
      *         The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code>
@@ -779,8 +789,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the new NLU
-     * may improve the performance of your bot.
+     * Set to <code>true</code> to enable access to natural language understanding improvements.
      * </p>
      * <p>
      * When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
@@ -789,9 +798,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <p>
      * You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter
-     * to <code>true</code>, your bot will use the new NLU. If you set the parameter to <code>false</code>, your bot
-     * will continue to use the original NLU. If you set the parameter to <code>false</code> after setting it to
-     * <code>true</code>, your bot will return to the original NLU.
+     * to <code>true</code>, your bot has access to accuracy improvements.
      * </p>
      * <p>
      * The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -846,8 +853,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </ul>
      * 
      * @param enableModelImprovements
-     *        Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the
-     *        new NLU may improve the performance of your bot. </p>
+     *        Set to <code>true</code> to enable access to natural language understanding improvements. </p>
      *        <p>
      *        When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
      *        <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information,
@@ -855,9 +861,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        </p>
      *        <p>
      *        You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the
-     *        parameter to <code>true</code>, your bot will use the new NLU. If you set the parameter to
-     *        <code>false</code>, your bot will continue to use the original NLU. If you set the parameter to
-     *        <code>false</code> after setting it to <code>true</code>, your bot will return to the original NLU.
+     *        parameter to <code>true</code>, your bot has access to accuracy improvements.
      *        </p>
      *        <p>
      *        The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -920,8 +924,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the new NLU
-     * may improve the performance of your bot.
+     * Set to <code>true</code> to enable access to natural language understanding improvements.
      * </p>
      * <p>
      * When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
@@ -930,9 +933,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * <p>
      * You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter
-     * to <code>true</code>, your bot will use the new NLU. If you set the parameter to <code>false</code>, your bot
-     * will continue to use the original NLU. If you set the parameter to <code>false</code> after setting it to
-     * <code>true</code>, your bot will return to the original NLU.
+     * to <code>true</code>, your bot has access to accuracy improvements.
      * </p>
      * <p>
      * The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:
@@ -986,8 +987,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </li>
      * </ul>
      * 
-     * @return Set to <code>true</code> to enable the use of a new natural language understanding (NLU) model. Using the
-     *         new NLU may improve the performance of your bot. </p>
+     * @return Set to <code>true</code> to enable access to natural language understanding improvements. </p>
      *         <p>
      *         When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the
      *         <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information,
@@ -995,9 +995,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         </p>
      *         <p>
      *         You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the
-     *         parameter to <code>true</code>, your bot will use the new NLU. If you set the parameter to
-     *         <code>false</code>, your bot will continue to use the original NLU. If you set the parameter to
-     *         <code>false</code> after setting it to <code>true</code>, your bot will return to the original NLU.
+     *         parameter to <code>true</code>, your bot has access to accuracy improvements.
      *         </p>
      *         <p>
      *         The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code>
@@ -1069,6 +1067,31 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney) (ap-southeast-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EU (Ireland) (eu-west-1)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.
+     * </p>
      * <p>
      * For example, suppose a bot is configured with the confidence threshold of 0.80 and the
      * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence
@@ -1108,6 +1131,32 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        <p>
      *        You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence
      *        scores.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        US East (N. Virginia) (us-east-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        US West (Oregon) (us-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Sydney) (ap-southeast-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EU (Ireland) (eu-west-1)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
+     *        default.
      *        </p>
      *        <p>
      *        For example, suppose a bot is configured with the confidence threshold of 0.80 and the
@@ -1154,6 +1203,31 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney) (ap-southeast-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EU (Ireland) (eu-west-1)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.
+     * </p>
      * <p>
      * For example, suppose a bot is configured with the confidence threshold of 0.80 and the
      * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence
@@ -1192,6 +1266,32 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         <p>
      *         You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence
      *         scores.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         US East (N. Virginia) (us-east-1)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         US West (Oregon) (us-west-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Asia Pacific (Sydney) (ap-southeast-2)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EU (Ireland) (eu-west-1)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
+     *         default.
      *         </p>
      *         <p>
      *         For example, suppose a bot is configured with the confidence threshold of 0.80 and the
@@ -1238,6 +1338,31 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <p>
      * You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia) (us-east-1)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon) (us-west-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney) (ap-southeast-2)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EU (Ireland) (eu-west-1)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.
+     * </p>
      * <p>
      * For example, suppose a bot is configured with the confidence threshold of 0.80 and the
      * <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence
@@ -1277,6 +1402,32 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        <p>
      *        You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence
      *        scores.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        US East (N. Virginia) (us-east-1)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        US West (Oregon) (us-west-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Asia Pacific (Sydney) (ap-southeast-2)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EU (Ireland) (eu-west-1)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by
+     *        default.
      *        </p>
      *        <p>
      *        For example, suppose a bot is configured with the confidence threshold of 0.80 and the
@@ -1594,7 +1745,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times.
-     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then aborts the
+     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.
      * </p>
      * <p>
@@ -1608,7 +1759,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * create the <code>CrustType</code> slot.
      * </p>
      * <p>
-     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is
      * used instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * </p>
@@ -1616,7 +1767,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @param abortStatement
      *        When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few
      *        times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and
-     *        then aborts the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code>
+     *        then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code>
      *        field for the slot type. </p>
      *        <p>
      *        For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If
@@ -1629,7 +1780,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        field when you create the <code>CrustType</code> slot.
      *        </p>
      *        <p>
-     *        If you have defined a fallback intent the abort statement will not be sent to the user, the fallback
+     *        If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback
      *        intent is used instead. For more information, see <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      */
@@ -1641,7 +1792,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times.
-     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then aborts the
+     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.
      * </p>
      * <p>
@@ -1655,14 +1806,14 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * create the <code>CrustType</code> slot.
      * </p>
      * <p>
-     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is
      * used instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * </p>
      * 
      * @return When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few
      *         times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and
-     *         then aborts the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code>
+     *         then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code>
      *         field for the slot type. </p>
      *         <p>
      *         For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If
@@ -1675,7 +1826,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         field when you create the <code>CrustType</code> slot.
      *         </p>
      *         <p>
-     *         If you have defined a fallback intent the abort statement will not be sent to the user, the fallback
+     *         If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback
      *         intent is used instead. For more information, see <a
      *         href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html">
      *         AMAZON.FallbackIntent</a>.
@@ -1688,7 +1839,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times.
-     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then aborts the
+     * After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the
      * conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type.
      * </p>
      * <p>
@@ -1702,7 +1853,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * create the <code>CrustType</code> slot.
      * </p>
      * <p>
-     * If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is
+     * If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is
      * used instead. For more information, see <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * </p>
@@ -1710,7 +1861,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * @param abortStatement
      *        When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few
      *        times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and
-     *        then aborts the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code>
+     *        then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code>
      *        field for the slot type. </p>
      *        <p>
      *        For example, in a pizza ordering bot, Amazon Lex might ask a user "What type of crust would you like?" If
@@ -1723,7 +1874,7 @@ public class PutBotRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        field when you create the <code>CrustType</code> slot.
      *        </p>
      *        <p>
-     *        If you have defined a fallback intent the abort statement will not be sent to the user, the fallback
+     *        If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback
      *        intent is used instead. For more information, see <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html"> AMAZON.FallbackIntent</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

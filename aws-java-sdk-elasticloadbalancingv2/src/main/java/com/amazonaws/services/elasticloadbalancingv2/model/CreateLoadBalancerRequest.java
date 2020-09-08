@@ -44,6 +44,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      */
@@ -56,6 +62,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot specify
      * Elastic IP addresses for your subnets.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      * </p>
      * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
@@ -106,6 +118,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String ipAddressType;
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     * </p>
+     */
+    private String customerOwnedIpv4Pool;
 
     /**
      * <p>
@@ -180,6 +198,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * 
@@ -187,6 +211,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         either subnets or subnet mappings.</p>
      *         <p>
      *         [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *         </p>
      *         <p>
      *         [Network Load Balancers] You can specify subnets from one or more Availability Zones.
@@ -205,6 +235,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * 
@@ -213,6 +249,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        either subnets or subnet mappings.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
@@ -236,6 +278,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * <p>
@@ -249,6 +297,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        either subnets or subnet mappings.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
@@ -274,6 +328,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * [Application Load Balancers] You must specify subnets from at least two Availability Zones.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones.
      * </p>
      * 
@@ -282,6 +342,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        either subnets or subnet mappings.</p>
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones.
@@ -303,6 +369,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * Elastic IP addresses for your subnets.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
@@ -313,6 +385,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *         specify Elastic IP addresses for your subnets.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *         </p>
+     *         <p>
+     *         [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *         </p>
      *         <p>
      *         [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
@@ -335,6 +413,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * Elastic IP addresses for your subnets.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
@@ -346,6 +430,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *        specify Elastic IP addresses for your subnets.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
@@ -373,6 +463,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * Elastic IP addresses for your subnets.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
@@ -389,6 +485,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *        specify Elastic IP addresses for your subnets.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
@@ -418,6 +520,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      * Elastic IP addresses for your subnets.
      * </p>
      * <p>
+     * [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     * </p>
+     * <p>
+     * [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
+     * </p>
+     * <p>
      * [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic
      * IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load
      * balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet.
@@ -429,6 +537,12 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        [Application Load Balancers] You must specify subnets from at least two Availability Zones. You cannot
      *        specify Elastic IP addresses for your subnets.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Outposts] You must specify one Outpost subnet.
+     *        </p>
+     *        <p>
+     *        [Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
      *        </p>
      *        <p>
      *        [Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one
@@ -918,6 +1032,46 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     */
+
+    public void setCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        this.customerOwnedIpv4Pool = customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     * </p>
+     * 
+     * @return [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     */
+
+    public String getCustomerOwnedIpv4Pool() {
+        return this.customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        [Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLoadBalancerRequest withCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        setCustomerOwnedIpv4Pool(customerOwnedIpv4Pool);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -944,7 +1098,9 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getIpAddressType() != null)
-            sb.append("IpAddressType: ").append(getIpAddressType());
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getCustomerOwnedIpv4Pool() != null)
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -991,6 +1147,10 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
+        if (other.getCustomerOwnedIpv4Pool() == null ^ this.getCustomerOwnedIpv4Pool() == null)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -1007,6 +1167,7 @@ public class CreateLoadBalancerRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
         return hashCode;
     }
 

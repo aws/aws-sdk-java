@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateAccountCustomizationRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespace").build();
     private static final MarshallingInfo<StructuredPojo> ACCOUNTCUSTOMIZATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountCustomization").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateAccountCustomizationRequestMarshaller instance = new CreateAccountCustomizationRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateAccountCustomizationRequestMarshaller {
             protocolMarshaller.marshall(createAccountCustomizationRequest.getAwsAccountId(), AWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(createAccountCustomizationRequest.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(createAccountCustomizationRequest.getAccountCustomization(), ACCOUNTCUSTOMIZATION_BINDING);
+            protocolMarshaller.marshall(createAccountCustomizationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

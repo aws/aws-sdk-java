@@ -50,6 +50,10 @@ public class CreateAccountCustomizationResultJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    createAccountCustomizationResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("AwsAccountId", targetDepth)) {
                     context.nextToken();
                     createAccountCustomizationResult.setAwsAccountId(context.getUnmarshaller(String.class).unmarshall(context));

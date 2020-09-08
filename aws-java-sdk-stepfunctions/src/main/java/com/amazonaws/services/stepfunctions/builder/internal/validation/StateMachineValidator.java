@@ -272,7 +272,6 @@ public class StateMachineValidator {
 
         @Override
         public Void visit(FailState failState) {
-            currentContext.assertStringNotEmpty(failState.getCause(), PropertyNames.CAUSE);
             return null;
         }
 

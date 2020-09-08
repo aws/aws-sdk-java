@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda function using incoming request parameters. For
- * HTTP APIs, specify JWT to use JSON Web Tokens.
+ * The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON
+ * Web Tokens (supported only for HTTP APIs).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

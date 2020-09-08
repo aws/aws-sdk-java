@@ -29,6 +29,8 @@ public class TestCaseFilterMarshaller {
 
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<String> KEYWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("keyword").build();
 
     private static final TestCaseFilterMarshaller instance = new TestCaseFilterMarshaller();
 
@@ -47,6 +49,7 @@ public class TestCaseFilterMarshaller {
 
         try {
             protocolMarshaller.marshall(testCaseFilter.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(testCaseFilter.getKeyword(), KEYWORD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

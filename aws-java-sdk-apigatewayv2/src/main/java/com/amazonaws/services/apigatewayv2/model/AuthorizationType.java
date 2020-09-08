@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM
- * permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, or JWT
- * for using JSON Web Tokens.
+ * permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for
+ * using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

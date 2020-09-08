@@ -56,6 +56,10 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
                     context.nextToken();
                     getAuthorizerResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("authorizerPayloadFormatVersion", targetDepth)) {
+                    context.nextToken();
+                    getAuthorizerResult.setAuthorizerPayloadFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
                     context.nextToken();
                     getAuthorizerResult.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -67,6 +71,10 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
                 if (context.testExpression("authorizerUri", targetDepth)) {
                     context.nextToken();
                     getAuthorizerResult.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("enableSimpleResponses", targetDepth)) {
+                    context.nextToken();
+                    getAuthorizerResult.setEnableSimpleResponses(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();

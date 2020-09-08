@@ -32,12 +32,16 @@ public class CreateAuthorizerRequestMarshaller {
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> AUTHORIZERCREDENTIALSARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerCredentialsArn").build();
+    private static final MarshallingInfo<String> AUTHORIZERPAYLOADFORMATVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerPayloadFormatVersion").build();
     private static final MarshallingInfo<Integer> AUTHORIZERRESULTTTLINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerResultTtlInSeconds").build();
     private static final MarshallingInfo<String> AUTHORIZERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerType").build();
     private static final MarshallingInfo<String> AUTHORIZERURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerUri").build();
+    private static final MarshallingInfo<Boolean> ENABLESIMPLERESPONSES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableSimpleResponses").build();
     private static final MarshallingInfo<List> IDENTITYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identitySource").build();
     private static final MarshallingInfo<String> IDENTITYVALIDATIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,9 +69,11 @@ public class CreateAuthorizerRequestMarshaller {
         try {
             protocolMarshaller.marshall(createAuthorizerRequest.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerCredentialsArn(), AUTHORIZERCREDENTIALSARN_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerPayloadFormatVersion(), AUTHORIZERPAYLOADFORMATVERSION_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerResultTtlInSeconds(), AUTHORIZERRESULTTTLINSECONDS_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerType(), AUTHORIZERTYPE_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getAuthorizerUri(), AUTHORIZERURI_BINDING);
+            protocolMarshaller.marshall(createAuthorizerRequest.getEnableSimpleResponses(), ENABLESIMPLERESPONSES_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getIdentitySource(), IDENTITYSOURCE_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getIdentityValidationExpression(), IDENTITYVALIDATIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(createAuthorizerRequest.getJwtConfiguration(), JWTCONFIGURATION_BINDING);

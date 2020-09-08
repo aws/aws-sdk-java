@@ -1,3 +1,24 @@
+# __1.11.857__ __2020-09-08__
+## __AWS CodeBuild__
+  - ### Features
+    - AWS CodeBuild - Support keyword search for test cases in DecribeTestCases API . Allow deletion of reports in the report group, before deletion of report group using the deleteReports flag.
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Amazon Lex supports en-AU locale
+
+## __Amazon QuickSight__
+  - ### Features
+    - Adds tagging support for QuickSight customization resources.  A user can now specify a list of tags when creating a customization resource and use a customization ARN in QuickSight's tagging APIs.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - You can now secure HTTP APIs using Lambda authorizers and IAM authorizers. These options enable you to make flexible auth decisions using a Lambda function, or using IAM policies, respectively.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Adds support for Application Load Balancers on Outposts.
+
 # __1.11.856__ __2020-09-04__
 ## __AWS X-Ray__
   - ### Features

@@ -992,6 +992,21 @@ public interface AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @return Result of the ResetAuthorizersCache operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.ResetAuthorizersCache
+     */
+    ResetAuthorizersCacheResult resetAuthorizersCache(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest);
+
+    /**
+     * <p>
      * Creates a new Tag resource to represent a tag.
      * </p>
      * 

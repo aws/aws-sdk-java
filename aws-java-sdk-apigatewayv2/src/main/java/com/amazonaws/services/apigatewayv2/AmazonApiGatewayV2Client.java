@@ -3384,6 +3384,62 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @return Result of the ResetAuthorizersCache operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.ResetAuthorizersCache
+     */
+    @Override
+    public ResetAuthorizersCacheResult resetAuthorizersCache(ResetAuthorizersCacheRequest request) {
+        request = beforeClientExecution(request);
+        return executeResetAuthorizersCache(request);
+    }
+
+    @SdkInternalApi
+    final ResetAuthorizersCacheResult executeResetAuthorizersCache(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resetAuthorizersCacheRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResetAuthorizersCacheRequest> request = null;
+        Response<ResetAuthorizersCacheResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResetAuthorizersCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetAuthorizersCacheRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayV2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetAuthorizersCache");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResetAuthorizersCacheResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ResetAuthorizersCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new Tag resource to represent a tag.
      * </p>
      * 

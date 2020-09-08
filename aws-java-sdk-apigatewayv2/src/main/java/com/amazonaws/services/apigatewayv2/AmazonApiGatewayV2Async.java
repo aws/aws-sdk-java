@@ -1595,6 +1595,33 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
 
     /**
      * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @return A Java Future containing the result of the ResetAuthorizersCache operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.ResetAuthorizersCache
+     */
+    java.util.concurrent.Future<ResetAuthorizersCacheResult> resetAuthorizersCacheAsync(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest);
+
+    /**
+     * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetAuthorizersCache operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.ResetAuthorizersCache
+     */
+    java.util.concurrent.Future<ResetAuthorizersCacheResult> resetAuthorizersCacheAsync(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetAuthorizersCacheRequest, ResetAuthorizersCacheResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Tag resource to represent a tag.
      * </p>
      * 

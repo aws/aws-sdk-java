@@ -25,17 +25,17 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      */
     private java.util.List<AvailabilityZone> availabilityZones;
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * 
-     * @return Information about the subnet and Availability Zone.
+     * @return Information about the subnets.
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -44,11 +44,11 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the subnet and Availability Zone.
+     *        Information about the subnets.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -62,7 +62,7 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the subnet and Availability Zone.
+     *        Information about the subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the subnet and Availability Zone.
+     *        Information about the subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

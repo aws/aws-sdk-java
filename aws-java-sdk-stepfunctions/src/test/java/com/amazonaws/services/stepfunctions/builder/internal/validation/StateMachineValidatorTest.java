@@ -462,8 +462,16 @@ public class StateMachineValidatorTest {
                 .build();
     }
 
-    @Test(expected = ValidationException.class)
-    public void missingCauseInFailState_IsNotValid() {
+    @Test
+    public void missingCauseAndErrorInFailState_IsValid() {
+        stateMachine()
+                .startAt("Initial")
+                .state("Initial", failState())
+                .build();
+    }
+
+    @Test
+    public void missingCauseInFailState_IsValid() {
         stateMachine()
                 .startAt("Initial")
                 .state("Initial", failState()
@@ -630,7 +638,7 @@ public class StateMachineValidatorTest {
                 .state("Initial", parallelState()
                         .branch(branch()
                                         .startAt("InitialBranchState")
-                                        .state("InitialBranchState", failState()))
+                                        .state("InitialBranchState", taskState()))
                         .transition(end()))
                 .build();
     }
@@ -703,7 +711,7 @@ public class StateMachineValidatorTest {
                 .state("Initial", mapState()
                         .iterator(iterator()
                                 .startAt("InitialBranchState")
-                                .state("InitialBranchState", failState()))
+                                .state("InitialBranchState", taskState()))
                         .transition(end()))
                 .build();
     }

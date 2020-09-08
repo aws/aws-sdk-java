@@ -25,6 +25,12 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * The ID for the AWS account that you're describing.
      * </p>
      */
@@ -53,6 +59,46 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
      * </p>
      */
     private Integer status;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the customization that's associated with this AWS account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAccountCustomizationResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
 
     /**
      * <p>
@@ -266,6 +312,8 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getAwsAccountId() != null)
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
         if (getNamespace() != null)
@@ -290,6 +338,10 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
         if (obj instanceof DescribeAccountCustomizationResult == false)
             return false;
         DescribeAccountCustomizationResult other = (DescribeAccountCustomizationResult) obj;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getAwsAccountId() == null ^ this.getAwsAccountId() == null)
             return false;
         if (other.getAwsAccountId() != null && other.getAwsAccountId().equals(this.getAwsAccountId()) == false)
@@ -318,6 +370,7 @@ public class DescribeAccountCustomizationResult extends com.amazonaws.AmazonWebS
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getAccountCustomization() == null) ? 0 : getAccountCustomization().hashCode());

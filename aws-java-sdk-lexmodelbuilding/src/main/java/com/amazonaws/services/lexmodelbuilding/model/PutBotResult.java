@@ -43,8 +43,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private java.util.List<Intent> intents;
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      */
     private Boolean enableModelImprovements;
@@ -54,8 +54,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     * <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-     * configured for the bot.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      * </p>
      */
     private Double nluIntentConfidenceThreshold;
@@ -68,7 +68,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private Prompt clarificationPrompt;
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      */
     private Statement abortStatement;
@@ -343,13 +343,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
      * @param enableModelImprovements
-     *        Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *        True indicates that the bot is using the new model, otherwise, false.
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the imoprovements, otherwise, <code>false</code>.
      */
 
     public void setEnableModelImprovements(Boolean enableModelImprovements) {
@@ -358,12 +358,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
-     * @return Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *         True indicates that the bot is using the new model, otherwise, false.
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the imoprovements, otherwise, <code>false</code>.
      */
 
     public Boolean getEnableModelImprovements() {
@@ -372,13 +372,13 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
      * @param enableModelImprovements
-     *        Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *        True indicates that the bot is using the new model, otherwise, false.
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the imoprovements, otherwise, <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,12 +389,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
-     * @return Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *         True indicates that the bot is using the new model, otherwise, false.
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the imoprovements, otherwise, <code>false</code>.
      */
 
     public Boolean isEnableModelImprovements() {
@@ -407,8 +407,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     * <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-     * configured for the bot.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      * </p>
      * 
      * @param nluIntentConfidenceThreshold
@@ -416,8 +416,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      *        <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     *        <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they
-     *        are configured for the bot.
+     *        <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this
+     *        value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      */
 
     public void setNluIntentConfidenceThreshold(Double nluIntentConfidenceThreshold) {
@@ -430,16 +430,16 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     * <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-     * configured for the bot.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      * </p>
      * 
      * @return The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
      *         <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      *         href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      *         href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     *         <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they
-     *         are configured for the bot.
+     *         <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this
+     *         value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      */
 
     public Double getNluIntentConfidenceThreshold() {
@@ -452,8 +452,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      * <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      * href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     * <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are
-     * configured for the bot.
+     * <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value.
+     * <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      * </p>
      * 
      * @param nluIntentConfidenceThreshold
@@ -461,8 +461,8 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
      *        <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a
      *        href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> response.
-     *        <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they
-     *        are configured for the bot.
+     *        <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this
+     *        value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,11 +519,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     *        The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      */
 
     public void setAbortStatement(Statement abortStatement) {
@@ -532,10 +532,10 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * @return The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      */
 
     public Statement getAbortStatement() {
@@ -544,11 +544,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     *        The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

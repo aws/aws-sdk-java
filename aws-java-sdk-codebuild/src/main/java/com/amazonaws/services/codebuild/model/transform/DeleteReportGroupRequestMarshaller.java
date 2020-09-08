@@ -29,6 +29,8 @@ public class DeleteReportGroupRequestMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<Boolean> DELETEREPORTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteReports").build();
 
     private static final DeleteReportGroupRequestMarshaller instance = new DeleteReportGroupRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeleteReportGroupRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deleteReportGroupRequest.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(deleteReportGroupRequest.getDeleteReports(), DELETEREPORTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

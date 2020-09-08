@@ -51,6 +51,12 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private AccountCustomization accountCustomization;
+    /**
+     * <p>
+     * A list of the tags that you want to attach to this resource.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -216,6 +222,76 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * A list of the tags that you want to attach to this resource.
+     * </p>
+     * 
+     * @return A list of the tags that you want to attach to this resource.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of the tags that you want to attach to this resource.
+     * </p>
+     * 
+     * @param tags
+     *        A list of the tags that you want to attach to this resource.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of the tags that you want to attach to this resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of the tags that you want to attach to this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccountCustomizationRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the tags that you want to attach to this resource.
+     * </p>
+     * 
+     * @param tags
+     *        A list of the tags that you want to attach to this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAccountCustomizationRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +308,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
         if (getNamespace() != null)
             sb.append("Namespace: ").append(getNamespace()).append(",");
         if (getAccountCustomization() != null)
-            sb.append("AccountCustomization: ").append(getAccountCustomization());
+            sb.append("AccountCustomization: ").append(getAccountCustomization()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -259,6 +337,10 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getAccountCustomization() != null && other.getAccountCustomization().equals(this.getAccountCustomization()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +352,7 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
         hashCode = prime * hashCode + ((getAccountCustomization() == null) ? 0 : getAccountCustomization().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

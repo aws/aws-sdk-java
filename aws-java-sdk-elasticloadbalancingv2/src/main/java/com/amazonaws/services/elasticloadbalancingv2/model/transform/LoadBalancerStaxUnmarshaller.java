@@ -114,6 +114,11 @@ public class LoadBalancerStaxUnmarshaller implements Unmarshaller<LoadBalancer, 
                     loadBalancer.setIpAddressType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("CustomerOwnedIpv4Pool", targetDepth)) {
+                    loadBalancer.setCustomerOwnedIpv4Pool(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return loadBalancer;

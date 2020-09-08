@@ -56,6 +56,10 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("authorizerPayloadFormatVersion", targetDepth)) {
+                    context.nextToken();
+                    updateAuthorizerResult.setAuthorizerPayloadFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -67,6 +71,10 @@ public class UpdateAuthorizerResultJsonUnmarshaller implements Unmarshaller<Upda
                 if (context.testExpression("authorizerUri", targetDepth)) {
                     context.nextToken();
                     updateAuthorizerResult.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("enableSimpleResponses", targetDepth)) {
+                    context.nextToken();
+                    updateAuthorizerResult.setEnableSimpleResponses(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();

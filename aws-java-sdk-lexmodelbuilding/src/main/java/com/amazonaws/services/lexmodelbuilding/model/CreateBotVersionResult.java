@@ -50,7 +50,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     private Prompt clarificationPrompt;
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      */
     private Statement abortStatement;
@@ -138,8 +138,8 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     private Boolean childDirected;
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      */
     private Boolean enableModelImprovements;
@@ -348,11 +348,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     *        The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      */
 
     public void setAbortStatement(Statement abortStatement) {
@@ -361,10 +361,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * @return The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      */
 
     public Statement getAbortStatement() {
@@ -373,11 +373,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     *        The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1049,13 +1049,13 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
      * @param enableModelImprovements
-     *        Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *        True indicates that the bot is using the new model, otherwise, false.
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the imoprovements, otherwise, <code>false</code>.
      */
 
     public void setEnableModelImprovements(Boolean enableModelImprovements) {
@@ -1064,12 +1064,12 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
-     * @return Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *         True indicates that the bot is using the new model, otherwise, false.
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the imoprovements, otherwise, <code>false</code>.
      */
 
     public Boolean getEnableModelImprovements() {
@@ -1078,13 +1078,13 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
      * @param enableModelImprovements
-     *        Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *        True indicates that the bot is using the new model, otherwise, false.
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the imoprovements, otherwise, <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1095,12 +1095,12 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU. True
-     * indicates that the bot is using the new model, otherwise, false.
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * imoprovements, otherwise, <code>false</code>.
      * </p>
      * 
-     * @return Indicates whether the bot uses the new natural language understanding (NLU) model or the original NLU.
-     *         True indicates that the bot is using the new model, otherwise, false.
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the imoprovements, otherwise, <code>false</code>.
      */
 
     public Boolean isEnableModelImprovements() {
