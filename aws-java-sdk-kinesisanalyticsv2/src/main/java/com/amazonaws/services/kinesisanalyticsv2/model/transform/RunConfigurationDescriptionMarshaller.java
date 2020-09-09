@@ -30,6 +30,8 @@ public class RunConfigurationDescriptionMarshaller {
     private static final MarshallingInfo<StructuredPojo> APPLICATIONRESTORECONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
             .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationRestoreConfigurationDescription")
             .build();
+    private static final MarshallingInfo<StructuredPojo> FLINKRUNCONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlinkRunConfigurationDescription").build();
 
     private static final RunConfigurationDescriptionMarshaller instance = new RunConfigurationDescriptionMarshaller();
 
@@ -49,6 +51,7 @@ public class RunConfigurationDescriptionMarshaller {
         try {
             protocolMarshaller.marshall(runConfigurationDescription.getApplicationRestoreConfigurationDescription(),
                     APPLICATIONRESTORECONFIGURATIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(runConfigurationDescription.getFlinkRunConfigurationDescription(), FLINKRUNCONFIGURATIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -956,6 +956,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetPartitionIndexesResult> getPartitionIndexesAsync(GetPartitionIndexesRequest request) {
+
+        return getPartitionIndexesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPartitionIndexesResult> getPartitionIndexesAsync(GetPartitionIndexesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPartitionIndexesRequest, GetPartitionIndexesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPartitionsResult> getPartitionsAsync(GetPartitionsRequest request) {
 
         return getPartitionsAsync(request, null);

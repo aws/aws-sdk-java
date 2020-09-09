@@ -25,7 +25,8 @@ public enum ApplicationStatus {
     STOPPING("STOPPING"),
     READY("READY"),
     RUNNING("RUNNING"),
-    UPDATING("UPDATING");
+    UPDATING("UPDATING"),
+    AUTOSCALING("AUTOSCALING");
 
     private String value;
 

@@ -164,24 +164,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
-     * empty string.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
-     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
-     * </p>
-     * </li>
      * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -532,24 +514,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
-     * empty string.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
-     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return These key-value pairs define parameters for the connection:</p>
@@ -661,25 +625,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
      *         addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
      *         bootstrap itself.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default
-     *         value is "true".
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The
-     *         default is an empty string.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
-     *         not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
-     *         value is "false".
      *         </p>
      *         </li>
      */
@@ -800,24 +745,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
-     * empty string.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
-     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -930,25 +857,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
      *        addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
      *        bootstrap itself.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default
-     *        value is "true".
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default
-     *        is an empty string.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
-     *        not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
-     *        value is "false".
      *        </p>
      *        </li>
      */
@@ -1069,24 +977,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
-     * "true".
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
-     * empty string.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
-     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -1199,25 +1089,6 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
      *        addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
      *        bootstrap itself.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default
-     *        value is "true".
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default
-     *        is an empty string.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
-     *        not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
-     *        value is "false".
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

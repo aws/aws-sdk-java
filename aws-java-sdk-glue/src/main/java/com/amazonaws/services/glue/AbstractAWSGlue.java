@@ -383,6 +383,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetPartitionIndexesResult getPartitionIndexes(GetPartitionIndexesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPartitionsResult getPartitions(GetPartitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

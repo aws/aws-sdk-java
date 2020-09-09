@@ -385,6 +385,10 @@
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>",
         "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidApplicationConfigurationException",
+        "documentation" : "<p>The user-provided application configuration is not valid.</p>",
+        "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -502,6 +506,10 @@
       }, {
         "exceptionName" : "InvalidRequestException",
         "documentation" : "<p>The request JSON is not valid for the operation.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidApplicationConfigurationException",
+        "documentation" : "<p>The user-provided application configuration is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -877,6 +885,10 @@
       }, {
         "exceptionName" : "ConcurrentModificationException",
         "documentation" : "<p>Exception thrown as a result of concurrent modifications to an application. This error can be the result of attempting to modify an application without using the current application ID.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidApplicationConfigurationException",
+        "documentation" : "<p>The user-provided application configuration is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -14906,6 +14918,9 @@
       }, {
         "name" : "UPDATING",
         "value" : "UPDATING"
+      }, {
+        "name" : "AUTOSCALING",
+        "value" : "AUTOSCALING"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.kinesisanalyticsv2.enum.ApplicationStatus",
@@ -55565,6 +55580,75 @@
           "variableSetterType" : "ApplicationRestoreConfiguration"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FlinkRunConfigurationDescription",
+        "c2jShape" : "FlinkRunConfiguration",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param flinkRunConfigurationDescription \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withFlinkRunConfigurationDescription",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getFlinkRunConfigurationDescription",
+        "getterModel" : {
+          "returnType" : "FlinkRunConfiguration",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FlinkRunConfigurationDescription",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FlinkRunConfigurationDescription",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "FlinkRunConfigurationDescription",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param flinkRunConfigurationDescription */",
+        "setterMethodName" : "setFlinkRunConfigurationDescription",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "FlinkRunConfiguration",
+          "variableName" : "flinkRunConfigurationDescription",
+          "variableType" : "FlinkRunConfiguration",
+          "documentation" : "",
+          "simpleType" : "FlinkRunConfiguration",
+          "variableSetterType" : "FlinkRunConfiguration"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param flinkRunConfigurationDescription \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "FlinkRunConfiguration",
+          "variableName" : "flinkRunConfigurationDescription",
+          "variableType" : "FlinkRunConfiguration",
+          "documentation" : "",
+          "simpleType" : "FlinkRunConfiguration",
+          "variableSetterType" : "FlinkRunConfiguration"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ApplicationRestoreConfigurationDescription" : {
@@ -55634,6 +55718,76 @@
             "documentation" : "<p>Describes the restore behavior of a restarting application.</p>",
             "simpleType" : "ApplicationRestoreConfiguration",
             "variableSetterType" : "ApplicationRestoreConfiguration"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "FlinkRunConfigurationDescription" : {
+          "c2jName" : "FlinkRunConfigurationDescription",
+          "c2jShape" : "FlinkRunConfiguration",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param flinkRunConfigurationDescription \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withFlinkRunConfigurationDescription",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getFlinkRunConfigurationDescription",
+          "getterModel" : {
+            "returnType" : "FlinkRunConfiguration",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FlinkRunConfigurationDescription",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FlinkRunConfigurationDescription",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "FlinkRunConfigurationDescription",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param flinkRunConfigurationDescription */",
+          "setterMethodName" : "setFlinkRunConfigurationDescription",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "FlinkRunConfiguration",
+            "variableName" : "flinkRunConfigurationDescription",
+            "variableType" : "FlinkRunConfiguration",
+            "documentation" : "",
+            "simpleType" : "FlinkRunConfiguration",
+            "variableSetterType" : "FlinkRunConfiguration"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param flinkRunConfigurationDescription \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "FlinkRunConfiguration",
+            "variableName" : "flinkRunConfigurationDescription",
+            "variableType" : "FlinkRunConfiguration",
+            "documentation" : "",
+            "simpleType" : "FlinkRunConfiguration",
+            "variableSetterType" : "FlinkRunConfiguration"
           },
           "xmlNameSpaceUri" : null
         }

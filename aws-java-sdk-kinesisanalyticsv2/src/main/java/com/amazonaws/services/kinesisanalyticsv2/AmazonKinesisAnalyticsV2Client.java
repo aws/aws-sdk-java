@@ -567,6 +567,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
      *         of attempting to modify an application without using the current application ID.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.AddApplicationVpcConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration"
@@ -708,6 +710,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         valid for this operation.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.CreateApplicationSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -1185,6 +1189,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
      *         of attempting to modify an application without using the current application ID.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.DeleteApplicationVpcConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration"

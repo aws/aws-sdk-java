@@ -105,6 +105,9 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("CrawlerStoppingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.CrawlerStoppingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -4661,6 +4664,69 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<GetPartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPartitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the partition indexes associated with a table.
+     * </p>
+     * 
+     * @param getPartitionIndexesRequest
+     * @return Result of the GetPartitionIndexes operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @sample AWSGlue.GetPartitionIndexes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitionIndexes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetPartitionIndexesResult getPartitionIndexes(GetPartitionIndexesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPartitionIndexes(request);
+    }
+
+    @SdkInternalApi
+    final GetPartitionIndexesResult executeGetPartitionIndexes(GetPartitionIndexesRequest getPartitionIndexesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPartitionIndexesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPartitionIndexesRequest> request = null;
+        Response<GetPartitionIndexesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPartitionIndexesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPartitionIndexesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPartitionIndexes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPartitionIndexesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetPartitionIndexesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

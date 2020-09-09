@@ -2425,6 +2425,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetPartitionIndexesResult> getPartitionIndexesAsync(GetPartitionIndexesRequest request) {
+
+        return getPartitionIndexesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPartitionIndexesResult> getPartitionIndexesAsync(final GetPartitionIndexesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPartitionIndexesRequest, GetPartitionIndexesResult> asyncHandler) {
+        final GetPartitionIndexesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPartitionIndexesResult>() {
+            @Override
+            public GetPartitionIndexesResult call() throws Exception {
+                GetPartitionIndexesResult result = null;
+
+                try {
+                    result = executeGetPartitionIndexes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPartitionsResult> getPartitionsAsync(GetPartitionsRequest request) {
 
         return getPartitionsAsync(request, null);

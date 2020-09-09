@@ -113,7 +113,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ResourceInUseException"},
         {"shape":"InvalidArgumentException"},
-        {"shape":"ConcurrentModificationException"}
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InvalidApplicationConfigurationException"}
       ],
       "documentation":"<p>Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and access resources securely.</p> <p>Note the following about VPC configurations for Kinesis Data Analytics applications:</p> <ul> <li> <p>VPC configurations are not supported for SQL applications.</p> </li> <li> <p>When a VPC is added to a Kinesis Data Analytics application, the application can no longer be accessed from the Internet directly. To enable Internet access to the application, add an Internet gateway to your VPC.</p> </li> </ul>"
     },
@@ -150,7 +151,8 @@
         {"shape":"LimitExceededException"},
         {"shape":"InvalidArgumentException"},
         {"shape":"UnsupportedOperationException"},
-        {"shape":"InvalidRequestException"}
+        {"shape":"InvalidRequestException"},
+        {"shape":"InvalidApplicationConfigurationException"}
       ],
       "documentation":"<p>Creates a snapshot of the application's state data.</p>"
     },
@@ -270,7 +272,8 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ResourceInUseException"},
         {"shape":"InvalidArgumentException"},
-        {"shape":"ConcurrentModificationException"}
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InvalidApplicationConfigurationException"}
       ],
       "documentation":"<p>Removes a VPC configuration from a Kinesis Data Analytics application.</p>"
     },
@@ -966,7 +969,8 @@
         "STOPPING",
         "READY",
         "RUNNING",
-        "UPDATING"
+        "UPDATING",
+        "AUTOSCALING"
       ]
     },
     "ApplicationSummaries":{
@@ -1784,7 +1788,8 @@
     "InAppStreamName":{
       "type":"string",
       "max":32,
-      "min":1
+      "min":1,
+      "pattern":"[^-\\s<>&]*"
     },
     "InAppStreamNames":{
       "type":"list",
@@ -2089,7 +2094,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"arn:aws:kinesisanalytics:[a-z]{2}-[a-z]+-\\d{1}+:\\d{12}+:application/[a-zA-Z0-9_.-]{1,128}"
+      "pattern":"arn:.*"
     },
     "KinesisFirehoseInput":{
       "type":"structure",
@@ -2473,7 +2478,11 @@
       "max":512,
       "min":1
     },
-    "ObjectVersion":{"type":"string"},
+    "ObjectVersion":{
+      "type":"string",
+      "max":1024,
+      "min":0
+    },
     "Output":{
       "type":"structure",
       "required":[
@@ -2739,12 +2748,23 @@
     },
     "RecordColumnDelimiter":{
       "type":"string",
+      "max":1024,
       "min":1
     },
-    "RecordColumnMapping":{"type":"string"},
-    "RecordColumnName":{"type":"string"},
+    "RecordColumnMapping":{
+      "type":"string",
+      "max":65535,
+      "min":0
+    },
+    "RecordColumnName":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[^-\\s<>&]*"
+    },
     "RecordColumnSqlType":{
       "type":"string",
+      "max":100,
       "min":1
     },
     "RecordColumns":{
@@ -2755,6 +2775,8 @@
     },
     "RecordEncoding":{
       "type":"string",
+      "max":5,
+      "min":5,
       "pattern":"UTF-8"
     },
     "RecordFormat":{
@@ -2781,11 +2803,14 @@
     },
     "RecordRowDelimiter":{
       "type":"string",
+      "max":1024,
       "min":1
     },
     "RecordRowPath":{
       "type":"string",
-      "min":1
+      "max":65535,
+      "min":1,
+      "pattern":"^(?=^\\$)(?=^\\S+$).*$"
     },
     "ReferenceDataSource":{
       "type":"structure",
@@ -2905,7 +2930,7 @@
       "type":"string",
       "max":2048,
       "min":1,
-      "pattern":"arn:aws:iam::\\d{12}:role/?[a-zA-Z_0-9+=,.@\\-_/]+"
+      "pattern":"arn:.*"
     },
     "RunConfiguration":{
       "type":"structure",
@@ -2931,7 +2956,8 @@
         "ApplicationRestoreConfigurationDescription":{
           "shape":"ApplicationRestoreConfiguration",
           "documentation":"<p>Describes the restore behavior of a restarting application.</p>"
-        }
+        },
+        "FlinkRunConfigurationDescription":{"shape":"FlinkRunConfiguration"}
       },
       "documentation":"<p>Describes the starting properties for a Kinesis Data Analytics application.</p>"
     },

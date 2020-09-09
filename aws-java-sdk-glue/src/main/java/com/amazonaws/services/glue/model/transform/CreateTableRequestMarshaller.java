@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateTableRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<StructuredPojo> TABLEINPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableInput").build();
+    private static final MarshallingInfo<List> PARTITIONINDEXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PartitionIndexes").build();
 
     private static final CreateTableRequestMarshaller instance = new CreateTableRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateTableRequestMarshaller {
             protocolMarshaller.marshall(createTableRequest.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(createTableRequest.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(createTableRequest.getTableInput(), TABLEINPUT_BINDING);
+            protocolMarshaller.marshall(createTableRequest.getPartitionIndexes(), PARTITIONINDEXES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

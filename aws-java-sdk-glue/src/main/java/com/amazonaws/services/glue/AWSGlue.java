@@ -1657,6 +1657,29 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Retrieves the partition indexes associated with a table.
+     * </p>
+     * 
+     * @param getPartitionIndexesRequest
+     * @return Result of the GetPartitionIndexes operation returned by the service.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @sample AWSGlue.GetPartitionIndexes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitionIndexes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetPartitionIndexesResult getPartitionIndexes(GetPartitionIndexesRequest getPartitionIndexesRequest);
+
+    /**
+     * <p>
      * Retrieves information about the partitions in a table.
      * </p>
      * 
