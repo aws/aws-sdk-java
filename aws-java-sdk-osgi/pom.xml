@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.858</version>
+    <version>1.11.859</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-ssoadmin</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-redshiftdataapi</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1502,6 +1508,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Single Sign-On Admin</title>
+                                  <packages>com.amazonaws.services.ssoadmin*</packages>
+                              </group>
                               <group>
                                   <title>Redshift Data API</title>
                                   <packages>com.amazonaws.services.redshiftdataapi*</packages>

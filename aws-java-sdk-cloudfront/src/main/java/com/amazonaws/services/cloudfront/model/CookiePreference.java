@@ -21,11 +21,11 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * If you want to include cookies in the cache key, use <code>CookiesConfig</code> in a cache policy. See
- * <code>CreateCachePolicy</code>.
+ * <code>CachePolicy</code>.
  * </p>
  * <p>
  * If you want to send cookies to the origin but not include them in the cache key, use <code>CookiesConfig</code> in an
- * origin request policy. See <code>CreateOriginRequestPolicy</code>.
+ * origin request policy. See <code>OriginRequestPolicy</code>.
  * </p>
  * <p>
  * A complex type that specifies whether you want CloudFront to forward cookies to the origin and, if so, which ones.

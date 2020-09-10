@@ -95,6 +95,11 @@ public class UpdateCachePolicyRequestMarshaller implements Marshaller<Request<Up
                                     .endElement();
                         }
 
+                        if (parametersInCacheKeyAndForwardedToOrigin.getEnableAcceptEncodingBrotli() != null) {
+                            xmlWriter.startElement("EnableAcceptEncodingBrotli")
+                                    .value(parametersInCacheKeyAndForwardedToOrigin.getEnableAcceptEncodingBrotli()).endElement();
+                        }
+
                         {
                             CachePolicyHeadersConfig headersConfig = parametersInCacheKeyAndForwardedToOrigin.getHeadersConfig();
                             if (headersConfig != null) {

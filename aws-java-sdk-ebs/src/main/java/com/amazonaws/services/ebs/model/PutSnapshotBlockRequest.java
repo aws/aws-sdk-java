@@ -34,9 +34,10 @@ public class PutSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
     private String snapshotId;
     /**
      * <p>
-     * The block index of the block in which to write the data. A block index is the offset position of a block within a
-     * snapshot, and it is used to identify the block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).
+     * The block index of the block in which to write the data. A block index is a logical index in units of
+     * <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical
+     * volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be
+     * <code>512</code> KiB aligned.
      * </p>
      */
     private Integer blockIndex;
@@ -126,15 +127,17 @@ public class PutSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The block index of the block in which to write the data. A block index is the offset position of a block within a
-     * snapshot, and it is used to identify the block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).
+     * The block index of the block in which to write the data. A block index is a logical index in units of
+     * <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical
+     * volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be
+     * <code>512</code> KiB aligned.
      * </p>
      * 
      * @param blockIndex
-     *        The block index of the block in which to write the data. A block index is the offset position of a block
-     *        within a snapshot, and it is used to identify the block. To identify the logical offset of the data in the
-     *        logical volume, multiply the block index with the block size (Block index * 512 bytes).
+     *        The block index of the block in which to write the data. A block index is a logical index in units of
+     *        <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the
+     *        logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the
+     *        data must be <code>512</code> KiB aligned.
      */
 
     public void setBlockIndex(Integer blockIndex) {
@@ -143,14 +146,16 @@ public class PutSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The block index of the block in which to write the data. A block index is the offset position of a block within a
-     * snapshot, and it is used to identify the block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).
+     * The block index of the block in which to write the data. A block index is a logical index in units of
+     * <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical
+     * volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be
+     * <code>512</code> KiB aligned.
      * </p>
      * 
-     * @return The block index of the block in which to write the data. A block index is the offset position of a block
-     *         within a snapshot, and it is used to identify the block. To identify the logical offset of the data in
-     *         the logical volume, multiply the block index with the block size (Block index * 512 bytes).
+     * @return The block index of the block in which to write the data. A block index is a logical index in units of
+     *         <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the
+     *         logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the
+     *         data must be <code>512</code> KiB aligned.
      */
 
     public Integer getBlockIndex() {
@@ -159,15 +164,17 @@ public class PutSnapshotBlockRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The block index of the block in which to write the data. A block index is the offset position of a block within a
-     * snapshot, and it is used to identify the block. To identify the logical offset of the data in the logical volume,
-     * multiply the block index with the block size (Block index * 512 bytes).
+     * The block index of the block in which to write the data. A block index is a logical index in units of
+     * <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the logical
+     * volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the data must be
+     * <code>512</code> KiB aligned.
      * </p>
      * 
      * @param blockIndex
-     *        The block index of the block in which to write the data. A block index is the offset position of a block
-     *        within a snapshot, and it is used to identify the block. To identify the logical offset of the data in the
-     *        logical volume, multiply the block index with the block size (Block index * 512 bytes).
+     *        The block index of the block in which to write the data. A block index is a logical index in units of
+     *        <code>512</code> KiB blocks. To identify the block index, divide the logical offset of the data in the
+     *        logical volume by the block size (logical offset of data/<code>524288</code>). The logical offset of the
+     *        data must be <code>512</code> KiB aligned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -61,7 +61,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
      * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
      * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
-     * cache key, use <code>CreateOriginRequestPolicy</code>.
+     * cache key, use <code>OriginRequestPolicy</code>.
      * </p>
      * <p>
      * For more information about cache policies, see <a
@@ -103,7 +103,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
      * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
      * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the
-     * cache key, use <code>CreateOriginRequestPolicy</code>.
+     * cache key, use <code>OriginRequestPolicy</code>.
      * </p>
      * <p>
      * For more information about cache policies, see <a
@@ -458,7 +458,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </ul>
      * <p>
      * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
-     * to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+     * to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
      * </p>
      * <p>
      * For more information about origin request policies, see <a
@@ -506,7 +506,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
      * </ul>
      * <p>
      * CloudFront sends a request when it can’t find a valid object in its cache that matches the request. If you want
-     * to send values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+     * to send values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
      * </p>
      * <p>
      * For more information about origin request policies, see <a
@@ -2340,7 +2340,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution that have a cache behavior that’s associated with the specified real-time log
+     * Gets a list of distributions that have a cache behavior that’s associated with the specified real-time log
      * configuration.
      * </p>
      * <p>
@@ -2367,7 +2367,7 @@ public interface AmazonCloudFrontAsync extends AmazonCloudFront {
 
     /**
      * <p>
-     * Gets a list of distribution that have a cache behavior that’s associated with the specified real-time log
+     * Gets a list of distributions that have a cache behavior that’s associated with the specified real-time log
      * configuration.
      * </p>
      * <p>

@@ -49,6 +49,11 @@ public class ParametersInCacheKeyAndForwardedToOriginStaxUnmarshaller implements
                     continue;
                 }
 
+                if (context.testExpression("EnableAcceptEncodingBrotli", targetDepth)) {
+                    parametersInCacheKeyAndForwardedToOrigin.setEnableAcceptEncodingBrotli(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("HeadersConfig", targetDepth)) {
                     parametersInCacheKeyAndForwardedToOrigin.setHeadersConfig(CachePolicyHeadersConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

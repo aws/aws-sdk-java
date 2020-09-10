@@ -45,7 +45,7 @@ import javax.annotation.Generated;
  * </ul>
  * <p>
  * CloudFront sends a request when it can’t find an object in its cache that matches the request. If you want to send
- * values to the origin and also include them in the cache key, use <code>CreateCachePolicy</code>.
+ * values to the origin and also include them in the cache key, use <code>CachePolicy</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/OriginRequestPolicyConfig"

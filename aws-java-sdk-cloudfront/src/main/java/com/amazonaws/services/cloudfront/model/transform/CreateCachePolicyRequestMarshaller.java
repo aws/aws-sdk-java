@@ -89,6 +89,11 @@ public class CreateCachePolicyRequestMarshaller implements Marshaller<Request<Cr
                                     .endElement();
                         }
 
+                        if (parametersInCacheKeyAndForwardedToOrigin.getEnableAcceptEncodingBrotli() != null) {
+                            xmlWriter.startElement("EnableAcceptEncodingBrotli")
+                                    .value(parametersInCacheKeyAndForwardedToOrigin.getEnableAcceptEncodingBrotli()).endElement();
+                        }
+
                         {
                             CachePolicyHeadersConfig headersConfig = parametersInCacheKeyAndForwardedToOrigin.getHeadersConfig();
                             if (headersConfig != null) {
