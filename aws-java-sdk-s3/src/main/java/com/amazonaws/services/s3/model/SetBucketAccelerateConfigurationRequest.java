@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Contains options for setting the accelerate configuration for a bucket.
  * </p>
  */
-public class SetBucketAccelerateConfigurationRequest extends AmazonWebServiceRequest {
+public class SetBucketAccelerateConfigurationRequest extends AmazonWebServiceRequest implements ExpectedBucketOwnerRequest {
 
     /**
      * The bucket whose accelerate configuration is being set.
@@ -32,6 +32,8 @@ public class SetBucketAccelerateConfigurationRequest extends AmazonWebServiceReq
      * The new accelerate configuration for the specified bucket.
      */
     private BucketAccelerateConfiguration accelerateConfiguration;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new {@link SetBucketAccelerateConfigurationRequest} to set
@@ -47,6 +49,19 @@ public class SetBucketAccelerateConfigurationRequest extends AmazonWebServiceReq
             String bucketName, BucketAccelerateConfiguration configuration) {
         this.bucketName = bucketName;
         this.accelerateConfiguration = configuration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketAccelerateConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

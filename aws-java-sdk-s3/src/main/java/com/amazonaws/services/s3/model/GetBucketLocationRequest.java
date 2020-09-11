@@ -25,12 +25,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see CreateBucketRequest
  */
-public class GetBucketLocationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketLocationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
 	/** The name of the bucket whose location is being requested. */
 	private String bucketName;
 
-	
+	private String expectedBucketOwner;
+
 	/**
 	 * Constructs a new request object to create a new bucket with the specified
 	 * name.
@@ -56,6 +57,18 @@ public class GetBucketLocationRequest extends AmazonWebServiceRequest implements
 		this.bucketName = bucketName;
 	}
 
+	public String getExpectedBucketOwner() {
+		return expectedBucketOwner;
+	}
+
+	public GetBucketLocationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+		this.expectedBucketOwner = expectedBucketOwner;
+		return this;
+	}
+
+	public void setExpectedBucketOwner(String expectedBucketOwner) {
+		withExpectedBucketOwner(expectedBucketOwner);
+	}
 	
 	/**
 	 * Returns the name of the bucket whose location is being requested.

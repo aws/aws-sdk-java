@@ -59,8 +59,28 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
     private Boolean enableInternetAccess;
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      */
     private String defaultOu;
     /**
@@ -306,11 +326,49 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param defaultOu
-     *        The default organizational unit (OU) for your WorkSpace directories.
+     *        The default organizational unit (OU) for your WorkSpaces directories. This string must be the full
+     *        Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be
+     *        in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any
+     *        string of characters, and the number of domain components (DCs) is two or more. For example,
+     *        <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To avoid errors, certain characters in the distinguished name must be escaped. For more information, see
+     *        <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     *        Distinguished Names</a> in the Microsoft documentation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The API doesn't validate whether the OU exists.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setDefaultOu(String defaultOu) {
@@ -319,10 +377,48 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
-     * @return The default organizational unit (OU) for your WorkSpace directories.
+     * @return The default organizational unit (OU) for your WorkSpaces directories. This string must be the full
+     *         Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be
+     *         in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any
+     *         string of characters, and the number of domain components (DCs) is two or more. For example,
+     *         <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To avoid errors, certain characters in the distinguished name must be escaped. For more information, see
+     *         <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     *         Distinguished Names</a> in the Microsoft documentation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The API doesn't validate whether the OU exists.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getDefaultOu() {
@@ -331,11 +427,49 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param defaultOu
-     *        The default organizational unit (OU) for your WorkSpace directories.
+     *        The default organizational unit (OU) for your WorkSpaces directories. This string must be the full
+     *        Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be
+     *        in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any
+     *        string of characters, and the number of domain components (DCs) is two or more. For example,
+     *        <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To avoid errors, certain characters in the distinguished name must be escaped. For more information, see
+     *        <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     *        Distinguished Names</a> in the Microsoft documentation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The API doesn't validate whether the OU exists.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

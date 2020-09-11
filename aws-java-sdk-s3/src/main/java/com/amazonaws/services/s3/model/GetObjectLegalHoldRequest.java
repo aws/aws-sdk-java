@@ -22,11 +22,25 @@ import java.io.Serializable;
 /**
  * Gets an object's current Legal Hold status.
  */
-public class GetObjectLegalHoldRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetObjectLegalHoldRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucket;
     private String key;
     private String versionId;
     private boolean isRequesterPays;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectLegalHoldRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The S3 Bucket.

@@ -31,6 +31,7 @@ public class RequestCopyUtils {
                 .withRequesterPays(getObjectRequest.isRequesterPays())
                 .withSSECustomerKey(getObjectRequest.getSSECustomerKey())
                 .withPartNumber(getObjectRequest.getPartNumber())
+                .withExpectedBucketOwner(getObjectRequest.getExpectedBucketOwner())
                 .withRequestCredentialsProvider(getObjectRequest.getRequestCredentialsProvider());
     }
 }

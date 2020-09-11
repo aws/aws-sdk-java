@@ -25,7 +25,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#listParts(ListPartsRequest)
  */
-public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListPartsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the multipart upload whose parts are
@@ -73,6 +73,7 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new ListPartsRequest from the required parameters bucket
@@ -104,6 +105,18 @@ public class ListPartsRequest extends AmazonWebServiceRequest implements Seriali
         this.uploadId = uploadId;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListPartsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket containing the multipart upload whose

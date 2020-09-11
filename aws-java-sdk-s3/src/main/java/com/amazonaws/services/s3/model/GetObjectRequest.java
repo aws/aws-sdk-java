@@ -52,7 +52,7 @@ import java.util.List;
  * @see GetObjectMetadataRequest
  */
 public class GetObjectRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider, Serializable {
+        SSECustomerKeyProvider, Serializable, ExpectedBucketOwnerRequest {
     /**
      * Builder of an S3 object identifier.  This member field is never null.
      */
@@ -107,6 +107,8 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
      * The part number of the requested part in a multipart object.
      */
     private Integer partNumber;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
@@ -208,6 +210,19 @@ public class GetObjectRequest extends AmazonWebServiceRequest implements
             .withKey(key)
             ;
         this.isRequesterPays = isRequesterPays;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

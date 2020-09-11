@@ -18,9 +18,23 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 import java.io.Serializable;
 
-public class GetPublicAccessBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetPublicAccessBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetPublicAccessBlockRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The name of the Amazon S3 bucket whose Public Access Block configuration you want to retrieve.

@@ -36,10 +36,12 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#getBucketPolicy(GetBucketPolicyRequest)
  */
-public class GetBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /** The name of the Amazon S3 bucket whose policy is being retrieved. */
     private String bucketName;
+
+    private String expectedBucketOwner;
 
 
     /**
@@ -52,6 +54,19 @@ public class GetBucketPolicyRequest extends AmazonWebServiceRequest implements S
      */
     public GetBucketPolicyRequest(String bucketName) {
         this.bucketName = bucketName;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketPolicyRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

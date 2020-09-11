@@ -21,11 +21,13 @@ import java.io.Serializable;
 /**
  * Request object for the parameters to set the tags for an object.
  */
-public class SetObjectTaggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetObjectTaggingRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String key;
     private String versionId;
     private ObjectTagging tagging;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs an instance of this object.
@@ -52,7 +54,6 @@ public class SetObjectTaggingRequest extends AmazonWebServiceRequest implements 
     public SetObjectTaggingRequest(String bucketName, String key, ObjectTagging tagging) {
         this(bucketName, key, null, tagging);
     }
-
     /**
      * Constructs an instance of this object.
      *
@@ -82,6 +83,19 @@ public class SetObjectTaggingRequest extends AmazonWebServiceRequest implements 
         this.key = key;
         this.versionId = versionId;
         this.tagging = tagging;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetObjectTaggingRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

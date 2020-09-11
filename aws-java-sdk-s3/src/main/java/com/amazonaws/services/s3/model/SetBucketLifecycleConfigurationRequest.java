@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketLifecycleConfigurationRequest#SetBucketLifecycleConfigurationRequest(String, BucketLifecycleConfiguration)
  */
-public class SetBucketLifecycleConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketLifecycleConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     
     /**
      * The bucket whose lifecycle configuration is being set.
@@ -33,12 +33,14 @@ public class SetBucketLifecycleConfigurationRequest extends AmazonWebServiceRequ
      * The new lifecycle configuration for the specified bucket.
      */
     private BucketLifecycleConfiguration lifecycleConfiguration;
-    
+
+    private String expectedBucketOwner;
+
     /**
-     * Constructs a new {@link SetBucketLifecycleConfigurationRequest} 
+     * Constructs a new {@link SetBucketLifecycleConfigurationRequest}
      * to set the bucket lifecycle configuration of
      * the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to set the lifecycle
      *            configuration.
@@ -52,6 +54,19 @@ public class SetBucketLifecycleConfigurationRequest extends AmazonWebServiceRequ
         this.lifecycleConfiguration = lifecycleConfiguration;
     }
 
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketLifecycleConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
     
     /**
      * Gets the name of the bucket whose lifecycle configuration is being

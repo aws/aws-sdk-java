@@ -21,9 +21,10 @@ import java.io.Serializable;
 /**
  * Request object to delete a metrics configuration from a bucket.
  */
-public class DeleteBucketMetricsConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteBucketMetricsConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String id;
+    private String expectedBucketOwner;
 
     public DeleteBucketMetricsConfigurationRequest() {
     }
@@ -31,6 +32,19 @@ public class DeleteBucketMetricsConfigurationRequest extends AmazonWebServiceReq
     public DeleteBucketMetricsConfigurationRequest(String bucketName, String id) {
         this.bucketName = bucketName;
         this.id = id;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketMetricsConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

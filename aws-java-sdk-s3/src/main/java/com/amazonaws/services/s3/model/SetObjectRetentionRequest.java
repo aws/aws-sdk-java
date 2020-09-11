@@ -22,13 +22,27 @@ import java.io.Serializable;
 /**
  * Places an Object Retention configuration on an object.
  */
-public class SetObjectRetentionRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetObjectRetentionRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucket;
     private String key;
     private ObjectLockRetention retention;
     private boolean isRequesterPays;
     private String versionId;
     private boolean bypassGovernanceRetention;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetObjectRetentionRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The S3 Bucket.

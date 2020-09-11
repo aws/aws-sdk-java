@@ -21,16 +21,29 @@ import java.io.Serializable;
 /**
  * Request object to retrieve metrics configuration from a bucket.
  */
-public class GetBucketMetricsConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketMetricsConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String id;
+    private String expectedBucketOwner;
 
     public GetBucketMetricsConfigurationRequest() {
     }
-
     public GetBucketMetricsConfigurationRequest(String bucketName, String id) {
         this.bucketName = bucketName;
         this.id = id;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketMetricsConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

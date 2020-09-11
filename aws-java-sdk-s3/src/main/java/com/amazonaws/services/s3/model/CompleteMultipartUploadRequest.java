@@ -38,7 +38,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#completeMultipartUpload(CompleteMultipartUploadRequest)
  */
-public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
+public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the multipart upload to complete
@@ -72,7 +72,10 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     public CompleteMultipartUploadRequest() {}
+
     /**
      * Constructs a new request to complete a multipart upload.
      *
@@ -94,6 +97,18 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.partETags = partETags;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public CompleteMultipartUploadRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket containing the multipart upload to

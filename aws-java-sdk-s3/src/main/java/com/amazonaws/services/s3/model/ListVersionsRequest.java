@@ -82,7 +82,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
  * </p>
  */
-public class ListVersionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListVersionsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket whose versions are to be listed.
@@ -173,6 +173,8 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
      */
     private String encodingType;
 
+    private String expectedBucketOwner;
+
 
     /**
      * Constructs a new {@link ListVersionsRequest} object.
@@ -224,6 +226,18 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
         setMaxResults(maxResults);
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListVersionsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Gets the name of the Amazon S3 bucket whose versions are to be listed.

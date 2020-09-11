@@ -26,7 +26,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#abortMultipartUpload(AbortMultipartUploadRequest)
  */
-public class AbortMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
+public class AbortMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the multipart upload to abort
@@ -57,6 +57,8 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest impleme
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     /**
      * Constructs a new request to abort a multipart upload.
      *
@@ -74,6 +76,18 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest impleme
         this.uploadId = uploadId;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public AbortMultipartUploadRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket containing the multipart upload to abort.

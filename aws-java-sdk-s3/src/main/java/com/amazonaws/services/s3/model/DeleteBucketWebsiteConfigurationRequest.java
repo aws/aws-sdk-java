@@ -43,17 +43,32 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketWebsiteConfiguration(DeleteBucketWebsiteConfigurationRequest)
  */
-public class DeleteBucketWebsiteConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class DeleteBucketWebsiteConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+
+    private String expectedBucketOwner;
 
     /**
      * Creates a new request object, ready to be executed to delete the website
      * configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket whose website configuration is being
      *            deleted.
      */
     public DeleteBucketWebsiteConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketWebsiteConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

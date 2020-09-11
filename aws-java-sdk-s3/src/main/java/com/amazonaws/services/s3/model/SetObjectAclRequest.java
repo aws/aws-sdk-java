@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request object containing all the options for setting a object's Access
  * Control List (ACL).
  */
-public class SetObjectAclRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetObjectAclRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the object whose ACL is being set.
@@ -58,6 +58,8 @@ public class SetObjectAclRequest extends AmazonWebServiceRequest implements Seri
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     /**
      * Constructs a new SetObjectAclRequest object, ready to set the specified
      * ACL on the specified object when this request is executed.
@@ -200,6 +202,19 @@ public class SetObjectAclRequest extends AmazonWebServiceRequest implements Seri
 
         this.acl = null;
         this.cannedAcl = acl;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetObjectAclRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

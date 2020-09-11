@@ -1,3 +1,8 @@
+# __1.11.860__ __2020-09-11__
+## __Amazon WorkSpaces__
+  - ### Features
+    - Adds API support for WorkSpaces Cross-Region Redirection feature.
+
 # __1.11.859__ __2020-09-10__
 ## __AWS Single Sign-On Admin__
   - ### Features

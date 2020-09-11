@@ -21,7 +21,7 @@ import java.io.Serializable;
 /**
  * Request object to list the analytics configurations of a bucket.
  */
-public class ListBucketAnalyticsConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListBucketAnalyticsConfigurationsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /** The name of the Amazon S3 bucket to list the analytics configurations. */
     private String bucketName;
@@ -31,6 +31,21 @@ public class ListBucketAnalyticsConfigurationsRequest extends AmazonWebServiceRe
      * ContinuationToken is provided in truncated list results.
      */
     private String continuationToken;
+
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListBucketAnalyticsConfigurationsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Gets the name of the Amazon S3 bucket whose

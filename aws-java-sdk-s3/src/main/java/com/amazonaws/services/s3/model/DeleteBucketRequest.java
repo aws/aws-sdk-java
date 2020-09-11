@@ -29,12 +29,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteBucketRequest extends AmazonWebServiceRequest implements
-        Serializable, S3AccelerateUnsupported {
+        Serializable, S3AccelerateUnsupported, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket to delete.
      */
     private String bucketName;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new {@link DeleteBucketRequest},
@@ -46,6 +48,19 @@ public class DeleteBucketRequest extends AmazonWebServiceRequest implements
      */
     public DeleteBucketRequest(String bucketName) {
         setBucketName(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

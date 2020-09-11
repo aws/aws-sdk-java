@@ -22,10 +22,12 @@ import java.io.Serializable;
 /**
  * Request object to set metrics configuration to a bucket.
  */
-public class SetBucketMetricsConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketMetricsConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
     private MetricsConfiguration metricsConfiguration;
+    private String expectedBucketOwner;
+
 
     public SetBucketMetricsConfigurationRequest() {
     }
@@ -33,6 +35,19 @@ public class SetBucketMetricsConfigurationRequest extends AmazonWebServiceReques
     public SetBucketMetricsConfigurationRequest(String bucketName, MetricsConfiguration metricsConfiguration) {
         this.bucketName = bucketName;
         this.metricsConfiguration = metricsConfiguration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketMetricsConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

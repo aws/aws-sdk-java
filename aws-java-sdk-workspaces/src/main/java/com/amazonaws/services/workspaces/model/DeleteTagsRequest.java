@@ -28,7 +28,7 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      */
     private String resourceId;
@@ -42,12 +42,12 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      * 
      * @param resourceId
      *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *        directories, images, custom bundles, and IP access control groups.
+     *        directories, images, custom bundles, IP access control groups, and connection aliases.
      */
 
     public void setResourceId(String resourceId) {
@@ -57,11 +57,11 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      * 
      * @return The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *         directories, images, custom bundles, and IP access control groups.
+     *         directories, images, custom bundles, IP access control groups, and connection aliases.
      */
 
     public String getResourceId() {
@@ -71,12 +71,12 @@ public class DeleteTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      * 
      * @param resourceId
      *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *        directories, images, custom bundles, and IP access control groups.
+     *        directories, images, custom bundles, IP access control groups, and connection aliases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

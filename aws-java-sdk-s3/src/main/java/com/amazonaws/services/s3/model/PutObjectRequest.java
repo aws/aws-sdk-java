@@ -82,13 +82,15 @@ import java.io.Serializable;
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream,
  *      ObjectMetadata)
  */
-public class PutObjectRequest extends AbstractPutObjectRequest implements Serializable {
+public class PutObjectRequest extends AbstractPutObjectRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * If enabled, the requester is charged for conducting this operation from
      * Requester Pays Buckets.
      */
     private boolean isRequesterPays;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new
@@ -195,6 +197,19 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
     public PutObjectRequest(String bucketName, String key, InputStream input,
             ObjectMetadata metadata) {
         super(bucketName, key, input, metadata);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public PutObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

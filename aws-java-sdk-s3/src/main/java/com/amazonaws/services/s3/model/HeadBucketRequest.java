@@ -21,9 +21,23 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request object for checking if the bucket exists and the user has access to
  * the given bucket.
  */
-public class HeadBucketRequest extends AmazonWebServiceRequest implements Serializable {
+public class HeadBucketRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public HeadBucketRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;

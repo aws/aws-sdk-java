@@ -136,6 +136,20 @@ public class BucketWebsiteConfiguration implements Serializable {
      * @param indexDocumentSuffix
      *            The document to serve when a directory is specified (ex:
      *            index.html). This path is relative to the requested resource.
+     * @return
+     */
+    public BucketWebsiteConfiguration withIndexDocumentSuffix(String indexDocumentSuffix) {
+        this.indexDocumentSuffix = indexDocumentSuffix;
+        return this;
+    }
+
+    /**
+     * Sets the document to serve when a directory is specified (ex:
+     * index.html). This path is relative to the requested resource.
+     *
+     * @param indexDocumentSuffix
+     *            The document to serve when a directory is specified (ex:
+     *            index.html). This path is relative to the requested resource.
      */
     public void setIndexDocumentSuffix(String indexDocumentSuffix) {
         this.indexDocumentSuffix = indexDocumentSuffix;

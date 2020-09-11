@@ -160,6 +160,8 @@ import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
+import com.amazonaws.services.s3.model.ExpectedBucketOwnerRequest;
+import com.amazonaws.services.s3.model.ExpectedSourceBucketOwnerRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
 import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
@@ -4750,6 +4752,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                                   clientOptions.isPayloadSigningEnabled());
         request.addHandlerContext(HandlerContextKey.SERVICE_ID, SERVICE_ID);
 
+        if (originalRequest instanceof ExpectedBucketOwnerRequest) {
+            ExpectedBucketOwnerRequest expectedBucketOwnerRequest = (ExpectedBucketOwnerRequest) originalRequest;
+            addHeaderIfNotNull(request, "x-amz-expected-bucket-owner",
+                               expectedBucketOwnerRequest.getExpectedBucketOwner());
+        }
+
+        if (originalRequest instanceof ExpectedSourceBucketOwnerRequest) {
+            ExpectedSourceBucketOwnerRequest expectedSourceBucketOwnerRequest = (ExpectedSourceBucketOwnerRequest) originalRequest;
+            addHeaderIfNotNull(request, "x-amz-source-expected-bucket-owner",
+                               expectedSourceBucketOwnerRequest.getExpectedSourceBucketOwner());
+        }
+
         // If the bucketName appears to be an ARN, parse the ARN as an S3 resource and rewrite target resource arguments
         // based on the parsed resource.
         if (isAccessPointArn(bucketName)) {
@@ -4816,6 +4830,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         request.addHandlerContext(HandlerContextKey.SIGNING_REGION, signingRegion);
+
         return request;
     }
 
@@ -5215,7 +5230,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         RequestPaymentConfiguration configuration = new RequestPaymentConfiguration(
                 Payer.Requester);
 
-        setBucketRequestPayment(new SetRequestPaymentConfigurationRequest(
+        setRequestPaymentConfiguration(new SetRequestPaymentConfigurationRequest(
                 bucketName, configuration));
     }
 
@@ -5224,7 +5239,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         RequestPaymentConfiguration configuration = new RequestPaymentConfiguration(
                 Payer.BucketOwner);
 
-        setBucketRequestPayment(new SetRequestPaymentConfigurationRequest(
+        setRequestPaymentConfiguration(new SetRequestPaymentConfigurationRequest(
                 bucketName, configuration));
     }
 
@@ -5244,7 +5259,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * the cost of the request and the data download from the bucket. The bucket
      * owner always pays the cost of storing data.
      */
-    private void setBucketRequestPayment(
+    @Override
+    public void setRequestPaymentConfiguration(
             SetRequestPaymentConfigurationRequest setRequestPaymentConfigurationRequest) {
 
         String bucketName = setRequestPaymentConfigurationRequest

@@ -22,7 +22,9 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#getBucketLoggingConfiguration(GetBucketLoggingConfigurationRequest)
  */
-public class GetBucketLoggingConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class GetBucketLoggingConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+
+    private String expectedBucketOwner;
 
     /**
      * Creates request object, ready to be executed to fetch the logging
@@ -36,4 +38,16 @@ public class GetBucketLoggingConfigurationRequest extends GenericBucketRequest i
         super(bucketName);
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketLoggingConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 }

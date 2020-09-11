@@ -21,7 +21,7 @@ import java.io.Serializable;
 /**
  * Request to retrieve a listing of objects in an S3 bucket.
  */
-public class ListObjectsV2Request extends AmazonWebServiceRequest implements Serializable {
+public class ListObjectsV2Request extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket to list.
@@ -100,6 +100,21 @@ public class ListObjectsV2Request extends AmazonWebServiceRequest implements Ser
      * Requester Pays Buckets.
      */
     private boolean isRequesterPays;
+
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListObjectsV2Request withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Gets the name of the Amazon S3 bucket whose

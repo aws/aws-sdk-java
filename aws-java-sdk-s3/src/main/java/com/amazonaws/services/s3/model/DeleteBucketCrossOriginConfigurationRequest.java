@@ -22,9 +22,10 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketCrossOriginConfiguration(DeleteBucketCrossOriginConfigurationRequest)
  */
-public class DeleteBucketCrossOriginConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class DeleteBucketCrossOriginConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+    private String expectedBucketOwner;
 
-	/**
+    /**
      * Creates a new request object, ready to be executed to delete the cross origin
      * configuration for the specified bucket.
      *
@@ -34,5 +35,18 @@ public class DeleteBucketCrossOriginConfigurationRequest extends GenericBucketRe
      */
     public DeleteBucketCrossOriginConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketCrossOriginConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

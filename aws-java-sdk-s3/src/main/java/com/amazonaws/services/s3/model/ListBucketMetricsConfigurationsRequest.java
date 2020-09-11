@@ -21,7 +21,7 @@ import java.io.Serializable;
 /**
  * Request object to list the metrics configurations of a bucket.
  */
-public class ListBucketMetricsConfigurationsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListBucketMetricsConfigurationsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /** The name of the Amazon S3 bucket to list the metrics configurations. */
     private String bucketName;
@@ -31,6 +31,8 @@ public class ListBucketMetricsConfigurationsRequest extends AmazonWebServiceRequ
      * ContinuationToken is provided in truncated list results.
      */
     private String continuationToken;
+
+    private String expectedBucketOwner;
 
     /**
      * Gets the name of the bucket containing the metrics configurations to retrieve.
@@ -82,5 +84,18 @@ public class ListBucketMetricsConfigurationsRequest extends AmazonWebServiceRequ
     public ListBucketMetricsConfigurationsRequest withContinuationToken(String continuationToken) {
         setContinuationToken(continuationToken);
         return this;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListBucketMetricsConfigurationsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

@@ -47,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketLoggingConfigurationRequest#SetBucketLoggingConfigurationRequest(String, BucketLoggingConfiguration)
  */
-public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket whose logging configuration is being set.
@@ -59,12 +59,14 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
      */
     private BucketLoggingConfiguration loggingConfiguration;
 
-    
+    private String expectedBucketOwner;
+
+
     /**
-     * Constructs a new {@link SetBucketLoggingConfigurationRequest} 
+     * Constructs a new {@link SetBucketLoggingConfigurationRequest}
      * to set the bucket logging configuration of
      * the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket whose logging configuration is being
      *            set.
@@ -74,6 +76,19 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
     public SetBucketLoggingConfigurationRequest(String bucketName, BucketLoggingConfiguration loggingConfiguration) {
         this.bucketName = bucketName;
         this.loggingConfiguration = loggingConfiguration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketLoggingConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

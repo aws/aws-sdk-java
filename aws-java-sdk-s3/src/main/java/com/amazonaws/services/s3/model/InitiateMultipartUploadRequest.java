@@ -38,7 +38,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
  */
 public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
-        implements SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, Serializable {
+        implements SSECustomerKeyProvider, SSEAwsKeyManagementParamsProvider, Serializable, ExpectedBucketOwnerRequest {
     /**
      * The name of the bucket in which to create the new multipart upload, and
      * hence, the eventual object created from the multipart upload.
@@ -118,6 +118,8 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
 
     private String objectLockLegalHoldStatus;
 
+    private String expectedBucketOwner;
+
     /**
      * Constructs a request to initiate a new multipart upload in the specified
      * bucket, stored by the specified key.
@@ -181,6 +183,18 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest
         this.objectMetadata = objectMetadata;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public InitiateMultipartUploadRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket in which to create the new multipart

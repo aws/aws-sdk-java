@@ -21,16 +21,30 @@ import java.io.Serializable;
 /**
  * Request object to delete an analytics configuration.
  */
-public class DeleteBucketAnalyticsConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteBucketAnalyticsConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
     private String id;
+    private String expectedBucketOwner;
 
     public DeleteBucketAnalyticsConfigurationRequest() { }
 
     public DeleteBucketAnalyticsConfigurationRequest(String bucketName, String id) {
         this.bucketName = bucketName;
         this.id = id;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketAnalyticsConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

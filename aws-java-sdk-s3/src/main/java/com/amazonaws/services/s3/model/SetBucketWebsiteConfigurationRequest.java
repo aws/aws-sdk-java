@@ -44,7 +44,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#setBucketWebsiteConfiguration(SetBucketWebsiteConfigurationRequest)
  */
-public class SetBucketWebsiteConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketWebsiteConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
 	/** The name of the bucket whose website configuration is being set. */
 	private String bucketName;
@@ -52,6 +52,7 @@ public class SetBucketWebsiteConfigurationRequest extends AmazonWebServiceReques
 	/** The new website configuration for the specified bucket. */
 	private BucketWebsiteConfiguration configuration;
 
+	private String expectedBucketOwner;
 
 	/**
 	 * Creates a new request object, ready to be executed to set the specified
@@ -66,6 +67,19 @@ public class SetBucketWebsiteConfigurationRequest extends AmazonWebServiceReques
 	public SetBucketWebsiteConfigurationRequest(String bucketName, BucketWebsiteConfiguration configuration) {
 		this.bucketName = bucketName;
 		this.configuration = configuration;
+	}
+
+	public String getExpectedBucketOwner() {
+		return expectedBucketOwner;
+	}
+
+	public SetBucketWebsiteConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+		this.expectedBucketOwner = expectedBucketOwner;
+		return this;
+	}
+
+	public void setExpectedBucketOwner(String expectedBucketOwner) {
+		withExpectedBucketOwner(expectedBucketOwner);
 	}
 
 	/**

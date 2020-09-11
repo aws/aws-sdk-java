@@ -18,9 +18,24 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 import java.io.Serializable;
 
-public class DeletePublicAccessBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class DeletePublicAccessBlockRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
+
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeletePublicAccessBlockRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The Amazon S3 bucket whose Public Access Block configuration you want to delete.

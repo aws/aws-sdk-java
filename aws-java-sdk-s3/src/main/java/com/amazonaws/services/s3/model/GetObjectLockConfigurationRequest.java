@@ -22,8 +22,10 @@ import java.io.Serializable;
  * Gets the Object Lock configuration for a bucket. The rule specified in the Object Lock configuration will be applied by
  * default to every new object placed in the specified bucket.
  */
-public class GetObjectLockConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetObjectLockConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucket;
+
+    private String expectedBucketOwner;
 
     /**
      * The S3 Bucket.
@@ -69,5 +71,18 @@ public class GetObjectLockConfigurationRequest extends AmazonWebServiceRequest i
      */
     public void setBucketName(String bucket) {
         withBucketName(bucket);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectLockConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

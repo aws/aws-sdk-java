@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Request object containing all the options for setting a bucket's Access Control List (ACL).
  */
-public class SetBucketAclRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketAclRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 	/**
 	 * The name of the bucket whose ACL is being set.
 	 *
@@ -43,6 +43,8 @@ public class SetBucketAclRequest extends AmazonWebServiceRequest implements Seri
 
 	/** The canned ACL to apply to the specified bucket. */
 	private CannedAccessControlList cannedAcl;
+
+	private String expectedBucketOwner;
 
 	/**
 	 * Constructs a new SetBucketAclRequest object, ready to set the specified
@@ -133,5 +135,18 @@ public class SetBucketAclRequest extends AmazonWebServiceRequest implements Seri
 	 */
 	public CannedAccessControlList getCannedAcl() {
 		return cannedAcl;
+	}
+
+	public String getExpectedBucketOwner() {
+		return expectedBucketOwner;
+	}
+
+	public SetBucketAclRequest withExpectedBucketOwner(String expectedBucketOwner) {
+		this.expectedBucketOwner = expectedBucketOwner;
+		return this;
+	}
+
+	public void setExpectedBucketOwner(String expectedBucketOwner) {
+		withExpectedBucketOwner(expectedBucketOwner);
 	}
 }

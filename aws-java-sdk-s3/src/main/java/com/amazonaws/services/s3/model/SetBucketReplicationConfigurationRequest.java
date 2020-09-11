@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.util.json.Jackson;
 
 public class SetBucketReplicationConfigurationRequest extends
-        AmazonWebServiceRequest implements Serializable{
+        AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of Amazon S3 bucket to which the replication configuration is
@@ -34,6 +34,8 @@ public class SetBucketReplicationConfigurationRequest extends
     private BucketReplicationConfiguration replicationConfiguration;
 
     private String token;
+
+    private String expectedBucketOwner;
 
     /**
      * Creates a new SetReplicationConfigurationRequest.
@@ -53,6 +55,19 @@ public class SetBucketReplicationConfigurationRequest extends
             BucketReplicationConfiguration replicationConfiguration) {
         this.bucketName = bucketName;
         this.replicationConfiguration = replicationConfiguration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketReplicationConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

@@ -873,6 +873,11 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public void setRequestPaymentConfiguration(SetRequestPaymentConfigurationRequest request) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public void setBucketReplicationConfiguration(String bucketName,
             BucketReplicationConfiguration configuration)
             throws AmazonServiceException, SdkClientException {

@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketCrossOriginConfigurationRequest#SetBucketCrossOriginConfigurationRequest(String, BucketCrossOriginConfiguration)
  */
-public class SetBucketCrossOriginConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketCrossOriginConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     
     /**
      * The bucket whose cross origin configuration is being set.
@@ -45,9 +45,11 @@ public class SetBucketCrossOriginConfigurationRequest extends AmazonWebServiceRe
      * The new cross origin configuration for the specified bucket.
      */
     private BucketCrossOriginConfiguration crossOriginConfiguration;
-    
+
+    private String expectedBucketOwner;
+
     /**
-     * Constructs a new {@link SetBucketCrossOriginConfigurationRequest} 
+     * Constructs a new {@link SetBucketCrossOriginConfigurationRequest}
      * to set the bucket cross origin configuration of
      * the specified bucket.
      *
@@ -76,6 +78,18 @@ public class SetBucketCrossOriginConfigurationRequest extends AmazonWebServiceRe
         this.crossOriginConfiguration = crossOriginConfiguration;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketCrossOriginConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
     
     /**
      * Gets the name of the bucket whose cross origin configuration is being

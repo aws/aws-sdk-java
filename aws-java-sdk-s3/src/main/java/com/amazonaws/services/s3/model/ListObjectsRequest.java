@@ -65,7 +65,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * nor does the presence or absence of additional request parameters.
  * </p>
  */
-public class ListObjectsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListObjectsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket to list.
@@ -136,6 +136,8 @@ public class ListObjectsRequest extends AmazonWebServiceRequest implements Seria
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     /**
      * Constructs a new {@link ListObjectsRequest} object.
      * The caller must populate
@@ -183,6 +185,18 @@ public class ListObjectsRequest extends AmazonWebServiceRequest implements Seria
         setMaxKeys(maxKeys);
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListObjectsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Gets the name of the Amazon S3 bucket whose

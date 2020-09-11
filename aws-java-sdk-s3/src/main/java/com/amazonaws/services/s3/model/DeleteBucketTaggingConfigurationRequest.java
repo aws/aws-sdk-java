@@ -22,17 +22,32 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketTaggingConfiguration(DeleteBucketTaggingConfigurationRequest)
  */
-public class DeleteBucketTaggingConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class DeleteBucketTaggingConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+
+    private String expectedBucketOwner;
 
     /**
      * Creates a new request object, ready to be executed to delete the tagging
      * configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket whose tagging configuration is being
      *            deleted.
      */
     public DeleteBucketTaggingConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketTaggingConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

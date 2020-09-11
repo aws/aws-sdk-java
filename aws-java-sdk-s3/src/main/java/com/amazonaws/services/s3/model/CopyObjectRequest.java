@@ -45,7 +45,49 @@ import java.util.List;
 public class CopyObjectRequest extends AmazonWebServiceRequest implements
                                                                SSEAwsKeyManagementParamsProvider,
                                                                Serializable,
-                                                               S3AccelerateUnsupported {
+                                                               S3AccelerateUnsupported,
+                                                               ExpectedBucketOwnerRequest,
+                                                               ExpectedSourceBucketOwnerRequest {
+    private String expectedBucketOwner;
+    private String expectedSourceBucketOwner;
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public CopyObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
+
+    public String getExpectedSourceBucketOwner() {
+        return expectedSourceBucketOwner;
+    }
+
+    public CopyObjectRequest withExpectedSourceBucketOwner(String expectedSourceBucketOwner) {
+        this.expectedSourceBucketOwner = expectedSourceBucketOwner;
+        return this;
+    }
+
+    public void setExpectedSourceBucketOwner(String expectedSourceBucketOwner) {
+        withExpectedSourceBucketOwner(expectedSourceBucketOwner);
+    }
 
     /**
      * The name of the bucket containing the object to be copied

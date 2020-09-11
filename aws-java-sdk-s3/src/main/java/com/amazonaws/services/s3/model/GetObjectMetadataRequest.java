@@ -42,7 +42,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see GetObjectRequest
  */
 public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider, Serializable {
+        SSECustomerKeyProvider, Serializable, ExpectedBucketOwnerRequest {
     /**
      * The name of the bucket containing the object's whose metadata is being
      * retrieved.
@@ -89,6 +89,8 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
      */
     private Integer partNumber;
 
+    private String expectedBucketOwner;
+
 
     /**
      * Constructs a new
@@ -128,6 +130,19 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
     public GetObjectMetadataRequest(String bucketName, String key, String versionId) {
         this(bucketName, key);
         setVersionId(versionId);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectMetadataRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

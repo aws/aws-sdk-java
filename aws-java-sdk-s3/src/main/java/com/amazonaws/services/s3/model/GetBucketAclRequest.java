@@ -20,20 +20,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Request object containing all the options for requesting a bucket's Access Control List (ACL).
  */
-public class GetBucketAclRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketAclRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 	/** The name of the bucket whose ACL is being retrieved. */
 	private String bucketName;
+
+	private String expectedBucketOwner;
 
 	/**
 	 * Constructs a new GetBucketAclRequest object, ready to retrieve the ACL
 	 * for the specified bucket when executed.
-	 * 
+	 *
 	 * @param bucketName
 	 *            The name of the bucket whose ACL will be retrieved by this
 	 *            request when executed.
 	 */
 	public GetBucketAclRequest(String bucketName) {
 		this.bucketName = bucketName;
+	}
+
+	public String getExpectedBucketOwner() {
+		return expectedBucketOwner;
+	}
+
+	public GetBucketAclRequest withExpectedBucketOwner(String expectedBucketOwner) {
+		this.expectedBucketOwner = expectedBucketOwner;
+		return this;
+	}
+
+	public void setExpectedBucketOwner(String expectedBucketOwner) {
+		withExpectedBucketOwner(expectedBucketOwner);
 	}
 
 	/**

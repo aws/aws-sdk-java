@@ -22,7 +22,8 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest)
  */
-public class DeleteBucketLifecycleConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class DeleteBucketLifecycleConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+    private String expectedBucketOwner;
 
     /**
      * Creates a new request object, ready to be executed to delete the lifecycle
@@ -34,5 +35,18 @@ public class DeleteBucketLifecycleConfigurationRequest extends GenericBucketRequ
      */
     public DeleteBucketLifecycleConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketLifecycleConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

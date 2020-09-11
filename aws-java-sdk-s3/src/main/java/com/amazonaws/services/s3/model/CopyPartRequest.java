@@ -39,8 +39,9 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see AmazonS3Client#uploadPart(UploadPartRequest)
  * @see CopyPartResult
  */
-public class CopyPartRequest extends AmazonWebServiceRequest implements Serializable,
-                                                                        S3AccelerateUnsupported {
+public class CopyPartRequest
+    extends AmazonWebServiceRequest
+    implements Serializable, S3AccelerateUnsupported, ExpectedBucketOwnerRequest, ExpectedSourceBucketOwnerRequest {
 
     /**
      * The upload id of the multipart upload into which to copy this part.
@@ -140,6 +141,48 @@ public class CopyPartRequest extends AmazonWebServiceRequest implements Serializ
      * Requester Pays Buckets.
      */
     private boolean isRequesterPays;
+
+    private String expectedBucketOwner;
+
+    private String expectedSourceBucketOwner;
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public CopyPartRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
+
+    public String getExpectedSourceBucketOwner() {
+        return expectedSourceBucketOwner;
+    }
+
+    public CopyPartRequest withExpectedSourceBucketOwner(String expectedSourceBucketOwner) {
+        this.expectedSourceBucketOwner = expectedSourceBucketOwner;
+        return this;
+    }
+
+    public void setExpectedSourceBucketOwner(String expectedSourceBucketOwner) {
+        withExpectedSourceBucketOwner(expectedSourceBucketOwner);
+    }
 
     /**
      * Returns the ID of the existing, initiated multipart upload with which

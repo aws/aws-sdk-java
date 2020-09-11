@@ -25,7 +25,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#listMultipartUploads(ListMultipartUploadsRequest)
  */
-public class ListMultipartUploadsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListMultipartUploadsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the uploads to list.
@@ -104,6 +104,8 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
      */
     private String encodingType;
 
+    private String expectedBucketOwner;
+
 
     /**
      * Constructs a new ListMultipartUploadsRequest to list the multipart
@@ -128,6 +130,18 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest impleme
         this.bucketName = bucketName;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListMultipartUploadsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket containing the uploads to list.

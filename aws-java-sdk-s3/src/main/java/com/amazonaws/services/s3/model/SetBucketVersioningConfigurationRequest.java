@@ -67,7 +67,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration)
  * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration, MultiFactorAuthentication)
  */
-public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     
     /**
      * The bucket whose versioning configuration is being set.
@@ -86,19 +86,21 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * {@link BucketVersioningConfiguration} for more details on MFA Delete.
      */
     private MultiFactorAuthentication mfa;
-    
+
+    private String expectedBucketOwner;
+
     /**
-     * Constructs a new {@link SetBucketVersioningConfigurationRequest} 
+     * Constructs a new {@link SetBucketVersioningConfigurationRequest}
      * to set the bucket versioning configuration of
      * the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket whose versioning configuration is being
      *            set.
      * @param configuration
      *            The new versioning configuration for the specified bucket.
-     *            
-     * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration, MultiFactorAuthentication)          
+     *
+     * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration, MultiFactorAuthentication)
      */
     public SetBucketVersioningConfigurationRequest(
             String bucketName, BucketVersioningConfiguration configuration) {
@@ -107,12 +109,12 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Constructs a new {@link SetBucketVersioningConfigurationRequest} 
+     * Constructs a new {@link SetBucketVersioningConfigurationRequest}
      * to set the bucket versioning configuration of
      * the specified bucket, including the specified Multi-Factor Authentication
      * (MFA) information, which is required when changing the state of the MFA
      * Delete option.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket whose versioning configuration is being
      *            set.
@@ -121,16 +123,28 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * @param mfa
      *            The Multi-Factor Authentication information to include in this
      *            request.
-     *            
-     * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration)           
+     *
+     * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration)
      */
     public SetBucketVersioningConfigurationRequest(
-            String bucketName, BucketVersioningConfiguration configuration, 
+            String bucketName, BucketVersioningConfiguration configuration,
             MultiFactorAuthentication mfa) {
         this(bucketName, configuration);
         this.mfa = mfa;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketVersioningConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
     
     /**
      * Gets the name of the bucket whose versioning configuration is being

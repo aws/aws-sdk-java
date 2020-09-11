@@ -45,11 +45,12 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#getBucketWebsiteConfiguration(GetBucketWebsiteConfigurationRequest)
  */
-public class GetBucketWebsiteConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketWebsiteConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
 	/** The name of the bucket whose website configuration is being retrieved. */
 	private String bucketName;
 
+	private String expectedBucketOwner;
 
 	/**
 	 * Creates a new request object, ready to be executed to retrieve the bucket
@@ -61,6 +62,19 @@ public class GetBucketWebsiteConfigurationRequest extends AmazonWebServiceReques
 	 */
 	public GetBucketWebsiteConfigurationRequest(String bucketName) {
 		this.bucketName = bucketName;
+	}
+
+	public String getExpectedBucketOwner() {
+		return expectedBucketOwner;
+	}
+
+	public GetBucketWebsiteConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+		this.expectedBucketOwner = expectedBucketOwner;
+		return this;
+	}
+
+	public void setExpectedBucketOwner(String expectedBucketOwner) {
+		withExpectedBucketOwner(expectedBucketOwner);
 	}
 
 	/**

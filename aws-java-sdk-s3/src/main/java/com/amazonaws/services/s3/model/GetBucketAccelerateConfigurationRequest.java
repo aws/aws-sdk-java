@@ -22,7 +22,9 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#getBucketAccelerateConfiguration(GetBucketAccelerateConfigurationRequest)
  */
 public class GetBucketAccelerateConfigurationRequest extends
-        GenericBucketRequest {
+        GenericBucketRequest implements ExpectedBucketOwnerRequest {
+
+    private String expectedBucketOwner;
 
     /**
      * Creates a request object, ready to be executed to fetch the accelerate
@@ -34,6 +36,19 @@ public class GetBucketAccelerateConfigurationRequest extends
      */
     public GetBucketAccelerateConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketAccelerateConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
 }

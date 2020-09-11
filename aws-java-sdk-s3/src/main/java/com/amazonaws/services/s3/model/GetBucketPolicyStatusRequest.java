@@ -18,9 +18,11 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 import java.io.Serializable;
 
-public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
+
+    private String expectedBucketOwner;
 
     /**
      * The name of the Amazon S3 bucket whose public-policy status you want to retrieve.
@@ -47,6 +49,19 @@ public class GetBucketPolicyStatusRequest extends AmazonWebServiceRequest implem
     public GetBucketPolicyStatusRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
         return this;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketPolicyStatusRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     @Override

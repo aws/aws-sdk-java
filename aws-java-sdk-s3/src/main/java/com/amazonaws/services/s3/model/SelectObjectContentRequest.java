@@ -27,7 +27,7 @@ import java.io.Serializable;
  * For more information, go to
  * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.
  */
-public class SelectObjectContentRequest extends AmazonWebServiceRequest implements SSECustomerKeyProvider, Serializable, Cloneable {
+public class SelectObjectContentRequest extends AmazonWebServiceRequest implements SSECustomerKeyProvider, Serializable, Cloneable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String key;
     private SSECustomerKey sseCustomerKey;
@@ -37,6 +37,20 @@ public class SelectObjectContentRequest extends AmazonWebServiceRequest implemen
     private InputSerialization inputSerialization;
     private OutputSerialization outputSerialization;
     private ScanRange scanRange;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SelectObjectContentRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The S3 Bucket.

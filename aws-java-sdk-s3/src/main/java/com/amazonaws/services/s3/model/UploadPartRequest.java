@@ -14,12 +14,11 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.event.ProgressListener;
 import java.io.File;
 import java.io.InputStream;
 import java.io.Serializable;
-
-import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.event.ProgressListener;
 
 /**
  * Contains the parameters used for the UploadPart operation on Amazon S3.
@@ -40,7 +39,7 @@ import com.amazonaws.event.ProgressListener;
  *
  */
 public class UploadPartRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider, S3DataSource, Serializable {
+        SSECustomerKeyProvider, S3DataSource, Serializable, ExpectedBucketOwnerRequest {
 
     private static final long serialVersionUID = 1L;
     /**
@@ -129,6 +128,20 @@ public class UploadPartRequest extends AmazonWebServiceRequest implements
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public UploadPartRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Sets the stream containing the data to upload for the new part.

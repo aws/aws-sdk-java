@@ -32,7 +32,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see AmazonS3Client#deleteObject(String, String)
  * @see AmazonS3Client#deleteObject(DeleteObjectRequest)
  */
-public class DeleteObjectRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteObjectRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket containing the object to delete.
@@ -62,6 +62,8 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     /**
      * Constructs a new
      * {@link DeleteObjectRequest},
@@ -76,6 +78,19 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest implements Seri
     public DeleteObjectRequest(String bucketName, String key) {
         setBucketName(bucketName);
         setKey(key);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
 

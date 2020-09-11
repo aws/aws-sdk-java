@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * @see AmazonS3#getObjectAcl(String, String, String)
  * @see AmazonS3#getObjectAcl(GetObjectAclRequest)
  */
-public class GetObjectAclRequest extends AmazonWebServiceRequest implements Serializable{
+public class GetObjectAclRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * Builder of an S3 object identifier. This member field is never null.
@@ -49,14 +49,28 @@ public class GetObjectAclRequest extends AmazonWebServiceRequest implements Seri
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     public GetObjectAclRequest(String bucketName, String key) {
         this(bucketName, key, null);
     }
-
     public GetObjectAclRequest(String bucketName, String key, String versionId) {
         setBucketName(bucketName);
         setKey(key);
         setVersionId(versionId);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectAclRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

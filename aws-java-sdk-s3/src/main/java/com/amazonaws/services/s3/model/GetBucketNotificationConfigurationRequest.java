@@ -25,7 +25,8 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#getBucketNotificationConfiguration(GetBucketNotificationConfigurationRequest)
  */
 public class GetBucketNotificationConfigurationRequest extends
-        GenericBucketRequest implements Serializable {
+        GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+    private String expectedBucketOwner;
 
     /**
      * Creates a new request object, ready to be executed to fetch the
@@ -37,6 +38,19 @@ public class GetBucketNotificationConfigurationRequest extends
      */
     public GetBucketNotificationConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketNotificationConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
 }

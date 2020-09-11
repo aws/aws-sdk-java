@@ -31,7 +31,7 @@ import java.io.Serializable;
  * @see RestoreObjectRequest#RestoreObjectRequest(String, String, int)
  * @see RestoreObjectRequest#RestoreObjectRequest(String, String)
  */
-public class RestoreObjectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class RestoreObjectRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     /**
      * Lifetime of the active copy in days. Do not use with restores that specify OutputLocation.
@@ -110,6 +110,8 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
      */
     private OutputLocation outputLocation;
 
+    private String expectedBucketOwner;
+
     /**
      * <p>
      * Constructs a new RestoreObjectRequest.
@@ -173,6 +175,20 @@ public class RestoreObjectRequest extends AmazonWebServiceRequest implements Ser
         this.bucketName = bucketName;
         this.key = key;
         this.expirationInDays = expirationInDays;
+    }
+
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public RestoreObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

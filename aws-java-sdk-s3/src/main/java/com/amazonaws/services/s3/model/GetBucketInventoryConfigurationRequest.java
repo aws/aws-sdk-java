@@ -21,11 +21,13 @@ import java.io.Serializable;
 /**
  * Request object to retrieve an inventory configuration.
  */
-public class GetBucketInventoryConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetBucketInventoryConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
 
     private String id;
+
+    private String expectedBucketOwner;
 
     public GetBucketInventoryConfigurationRequest() {
     }
@@ -33,6 +35,19 @@ public class GetBucketInventoryConfigurationRequest extends AmazonWebServiceRequ
     public GetBucketInventoryConfigurationRequest(String bucketName, String id) {
         this.bucketName = bucketName;
         this.id = id;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketInventoryConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

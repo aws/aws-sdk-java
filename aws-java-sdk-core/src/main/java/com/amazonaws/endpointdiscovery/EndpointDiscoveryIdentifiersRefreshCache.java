@@ -106,6 +106,17 @@ public abstract class EndpointDiscoveryIdentifiersRefreshCache<K> {
         }, refreshPeriod, TimeUnit.MINUTES);
     }
 
+    public ScheduledFuture<?> loadAndScheduleEvict(final String key,
+                                                   final long refreshPeriod,
+                                                   final TimeUnit refreshPeriodTimeUnit) {
+        return executorService.schedule(new Runnable() {
+            @Override
+            public void run() {
+                evict(key);
+            }
+        }, refreshPeriod, refreshPeriodTimeUnit);
+    }
+
     public void shutdown() {
         executorService.shutdownNow();
     }

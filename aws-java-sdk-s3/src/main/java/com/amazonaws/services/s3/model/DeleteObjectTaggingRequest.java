@@ -21,10 +21,12 @@ import java.io.Serializable;
 /**
  * Request object for the parameters to delete the tags for an object.
  */
-public class DeleteObjectTaggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class DeleteObjectTaggingRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String key;
     private String versionId;
+    private String expectedBucketOwner;
+
 
     /**
      * Constructs an instance of this object.
@@ -37,6 +39,19 @@ public class DeleteObjectTaggingRequest extends AmazonWebServiceRequest implemen
     public DeleteObjectTaggingRequest(String bucketName, String key) {
         this.bucketName = bucketName;
         this.key = key;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteObjectTaggingRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

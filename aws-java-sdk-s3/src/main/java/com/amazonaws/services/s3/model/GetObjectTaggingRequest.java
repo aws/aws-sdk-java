@@ -21,10 +21,11 @@ import java.io.Serializable;
 /**
  * Request object for the parameters to get the tags for an object.
  */
-public class GetObjectTaggingRequest extends AmazonWebServiceRequest implements Serializable {
+public class GetObjectTaggingRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String key;
     private String versionId;
+    private String expectedBucketOwner;
 
     /**
      * Construct an instance of this object.
@@ -76,6 +77,19 @@ public class GetObjectTaggingRequest extends AmazonWebServiceRequest implements 
      */
     public GetObjectTaggingRequest(String bucketName, String key) {
         this(bucketName, key, null);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectTaggingRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

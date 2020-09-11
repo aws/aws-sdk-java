@@ -22,16 +22,30 @@ import java.io.Serializable;
 /**
  * Request object to set analytics configuration to a bucket.
  */
-public class SetBucketAnalyticsConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketAnalyticsConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
     private AnalyticsConfiguration analyticsConfiguration;
+    private String expectedBucketOwner;
 
     public SetBucketAnalyticsConfigurationRequest() { }
 
     public SetBucketAnalyticsConfigurationRequest(String bucketName, AnalyticsConfiguration analyticsConfiguration) {
         this.bucketName = bucketName;
         this.analyticsConfiguration = analyticsConfiguration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketAnalyticsConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

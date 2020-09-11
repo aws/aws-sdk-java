@@ -173,6 +173,7 @@ import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
+import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
@@ -4750,6 +4751,37 @@ public interface AmazonS3 extends S3DirectSpi {
      */
     public boolean isRequesterPaysEnabled(String bucketName)
             throws AmazonServiceException, SdkClientException;
+
+
+    /**
+     * Configure the Requester Pays configuration associated with an Amazon S3 bucket.
+     *
+     * Note:
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * <p>
+     * For more information on Requester pays, @see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+     *
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @see AmazonS3#enableRequesterPays(String)
+     * @see AmazonS3#disableRequesterPays(String)
+     * @see AmazonS3#isRequesterPaysEnabled(String)
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">AWS API Documentation</a>
+     */
+    public void setRequestPaymentConfiguration(SetRequestPaymentConfigurationRequest setRequestPaymentConfigurationRequest);
 
     /**
      * Sets a replication configuration for the Amazon S3 bucket.
