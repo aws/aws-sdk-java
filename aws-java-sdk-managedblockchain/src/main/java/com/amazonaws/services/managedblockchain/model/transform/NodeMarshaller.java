@@ -41,6 +41,8 @@ public class NodeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FrameworkAttributes").build();
     private static final MarshallingInfo<StructuredPojo> LOGPUBLISHINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogPublishingConfiguration").build();
+    private static final MarshallingInfo<String> STATEDB_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StateDB").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -69,6 +71,7 @@ public class NodeMarshaller {
             protocolMarshaller.marshall(node.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(node.getFrameworkAttributes(), FRAMEWORKATTRIBUTES_BINDING);
             protocolMarshaller.marshall(node.getLogPublishingConfiguration(), LOGPUBLISHINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(node.getStateDB(), STATEDB_BINDING);
             protocolMarshaller.marshall(node.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(node.getCreationDate(), CREATIONDATE_BINDING);
         } catch (Exception e) {

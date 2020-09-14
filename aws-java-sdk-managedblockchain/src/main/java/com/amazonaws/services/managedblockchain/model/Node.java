@@ -64,8 +64,19 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodeFrameworkAttributes frameworkAttributes;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
+     */
     private NodeLogPublishingConfiguration logPublishingConfiguration;
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     */
+    private String stateDB;
     /**
      * <p>
      * The status of the node.
@@ -320,9 +331,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
+     *        Blockchain network.
      */
 
     public void setLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
@@ -330,9 +346,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
      * 
-     * @return
+     * @return Configuration properties for logging events associated with a peer node owned by a member in a Managed
+     *         Blockchain network.
      */
 
     public NodeLogPublishingConfiguration getLogPublishingConfiguration() {
@@ -340,14 +360,78 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
+     *        Blockchain network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Node withLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
         setLogPublishingConfiguration(logPublishingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * @see StateDBType
+     */
+
+    public void setStateDB(String stateDB) {
+        this.stateDB = stateDB;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * 
+     * @return The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * @see StateDBType
+     */
+
+    public String getStateDB() {
+        return this.stateDB;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateDBType
+     */
+
+    public Node withStateDB(String stateDB) {
+        setStateDB(stateDB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateDBType
+     */
+
+    public Node withStateDB(StateDBType stateDB) {
+        this.stateDB = stateDB.toString();
         return this;
     }
 
@@ -476,6 +560,8 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             sb.append("FrameworkAttributes: ").append(getFrameworkAttributes()).append(",");
         if (getLogPublishingConfiguration() != null)
             sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration()).append(",");
+        if (getStateDB() != null)
+            sb.append("StateDB: ").append(getStateDB()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationDate() != null)
@@ -522,6 +608,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogPublishingConfiguration() != null && other.getLogPublishingConfiguration().equals(this.getLogPublishingConfiguration()) == false)
             return false;
+        if (other.getStateDB() == null ^ this.getStateDB() == null)
+            return false;
+        if (other.getStateDB() != null && other.getStateDB().equals(this.getStateDB()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -545,6 +635,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getFrameworkAttributes() == null) ? 0 : getFrameworkAttributes().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStateDB() == null) ? 0 : getStateDB().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         return hashCode;

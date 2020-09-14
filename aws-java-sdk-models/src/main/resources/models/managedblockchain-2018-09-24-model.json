@@ -209,7 +209,7 @@
         {"shape":"ResourceLimitExceededException"},
         {"shape":"InternalServiceErrorException"}
       ],
-      "documentation":"<p>Returns a listing of all invitations made on the specified network.</p>"
+      "documentation":"<p>Returns a listing of all invitations for the current AWS account.</p>"
     },
     "ListMembers":{
       "name":"ListMembers",
@@ -1209,7 +1209,7 @@
         },
         "LogPublishingConfiguration":{
           "shape":"MemberLogPublishingConfiguration",
-          "documentation":"<p/>"
+          "documentation":"<p>Configuration properties for logging events associated with a member of a Managed Blockchain network.</p>"
         }
       },
       "documentation":"<p>Configuration properties of the member.</p>"
@@ -1523,7 +1523,11 @@
         },
         "LogPublishingConfiguration":{
           "shape":"NodeLogPublishingConfiguration",
-          "documentation":"<p/>"
+          "documentation":"<p>Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network.</p>"
+        },
+        "StateDB":{
+          "shape":"StateDBType",
+          "documentation":"<p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>"
         },
         "Status":{
           "shape":"NodeStatus",
@@ -1553,7 +1557,11 @@
         },
         "LogPublishingConfiguration":{
           "shape":"NodeLogPublishingConfiguration",
-          "documentation":"<p/>"
+          "documentation":"<p>Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain network. </p>"
+        },
+        "StateDB":{
+          "shape":"StateDBType",
+          "documentation":"<p>The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is <code>CouchDB</code>.</p>"
         }
       },
       "documentation":"<p>Configuration properties of a peer node.</p>"
@@ -1870,6 +1878,13 @@
       "documentation":"<p>The requested resource exists but is not in a status that can complete the operation.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
+    },
+    "StateDBType":{
+      "type":"string",
+      "enum":[
+        "LevelDB",
+        "CouchDB"
+      ]
     },
     "String":{"type":"string"},
     "ThresholdComparator":{

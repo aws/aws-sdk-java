@@ -46,7 +46,11 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private MemberFrameworkConfiguration frameworkConfiguration;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a member of a Managed Blockchain network.
+     * </p>
+     */
     private MemberLogPublishingConfiguration logPublishingConfiguration;
 
     /**
@@ -170,9 +174,12 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a member of a Managed Blockchain network.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a member of a Managed Blockchain network.
      */
 
     public void setLogPublishingConfiguration(MemberLogPublishingConfiguration logPublishingConfiguration) {
@@ -180,9 +187,11 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a member of a Managed Blockchain network.
+     * </p>
      * 
-     * @return
+     * @return Configuration properties for logging events associated with a member of a Managed Blockchain network.
      */
 
     public MemberLogPublishingConfiguration getLogPublishingConfiguration() {
@@ -190,9 +199,12 @@ public class MemberConfiguration implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a member of a Managed Blockchain network.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a member of a Managed Blockchain network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

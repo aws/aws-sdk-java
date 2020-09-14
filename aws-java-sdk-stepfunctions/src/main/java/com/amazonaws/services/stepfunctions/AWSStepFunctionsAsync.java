@@ -132,10 +132,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 
@@ -165,10 +166,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 

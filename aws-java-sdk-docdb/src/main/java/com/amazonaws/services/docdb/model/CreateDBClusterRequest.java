@@ -268,7 +268,17 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String kmsKeyId;
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * Not currently supported.
+     * </p>
+     */
+    private String preSignedUrl;
+    /**
+     * <p>
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      */
     private java.util.List<String> enableCloudwatchLogsExports;
@@ -1857,10 +1867,59 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * Not currently supported.
      * </p>
      * 
-     * @return A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * @param preSignedUrl
+     *        Not currently supported.
+     */
+
+    public void setPreSignedUrl(String preSignedUrl) {
+        this.preSignedUrl = preSignedUrl;
+    }
+
+    /**
+     * <p>
+     * Not currently supported.
+     * </p>
+     * 
+     * @return Not currently supported.
+     */
+
+    public String getPreSignedUrl() {
+        return this.preSignedUrl;
+    }
+
+    /**
+     * <p>
+     * Not currently supported.
+     * </p>
+     * 
+     * @param preSignedUrl
+     *        Not currently supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withPreSignedUrl(String preSignedUrl) {
+        setPreSignedUrl(preSignedUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
+     * </p>
+     * 
+     * @return A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *         logs or profiler logs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *         DocumentDB Events</a> and <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *         DocumentDB Operations</a>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -1869,11 +1928,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *        logs or profiler logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *        DocumentDB Events</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *        DocumentDB Operations</a>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -1887,7 +1955,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1896,7 +1968,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *        logs or profiler logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *        DocumentDB Events</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *        DocumentDB Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1912,11 +1989,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *        logs or profiler logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *        DocumentDB Events</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *        DocumentDB Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2037,6 +2123,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("StorageEncrypted: ").append(getStorageEncrypted()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getPreSignedUrl() != null)
+            sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getDeletionProtection() != null)
@@ -2119,6 +2207,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getPreSignedUrl() == null ^ this.getPreSignedUrl() == null)
+            return false;
+        if (other.getPreSignedUrl() != null && other.getPreSignedUrl().equals(this.getPreSignedUrl()) == false)
+            return false;
         if (other.getEnableCloudwatchLogsExports() == null ^ this.getEnableCloudwatchLogsExports() == null)
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
@@ -2151,6 +2243,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         return hashCode;

@@ -40,6 +40,8 @@ public class CreateStateMachineRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingConfiguration").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> TRACINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tracingConfiguration").build();
 
     private static final CreateStateMachineRequestMarshaller instance = new CreateStateMachineRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateStateMachineRequestMarshaller {
             protocolMarshaller.marshall(createStateMachineRequest.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(createStateMachineRequest.getLoggingConfiguration(), LOGGINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createStateMachineRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createStateMachineRequest.getTracingConfiguration(), TRACINGCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

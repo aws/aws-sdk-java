@@ -33,6 +33,8 @@ public class StartExecutionRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("input").build();
+    private static final MarshallingInfo<String> TRACEHEADER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("traceHeader").build();
 
     private static final StartExecutionRequestMarshaller instance = new StartExecutionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class StartExecutionRequestMarshaller {
             protocolMarshaller.marshall(startExecutionRequest.getStateMachineArn(), STATEMACHINEARN_BINDING);
             protocolMarshaller.marshall(startExecutionRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(startExecutionRequest.getInput(), INPUT_BINDING);
+            protocolMarshaller.marshall(startExecutionRequest.getTraceHeader(), TRACEHEADER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

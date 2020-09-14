@@ -88,6 +88,10 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeExecutionResult.setOutputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("traceHeader", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setTraceHeader(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

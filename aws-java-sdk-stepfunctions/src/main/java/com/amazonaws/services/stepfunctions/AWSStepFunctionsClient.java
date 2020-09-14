@@ -146,6 +146,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.InvalidOutputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTracingConfiguration").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidTracingConfigurationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -459,10 +462,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 
@@ -475,6 +479,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidNameException
      *         The provided name is invalid.
      * @throws InvalidLoggingConfigurationException
+     * @throws InvalidTracingConfigurationException
+     *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
+     *         <code>true</code> or <code>false</code>.
      * @throws StateMachineAlreadyExistsException
      *         A state machine with the same name but a different definition or role ARN already exists.
      * @throws StateMachineDeletingException
@@ -1809,6 +1816,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws InvalidDefinitionException
      *         The provided Amazon States Language definition is invalid.
      * @throws InvalidLoggingConfigurationException
+     * @throws InvalidTracingConfigurationException
+     *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
+     *         <code>true</code> or <code>false</code>.
      * @throws MissingRequiredParameterException
      *         Request is missing a required parameter. This error occurs if both <code>definition</code> and
      *         <code>roleArn</code> are not specified.

@@ -1,3 +1,20 @@
+# __1.11.861__ __2020-09-14__
+## __AWS Step Functions__
+  - ### Features
+    - This release of the AWS Step Functions SDK introduces support for AWS X-Ray.
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - Updated API documentation and added paginators for DescribeCertificates, DescribeDBClusterParameterGroups, DescribeDBClusterParameters, DescribeDBClusterSnapshots and DescribePendingMaintenanceActions
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for the T4G instance family to the EC2 ModifyDefaultCreditSpecification and GetDefaultCreditSpecification APIs.
+
+## __Amazon Managed Blockchain__
+  - ### Features
+    - Introducing support for Hyperledger Fabric 1.4. When using framework version 1.4, the state database may optionally be specified when creating peer nodes (defaults to CouchDB).
+
 # __1.11.860__ __2020-09-11__
 ## __Amazon WorkSpaces__
   - ### Features

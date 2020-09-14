@@ -40,8 +40,21 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String availabilityZone;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
+     */
     private NodeLogPublishingConfiguration logPublishingConfiguration;
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an
+     * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     * <code>CouchDB</code>.
+     * </p>
+     */
+    private String stateDB;
 
     /**
      * <p>
@@ -124,9 +137,14 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
+     *        Blockchain network.
      */
 
     public void setLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
@@ -134,9 +152,13 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
      * 
-     * @return
+     * @return Configuration properties for logging events associated with a peer node owned by a member in a Managed
+     *         Blockchain network.
      */
 
     public NodeLogPublishingConfiguration getLogPublishingConfiguration() {
@@ -144,14 +166,94 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node owned by a member in a Managed Blockchain
+     * network.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a peer node owned by a member in a Managed
+     *        Blockchain network.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public NodeConfiguration withLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
         setLogPublishingConfiguration(logPublishingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an
+     * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     * <code>CouchDB</code>.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using
+     *        an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     *        <code>CouchDB</code>.
+     * @see StateDBType
+     */
+
+    public void setStateDB(String stateDB) {
+        this.stateDB = stateDB;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an
+     * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     * <code>CouchDB</code>.
+     * </p>
+     * 
+     * @return The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When
+     *         using an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     *         <code>CouchDB</code>.
+     * @see StateDBType
+     */
+
+    public String getStateDB() {
+        return this.stateDB;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an
+     * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     * <code>CouchDB</code>.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using
+     *        an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     *        <code>CouchDB</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateDBType
+     */
+
+    public NodeConfiguration withStateDB(String stateDB) {
+        setStateDB(stateDB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using an
+     * Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     * <code>CouchDB</code>.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>. When using
+     *        an Amazon Managed Blockchain network with Hyperledger Fabric version 1.4 or later, the default is
+     *        <code>CouchDB</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateDBType
+     */
+
+    public NodeConfiguration withStateDB(StateDBType stateDB) {
+        this.stateDB = stateDB.toString();
         return this;
     }
 
@@ -172,7 +274,9 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getLogPublishingConfiguration() != null)
-            sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration());
+            sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration()).append(",");
+        if (getStateDB() != null)
+            sb.append("StateDB: ").append(getStateDB());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +303,10 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getLogPublishingConfiguration() != null && other.getLogPublishingConfiguration().equals(this.getLogPublishingConfiguration()) == false)
             return false;
+        if (other.getStateDB() == null ^ this.getStateDB() == null)
+            return false;
+        if (other.getStateDB() != null && other.getStateDB().equals(this.getStateDB()) == false)
+            return false;
         return true;
     }
 
@@ -210,6 +318,7 @@ public class NodeConfiguration implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStateDB() == null) ? 0 : getStateDB().hashCode());
         return hashCode;
     }
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides details about execution input.
+ * Provides details about execution input or output.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CloudWatchEventsExecutionDataDetails"
@@ -30,21 +30,18 @@ public class CloudWatchEventsExecutionDataDetails implements Serializable, Clone
 
     /**
      * <p>
-     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls, but may
-     * be <code>false</code> for CloudWatch Events.
+     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      * </p>
      */
     private Boolean included;
 
     /**
      * <p>
-     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls, but may
-     * be <code>false</code> for CloudWatch Events.
+     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      * </p>
      * 
      * @param included
-     *        Indicates whether input or output was included in the response. Always <code>true</code> for API calls,
-     *        but may be <code>false</code> for CloudWatch Events.
+     *        Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      */
 
     public void setIncluded(Boolean included) {
@@ -53,12 +50,10 @@ public class CloudWatchEventsExecutionDataDetails implements Serializable, Clone
 
     /**
      * <p>
-     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls, but may
-     * be <code>false</code> for CloudWatch Events.
+     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      * </p>
      * 
-     * @return Indicates whether input or output was included in the response. Always <code>true</code> for API calls,
-     *         but may be <code>false</code> for CloudWatch Events.
+     * @return Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      */
 
     public Boolean getIncluded() {
@@ -67,13 +62,11 @@ public class CloudWatchEventsExecutionDataDetails implements Serializable, Clone
 
     /**
      * <p>
-     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls, but may
-     * be <code>false</code> for CloudWatch Events.
+     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      * </p>
      * 
      * @param included
-     *        Indicates whether input or output was included in the response. Always <code>true</code> for API calls,
-     *        but may be <code>false</code> for CloudWatch Events.
+     *        Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,12 +77,10 @@ public class CloudWatchEventsExecutionDataDetails implements Serializable, Clone
 
     /**
      * <p>
-     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls, but may
-     * be <code>false</code> for CloudWatch Events.
+     * Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      * </p>
      * 
-     * @return Indicates whether input or output was included in the response. Always <code>true</code> for API calls,
-     *         but may be <code>false</code> for CloudWatch Events.
+     * @return Indicates whether input or output was included in the response. Always <code>true</code> for API calls.
      */
 
     public Boolean isIncluded() {

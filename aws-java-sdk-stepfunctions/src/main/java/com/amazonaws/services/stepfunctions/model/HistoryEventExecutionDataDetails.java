@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details about the data from an execution's events. Always <code>true</code> for API calls, but may be
- * <code>false</code> for CloudWatch Logs.
+ * Provides details about input or output in an execution history event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/HistoryEventExecutionDataDetails"
@@ -31,18 +30,18 @@ public class HistoryEventExecutionDataDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      * </p>
      */
     private Boolean truncated;
 
     /**
      * <p>
-     * Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      * </p>
      * 
      * @param truncated
-     *        Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     *        Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      */
 
     public void setTruncated(Boolean truncated) {
@@ -51,10 +50,10 @@ public class HistoryEventExecutionDataDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      * </p>
      * 
-     * @return Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * @return Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      */
 
     public Boolean getTruncated() {
@@ -63,11 +62,11 @@ public class HistoryEventExecutionDataDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      * </p>
      * 
      * @param truncated
-     *        Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     *        Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +77,10 @@ public class HistoryEventExecutionDataDetails implements Serializable, Cloneable
 
     /**
      * <p>
-     * Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      * </p>
      * 
-     * @return Indicates whether input or output was truncated in the response. Always <code>false</code>.
+     * @return Indicates whether input or output was truncated in the response. Always <code>false</code> for API calls.
      */
 
     public Boolean isTruncated() {

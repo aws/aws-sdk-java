@@ -35,6 +35,8 @@ public class UpdateStateMachineRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<StructuredPojo> LOGGINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> TRACINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tracingConfiguration").build();
 
     private static final UpdateStateMachineRequestMarshaller instance = new UpdateStateMachineRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateStateMachineRequestMarshaller {
             protocolMarshaller.marshall(updateStateMachineRequest.getDefinition(), DEFINITION_BINDING);
             protocolMarshaller.marshall(updateStateMachineRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(updateStateMachineRequest.getLoggingConfiguration(), LOGGINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateStateMachineRequest.getTracingConfiguration(), TRACINGCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

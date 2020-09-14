@@ -80,6 +80,10 @@ public class DescribeStateMachineResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     describeStateMachineResult.setLoggingConfiguration(LoggingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("tracingConfiguration", targetDepth)) {
+                    context.nextToken();
+                    describeStateMachineResult.setTracingConfiguration(TracingConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

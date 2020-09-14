@@ -22,7 +22,8 @@ public enum UnlimitedSupportedInstanceFamily {
 
     T2("t2"),
     T3("t3"),
-    T3a("t3a");
+    T3a("t3a"),
+    T4g("t4g");
 
     private String value;
 

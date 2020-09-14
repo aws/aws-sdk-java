@@ -838,7 +838,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns a listing of all invitations made on the specified network.
+     * Returns a listing of all invitations for the current AWS account.
      * </p>
      * 
      * @param listInvitationsRequest

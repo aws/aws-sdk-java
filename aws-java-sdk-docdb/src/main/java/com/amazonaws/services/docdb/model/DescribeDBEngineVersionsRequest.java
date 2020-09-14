@@ -39,7 +39,7 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * The database engine version to return.
      * </p>
      * <p>
-     * Example: <code>5.1.49</code>
+     * Example: <code>3.6.0</code>
      * </p>
      */
     private String engineVersion;
@@ -153,13 +153,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * The database engine version to return.
      * </p>
      * <p>
-     * Example: <code>5.1.49</code>
+     * Example: <code>3.6.0</code>
      * </p>
      * 
      * @param engineVersion
      *        The database engine version to return.</p>
      *        <p>
-     *        Example: <code>5.1.49</code>
+     *        Example: <code>3.6.0</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -171,12 +171,12 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * The database engine version to return.
      * </p>
      * <p>
-     * Example: <code>5.1.49</code>
+     * Example: <code>3.6.0</code>
      * </p>
      * 
      * @return The database engine version to return.</p>
      *         <p>
-     *         Example: <code>5.1.49</code>
+     *         Example: <code>3.6.0</code>
      */
 
     public String getEngineVersion() {
@@ -188,13 +188,13 @@ public class DescribeDBEngineVersionsRequest extends com.amazonaws.AmazonWebServ
      * The database engine version to return.
      * </p>
      * <p>
-     * Example: <code>5.1.49</code>
+     * Example: <code>3.6.0</code>
      * </p>
      * 
      * @param engineVersion
      *        The database engine version to return.</p>
      *        <p>
-     *        Example: <code>5.1.49</code>
+     *        Example: <code>3.6.0</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

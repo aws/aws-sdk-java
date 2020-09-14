@@ -149,6 +149,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("KmsKeyId", StringUtils.fromString(createDBClusterRequest.getKmsKeyId()));
         }
 
+        if (createDBClusterRequest.getPreSignedUrl() != null) {
+            request.addParameter("PreSignedUrl", StringUtils.fromString(createDBClusterRequest.getPreSignedUrl()));
+        }
+
         if (createDBClusterRequest.getEnableCloudwatchLogsExports() != null) {
             java.util.List<String> enableCloudwatchLogsExportsList = createDBClusterRequest.getEnableCloudwatchLogsExports();
             if (enableCloudwatchLogsExportsList.isEmpty()) {

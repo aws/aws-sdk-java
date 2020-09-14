@@ -362,7 +362,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Returns a listing of all invitations made on the specified network.
+     * Returns a listing of all invitations for the current AWS account.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -375,7 +375,7 @@ public interface AmazonManagedBlockchainAsync extends AmazonManagedBlockchain {
 
     /**
      * <p>
-     * Returns a listing of all invitations made on the specified network.
+     * Returns a listing of all invitations for the current AWS account.
      * </p>
      * 
      * @param listInvitationsRequest

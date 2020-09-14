@@ -115,6 +115,12 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private String output;
 
     private CloudWatchEventsExecutionDataDetails outputDetails;
+    /**
+     * <p>
+     * The AWS X-Ray trace header which was passed to the execution.
+     * </p>
+     */
+    private String traceHeader;
 
     /**
      * <p>
@@ -753,6 +759,46 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * The AWS X-Ray trace header which was passed to the execution.
+     * </p>
+     * 
+     * @param traceHeader
+     *        The AWS X-Ray trace header which was passed to the execution.
+     */
+
+    public void setTraceHeader(String traceHeader) {
+        this.traceHeader = traceHeader;
+    }
+
+    /**
+     * <p>
+     * The AWS X-Ray trace header which was passed to the execution.
+     * </p>
+     * 
+     * @return The AWS X-Ray trace header which was passed to the execution.
+     */
+
+    public String getTraceHeader() {
+        return this.traceHeader;
+    }
+
+    /**
+     * <p>
+     * The AWS X-Ray trace header which was passed to the execution.
+     * </p>
+     * 
+     * @param traceHeader
+     *        The AWS X-Ray trace header which was passed to the execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withTraceHeader(String traceHeader) {
+        setTraceHeader(traceHeader);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -783,7 +829,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         if (getOutput() != null)
             sb.append("Output: ").append("***Sensitive Data Redacted***").append(",");
         if (getOutputDetails() != null)
-            sb.append("OutputDetails: ").append(getOutputDetails());
+            sb.append("OutputDetails: ").append(getOutputDetails()).append(",");
+        if (getTraceHeader() != null)
+            sb.append("TraceHeader: ").append(getTraceHeader());
         sb.append("}");
         return sb.toString();
     }
@@ -838,6 +886,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getOutputDetails() != null && other.getOutputDetails().equals(this.getOutputDetails()) == false)
             return false;
+        if (other.getTraceHeader() == null ^ this.getTraceHeader() == null)
+            return false;
+        if (other.getTraceHeader() != null && other.getTraceHeader().equals(this.getTraceHeader()) == false)
+            return false;
         return true;
     }
 
@@ -856,6 +908,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getInputDetails() == null) ? 0 : getInputDetails().hashCode());
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
         hashCode = prime * hashCode + ((getOutputDetails() == null) ? 0 : getOutputDetails().hashCode());
+        hashCode = prime * hashCode + ((getTraceHeader() == null) ? 0 : getTraceHeader().hashCode());
         return hashCode;
     }
 
