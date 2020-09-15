@@ -87,14 +87,13 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
+     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
-     * Confidence scores are only returned for results with the <code>Type</code> field set to
-     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
-     * set to <code>DOCUMENT</code>.
+     * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
+     * Amazon Kendra is not confident that the result matches the query.
      * </p>
      */
     private ScoreAttributes scoreAttributes;
@@ -521,25 +520,23 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
+     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
-     * Confidence scores are only returned for results with the <code>Type</code> field set to
-     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
-     * set to <code>DOCUMENT</code>.
+     * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
+     * Amazon Kendra is not confident that the result matches the query.
      * </p>
      * 
      * @param scoreAttributes
      *        Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
-     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     *        <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
-     *        application.</p>
+     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+     *        <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the
+     *        confidence needed for your application.</p>
      *        <p>
-     *        Confidence scores are only returned for results with the <code>Type</code> field set to
-     *        <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code>
-     *        field is set to <code>DOCUMENT</code>.
+     *        The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code>
+     *        and Amazon Kendra is not confident that the result matches the query.
      */
 
     public void setScoreAttributes(ScoreAttributes scoreAttributes) {
@@ -549,24 +546,22 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
+     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
-     * Confidence scores are only returned for results with the <code>Type</code> field set to
-     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
-     * set to <code>DOCUMENT</code>.
+     * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
+     * Amazon Kendra is not confident that the result matches the query.
      * </p>
      * 
      * @return Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
-     *         result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     *         <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for
-     *         your application.</p>
+     *         result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+     *         <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the
+     *         confidence needed for your application.</p>
      *         <p>
-     *         Confidence scores are only returned for results with the <code>Type</code> field set to
-     *         <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code>
-     *         field is set to <code>DOCUMENT</code>.
+     *         The field is only set to <code>LOW</code> when the <code>Type</code> field is set to
+     *         <code>DOCUMENT</code> and Amazon Kendra is not confident that the result matches the query.
      */
 
     public ScoreAttributes getScoreAttributes() {
@@ -576,25 +571,23 @@ public class QueryResultItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each result is
-     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     * <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
+     * placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, <code>MEDIUM</code>
+     * and <code>LOW</code>. You can use the score to determine if a response meets the confidence needed for your
      * application.
      * </p>
      * <p>
-     * Confidence scores are only returned for results with the <code>Type</code> field set to
-     * <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code> field is
-     * set to <code>DOCUMENT</code>.
+     * The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code> and
+     * Amazon Kendra is not confident that the result matches the query.
      * </p>
      * 
      * @param scoreAttributes
      *        Indicates the confidence that Amazon Kendra has that a result matches the query that you provided. Each
-     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>, and
-     *        <code>MEDIUM</code>. You can use the score to determine if a response meets the confidence needed for your
-     *        application.</p>
+     *        result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>, <code>HIGH</code>,
+     *        <code>MEDIUM</code> and <code>LOW</code>. You can use the score to determine if a response meets the
+     *        confidence needed for your application.</p>
      *        <p>
-     *        Confidence scores are only returned for results with the <code>Type</code> field set to
-     *        <code>QUESTION_ANSWER</code> or <code>ANSWER</code>. This field is not returned if the <code>Type</code>
-     *        field is set to <code>DOCUMENT</code>.
+     *        The field is only set to <code>LOW</code> when the <code>Type</code> field is set to <code>DOCUMENT</code>
+     *        and Amazon Kendra is not confident that the result matches the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

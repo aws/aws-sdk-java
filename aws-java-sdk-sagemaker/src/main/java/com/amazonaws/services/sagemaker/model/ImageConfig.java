@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual Private
- * Cloud (VPC).
+ * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+ * Virtual Private Cloud (VPC).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImageConfig" target="_top">AWS API
@@ -41,7 +41,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     * <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      * </p>
      * </li>
      * </ul>
@@ -60,7 +60,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     * <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      * </p>
      * </li>
      * </ul>
@@ -75,7 +75,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     *        <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      *        </p>
      *        </li>
      * @see RepositoryAccessMode
@@ -97,7 +97,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     * <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      * </p>
      * </li>
      * </ul>
@@ -111,7 +111,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     *         <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      *         </p>
      *         </li>
      * @see RepositoryAccessMode
@@ -133,7 +133,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     * <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      * </p>
      * </li>
      * </ul>
@@ -148,7 +148,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     *        <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -172,7 +172,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     * <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      * </p>
      * </li>
      * </ul>
@@ -187,7 +187,7 @@ public class ImageConfig implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>VPC</code> - The model image is hosted in a private Docker registry in your VPC.
+     *        <code>Vpc</code> - The model image is hosted in a private Docker registry in your VPC.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

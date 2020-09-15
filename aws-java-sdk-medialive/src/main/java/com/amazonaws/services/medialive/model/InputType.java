@@ -27,7 +27,8 @@ public enum InputType {
     URL_PULL("URL_PULL"),
     MP4_FILE("MP4_FILE"),
     MEDIACONNECT("MEDIACONNECT"),
-    INPUT_DEVICE("INPUT_DEVICE");
+    INPUT_DEVICE("INPUT_DEVICE"),
+    AWS_CDI("AWS_CDI");
 
     private String value;
 

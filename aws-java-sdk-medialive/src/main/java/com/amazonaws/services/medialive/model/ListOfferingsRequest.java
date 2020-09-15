@@ -34,7 +34,7 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
      */
     private String channelConfiguration;
-    /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO' */
+    /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK' */
     private String codec;
     /** Filter by offering duration, e.g. '12' */
     private String duration;
@@ -130,10 +130,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * 
      * @param codec
-     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      */
 
     public void setCodec(String codec) {
@@ -141,9 +141,9 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * 
-     * @return Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * @return Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      */
 
     public String getCodec() {
@@ -151,10 +151,10 @@ public class ListOfferingsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * 
      * @param codec
-     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

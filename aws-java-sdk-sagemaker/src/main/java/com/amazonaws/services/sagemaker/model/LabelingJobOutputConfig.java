@@ -56,6 +56,20 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * </p>
+     * <p>
+     * When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output topic
+     * you specify here.
+     * </p>
+     * <p>
+     * You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.
+     * </p>
+     */
+    private String snsTopicArn;
 
     /**
      * <p>
@@ -234,6 +248,91 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * </p>
+     * <p>
+     * When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output topic
+     * you specify here.
+     * </p>
+     * <p>
+     * You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.
+     * </p>
+     * 
+     * @param snsTopicArn
+     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     *        <p>
+     *        When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output
+     *        topic you specify here.
+     *        </p>
+     *        <p>
+     *        You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     *        <code>SnsDataSource</code> in <code>InputConfig</code>.
+     */
+
+    public void setSnsTopicArn(String snsTopicArn) {
+        this.snsTopicArn = snsTopicArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * </p>
+     * <p>
+     * When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output topic
+     * you specify here.
+     * </p>
+     * <p>
+     * You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.
+     * </p>
+     * 
+     * @return An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     *         <p>
+     *         When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output
+     *         topic you specify here.
+     *         </p>
+     *         <p>
+     *         You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     *         <code>SnsDataSource</code> in <code>InputConfig</code>.
+     */
+
+    public String getSnsTopicArn() {
+        return this.snsTopicArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Simple Notification Service (Amazon SNS) output topic ARN.
+     * </p>
+     * <p>
+     * When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output topic
+     * you specify here.
+     * </p>
+     * <p>
+     * You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     * <code>SnsDataSource</code> in <code>InputConfig</code>.
+     * </p>
+     * 
+     * @param snsTopicArn
+     *        An Amazon Simple Notification Service (Amazon SNS) output topic ARN.</p>
+     *        <p>
+     *        When workers complete labeling tasks, Ground Truth will send labeling task output data to the SNS output
+     *        topic you specify here.
+     *        </p>
+     *        <p>
+     *        You must provide a value for this parameter if you provide an Amazon SNS input topic in
+     *        <code>SnsDataSource</code> in <code>InputConfig</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelingJobOutputConfig withSnsTopicArn(String snsTopicArn) {
+        setSnsTopicArn(snsTopicArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -248,7 +347,9 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
         if (getS3OutputPath() != null)
             sb.append("S3OutputPath: ").append(getS3OutputPath()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getSnsTopicArn() != null)
+            sb.append("SnsTopicArn: ").append(getSnsTopicArn());
         sb.append("}");
         return sb.toString();
     }
@@ -271,6 +372,10 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getSnsTopicArn() == null ^ this.getSnsTopicArn() == null)
+            return false;
+        if (other.getSnsTopicArn() != null && other.getSnsTopicArn().equals(this.getSnsTopicArn()) == false)
+            return false;
         return true;
     }
 
@@ -281,6 +386,7 @@ public class LabelingJobOutputConfig implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getS3OutputPath() == null) ? 0 : getS3OutputPath().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode());
         return hashCode;
     }
 

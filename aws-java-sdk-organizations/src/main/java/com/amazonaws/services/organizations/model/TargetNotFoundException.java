@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+ * We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

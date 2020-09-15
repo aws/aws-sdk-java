@@ -28,7 +28,7 @@ public class RebootBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The list of broker IDs to be rebooted.
+     * The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
      * </p>
      */
     private java.util.List<String> brokerIds;
@@ -41,11 +41,12 @@ public class RebootBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The list of broker IDs to be rebooted.
+     * The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
      * </p>
      * 
      * @return <p>
-     *         The list of broker IDs to be rebooted.
+     *         The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a
+     *         time.
      *         </p>
      */
 
@@ -55,12 +56,13 @@ public class RebootBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The list of broker IDs to be rebooted.
+     * The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
      * </p>
      * 
      * @param brokerIds
      *        <p>
-     *        The list of broker IDs to be rebooted.
+     *        The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a
+     *        time.
      *        </p>
      */
 
@@ -75,7 +77,7 @@ public class RebootBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The list of broker IDs to be rebooted.
+     * The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
      * </p>
      * 
      * <p>
@@ -86,7 +88,8 @@ public class RebootBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param brokerIds
      *        <p>
-     *        The list of broker IDs to be rebooted.
+     *        The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a
+     *        time.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -103,12 +106,13 @@ public class RebootBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The list of broker IDs to be rebooted.
+     * The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
      * </p>
      * 
      * @param brokerIds
      *        <p>
-     *        The list of broker IDs to be rebooted.
+     *        The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a
+     *        time.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

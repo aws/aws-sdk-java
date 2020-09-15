@@ -52,6 +52,10 @@ public class FacetResultJsonUnmarshaller implements Unmarshaller<FacetResult, Js
                     context.nextToken();
                     facetResult.setDocumentAttributeKey(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DocumentAttributeValueType", targetDepth)) {
+                    context.nextToken();
+                    facetResult.setDocumentAttributeValueType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DocumentAttributeValueCountPairs", targetDepth)) {
                     context.nextToken();
                     facetResult.setDocumentAttributeValueCountPairs(new ListUnmarshaller<DocumentAttributeValueCountPair>(

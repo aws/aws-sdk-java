@@ -21,6 +21,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Provides information about the location of input data.
  * </p>
+ * <p>
+ * You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>.
+ * </p>
+ * <p>
+ * Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling job. If you do not specify and
+ * SNS input topic ARN, Ground Truth will create a one-time labeling job.
+ * </p>
+ * <p>
+ * Use <code>S3DataSource</code> to specify an input manifest file for both streaming and one-time labeling jobs. Adding
+ * an <code>S3DataSource</code> is optional if you use <code>SnsDataSource</code> to create a streaming labeling job.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/LabelingJobDataSource" target="_top">AWS
  *      API Documentation</a>
@@ -34,6 +45,12 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
      * </p>
      */
     private LabelingJobS3DataSource s3DataSource;
+    /**
+     * <p>
+     * An Amazon SNS data source used for streaming labeling jobs.
+     * </p>
+     */
+    private LabelingJobSnsDataSource snsDataSource;
 
     /**
      * <p>
@@ -76,6 +93,46 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An Amazon SNS data source used for streaming labeling jobs.
+     * </p>
+     * 
+     * @param snsDataSource
+     *        An Amazon SNS data source used for streaming labeling jobs.
+     */
+
+    public void setSnsDataSource(LabelingJobSnsDataSource snsDataSource) {
+        this.snsDataSource = snsDataSource;
+    }
+
+    /**
+     * <p>
+     * An Amazon SNS data source used for streaming labeling jobs.
+     * </p>
+     * 
+     * @return An Amazon SNS data source used for streaming labeling jobs.
+     */
+
+    public LabelingJobSnsDataSource getSnsDataSource() {
+        return this.snsDataSource;
+    }
+
+    /**
+     * <p>
+     * An Amazon SNS data source used for streaming labeling jobs.
+     * </p>
+     * 
+     * @param snsDataSource
+     *        An Amazon SNS data source used for streaming labeling jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LabelingJobDataSource withSnsDataSource(LabelingJobSnsDataSource snsDataSource) {
+        setSnsDataSource(snsDataSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +145,9 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3DataSource() != null)
-            sb.append("S3DataSource: ").append(getS3DataSource());
+            sb.append("S3DataSource: ").append(getS3DataSource()).append(",");
+        if (getSnsDataSource() != null)
+            sb.append("SnsDataSource: ").append(getSnsDataSource());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +166,10 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
             return false;
         if (other.getS3DataSource() != null && other.getS3DataSource().equals(this.getS3DataSource()) == false)
             return false;
+        if (other.getSnsDataSource() == null ^ this.getSnsDataSource() == null)
+            return false;
+        if (other.getSnsDataSource() != null && other.getSnsDataSource().equals(this.getSnsDataSource()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +179,7 @@ public class LabelingJobDataSource implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getS3DataSource() == null) ? 0 : getS3DataSource().hashCode());
+        hashCode = prime * hashCode + ((getSnsDataSource() == null) ? 0 : getSnsDataSource().hashCode());
         return hashCode;
     }
 

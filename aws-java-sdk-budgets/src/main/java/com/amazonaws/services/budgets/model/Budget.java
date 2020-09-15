@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * This is the ARN pattern for a budget:
  * </p>
  * <p>
- * <code>arn:aws:budgetservice::AccountId:budget/budgetName</code>
+ * <code>arn:aws:budgets::AccountId:budget/budgetName</code>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -134,16 +134,14 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * The types of costs that are included in this <code>COST</code> budget.
      * </p>
      * <p>
-     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>
-     * , and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.
+     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>
+     * , and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
      * </p>
      */
     private CostTypes costTypes;
     /**
      * <p>
-     * The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only
-     * for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.
+     * The length of time until a budget resets the actual and forecasted spend.
      * </p>
      */
     private String timeUnit;
@@ -838,15 +836,15 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * The types of costs that are included in this <code>COST</code> budget.
      * </p>
      * <p>
-     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>
-     * , and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.
+     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>
+     * , and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
      * </p>
      * 
      * @param costTypes
      *        The types of costs that are included in this <code>COST</code> budget.</p>
      *        <p>
      *        <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     *        <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have
+     *        <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have
      *        <code>CostTypes</code>.
      */
 
@@ -859,14 +857,14 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * The types of costs that are included in this <code>COST</code> budget.
      * </p>
      * <p>
-     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>
-     * , and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.
+     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>
+     * , and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
      * </p>
      * 
      * @return The types of costs that are included in this <code>COST</code> budget.</p>
      *         <p>
      *         <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     *         <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have
+     *         <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have
      *         <code>CostTypes</code>.
      */
 
@@ -879,15 +877,15 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
      * The types of costs that are included in this <code>COST</code> budget.
      * </p>
      * <p>
-     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>
-     * , and <code>Savings_Plans_Coverage</code> budgets do not have <code>CostTypes</code>.
+     * <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>
+     * , and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
      * </p>
      * 
      * @param costTypes
      *        The types of costs that are included in this <code>COST</code> budget.</p>
      *        <p>
      *        <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
-     *        <code>Savings_Plans_Utilization</code>, and <code>Savings_Plans_Coverage</code> budgets do not have
+     *        <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have
      *        <code>CostTypes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -899,15 +897,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only
-     * for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.
+     * The length of time until a budget resets the actual and forecasted spend.
      * </p>
      * 
      * @param timeUnit
-     *        The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available
-     *        only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-     *        and <code>Savings_Plans_Coverage</code> budgets.
+     *        The length of time until a budget resets the actual and forecasted spend.
      * @see TimeUnit
      */
 
@@ -917,14 +911,10 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only
-     * for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.
+     * The length of time until a budget resets the actual and forecasted spend.
      * </p>
      * 
-     * @return The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available
-     *         only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-     *         and <code>Savings_Plans_Coverage</code> budgets.
+     * @return The length of time until a budget resets the actual and forecasted spend.
      * @see TimeUnit
      */
 
@@ -934,15 +924,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only
-     * for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.
+     * The length of time until a budget resets the actual and forecasted spend.
      * </p>
      * 
      * @param timeUnit
-     *        The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available
-     *        only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-     *        and <code>Savings_Plans_Coverage</code> budgets.
+     *        The length of time until a budget resets the actual and forecasted spend.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnit
      */
@@ -954,15 +940,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only
-     * for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.
+     * The length of time until a budget resets the actual and forecasted spend.
      * </p>
      * 
      * @param timeUnit
-     *        The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available
-     *        only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-     *        and <code>Savings_Plans_Coverage</code> budgets.
+     *        The length of time until a budget resets the actual and forecasted spend.
      * @see TimeUnit
      */
 
@@ -972,15 +954,11 @@ public class Budget implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available only
-     * for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>, and
-     * <code>Savings_Plans_Coverage</code> budgets.
+     * The length of time until a budget resets the actual and forecasted spend.
      * </p>
      * 
      * @param timeUnit
-     *        The length of time until a budget resets the actual and forecasted spend. <code>DAILY</code> is available
-     *        only for <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>Savings_Plans_Utilization</code>,
-     *        and <code>Savings_Plans_Coverage</code> budgets.
+     *        The length of time until a budget resets the actual and forecasted spend.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnit
      */

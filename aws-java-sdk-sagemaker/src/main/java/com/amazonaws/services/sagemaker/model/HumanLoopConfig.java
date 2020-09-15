@@ -62,13 +62,13 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
     private Integer taskCount;
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      */
     private Integer taskAvailabilityLifetimeInSeconds;
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      * </p>
      */
     private Integer taskTimeLimitInSeconds;
@@ -295,11 +295,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labeling by human workers.
+     *        The length of time that a task remains available for review by human workers.
      */
 
     public void setTaskAvailabilityLifetimeInSeconds(Integer taskAvailabilityLifetimeInSeconds) {
@@ -308,10 +308,10 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      * 
-     * @return The length of time that a task remains available for labeling by human workers.
+     * @return The length of time that a task remains available for review by human workers.
      */
 
     public Integer getTaskAvailabilityLifetimeInSeconds() {
@@ -320,11 +320,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labeling by human workers.
+     *        The length of time that a task remains available for review by human workers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +335,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      * </p>
      * 
      * @param taskTimeLimitInSeconds
-     *        The amount of time that a worker has to complete a task.
+     *        The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      */
 
     public void setTaskTimeLimitInSeconds(Integer taskTimeLimitInSeconds) {
@@ -348,10 +348,10 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      * </p>
      * 
-     * @return The amount of time that a worker has to complete a task.
+     * @return The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      */
 
     public Integer getTaskTimeLimitInSeconds() {
@@ -360,11 +360,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      * </p>
      * 
      * @param taskTimeLimitInSeconds
-     *        The amount of time that a worker has to complete a task.
+     *        The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

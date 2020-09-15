@@ -35,6 +35,86 @@ public interface AWSKafkaAsync extends AWSKafka {
 
     /**
      * <p>
+     * Associates one or more Scram Secrets with an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param batchAssociateScramSecretRequest
+     *        <p>
+     *        Associates sasl scram secrets to cluster.
+     *        </p>
+     * @return A Java Future containing the result of the BatchAssociateScramSecret operation returned by the service.
+     * @sample AWSKafkaAsync.BatchAssociateScramSecret
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateScramSecretResult> batchAssociateScramSecretAsync(
+            BatchAssociateScramSecretRequest batchAssociateScramSecretRequest);
+
+    /**
+     * <p>
+     * Associates one or more Scram Secrets with an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param batchAssociateScramSecretRequest
+     *        <p>
+     *        Associates sasl scram secrets to cluster.
+     *        </p>
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAssociateScramSecret operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.BatchAssociateScramSecret
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateScramSecretResult> batchAssociateScramSecretAsync(
+            BatchAssociateScramSecretRequest batchAssociateScramSecretRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateScramSecretRequest, BatchAssociateScramSecretResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates one or more Scram Secrets from an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param batchDisassociateScramSecretRequest
+     *        <p>
+     *        Disassociates sasl scram secrets to cluster.
+     *        </p>
+     * @return A Java Future containing the result of the BatchDisassociateScramSecret operation returned by the
+     *         service.
+     * @sample AWSKafkaAsync.BatchDisassociateScramSecret
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateScramSecretResult> batchDisassociateScramSecretAsync(
+            BatchDisassociateScramSecretRequest batchDisassociateScramSecretRequest);
+
+    /**
+     * <p>
+     * Disassociates one or more Scram Secrets from an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param batchDisassociateScramSecretRequest
+     *        <p>
+     *        Disassociates sasl scram secrets to cluster.
+     *        </p>
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisassociateScramSecret operation returned by the
+     *         service.
+     * @sample AWSKafkaAsyncHandler.BatchDisassociateScramSecret
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateScramSecretResult> batchDisassociateScramSecretAsync(
+            BatchDisassociateScramSecretRequest batchDisassociateScramSecretRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateScramSecretRequest, BatchDisassociateScramSecretResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new MSK cluster.
      * </p>
      * 
@@ -536,6 +616,37 @@ public interface AWSKafkaAsync extends AWSKafka {
      */
     java.util.concurrent.Future<ListNodesResult> listNodesAsync(ListNodesRequest listNodesRequest,
             com.amazonaws.handlers.AsyncHandler<ListNodesRequest, ListNodesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param listScramSecretsRequest
+     * @return A Java Future containing the result of the ListScramSecrets operation returned by the service.
+     * @sample AWSKafkaAsync.ListScramSecrets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(ListScramSecretsRequest listScramSecretsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param listScramSecretsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListScramSecrets operation returned by the service.
+     * @sample AWSKafkaAsyncHandler.ListScramSecrets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(ListScramSecretsRequest listScramSecretsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListScramSecretsRequest, ListScramSecretsResult> asyncHandler);
 
     /**
      * <p>

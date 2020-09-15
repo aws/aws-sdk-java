@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.transcribe.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -49,6 +50,10 @@ public class StartTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobExecutionSettings").build();
     private static final MarshallingInfo<StructuredPojo> CONTENTREDACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentRedaction").build();
+    private static final MarshallingInfo<Boolean> IDENTIFYLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyLanguage").build();
+    private static final MarshallingInfo<List> LANGUAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
 
     private static final StartTranscriptionJobRequestMarshaller instance = new StartTranscriptionJobRequestMarshaller();
 
@@ -77,6 +82,8 @@ public class StartTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startTranscriptionJobRequest.getModelSettings(), MODELSETTINGS_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getJobExecutionSettings(), JOBEXECUTIONSETTINGS_BINDING);
             protocolMarshaller.marshall(startTranscriptionJobRequest.getContentRedaction(), CONTENTREDACTION_BINDING);
+            protocolMarshaller.marshall(startTranscriptionJobRequest.getIdentifyLanguage(), IDENTIFYLANGUAGE_BINDING);
+            protocolMarshaller.marshall(startTranscriptionJobRequest.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

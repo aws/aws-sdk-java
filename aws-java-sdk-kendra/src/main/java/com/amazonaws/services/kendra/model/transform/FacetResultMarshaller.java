@@ -30,6 +30,8 @@ public class FacetResultMarshaller {
 
     private static final MarshallingInfo<String> DOCUMENTATTRIBUTEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentAttributeKey").build();
+    private static final MarshallingInfo<String> DOCUMENTATTRIBUTEVALUETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentAttributeValueType").build();
     private static final MarshallingInfo<List> DOCUMENTATTRIBUTEVALUECOUNTPAIRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentAttributeValueCountPairs").build();
 
@@ -50,6 +52,7 @@ public class FacetResultMarshaller {
 
         try {
             protocolMarshaller.marshall(facetResult.getDocumentAttributeKey(), DOCUMENTATTRIBUTEKEY_BINDING);
+            protocolMarshaller.marshall(facetResult.getDocumentAttributeValueType(), DOCUMENTATTRIBUTEVALUETYPE_BINDING);
             protocolMarshaller.marshall(facetResult.getDocumentAttributeValueCountPairs(), DOCUMENTATTRIBUTEVALUECOUNTPAIRS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -47,7 +47,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String containerHostname;
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -58,8 +59,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String image;
     /**
      * <p>
-     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
-     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
      * Private Docker Registry for Real-Time Inference Containers</a>
      * </p>
@@ -214,7 +215,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -223,10 +225,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param image
-     *        The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your
-     *        own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
-     *        Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
-     *        <code>registry/repository[@digest]</code> image path formats. For more information, see <a
+     *        The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a
+     *        Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are
+     *        using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code
+     *        must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
      *        Amazon SageMaker</a>
      */
@@ -237,7 +241,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -245,10 +250,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * SageMaker</a>
      * </p>
      * 
-     * @return The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your
-     *         own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
-     *         Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
-     *         <code>registry/repository[@digest]</code> image path formats. For more information, see <a
+     * @return The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a
+     *         Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are
+     *         using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code
+     *         must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+     *         <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
      *         with Amazon SageMaker</a>
      */
@@ -259,7 +266,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -268,10 +276,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param image
-     *        The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your
-     *        own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
-     *        Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
-     *        <code>registry/repository[@digest]</code> image path formats. For more information, see <a
+     *        The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a
+     *        Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are
+     *        using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code
+     *        must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
      *        Amazon SageMaker</a>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -284,15 +294,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
-     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
      * Private Docker Registry for Real-Time Inference Containers</a>
      * </p>
      * 
      * @param imageConfig
-     *        Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
-     *        Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     *        Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your
+     *        Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry,
+     *        see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html"
      *        >Use a Private Docker Registry for Real-Time Inference Containers</a>
      */
@@ -303,15 +314,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
-     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
      * Private Docker Registry for Real-Time Inference Containers</a>
      * </p>
      * 
-     * @return Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon
-     *         Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see
-     *         <a href=
+     * @return Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your
+     *         Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker
+     *         registry, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
      *         Private Docker Registry for Real-Time Inference Containers</a>
      */
@@ -322,15 +333,16 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
-     * Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
      * Private Docker Registry for Real-Time Inference Containers</a>
      * </p>
      * 
      * @param imageConfig
-     *        Specifies whether the model container is in Amazon ECR or a private Docker registry in your Amazon Virtual
-     *        Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     *        Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your
+     *        Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry,
+     *        see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html"
      *        >Use a Private Docker Registry for Real-Time Inference Containers</a>
      * @return Returns a reference to this object so that method calls can be chained together.

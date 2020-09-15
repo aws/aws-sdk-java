@@ -152,6 +152,178 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
     /**
      * <p>
+     * Associates one or more Scram Secrets with an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param batchAssociateScramSecretRequest
+     *        <p>
+     *        Associates sasl scram secrets to cluster.
+     *        </p>
+     * @return Result of the BatchAssociateScramSecret operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @throws TooManyRequestsException
+     *         <p>
+     *         429 response
+     *         </p>
+     * @sample AWSKafka.BatchAssociateScramSecret
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchAssociateScramSecret"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchAssociateScramSecretResult batchAssociateScramSecret(BatchAssociateScramSecretRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchAssociateScramSecret(request);
+    }
+
+    @SdkInternalApi
+    final BatchAssociateScramSecretResult executeBatchAssociateScramSecret(BatchAssociateScramSecretRequest batchAssociateScramSecretRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchAssociateScramSecretRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchAssociateScramSecretRequest> request = null;
+        Response<BatchAssociateScramSecretResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchAssociateScramSecretRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchAssociateScramSecretRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateScramSecret");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchAssociateScramSecretResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchAssociateScramSecretResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates one or more Scram Secrets from an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param batchDisassociateScramSecretRequest
+     *        <p>
+     *        Disassociates sasl scram secrets to cluster.
+     *        </p>
+     * @return Result of the BatchDisassociateScramSecret operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @throws TooManyRequestsException
+     *         <p>
+     *         429 response
+     *         </p>
+     * @sample AWSKafka.BatchDisassociateScramSecret
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/BatchDisassociateScramSecret"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDisassociateScramSecretResult batchDisassociateScramSecret(BatchDisassociateScramSecretRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDisassociateScramSecret(request);
+    }
+
+    @SdkInternalApi
+    final BatchDisassociateScramSecretResult executeBatchDisassociateScramSecret(BatchDisassociateScramSecretRequest batchDisassociateScramSecretRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDisassociateScramSecretRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDisassociateScramSecretRequest> request = null;
+        Response<BatchDisassociateScramSecretResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDisassociateScramSecretRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchDisassociateScramSecretRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateScramSecret");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDisassociateScramSecretResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchDisassociateScramSecretResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new MSK cluster.
      * </p>
      * 
@@ -1356,6 +1528,87 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
 
     /**
      * <p>
+     * Returns a list of the Scram Secrets associated with an Amazon MSK cluster.
+     * </p>
+     * 
+     * @param listScramSecretsRequest
+     * @return Result of the ListScramSecrets operation returned by the service.
+     * @throws BadRequestException
+     *         <p>
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
+     *         </p>
+     * @throws UnauthorizedException
+     *         <p>
+     *         The request is not authorized. The provided credentials couldn't be validated.
+     *         </p>
+     * @throws InternalServerErrorException
+     *         <p>
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
+     *         </p>
+     * @throws ForbiddenException
+     *         <p>
+     *         Access forbidden. Check your credentials and then retry your request.
+     *         </p>
+     * @throws NotFoundException
+     *         <p>
+     *         The resource could not be found due to incorrect input. Correct the input, then retry the request.
+     *         </p>
+     * @throws ServiceUnavailableException
+     *         <p>
+     *         503 response
+     *         </p>
+     * @throws TooManyRequestsException
+     *         <p>
+     *         429 response
+     *         </p>
+     * @sample AWSKafka.ListScramSecrets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListScramSecrets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListScramSecretsResult listScramSecrets(ListScramSecretsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListScramSecrets(request);
+    }
+
+    @SdkInternalApi
+    final ListScramSecretsResult executeListScramSecrets(ListScramSecretsRequest listScramSecretsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listScramSecretsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListScramSecretsRequest> request = null;
+        Response<ListScramSecretsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListScramSecretsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listScramSecretsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kafka");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListScramSecrets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListScramSecretsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListScramSecretsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the tags associated with the specified resource.
      * </p>
      * 
@@ -2026,23 +2279,23 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
      * @return Result of the UpdateMonitoring operation returned by the service.
      * @throws ServiceUnavailableException
      *         <p>
-     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     *         503 response
      *         </p>
      * @throws BadRequestException
      *         <p>
-     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     *         The request isn't valid because the input is incorrect. Correct your input and then submit it again.
      *         </p>
      * @throws UnauthorizedException
      *         <p>
-     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     *         The request is not authorized. The provided credentials couldn't be validated.
      *         </p>
      * @throws InternalServerErrorException
      *         <p>
-     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     *         There was an unexpected internal server error. Retrying your request might resolve the issue.
      *         </p>
      * @throws ForbiddenException
      *         <p>
-     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     *         Access forbidden. Check your credentials and then retry your request.
      *         </p>
      * @sample AWSKafka.UpdateMonitoring
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateMonitoring" target="_top">AWS API

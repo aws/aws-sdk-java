@@ -36,6 +36,12 @@ public class FacetResult implements Serializable, Cloneable, StructuredPojo {
     private String documentAttributeKey;
     /**
      * <p>
+     * The data type of the facet value. This is the same as the type defined for the index field when it was created.
+     * </p>
+     */
+    private String documentAttributeValueType;
+    /**
+     * <p>
      * An array of key/value pairs, where the key is the value of the attribute and the count is the number of documents
      * that share the key value.
      * </p>
@@ -82,6 +88,69 @@ public class FacetResult implements Serializable, Cloneable, StructuredPojo {
 
     public FacetResult withDocumentAttributeKey(String documentAttributeKey) {
         setDocumentAttributeKey(documentAttributeKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data type of the facet value. This is the same as the type defined for the index field when it was created.
+     * </p>
+     * 
+     * @param documentAttributeValueType
+     *        The data type of the facet value. This is the same as the type defined for the index field when it was
+     *        created.
+     * @see DocumentAttributeValueType
+     */
+
+    public void setDocumentAttributeValueType(String documentAttributeValueType) {
+        this.documentAttributeValueType = documentAttributeValueType;
+    }
+
+    /**
+     * <p>
+     * The data type of the facet value. This is the same as the type defined for the index field when it was created.
+     * </p>
+     * 
+     * @return The data type of the facet value. This is the same as the type defined for the index field when it was
+     *         created.
+     * @see DocumentAttributeValueType
+     */
+
+    public String getDocumentAttributeValueType() {
+        return this.documentAttributeValueType;
+    }
+
+    /**
+     * <p>
+     * The data type of the facet value. This is the same as the type defined for the index field when it was created.
+     * </p>
+     * 
+     * @param documentAttributeValueType
+     *        The data type of the facet value. This is the same as the type defined for the index field when it was
+     *        created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentAttributeValueType
+     */
+
+    public FacetResult withDocumentAttributeValueType(String documentAttributeValueType) {
+        setDocumentAttributeValueType(documentAttributeValueType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data type of the facet value. This is the same as the type defined for the index field when it was created.
+     * </p>
+     * 
+     * @param documentAttributeValueType
+     *        The data type of the facet value. This is the same as the type defined for the index field when it was
+     *        created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DocumentAttributeValueType
+     */
+
+    public FacetResult withDocumentAttributeValueType(DocumentAttributeValueType documentAttributeValueType) {
+        this.documentAttributeValueType = documentAttributeValueType.toString();
         return this;
     }
 
@@ -177,6 +246,8 @@ public class FacetResult implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDocumentAttributeKey() != null)
             sb.append("DocumentAttributeKey: ").append(getDocumentAttributeKey()).append(",");
+        if (getDocumentAttributeValueType() != null)
+            sb.append("DocumentAttributeValueType: ").append(getDocumentAttributeValueType()).append(",");
         if (getDocumentAttributeValueCountPairs() != null)
             sb.append("DocumentAttributeValueCountPairs: ").append(getDocumentAttributeValueCountPairs());
         sb.append("}");
@@ -197,6 +268,10 @@ public class FacetResult implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDocumentAttributeKey() != null && other.getDocumentAttributeKey().equals(this.getDocumentAttributeKey()) == false)
             return false;
+        if (other.getDocumentAttributeValueType() == null ^ this.getDocumentAttributeValueType() == null)
+            return false;
+        if (other.getDocumentAttributeValueType() != null && other.getDocumentAttributeValueType().equals(this.getDocumentAttributeValueType()) == false)
+            return false;
         if (other.getDocumentAttributeValueCountPairs() == null ^ this.getDocumentAttributeValueCountPairs() == null)
             return false;
         if (other.getDocumentAttributeValueCountPairs() != null
@@ -211,6 +286,7 @@ public class FacetResult implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDocumentAttributeKey() == null) ? 0 : getDocumentAttributeKey().hashCode());
+        hashCode = prime * hashCode + ((getDocumentAttributeValueType() == null) ? 0 : getDocumentAttributeValueType().hashCode());
         hashCode = prime * hashCode + ((getDocumentAttributeValueCountPairs() == null) ? 0 : getDocumentAttributeValueCountPairs().hashCode());
         return hashCode;
     }

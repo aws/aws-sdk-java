@@ -23,7 +23,8 @@ public enum ReservationCodec {
     MPEG2("MPEG2"),
     AVC("AVC"),
     HEVC("HEVC"),
-    AUDIO("AUDIO");
+    AUDIO("AUDIO"),
+    LINK("LINK");
 
     private String value;
 

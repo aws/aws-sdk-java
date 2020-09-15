@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.organizations.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateAccountRequestMarshaller {
             .marshallLocationName("RoleName").build();
     private static final MarshallingInfo<String> IAMUSERACCESSTOBILLING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamUserAccessToBilling").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateAccountRequestMarshaller instance = new CreateAccountRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateAccountRequestMarshaller {
             protocolMarshaller.marshall(createAccountRequest.getAccountName(), ACCOUNTNAME_BINDING);
             protocolMarshaller.marshall(createAccountRequest.getRoleName(), ROLENAME_BINDING);
             protocolMarshaller.marshall(createAccountRequest.getIamUserAccessToBilling(), IAMUSERACCESSTOBILLING_BINDING);
+            protocolMarshaller.marshall(createAccountRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -541,6 +541,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -552,6 +557,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -638,6 +648,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ConcurrentModificationException
@@ -972,6 +992,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -983,6 +1008,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -1071,6 +1101,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the <code>PolicyId</code> that you specified.
      * @throws PolicyTypeNotEnabledException
@@ -1082,7 +1122,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
      *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
@@ -1183,6 +1223,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -1194,6 +1239,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -1282,6 +1332,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -1361,13 +1421,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </li>
      * </ul>
-     * <p/>
      * <p>
      * The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
      * permission. If you enabled all features in the organization, AWS Organizations creates the required
      * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
      * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * AWS Organizations preconfigures the new member account with a role (named
@@ -1661,6 +1723,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -1672,6 +1739,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -1760,6 +1832,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws FinalizingOrganizationException
      *         AWS Organizations couldn't perform the operation because your organization hasn't finished initializing.
      *         This can take up to an hour. Try again later. If after one hour you continue to receive this error,
@@ -1846,13 +1928,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * <li>
      * <p>
-     * You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations creates the required
-     * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
-     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * You have the <code>organizations:CreateGovCloudAccount</code> permission.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * AWS Organizations automatically creates the required service-linked role named
+     * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * </p>
      * <p>
      * AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should also do the following:
      * </p>
@@ -1873,6 +1958,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * The tags are attached to the commercial account associated with the GovCloud account, rather than the GovCloud
+     * account itself. To add tags to the GovCloud account, call the <a>TagResource</a> operation in the GovCloud Region
+     * after the new GovCloud account exists.
+     * </p>
      * <p>
      * You call this action from the master account of your organization in the commercial Region to create a standalone
      * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
@@ -1913,7 +2004,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * A role is created in the new account in the commercial Region that allows the master account in the organization
      * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is created in the new AWS GovCloud (US) account that can be
+     * commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be
      * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
      * organization. For more information and to view a diagram that explains how account access works, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
@@ -2203,6 +2294,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -2214,6 +2310,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -2302,6 +2403,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws FinalizingOrganizationException
      *         AWS Organizations couldn't perform the operation because your organization hasn't finished initializing.
      *         This can take up to an hour. Try again later. If after one hour you continue to receive this error,
@@ -2368,8 +2479,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
-     * account</a> of the new organization.
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
+     * >master account</a> of the new organization.
      * </p>
      * <p>
      * This operation must be called using credentials from the account that is to become the new organization's master
@@ -2615,6 +2726,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -2626,6 +2742,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -2714,6 +2835,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
@@ -2784,6 +2915,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * For more information about OUs, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
      * Units</a> in the <i>AWS Organizations User Guide.</i>
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -3023,6 +3157,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -3034,6 +3173,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3122,6 +3266,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or OU with the <code>ParentId</code> that you specified.
      * @throws ServiceException
@@ -3190,6 +3344,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * For more information about policies and their use, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
      * Policies</a>.
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -3429,6 +3586,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -3440,6 +3602,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3526,6 +3693,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws MalformedPolicyDocumentException
@@ -3639,6 +3816,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -3650,6 +3832,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3736,6 +3923,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -3822,6 +4019,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -3833,6 +4035,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3919,6 +4126,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws OrganizationNotEmptyException
@@ -4011,6 +4228,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -4022,6 +4244,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4108,6 +4335,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws OrganizationalUnitNotEmptyException
@@ -4204,6 +4441,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -4215,6 +4457,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4301,6 +4548,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws PolicyInUseException
@@ -4623,6 +4880,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -4634,6 +4896,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4720,6 +4987,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
@@ -4815,6 +5092,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -4826,6 +5108,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4912,6 +5199,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -5001,6 +5298,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -5012,6 +5314,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5098,6 +5405,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -5407,7 +5724,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
      *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws EffectivePolicyNotFoundException
      *         If you ran this action on the master account, this policy type is not enabled. If you ran the action on a
      *         member account, the account doesn't have an effective policy of this type. Contact the administrator of
@@ -5425,6 +5742,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -5436,6 +5758,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5522,6 +5849,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws UnsupportedAPIEndpointException
@@ -5609,6 +5946,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -5620,6 +5962,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5706,6 +6053,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -5874,6 +6231,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -5885,6 +6247,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5971,6 +6338,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws OrganizationalUnitNotFoundException
@@ -6062,6 +6439,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -6073,6 +6455,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -6159,6 +6546,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws PolicyNotFoundException
@@ -6478,6 +6875,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -6489,6 +6891,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -6577,6 +6984,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyNotAttachedException
      *         The policy isn't attached to the specified target in the specified root.
      * @throws PolicyNotFoundException
@@ -6584,7 +7001,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
      *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
@@ -6909,6 +7326,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -6920,6 +7342,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -7006,6 +7433,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -7320,6 +7757,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -7331,6 +7773,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -7417,6 +7864,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws PolicyTypeNotEnabledException
@@ -7748,6 +8205,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -7759,6 +8221,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -7845,6 +8312,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -8027,6 +8504,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -8038,6 +8520,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -8124,6 +8611,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -8431,6 +8928,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -8442,6 +8944,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -8528,6 +9035,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws PolicyTypeAlreadyEnabledException
@@ -8628,6 +9145,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </ul>
      * </important>
      * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
@@ -8716,6 +9236,215 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         join your organization, the invited account might already have a pending invitation from this
      *         organization. If you intend to resend an invitation to an account, ensure that existing handshakes that
      *         might be considered duplicates are canceled or declined.
+     * @throws ConstraintViolationException
+     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
+     *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
+     *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
+     *         that contains additional information about the violated limit:</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
+     *         </p>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZAION: You attempted to remove the master account from the organization. You
+     *         can't remove the master account. Instead, after you remove all member accounts, delete the organization
+     *         itself.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
+     *         yet have enough information to exist as a standalone account. This account requires you to first agree to
+     *         the AWS Customer Agreement. Follow the steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
+     *         first complete phone verification. Follow the steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. If you need more accounts, contact <a
+     *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a> to request an increase in your
+     *         limit.
+     *         </p>
+     *         <p>
+     *         Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </note> <important>
+     *         <p>
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
+     *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+     *         </p>
+     *         </important></li>
+     *         <li>
+     *         <p>
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the master account of the
+     *         organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one
+     *         day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have an valid business license. For more information, contact customer
+     *         support.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the master account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
+     *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+     *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
+     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
+     *         <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     *         >To leave an organization when all required account information has not yet been provided</a> in the
+     *         <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated
+     *         administrators than allowed for the service principal.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     *         >To leave an organization when all required account information has not yet been provided</a> in the
+     *         <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
+     *         </p>
+     *         </li>
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
@@ -8725,6 +9454,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -8738,6 +9472,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -8824,6 +9563,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws FinalizingOrganizationException
@@ -8945,6 +9694,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
      * </p>
      * </li>
      * </ul>
@@ -9185,6 +9940,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -9196,6 +9956,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9282,6 +10047,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws MasterCannotLeaveOrganizationException
@@ -9589,6 +10364,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -9600,6 +10380,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9686,6 +10471,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -9788,6 +10583,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -9799,6 +10599,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9885,6 +10690,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -9983,6 +10798,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -9994,6 +10814,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10080,6 +10905,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ParentNotFoundException
@@ -10179,6 +11014,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -10190,6 +11030,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10276,6 +11121,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ParentNotFoundException
@@ -10374,6 +11229,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -10385,6 +11245,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10471,6 +11336,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -10771,6 +11646,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -10782,6 +11662,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10868,6 +11753,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
@@ -11173,6 +12068,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -11184,6 +12084,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11270,6 +12175,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws TooManyRequestsException
@@ -11372,6 +12287,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -11383,6 +12303,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11469,6 +12394,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -11574,6 +12509,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -11585,6 +12525,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11671,6 +12616,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -11768,6 +12723,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -11779,6 +12739,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11865,6 +12830,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ParentNotFoundException
@@ -11975,6 +12950,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -11986,6 +12966,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12072,6 +13057,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -12167,6 +13162,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -12178,6 +13178,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12264,6 +13269,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -12362,6 +13377,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -12373,6 +13393,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12461,10 +13486,20 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
      *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
@@ -12567,6 +13602,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -12578,6 +13618,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12664,6 +13709,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -12723,11 +13778,33 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists tags for the specified resource.
+     * Lists tags that are attached to the specified resource.
      * </p>
      * <p>
-     * Currently, you can list tags on an account in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account or by a member account that is a
      * delegated administrator for an AWS service.
@@ -12744,7 +13821,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
@@ -12754,6 +13831,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -12767,6 +13849,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12853,6 +13940,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -12948,6 +14045,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -12959,6 +14061,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -13045,6 +14152,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws PolicyNotFoundException
@@ -13133,6 +14250,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -13144,6 +14266,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -13230,6 +14357,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws SourceParentNotFoundException
@@ -13554,6 +14691,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -13565,6 +14707,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -13653,6 +14800,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws TooManyRequestsException
      *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
@@ -13726,6 +14883,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
@@ -13739,6 +14898,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide.</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -13976,6 +15143,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -13987,6 +15159,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -14073,6 +15250,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws MasterCannotLeaveOrganizationException
@@ -14140,8 +15327,30 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Adds one or more tags to the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * Currently, you can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -14159,7 +15368,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
@@ -14380,6 +15589,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -14391,6 +15605,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -14477,6 +15696,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -14536,11 +15765,33 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Removes a tag from the specified resource.
+     * Removes any tags with the specified keys from the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -14558,7 +15809,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
@@ -14779,6 +16030,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -14790,6 +16046,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -14876,6 +16137,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws ServiceException
@@ -14967,6 +16238,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -14978,6 +16254,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -15064,6 +16345,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws OrganizationalUnitNotFoundException
@@ -15368,6 +16659,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <ul>
      *         <li>
      *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
      *         </p>
      *         </li>
@@ -15379,6 +16675,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -15465,6 +16766,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
      *         </p>
      *         </li>
      * @throws MalformedPolicyDocumentException

@@ -48,6 +48,10 @@ public class ClientAuthenticationJsonUnmarshaller implements Unmarshaller<Client
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("sasl", targetDepth)) {
+                    context.nextToken();
+                    clientAuthentication.setSasl(SaslJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tls", targetDepth)) {
                     context.nextToken();
                     clientAuthentication.setTls(TlsJsonUnmarshaller.getInstance().unmarshall(context));

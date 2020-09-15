@@ -638,6 +638,9 @@ public interface AWSkendraAsync extends AWSkendra {
      * You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
      * parameter.
      * </p>
+     * <p>
+     * Each query returns the 100 most relevant results.
+     * </p>
      * 
      * @param queryRequest
      * @return A Java Future containing the result of the Query operation returned by the service.
@@ -680,6 +683,9 @@ public interface AWSkendraAsync extends AWSkendra {
      * <p>
      * You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
      * parameter.
+     * </p>
+     * <p>
+     * Each query returns the 100 most relevant results.
      * </p>
      * 
      * @param queryRequest

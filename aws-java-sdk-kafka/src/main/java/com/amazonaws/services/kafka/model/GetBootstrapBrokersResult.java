@@ -35,6 +35,12 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String bootstrapBrokerStringTls;
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     * </p>
+     */
+    private String bootstrapBrokerStringSaslScram;
 
     /**
      * <p>
@@ -129,6 +135,52 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     * </p>
+     * 
+     * @param bootstrapBrokerStringSaslScram
+     *        <p>
+     *        A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     *        </p>
+     */
+
+    public void setBootstrapBrokerStringSaslScram(String bootstrapBrokerStringSaslScram) {
+        this.bootstrapBrokerStringSaslScram = bootstrapBrokerStringSaslScram;
+    }
+
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     * </p>
+     * 
+     * @return <p>
+     *         A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     *         </p>
+     */
+
+    public String getBootstrapBrokerStringSaslScram() {
+        return this.bootstrapBrokerStringSaslScram;
+    }
+
+    /**
+     * <p>
+     * A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     * </p>
+     * 
+     * @param bootstrapBrokerStringSaslScram
+     *        <p>
+     *        A string containing one or more DNS names (or IP) and Sasl Scram port pairs.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetBootstrapBrokersResult withBootstrapBrokerStringSaslScram(String bootstrapBrokerStringSaslScram) {
+        setBootstrapBrokerStringSaslScram(bootstrapBrokerStringSaslScram);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,7 +195,9 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
         if (getBootstrapBrokerString() != null)
             sb.append("BootstrapBrokerString: ").append(getBootstrapBrokerString()).append(",");
         if (getBootstrapBrokerStringTls() != null)
-            sb.append("BootstrapBrokerStringTls: ").append(getBootstrapBrokerStringTls());
+            sb.append("BootstrapBrokerStringTls: ").append(getBootstrapBrokerStringTls()).append(",");
+        if (getBootstrapBrokerStringSaslScram() != null)
+            sb.append("BootstrapBrokerStringSaslScram: ").append(getBootstrapBrokerStringSaslScram());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +220,11 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getBootstrapBrokerStringTls() != null && other.getBootstrapBrokerStringTls().equals(this.getBootstrapBrokerStringTls()) == false)
             return false;
+        if (other.getBootstrapBrokerStringSaslScram() == null ^ this.getBootstrapBrokerStringSaslScram() == null)
+            return false;
+        if (other.getBootstrapBrokerStringSaslScram() != null
+                && other.getBootstrapBrokerStringSaslScram().equals(this.getBootstrapBrokerStringSaslScram()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +235,7 @@ public class GetBootstrapBrokersResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getBootstrapBrokerString() == null) ? 0 : getBootstrapBrokerString().hashCode());
         hashCode = prime * hashCode + ((getBootstrapBrokerStringTls() == null) ? 0 : getBootstrapBrokerStringTls().hashCode());
+        hashCode = prime * hashCode + ((getBootstrapBrokerStringSaslScram() == null) ? 0 : getBootstrapBrokerStringSaslScram().hashCode());
         return hashCode;
     }
 

@@ -72,9 +72,9 @@ public class LabelingJobAlgorithmsConfig implements Serializable, Cloneable, Str
     private String labelingJobAlgorithmSpecificationArn;
     /**
      * <p>
-     * At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the final
-     * model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by
-     * providing the ARN of the model here.
+     * At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for
+     * auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of
+     * the model here.
      * </p>
      */
     private String initialActiveLearningModelArn;
@@ -334,15 +334,15 @@ public class LabelingJobAlgorithmsConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the final
-     * model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by
-     * providing the ARN of the model here.
+     * At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for
+     * auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of
+     * the model here.
      * </p>
      * 
      * @param initialActiveLearningModelArn
-     *        At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the
-     *        final model used for auto-labeling. You can use this model as the starting point for subsequent similar
-     *        jobs by providing the ARN of the model here.
+     *        At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used
+     *        for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing
+     *        the ARN of the model here.
      */
 
     public void setInitialActiveLearningModelArn(String initialActiveLearningModelArn) {
@@ -351,14 +351,14 @@ public class LabelingJobAlgorithmsConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the final
-     * model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by
-     * providing the ARN of the model here.
+     * At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for
+     * auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of
+     * the model here.
      * </p>
      * 
-     * @return At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the
-     *         final model used for auto-labeling. You can use this model as the starting point for subsequent similar
-     *         jobs by providing the ARN of the model here.
+     * @return At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used
+     *         for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing
+     *         the ARN of the model here.
      */
 
     public String getInitialActiveLearningModelArn() {
@@ -367,15 +367,15 @@ public class LabelingJobAlgorithmsConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the final
-     * model used for auto-labeling. You can use this model as the starting point for subsequent similar jobs by
-     * providing the ARN of the model here.
+     * At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used for
+     * auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing the ARN of
+     * the model here.
      * </p>
      * 
      * @param initialActiveLearningModelArn
-     *        At the end of an auto-label job Amazon SageMaker Ground Truth sends the Amazon Resource Nam (ARN) of the
-     *        final model used for auto-labeling. You can use this model as the starting point for subsequent similar
-     *        jobs by providing the ARN of the model here.
+     *        At the end of an auto-label job Ground Truth sends the Amazon Resource Name (ARN) of the final model used
+     *        for auto-labeling. You can use this model as the starting point for subsequent similar jobs by providing
+     *        the ARN of the model here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

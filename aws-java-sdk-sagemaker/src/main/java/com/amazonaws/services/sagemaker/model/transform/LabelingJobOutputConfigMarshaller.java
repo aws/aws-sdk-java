@@ -31,6 +31,8 @@ public class LabelingJobOutputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3OutputPath").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> SNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsTopicArn").build();
 
     private static final LabelingJobOutputConfigMarshaller instance = new LabelingJobOutputConfigMarshaller();
 
@@ -50,6 +52,7 @@ public class LabelingJobOutputConfigMarshaller {
         try {
             protocolMarshaller.marshall(labelingJobOutputConfig.getS3OutputPath(), S3OUTPUTPATH_BINDING);
             protocolMarshaller.marshall(labelingJobOutputConfig.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(labelingJobOutputConfig.getSnsTopicArn(), SNSTOPICARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

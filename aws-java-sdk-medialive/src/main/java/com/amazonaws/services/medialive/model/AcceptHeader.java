@@ -15,7 +15,7 @@ package com.amazonaws.services.medialive.model;
 import javax.annotation.Generated;
 
 /**
- * The HTTP Accept header. Indicates the requested type for the thumbnail.
+ * The HTTP Accept header. Indicates the requested type fothe thumbnail.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AcceptHeader {

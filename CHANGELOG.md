@@ -1,3 +1,36 @@
+# __1.11.862__ __2020-09-15__
+## __AWS Budgets__
+  - ### Features
+    - Documentation updates for Daily Cost and Usage budgets
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports CDI (Cloud Digital Interface) inputs which enable uncompressed video from applications on Elastic Cloud Compute (EC2), AWS Media Services, and from AWS partners
+
+## __AWS Organizations__
+  - ### Features
+    - AWS Organizations now enables you to add tags to the AWS accounts, organizational units, organization root, and policies in your organization.
+
+## __AWSKendraFrontendService__
+  - ### Features
+    - Amazon Kendra now returns confidence scores for 'document' query responses.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - T4g instances are powered by AWS Graviton2 processors
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Sagemaker Ground Truth: Added support for a new Streaming feature which helps to continuously feed data and receive labels in real time. This release adds a new input and output SNS data channel.
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - Amazon Transcribe now supports automatic language identification, which enables you to transcribe audio files without needing to know the language in advance.
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Added new API's to support SASL SCRAM Authentication with MSK Clusters.
+
 # __1.11.861__ __2020-09-14__
 ## __AWS Step Functions__
   - ### Features

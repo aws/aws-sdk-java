@@ -75,6 +75,72 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
     }
 
     @Override
+    public java.util.concurrent.Future<BatchAssociateScramSecretResult> batchAssociateScramSecretAsync(BatchAssociateScramSecretRequest request) {
+
+        return batchAssociateScramSecretAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateScramSecretResult> batchAssociateScramSecretAsync(final BatchAssociateScramSecretRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchAssociateScramSecretRequest, BatchAssociateScramSecretResult> asyncHandler) {
+        final BatchAssociateScramSecretRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchAssociateScramSecretResult>() {
+            @Override
+            public BatchAssociateScramSecretResult call() throws Exception {
+                BatchAssociateScramSecretResult result = null;
+
+                try {
+                    result = executeBatchAssociateScramSecret(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateScramSecretResult> batchDisassociateScramSecretAsync(BatchDisassociateScramSecretRequest request) {
+
+        return batchDisassociateScramSecretAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateScramSecretResult> batchDisassociateScramSecretAsync(final BatchDisassociateScramSecretRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDisassociateScramSecretRequest, BatchDisassociateScramSecretResult> asyncHandler) {
+        final BatchDisassociateScramSecretRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDisassociateScramSecretResult>() {
+            @Override
+            public BatchDisassociateScramSecretResult call() throws Exception {
+                BatchDisassociateScramSecretResult result = null;
+
+                try {
+                    result = executeBatchDisassociateScramSecret(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);
@@ -588,6 +654,39 @@ public class AWSKafkaAsyncClient extends AWSKafkaClient implements AWSKafkaAsync
 
                 try {
                     result = executeListNodes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(ListScramSecretsRequest request) {
+
+        return listScramSecretsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(final ListScramSecretsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListScramSecretsRequest, ListScramSecretsResult> asyncHandler) {
+        final ListScramSecretsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListScramSecretsResult>() {
+            @Override
+            public ListScramSecretsResult call() throws Exception {
+                ListScramSecretsResult result = null;
+
+                try {
+                    result = executeListScramSecrets(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

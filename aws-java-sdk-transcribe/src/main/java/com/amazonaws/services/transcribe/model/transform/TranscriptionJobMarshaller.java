@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.transcribe.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -57,6 +58,12 @@ public class TranscriptionJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("JobExecutionSettings").build();
     private static final MarshallingInfo<StructuredPojo> CONTENTREDACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentRedaction").build();
+    private static final MarshallingInfo<Boolean> IDENTIFYLANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifyLanguage").build();
+    private static final MarshallingInfo<List> LANGUAGEOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LanguageOptions").build();
+    private static final MarshallingInfo<Float> IDENTIFIEDLANGUAGESCORE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdentifiedLanguageScore").build();
 
     private static final TranscriptionJobMarshaller instance = new TranscriptionJobMarshaller();
 
@@ -89,6 +96,9 @@ public class TranscriptionJobMarshaller {
             protocolMarshaller.marshall(transcriptionJob.getModelSettings(), MODELSETTINGS_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getJobExecutionSettings(), JOBEXECUTIONSETTINGS_BINDING);
             protocolMarshaller.marshall(transcriptionJob.getContentRedaction(), CONTENTREDACTION_BINDING);
+            protocolMarshaller.marshall(transcriptionJob.getIdentifyLanguage(), IDENTIFYLANGUAGE_BINDING);
+            protocolMarshaller.marshall(transcriptionJob.getLanguageOptions(), LANGUAGEOPTIONS_BINDING);
+            protocolMarshaller.marshall(transcriptionJob.getIdentifiedLanguageScore(), IDENTIFIEDLANGUAGESCORE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

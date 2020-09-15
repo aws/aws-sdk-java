@@ -28,6 +28,16 @@ public class AbstractAWSKafka implements AWSKafka {
     }
 
     @Override
+    public BatchAssociateScramSecretResult batchAssociateScramSecret(BatchAssociateScramSecretRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDisassociateScramSecretResult batchDisassociateScramSecret(BatchDisassociateScramSecretRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClusterResult createCluster(CreateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +114,11 @@ public class AbstractAWSKafka implements AWSKafka {
 
     @Override
     public ListNodesResult listNodes(ListNodesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListScramSecretsResult listScramSecrets(ListScramSecretsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

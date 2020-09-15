@@ -27,6 +27,32 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     }
 
     @Override
+    public java.util.concurrent.Future<BatchAssociateScramSecretResult> batchAssociateScramSecretAsync(BatchAssociateScramSecretRequest request) {
+
+        return batchAssociateScramSecretAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchAssociateScramSecretResult> batchAssociateScramSecretAsync(BatchAssociateScramSecretRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateScramSecretRequest, BatchAssociateScramSecretResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateScramSecretResult> batchDisassociateScramSecretAsync(BatchDisassociateScramSecretRequest request) {
+
+        return batchDisassociateScramSecretAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDisassociateScramSecretResult> batchDisassociateScramSecretAsync(BatchDisassociateScramSecretRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateScramSecretRequest, BatchDisassociateScramSecretResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateClusterResult> createClusterAsync(CreateClusterRequest request) {
 
         return createClusterAsync(request, null);
@@ -230,6 +256,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<ListNodesResult> listNodesAsync(ListNodesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListNodesRequest, ListNodesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(ListScramSecretsRequest request) {
+
+        return listScramSecretsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListScramSecretsResult> listScramSecretsAsync(ListScramSecretsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListScramSecretsRequest, ListScramSecretsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -19,7 +19,8 @@ import javax.annotation.Generated;
  * The type of a budget. It must be one of the following types:
  * </p>
  * <p>
- * <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, or <code>RI_COVERAGE</code>.
+ * <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>,
+ * <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

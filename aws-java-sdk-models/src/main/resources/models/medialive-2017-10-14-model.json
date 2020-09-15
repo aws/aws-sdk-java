@@ -2452,12 +2452,14 @@
     },
     "AribDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Arib Destination Settings"
     },
     "AribSourceSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Arib Source Settings"
     },
     "AudioChannelMapping": {
@@ -2760,7 +2762,7 @@
         "Tracks": {
           "shape": "__listOfAudioTrack",
           "locationName": "tracks",
-          "documentation": "Selects one or more unique audio tracks from within an mp4 source."
+          "documentation": "Selects one or more unique audio tracks from within a source."
         }
       },
       "documentation": "Audio Track Selection",
@@ -3565,7 +3567,8 @@
     },
     "ColorSpacePassthroughSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Passthrough applies no color space conversion to the output"
     },
     "ConflictException": {
@@ -4209,7 +4212,8 @@
     },
     "DeleteInputResponse": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for DeleteInputResponse"
     },
     "DeleteInputSecurityGroupRequest": {
@@ -4229,7 +4233,8 @@
     },
     "DeleteInputSecurityGroupResponse": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for DeleteInputSecurityGroupResponse"
     },
     "DeleteMultiplexProgramRequest": {
@@ -4479,7 +4484,8 @@
     },
     "DeleteScheduleResponse": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for DeleteScheduleResponse"
     },
     "DeleteTagsRequest": {
@@ -5703,7 +5709,7 @@
         "FontFamily": {
           "shape": "__string",
           "locationName": "fontFamily",
-          "documentation": "Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to \"monospaced\". (If styleControl is set to exclude, the font family is always set to \"monospaced\".)\n\nYou specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.\n\n- Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as “Arial”), or a generic font family (such as “serif”), or “default” (to let the downstream player choose the font).\n- Leave blank to set the family to “monospace”."
+          "documentation": "Specifies the font family to include in the font data attached to the EBU-TT captions. Valid only if styleControl is set to include. If you leave this field empty, the font family is set to \"monospaced\". (If styleControl is set to exclude, the font family is always set to \"monospaced\".)\n\nYou specify only the font family. All other style information (color, bold, position and so on) is copied from the input captions. The size is always set to 100% to allow the downstream player to choose the size.\n\n- Enter a list of font families, as a comma-separated list of font names, in order of preference. The name can be a font family (such as \u201cArial\u201d), or a generic font family (such as \u201cserif\u201d), or \u201cdefault\u201d (to let the downstream player choose the font).\n- Leave blank to set the family to \u201cmonospace\u201d."
         },
         "StyleControl": {
           "shape": "EbuTtDDestinationStyleControl",
@@ -5739,12 +5745,14 @@
     },
     "EmbeddedDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Embedded Destination Settings"
     },
     "EmbeddedPlusScte20DestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Embedded Plus Scte20 Destination Settings"
     },
     "EmbeddedScte20Detection": {
@@ -5783,7 +5791,8 @@
     },
     "Empty": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Placeholder documentation for Empty"
     },
     "EncoderSettings": {
@@ -6014,7 +6023,7 @@
         "Destination": {
           "shape": "OutputLocationRef",
           "locationName": "destination",
-          "documentation": "The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling_) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling_). The final file names consist of the prefix from the destination field (for example, \"curling_\") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curlingLow.00001.jpg"
+          "documentation": "The destination for the frame capture files. Either the URI for an Amazon S3 bucket and object, plus a file name prefix (for example, s3ssl://sportsDelivery/highlights/20180820/curling-) or the URI for a MediaStore container, plus a file name prefix (for example, mediastoressl://sportsDelivery/20180820/curling-). The final file names consist of the prefix from the destination field (for example, \"curling-\") + name modifier + the counter (5 digits, starting from 00001) + extension (which is always .jpg).  For example, curling-low.00001.jpg"
         }
       },
       "documentation": "Frame Capture Group Settings",
@@ -7133,7 +7142,7 @@
         "IndexNSegments": {
           "shape": "__integerMin3",
           "locationName": "indexNSegments",
-          "documentation": "Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be less than or equal to the Keep Segments field."
+          "documentation": "Applies only if Mode field is LIVE.\n\nSpecifies the maximum number of segments in the media manifest file. After this maximum, older segments are removed from the media manifest. This number must be smaller than the number in the Keep Segments field."
         },
         "InputLossAction": {
           "shape": "InputLossActionForHlsOut",
@@ -7153,7 +7162,7 @@
         "KeepSegments": {
           "shape": "__integerMin1",
           "locationName": "keepSegments",
-          "documentation": "Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the destination directory."
+          "documentation": "Applies only if Mode field is LIVE.\n\nSpecifies the number of media segments to retain in the destination directory. This number should be bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).\n\nIf this \"keep segments\" number is too low, the following might happen: the player is still reading a media manifest file that lists this segment, but that segment has been removed from the destination directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player."
         },
         "KeyFormat": {
           "shape": "__string",
@@ -7558,7 +7567,8 @@
     },
     "ImmediateModeScheduleActionStartSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Settings to configure an action so that it occurs as soon as possible."
     },
     "Input": {
@@ -8496,7 +8506,8 @@
         "URL_PULL",
         "MP4_FILE",
         "MEDIACONNECT",
-        "INPUT_DEVICE"
+        "INPUT_DEVICE",
+        "AWS_CDI"
       ],
       "documentation": "Placeholder documentation for InputType"
     },
@@ -8913,7 +8924,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "codec",
-          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'"
+          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'"
         },
         "Duration": {
           "shape": "__string",
@@ -9015,7 +9026,7 @@
           "shape": "__string",
           "location": "querystring",
           "locationName": "codec",
-          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'"
+          "documentation": "Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'"
         },
         "MaxResults": {
           "shape": "MaxResults",
@@ -9332,7 +9343,7 @@
         "BufferModel": {
           "shape": "M2tsBufferModel",
           "locationName": "bufferModel",
-          "documentation": "If set to multiplex, use multiplex buffer model for accurate interleaving.  Setting to bufferModel to none can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions."
+          "documentation": "Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet timing. Or set to NONE, which might result in lower latency but will result in more variability in output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or receiving devices."
         },
         "CcDescriptor": {
           "shape": "M2tsCcDescriptor",
@@ -9708,7 +9719,8 @@
     },
     "MediaPackageOutputSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Media Package Output Settings"
     },
     "Mp2CodingMode": {
@@ -9942,7 +9954,8 @@
     },
     "MultiplexGroupSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Multiplex Group Settings"
     },
     "MultiplexMediaConnectOutputDestinationSettings": {
@@ -10620,7 +10633,8 @@
     },
     "PassThroughSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Pass Through Settings"
     },
     "PauseStateScheduleActionSettings": {
@@ -10784,12 +10798,14 @@
     },
     "Rec601Settings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Rec601 Settings"
     },
     "Rec709Settings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Rec709 Settings"
     },
     "RemixSettings": {
@@ -10919,7 +10935,8 @@
         "MPEG2",
         "AVC",
         "HEVC",
-        "AUDIO"
+        "AUDIO",
+        "LINK"
       ]
     },
     "ReservationMaximumBitrate": {
@@ -11071,7 +11088,8 @@
     },
     "RtmpCaptionInfoDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Rtmp Caption Info Destination Settings"
     },
     "RtmpGroupSettings": {
@@ -11252,7 +11270,8 @@
     },
     "ScheduleDeleteResultModel": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Result of a schedule deletion."
     },
     "ScheduleDescribeResultModel": {
@@ -11284,7 +11303,8 @@
     },
     "Scte20PlusEmbeddedDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Scte20 Plus Embedded Destination Settings"
     },
     "Scte20SourceSettings": {
@@ -11305,7 +11325,8 @@
     },
     "Scte27DestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Scte27 Destination Settings"
     },
     "Scte27SourceSettings": {
@@ -11683,7 +11704,8 @@
     },
     "SmpteTtDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Smpte Tt Destination Settings"
     },
     "StandardHlsSettings": {
@@ -12175,7 +12197,8 @@
     },
     "TeletextDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Teletext Destination Settings"
     },
     "TeletextSourceSettings": {
@@ -13033,7 +13056,7 @@
         "RespondToAfd": {
           "shape": "VideoDescriptionRespondToAfd",
           "locationName": "respondToAfd",
-          "documentation": "Indicates how to respond to the AFD values in the input stream. RESPOND causes input video to be clipped, depending on the AFD value, input display aspect ratio, and output display aspect ratio, and (except for FRAME_CAPTURE codec) includes the values in the output. PASSTHROUGH (does not apply to FRAME_CAPTURE codec) ignores the AFD values and includes the values in the output, so input video is not clipped. NONE ignores the AFD values and does not include the values through to the output, so input video is not clipped."
+          "documentation": "Indicates how MediaLive will respond to the AFD values that might be in the input video. If you do not know what AFD signaling is, or if your downstream system has not given you guidance, choose PASSTHROUGH.\nRESPOND: MediaLive clips the input video using a formula that uses the AFD values (configured in afdSignaling ), the input display aspect ratio, and the output display aspect ratio. MediaLive also includes the AFD values in the output, unless the codec for this encode is FRAME_CAPTURE.\nPASSTHROUGH: MediaLive ignores the AFD values and does not clip the video. But MediaLive does include the values in the output.\nNONE: MediaLive does not clip the input video and does not include the AFD values in the output"
         },
         "ScalingBehavior": {
           "shape": "VideoDescriptionScalingBehavior",
@@ -13149,27 +13172,9 @@
     },
     "WebvttDestinationSettings": {
       "type": "structure",
-      "members": {},
+      "members": {
+      },
       "documentation": "Webvtt Destination Settings"
-    },
-    "AcceptHeader": {
-      "type": "string",
-      "enum": [
-        "image/jpeg"
-      ],
-      "documentation": "The HTTP Accept header. Indicates the requested type for the thumbnail."
-    },
-    "ContentType": {
-      "type": "string",
-      "enum": [
-        "image/jpeg"
-      ],
-      "documentation": "Specifies the media type of the thumbnail."
-    },
-    "InputDeviceThumbnail": {
-      "type": "blob",
-      "streaming": true,
-      "description": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
     },
     "__boolean": {
       "type": "boolean",
@@ -13871,6 +13876,25 @@
       "type": "timestamp",
       "timestampFormat": "unixTimestamp",
       "documentation": "Placeholder documentation for __timestampUnix"
+    },
+    "InputDeviceThumbnail": {
+      "type": "blob",
+      "streaming": true,
+      "documentation": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
+    },
+    "AcceptHeader": {
+      "type": "string",
+      "enum": [
+        "image/jpeg"
+      ],
+      "documentation": "The HTTP Accept header. Indicates the requested type fothe thumbnail."
+    },
+    "ContentType": {
+      "type": "string",
+      "enum": [
+        "image/jpeg"
+      ],
+      "documentation": "Specifies the media type of the thumbnail."
     },
     "__timestamp": {
       "type": "timestamp",

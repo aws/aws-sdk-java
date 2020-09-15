@@ -31,10 +31,62 @@ public class ClientAuthentication implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * Details for ClientAuthentication using SASL.
+     * </p>
+     */
+    private Sasl sasl;
+    /**
+     * <p>
      * Details for ClientAuthentication using TLS.
      * </p>
      */
     private Tls tls;
+
+    /**
+     * <p>
+     * Details for ClientAuthentication using SASL.
+     * </p>
+     * 
+     * @param sasl
+     *        <p>
+     *        Details for ClientAuthentication using SASL.
+     *        </p>
+     */
+
+    public void setSasl(Sasl sasl) {
+        this.sasl = sasl;
+    }
+
+    /**
+     * <p>
+     * Details for ClientAuthentication using SASL.
+     * </p>
+     * 
+     * @return <p>
+     *         Details for ClientAuthentication using SASL.
+     *         </p>
+     */
+
+    public Sasl getSasl() {
+        return this.sasl;
+    }
+
+    /**
+     * <p>
+     * Details for ClientAuthentication using SASL.
+     * </p>
+     * 
+     * @param sasl
+     *        <p>
+     *        Details for ClientAuthentication using SASL.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientAuthentication withSasl(Sasl sasl) {
+        setSasl(sasl);
+        return this;
+    }
 
     /**
      * <p>
@@ -94,6 +146,8 @@ public class ClientAuthentication implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getSasl() != null)
+            sb.append("Sasl: ").append(getSasl()).append(",");
         if (getTls() != null)
             sb.append("Tls: ").append(getTls());
         sb.append("}");
@@ -110,6 +164,10 @@ public class ClientAuthentication implements Serializable, Cloneable, Structured
         if (obj instanceof ClientAuthentication == false)
             return false;
         ClientAuthentication other = (ClientAuthentication) obj;
+        if (other.getSasl() == null ^ this.getSasl() == null)
+            return false;
+        if (other.getSasl() != null && other.getSasl().equals(this.getSasl()) == false)
+            return false;
         if (other.getTls() == null ^ this.getTls() == null)
             return false;
         if (other.getTls() != null && other.getTls().equals(this.getTls()) == false)
@@ -122,6 +180,7 @@ public class ClientAuthentication implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getSasl() == null) ? 0 : getSasl().hashCode());
         hashCode = prime * hashCode + ((getTls() == null) ? 0 : getTls().hashCode());
         return hashCode;
     }

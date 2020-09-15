@@ -160,6 +160,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ContentRedaction contentRedaction;
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     */
+    private Boolean identifyLanguage;
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     */
+    private java.util.List<String> languageOptions;
 
     /**
      * <p>
@@ -1057,6 +1072,182 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *        identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a
+     *        value for a <code>LanguageCode</code>.
+     */
+
+    public void setIdentifyLanguage(Boolean identifyLanguage) {
+        this.identifyLanguage = identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @return Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *         identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter
+     *         a value for a <code>LanguageCode</code>.
+     */
+
+    public Boolean getIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @param identifyLanguage
+     *        Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *        identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a
+     *        value for a <code>LanguageCode</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withIdentifyLanguage(Boolean identifyLanguage) {
+        setIdentifyLanguage(identifyLanguage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     * identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter a value
+     * for a <code>LanguageCode</code>.
+     * </p>
+     * 
+     * @return Set this field to <code>true</code> to enable automatic language identification. Automatic language
+     *         identification is disabled by default. You receive a <code>BadRequestException</code> error if you enter
+     *         a value for a <code>LanguageCode</code>.
+     */
+
+    public Boolean isIdentifyLanguage() {
+        return this.identifyLanguage;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @return An object containing a list of languages that might be present in your collection of audio files.
+     *         Automatic language identification chooses a language that best matches the source audio from that list.
+     * @see LanguageCode
+     */
+
+    public java.util.List<String> getLanguageOptions() {
+        return languageOptions;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @see LanguageCode
+     */
+
+    public void setLanguageOptions(java.util.Collection<String> languageOptions) {
+        if (languageOptions == null) {
+            this.languageOptions = null;
+            return;
+        }
+
+        this.languageOptions = new java.util.ArrayList<String>(languageOptions);
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLanguageOptions(java.util.Collection)} or {@link #withLanguageOptions(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public StartTranscriptionJobRequest withLanguageOptions(String... languageOptions) {
+        if (this.languageOptions == null) {
+            setLanguageOptions(new java.util.ArrayList<String>(languageOptions.length));
+        }
+        for (String ele : languageOptions) {
+            this.languageOptions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public StartTranscriptionJobRequest withLanguageOptions(java.util.Collection<String> languageOptions) {
+        setLanguageOptions(languageOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object containing a list of languages that might be present in your collection of audio files. Automatic
+     * language identification chooses a language that best matches the source audio from that list.
+     * </p>
+     * 
+     * @param languageOptions
+     *        An object containing a list of languages that might be present in your collection of audio files.
+     *        Automatic language identification chooses a language that best matches the source audio from that list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LanguageCode
+     */
+
+    public StartTranscriptionJobRequest withLanguageOptions(LanguageCode... languageOptions) {
+        java.util.ArrayList<String> languageOptionsCopy = new java.util.ArrayList<String>(languageOptions.length);
+        for (LanguageCode value : languageOptions) {
+            languageOptionsCopy.add(value.toString());
+        }
+        if (getLanguageOptions() == null) {
+            setLanguageOptions(languageOptionsCopy);
+        } else {
+            getLanguageOptions().addAll(languageOptionsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1089,7 +1280,11 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         if (getJobExecutionSettings() != null)
             sb.append("JobExecutionSettings: ").append(getJobExecutionSettings()).append(",");
         if (getContentRedaction() != null)
-            sb.append("ContentRedaction: ").append(getContentRedaction());
+            sb.append("ContentRedaction: ").append(getContentRedaction()).append(",");
+        if (getIdentifyLanguage() != null)
+            sb.append("IdentifyLanguage: ").append(getIdentifyLanguage()).append(",");
+        if (getLanguageOptions() != null)
+            sb.append("LanguageOptions: ").append(getLanguageOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1148,6 +1343,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getContentRedaction() != null && other.getContentRedaction().equals(this.getContentRedaction()) == false)
             return false;
+        if (other.getIdentifyLanguage() == null ^ this.getIdentifyLanguage() == null)
+            return false;
+        if (other.getIdentifyLanguage() != null && other.getIdentifyLanguage().equals(this.getIdentifyLanguage()) == false)
+            return false;
+        if (other.getLanguageOptions() == null ^ this.getLanguageOptions() == null)
+            return false;
+        if (other.getLanguageOptions() != null && other.getLanguageOptions().equals(this.getLanguageOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1167,6 +1370,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionSettings() == null) ? 0 : getJobExecutionSettings().hashCode());
         hashCode = prime * hashCode + ((getContentRedaction() == null) ? 0 : getContentRedaction().hashCode());
+        hashCode = prime * hashCode + ((getIdentifyLanguage() == null) ? 0 : getIdentifyLanguage().hashCode());
+        hashCode = prime * hashCode + ((getLanguageOptions() == null) ? 0 : getLanguageOptions().hashCode());
         return hashCode;
     }
 

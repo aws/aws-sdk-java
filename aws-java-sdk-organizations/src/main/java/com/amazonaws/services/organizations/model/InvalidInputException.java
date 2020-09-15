@@ -27,6 +27,11 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
+ * DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
  * </p>
  * </li>
@@ -38,6 +43,11 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * INVALID_ENUM: You specified an invalid value.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
  * </p>
  * </li>
  * <li>
@@ -121,6 +131,16 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
  * </p>
  * </li>
  * </ul>

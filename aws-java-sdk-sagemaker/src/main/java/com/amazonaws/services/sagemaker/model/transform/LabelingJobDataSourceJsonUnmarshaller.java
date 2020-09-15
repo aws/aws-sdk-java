@@ -52,6 +52,10 @@ public class LabelingJobDataSourceJsonUnmarshaller implements Unmarshaller<Label
                     context.nextToken();
                     labelingJobDataSource.setS3DataSource(LabelingJobS3DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SnsDataSource", targetDepth)) {
+                    context.nextToken();
+                    labelingJobDataSource.setSnsDataSource(LabelingJobSnsDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

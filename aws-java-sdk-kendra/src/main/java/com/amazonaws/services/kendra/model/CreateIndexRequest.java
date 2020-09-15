@@ -37,6 +37,10 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      */
     private String edition;
     /**
@@ -121,11 +125,18 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
      *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.
+     *        databases. Once you set the edition for an index, it can't be changed. </p>
+     *        <p>
+     *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *        <code>ENTERPRISE_EDITION</code>.
      * @see IndexEdition
      */
 
@@ -139,10 +150,17 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @return The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes
      *         intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-     *         production databases. Once you set the edition for an index, it can't be changed.
+     *         production databases. Once you set the edition for an index, it can't be changed. </p>
+     *         <p>
+     *         The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *         <code>ENTERPRISE_EDITION</code>.
      * @see IndexEdition
      */
 
@@ -156,11 +174,18 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
      *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.
+     *        databases. Once you set the edition for an index, it can't be changed. </p>
+     *        <p>
+     *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *        <code>ENTERPRISE_EDITION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */
@@ -176,11 +201,18 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
      *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.
+     *        databases. Once you set the edition for an index, it can't be changed. </p>
+     *        <p>
+     *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *        <code>ENTERPRISE_EDITION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */

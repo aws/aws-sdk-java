@@ -88,6 +88,14 @@ public class TranscriptionJobSummaryJsonUnmarshaller implements Unmarshaller<Tra
                     context.nextToken();
                     transcriptionJobSummary.setModelSettings(ModelSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("IdentifyLanguage", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setIdentifyLanguage(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IdentifiedLanguageScore", targetDepth)) {
+                    context.nextToken();
+                    transcriptionJobSummary.setIdentifiedLanguageScore(context.getUnmarshaller(Float.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -301,13 +301,15 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </li>
      * </ul>
-     * <p/>
      * <p>
      * The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
      * permission. If you enabled all features in the organization, AWS Organizations creates the required
      * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
      * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * AWS Organizations preconfigures the new member account with a role (named
@@ -401,13 +403,15 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </li>
      * </ul>
-     * <p/>
      * <p>
      * The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
      * permission. If you enabled all features in the organization, AWS Organizations creates the required
      * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
      * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * AWS Organizations preconfigures the new member account with a role (named
@@ -507,13 +511,16 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations creates the required
-     * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
-     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * You have the <code>organizations:CreateGovCloudAccount</code> permission.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * AWS Organizations automatically creates the required service-linked role named
+     * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * </p>
      * <p>
      * AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should also do the following:
      * </p>
@@ -534,6 +541,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * The tags are attached to the commercial account associated with the GovCloud account, rather than the GovCloud
+     * account itself. To add tags to the GovCloud account, call the <a>TagResource</a> operation in the GovCloud Region
+     * after the new GovCloud account exists.
+     * </p>
      * <p>
      * You call this action from the master account of your organization in the commercial Region to create a standalone
      * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
@@ -574,7 +587,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * A role is created in the new account in the commercial Region that allows the master account in the organization
      * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is created in the new AWS GovCloud (US) account that can be
+     * commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be
      * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
      * organization. For more information and to view a diagram that explains how account access works, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
@@ -665,13 +678,16 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations creates the required
-     * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
-     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * You have the <code>organizations:CreateGovCloudAccount</code> permission.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * AWS Organizations automatically creates the required service-linked role named
+     * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * </p>
      * <p>
      * AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should also do the following:
      * </p>
@@ -692,6 +708,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * The tags are attached to the commercial account associated with the GovCloud account, rather than the GovCloud
+     * account itself. To add tags to the GovCloud account, call the <a>TagResource</a> operation in the GovCloud Region
+     * after the new GovCloud account exists.
+     * </p>
      * <p>
      * You call this action from the master account of your organization in the commercial Region to create a standalone
      * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
@@ -732,7 +754,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * A role is created in the new account in the commercial Region that allows the master account in the organization
      * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is created in the new AWS GovCloud (US) account that can be
+     * commercial account that you just created. A role is also created in the new AWS GovCloud (US) account that can be
      * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
      * organization. For more information and to view a diagram that explains how account access works, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
@@ -807,8 +829,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
-     * account</a> of the new organization.
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
+     * >master account</a> of the new organization.
      * </p>
      * <p>
      * This operation must be called using credentials from the account that is to become the new organization's master
@@ -834,8 +856,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
-     * account</a> of the new organization.
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
+     * >master account</a> of the new organization.
      * </p>
      * <p>
      * This operation must be called using credentials from the account that is to become the new organization's master
@@ -875,6 +897,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Units</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
@@ -897,6 +922,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * For more information about OUs, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
      * Units</a> in the <i>AWS Organizations User Guide.</i>
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -926,6 +954,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Policies</a>.
      * </p>
      * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
@@ -946,6 +977,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * For more information about policies and their use, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
      * Policies</a>.
+     * </p>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
      * This operation can be called only from the organization's master account.
@@ -1990,6 +2024,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </ul>
      * </important>
      * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
      * This operation can be called only from the organization's master account.
      * </p>
      * 
@@ -2029,6 +2066,9 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * </important>
+     * <p>
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -2107,6 +2147,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Guide.</i>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
+     * </p>
+     * </li>
      * </ul>
      * </important>
      * 
@@ -2176,6 +2222,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
      * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
      * Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
      * </p>
      * </li>
      * </ul>
@@ -3016,11 +3068,33 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists tags for the specified resource.
+     * Lists tags that are attached to the specified resource.
      * </p>
      * <p>
-     * Currently, you can list tags on an account in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account or by a member account that is a
      * delegated administrator for an AWS service.
@@ -3036,11 +3110,33 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Lists tags for the specified resource.
+     * Lists tags that are attached to the specified resource.
      * </p>
      * <p>
-     * Currently, you can list tags on an account in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account or by a member account that is a
      * delegated administrator for an AWS service.
@@ -3224,6 +3320,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
@@ -3237,6 +3335,14 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide.</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -3263,6 +3369,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
@@ -3276,6 +3384,14 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide.</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -3298,8 +3414,30 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Adds one or more tags to the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * Currently, you can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -3317,8 +3455,30 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Adds one or more tags to the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * Currently, you can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -3338,11 +3498,33 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Removes a tag from the specified resource.
+     * Removes any tags with the specified keys from the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>
@@ -3357,11 +3539,33 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
-     * Removes a tag from the specified resource.
+     * Removes any tags with the specified keys from the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * This operation can be called only from the organization's master account.
      * </p>

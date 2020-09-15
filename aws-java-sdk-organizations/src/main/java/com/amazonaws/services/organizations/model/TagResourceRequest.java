@@ -33,9 +33,45 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceId;
     /**
      * <p>
-     * The tag to add to the specified resource. You must specify both a tag key and value. You can set the value of a
-     * tag to an empty string, but you can't set it to null.
+     * A list of tags to add to the specified resource.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string,
+     * but you can't set it to <code>null</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the
+     * entire request fails and the account is not created.
+     * </p>
+     * </note>
      */
     private java.util.List<Tag> tags;
 
@@ -81,12 +117,84 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource. You must specify both a tag key and value. You can set the value of a
-     * tag to an empty string, but you can't set it to null.
+     * A list of tags to add to the specified resource.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string,
+     * but you can't set it to <code>null</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the
+     * entire request fails and the account is not created.
+     * </p>
+     * </note>
      * 
-     * @return The tag to add to the specified resource. You must specify both a tag key and value. You can set the
-     *         value of a tag to an empty string, but you can't set it to null.
+     * @return A list of tags to add to the specified resource.</p>
+     *         <p>
+     *         You can specify any of the following taggable resources.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AWS account – specify the account ID number.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *         <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *         <code>r-<i>1a2b</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *         <code>p-<i>12abcdefg3</i> </code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty
+     *         string, but you can't set it to <code>null</code>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then
+     *         the entire request fails and the account is not created.
+     *         </p>
      */
 
     public java.util.List<Tag> getTags() {
@@ -95,13 +203,85 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource. You must specify both a tag key and value. You can set the value of a
-     * tag to an empty string, but you can't set it to null.
+     * A list of tags to add to the specified resource.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string,
+     * but you can't set it to <code>null</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the
+     * entire request fails and the account is not created.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        The tag to add to the specified resource. You must specify both a tag key and value. You can set the value
-     *        of a tag to an empty string, but you can't set it to null.
+     *        A list of tags to add to the specified resource.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty
+     *        string, but you can't set it to <code>null</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then
+     *        the entire request fails and the account is not created.
+     *        </p>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -115,9 +295,45 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource. You must specify both a tag key and value. You can set the value of a
-     * tag to an empty string, but you can't set it to null.
+     * A list of tags to add to the specified resource.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string,
+     * but you can't set it to <code>null</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the
+     * entire request fails and the account is not created.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -125,8 +341,44 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The tag to add to the specified resource. You must specify both a tag key and value. You can set the value
-     *        of a tag to an empty string, but you can't set it to null.
+     *        A list of tags to add to the specified resource.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty
+     *        string, but you can't set it to <code>null</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then
+     *        the entire request fails and the account is not created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,13 +394,85 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tag to add to the specified resource. You must specify both a tag key and value. You can set the value of a
-     * tag to an empty string, but you can't set it to null.
+     * A list of tags to add to the specified resource.
      * </p>
+     * <p>
+     * You can specify any of the following taggable resources.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AWS account – specify the account ID number.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     * <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Root – specify the root ID that begins with <code>r-</code> and looks similar to: <code>r-<i>1a2b</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     * <code>p-<i>12abcdefg3</i> </code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty string,
+     * but you can't set it to <code>null</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then the
+     * entire request fails and the account is not created.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        The tag to add to the specified resource. You must specify both a tag key and value. You can set the value
-     *        of a tag to an empty string, but you can't set it to null.
+     *        A list of tags to add to the specified resource.</p>
+     *        <p>
+     *        You can specify any of the following taggable resources.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AWS account – specify the account ID number.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks similar to:
+     *        <code>ou-<i>1a2b-34uvwxyz</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Root – specify the root ID that begins with <code>r-</code> and looks similar to:
+     *        <code>r-<i>1a2b</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
+     *        <code>p-<i>12abcdefg3</i> </code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For each tag in the list, you must specify both a tag key and a value. You can set the value to an empty
+     *        string, but you can't set it to <code>null</code>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed number of tags for an account user, then
+     *        the entire request fails and the account is not created.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

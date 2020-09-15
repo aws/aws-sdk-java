@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ClientAuthenticationMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> SASL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sasl").build();
     private static final MarshallingInfo<StructuredPojo> TLS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tls").build();
 
@@ -46,6 +48,7 @@ public class ClientAuthenticationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(clientAuthentication.getSasl(), SASL_BINDING);
             protocolMarshaller.marshall(clientAuthentication.getTls(), TLS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

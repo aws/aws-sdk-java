@@ -56,6 +56,10 @@ public class LabelingJobOutputConfigJsonUnmarshaller implements Unmarshaller<Lab
                     context.nextToken();
                     labelingJobOutputConfig.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SnsTopicArn", targetDepth)) {
+                    context.nextToken();
+                    labelingJobOutputConfig.setSnsTopicArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -101,9 +101,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String iFrameOnlyPlaylists;
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
      */
     private Integer indexNSegments;
     /** Parameter that control output group behavior on input loss. */
@@ -121,8 +122,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String ivSource;
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     private Integer keepSegments;
     /**
@@ -1139,14 +1146,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
      * 
      * @param indexNSegments
-     *        Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file.
-     *        After this maximum, older segments are removed from the media manifest. This number must be less than or
-     *        equal to the Keep Segments field.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the maximum number of segments in the media manifest file. After this maximum, older segments
+     *        are removed from the media manifest. This number must be smaller than the number in the Keep Segments
+     *        field.
      */
 
     public void setIndexNSegments(Integer indexNSegments) {
@@ -1154,13 +1164,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Applies only if Mode field is LIVE.
      * 
-     * @return Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file.
-     *         After this maximum, older segments are removed from the media manifest. This number must be less than or
-     *         equal to the Keep Segments field.
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+     * 
+     * @return Applies only if Mode field is LIVE.
+     * 
+     *         Specifies the maximum number of segments in the media manifest file. After this maximum, older segments
+     *         are removed from the media manifest. This number must be smaller than the number in the Keep Segments
+     *         field.
      */
 
     public Integer getIndexNSegments() {
@@ -1168,14 +1181,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
      * 
      * @param indexNSegments
-     *        Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file.
-     *        After this maximum, older segments are removed from the media manifest. This number must be less than or
-     *        equal to the Keep Segments field.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the maximum number of segments in the media manifest file. After this maximum, older segments
+     *        are removed from the media manifest. This number must be smaller than the number in the Keep Segments
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1374,12 +1390,24 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      * 
      * @param keepSegments
-     *        Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     *        destination directory.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the number of media segments to retain in the destination directory. This number should be
+     *        bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     *        If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     *        manifest file that lists this segment, but that segment has been removed from the destination directory
+     *        (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
 
     public void setKeepSegments(Integer keepSegments) {
@@ -1387,11 +1415,23 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
      * 
-     * @return Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     *         destination directory.
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+     * 
+     * @return Applies only if Mode field is LIVE.
+     * 
+     *         Specifies the number of media segments to retain in the destination directory. This number should be
+     *         bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     *         If this "keep segments" number is too low, the following might happen: the player is still reading a
+     *         media manifest file that lists this segment, but that segment has been removed from the destination
+     *         directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
 
     public Integer getKeepSegments() {
@@ -1399,12 +1439,24 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      * 
      * @param keepSegments
-     *        Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     *        destination directory.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the number of media segments to retain in the destination directory. This number should be
+     *        bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     *        If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     *        manifest file that lists this segment, but that segment has been removed from the destination directory
+     *        (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
