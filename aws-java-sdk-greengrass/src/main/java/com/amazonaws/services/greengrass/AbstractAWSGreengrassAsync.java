@@ -746,6 +746,19 @@ public class AbstractAWSGreengrassAsync extends AbstractAWSGreengrass implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetThingRuntimeConfigurationResult> getThingRuntimeConfigurationAsync(GetThingRuntimeConfigurationRequest request) {
+
+        return getThingRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetThingRuntimeConfigurationResult> getThingRuntimeConfigurationAsync(GetThingRuntimeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetThingRuntimeConfigurationRequest, GetThingRuntimeConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListBulkDeploymentDetailedReportsResult> listBulkDeploymentDetailedReportsAsync(
             ListBulkDeploymentDetailedReportsRequest request) {
 
@@ -1219,6 +1232,21 @@ public class AbstractAWSGreengrassAsync extends AbstractAWSGreengrass implements
     @Override
     public java.util.concurrent.Future<UpdateSubscriptionDefinitionResult> updateSubscriptionDefinitionAsync(UpdateSubscriptionDefinitionRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionDefinitionRequest, UpdateSubscriptionDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThingRuntimeConfigurationResult> updateThingRuntimeConfigurationAsync(
+            UpdateThingRuntimeConfigurationRequest request) {
+
+        return updateThingRuntimeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThingRuntimeConfigurationResult> updateThingRuntimeConfigurationAsync(
+            UpdateThingRuntimeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateThingRuntimeConfigurationRequest, UpdateThingRuntimeConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -158,16 +158,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -180,16 +180,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1026,16 +1026,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1045,16 +1045,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        The S3 bucket where the responses to the command executions should be stored. This was requested when
      *        issuing the command. For example, in the following response:</p>
      *        <p>
-     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the S3 bucket;
+     *        doc-example-bucket is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-1234567876543 is the instance ID;
+     *        i-02573cafcfEXAMPLE is the instance ID;
      *        </p>
      *        <p>
      *        awsrunShellScript is the name of the plugin.
@@ -1070,16 +1070,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1088,16 +1088,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * @return The S3 bucket where the responses to the command executions should be stored. This was requested when
      *         issuing the command. For example, in the following response:</p>
      *         <p>
-     *         test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     *         doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      *         </p>
      *         <p>
-     *         test_folder is the name of the S3 bucket;
+     *         doc-example-bucket is the name of the S3 bucket;
      *         </p>
      *         <p>
      *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *         </p>
      *         <p>
-     *         i-1234567876543 is the instance ID;
+     *         i-02573cafcfEXAMPLE is the instance ID;
      *         </p>
      *         <p>
      *         awsrunShellScript is the name of the plugin.
@@ -1113,16 +1113,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1132,16 +1132,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        The S3 bucket where the responses to the command executions should be stored. This was requested when
      *        issuing the command. For example, in the following response:</p>
      *        <p>
-     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the S3 bucket;
+     *        doc-example-bucket is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-1234567876543 is the instance ID;
+     *        i-02573cafcfEXAMPLE is the instance ID;
      *        </p>
      *        <p>
      *        awsrunShellScript is the name of the plugin.
@@ -1159,16 +1159,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1178,16 +1178,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *        This was requested when issuing the command. For example, in the following response:</p>
      *        <p>
-     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the S3 bucket;
+     *        doc-example-bucket is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-1234567876543 is the instance ID;
+     *        i-02573cafcfEXAMPLE is the instance ID;
      *        </p>
      *        <p>
      *        awsrunShellScript is the name of the plugin.
@@ -1203,16 +1203,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1221,16 +1221,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * @return The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *         This was requested when issuing the command. For example, in the following response:</p>
      *         <p>
-     *         test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     *         doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      *         </p>
      *         <p>
-     *         test_folder is the name of the S3 bucket;
+     *         doc-example-bucket is the name of the S3 bucket;
      *         </p>
      *         <p>
      *         ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *         </p>
      *         <p>
-     *         i-1234567876543 is the instance ID;
+     *         i-02573cafcfEXAMPLE is the instance ID;
      *         </p>
      *         <p>
      *         awsrunShellScript is the name of the plugin.
@@ -1246,16 +1246,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      * requested when issuing the command. For example, in the following response:
      * </p>
      * <p>
-     * test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     * doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      * </p>
      * <p>
-     * test_folder is the name of the S3 bucket;
+     * doc-example-bucket is the name of the S3 bucket;
      * </p>
      * <p>
      * ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      * </p>
      * <p>
-     * i-1234567876543 is the instance ID;
+     * i-02573cafcfEXAMPLE is the instance ID;
      * </p>
      * <p>
      * awsrunShellScript is the name of the plugin.
@@ -1265,16 +1265,16 @@ public class CommandPlugin implements Serializable, Cloneable, StructuredPojo {
      *        The S3 directory path inside the bucket where the responses to the command executions should be stored.
      *        This was requested when issuing the command. For example, in the following response:</p>
      *        <p>
-     *        test_folder/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-1234567876543/awsrunShellScript
+     *        doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript
      *        </p>
      *        <p>
-     *        test_folder is the name of the S3 bucket;
+     *        doc-example-bucket is the name of the S3 bucket;
      *        </p>
      *        <p>
      *        ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;
      *        </p>
      *        <p>
-     *        i-1234567876543 is the instance ID;
+     *        i-02573cafcfEXAMPLE is the instance ID;
      *        </p>
      *        <p>
      *        awsrunShellScript is the name of the plugin.

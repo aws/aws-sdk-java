@@ -37,7 +37,11 @@ import java.util.concurrent.ExecutorService;
  * There are limits to the number of Amazon Connect resources that you can create and limits to the number of requests
  * that you can make per second. For more information, see <a
  * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect
- * Service Limits</a> in the <i>Amazon Connect Administrator Guide</i>.
+ * Service Quotas</a> in the <i>Amazon Connect Administrator Guide</i>.
+ * </p>
+ * <p>
+ * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
  * </p>
  */
 @ThreadSafe
@@ -82,6 +86,106 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateRoutingProfileQueuesResult> associateRoutingProfileQueuesAsync(AssociateRoutingProfileQueuesRequest request) {
+
+        return associateRoutingProfileQueuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateRoutingProfileQueuesResult> associateRoutingProfileQueuesAsync(
+            final AssociateRoutingProfileQueuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateRoutingProfileQueuesRequest, AssociateRoutingProfileQueuesResult> asyncHandler) {
+        final AssociateRoutingProfileQueuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateRoutingProfileQueuesResult>() {
+            @Override
+            public AssociateRoutingProfileQueuesResult call() throws Exception {
+                AssociateRoutingProfileQueuesResult result = null;
+
+                try {
+                    result = executeAssociateRoutingProfileQueues(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactFlowResult> createContactFlowAsync(CreateContactFlowRequest request) {
+
+        return createContactFlowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactFlowResult> createContactFlowAsync(final CreateContactFlowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactFlowRequest, CreateContactFlowResult> asyncHandler) {
+        final CreateContactFlowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactFlowResult>() {
+            @Override
+            public CreateContactFlowResult call() throws Exception {
+                CreateContactFlowResult result = null;
+
+                try {
+                    result = executeCreateContactFlow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(CreateRoutingProfileRequest request) {
+
+        return createRoutingProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateRoutingProfileResult> createRoutingProfileAsync(final CreateRoutingProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateRoutingProfileRequest, CreateRoutingProfileResult> asyncHandler) {
+        final CreateRoutingProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateRoutingProfileResult>() {
+            @Override
+            public CreateRoutingProfileResult call() throws Exception {
+                CreateRoutingProfileResult result = null;
+
+                try {
+                    result = executeCreateRoutingProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -135,6 +239,72 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDeleteUser(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContactFlowResult> describeContactFlowAsync(DescribeContactFlowRequest request) {
+
+        return describeContactFlowAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeContactFlowResult> describeContactFlowAsync(final DescribeContactFlowRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeContactFlowRequest, DescribeContactFlowResult> asyncHandler) {
+        final DescribeContactFlowRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeContactFlowResult>() {
+            @Override
+            public DescribeContactFlowResult call() throws Exception {
+                DescribeContactFlowResult result = null;
+
+                try {
+                    result = executeDescribeContactFlow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRoutingProfileResult> describeRoutingProfileAsync(DescribeRoutingProfileRequest request) {
+
+        return describeRoutingProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRoutingProfileResult> describeRoutingProfileAsync(final DescribeRoutingProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRoutingProfileRequest, DescribeRoutingProfileResult> asyncHandler) {
+        final DescribeRoutingProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRoutingProfileResult>() {
+            @Override
+            public DescribeRoutingProfileResult call() throws Exception {
+                DescribeRoutingProfileResult result = null;
+
+                try {
+                    result = executeDescribeRoutingProfile(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -235,6 +405,41 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeDescribeUserHierarchyStructure(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateRoutingProfileQueuesResult> disassociateRoutingProfileQueuesAsync(
+            DisassociateRoutingProfileQueuesRequest request) {
+
+        return disassociateRoutingProfileQueuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateRoutingProfileQueuesResult> disassociateRoutingProfileQueuesAsync(
+            final DisassociateRoutingProfileQueuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateRoutingProfileQueuesRequest, DisassociateRoutingProfileQueuesResult> asyncHandler) {
+        final DisassociateRoutingProfileQueuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateRoutingProfileQueuesResult>() {
+            @Override
+            public DisassociateRoutingProfileQueuesResult call() throws Exception {
+                DisassociateRoutingProfileQueuesResult result = null;
+
+                try {
+                    result = executeDisassociateRoutingProfileQueues(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -482,6 +687,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<ListPromptsResult> listPromptsAsync(ListPromptsRequest request) {
+
+        return listPromptsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPromptsResult> listPromptsAsync(final ListPromptsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPromptsRequest, ListPromptsResult> asyncHandler) {
+        final ListPromptsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPromptsResult>() {
+            @Override
+            public ListPromptsResult call() throws Exception {
+                ListPromptsResult result = null;
+
+                try {
+                    result = executeListPrompts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListQueuesResult> listQueuesAsync(ListQueuesRequest request) {
 
         return listQueuesAsync(request, null);
@@ -499,6 +737,39 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeListQueues(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoutingProfileQueuesResult> listRoutingProfileQueuesAsync(ListRoutingProfileQueuesRequest request) {
+
+        return listRoutingProfileQueuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRoutingProfileQueuesResult> listRoutingProfileQueuesAsync(final ListRoutingProfileQueuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRoutingProfileQueuesRequest, ListRoutingProfileQueuesResult> asyncHandler) {
+        final ListRoutingProfileQueuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRoutingProfileQueuesResult>() {
+            @Override
+            public ListRoutingProfileQueuesResult call() throws Exception {
+                ListRoutingProfileQueuesResult result = null;
+
+                try {
+                    result = executeListRoutingProfileQueues(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -994,6 +1265,208 @@ public class AmazonConnectAsyncClient extends AmazonConnectClient implements Ama
 
                 try {
                     result = executeUpdateContactAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowContentResult> updateContactFlowContentAsync(UpdateContactFlowContentRequest request) {
+
+        return updateContactFlowContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowContentResult> updateContactFlowContentAsync(final UpdateContactFlowContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactFlowContentRequest, UpdateContactFlowContentResult> asyncHandler) {
+        final UpdateContactFlowContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactFlowContentResult>() {
+            @Override
+            public UpdateContactFlowContentResult call() throws Exception {
+                UpdateContactFlowContentResult result = null;
+
+                try {
+                    result = executeUpdateContactFlowContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowNameResult> updateContactFlowNameAsync(UpdateContactFlowNameRequest request) {
+
+        return updateContactFlowNameAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactFlowNameResult> updateContactFlowNameAsync(final UpdateContactFlowNameRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactFlowNameRequest, UpdateContactFlowNameResult> asyncHandler) {
+        final UpdateContactFlowNameRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactFlowNameResult>() {
+            @Override
+            public UpdateContactFlowNameResult call() throws Exception {
+                UpdateContactFlowNameResult result = null;
+
+                try {
+                    result = executeUpdateContactFlowName(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileConcurrencyResult> updateRoutingProfileConcurrencyAsync(
+            UpdateRoutingProfileConcurrencyRequest request) {
+
+        return updateRoutingProfileConcurrencyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileConcurrencyResult> updateRoutingProfileConcurrencyAsync(
+            final UpdateRoutingProfileConcurrencyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoutingProfileConcurrencyRequest, UpdateRoutingProfileConcurrencyResult> asyncHandler) {
+        final UpdateRoutingProfileConcurrencyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoutingProfileConcurrencyResult>() {
+            @Override
+            public UpdateRoutingProfileConcurrencyResult call() throws Exception {
+                UpdateRoutingProfileConcurrencyResult result = null;
+
+                try {
+                    result = executeUpdateRoutingProfileConcurrency(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileDefaultOutboundQueueResult> updateRoutingProfileDefaultOutboundQueueAsync(
+            UpdateRoutingProfileDefaultOutboundQueueRequest request) {
+
+        return updateRoutingProfileDefaultOutboundQueueAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileDefaultOutboundQueueResult> updateRoutingProfileDefaultOutboundQueueAsync(
+            final UpdateRoutingProfileDefaultOutboundQueueRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoutingProfileDefaultOutboundQueueRequest, UpdateRoutingProfileDefaultOutboundQueueResult> asyncHandler) {
+        final UpdateRoutingProfileDefaultOutboundQueueRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoutingProfileDefaultOutboundQueueResult>() {
+            @Override
+            public UpdateRoutingProfileDefaultOutboundQueueResult call() throws Exception {
+                UpdateRoutingProfileDefaultOutboundQueueResult result = null;
+
+                try {
+                    result = executeUpdateRoutingProfileDefaultOutboundQueue(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileNameResult> updateRoutingProfileNameAsync(UpdateRoutingProfileNameRequest request) {
+
+        return updateRoutingProfileNameAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileNameResult> updateRoutingProfileNameAsync(final UpdateRoutingProfileNameRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoutingProfileNameRequest, UpdateRoutingProfileNameResult> asyncHandler) {
+        final UpdateRoutingProfileNameRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoutingProfileNameResult>() {
+            @Override
+            public UpdateRoutingProfileNameResult call() throws Exception {
+                UpdateRoutingProfileNameResult result = null;
+
+                try {
+                    result = executeUpdateRoutingProfileName(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileQueuesResult> updateRoutingProfileQueuesAsync(UpdateRoutingProfileQueuesRequest request) {
+
+        return updateRoutingProfileQueuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRoutingProfileQueuesResult> updateRoutingProfileQueuesAsync(final UpdateRoutingProfileQueuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRoutingProfileQueuesRequest, UpdateRoutingProfileQueuesResult> asyncHandler) {
+        final UpdateRoutingProfileQueuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRoutingProfileQueuesResult>() {
+            @Override
+            public UpdateRoutingProfileQueuesResult call() throws Exception {
+                UpdateRoutingProfileQueuesResult result = null;
+
+                try {
+                    result = executeUpdateRoutingProfileQueues(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -2327,9 +2327,14 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
      * </p>
      * 
      * @param describeProvisionedProductRequest
+     *        DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for
+     *        localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned
+     *        product identifier. Customers must provide either Id or Name.
      * @return Result of the DescribeProvisionedProduct operation returned by the service.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws InvalidParametersException
+     *         One or more parameters provided to the operation are not valid.
      * @sample AWSServiceCatalog.DescribeProvisionedProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct"
      *      target="_top">AWS API Documentation</a>

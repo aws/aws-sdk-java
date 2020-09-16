@@ -3114,6 +3114,63 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
     }
 
     /**
+     * Get the runtime configuration of a thing.
+     * 
+     * @param getThingRuntimeConfigurationRequest
+     * @return Result of the GetThingRuntimeConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @throws InternalServerErrorException
+     *         server error
+     * @sample AWSGreengrass.GetThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetThingRuntimeConfigurationResult getThingRuntimeConfiguration(GetThingRuntimeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetThingRuntimeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetThingRuntimeConfigurationResult executeGetThingRuntimeConfiguration(GetThingRuntimeConfigurationRequest getThingRuntimeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getThingRuntimeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetThingRuntimeConfigurationRequest> request = null;
+        Response<GetThingRuntimeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetThingRuntimeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getThingRuntimeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThingRuntimeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetThingRuntimeConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetThingRuntimeConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current
      * deployment status.
      * 
@@ -5061,6 +5118,64 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
             HttpResponseHandler<AmazonWebServiceResponse<UpdateSubscriptionDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateSubscriptionDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates the runtime configuration of a thing.
+     * 
+     * @param updateThingRuntimeConfigurationRequest
+     * @return Result of the UpdateThingRuntimeConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @throws InternalServerErrorException
+     *         server error
+     * @sample AWSGreengrass.UpdateThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateThingRuntimeConfigurationResult updateThingRuntimeConfiguration(UpdateThingRuntimeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThingRuntimeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThingRuntimeConfigurationResult executeUpdateThingRuntimeConfiguration(
+            UpdateThingRuntimeConfigurationRequest updateThingRuntimeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThingRuntimeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThingRuntimeConfigurationRequest> request = null;
+        Response<UpdateThingRuntimeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThingRuntimeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateThingRuntimeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingRuntimeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThingRuntimeConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateThingRuntimeConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

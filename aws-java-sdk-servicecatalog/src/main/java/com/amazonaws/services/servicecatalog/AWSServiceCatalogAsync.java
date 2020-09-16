@@ -1233,6 +1233,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * 
      * @param describeProvisionedProductRequest
+     *        DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for
+     *        localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned
+     *        product identifier. Customers must provide either Id or Name.
      * @return A Java Future containing the result of the DescribeProvisionedProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeProvisionedProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct"
@@ -1247,6 +1250,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * 
      * @param describeProvisionedProductRequest
+     *        DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for
+     *        localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned
+     *        product identifier. Customers must provide either Id or Name.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

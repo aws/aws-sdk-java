@@ -49,7 +49,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Tag> targetTags;
     /**
      * <p>
-     * The schedule of policy-defined actions.
+     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
+     * to three optional schedules.
      * </p>
      */
     private java.util.List<Schedule> schedules;
@@ -299,10 +300,12 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule of policy-defined actions.
+     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
+     * to three optional schedules.
      * </p>
      * 
-     * @return The schedule of policy-defined actions.
+     * @return The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
+     *         and up to three optional schedules.
      */
 
     public java.util.List<Schedule> getSchedules() {
@@ -311,11 +314,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule of policy-defined actions.
+     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
+     * to three optional schedules.
      * </p>
      * 
      * @param schedules
-     *        The schedule of policy-defined actions.
+     *        The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
+     *        and up to three optional schedules.
      */
 
     public void setSchedules(java.util.Collection<Schedule> schedules) {
@@ -329,7 +334,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule of policy-defined actions.
+     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
+     * to three optional schedules.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -338,7 +344,8 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param schedules
-     *        The schedule of policy-defined actions.
+     *        The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
+     *        and up to three optional schedules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,11 +361,13 @@ public class PolicyDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The schedule of policy-defined actions.
+     * The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule and up
+     * to three optional schedules.
      * </p>
      * 
      * @param schedules
-     *        The schedule of policy-defined actions.
+     *        The schedules of policy-defined actions. A policy can have up to four schedules - one mandatory schedule
+     *        and up to three optional schedules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -46,7 +46,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      * </p>
      * </li>
      * <li>
@@ -54,7 +54,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      * </p>
      * </li>
      * <li>
@@ -154,7 +154,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      * </p>
      * </li>
      * <li>
@@ -162,7 +162,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      * </p>
      * </li>
      * <li>
@@ -192,7 +192,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *         For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      *         </p>
      *         <p>
-     *         <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *         <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      *         </p>
      *         </li>
      *         <li>
@@ -200,7 +200,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *         For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      *         </p>
      *         <p>
-     *         <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *         <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      *         </p>
      *         </li>
      *         <li>
@@ -240,7 +240,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      * </p>
      * </li>
      * <li>
@@ -248,7 +248,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      * </p>
      * </li>
      * <li>
@@ -279,7 +279,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *        For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      *        </p>
      *        <p>
-     *        <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *        <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      *        </p>
      *        </li>
      *        <li>
@@ -287,7 +287,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *        For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      *        </p>
      *        <p>
-     *        <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *        <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      *        </p>
      *        </li>
      *        <li>
@@ -329,7 +329,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      * </p>
      * </li>
      * <li>
@@ -337,7 +337,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      * </p>
      * </li>
      * <li>
@@ -373,7 +373,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *        For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      *        </p>
      *        <p>
-     *        <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *        <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      *        </p>
      *        </li>
      *        <li>
@@ -381,7 +381,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *        For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      *        </p>
      *        <p>
-     *        <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *        <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      *        </p>
      *        </li>
      *        <li>
@@ -425,7 +425,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      * </p>
      * </li>
      * <li>
@@ -433,7 +433,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      * For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      * </p>
      * <p>
-     * <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     * <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      * </p>
      * </li>
      * <li>
@@ -464,7 +464,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *        For the key <i>SourceUrl</i>, the value is an S3 bucket location. For example:
      *        </p>
      *        <p>
-     *        <code>"Values": [ "s3://my-bucket/my-folder" ]</code>
+     *        <code>"Values": [ "s3://doc-example-bucket/my-folder" ]</code>
      *        </p>
      *        </li>
      *        <li>
@@ -472,7 +472,7 @@ public class AttachmentsSource implements Serializable, Cloneable, StructuredPoj
      *        For the key <i>S3FileUrl</i>, the value is a file in an S3 bucket. For example:
      *        </p>
      *        <p>
-     *        <code>"Values": [ "s3://my-bucket/my-folder/my-file.py" ]</code>
+     *        <code>"Values": [ "s3://doc-example-bucket/my-folder/my-file.py" ]</code>
      *        </p>
      *        </li>
      *        <li>

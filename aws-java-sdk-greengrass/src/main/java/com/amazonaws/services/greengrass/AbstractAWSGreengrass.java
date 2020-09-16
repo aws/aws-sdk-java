@@ -298,6 +298,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
     }
 
     @Override
+    public GetThingRuntimeConfigurationResult getThingRuntimeConfiguration(GetThingRuntimeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListBulkDeploymentDetailedReportsResult listBulkDeploymentDetailedReports(ListBulkDeploymentDetailedReportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -474,6 +479,11 @@ public class AbstractAWSGreengrass implements AWSGreengrass {
 
     @Override
     public UpdateSubscriptionDefinitionResult updateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThingRuntimeConfigurationResult updateThingRuntimeConfiguration(UpdateThingRuntimeConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

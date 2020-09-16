@@ -28,12 +28,37 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public AssociateRoutingProfileQueuesResult associateRoutingProfileQueues(AssociateRoutingProfileQueuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateContactFlowResult createContactFlow(CreateContactFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRoutingProfileResult createRoutingProfile(CreateRoutingProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateUserResult createUser(CreateUserRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteUserResult deleteUser(DeleteUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeContactFlowResult describeContactFlow(DescribeContactFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeRoutingProfileResult describeRoutingProfile(DescribeRoutingProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +74,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public DescribeUserHierarchyStructureResult describeUserHierarchyStructure(DescribeUserHierarchyStructureRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateRoutingProfileQueuesResult disassociateRoutingProfileQueues(DisassociateRoutingProfileQueuesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,7 +118,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListPromptsResult listPrompts(ListPromptsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListQueuesResult listQueues(ListQueuesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRoutingProfileQueuesResult listRoutingProfileQueues(ListRoutingProfileQueuesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,6 +204,36 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public UpdateContactAttributesResult updateContactAttributes(UpdateContactAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactFlowContentResult updateContactFlowContent(UpdateContactFlowContentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContactFlowNameResult updateContactFlowName(UpdateContactFlowNameRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoutingProfileConcurrencyResult updateRoutingProfileConcurrency(UpdateRoutingProfileConcurrencyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoutingProfileDefaultOutboundQueueResult updateRoutingProfileDefaultOutboundQueue(UpdateRoutingProfileDefaultOutboundQueueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoutingProfileNameResult updateRoutingProfileName(UpdateRoutingProfileNameRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRoutingProfileQueuesResult updateRoutingProfileQueues(UpdateRoutingProfileQueuesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

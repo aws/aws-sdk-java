@@ -31,6 +31,8 @@ public class DescribeProvisionedProductRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceptLanguage").build();
     private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Id").build();
+    private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Name").build();
 
     private static final DescribeProvisionedProductRequestMarshaller instance = new DescribeProvisionedProductRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DescribeProvisionedProductRequestMarshaller {
         try {
             protocolMarshaller.marshall(describeProvisionedProductRequest.getAcceptLanguage(), ACCEPTLANGUAGE_BINDING);
             protocolMarshaller.marshall(describeProvisionedProductRequest.getId(), ID_BINDING);
+            protocolMarshaller.marshall(describeProvisionedProductRequest.getName(), NAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

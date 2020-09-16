@@ -1618,6 +1618,37 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
             com.amazonaws.handlers.AsyncHandler<GetSubscriptionDefinitionVersionRequest, GetSubscriptionDefinitionVersionResult> asyncHandler);
 
     /**
+     * Get the runtime configuration of a thing.
+     * 
+     * @param getThingRuntimeConfigurationRequest
+     * @return A Java Future containing the result of the GetThingRuntimeConfiguration operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsync.GetThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetThingRuntimeConfigurationResult> getThingRuntimeConfigurationAsync(
+            GetThingRuntimeConfigurationRequest getThingRuntimeConfigurationRequest);
+
+    /**
+     * Get the runtime configuration of a thing.
+     * 
+     * @param getThingRuntimeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetThingRuntimeConfiguration operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsyncHandler.GetThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetThingRuntimeConfigurationResult> getThingRuntimeConfigurationAsync(
+            GetThingRuntimeConfigurationRequest getThingRuntimeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetThingRuntimeConfigurationRequest, GetThingRuntimeConfigurationResult> asyncHandler);
+
+    /**
      * Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current
      * deployment status.
      * 
@@ -2662,5 +2693,36 @@ public interface AWSGreengrassAsync extends AWSGreengrass {
     java.util.concurrent.Future<UpdateSubscriptionDefinitionResult> updateSubscriptionDefinitionAsync(
             UpdateSubscriptionDefinitionRequest updateSubscriptionDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSubscriptionDefinitionRequest, UpdateSubscriptionDefinitionResult> asyncHandler);
+
+    /**
+     * Updates the runtime configuration of a thing.
+     * 
+     * @param updateThingRuntimeConfigurationRequest
+     * @return A Java Future containing the result of the UpdateThingRuntimeConfiguration operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsync.UpdateThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThingRuntimeConfigurationResult> updateThingRuntimeConfigurationAsync(
+            UpdateThingRuntimeConfigurationRequest updateThingRuntimeConfigurationRequest);
+
+    /**
+     * Updates the runtime configuration of a thing.
+     * 
+     * @param updateThingRuntimeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThingRuntimeConfiguration operation returned by the
+     *         service.
+     * @sample AWSGreengrassAsyncHandler.UpdateThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThingRuntimeConfigurationResult> updateThingRuntimeConfigurationAsync(
+            UpdateThingRuntimeConfigurationRequest updateThingRuntimeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThingRuntimeConfigurationRequest, UpdateThingRuntimeConfigurationResult> asyncHandler);
 
 }
