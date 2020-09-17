@@ -40,7 +40,7 @@ abstract class AbstractFileTlsKeyManagersProvider implements TlsKeyManagersProvi
 
     protected final KeyManager[] createKeyManagers(File storePath, String storeType, char[] password) throws CertificateException, NoSuchAlgorithmException, KeyStoreException, IOException, UnrecoverableKeyException {
         KeyStore ks = createKeyStore(storePath, storeType, password);
-        KeyManagerFactory kmf = KeyManagerFactory.getInstance("SunX509");
+        KeyManagerFactory kmf = KeyManagerFactory.getInstance(KeyManagerFactory.getDefaultAlgorithm());
         kmf.init(ks, password);
         return kmf.getKeyManagers();
     }
