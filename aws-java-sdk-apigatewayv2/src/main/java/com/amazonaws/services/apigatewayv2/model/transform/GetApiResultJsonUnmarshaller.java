@@ -80,6 +80,10 @@ public class GetApiResultJsonUnmarshaller implements Unmarshaller<GetApiResult, 
                     context.nextToken();
                     getApiResult.setDisableSchemaValidation(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("disableExecuteApiEndpoint", targetDepth)) {
+                    context.nextToken();
+                    getApiResult.setDisableExecuteApiEndpoint(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("importInfo", targetDepth)) {
                     context.nextToken();
                     getApiResult.setImportInfo(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))

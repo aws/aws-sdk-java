@@ -57,18 +57,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -101,18 +103,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -167,18 +171,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -208,19 +214,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Includes the normalized header in the request to the origin
+     *        Includes the normalized header in the request to the origin, if a request is necessary
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If one or both of these fields are <code>true</code>, you should not whitelist the
-     *        <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *        same cache behavior.
-     *        </p>
-     *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *        >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *        attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *        always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is
+     *        <code>true</code>, so including this header in an origin request policy has no effect.
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -256,18 +263,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -296,19 +305,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Includes the normalized header in the request to the origin
+     *         Includes the normalized header in the request to the origin, if a request is necessary
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If one or both of these fields are <code>true</code>, you should not whitelist the
-     *         <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *         same cache behavior.
-     *         </p>
-     *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *         >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *         attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *         always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field
+     *         is <code>true</code>, so including this header in an origin request policy has no effect.
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -344,18 +354,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -385,19 +397,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Includes the normalized header in the request to the origin
+     *        Includes the normalized header in the request to the origin, if a request is necessary
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If one or both of these fields are <code>true</code>, you should not whitelist the
-     *        <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *        same cache behavior.
-     *        </p>
-     *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *        >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *        attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *        always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is
+     *        <code>true</code>, so including this header in an origin request policy has no effect.
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -435,18 +448,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -475,19 +490,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Includes the normalized header in the request to the origin
+     *         Includes the normalized header in the request to the origin, if a request is necessary
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If one or both of these fields are <code>true</code>, you should not whitelist the
-     *         <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *         same cache behavior.
-     *         </p>
-     *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *         >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *         attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *         always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field
+     *         is <code>true</code>, so including this header in an origin request policy has no effect.
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -523,18 +539,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -564,19 +582,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Includes the normalized header in the request to the origin
+     *        Includes the normalized header in the request to the origin, if a request is necessary
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If one or both of these fields are <code>true</code>, you should not whitelist the
-     *        <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *        same cache behavior.
-     *        </p>
-     *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *        >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *        attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *        always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is
+     *        <code>true</code>, so including this header in an origin request policy has no effect.
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -612,18 +631,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -652,19 +673,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Includes the normalized header in the request to the origin
+     *         Includes the normalized header in the request to the origin, if a request is necessary
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If one or both of these fields are <code>true</code>, you should not whitelist the
-     *         <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *         same cache behavior.
-     *         </p>
-     *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *         >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *         attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *         always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field
+     *         is <code>true</code>, so including this header in an origin request policy has no effect.
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -700,18 +722,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -741,19 +765,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Includes the normalized header in the request to the origin
+     *        Includes the normalized header in the request to the origin, if a request is necessary
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If one or both of these fields are <code>true</code>, you should not whitelist the
-     *        <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *        same cache behavior.
-     *        </p>
-     *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *        >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *        attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *        always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field is
+     *        <code>true</code>, so including this header in an origin request policy has no effect.
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
@@ -791,18 +816,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Includes the normalized header in the request to the origin
+     * Includes the normalized header in the request to the origin, if a request is necessary
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If one or both of these fields are <code>true</code>, you should not whitelist the <code>Accept-Encoding</code>
-     * header in the cache policy or in an origin request policy attached to the same cache behavior.
-     * </p>
-     * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      * >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you set this value to <code>true</code>, and this cache behavior also has an origin request policy attached,
+     * do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront always includes
+     * the <code>Accept-Encoding</code> header in origin requests when the value of this field is <code>true</code>, so
+     * including this header in an origin request policy has no effect.
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
@@ -831,19 +858,20 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Includes the normalized header in the request to the origin
+     *         Includes the normalized header in the request to the origin, if a request is necessary
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If one or both of these fields are <code>true</code>, you should not whitelist the
-     *         <code>Accept-Encoding</code> header in the cache policy or in an origin request policy attached to the
-     *         same cache behavior.
-     *         </p>
-     *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html#cache-policy-compressed-objects"
      *         >Cache compressed objects</a> in the <i>Amazon CloudFront Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you set this value to <code>true</code>, and this cache behavior also has an origin request policy
+     *         attached, do not include the <code>Accept-Encoding</code> header in the origin request policy. CloudFront
+     *         always includes the <code>Accept-Encoding</code> header in origin requests when the value of this field
+     *         is <code>true</code>, so including this header in an origin request policy has no effect.
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>

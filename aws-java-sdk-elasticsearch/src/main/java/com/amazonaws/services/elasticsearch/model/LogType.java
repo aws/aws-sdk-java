@@ -24,6 +24,7 @@ import javax.annotation.Generated;
  * threshold to execute.</li>
  * <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during
  * the operation of the service and can be useful for troubleshooting.</li>
+ * <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li>
  * </ul>
  * </p>
  */
@@ -32,7 +33,8 @@ public enum LogType {
 
     INDEX_SLOW_LOGS("INDEX_SLOW_LOGS"),
     SEARCH_SLOW_LOGS("SEARCH_SLOW_LOGS"),
-    ES_APPLICATION_LOGS("ES_APPLICATION_LOGS");
+    ES_APPLICATION_LOGS("ES_APPLICATION_LOGS"),
+    AUDIT_LOGS("AUDIT_LOGS");
 
     private String value;
 

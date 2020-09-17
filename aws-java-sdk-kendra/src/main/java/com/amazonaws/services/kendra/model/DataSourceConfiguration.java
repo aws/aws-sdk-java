@@ -30,19 +30,19 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      */
     private S3DataSourceConfiguration s3Configuration;
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      */
     private SharePointConfiguration sharePointConfiguration;
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      */
     private DatabaseConfiguration databaseConfiguration;
@@ -67,11 +67,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      * 
      * @param s3Configuration
-     *        Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     *        Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      */
 
     public void setS3Configuration(S3DataSourceConfiguration s3Configuration) {
@@ -80,10 +80,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      * 
-     * @return Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * @return Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      */
 
     public S3DataSourceConfiguration getS3Configuration() {
@@ -92,11 +92,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      * 
      * @param s3Configuration
-     *        Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     *        Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      * 
      * @param sharePointConfiguration
-     *        Provides information necessary to create a connector for a Microsoft SharePoint site.
+     *        Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      */
 
     public void setSharePointConfiguration(SharePointConfiguration sharePointConfiguration) {
@@ -120,10 +120,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      * 
-     * @return Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * @return Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      */
 
     public SharePointConfiguration getSharePointConfiguration() {
@@ -132,11 +132,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      * 
      * @param sharePointConfiguration
-     *        Provides information necessary to create a connector for a Microsoft SharePoint site.
+     *        Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      * 
      * @param databaseConfiguration
-     *        Provides information necessary to create a connector for a database.
+     *        Provides information necessary to create a data source connector for a database.
      */
 
     public void setDatabaseConfiguration(DatabaseConfiguration databaseConfiguration) {
@@ -160,10 +160,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      * 
-     * @return Provides information necessary to create a connector for a database.
+     * @return Provides information necessary to create a data source connector for a database.
      */
 
     public DatabaseConfiguration getDatabaseConfiguration() {
@@ -172,11 +172,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      * 
      * @param databaseConfiguration
-     *        Provides information necessary to create a connector for a database.
+     *        Provides information necessary to create a data source connector for a database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

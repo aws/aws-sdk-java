@@ -78,7 +78,7 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a connector.
+     * supplied when documents are deleted by a data source connector.
      * </p>
      */
     private DataSourceSyncJobMetrics metrics;
@@ -440,12 +440,12 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a connector.
+     * supplied when documents are deleted by a data source connector.
      * </p>
      * 
      * @param metrics
      *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
-     *        be supplied when documents are deleted by a connector.
+     *        be supplied when documents are deleted by a data source connector.
      */
 
     public void setMetrics(DataSourceSyncJobMetrics metrics) {
@@ -455,11 +455,11 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a connector.
+     * supplied when documents are deleted by a data source connector.
      * </p>
      * 
      * @return Maps a batch delete document request to a specific data source sync job. This is optional and should only
-     *         be supplied when documents are deleted by a connector.
+     *         be supplied when documents are deleted by a data source connector.
      */
 
     public DataSourceSyncJobMetrics getMetrics() {
@@ -469,12 +469,12 @@ public class DataSourceSyncJob implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * Maps a batch delete document request to a specific data source sync job. This is optional and should only be
-     * supplied when documents are deleted by a connector.
+     * supplied when documents are deleted by a data source connector.
      * </p>
      * 
      * @param metrics
      *        Maps a batch delete document request to a specific data source sync job. This is optional and should only
-     *        be supplied when documents are deleted by a connector.
+     *        be supplied when documents are deleted by a data source connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

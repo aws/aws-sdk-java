@@ -101,6 +101,8 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
      */
     private String securityPolicy;
 
+    private MutualTlsAuthenticationInput mutualTlsAuthentication;
+
     /**
      * <p>
      * [Required] The name of the <a>DomainName</a> resource.
@@ -648,6 +650,32 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * @param mutualTlsAuthentication
+     */
+
+    public void setMutualTlsAuthentication(MutualTlsAuthenticationInput mutualTlsAuthentication) {
+        this.mutualTlsAuthentication = mutualTlsAuthentication;
+    }
+
+    /**
+     * @return
+     */
+
+    public MutualTlsAuthenticationInput getMutualTlsAuthentication() {
+        return this.mutualTlsAuthentication;
+    }
+
+    /**
+     * @param mutualTlsAuthentication
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withMutualTlsAuthentication(MutualTlsAuthenticationInput mutualTlsAuthentication) {
+        setMutualTlsAuthentication(mutualTlsAuthentication);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -680,7 +708,9 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getSecurityPolicy() != null)
-            sb.append("SecurityPolicy: ").append(getSecurityPolicy());
+            sb.append("SecurityPolicy: ").append(getSecurityPolicy()).append(",");
+        if (getMutualTlsAuthentication() != null)
+            sb.append("MutualTlsAuthentication: ").append(getMutualTlsAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -739,6 +769,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getSecurityPolicy() != null && other.getSecurityPolicy().equals(this.getSecurityPolicy()) == false)
             return false;
+        if (other.getMutualTlsAuthentication() == null ^ this.getMutualTlsAuthentication() == null)
+            return false;
+        if (other.getMutualTlsAuthentication() != null && other.getMutualTlsAuthentication().equals(this.getMutualTlsAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -758,6 +792,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEndpointConfiguration() == null) ? 0 : getEndpointConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSecurityPolicy() == null) ? 0 : getSecurityPolicy().hashCode());
+        hashCode = prime * hashCode + ((getMutualTlsAuthentication() == null) ? 0 : getMutualTlsAuthentication().hashCode());
         return hashCode;
     }
 

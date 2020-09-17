@@ -46,7 +46,7 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private String type;
     /**
      * <p>
-     * The connector configuration information that is required to access the repository.
+     * The data source connector configuration information that is required to access the repository.
      * </p>
      */
     private DataSourceConfiguration configuration;
@@ -226,11 +226,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The connector configuration information that is required to access the repository.
+     * The data source connector configuration information that is required to access the repository.
      * </p>
      * 
      * @param configuration
-     *        The connector configuration information that is required to access the repository.
+     *        The data source connector configuration information that is required to access the repository.
      */
 
     public void setConfiguration(DataSourceConfiguration configuration) {
@@ -239,10 +239,10 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The connector configuration information that is required to access the repository.
+     * The data source connector configuration information that is required to access the repository.
      * </p>
      * 
-     * @return The connector configuration information that is required to access the repository.
+     * @return The data source connector configuration information that is required to access the repository.
      */
 
     public DataSourceConfiguration getConfiguration() {
@@ -251,11 +251,11 @@ public class CreateDataSourceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The connector configuration information that is required to access the repository.
+     * The data source connector configuration information that is required to access the repository.
      * </p>
      * 
      * @param configuration
-     *        The connector configuration information that is required to access the repository.
+     *        The data source connector configuration information that is required to access the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

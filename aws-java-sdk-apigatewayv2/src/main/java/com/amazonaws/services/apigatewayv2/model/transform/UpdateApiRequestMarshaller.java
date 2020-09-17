@@ -39,6 +39,8 @@ public class UpdateApiRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Boolean> DISABLESCHEMAVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableSchemaValidation").build();
+    private static final MarshallingInfo<Boolean> DISABLEEXECUTEAPIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableExecuteApiEndpoint").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> ROUTEKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +74,7 @@ public class UpdateApiRequestMarshaller {
             protocolMarshaller.marshall(updateApiRequest.getCredentialsArn(), CREDENTIALSARN_BINDING);
             protocolMarshaller.marshall(updateApiRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateApiRequest.getDisableSchemaValidation(), DISABLESCHEMAVALIDATION_BINDING);
+            protocolMarshaller.marshall(updateApiRequest.getDisableExecuteApiEndpoint(), DISABLEEXECUTEAPIENDPOINT_BINDING);
             protocolMarshaller.marshall(updateApiRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateApiRequest.getRouteKey(), ROUTEKEY_BINDING);
             protocolMarshaller.marshall(updateApiRequest.getRouteSelectionExpression(), ROUTESELECTIONEXPRESSION_BINDING);

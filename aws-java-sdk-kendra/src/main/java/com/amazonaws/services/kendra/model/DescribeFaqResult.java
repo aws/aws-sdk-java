@@ -81,6 +81,12 @@ public class DescribeFaqResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String errorMessage;
+    /**
+     * <p>
+     * The file format used by the input files for the FAQ.
+     * </p>
+     */
+    private String fileFormat;
 
     /**
      * <p>
@@ -500,6 +506,65 @@ public class DescribeFaqResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The file format used by the input files for the FAQ.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The file format used by the input files for the FAQ.
+     * @see FaqFileFormat
+     */
+
+    public void setFileFormat(String fileFormat) {
+        this.fileFormat = fileFormat;
+    }
+
+    /**
+     * <p>
+     * The file format used by the input files for the FAQ.
+     * </p>
+     * 
+     * @return The file format used by the input files for the FAQ.
+     * @see FaqFileFormat
+     */
+
+    public String getFileFormat() {
+        return this.fileFormat;
+    }
+
+    /**
+     * <p>
+     * The file format used by the input files for the FAQ.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The file format used by the input files for the FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FaqFileFormat
+     */
+
+    public DescribeFaqResult withFileFormat(String fileFormat) {
+        setFileFormat(fileFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file format used by the input files for the FAQ.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The file format used by the input files for the FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FaqFileFormat
+     */
+
+    public DescribeFaqResult withFileFormat(FaqFileFormat fileFormat) {
+        this.fileFormat = fileFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -530,7 +595,9 @@ public class DescribeFaqResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getFileFormat() != null)
+            sb.append("FileFormat: ").append(getFileFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -585,6 +652,10 @@ public class DescribeFaqResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
+        if (other.getFileFormat() == null ^ this.getFileFormat() == null)
+            return false;
+        if (other.getFileFormat() != null && other.getFileFormat().equals(this.getFileFormat()) == false)
+            return false;
         return true;
     }
 
@@ -603,6 +674,7 @@ public class DescribeFaqResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getFileFormat() == null) ? 0 : getFileFormat().hashCode());
         return hashCode;
     }
 

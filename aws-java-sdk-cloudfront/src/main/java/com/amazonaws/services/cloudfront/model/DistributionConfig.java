@@ -168,8 +168,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      */
     private String priceClass;
@@ -1100,8 +1099,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1120,7 +1118,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1144,8 +1141,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @return The price class that corresponds with the maximum price that you want to pay for CloudFront service. If
@@ -1163,7 +1159,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      *         Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *         information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *         CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
-     *         Pricing</a>. For price class information, scroll down to see the table at the bottom of the page.
+     *         Pricing</a>.
      * @see PriceClass
      */
 
@@ -1187,8 +1183,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1207,7 +1202,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */
@@ -1233,8 +1227,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1253,7 +1246,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @see PriceClass
      */
 
@@ -1277,8 +1269,7 @@ public class DistributionConfig implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PriceClass.html">Choosing the Price
      * Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For information about
      * CloudFront pricing, including how price classes (such as Price Class 100) map to CloudFront regions, see <a
-     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>. For price class information,
-     * scroll down to see the table at the bottom of the page.
+     * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
      * </p>
      * 
      * @param priceClass
@@ -1297,7 +1288,6 @@ public class DistributionConfig implements Serializable, Cloneable {
      *        Price Class for a CloudFront Distribution</a> in the <i>Amazon CloudFront Developer Guide</i>. For
      *        information about CloudFront pricing, including how price classes (such as Price Class 100) map to
      *        CloudFront regions, see <a href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront Pricing</a>.
-     *        For price class information, scroll down to see the table at the bottom of the page.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PriceClass
      */

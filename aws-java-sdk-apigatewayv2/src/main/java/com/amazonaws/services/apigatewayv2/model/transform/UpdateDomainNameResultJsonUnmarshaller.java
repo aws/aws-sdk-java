@@ -63,6 +63,10 @@ public class UpdateDomainNameResultJsonUnmarshaller implements Unmarshaller<Upda
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("mutualTlsAuthentication", targetDepth)) {
+                    context.nextToken();
+                    updateDomainNameResult.setMutualTlsAuthentication(MutualTlsAuthenticationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     updateDomainNameResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

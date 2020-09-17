@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.863</version>
+    <version>1.11.864</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -2391,13 +2391,15 @@
                           </groups>
                           <header>
                   <![CDATA[
+                  <!-- This should be the first script -->
+                  <script type="text/javascript" src="/assets/js/awsdocs-boot.js"></script>
+
                   <!-- Scripts for Syntax Highlighter START-->
                   <script id="syntaxhighlight_script_core" type="text/javascript" src = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shCore.js">
                   </script>
                   <script id="syntaxhighlight_script_java" type="text/javascript" src = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/scripts/shBrushJava.js">
                   </script>
                   <!-- Script for GDPR highlighting -->
-                  <script type="text/javascript" src="https://docs.aws.amazon.com/assets/js/awsdocs-boot.js" defer></script>
                   <link id="syntaxhighlight_css_core" rel="stylesheet" type="text/css" href = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shCoreDefault.css"/>
                   <link id="syntaxhighlight_css_theme" rel="stylesheet" type="text/css" href = "https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/resources/syntaxhighlight/styles/shThemeDefault.css"/>
                   <!-- Scripts for Syntax Highlighter END-->
@@ -2478,24 +2480,8 @@
                           });
                           &lt;/script>
 
-                          &lt;script type="text/javascript" src="https://a0.awsstatic.com/s_code/js/2.0/awshome_s_code.js" />
-                      &lt;script type="text/javascript">
-                      s.prop66='AWS SDK for Java';
-                      s.eVar66='D=c66';
-                      s.prop65='API Reference';
-                      s.eVar65='D=c65';
-                      var s_code=s.t();
-                      if (s_code) document.write(s_code);
-                      &lt;/script>
-                      &lt;script language="JavaScript" type="text/javascript">
-                      &lt;!--if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
-                      //-->
-                      &lt;/script>
-                      &lt;noscript>
-                      &lt;img src="https://amazonwebservices.d2.sc.omtrdc.net/b/ss/awsamazondev/1/H.25.2--NS/0" height="1" width="1" border="0" alt="" />
-                  &lt;/noscript>
-                  &lt;!--/DO NOT REMOVE/-->
-                  &lt;!-- End SiteCatalyst code version: H.25.2. -->
+                          &lt;meta name="guide-name" content="API Reference"> <!-- Documentation Guide Name for s.prop65 -->
+                          &lt;meta name="service-name" content="AWS SDK for Java"> <!-- Documentation Service Name for s.prop66 -->
                           </footer>
                           <bottom><![CDATA[<span id="awsdocs-legal-zone-copyright"></span>]]></bottom>
                        </configuration>

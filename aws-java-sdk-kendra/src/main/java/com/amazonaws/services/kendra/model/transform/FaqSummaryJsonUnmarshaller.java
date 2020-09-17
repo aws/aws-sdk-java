@@ -68,6 +68,10 @@ public class FaqSummaryJsonUnmarshaller implements Unmarshaller<FaqSummary, Json
                     context.nextToken();
                     faqSummary.setUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("FileFormat", targetDepth)) {
+                    context.nextToken();
+                    faqSummary.setFileFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

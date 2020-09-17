@@ -554,6 +554,28 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets the properties associated with a PII entities detection job. For example, you can use this operation to get
+     * the job status.
+     * </p>
+     * 
+     * @param describePiiEntitiesDetectionJobRequest
+     * @return Result of the DescribePiiEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DescribePiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePiiEntitiesDetectionJobResult describePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest describePiiEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
      * Gets the properties associated with a sentiment detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -669,6 +691,32 @@ public interface AmazonComprehend {
      *      API Documentation</a>
      */
     DetectKeyPhrasesResult detectKeyPhrases(DetectKeyPhrasesRequest detectKeyPhrasesRequest);
+
+    /**
+     * <p>
+     * Inspects the input text for entities that contain personally identifiable information (PII) and returns
+     * information about them.
+     * </p>
+     * 
+     * @param detectPiiEntitiesRequest
+     * @return Result of the DetectPiiEntities operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TextSizeLimitExceededException
+     *         The size of the input text exceeds the limit. Use a smaller document.
+     * @throws UnsupportedLanguageException
+     *         Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs
+     *         (such as <code>CreateEntityRecognizer</code>), only English, Spanish, French, Italian, German, or
+     *         Portuguese are accepted. For most other APIs, such as those for Custom Classification, Amazon Comprehend
+     *         accepts text in all supported languages. For a list of supported languages, see
+     *         <a>supported-languages</a>.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.DetectPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DetectPiiEntitiesResult detectPiiEntities(DetectPiiEntitiesRequest detectPiiEntitiesRequest);
 
     /**
      * <p>
@@ -874,6 +922,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the PII entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listPiiEntitiesDetectionJobsRequest
+     * @return Result of the ListPiiEntitiesDetectionJobs operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws InvalidFilterException
+     *         The filter specified for the operation is invalid. Specify a different filter.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.ListPiiEntitiesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPiiEntitiesDetectionJobsResult listPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest listPiiEntitiesDetectionJobsRequest);
+
+    /**
+     * <p>
      * Gets a list of sentiment detection jobs that you have submitted.
      * </p>
      * 
@@ -1035,6 +1104,27 @@ public interface AmazonComprehend {
 
     /**
      * <p>
+     * Starts an asynchronous PII entity detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startPiiEntitiesDetectionJobRequest
+     * @return Result of the StartPiiEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws KmsKeyValidationException
+     *         The KMS customer managed key (CMK) entered cannot be validated. Verify the key and re-enter it.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StartPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartPiiEntitiesDetectionJobResult startPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest startPiiEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
      * Starts an asynchronous sentiment detection job for a collection of documents. use the operation to track the
      * status of a job.
      * </p>
@@ -1169,6 +1259,25 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StopKeyPhrasesDetectionJobResult stopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest stopKeyPhrasesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a PII entities detection job in progress.
+     * </p>
+     * 
+     * @param stopPiiEntitiesDetectionJobRequest
+     * @return Result of the StopPiiEntitiesDetectionJob operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws JobNotFoundException
+     *         The specified job was not found. Check the job ID and try again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopPiiEntitiesDetectionJobResult stopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest stopPiiEntitiesDetectionJobRequest);
 
     /**
      * <p>

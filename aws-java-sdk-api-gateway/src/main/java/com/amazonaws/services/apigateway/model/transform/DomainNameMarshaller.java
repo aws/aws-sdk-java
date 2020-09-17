@@ -59,6 +59,8 @@ public class DomainNameMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityPolicy").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> MUTUALTLSAUTHENTICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mutualTlsAuthentication").build();
 
     private static final DomainNameMarshaller instance = new DomainNameMarshaller();
 
@@ -91,6 +93,7 @@ public class DomainNameMarshaller {
             protocolMarshaller.marshall(domainName.getDomainNameStatusMessage(), DOMAINNAMESTATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(domainName.getSecurityPolicy(), SECURITYPOLICY_BINDING);
             protocolMarshaller.marshall(domainName.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(domainName.getMutualTlsAuthentication(), MUTUALTLSAUTHENTICATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

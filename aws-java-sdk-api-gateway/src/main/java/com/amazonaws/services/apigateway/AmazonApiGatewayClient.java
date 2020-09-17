@@ -3362,6 +3362,8 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
      * @throws BadRequestException
      *         The submitted request is not valid, for example, the input is incomplete or incorrect. See the
      *         accompanying error message for details.
+     * @throws NotFoundException
+     *         The requested resource is not found. Make sure that the request URI is correct.
      * @throws UnauthorizedException
      *         The request is denied because the caller has insufficient permissions.
      * @throws TooManyRequestsException

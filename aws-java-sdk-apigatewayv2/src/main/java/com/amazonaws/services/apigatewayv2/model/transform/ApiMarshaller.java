@@ -45,6 +45,8 @@ public class ApiMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Boolean> DISABLESCHEMAVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableSchemaValidation").build();
+    private static final MarshallingInfo<Boolean> DISABLEEXECUTEAPIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableExecuteApiEndpoint").build();
     private static final MarshallingInfo<List> IMPORTINFO_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("importInfo").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -84,6 +86,7 @@ public class ApiMarshaller {
             protocolMarshaller.marshall(api.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(api.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(api.getDisableSchemaValidation(), DISABLESCHEMAVALIDATION_BINDING);
+            protocolMarshaller.marshall(api.getDisableExecuteApiEndpoint(), DISABLEEXECUTEAPIENDPOINT_BINDING);
             protocolMarshaller.marshall(api.getImportInfo(), IMPORTINFO_BINDING);
             protocolMarshaller.marshall(api.getName(), NAME_BINDING);
             protocolMarshaller.marshall(api.getProtocolType(), PROTOCOLTYPE_BINDING);

@@ -72,6 +72,14 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private Boolean disableSchemaValidation;
     /**
      * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     */
+    private Boolean disableExecuteApiEndpoint;
+    /**
+     * <p>
      * The validation information during API import. This may include particular properties of your OpenAPI definition
      * which are ignored during import. Supported only for HTTP APIs.
      * </p>
@@ -484,6 +492,76 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     public Boolean isDisableSchemaValidation() {
         return this.disableSchemaValidation;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *        clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint.
+     *        To require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     */
+
+    public void setDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        this.disableExecuteApiEndpoint = disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *         clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean getDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *        clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint.
+     *        To require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImportApiResult withDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        setDisableExecuteApiEndpoint(disableExecuteApiEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *         clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean isDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
     }
 
     /**
@@ -921,6 +999,8 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisableSchemaValidation() != null)
             sb.append("DisableSchemaValidation: ").append(getDisableSchemaValidation()).append(",");
+        if (getDisableExecuteApiEndpoint() != null)
+            sb.append("DisableExecuteApiEndpoint: ").append(getDisableExecuteApiEndpoint()).append(",");
         if (getImportInfo() != null)
             sb.append("ImportInfo: ").append(getImportInfo()).append(",");
         if (getName() != null)
@@ -981,6 +1061,10 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
             return false;
         if (other.getDisableSchemaValidation() != null && other.getDisableSchemaValidation().equals(this.getDisableSchemaValidation()) == false)
             return false;
+        if (other.getDisableExecuteApiEndpoint() == null ^ this.getDisableExecuteApiEndpoint() == null)
+            return false;
+        if (other.getDisableExecuteApiEndpoint() != null && other.getDisableExecuteApiEndpoint().equals(this.getDisableExecuteApiEndpoint()) == false)
+            return false;
         if (other.getImportInfo() == null ^ this.getImportInfo() == null)
             return false;
         if (other.getImportInfo() != null && other.getImportInfo().equals(this.getImportInfo()) == false)
@@ -1025,6 +1109,7 @@ public class ImportApiResult extends com.amazonaws.AmazonWebServiceResult<com.am
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisableSchemaValidation() == null) ? 0 : getDisableSchemaValidation().hashCode());
+        hashCode = prime * hashCode + ((getDisableExecuteApiEndpoint() == null) ? 0 : getDisableExecuteApiEndpoint().hashCode());
         hashCode = prime * hashCode + ((getImportInfo() == null) ? 0 : getImportInfo().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getProtocolType() == null) ? 0 : getProtocolType().hashCode());

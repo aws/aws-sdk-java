@@ -37,6 +37,12 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<DomainNameConfiguration> domainNameConfigurations;
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     */
+    private MutualTlsAuthenticationInput mutualTlsAuthentication;
 
     /**
      * <p>
@@ -149,6 +155,46 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name.
+     */
+
+    public void setMutualTlsAuthentication(MutualTlsAuthenticationInput mutualTlsAuthentication) {
+        this.mutualTlsAuthentication = mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @return The mutual TLS authentication configuration for a custom domain name.
+     */
+
+    public MutualTlsAuthenticationInput getMutualTlsAuthentication() {
+        return this.mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainNameRequest withMutualTlsAuthentication(MutualTlsAuthenticationInput mutualTlsAuthentication) {
+        setMutualTlsAuthentication(mutualTlsAuthentication);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +209,9 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDomainNameConfigurations() != null)
-            sb.append("DomainNameConfigurations: ").append(getDomainNameConfigurations());
+            sb.append("DomainNameConfigurations: ").append(getDomainNameConfigurations()).append(",");
+        if (getMutualTlsAuthentication() != null)
+            sb.append("MutualTlsAuthentication: ").append(getMutualTlsAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +234,10 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDomainNameConfigurations() != null && other.getDomainNameConfigurations().equals(this.getDomainNameConfigurations()) == false)
             return false;
+        if (other.getMutualTlsAuthentication() == null ^ this.getMutualTlsAuthentication() == null)
+            return false;
+        if (other.getMutualTlsAuthentication() != null && other.getMutualTlsAuthentication().equals(this.getMutualTlsAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +248,7 @@ public class UpdateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getDomainNameConfigurations() == null) ? 0 : getDomainNameConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getMutualTlsAuthentication() == null) ? 0 : getMutualTlsAuthentication().hashCode());
         return hashCode;
     }
 

@@ -123,6 +123,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public DescribePiiEntitiesDetectionJobResult describePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSentimentDetectionJobResult describeSentimentDetectionJob(DescribeSentimentDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +149,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public DetectKeyPhrasesResult detectKeyPhrases(DetectKeyPhrasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetectPiiEntitiesResult detectPiiEntities(DetectPiiEntitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +203,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ListPiiEntitiesDetectionJobsResult listPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSentimentDetectionJobsResult listSentimentDetectionJobs(ListSentimentDetectionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -228,6 +243,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public StartPiiEntitiesDetectionJobResult startPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartSentimentDetectionJobResult startSentimentDetectionJob(StartSentimentDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -249,6 +269,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public StopKeyPhrasesDetectionJobResult stopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopPiiEntitiesDetectionJobResult stopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

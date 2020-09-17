@@ -38,6 +38,12 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
     private java.util.List<DomainNameConfiguration> domainNameConfigurations;
     /**
      * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     */
+    private MutualTlsAuthentication mutualTlsAuthentication;
+    /**
+     * <p>
      * The collection of tags associated with a domain name.
      * </p>
      */
@@ -195,6 +201,46 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name.
+     */
+
+    public void setMutualTlsAuthentication(MutualTlsAuthentication mutualTlsAuthentication) {
+        this.mutualTlsAuthentication = mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @return The mutual TLS authentication configuration for a custom domain name.
+     */
+
+    public MutualTlsAuthentication getMutualTlsAuthentication() {
+        return this.mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDomainNameResult withMutualTlsAuthentication(MutualTlsAuthentication mutualTlsAuthentication) {
+        setMutualTlsAuthentication(mutualTlsAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
      * The collection of tags associated with a domain name.
      * </p>
      * 
@@ -279,6 +325,8 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDomainNameConfigurations() != null)
             sb.append("DomainNameConfigurations: ").append(getDomainNameConfigurations()).append(",");
+        if (getMutualTlsAuthentication() != null)
+            sb.append("MutualTlsAuthentication: ").append(getMutualTlsAuthentication()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -308,6 +356,10 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getDomainNameConfigurations() != null && other.getDomainNameConfigurations().equals(this.getDomainNameConfigurations()) == false)
             return false;
+        if (other.getMutualTlsAuthentication() == null ^ this.getMutualTlsAuthentication() == null)
+            return false;
+        if (other.getMutualTlsAuthentication() != null && other.getMutualTlsAuthentication().equals(this.getMutualTlsAuthentication()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -323,6 +375,7 @@ public class GetDomainNameResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getApiMappingSelectionExpression() == null) ? 0 : getApiMappingSelectionExpression().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getDomainNameConfigurations() == null) ? 0 : getDomainNameConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getMutualTlsAuthentication() == null) ? 0 : getMutualTlsAuthentication().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -45939,7 +45939,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> </ul> </p>",
+      "documentation" : "<p>Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li> </ul> </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
         "name" : "INDEX_SLOW_LOGS",
@@ -45950,6 +45950,9 @@
       }, {
         "name" : "ES_APPLICATION_LOGS",
         "value" : "ES_APPLICATION_LOGS"
+      }, {
+        "name" : "AUDIT_LOGS",
+        "value" : "AUDIT_LOGS"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.elasticsearch.enum.LogType",

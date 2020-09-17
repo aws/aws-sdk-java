@@ -40,6 +40,8 @@ public class CreateFaqRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> FILEFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FileFormat").build();
 
     private static final CreateFaqRequestMarshaller instance = new CreateFaqRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateFaqRequestMarshaller {
             protocolMarshaller.marshall(createFaqRequest.getS3Path(), S3PATH_BINDING);
             protocolMarshaller.marshall(createFaqRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createFaqRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFaqRequest.getFileFormat(), FILEFORMAT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

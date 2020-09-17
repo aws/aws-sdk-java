@@ -144,6 +144,13 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way
+     * authentication between the client and the server. Clients must present a trusted certificate to access your API.
+     * </p>
+     */
+    private MutualTlsAuthentication mutualTlsAuthentication;
 
     /**
      * <p>
@@ -941,6 +948,55 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way
+     * authentication between the client and the server. Clients must present a trusted certificate to access your API.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs
+     *        two-way authentication between the client and the server. Clients must present a trusted certificate to
+     *        access your API.
+     */
+
+    public void setMutualTlsAuthentication(MutualTlsAuthentication mutualTlsAuthentication) {
+        this.mutualTlsAuthentication = mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way
+     * authentication between the client and the server. Clients must present a trusted certificate to access your API.
+     * </p>
+     * 
+     * @return The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs
+     *         two-way authentication between the client and the server. Clients must present a trusted certificate to
+     *         access your API.
+     */
+
+    public MutualTlsAuthentication getMutualTlsAuthentication() {
+        return this.mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way
+     * authentication between the client and the server. Clients must present a trusted certificate to access your API.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs
+     *        two-way authentication between the client and the server. Clients must present a trusted certificate to
+     *        access your API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainNameResult withMutualTlsAuthentication(MutualTlsAuthentication mutualTlsAuthentication) {
+        setMutualTlsAuthentication(mutualTlsAuthentication);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -981,7 +1037,9 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
         if (getSecurityPolicy() != null)
             sb.append("SecurityPolicy: ").append(getSecurityPolicy()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getMutualTlsAuthentication() != null)
+            sb.append("MutualTlsAuthentication: ").append(getMutualTlsAuthentication());
         sb.append("}");
         return sb.toString();
     }
@@ -1056,6 +1114,10 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getMutualTlsAuthentication() == null ^ this.getMutualTlsAuthentication() == null)
+            return false;
+        if (other.getMutualTlsAuthentication() != null && other.getMutualTlsAuthentication().equals(this.getMutualTlsAuthentication()) == false)
+            return false;
         return true;
     }
 
@@ -1079,6 +1141,7 @@ public class UpdateDomainNameResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getDomainNameStatusMessage() == null) ? 0 : getDomainNameStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getSecurityPolicy() == null) ? 0 : getSecurityPolicy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMutualTlsAuthentication() == null) ? 0 : getMutualTlsAuthentication().hashCode());
         return hashCode;
     }
 
