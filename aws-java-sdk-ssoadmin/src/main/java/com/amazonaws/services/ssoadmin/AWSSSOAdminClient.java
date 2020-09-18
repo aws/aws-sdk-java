@@ -147,6 +147,13 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
      * <p>
      * Attaches an IAM managed policy ARN to a permission set.
      * </p>
+     * <note>
+     * <p>
+     * If the permission set is already referenced by one or more account assignments, you will need to call
+     * <code> <a>ProvisionPermissionSet</a> </code> after this action to apply the corresponding IAM policy updates to
+     * all assigned accounts.
+     * </p>
+     * </note>
      * 
      * @param attachManagedPolicyToPermissionSetRequest
      * @return Result of the AttachManagedPolicyToPermissionSet operation returned by the service.
@@ -224,6 +231,14 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
      * <p>
      * The term <i>principal</i> here refers to a user or group that is defined in AWS SSO.
      * </p>
+     * </note> <note>
+     * <p>
+     * As part of a successful <code>CreateAccountAssignment</code> call, the specified permission set will
+     * automatically be provisioned to the account in the form of an IAM policy attached to the SSO-created IAM role. If
+     * the permission set is subsequently updated, the corresponding IAM policies attached to roles in your accounts
+     * will not be updated automatically. In this case, you will need to call
+     * <code> <a>ProvisionPermissionSet</a> </code> to make these updates.
+     * </p>
      * </note>
      * 
      * @param createAccountAssignmentRequest
@@ -297,6 +312,11 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
      * <p>
      * Creates a permission set within a specified SSO instance.
      * </p>
+     * <note>
+     * <p>
+     * To grant users and groups access to AWS account resources, use <code> <a>CreateAccountAssignment</a> </code>.
+     * </p>
+     * </note>
      * 
      * @param createPermissionSetRequest
      * @return Result of the CreatePermissionSet operation returned by the service.
@@ -1710,6 +1730,13 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
      * <p>
      * Attaches an IAM inline policy to a permission set.
      * </p>
+     * <note>
+     * <p>
+     * If the permission set is already referenced by one or more account assignments, you will need to call
+     * <code> <a>ProvisionPermissionSet</a> </code> after this action to apply the corresponding IAM policy updates to
+     * all assigned accounts.
+     * </p>
+     * </note>
      * 
      * @param putInlinePolicyToPermissionSetRequest
      * @return Result of the PutInlinePolicyToPermissionSet operation returned by the service.

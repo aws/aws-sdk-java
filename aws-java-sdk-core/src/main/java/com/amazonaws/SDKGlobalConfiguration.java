@@ -71,6 +71,13 @@ public class SDKGlobalConfiguration {
         "com.amazonaws.sdk.ec2MetadataServiceEndpointOverride";
 
     /**
+     * Environment variable for overriding the Amazon EC2 Instance Metadata Service
+     * endpoint.
+     */
+    public static final String EC2_METADATA_SERVICE_OVERRIDE_ENV_VAR =
+        "AWS_EC2_METADATA_SERVICE_ENDPOINT";
+
+    /**
      * System property for enabling retry throttling.
      * <p>
      * Retry throttling is a feature which intelligently throttles retry attempts when a

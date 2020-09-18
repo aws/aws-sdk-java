@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -8781,6 +8781,9 @@
       "enums" : [ {
         "name" : "Bitbucket",
         "value" : "Bitbucket"
+      }, {
+        "name" : "GitHub",
+        "value" : "GitHub"
       }, {
         "name" : "GitHubEnterpriseServer",
         "value" : "GitHubEnterpriseServer"

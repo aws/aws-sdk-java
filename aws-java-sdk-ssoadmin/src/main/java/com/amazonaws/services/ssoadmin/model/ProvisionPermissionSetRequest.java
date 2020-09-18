@@ -41,7 +41,7 @@ public class ProvisionPermissionSetRequest extends com.amazonaws.AmazonWebServic
     private String permissionSetArn;
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      */
     private String targetId;
@@ -146,11 +146,11 @@ public class ProvisionPermissionSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        The identifier for the chosen target.
+     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      */
 
     public void setTargetId(String targetId) {
@@ -159,10 +159,10 @@ public class ProvisionPermissionSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
-     * @return The identifier for the chosen target.
+     * @return TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      */
 
     public String getTargetId() {
@@ -171,11 +171,11 @@ public class ProvisionPermissionSetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        The identifier for the chosen target.
+     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

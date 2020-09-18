@@ -29,6 +29,21 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public BatchDeleteResult batchDelete(BatchDeleteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchStartResult batchStart(BatchStartRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchStopResult batchStop(BatchStopRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

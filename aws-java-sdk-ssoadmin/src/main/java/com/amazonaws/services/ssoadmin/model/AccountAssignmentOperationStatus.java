@@ -49,7 +49,7 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
     private String failureReason;
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      */
     private String targetId;
@@ -75,7 +75,9 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
     private String principalType;
     /**
      * <p>
-     * The identifier of the principal.
+     * An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API Reference</a>.
      * </p>
      */
     private String principalId;
@@ -233,11 +235,11 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        The identifier for the chosen target.
+     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      */
 
     public void setTargetId(String targetId) {
@@ -246,10 +248,10 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
-     * @return The identifier for the chosen target.
+     * @return TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      */
 
     public String getTargetId() {
@@ -258,11 +260,11 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identifier for the chosen target.
+     * TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * </p>
      * 
      * @param targetId
-     *        The identifier for the chosen target.
+     *        TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -443,11 +445,16 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identifier of the principal.
+     * An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API Reference</a>.
      * </p>
      * 
      * @param principalId
-     *        The identifier of the principal.
+     *        An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     *        f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     *        href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API
+     *        Reference</a>.
      */
 
     public void setPrincipalId(String principalId) {
@@ -456,10 +463,15 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identifier of the principal.
+     * An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API Reference</a>.
      * </p>
      * 
-     * @return The identifier of the principal.
+     * @return An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     *         f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     *         href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API
+     *         Reference</a>.
      */
 
     public String getPrincipalId() {
@@ -468,11 +480,16 @@ public class AccountAssignmentOperationStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * The identifier of the principal.
+     * An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     * f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     * href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API Reference</a>.
      * </p>
      * 
      * @param principalId
-     *        The identifier of the principal.
+     *        An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example,
+     *        f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a
+     *        href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API
+     *        Reference</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

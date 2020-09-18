@@ -12,6 +12,156 @@
     "jsonVersion": "1.1"
   },
   "operations": {
+    "BatchDelete": {
+      "name": "BatchDelete",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/batch/delete",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchDeleteRequest"
+      },
+      "output": {
+        "shape": "BatchDeleteResponse",
+        "documentation": "Delete was successfully initiated."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to delete the resources."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resources you're requesting to delete do not exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on delete resources calls."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The resources are unable to delete."
+        }
+      ],
+      "documentation": "Starts delete of resources."
+    },
+    "BatchStart": {
+      "name": "BatchStart",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/batch/start",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchStartRequest"
+      },
+      "output": {
+        "shape": "BatchStartResponse",
+        "documentation": "Successfully initiated start of resources."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to start the resources."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resources you're requesting to start do not exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on start resources calls to resource service."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The resources are unable to start."
+        }
+      ],
+      "documentation": "Starts existing resources"
+    },
+    "BatchStop": {
+      "name": "BatchStop",
+      "http": {
+        "method": "POST",
+        "requestUri": "/prod/batch/stop",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "BatchStopRequest"
+      },
+      "output": {
+        "shape": "BatchStopResponse",
+        "documentation": "Successfully initiated stop of the resources."
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "This request was invalid."
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "Unexpected internal service error."
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "You do not have permission to stop the resources."
+        },
+        {
+          "shape": "BadGatewayException",
+          "documentation": "Bad Gateway Error"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "The resources you're requesting to stop do not exist."
+        },
+        {
+          "shape": "GatewayTimeoutException",
+          "documentation": "Gateway Timeout Error"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "Request limit exceeded on stop resources."
+        },
+        {
+          "shape": "ConflictException",
+          "documentation": "The resources are unable to stop."
+        }
+      ],
+      "documentation": "Stops running resources"
+    },
     "BatchUpdateSchedule": {
       "name": "BatchUpdateSchedule",
       "http": {
@@ -2884,6 +3034,116 @@
       },
       "documentation": "Placeholder documentation for BadRequestException"
     },
+    "BatchDelete": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "InputIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputIds",
+          "documentation": "List of input IDs"
+        },
+        "InputSecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputSecurityGroupIds",
+          "documentation": "List of input security group IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "Batch delete resource request"
+    },
+    "BatchDeleteRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "InputIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputIds",
+          "documentation": "List of input IDs"
+        },
+        "InputSecurityGroupIds": {
+          "shape": "__listOf__string",
+          "locationName": "inputSecurityGroupIds",
+          "documentation": "List of input security group IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "A request to delete resources"
+    },
+    "BatchDeleteResponse": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Placeholder documentation for BatchDeleteResponse"
+    },
+    "BatchDeleteResultModel": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Batch delete resource results"
+    },
+    "BatchFailedResultModel": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "locationName": "arn",
+          "documentation": "ARN of the resource"
+        },
+        "Code": {
+          "shape": "__string",
+          "locationName": "code",
+          "documentation": "Error code for the failed operation"
+        },
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "ID of the resource"
+        },
+        "Message": {
+          "shape": "__string",
+          "locationName": "message",
+          "documentation": "Error message for the failed operation"
+        }
+      },
+      "documentation": "Details from a failed operation"
+    },
     "BatchScheduleActionCreateRequest": {
       "type": "structure",
       "members": {
@@ -2939,6 +3199,155 @@
       "required": [
         "ScheduleActions"
       ]
+    },
+    "BatchStart": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "Batch start resource request"
+    },
+    "BatchStartRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "A request to start resources"
+    },
+    "BatchStartResponse": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Placeholder documentation for BatchStartResponse"
+    },
+    "BatchStartResultModel": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Batch start resource results"
+    },
+    "BatchStop": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "Batch stop resource request"
+    },
+    "BatchStopRequest": {
+      "type": "structure",
+      "members": {
+        "ChannelIds": {
+          "shape": "__listOf__string",
+          "locationName": "channelIds",
+          "documentation": "List of channel IDs"
+        },
+        "MultiplexIds": {
+          "shape": "__listOf__string",
+          "locationName": "multiplexIds",
+          "documentation": "List of multiplex IDs"
+        }
+      },
+      "documentation": "A request to stop resources"
+    },
+    "BatchStopResponse": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Placeholder documentation for BatchStopResponse"
+    },
+    "BatchStopResultModel": {
+      "type": "structure",
+      "members": {
+        "Failed": {
+          "shape": "__listOfBatchFailedResultModel",
+          "locationName": "failed",
+          "documentation": "List of failed operations"
+        },
+        "Successful": {
+          "shape": "__listOfBatchSuccessfulResultModel",
+          "locationName": "successful",
+          "documentation": "List of successful operations"
+        }
+      },
+      "documentation": "Batch stop resource results"
+    },
+    "BatchSuccessfulResultModel": {
+      "type": "structure",
+      "members": {
+        "Arn": {
+          "shape": "__string",
+          "locationName": "arn",
+          "documentation": "ARN of the resource"
+        },
+        "Id": {
+          "shape": "__string",
+          "locationName": "id",
+          "documentation": "ID of the resource"
+        },
+        "State": {
+          "shape": "__string",
+          "locationName": "state",
+          "documentation": "Current state of the resource"
+        }
+      },
+      "documentation": "Details from a successful operation"
     },
     "BatchUpdateScheduleRequest": {
       "type": "structure",
@@ -12395,8 +12804,7 @@
       "members": {
         "Message": {
           "shape": "__string",
-          "locationName": "message",
-          "documentation": "The error message."
+          "locationName": "message"
         },
         "ValidationErrors": {
           "shape": "__listOfValidationError",
@@ -13471,6 +13879,12 @@
       "max": 1000,
       "documentation": "Placeholder documentation for __integerMinNegative1000Max1000"
     },
+    "__integerMinNegative5Max5": {
+      "type": "integer",
+      "min": -5,
+      "max": 5,
+      "documentation": "Placeholder documentation for __integerMinNegative5Max5"
+    },
     "__integerMinNegative60Max6": {
       "type": "integer",
       "min": -60,
@@ -13510,6 +13924,20 @@
         "shape": "AudioTrack"
       },
       "documentation": "Placeholder documentation for __listOfAudioTrack"
+    },
+    "__listOfBatchFailedResultModel": {
+      "type": "list",
+      "member": {
+        "shape": "BatchFailedResultModel"
+      },
+      "documentation": "Placeholder documentation for __listOfBatchFailedResultModel"
+    },
+    "__listOfBatchSuccessfulResultModel": {
+      "type": "list",
+      "member": {
+        "shape": "BatchSuccessfulResultModel"
+      },
+      "documentation": "Placeholder documentation for __listOfBatchSuccessfulResultModel"
     },
     "__listOfCaptionDescription": {
       "type": "list",

@@ -21,6 +21,7 @@ import javax.annotation.Generated;
 public enum ProviderType {
 
     Bitbucket("Bitbucket"),
+    GitHub("GitHub"),
     GitHubEnterpriseServer("GitHubEnterpriseServer");
 
     private String value;

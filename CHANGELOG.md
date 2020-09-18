@@ -1,3 +1,20 @@
+# __1.11.865__ __2020-09-18__
+## __AWS CodeStar connections__
+  - ### Features
+    - New integration with the GitHub provider type.
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports batch operations, which allow users to start, stop, and delete multiple MediaLive resources with a single request.
+
+## __AWS SDK for Java__
+  - ### Features
+    - The EC2 instance metadata endpoint can now be overridden using the 'AWS_EC2_METADATA_SERVICE_ENDPOINT' environment variable. This environment variable behaves exactly like the existing 'com.amazonaws.sdk.ec2MetadataServiceEndpointOverride' system property.
+
+## __AWS Single Sign-On Admin__
+  - ### Features
+    - Documentation updates for AWS SSO APIs.
+
 # __1.11.864__ __2020-09-17__
 ## __AWSKendraFrontendService__
   - ### Features

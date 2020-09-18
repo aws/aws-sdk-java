@@ -15,6 +15,7 @@
 package com.amazonaws.util;
 
 import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY;
+import static com.amazonaws.SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_ENV_VAR;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.SDKGlobalConfiguration;
@@ -430,6 +431,9 @@ public class EC2MetadataUtils {
      */
     public static String getHostAddressForEC2MetadataService() {
         String host = System.getProperty(EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY);
+        if (host == null) {
+            host = System.getenv(EC2_METADATA_SERVICE_OVERRIDE_ENV_VAR);
+        }
         return host != null ? host : EC2_METADATA_SERVICE_URL;
     }
 

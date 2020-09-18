@@ -72,6 +72,105 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest request) {
+
+        return batchDeleteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(final BatchDeleteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteRequest, BatchDeleteResult> asyncHandler) {
+        final BatchDeleteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteResult>() {
+            @Override
+            public BatchDeleteResult call() throws Exception {
+                BatchDeleteResult result = null;
+
+                try {
+                    result = executeBatchDelete(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest request) {
+
+        return batchStartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartResult> batchStartAsync(final BatchStartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStartRequest, BatchStartResult> asyncHandler) {
+        final BatchStartRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStartResult>() {
+            @Override
+            public BatchStartResult call() throws Exception {
+                BatchStartResult result = null;
+
+                try {
+                    result = executeBatchStart(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest request) {
+
+        return batchStopAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopResult> batchStopAsync(final BatchStopRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStopRequest, BatchStopResult> asyncHandler) {
+        final BatchStopRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStopResult>() {
+            @Override
+            public BatchStopResult call() throws Exception {
+                BatchStopResult result = null;
+
+                try {
+                    result = executeBatchStop(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchUpdateScheduleResult> batchUpdateScheduleAsync(BatchUpdateScheduleRequest request) {
 
         return batchUpdateScheduleAsync(request, null);

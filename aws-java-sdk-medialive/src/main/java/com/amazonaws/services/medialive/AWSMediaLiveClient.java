@@ -154,6 +154,210 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @return Result of the BatchDelete operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to delete the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to delete do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete resources calls.
+     * @throws ConflictException
+     *         The resources are unable to delete.
+     * @sample AWSMediaLive.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchDeleteResult batchDelete(BatchDeleteRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDelete(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteResult executeBatchDelete(BatchDeleteRequest batchDeleteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteRequest> request = null;
+        Response<BatchDeleteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDelete");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeleteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @return Result of the BatchStart operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to start do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start resources calls to resource service.
+     * @throws ConflictException
+     *         The resources are unable to start.
+     * @sample AWSMediaLive.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchStartResult batchStart(BatchStartRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchStart(request);
+    }
+
+    @SdkInternalApi
+    final BatchStartResult executeBatchStart(BatchStartRequest batchStartRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchStartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchStartRequest> request = null;
+        Response<BatchStartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchStartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStart");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchStartResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchStartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @return Result of the BatchStop operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to stop the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to stop do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop resources.
+     * @throws ConflictException
+     *         The resources are unable to stop.
+     * @sample AWSMediaLive.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchStopResult batchStop(BatchStopRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchStop(request);
+    }
+
+    @SdkInternalApi
+    final BatchStopResult executeBatchStop(BatchStopRequest batchStopRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchStopRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchStopRequest> request = null;
+        Response<BatchStopResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchStopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStopRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStop");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchStopResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchStopResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Update a channel schedule
      * 
      * @param batchUpdateScheduleRequest

@@ -31,6 +31,93 @@ import com.amazonaws.services.medialive.model.*;
 public interface AWSMediaLiveAsync extends AWSMediaLive {
 
     /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @return A Java Future containing the result of the BatchDelete operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest batchDeleteRequest);
+
+    /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDelete operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest batchDeleteRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteRequest, BatchDeleteResult> asyncHandler);
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @return A Java Future containing the result of the BatchStart operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest batchStartRequest);
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchStart operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest batchStartRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchStartRequest, BatchStartResult> asyncHandler);
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @return A Java Future containing the result of the BatchStop operation returned by the service.
+     * @sample AWSMediaLiveAsync.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest batchStopRequest);
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchStop operation returned by the service.
+     * @sample AWSMediaLiveAsyncHandler.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest batchStopRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchStopRequest, BatchStopResult> asyncHandler);
+
+    /**
      * Update a channel schedule
      * 
      * @param batchUpdateScheduleRequest

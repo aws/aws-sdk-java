@@ -41,6 +41,90 @@ public interface AWSMediaLive {
     String ENDPOINT_PREFIX = "medialive";
 
     /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @return Result of the BatchDelete operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to delete the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to delete do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete resources calls.
+     * @throws ConflictException
+     *         The resources are unable to delete.
+     * @sample AWSMediaLive.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchDeleteResult batchDelete(BatchDeleteRequest batchDeleteRequest);
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @return Result of the BatchStart operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to start do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start resources calls to resource service.
+     * @throws ConflictException
+     *         The resources are unable to start.
+     * @sample AWSMediaLive.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchStartResult batchStart(BatchStartRequest batchStartRequest);
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @return Result of the BatchStop operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to stop the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to stop do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop resources.
+     * @throws ConflictException
+     *         The resources are unable to stop.
+     * @sample AWSMediaLive.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchStopResult batchStop(BatchStopRequest batchStopRequest);
+
+    /**
      * Update a channel schedule
      * 
      * @param batchUpdateScheduleRequest

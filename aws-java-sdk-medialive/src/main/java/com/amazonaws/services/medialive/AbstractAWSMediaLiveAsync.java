@@ -28,6 +28,45 @@ public class AbstractAWSMediaLiveAsync extends AbstractAWSMediaLive implements A
     }
 
     @Override
+    public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest request) {
+
+        return batchDeleteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteRequest, BatchDeleteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest request) {
+
+        return batchStartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchStartRequest, BatchStartResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest request) {
+
+        return batchStopAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchStopRequest, BatchStopResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchUpdateScheduleResult> batchUpdateScheduleAsync(BatchUpdateScheduleRequest request) {
 
         return batchUpdateScheduleAsync(request, null);
