@@ -102,6 +102,21 @@ public class TransferManagerConfiguration {
     private boolean disableParallelDownloads = false;
 
     /**
+     * Option to instruct Transfer Manager to calculate MD5 for multipart uploads.
+     * <p>
+     * For instance, if a bucket is enabled for Object Locking, put requests for
+     * objects and object parts must contain an MD5 digest. Since Transfer Manager
+     * operates on a whole object, the user cannot supply the MD5
+     * digest directly if multipart uploads are in effect.
+     *
+     * <p>
+     * Supplying any object locking parameter also instructs Transfer Manager
+     * to calculate MD5 for parts. This flag should be used in instances where
+     * they are not present.
+     */
+    private boolean alwaysCalculateMultipartMd5 = false;
+
+    /**
      * Returns the minimum part size for upload parts.
      * Decreasing the minimum part size causes
      * multipart uploads to be split into a larger number
@@ -292,4 +307,39 @@ public class TransferManagerConfiguration {
     public void setDisableParallelDownloads(boolean disableParallelDownloads) {
         this.disableParallelDownloads = disableParallelDownloads;
     }
+
+    /**
+     * Returns true if Transfer Manager should calculate MD5 for multipart uploads.
+     * <p>
+     * For instance, if a bucket is enabled for Object Locking, put requests for
+     * objects and object parts must contain an MD5 digest. Since Transfer Manager
+     * operates on a whole object, the user cannot supply the MD5
+     * digest directly if multipart uploads are in effect.
+     *
+     * <p>
+     * Supplying any object locking parameter also instructs Transfer Manager
+     * to calculate MD5 for parts. This flag should be used in instances where
+     * they are not present.
+     */
+    public boolean isAlwaysCalculateMultipartMd5() {
+        return alwaysCalculateMultipartMd5;
+    }
+
+    /**
+     * Set to true if Transfer Manager should calculate MD5 for multipart uploads.
+     * <p>
+     * For instance, if a bucket is enabled for Object Locking, put requests for
+     * objects and object parts must contain an MD5 digest. Since Transfer Manager
+     * operates on a whole object, the user cannot supply the MD5
+     * digest directly if multipart uploads are in effect.
+     *
+     * <p>
+     * Supplying any object locking parameter also instructs Transfer Manager
+     * to calculate MD5 for parts. This flag should be used in instances where
+     * they are not present.
+     */
+    public void setAlwaysCalculateMultipartMd5(boolean alwaysCalculateMultipartMd5) {
+        this.alwaysCalculateMultipartMd5 = alwaysCalculateMultipartMd5;
+    }
+
 }

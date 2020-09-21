@@ -88,6 +88,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelMLTaskRunResult cancelMLTaskRun(CancelMLTaskRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

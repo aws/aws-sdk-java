@@ -948,6 +948,69 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Updates one or more partitions in a batch operation.
+     * </p>
+     * 
+     * @param batchUpdatePartitionRequest
+     * @return Result of the BatchUpdatePartition operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.BatchUpdatePartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchUpdatePartition(request);
+    }
+
+    @SdkInternalApi
+    final BatchUpdatePartitionResult executeBatchUpdatePartition(BatchUpdatePartitionRequest batchUpdatePartitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchUpdatePartitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchUpdatePartitionRequest> request = null;
+        Response<BatchUpdatePartitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchUpdatePartitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdatePartitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdatePartition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchUpdatePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchUpdatePartitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that AWS Glue runs on your behalf
      * as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling
      * <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's

@@ -29,18 +29,18 @@ public class ModifyDBParameterGroupResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Provides the name of the DB parameter group.
+     * The name of the DB parameter group.
      * </p>
      */
     private String dBParameterGroupName;
 
     /**
      * <p>
-     * Provides the name of the DB parameter group.
+     * The name of the DB parameter group.
      * </p>
      * 
      * @param dBParameterGroupName
-     *        Provides the name of the DB parameter group.
+     *        The name of the DB parameter group.
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -49,10 +49,10 @@ public class ModifyDBParameterGroupResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Provides the name of the DB parameter group.
+     * The name of the DB parameter group.
      * </p>
      * 
-     * @return Provides the name of the DB parameter group.
+     * @return The name of the DB parameter group.
      */
 
     public String getDBParameterGroupName() {
@@ -61,11 +61,11 @@ public class ModifyDBParameterGroupResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Provides the name of the DB parameter group.
+     * The name of the DB parameter group.
      * </p>
      * 
      * @param dBParameterGroupName
-     *        Provides the name of the DB parameter group.
+     *        The name of the DB parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

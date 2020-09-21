@@ -229,6 +229,11 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/">AWS CodeGuru Profiler</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/codepipeline">AWS CodePipeline</a>
  * </p>
  * </li>
@@ -354,6 +359,11 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/elastic-inference">Amazon Elastic Inference</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/elasticache">Amazon ElastiCache</a>
  * </p>
  * </li>
@@ -399,6 +409,16 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/forecast">Amazon Forecast</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/frauddetector">Amazon Fraud Detector</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/fsx">Amazon FSx</a>
  * </p>
  * </li>
@@ -430,6 +450,11 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/inspector">Amazon Inspector</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/ivs">Amazon Interactive Video Service</a>
  * </p>
  * </li>
  * <li>
@@ -521,6 +546,11 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/lightsail">Amazon Lightsail</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/macie">Amazon Macie</a>
  * </p>
  * </li>
@@ -541,7 +571,17 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
+ * <a href="https://docs.aws.amazon.com/msk">Amazon MSK</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a href="https://docs.aws.amazon.com/neptune">Amazon Neptune</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="https://docs.aws.amazon.com/vpc/latest/tgw/what-is-network-manager.html">AWS Network Manager</a>
  * </p>
  * </li>
  * <li>
@@ -681,7 +721,7 @@ import java.util.concurrent.ExecutorService;
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/waf">AWS WAFv2</a>
+ * <a href="https://docs.aws.amazon.com/waf">AWS WAF</a>
  * </p>
  * </li>
  * <li>

@@ -413,6 +413,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(CreatePresignedPortalUrlRequest request) {
+
+        return createPresignedPortalUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePresignedPortalUrlResult> createPresignedPortalUrlAsync(final CreatePresignedPortalUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePresignedPortalUrlRequest, CreatePresignedPortalUrlResult> asyncHandler) {
+        final CreatePresignedPortalUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePresignedPortalUrlResult>() {
+            @Override
+            public CreatePresignedPortalUrlResult call() throws Exception {
+                CreatePresignedPortalUrlResult result = null;
+
+                try {
+                    result = executeCreatePresignedPortalUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateProjectResult> createProjectAsync(CreateProjectRequest request) {
 
         return createProjectAsync(request, null);

@@ -33,14 +33,13 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
     private String accessPolicyId;
     /**
      * <p>
-     * The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not both.
+     * The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      * </p>
      */
     private Identity accessPolicyIdentity;
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     * <code>project</code> but not both.
+     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      * </p>
      */
     private Resource accessPolicyResource;
@@ -101,12 +100,11 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not both.
+     * The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not
-     *        both.
+     *        The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      */
 
     public void setAccessPolicyIdentity(Identity accessPolicyIdentity) {
@@ -115,11 +113,10 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not both.
+     * The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      * </p>
      * 
-     * @return The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not
-     *         both.
+     * @return The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      */
 
     public Identity getAccessPolicyIdentity() {
@@ -128,12 +125,11 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not both.
+     * The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The identity for this access policy. Choose either a <code>user</code> or a <code>group</code> but not
-     *        both.
+     *        The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,13 +140,11 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     * <code>project</code> but not both.
+     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      * </p>
      * 
      * @param accessPolicyResource
-     *        The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     *        <code>project</code> but not both.
+     *        The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      */
 
     public void setAccessPolicyResource(Resource accessPolicyResource) {
@@ -159,12 +153,10 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     * <code>project</code> but not both.
+     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      * </p>
      * 
-     * @return The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     *         <code>project</code> but not both.
+     * @return The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      */
 
     public Resource getAccessPolicyResource() {
@@ -173,13 +165,11 @@ public class UpdateAccessPolicyRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     * <code>project</code> but not both.
+     * The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      * </p>
      * 
      * @param accessPolicyResource
-     *        The AWS IoT SiteWise Monitor resource for this access policy. Choose either <code>portal</code> or
-     *        <code>project</code> but not both.
+     *        The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

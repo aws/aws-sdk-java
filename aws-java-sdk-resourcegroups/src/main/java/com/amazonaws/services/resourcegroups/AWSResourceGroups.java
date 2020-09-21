@@ -32,7 +32,7 @@ import com.amazonaws.services.resourcegroups.model.*;
  * databases, and Amazon S3 buckets into groups using criteria that you define as tags. A resource group is a collection
  * of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You
  * can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions,
- * application layers, or virtually any criteria. Resource groups enable you to automate management tasks, such as those
+ * application layers, or virtually any criteria. Resource Groups enable you to automate management tasks, such as those
  * in AWS Systems Manager Automation documents, on tag-related resources in AWS Systems Manager. Groups of tagged
  * resources also let you quickly view a custom console in AWS Systems Manager that shows AWS Config compliance and
  * other monitoring data about member resources.
@@ -324,7 +324,7 @@ public interface AWSResourceGroups {
 
     /**
      * <p>
-     * Returns a list of AWS resource identifiers that matches tne specified query. The query uses the same format as a
+     * Returns a list of AWS resource identifiers that matches the specified query. The query uses the same format as a
      * resource query in a CreateGroup or UpdateGroupQuery operation.
      * </p>
      * 

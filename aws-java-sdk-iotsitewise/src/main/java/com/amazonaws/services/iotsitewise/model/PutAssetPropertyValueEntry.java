@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains a list of value updates for an asset property in the list of asset entries consumed by the <a
  * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchPutAssetPropertyValue.html"
- * >BatchPutAssetPropertyValue</a> API.
+ * >BatchPutAssetPropertyValue</a> API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/PutAssetPropertyValueEntry"

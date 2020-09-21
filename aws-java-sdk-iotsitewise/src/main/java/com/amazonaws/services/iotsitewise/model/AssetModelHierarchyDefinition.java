@@ -31,11 +31,11 @@ public class AssetModelHierarchyDefinition implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the asset model hierarchy definition (as specified in <a
+     * The name of the asset model hierarchy definition (as specified in the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a>).
+     * >UpdateAssetModel</a> API operation).
      * </p>
      */
     private String name;
@@ -48,19 +48,19 @@ public class AssetModelHierarchyDefinition implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the asset model hierarchy definition (as specified in <a
+     * The name of the asset model hierarchy definition (as specified in the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a>).
+     * >UpdateAssetModel</a> API operation).
      * </p>
      * 
      * @param name
-     *        The name of the asset model hierarchy definition (as specified in <a
+     *        The name of the asset model hierarchy definition (as specified in the <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      *        >CreateAssetModel</a> or <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     *        >UpdateAssetModel</a>).
+     *        >UpdateAssetModel</a> API operation).
      */
 
     public void setName(String name) {
@@ -69,18 +69,18 @@ public class AssetModelHierarchyDefinition implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the asset model hierarchy definition (as specified in <a
+     * The name of the asset model hierarchy definition (as specified in the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a>).
+     * >UpdateAssetModel</a> API operation).
      * </p>
      * 
-     * @return The name of the asset model hierarchy definition (as specified in <a
+     * @return The name of the asset model hierarchy definition (as specified in the <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      *         >CreateAssetModel</a> or <a
      *         href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     *         >UpdateAssetModel</a>).
+     *         >UpdateAssetModel</a> API operation).
      */
 
     public String getName() {
@@ -89,19 +89,19 @@ public class AssetModelHierarchyDefinition implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the asset model hierarchy definition (as specified in <a
+     * The name of the asset model hierarchy definition (as specified in the <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      * >CreateAssetModel</a> or <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     * >UpdateAssetModel</a>).
+     * >UpdateAssetModel</a> API operation).
      * </p>
      * 
      * @param name
-     *        The name of the asset model hierarchy definition (as specified in <a
+     *        The name of the asset model hierarchy definition (as specified in the <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModel.html"
      *        >CreateAssetModel</a> or <a
      *        href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html"
-     *        >UpdateAssetModel</a>).
+     *        >UpdateAssetModel</a> API operation).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

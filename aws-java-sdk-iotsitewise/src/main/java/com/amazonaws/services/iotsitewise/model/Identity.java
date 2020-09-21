@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an AWS SSO identity ID for a user or group.
+ * Contains an identity that can access an AWS IoT SiteWise Monitor resource.
  * </p>
  * <note>
  * <p>
@@ -36,24 +36,30 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A user identity.
+     * An AWS SSO user identity.
      * </p>
      */
     private UserIdentity user;
     /**
      * <p>
-     * A group identity.
+     * An AWS SSO group identity.
      * </p>
      */
     private GroupIdentity group;
+    /**
+     * <p>
+     * An IAM user identity.
+     * </p>
+     */
+    private IAMUserIdentity iamUser;
 
     /**
      * <p>
-     * A user identity.
+     * An AWS SSO user identity.
      * </p>
      * 
      * @param user
-     *        A user identity.
+     *        An AWS SSO user identity.
      */
 
     public void setUser(UserIdentity user) {
@@ -62,10 +68,10 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A user identity.
+     * An AWS SSO user identity.
      * </p>
      * 
-     * @return A user identity.
+     * @return An AWS SSO user identity.
      */
 
     public UserIdentity getUser() {
@@ -74,11 +80,11 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A user identity.
+     * An AWS SSO user identity.
      * </p>
      * 
      * @param user
-     *        A user identity.
+     *        An AWS SSO user identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +95,11 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A group identity.
+     * An AWS SSO group identity.
      * </p>
      * 
      * @param group
-     *        A group identity.
+     *        An AWS SSO group identity.
      */
 
     public void setGroup(GroupIdentity group) {
@@ -102,10 +108,10 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A group identity.
+     * An AWS SSO group identity.
      * </p>
      * 
-     * @return A group identity.
+     * @return An AWS SSO group identity.
      */
 
     public GroupIdentity getGroup() {
@@ -114,16 +120,56 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A group identity.
+     * An AWS SSO group identity.
      * </p>
      * 
      * @param group
-     *        A group identity.
+     *        An AWS SSO group identity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Identity withGroup(GroupIdentity group) {
         setGroup(group);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An IAM user identity.
+     * </p>
+     * 
+     * @param iamUser
+     *        An IAM user identity.
+     */
+
+    public void setIamUser(IAMUserIdentity iamUser) {
+        this.iamUser = iamUser;
+    }
+
+    /**
+     * <p>
+     * An IAM user identity.
+     * </p>
+     * 
+     * @return An IAM user identity.
+     */
+
+    public IAMUserIdentity getIamUser() {
+        return this.iamUser;
+    }
+
+    /**
+     * <p>
+     * An IAM user identity.
+     * </p>
+     * 
+     * @param iamUser
+     *        An IAM user identity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Identity withIamUser(IAMUserIdentity iamUser) {
+        setIamUser(iamUser);
         return this;
     }
 
@@ -142,7 +188,9 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
         if (getUser() != null)
             sb.append("User: ").append(getUser()).append(",");
         if (getGroup() != null)
-            sb.append("Group: ").append(getGroup());
+            sb.append("Group: ").append(getGroup()).append(",");
+        if (getIamUser() != null)
+            sb.append("IamUser: ").append(getIamUser());
         sb.append("}");
         return sb.toString();
     }
@@ -165,6 +213,10 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
             return false;
+        if (other.getIamUser() == null ^ this.getIamUser() == null)
+            return false;
+        if (other.getIamUser() != null && other.getIamUser().equals(this.getIamUser()) == false)
+            return false;
         return true;
     }
 
@@ -175,6 +227,7 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
+        hashCode = prime * hashCode + ((getIamUser() == null) ? 0 : getIamUser().hashCode());
         return hashCode;
     }
 

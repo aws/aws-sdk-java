@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum IdentityType {
 
     USER("USER"),
-    GROUP("GROUP");
+    GROUP("GROUP"),
+    IAM("IAM");
 
     private String value;
 

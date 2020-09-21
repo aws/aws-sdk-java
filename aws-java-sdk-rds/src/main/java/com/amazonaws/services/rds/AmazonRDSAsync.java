@@ -755,7 +755,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DB snapshot. The source DB snapshot must be in the "available" state.
+     * Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> or
+     * <code>storage-optimization</code> state.
      * </p>
      * <p>
      * You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the
@@ -777,7 +778,8 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DB snapshot. The source DB snapshot must be in the "available" state.
+     * Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> or
+     * <code>storage-optimization</code> state.
      * </p>
      * <p>
      * You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the
@@ -1512,9 +1514,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an Aurora global database spread across multiple regions. The global database contains a single primary
-     * cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster
-     * through high-speed replication performed by the Aurora storage subsystem.
+     * Creates an Aurora global database spread across multiple AWS Regions. The global database contains a single
+     * primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary
+     * cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
      * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
@@ -1537,9 +1539,9 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Creates an Aurora global database spread across multiple regions. The global database contains a single primary
-     * cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster
-     * through high-speed replication performed by the Aurora storage subsystem.
+     * Creates an Aurora global database spread across multiple AWS Regions. The global database contains a single
+     * primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary
+     * cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
      * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
@@ -3708,8 +3710,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns events related to DB instances, DB clusters, DB parameter groups, DB security groups, DB snapshots, and
      * DB cluster snapshots for the past 14 days. Events specific to a particular DB instances, DB clusters, DB
      * parameter groups, DB security groups, DB snapshots, and DB cluster snapshots group can be obtained by providing
-     * the name as a parameter. By default, the past hour of events are returned.
+     * the name as a parameter.
      * </p>
+     * <note>
+     * <p>
+     * By default, the past hour of events are returned.
+     * </p>
+     * </note>
      * 
      * @param describeEventsRequest
      * @return A Java Future containing the result of the DescribeEvents operation returned by the service.
@@ -3724,8 +3731,13 @@ public interface AmazonRDSAsync extends AmazonRDS {
      * Returns events related to DB instances, DB clusters, DB parameter groups, DB security groups, DB snapshots, and
      * DB cluster snapshots for the past 14 days. Events specific to a particular DB instances, DB clusters, DB
      * parameter groups, DB security groups, DB snapshots, and DB cluster snapshots group can be obtained by providing
-     * the name as a parameter. By default, the past hour of events are returned.
+     * the name as a parameter.
      * </p>
+     * <note>
+     * <p>
+     * By default, the past hour of events are returned.
+     * </p>
+     * </note>
      * 
      * @param describeEventsRequest
      * @param asyncHandler

@@ -134,7 +134,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean multiAZ;
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      */
     private String engine;
@@ -1158,11 +1158,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB cluster.
+     *        The name of the database engine to be used for this DB cluster.
      */
 
     public void setEngine(String engine) {
@@ -1171,10 +1171,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * 
-     * @return Provides the name of the database engine to be used for this DB cluster.
+     * @return The name of the database engine to be used for this DB cluster.
      */
 
     public String getEngine() {
@@ -1183,11 +1183,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB cluster.
+     *        The name of the database engine to be used for this DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

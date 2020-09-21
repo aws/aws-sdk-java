@@ -1,3 +1,36 @@
+# __1.11.866__ __2020-09-21__
+## __AWS Glue__
+  - ### Features
+    - Adding support to update multiple partitions of a table in a single request
+
+## __AWS IoT SiteWise__
+  - ### Features
+    - This release supports IAM mode for SiteWise Monitor portals
+
+## __AWS Resource Groups__
+  - ### Features
+    - Documentation updates and corrections for Resource Groups API Reference and SDKs.
+
+## __AWS Resource Groups Tagging API__
+  - ### Features
+    - Documentation updates for the Resource Groups Tagging API.
+
+## __Amazon CloudWatch Events__
+  - ### Features
+    - Add support for Redshift Data API Targets
+
+## __Amazon EventBridge__
+  - ### Features
+    - Add support for Redshift Data API Targets
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - Documentation updates for the RDS DescribeExportTasks API
+
+## __Amazon S3__
+  - ### Bugfixes
+    - Adds an alwaysCalculateMultipartMd5 option to instruct TransferManager to calculate MD5 digest for parts in multipart uploads. This is useful for uploading objects to a bucket configured with Object Locking, which requires MD5 to be set.
+
 # __1.11.865__ __2020-09-18__
 ## __AWS CodeStar connections__
   - ### Features

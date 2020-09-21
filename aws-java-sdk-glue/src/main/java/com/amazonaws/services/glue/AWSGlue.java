@@ -310,6 +310,29 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Updates one or more partitions in a batch operation.
+     * </p>
+     * 
+     * @param batchUpdatePartitionRequest
+     * @return Result of the BatchUpdatePartition operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @sample AWSGlue.BatchUpdatePartition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchUpdatePartition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest batchUpdatePartitionRequest);
+
+    /**
+     * <p>
      * Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that AWS Glue runs on your behalf
      * as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling
      * <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's

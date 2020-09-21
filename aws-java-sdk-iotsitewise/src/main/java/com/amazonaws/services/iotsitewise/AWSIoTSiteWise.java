@@ -235,8 +235,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified AWS Single Sign-On user or group access to the specified AWS
-     * IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM user) access to
+     * the specified AWS IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -435,15 +435,13 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. Before you can create a portal, you must enable AWS
-     * Single Sign-On. AWS IoT SiteWise Monitor uses AWS SSO to manage user permissions. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS
-     * SSO</a> in the <i>AWS IoT SiteWise User Guide</i>.
+     * Creates a portal, which can contain projects and dashboards. AWS IoT SiteWise Monitor uses AWS SSO or IAM to
+     * authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
-     * Before you can sign in to a new portal, you must add at least one AWS SSO user or group to that portal. For more
-     * information, see <a
+     * Before you can sign in to a new portal, you must add at least one identity to that portal. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins"
      * >Adding or removing portal administrators</a> in the <i>AWS IoT SiteWise User Guide</i>.
      * </p>
@@ -479,6 +477,33 @@ public interface AWSIoTSiteWise {
      *      Documentation</a>
      */
     CreatePortalResult createPortal(CreatePortalRequest createPortalRequest);
+
+    /**
+     * <p>
+     * Creates a pre-signed URL to a portal. Use this operation to create URLs to portals that use AWS Identity and
+     * Access Management (IAM) to authenticate users. An IAM user with access to a portal can call this API to get a URL
+     * to that portal. The URL contains a session token that lets the IAM user access the portal.
+     * </p>
+     * 
+     * @param createPresignedPortalUrlRequest
+     * @return Result of the CreatePresignedPortalUrl operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         AWS IoT SiteWise can't process your request right now. Try again later.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of AWS IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.CreatePresignedPortalUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/CreatePresignedPortalUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePresignedPortalUrlResult createPresignedPortalUrl(CreatePresignedPortalUrlRequest createPresignedPortalUrlRequest);
 
     /**
      * <p>
@@ -518,8 +543,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Deletes an access policy that grants the specified AWS Single Sign-On identity access to the specified AWS IoT
-     * SiteWise Monitor resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
+     * Deletes an access policy that grants the specified identity access to the specified AWS IoT SiteWise Monitor
+     * resource. You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.
      * </p>
      * 
      * @param deleteAccessPolicyRequest
@@ -648,9 +673,7 @@ public interface AWSIoTSiteWise {
     /**
      * <p>
      * Deletes a gateway from AWS IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your
-     * gateway's file system. For more information, see <a
-     * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-retention.html">Data retention</a> in the
-     * <i>AWS IoT SiteWise User Guide</i>.
+     * gateway's file system.
      * </p>
      * 
      * @param deleteGatewayRequest
@@ -734,8 +757,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Describes an access policy, which specifies an AWS SSO user or group's access to an AWS IoT SiteWise Monitor
-     * portal or project.
+     * Describes an access policy, which specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * project.
      * </p>
      * 
      * @param describeAccessPolicyRequest
@@ -1200,8 +1223,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an AWS SSO identity (a user or group) or an AWS IoT SiteWise
-     * Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group, or an IAM user)
+     * or an AWS IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1581,8 +1604,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Updates an existing access policy that specifies an AWS SSO user or group's access to an AWS IoT SiteWise Monitor
-     * portal or project resource.
+     * Updates an existing access policy that specifies an identity's access to an AWS IoT SiteWise Monitor portal or
+     * project resource.
      * </p>
      * 
      * @param updateAccessPolicyRequest
@@ -1657,10 +1680,9 @@ public interface AWSIoTSiteWise {
      * >DescribeAssetModel</a>.
      * </p>
      * <p>
-     * If you remove a property from an asset model or update a property's formula expression, AWS IoT SiteWise deletes
-     * all previous data for that property. If you remove a hierarchy definition from an asset model, AWS IoT SiteWise
-     * disassociates every asset associated with that hierarchy. You can't change the type or data type of an existing
-     * property.
+     * If you remove a property from an asset model, AWS IoT SiteWise deletes all previous data for that property. If
+     * you remove a hierarchy definition from an asset model, AWS IoT SiteWise disassociates every asset associated with
+     * that hierarchy. You can't change the type or data type of an existing property.
      * </p>
      * </important>
      * 

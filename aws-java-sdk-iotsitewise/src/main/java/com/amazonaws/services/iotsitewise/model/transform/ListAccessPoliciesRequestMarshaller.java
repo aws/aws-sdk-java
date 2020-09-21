@@ -35,6 +35,8 @@ public class ListAccessPoliciesRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("resourceId").build();
+    private static final MarshallingInfo<String> IAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("iamArn").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -60,6 +62,7 @@ public class ListAccessPoliciesRequestMarshaller {
             protocolMarshaller.marshall(listAccessPoliciesRequest.getIdentityId(), IDENTITYID_BINDING);
             protocolMarshaller.marshall(listAccessPoliciesRequest.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(listAccessPoliciesRequest.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(listAccessPoliciesRequest.getIamArn(), IAMARN_BINDING);
             protocolMarshaller.marshall(listAccessPoliciesRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listAccessPoliciesRequest.getMaxResults(), MAXRESULTS_BINDING);
         } catch (Exception e) {

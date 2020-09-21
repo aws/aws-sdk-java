@@ -60,6 +60,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -186,6 +192,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -207,6 +219,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *        Cloud environment (Amazon VPC).
      *        </p>
      *        </li>
      *        </ul>
@@ -239,6 +257,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -259,6 +283,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *         Cloud environment (Amazon VPC).
      *         </p>
      *         </li>
      *         </ul>
@@ -291,6 +321,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -312,6 +348,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *        Cloud environment (Amazon VPC).
      *        </p>
      *        </li>
      *        </ul>
@@ -346,6 +388,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -367,6 +415,12 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *        Cloud environment (Amazon VPC).
      *        </p>
      *        </li>
      *        </ul>

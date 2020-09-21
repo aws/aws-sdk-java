@@ -459,7 +459,8 @@ public class UploadCallable implements Callable<UploadResult> {
     private boolean shouldCalculatePartMd5() {
         return origReq.getObjectLockMode() != null
                 || origReq.getObjectLockRetainUntilDate() != null
-                || origReq.getObjectLockLegalHoldStatus() != null;
+                || origReq.getObjectLockLegalHoldStatus() != null
+                || configuration.isAlwaysCalculateMultipartMd5();
     }
 
     private enum State {

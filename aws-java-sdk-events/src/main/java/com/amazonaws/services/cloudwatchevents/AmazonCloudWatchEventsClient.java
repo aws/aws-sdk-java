@@ -2100,6 +2100,11 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
      * Amazon API Gateway REST APIs
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Redshift Clusters to invoke Data API ExecuteStatement on
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are

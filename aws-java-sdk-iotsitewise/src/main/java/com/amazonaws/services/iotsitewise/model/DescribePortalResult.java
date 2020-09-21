@@ -53,13 +53,17 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     private String portalDescription;
     /**
      * <p>
-     * The AWS SSO application generated client ID (used with AWS SSO APIs).
+     * The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      * </p>
      */
     private String portalClientId;
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the <a
+     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      * </p>
      */
     private String portalStartUrl;
@@ -103,6 +107,12 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal.
+     * </p>
+     */
+    private String portalAuthMode;
 
     /**
      * <p>
@@ -287,11 +297,13 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS SSO application generated client ID (used with AWS SSO APIs).
+     * The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      * </p>
      * 
      * @param portalClientId
-     *        The AWS SSO application generated client ID (used with AWS SSO APIs).
+     *        The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     *        <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      */
 
     public void setPortalClientId(String portalClientId) {
@@ -300,10 +312,12 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS SSO application generated client ID (used with AWS SSO APIs).
+     * The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      * </p>
      * 
-     * @return The AWS SSO application generated client ID (used with AWS SSO APIs).
+     * @return The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     *         <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      */
 
     public String getPortalClientId() {
@@ -312,11 +326,13 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS SSO application generated client ID (used with AWS SSO APIs).
+     * The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     * <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      * </p>
      * 
      * @param portalClientId
-     *        The AWS SSO application generated client ID (used with AWS SSO APIs).
+     *        The AWS SSO application generated client ID (used with AWS SSO APIs). AWS IoT SiteWise includes
+     *        <code>portalClientId</code> for only portals that use AWS SSO to authenticate users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,11 +343,17 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the <a
+     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
-     *        The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
+     *        for authentication. For portals that use IAM for authentication, you must use the <a
+     *        href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     *        >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      */
 
     public void setPortalStartUrl(String portalStartUrl) {
@@ -340,10 +362,16 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the <a
+     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      * </p>
      * 
-     * @return The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * @return The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
+     *         for authentication. For portals that use IAM for authentication, you must use the <a
+     *         href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     *         >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      */
 
     public String getPortalStartUrl() {
@@ -352,11 +380,17 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     * The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO for
+     * authentication. For portals that use IAM for authentication, you must use the <a
+     * href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     * >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      * </p>
      * 
      * @param portalStartUrl
-     *        The public root URL for the AWS IoT AWS IoT SiteWise Monitor application portal.
+     *        The URL for the AWS IoT SiteWise Monitor portal. You can use this URL to access portals that use AWS SSO
+     *        for authentication. For portals that use IAM for authentication, you must use the <a
+     *        href="https://docs.aws.amazon.com/AWS IoT SiteWise API ReferenceAPI_CreatePresignedPortalUrl.html"
+     *        >CreatePresignedPortalUrl</a> operation to create a URL that you can use to access the portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,6 +664,65 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The service to use to authenticate users to the portal.
+     * </p>
+     * 
+     * @param portalAuthMode
+     *        The service to use to authenticate users to the portal.
+     * @see AuthMode
+     */
+
+    public void setPortalAuthMode(String portalAuthMode) {
+        this.portalAuthMode = portalAuthMode;
+    }
+
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal.
+     * </p>
+     * 
+     * @return The service to use to authenticate users to the portal.
+     * @see AuthMode
+     */
+
+    public String getPortalAuthMode() {
+        return this.portalAuthMode;
+    }
+
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal.
+     * </p>
+     * 
+     * @param portalAuthMode
+     *        The service to use to authenticate users to the portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthMode
+     */
+
+    public DescribePortalResult withPortalAuthMode(String portalAuthMode) {
+        setPortalAuthMode(portalAuthMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The service to use to authenticate users to the portal.
+     * </p>
+     * 
+     * @param portalAuthMode
+     *        The service to use to authenticate users to the portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthMode
+     */
+
+    public DescribePortalResult withPortalAuthMode(AuthMode portalAuthMode) {
+        this.portalAuthMode = portalAuthMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -664,7 +757,9 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getPortalLogoImageLocation() != null)
             sb.append("PortalLogoImageLocation: ").append(getPortalLogoImageLocation()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getPortalAuthMode() != null)
+            sb.append("PortalAuthMode: ").append(getPortalAuthMode());
         sb.append("}");
         return sb.toString();
     }
@@ -727,6 +822,10 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getPortalAuthMode() == null ^ this.getPortalAuthMode() == null)
+            return false;
+        if (other.getPortalAuthMode() != null && other.getPortalAuthMode().equals(this.getPortalAuthMode()) == false)
+            return false;
         return true;
     }
 
@@ -747,6 +846,7 @@ public class DescribePortalResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getPortalLastUpdateDate() == null) ? 0 : getPortalLastUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getPortalLogoImageLocation() == null) ? 0 : getPortalLogoImageLocation().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getPortalAuthMode() == null) ? 0 : getPortalAuthMode().hashCode());
         return hashCode;
     }
 

@@ -40,7 +40,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output.
+     * define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -63,7 +63,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the export task.
+     * <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.
      * </p>
      * </li>
      * </ul>
@@ -175,7 +175,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output.
+     * define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -198,13 +198,13 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the export task.
+     * <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @return Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *         that define what to include in the output.</p>
+     *         that define what to include in the output. Filter names and values are case-sensitive.</p>
      *         <p>
      *         Supported filters include the following:
      *         </p>
@@ -226,7 +226,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
-     *         <code>status</code> - The status of the export task.
+     *         <code>status</code> - The status of the export task. Must be lowercase, for example,
+     *         <code>complete</code>.
      *         </p>
      *         </li>
      */
@@ -241,7 +242,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output.
+     * define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -264,14 +265,14 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the export task.
+     * <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param filters
      *        Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *        that define what to include in the output.</p>
+     *        that define what to include in the output. Filter names and values are case-sensitive.</p>
      *        <p>
      *        Supported filters include the following:
      *        </p>
@@ -293,7 +294,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the export task.
+     *        <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>
+     *        .
      *        </p>
      *        </li>
      */
@@ -310,7 +312,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output.
+     * define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -333,7 +335,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the export task.
+     * <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.
      * </p>
      * </li>
      * </ul>
@@ -345,7 +347,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @param filters
      *        Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *        that define what to include in the output.</p>
+     *        that define what to include in the output. Filter names and values are case-sensitive.</p>
      *        <p>
      *        Supported filters include the following:
      *        </p>
@@ -367,7 +369,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the export task.
+     *        <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>
+     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -386,7 +389,7 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs that
-     * define what to include in the output.
+     * define what to include in the output. Filter names and values are case-sensitive.
      * </p>
      * <p>
      * Supported filters include the following:
@@ -409,14 +412,14 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the export task.
+     * <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>.
      * </p>
      * </li>
      * </ul>
      * 
      * @param filters
      *        Filters specify one or more snapshot exports to describe. The filters are specified as name-value pairs
-     *        that define what to include in the output.</p>
+     *        that define what to include in the output. Filter names and values are case-sensitive.</p>
      *        <p>
      *        Supported filters include the following:
      *        </p>
@@ -438,7 +441,8 @@ public class DescribeExportTasksRequest extends com.amazonaws.AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the export task.
+     *        <code>status</code> - The status of the export task. Must be lowercase, for example, <code>complete</code>
+     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

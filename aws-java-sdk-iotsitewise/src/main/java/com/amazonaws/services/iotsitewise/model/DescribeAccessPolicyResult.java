@@ -41,7 +41,7 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
     private String accessPolicyArn;
     /**
      * <p>
-     * The AWS SSO identity (user or group) to which this access policy applies.
+     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      * </p>
      */
     private Identity accessPolicyIdentity;
@@ -173,11 +173,11 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS SSO identity (user or group) to which this access policy applies.
+     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The AWS SSO identity (user or group) to which this access policy applies.
+     *        The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      */
 
     public void setAccessPolicyIdentity(Identity accessPolicyIdentity) {
@@ -186,10 +186,10 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS SSO identity (user or group) to which this access policy applies.
+     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      * </p>
      * 
-     * @return The AWS SSO identity (user or group) to which this access policy applies.
+     * @return The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      */
 
     public Identity getAccessPolicyIdentity() {
@@ -198,11 +198,11 @@ public class DescribeAccessPolicyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The AWS SSO identity (user or group) to which this access policy applies.
+     * The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      * </p>
      * 
      * @param accessPolicyIdentity
-     *        The AWS SSO identity (user or group) to which this access policy applies.
+     *        The identity (AWS SSO user, AWS SSO group, or IAM user) to which this access policy applies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

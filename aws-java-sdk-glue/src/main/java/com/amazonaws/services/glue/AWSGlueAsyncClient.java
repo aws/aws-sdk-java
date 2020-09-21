@@ -471,6 +471,39 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BatchUpdatePartitionResult> batchUpdatePartitionAsync(BatchUpdatePartitionRequest request) {
+
+        return batchUpdatePartitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdatePartitionResult> batchUpdatePartitionAsync(final BatchUpdatePartitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchUpdatePartitionRequest, BatchUpdatePartitionResult> asyncHandler) {
+        final BatchUpdatePartitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchUpdatePartitionResult>() {
+            @Override
+            public BatchUpdatePartitionResult call() throws Exception {
+                BatchUpdatePartitionResult result = null;
+
+                try {
+                    result = executeBatchUpdatePartition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelMLTaskRunResult> cancelMLTaskRunAsync(CancelMLTaskRunRequest request) {
 
         return cancelMLTaskRunAsync(request, null);

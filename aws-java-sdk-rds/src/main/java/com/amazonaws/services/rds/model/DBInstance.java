@@ -43,7 +43,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String dBInstanceClass;
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      */
     private String engine;
@@ -569,11 +569,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB instance.
+     *        The name of the database engine to be used for this DB instance.
      */
 
     public void setEngine(String engine) {
@@ -582,10 +582,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      * 
-     * @return Provides the name of the database engine to be used for this DB instance.
+     * @return The name of the database engine to be used for this DB instance.
      */
 
     public String getEngine() {
@@ -594,11 +594,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB instance.
+     *        The name of the database engine to be used for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,13 +27,15 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     * The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.
      * </p>
      */
     private String identityType;
     /**
      * <p>
-     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     * The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for
+     * <code>identityType</code>.
      * </p>
      */
     private String identityId;
@@ -49,6 +51,14 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String resourceId;
+    /**
+     * <p>
+     * The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.
+     * </p>
+     */
+    private String iamArn;
     /**
      * <p>
      * The token to be used for the next set of paginated results.
@@ -67,11 +77,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     * The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     *        The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     *        <code>identityId</code>.
      * @see IdentityType
      */
 
@@ -81,10 +93,12 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     * The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.
      * </p>
      * 
-     * @return The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     * @return The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you
+     *         specify <code>identityId</code>.
      * @see IdentityType
      */
 
@@ -94,11 +108,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     * The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     *        The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     *        <code>identityId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -110,11 +126,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     * The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     * <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (user or group). This parameter is required if you specify <code>identityId</code>.
+     *        The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required if you specify
+     *        <code>identityId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -126,11 +144,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     * The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for
+     * <code>identityType</code>.
      * </p>
      * 
      * @param identityId
-     *        The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     *        The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code>
+     *        for <code>identityType</code>.
      */
 
     public void setIdentityId(String identityId) {
@@ -139,10 +159,12 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     * The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for
+     * <code>identityType</code>.
      * </p>
      * 
-     * @return The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     * @return The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code>
+     *         for <code>identityType</code>.
      */
 
     public String getIdentityId() {
@@ -151,11 +173,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     * The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code> for
+     * <code>identityType</code>.
      * </p>
      * 
      * @param identityId
-     *        The ID of the identity. This parameter is required if you specify <code>identityType</code>.
+     *        The ID of the identity. This parameter is required if you specify <code>USER</code> or <code>GROUP</code>
+     *        for <code>identityType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -264,6 +288,61 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     public ListAccessPoliciesRequest withResourceId(String resourceId) {
         setResourceId(resourceId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.
+     * </p>
+     * 
+     * @param iamArn
+     *        The ARN of the IAM user. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+     *        <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for
+     *        <code>identityType</code>.
+     */
+
+    public void setIamArn(String iamArn) {
+        this.iamArn = iamArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.
+     * </p>
+     * 
+     * @return The ARN of the IAM user. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+     *         <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for
+     *         <code>identityType</code>.
+     */
+
+    public String getIamArn() {
+        return this.iamArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the <i>IAM
+     * User Guide</i>. This parameter is required if you specify <code>IAM</code> for <code>identityType</code>.
+     * </p>
+     * 
+     * @param iamArn
+     *        The ARN of the IAM user. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM ARNs</a> in the
+     *        <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code> for
+     *        <code>identityType</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAccessPoliciesRequest withIamArn(String iamArn) {
+        setIamArn(iamArn);
         return this;
     }
 
@@ -382,6 +461,8 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
+        if (getIamArn() != null)
+            sb.append("IamArn: ").append(getIamArn()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -416,6 +497,10 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
+        if (other.getIamArn() == null ^ this.getIamArn() == null)
+            return false;
+        if (other.getIamArn() != null && other.getIamArn().equals(this.getIamArn()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -436,6 +521,7 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getIdentityId() == null) ? 0 : getIdentityId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getIamArn() == null) ? 0 : getIamArn().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

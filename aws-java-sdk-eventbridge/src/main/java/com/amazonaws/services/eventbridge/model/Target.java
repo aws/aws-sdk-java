@@ -127,6 +127,16 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HttpParameters httpParameters;
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     */
+    private RedshiftDataParameters redshiftDataParameters;
 
     /**
      * <p>
@@ -721,6 +731,67 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     * 
+     * @param redshiftDataParameters
+     *        Contains the Redshift Data API parameters to use when the target is a Redshift cluster.</p>
+     *        <p>
+     *        If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+     *        Redshift Data API ExecuteStatement based on EventBridge events.
+     */
+
+    public void setRedshiftDataParameters(RedshiftDataParameters redshiftDataParameters) {
+        this.redshiftDataParameters = redshiftDataParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     * 
+     * @return Contains the Redshift Data API parameters to use when the target is a Redshift cluster.</p>
+     *         <p>
+     *         If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+     *         Redshift Data API ExecuteStatement based on EventBridge events.
+     */
+
+    public RedshiftDataParameters getRedshiftDataParameters() {
+        return this.redshiftDataParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     * 
+     * @param redshiftDataParameters
+     *        Contains the Redshift Data API parameters to use when the target is a Redshift cluster.</p>
+     *        <p>
+     *        If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+     *        Redshift Data API ExecuteStatement based on EventBridge events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withRedshiftDataParameters(RedshiftDataParameters redshiftDataParameters) {
+        setRedshiftDataParameters(redshiftDataParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -755,7 +826,9 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         if (getSqsParameters() != null)
             sb.append("SqsParameters: ").append(getSqsParameters()).append(",");
         if (getHttpParameters() != null)
-            sb.append("HttpParameters: ").append(getHttpParameters());
+            sb.append("HttpParameters: ").append(getHttpParameters()).append(",");
+        if (getRedshiftDataParameters() != null)
+            sb.append("RedshiftDataParameters: ").append(getRedshiftDataParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -818,6 +891,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHttpParameters() != null && other.getHttpParameters().equals(this.getHttpParameters()) == false)
             return false;
+        if (other.getRedshiftDataParameters() == null ^ this.getRedshiftDataParameters() == null)
+            return false;
+        if (other.getRedshiftDataParameters() != null && other.getRedshiftDataParameters().equals(this.getRedshiftDataParameters()) == false)
+            return false;
         return true;
     }
 
@@ -838,6 +915,7 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBatchParameters() == null) ? 0 : getBatchParameters().hashCode());
         hashCode = prime * hashCode + ((getSqsParameters() == null) ? 0 : getSqsParameters().hashCode());
         hashCode = prime * hashCode + ((getHttpParameters() == null) ? 0 : getHttpParameters().hashCode());
+        hashCode = prime * hashCode + ((getRedshiftDataParameters() == null) ? 0 : getRedshiftDataParameters().hashCode());
         return hashCode;
     }
 
