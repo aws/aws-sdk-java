@@ -20,10 +20,11 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Locale {
 
-    EnUS("en-US"),
-    EnGB("en-GB"),
     DeDE("de-DE"),
-    EnAU("en-AU");
+    EnAU("en-AU"),
+    EnGB("en-GB"),
+    EnUS("en-US"),
+    EsUS("es-US");
 
     private String value;
 

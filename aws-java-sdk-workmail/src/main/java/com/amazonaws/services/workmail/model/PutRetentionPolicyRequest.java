@@ -305,7 +305,7 @@ public class PutRetentionPolicyRequest extends com.amazonaws.AmazonWebServiceReq
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getFolderConfigurations() != null)
             sb.append("FolderConfigurations: ").append(getFolderConfigurations());
         sb.append("}");

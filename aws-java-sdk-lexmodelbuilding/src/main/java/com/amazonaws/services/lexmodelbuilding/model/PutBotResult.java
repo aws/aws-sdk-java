@@ -44,7 +44,7 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
-     * imoprovements, otherwise, <code>false</code>.
+     * improvements, otherwise, <code>false</code>.
      * </p>
      */
     private Boolean enableModelImprovements;
@@ -344,12 +344,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
-     * imoprovements, otherwise, <code>false</code>.
+     * improvements, otherwise, <code>false</code>.
      * </p>
      * 
      * @param enableModelImprovements
      *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
-     *        the imoprovements, otherwise, <code>false</code>.
+     *        the improvements, otherwise, <code>false</code>.
      */
 
     public void setEnableModelImprovements(Boolean enableModelImprovements) {
@@ -359,11 +359,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
-     * imoprovements, otherwise, <code>false</code>.
+     * improvements, otherwise, <code>false</code>.
      * </p>
      * 
      * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
-     *         the imoprovements, otherwise, <code>false</code>.
+     *         the improvements, otherwise, <code>false</code>.
      */
 
     public Boolean getEnableModelImprovements() {
@@ -373,12 +373,12 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
-     * imoprovements, otherwise, <code>false</code>.
+     * improvements, otherwise, <code>false</code>.
      * </p>
      * 
      * @param enableModelImprovements
      *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
-     *        the imoprovements, otherwise, <code>false</code>.
+     *        the improvements, otherwise, <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,11 +390,11 @@ public class PutBotResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     /**
      * <p>
      * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
-     * imoprovements, otherwise, <code>false</code>.
+     * improvements, otherwise, <code>false</code>.
      * </p>
      * 
      * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
-     *         the imoprovements, otherwise, <code>false</code>.
+     *         the improvements, otherwise, <code>false</code>.
      */
 
     public Boolean isEnableModelImprovements() {

@@ -141,6 +141,47 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @return A Java Future containing the result of the CancelMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsync.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest cancelMailboxExportJobRequest);
+
+    /**
+     * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest cancelMailboxExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelMailboxExportJobRequest, CancelMailboxExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
      * </p>
      * 
@@ -558,6 +599,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @return A Java Future containing the result of the DescribeMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsync.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest describeMailboxExportJobRequest);
+
+    /**
+     * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest describeMailboxExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMailboxExportJobRequest, DescribeMailboxExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides more information regarding a given organization based on its identifier.
      * </p>
      * 
@@ -940,6 +1012,37 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @return A Java Future containing the result of the ListMailboxExportJobs operation returned by the service.
+     * @sample AmazonWorkMailAsync.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest listMailboxExportJobsRequest);
+
+    /**
+     * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMailboxExportJobs operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest listMailboxExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMailboxExportJobsRequest, ListMailboxExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the mailbox permissions associated with a user, group, or resource mailbox.
      * </p>
      * 
@@ -1300,6 +1403,43 @@ public interface AmazonWorkMailAsync extends AmazonWorkMail {
      */
     java.util.concurrent.Future<ResetPasswordResult> resetPasswordAsync(ResetPasswordRequest resetPasswordRequest,
             com.amazonaws.handlers.AsyncHandler<ResetPasswordRequest, ResetPasswordResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @return A Java Future containing the result of the StartMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsync.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest startMailboxExportJobRequest);
+
+    /**
+     * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartMailboxExportJob operation returned by the service.
+     * @sample AmazonWorkMailAsyncHandler.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest startMailboxExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartMailboxExportJobRequest, StartMailboxExportJobResult> asyncHandler);
 
     /**
      * <p>

@@ -142,6 +142,33 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @return Result of the CancelMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelMailboxExportJobResult cancelMailboxExportJob(CancelMailboxExportJobRequest cancelMailboxExportJobRequest);
+
+    /**
+     * <p>
      * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
      * </p>
      * 
@@ -491,6 +518,28 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @return Result of the DescribeMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMailboxExportJobResult describeMailboxExportJob(DescribeMailboxExportJobRequest describeMailboxExportJobRequest);
+
+    /**
+     * <p>
      * Provides more information regarding a given organization based on its identifier.
      * </p>
      * 
@@ -763,6 +812,26 @@ public interface AmazonWorkMail {
 
     /**
      * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @return Result of the ListMailboxExportJobs operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListMailboxExportJobsResult listMailboxExportJobs(ListMailboxExportJobsRequest listMailboxExportJobsRequest);
+
+    /**
+     * <p>
      * Lists the mailbox permissions associated with a user, group, or resource mailbox.
      * </p>
      * 
@@ -1032,6 +1101,33 @@ public interface AmazonWorkMail {
      *      Documentation</a>
      */
     ResetPasswordResult resetPassword(ResetPasswordRequest resetPasswordRequest);
+
+    /**
+     * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @return Result of the StartMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartMailboxExportJobResult startMailboxExportJob(StartMailboxExportJobRequest startMailboxExportJobRequest);
 
     /**
      * <p>

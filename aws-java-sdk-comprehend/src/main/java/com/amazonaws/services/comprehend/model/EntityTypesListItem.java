@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about an individual item on a list of entity types.
+ * An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/EntityTypesListItem" target="_top">AWS API
@@ -30,18 +30,30 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Entity type of an item on an entity type list.
+     * An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
+     * </p>
+     * <p>
+     * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * Entity type of an item on an entity type list.
+     * An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
+     * </p>
+     * <p>
+     * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      * 
      * @param type
-     *        Entity type of an item on an entity type list.
+     *        An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity
+     *        recognizer.</p>
+     *        <p>
+     *        Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break,
+     *        \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      */
 
     public void setType(String type) {
@@ -50,10 +62,18 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Entity type of an item on an entity type list.
+     * An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
+     * </p>
+     * <p>
+     * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      * 
-     * @return Entity type of an item on an entity type list.
+     * @return An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity
+     *         recognizer.</p>
+     *         <p>
+     *         Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break,
+     *         \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      */
 
     public String getType() {
@@ -62,11 +82,19 @@ public class EntityTypesListItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Entity type of an item on an entity type list.
+     * An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity recognizer.
+     * </p>
+     * <p>
+     * Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break, \r
+     * (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      * 
      * @param type
-     *        Entity type of an item on an entity type list.
+     *        An entity type within a labeled training dataset that Amazon Comprehend uses to train a custom entity
+     *        recognizer.</p>
+     *        <p>
+     *        Entity types must not contain the following invalid characters: \n (line break), \\n (escaped line break,
+     *        \r (carriage return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public CancelMailboxExportJobResult cancelMailboxExportJob(CancelMailboxExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAliasResult createAlias(CreateAliasRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +108,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public DescribeMailboxExportJobResult describeMailboxExportJob(DescribeMailboxExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeOrganizationResult describeOrganization(DescribeOrganizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -163,6 +173,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
     }
 
     @Override
+    public ListMailboxExportJobsResult listMailboxExportJobs(ListMailboxExportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMailboxPermissionsResult listMailboxPermissions(ListMailboxPermissionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +229,11 @@ public class AbstractAmazonWorkMail implements AmazonWorkMail {
 
     @Override
     public ResetPasswordResult resetPassword(ResetPasswordRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMailboxExportJobResult startMailboxExportJob(StartMailboxExportJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

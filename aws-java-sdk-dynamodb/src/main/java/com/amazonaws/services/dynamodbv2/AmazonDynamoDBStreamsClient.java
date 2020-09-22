@@ -54,7 +54,7 @@ import com.amazonaws.services.dynamodbv2.model.transform.*;
  * <p>
  * Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about
  * application development with Streams, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
  * DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
  * </p>
  */
@@ -319,7 +319,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        Represents the input of a <code>DescribeStream</code> operation.
      * @return Result of the DescribeStream operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The operation tried to access a nonexistent stream.
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDBStreams.DescribeStream
@@ -388,20 +389,31 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        Represents the input of a <code>GetRecords</code> operation.
      * @return Result of the GetRecords operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The operation tried to access a nonexistent stream.
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws LimitExceededException
-     *         Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this
-     *         exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce
-     *         the frequency of requests and use exponential backoff. For more information, go to <a
-     *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries"
-     *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     *         There is no limit to the number of daily on-demand backups that can be taken.</p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account limit of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws ExpiredIteratorException
      *         The shard iterator has expired and can no longer be used to retrieve stream records. A shard iterator
      *         expires 15 minutes after it is retrieved using the <code>GetShardIterator</code> action.
      * @throws TrimmedDataAccessException
-     *         The operation attempted to read past the oldest stream record in a shard.</p>
+     *         The operation attempted to read past the oldest stream record in a shard.
+     *         </p>
      *         <p>
      *         In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this
      *         limit are subject to removal (trimming) from the stream. You might receive a TrimmedDataAccessException
@@ -482,7 +494,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        Represents the input of a <code>GetShardIterator</code> operation.
      * @return Result of the GetShardIterator operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The operation tried to access a nonexistent stream.
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws TrimmedDataAccessException
@@ -566,7 +579,8 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
      *        Represents the input of a <code>ListStreams</code> operation.
      * @return Result of the ListStreams operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The operation tried to access a nonexistent stream.
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDBStreams.ListStreams

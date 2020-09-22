@@ -1,3 +1,24 @@
+# __1.11.867__ __2020-09-22__
+## __AWS SDK for Java__
+  - ### Bugfixes
+    - This change makes the `FileStoreTlsKeyManagersProvider` and `SystemPropertyTlsKeyManagersProvider` respect the `ssl.KeyManagerFactory.algorithm` when instantiating the `KeyManagerFactory` rather than always using the hardcoded value of `SunX509`.
+
+## __Amazon Comprehend__
+  - ### Features
+    - Amazon Comprehend integrates with Amazon SageMaker GroundTruth to allow its customers to annotate their datasets using GroundTruth and train their models using Comprehend Custom APIs.
+
+## __Amazon DynamoDB Streams__
+  - ### Features
+    - Documentation updates for streams.dynamodb
+
+## __Amazon Lex Model Building Service__
+  - ### Features
+    - Lex now supports es-US locales
+
+## __Amazon WorkMail__
+  - ### Features
+    - Adding support for Mailbox Export APIs
+
 # __1.11.866__ __2020-09-21__
 ## __AWS Glue__
   - ### Features

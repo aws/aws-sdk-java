@@ -30,38 +30,369 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at one time
-     * to train an entity recognizer.
+     * The format of your training data:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     * information about the custom entities that your trained model will detect. The required format of the file
+     * depends on whether you are providing annotations or an entity list.
+     * </p>
+     * <p>
+     * If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     * <code>EntityList</code> parameters. You must provide your training documents by using the <code>Documents</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file
+     * is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels.
+     * Each label annotates a named entity in the training document.
+     * </p>
+     * <p>
+     * If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * </p>
+     */
+    private String dataFormat;
+    /**
+     * <p>
+     * The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer.
+     * Any entity types that you don't specify are ignored.
+     * </p>
+     * <p>
+     * A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain
+     * the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped
+     * carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      */
     private java.util.List<EntityTypesListItem> entityTypes;
     /**
      * <p>
-     * S3 location of the documents folder for an entity recognizer
+     * The S3 location of the folder that contains the training documents for your custom entity recognizer.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      * </p>
      */
     private EntityRecognizerDocuments documents;
     /**
      * <p>
-     * S3 location of the annotations file for an entity recognizer.
+     * The S3 location of the CSV file that annotates your training documents.
      * </p>
      */
     private EntityRecognizerAnnotations annotations;
     /**
      * <p>
-     * S3 location of the entity list for an entity recognizer.
+     * The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      * </p>
      */
     private EntityRecognizerEntityList entityList;
+    /**
+     * <p>
+     * A list of augmented manifest files that provide training data for your custom model. An augmented manifest file
+     * is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * </p>
+     */
+    private java.util.List<AugmentedManifestsListItem> augmentedManifests;
 
     /**
      * <p>
-     * The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at one time
-     * to train an entity recognizer.
+     * The format of your training data:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     * information about the custom entities that your trained model will detect. The required format of the file
+     * depends on whether you are providing annotations or an entity list.
+     * </p>
+     * <p>
+     * If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     * <code>EntityList</code> parameters. You must provide your training documents by using the <code>Documents</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file
+     * is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels.
+     * Each label annotates a named entity in the training document.
+     * </p>
+     * <p>
+     * If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
      * </p>
      * 
-     * @return The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at
-     *         one time to train an entity recognizer.
+     * @param dataFormat
+     *        The format of your training data:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     *        information about the custom entities that your trained model will detect. The required format of the file
+     *        depends on whether you are providing annotations or an entity list.
+     *        </p>
+     *        <p>
+     *        If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     *        <code>EntityList</code> parameters. You must provide your training documents by using the
+     *        <code>Documents</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This
+     *        file is in JSON lines format. Each line is a complete JSON object that contains a training document and
+     *        its labels. Each label annotates a named entity in the training document.
+     *        </p>
+     *        <p>
+     *        If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * @see EntityRecognizerDataFormat
+     */
+
+    public void setDataFormat(String dataFormat) {
+        this.dataFormat = dataFormat;
+    }
+
+    /**
+     * <p>
+     * The format of your training data:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     * information about the custom entities that your trained model will detect. The required format of the file
+     * depends on whether you are providing annotations or an entity list.
+     * </p>
+     * <p>
+     * If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     * <code>EntityList</code> parameters. You must provide your training documents by using the <code>Documents</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file
+     * is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels.
+     * Each label annotates a named entity in the training document.
+     * </p>
+     * <p>
+     * If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * </p>
+     * 
+     * @return The format of your training data:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     *         information about the custom entities that your trained model will detect. The required format of the
+     *         file depends on whether you are providing annotations or an entity list.
+     *         </p>
+     *         <p>
+     *         If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     *         <code>EntityList</code> parameters. You must provide your training documents by using the
+     *         <code>Documents</code> parameter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth.
+     *         This file is in JSON lines format. Each line is a complete JSON object that contains a training document
+     *         and its labels. Each label annotates a named entity in the training document.
+     *         </p>
+     *         <p>
+     *         If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * @see EntityRecognizerDataFormat
+     */
+
+    public String getDataFormat() {
+        return this.dataFormat;
+    }
+
+    /**
+     * <p>
+     * The format of your training data:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     * information about the custom entities that your trained model will detect. The required format of the file
+     * depends on whether you are providing annotations or an entity list.
+     * </p>
+     * <p>
+     * If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     * <code>EntityList</code> parameters. You must provide your training documents by using the <code>Documents</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file
+     * is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels.
+     * Each label annotates a named entity in the training document.
+     * </p>
+     * <p>
+     * If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * </p>
+     * 
+     * @param dataFormat
+     *        The format of your training data:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     *        information about the custom entities that your trained model will detect. The required format of the file
+     *        depends on whether you are providing annotations or an entity list.
+     *        </p>
+     *        <p>
+     *        If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     *        <code>EntityList</code> parameters. You must provide your training documents by using the
+     *        <code>Documents</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This
+     *        file is in JSON lines format. Each line is a complete JSON object that contains a training document and
+     *        its labels. Each label annotates a named entity in the training document.
+     *        </p>
+     *        <p>
+     *        If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntityRecognizerDataFormat
+     */
+
+    public EntityRecognizerInputDataConfig withDataFormat(String dataFormat) {
+        setDataFormat(dataFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The format of your training data:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     * information about the custom entities that your trained model will detect. The required format of the file
+     * depends on whether you are providing annotations or an entity list.
+     * </p>
+     * <p>
+     * If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     * <code>EntityList</code> parameters. You must provide your training documents by using the <code>Documents</code>
+     * parameter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This file
+     * is in JSON lines format. Each line is a complete JSON object that contains a training document and its labels.
+     * Each label annotates a named entity in the training document.
+     * </p>
+     * <p>
+     * If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * </p>
+     * 
+     * @param dataFormat
+     *        The format of your training data:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COMPREHEND_CSV</code>: A CSV file that supplements your training documents. The CSV file contains
+     *        information about the custom entities that your trained model will detect. The required format of the file
+     *        depends on whether you are providing annotations or an entity list.
+     *        </p>
+     *        <p>
+     *        If you use this value, you must provide your CSV file by using either the <code>Annotations</code> or
+     *        <code>EntityList</code> parameters. You must provide your training documents by using the
+     *        <code>Documents</code> parameter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AUGMENTED_MANIFEST</code>: A labeled dataset that is produced by Amazon SageMaker Ground Truth. This
+     *        file is in JSON lines format. Each line is a complete JSON object that contains a training document and
+     *        its labels. Each label annotates a named entity in the training document.
+     *        </p>
+     *        <p>
+     *        If you use this value, you must provide the <code>AugmentedManifests</code> parameter in your request.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you don't specify a value, Amazon Comprehend uses <code>COMPREHEND_CSV</code> as the default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntityRecognizerDataFormat
+     */
+
+    public EntityRecognizerInputDataConfig withDataFormat(EntityRecognizerDataFormat dataFormat) {
+        this.dataFormat = dataFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer.
+     * Any entity types that you don't specify are ignored.
+     * </p>
+     * <p>
+     * A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain
+     * the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped
+     * carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
+     * </p>
+     * 
+     * @return The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity
+     *         recognizer. Any entity types that you don't specify are ignored.</p>
+     *         <p>
+     *         A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not
+     *         contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage
+     *         return), \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      */
 
     public java.util.List<EntityTypesListItem> getEntityTypes() {
@@ -70,13 +401,22 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at one time
-     * to train an entity recognizer.
+     * The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer.
+     * Any entity types that you don't specify are ignored.
+     * </p>
+     * <p>
+     * A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain
+     * the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped
+     * carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      * 
      * @param entityTypes
-     *        The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at
-     *        one time to train an entity recognizer.
+     *        The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity
+     *        recognizer. Any entity types that you don't specify are ignored.</p>
+     *        <p>
+     *        A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not
+     *        contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return),
+     *        \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      */
 
     public void setEntityTypes(java.util.Collection<EntityTypesListItem> entityTypes) {
@@ -90,8 +430,13 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at one time
-     * to train an entity recognizer.
+     * The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer.
+     * Any entity types that you don't specify are ignored.
+     * </p>
+     * <p>
+     * A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain
+     * the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped
+     * carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,8 +445,12 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
      * </p>
      * 
      * @param entityTypes
-     *        The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at
-     *        one time to train an entity recognizer.
+     *        The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity
+     *        recognizer. Any entity types that you don't specify are ignored.</p>
+     *        <p>
+     *        A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not
+     *        contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return),
+     *        \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -117,13 +466,22 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at one time
-     * to train an entity recognizer.
+     * The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity recognizer.
+     * Any entity types that you don't specify are ignored.
+     * </p>
+     * <p>
+     * A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not contain
+     * the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return), \\r (escaped
+     * carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * </p>
      * 
      * @param entityTypes
-     *        The entity types in the input data for an entity recognizer. A maximum of 25 entity types can be used at
-     *        one time to train an entity recognizer.
+     *        The entity types in the labeled training data that Amazon Comprehend uses to train the custom entity
+     *        recognizer. Any entity types that you don't specify are ignored.</p>
+     *        <p>
+     *        A maximum of 25 entity types can be used at one time to train an entity recognizer. Entity types must not
+     *        contain the following invalid characters: \n (line break), \\n (escaped line break), \r (carriage return),
+     *        \\r (escaped carriage return), \t (tab), \\t (escaped tab), space, and , (comma).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +492,16 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the documents folder for an entity recognizer
+     * The S3 location of the folder that contains the training documents for your custom entity recognizer.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      * </p>
      * 
      * @param documents
-     *        S3 location of the documents folder for an entity recognizer
+     *        The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
+     *        <p>
+     *        This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      */
 
     public void setDocuments(EntityRecognizerDocuments documents) {
@@ -147,10 +510,15 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the documents folder for an entity recognizer
+     * The S3 location of the folder that contains the training documents for your custom entity recognizer.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      * </p>
      * 
-     * @return S3 location of the documents folder for an entity recognizer
+     * @return The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
+     *         <p>
+     *         This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      */
 
     public EntityRecognizerDocuments getDocuments() {
@@ -159,11 +527,16 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the documents folder for an entity recognizer
+     * The S3 location of the folder that contains the training documents for your custom entity recognizer.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      * </p>
      * 
      * @param documents
-     *        S3 location of the documents folder for an entity recognizer
+     *        The S3 location of the folder that contains the training documents for your custom entity recognizer.</p>
+     *        <p>
+     *        This parameter is required if you set <code>DataFormat</code> to <code>COMPREHEND_CSV</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,11 +547,11 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the annotations file for an entity recognizer.
+     * The S3 location of the CSV file that annotates your training documents.
      * </p>
      * 
      * @param annotations
-     *        S3 location of the annotations file for an entity recognizer.
+     *        The S3 location of the CSV file that annotates your training documents.
      */
 
     public void setAnnotations(EntityRecognizerAnnotations annotations) {
@@ -187,10 +560,10 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the annotations file for an entity recognizer.
+     * The S3 location of the CSV file that annotates your training documents.
      * </p>
      * 
-     * @return S3 location of the annotations file for an entity recognizer.
+     * @return The S3 location of the CSV file that annotates your training documents.
      */
 
     public EntityRecognizerAnnotations getAnnotations() {
@@ -199,11 +572,11 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the annotations file for an entity recognizer.
+     * The S3 location of the CSV file that annotates your training documents.
      * </p>
      * 
      * @param annotations
-     *        S3 location of the annotations file for an entity recognizer.
+     *        The S3 location of the CSV file that annotates your training documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +587,11 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the entity list for an entity recognizer.
+     * The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      * </p>
      * 
      * @param entityList
-     *        S3 location of the entity list for an entity recognizer.
+     *        The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      */
 
     public void setEntityList(EntityRecognizerEntityList entityList) {
@@ -227,10 +600,10 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the entity list for an entity recognizer.
+     * The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      * </p>
      * 
-     * @return S3 location of the entity list for an entity recognizer.
+     * @return The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      */
 
     public EntityRecognizerEntityList getEntityList() {
@@ -239,16 +612,114 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
 
     /**
      * <p>
-     * S3 location of the entity list for an entity recognizer.
+     * The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      * </p>
      * 
      * @param entityList
-     *        S3 location of the entity list for an entity recognizer.
+     *        The S3 location of the CSV file that has the entity list for your custom entity recognizer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EntityRecognizerInputDataConfig withEntityList(EntityRecognizerEntityList entityList) {
         setEntityList(entityList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of augmented manifest files that provide training data for your custom model. An augmented manifest file
+     * is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * </p>
+     * 
+     * @return A list of augmented manifest files that provide training data for your custom model. An augmented
+     *         manifest file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
+     *         <p>
+     *         This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     */
+
+    public java.util.List<AugmentedManifestsListItem> getAugmentedManifests() {
+        return augmentedManifests;
+    }
+
+    /**
+     * <p>
+     * A list of augmented manifest files that provide training data for your custom model. An augmented manifest file
+     * is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * </p>
+     * 
+     * @param augmentedManifests
+     *        A list of augmented manifest files that provide training data for your custom model. An augmented manifest
+     *        file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
+     *        <p>
+     *        This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     */
+
+    public void setAugmentedManifests(java.util.Collection<AugmentedManifestsListItem> augmentedManifests) {
+        if (augmentedManifests == null) {
+            this.augmentedManifests = null;
+            return;
+        }
+
+        this.augmentedManifests = new java.util.ArrayList<AugmentedManifestsListItem>(augmentedManifests);
+    }
+
+    /**
+     * <p>
+     * A list of augmented manifest files that provide training data for your custom model. An augmented manifest file
+     * is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAugmentedManifests(java.util.Collection)} or {@link #withAugmentedManifests(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param augmentedManifests
+     *        A list of augmented manifest files that provide training data for your custom model. An augmented manifest
+     *        file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
+     *        <p>
+     *        This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerInputDataConfig withAugmentedManifests(AugmentedManifestsListItem... augmentedManifests) {
+        if (this.augmentedManifests == null) {
+            setAugmentedManifests(new java.util.ArrayList<AugmentedManifestsListItem>(augmentedManifests.length));
+        }
+        for (AugmentedManifestsListItem ele : augmentedManifests) {
+            this.augmentedManifests.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of augmented manifest files that provide training data for your custom model. An augmented manifest file
+     * is a labeled dataset that is produced by Amazon SageMaker Ground Truth.
+     * </p>
+     * <p>
+     * This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * </p>
+     * 
+     * @param augmentedManifests
+     *        A list of augmented manifest files that provide training data for your custom model. An augmented manifest
+     *        file is a labeled dataset that is produced by Amazon SageMaker Ground Truth.</p>
+     *        <p>
+     *        This parameter is required if you set <code>DataFormat</code> to <code>AUGMENTED_MANIFEST</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityRecognizerInputDataConfig withAugmentedManifests(java.util.Collection<AugmentedManifestsListItem> augmentedManifests) {
+        setAugmentedManifests(augmentedManifests);
         return this;
     }
 
@@ -264,6 +735,8 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getDataFormat() != null)
+            sb.append("DataFormat: ").append(getDataFormat()).append(",");
         if (getEntityTypes() != null)
             sb.append("EntityTypes: ").append(getEntityTypes()).append(",");
         if (getDocuments() != null)
@@ -271,7 +744,9 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
         if (getAnnotations() != null)
             sb.append("Annotations: ").append(getAnnotations()).append(",");
         if (getEntityList() != null)
-            sb.append("EntityList: ").append(getEntityList());
+            sb.append("EntityList: ").append(getEntityList()).append(",");
+        if (getAugmentedManifests() != null)
+            sb.append("AugmentedManifests: ").append(getAugmentedManifests());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +761,10 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
         if (obj instanceof EntityRecognizerInputDataConfig == false)
             return false;
         EntityRecognizerInputDataConfig other = (EntityRecognizerInputDataConfig) obj;
+        if (other.getDataFormat() == null ^ this.getDataFormat() == null)
+            return false;
+        if (other.getDataFormat() != null && other.getDataFormat().equals(this.getDataFormat()) == false)
+            return false;
         if (other.getEntityTypes() == null ^ this.getEntityTypes() == null)
             return false;
         if (other.getEntityTypes() != null && other.getEntityTypes().equals(this.getEntityTypes()) == false)
@@ -302,6 +781,10 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
             return false;
         if (other.getEntityList() != null && other.getEntityList().equals(this.getEntityList()) == false)
             return false;
+        if (other.getAugmentedManifests() == null ^ this.getAugmentedManifests() == null)
+            return false;
+        if (other.getAugmentedManifests() != null && other.getAugmentedManifests().equals(this.getAugmentedManifests()) == false)
+            return false;
         return true;
     }
 
@@ -310,10 +793,12 @@ public class EntityRecognizerInputDataConfig implements Serializable, Cloneable,
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getDataFormat() == null) ? 0 : getDataFormat().hashCode());
         hashCode = prime * hashCode + ((getEntityTypes() == null) ? 0 : getEntityTypes().hashCode());
         hashCode = prime * hashCode + ((getDocuments() == null) ? 0 : getDocuments().hashCode());
         hashCode = prime * hashCode + ((getAnnotations() == null) ? 0 : getAnnotations().hashCode());
         hashCode = prime * hashCode + ((getEntityList() == null) ? 0 : getEntityList().hashCode());
+        hashCode = prime * hashCode + ((getAugmentedManifests() == null) ? 0 : getAugmentedManifests().hashCode());
         return hashCode;
     }
 

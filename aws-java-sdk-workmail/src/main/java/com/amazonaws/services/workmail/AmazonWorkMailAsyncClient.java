@@ -183,6 +183,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest request) {
+
+        return cancelMailboxExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(final CancelMailboxExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelMailboxExportJobRequest, CancelMailboxExportJobResult> asyncHandler) {
+        final CancelMailboxExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelMailboxExportJobResult>() {
+            @Override
+            public CancelMailboxExportJobResult call() throws Exception {
+                CancelMailboxExportJobResult result = null;
+
+                try {
+                    result = executeCancelMailboxExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request) {
 
         return createAliasAsync(request, null);
@@ -612,6 +645,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest request) {
+
+        return describeMailboxExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(final DescribeMailboxExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMailboxExportJobRequest, DescribeMailboxExportJobResult> asyncHandler) {
+        final DescribeMailboxExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMailboxExportJobResult>() {
+            @Override
+            public DescribeMailboxExportJobResult call() throws Exception {
+                DescribeMailboxExportJobResult result = null;
+
+                try {
+                    result = executeDescribeMailboxExportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOrganizationResult> describeOrganizationAsync(DescribeOrganizationRequest request) {
 
         return describeOrganizationAsync(request, null);
@@ -1010,6 +1076,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest request) {
+
+        return listMailboxExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(final ListMailboxExportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMailboxExportJobsRequest, ListMailboxExportJobsResult> asyncHandler) {
+        final ListMailboxExportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMailboxExportJobsResult>() {
+            @Override
+            public ListMailboxExportJobsResult call() throws Exception {
+                ListMailboxExportJobsResult result = null;
+
+                try {
+                    result = executeListMailboxExportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMailboxPermissionsResult> listMailboxPermissionsAsync(ListMailboxPermissionsRequest request) {
 
         return listMailboxPermissionsAsync(request, null);
@@ -1357,6 +1456,39 @@ public class AmazonWorkMailAsyncClient extends AmazonWorkMailClient implements A
 
                 try {
                     result = executeResetPassword(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest request) {
+
+        return startMailboxExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(final StartMailboxExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartMailboxExportJobRequest, StartMailboxExportJobResult> asyncHandler) {
+        final StartMailboxExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartMailboxExportJobResult>() {
+            @Override
+            public StartMailboxExportJobResult call() throws Exception {
+                StartMailboxExportJobResult result = null;
+
+                try {
+                    result = executeStartMailboxExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -48,6 +48,10 @@ public class EntityRecognizerInputDataConfigJsonUnmarshaller implements Unmarsha
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("DataFormat", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerInputDataConfig.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EntityTypes", targetDepth)) {
                     context.nextToken();
                     entityRecognizerInputDataConfig.setEntityTypes(new ListUnmarshaller<EntityTypesListItem>(EntityTypesListItemJsonUnmarshaller.getInstance())
@@ -65,6 +69,13 @@ public class EntityRecognizerInputDataConfigJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("EntityList", targetDepth)) {
                     context.nextToken();
                     entityRecognizerInputDataConfig.setEntityList(EntityRecognizerEntityListJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AugmentedManifests", targetDepth)) {
+                    context.nextToken();
+                    entityRecognizerInputDataConfig.setAugmentedManifests(new ListUnmarshaller<AugmentedManifestsListItem>(
+                            AugmentedManifestsListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

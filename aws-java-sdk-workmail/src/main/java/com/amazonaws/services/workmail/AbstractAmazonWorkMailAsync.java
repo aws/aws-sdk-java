@@ -54,6 +54,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest request) {
+
+        return cancelMailboxExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelMailboxExportJobResult> cancelMailboxExportJobAsync(CancelMailboxExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelMailboxExportJobRequest, CancelMailboxExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAliasResult> createAliasAsync(CreateAliasRequest request) {
 
         return createAliasAsync(request, null);
@@ -223,6 +236,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest request) {
+
+        return describeMailboxExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMailboxExportJobResult> describeMailboxExportJobAsync(DescribeMailboxExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMailboxExportJobRequest, DescribeMailboxExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeOrganizationResult> describeOrganizationAsync(DescribeOrganizationRequest request) {
 
         return describeOrganizationAsync(request, null);
@@ -381,6 +407,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest request) {
+
+        return listMailboxExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMailboxExportJobsResult> listMailboxExportJobsAsync(ListMailboxExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMailboxExportJobsRequest, ListMailboxExportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMailboxPermissionsResult> listMailboxPermissionsAsync(ListMailboxPermissionsRequest request) {
 
         return listMailboxPermissionsAsync(request, null);
@@ -519,6 +558,19 @@ public class AbstractAmazonWorkMailAsync extends AbstractAmazonWorkMail implemen
     @Override
     public java.util.concurrent.Future<ResetPasswordResult> resetPasswordAsync(ResetPasswordRequest request,
             com.amazonaws.handlers.AsyncHandler<ResetPasswordRequest, ResetPasswordResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest request) {
+
+        return startMailboxExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartMailboxExportJobResult> startMailboxExportJobAsync(StartMailboxExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartMailboxExportJobRequest, StartMailboxExportJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

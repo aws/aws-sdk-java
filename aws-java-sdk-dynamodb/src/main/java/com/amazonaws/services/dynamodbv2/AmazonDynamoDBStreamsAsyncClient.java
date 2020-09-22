@@ -34,7 +34,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about
  * application development with Streams, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with
  * DynamoDB Streams</a> in the Amazon DynamoDB Developer Guide.
  * </p>
  */

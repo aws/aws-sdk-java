@@ -365,6 +365,74 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @return Result of the CancelMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelMailboxExportJobResult cancelMailboxExportJob(CancelMailboxExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelMailboxExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelMailboxExportJobResult executeCancelMailboxExportJob(CancelMailboxExportJobRequest cancelMailboxExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelMailboxExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelMailboxExportJobRequest> request = null;
+        Response<CancelMailboxExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelMailboxExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelMailboxExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMailboxExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelMailboxExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelMailboxExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds an alias to the set of a given member (user or group) of Amazon WorkMail.
      * </p>
      * 
@@ -1240,6 +1308,70 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @return Result of the DescribeMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMailboxExportJobResult describeMailboxExportJob(DescribeMailboxExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMailboxExportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMailboxExportJobResult executeDescribeMailboxExportJob(DescribeMailboxExportJobRequest describeMailboxExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMailboxExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMailboxExportJobRequest> request = null;
+        Response<DescribeMailboxExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMailboxExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMailboxExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMailboxExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMailboxExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMailboxExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides more information regarding a given organization based on its identifier.
      * </p>
      * 
@@ -2001,6 +2133,67 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @return Result of the ListMailboxExportJobs operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @sample AmazonWorkMail.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListMailboxExportJobsResult listMailboxExportJobs(ListMailboxExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMailboxExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListMailboxExportJobsResult executeListMailboxExportJobs(ListMailboxExportJobsRequest listMailboxExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMailboxExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMailboxExportJobsRequest> request = null;
+        Response<ListMailboxExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMailboxExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMailboxExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMailboxExportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMailboxExportJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListMailboxExportJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the mailbox permissions associated with a user, group, or resource mailbox.
      * </p>
      * 
@@ -2704,6 +2897,74 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ResetPasswordResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ResetPasswordResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @return Result of the StartMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
+     *         organization or its members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartMailboxExportJobResult startMailboxExportJob(StartMailboxExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMailboxExportJob(request);
+    }
+
+    @SdkInternalApi
+    final StartMailboxExportJobResult executeStartMailboxExportJob(StartMailboxExportJobRequest startMailboxExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMailboxExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMailboxExportJobRequest> request = null;
+        Response<StartMailboxExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMailboxExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMailboxExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMailboxExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMailboxExportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartMailboxExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -16,9 +16,11 @@ package com.amazonaws.http;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.notNullValue;
 import static org.hamcrest.Matchers.nullValue;
 import java.io.File;
 import java.io.IOException;
+import java.security.Security;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -76,5 +78,27 @@ public class FileStoreTlsKeyManagersProviderTest extends ClientTlsAuthTestBase {
     public void passwordIncorrect_returnsNull() {
         FileStoreTlsKeyManagersProvider provider = new FileStoreTlsKeyManagersProvider(clientKeyStore, CLIENT_STORE_TYPE, "not correct password");
         assertThat(provider.getKeyManagers(), nullValue());
+    }
+
+    @Test
+    public void customKmfAlgorithmSetInProperty_usesAlgorithm() {
+        FileStoreTlsKeyManagersProvider beforePropSetProvider = new FileStoreTlsKeyManagersProvider(clientKeyStore,
+                CLIENT_STORE_TYPE, STORE_PASSWORD);
+
+        assertThat(beforePropSetProvider.getKeyManagers(), notNullValue());
+
+        String property = "ssl.KeyManagerFactory.algorithm";
+        String previousValue = Security.getProperty(property);
+        Security.setProperty(property, "some-bogus-value");
+        try {
+            FileStoreTlsKeyManagersProvider afterPropSetProvider = new FileStoreTlsKeyManagersProvider(
+                    clientKeyStore, CLIENT_STORE_TYPE, STORE_PASSWORD);
+            // This would otherwise be non-null if using the right algorithm,
+            // i.e. not setting the algorithm property will cause the assertion
+            // to fail
+            assertThat(afterPropSetProvider.getKeyManagers(), nullValue());
+        } finally {
+            Security.setProperty(property, previousValue);
+        }
     }
 }

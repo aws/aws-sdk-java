@@ -48,6 +48,10 @@ public class DocumentClassifierInputDataConfigJsonUnmarshaller implements Unmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("DataFormat", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierInputDataConfig.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("S3Uri", targetDepth)) {
                     context.nextToken();
                     documentClassifierInputDataConfig.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,6 +59,13 @@ public class DocumentClassifierInputDataConfigJsonUnmarshaller implements Unmars
                 if (context.testExpression("LabelDelimiter", targetDepth)) {
                     context.nextToken();
                     documentClassifierInputDataConfig.setLabelDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AugmentedManifests", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierInputDataConfig.setAugmentedManifests(new ListUnmarshaller<AugmentedManifestsListItem>(
+                            AugmentedManifestsListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

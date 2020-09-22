@@ -117,7 +117,7 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
     private String checksum;
     /**
      * <p>
-     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * Configuration information, if any, for connecting an Amazon Kendra index with the
      * <code>AMAZON.KendraSearchIntent</code> intent.
      * </p>
      */
@@ -798,12 +798,12 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * Configuration information, if any, for connecting an Amazon Kendra index with the
      * <code>AMAZON.KendraSearchIntent</code> intent.
      * </p>
      * 
      * @param kendraConfiguration
-     *        Configuration information, if any, for connectin an Amazon Kendra index with the
+     *        Configuration information, if any, for connecting an Amazon Kendra index with the
      *        <code>AMAZON.KendraSearchIntent</code> intent.
      */
 
@@ -813,11 +813,11 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * Configuration information, if any, for connecting an Amazon Kendra index with the
      * <code>AMAZON.KendraSearchIntent</code> intent.
      * </p>
      * 
-     * @return Configuration information, if any, for connectin an Amazon Kendra index with the
+     * @return Configuration information, if any, for connecting an Amazon Kendra index with the
      *         <code>AMAZON.KendraSearchIntent</code> intent.
      */
 
@@ -827,12 +827,12 @@ public class CreateIntentVersionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information, if any, for connectin an Amazon Kendra index with the
+     * Configuration information, if any, for connecting an Amazon Kendra index with the
      * <code>AMAZON.KendraSearchIntent</code> intent.
      * </p>
      * 
      * @param kendraConfiguration
-     *        Configuration information, if any, for connectin an Amazon Kendra index with the
+     *        Configuration information, if any, for connecting an Amazon Kendra index with the
      *        <code>AMAZON.KendraSearchIntent</code> intent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
