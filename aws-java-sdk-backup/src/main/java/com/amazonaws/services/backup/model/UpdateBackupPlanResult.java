@@ -51,6 +51,12 @@ public class UpdateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private String versionId;
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for each resource type.
+     * </p>
+     */
+    private java.util.List<AdvancedBackupSetting> advancedBackupSettings;
 
     /**
      * <p>
@@ -237,6 +243,76 @@ public class UpdateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for each resource type.
+     * </p>
+     * 
+     * @return Contains a list of <code>BackupOptions</code> for each resource type.
+     */
+
+    public java.util.List<AdvancedBackupSetting> getAdvancedBackupSettings() {
+        return advancedBackupSettings;
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for each resource type.
+     * </p>
+     * 
+     * @param advancedBackupSettings
+     *        Contains a list of <code>BackupOptions</code> for each resource type.
+     */
+
+    public void setAdvancedBackupSettings(java.util.Collection<AdvancedBackupSetting> advancedBackupSettings) {
+        if (advancedBackupSettings == null) {
+            this.advancedBackupSettings = null;
+            return;
+        }
+
+        this.advancedBackupSettings = new java.util.ArrayList<AdvancedBackupSetting>(advancedBackupSettings);
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for each resource type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdvancedBackupSettings(java.util.Collection)} or
+     * {@link #withAdvancedBackupSettings(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param advancedBackupSettings
+     *        Contains a list of <code>BackupOptions</code> for each resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBackupPlanResult withAdvancedBackupSettings(AdvancedBackupSetting... advancedBackupSettings) {
+        if (this.advancedBackupSettings == null) {
+            setAdvancedBackupSettings(new java.util.ArrayList<AdvancedBackupSetting>(advancedBackupSettings.length));
+        }
+        for (AdvancedBackupSetting ele : advancedBackupSettings) {
+            this.advancedBackupSettings.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains a list of <code>BackupOptions</code> for each resource type.
+     * </p>
+     * 
+     * @param advancedBackupSettings
+     *        Contains a list of <code>BackupOptions</code> for each resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBackupPlanResult withAdvancedBackupSettings(java.util.Collection<AdvancedBackupSetting> advancedBackupSettings) {
+        setAdvancedBackupSettings(advancedBackupSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -255,7 +331,9 @@ public class UpdateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getVersionId() != null)
-            sb.append("VersionId: ").append(getVersionId());
+            sb.append("VersionId: ").append(getVersionId()).append(",");
+        if (getAdvancedBackupSettings() != null)
+            sb.append("AdvancedBackupSettings: ").append(getAdvancedBackupSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +364,10 @@ public class UpdateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
             return false;
+        if (other.getAdvancedBackupSettings() == null ^ this.getAdvancedBackupSettings() == null)
+            return false;
+        if (other.getAdvancedBackupSettings() != null && other.getAdvancedBackupSettings().equals(this.getAdvancedBackupSettings()) == false)
+            return false;
         return true;
     }
 
@@ -298,6 +380,7 @@ public class UpdateBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getBackupPlanArn() == null) ? 0 : getBackupPlanArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedBackupSettings() == null) ? 0 : getAdvancedBackupSettings().hashCode());
         return hashCode;
     }
 

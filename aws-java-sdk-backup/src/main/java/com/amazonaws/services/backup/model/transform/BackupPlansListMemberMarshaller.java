@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.backup.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,8 @@ public class BackupPlansListMemberMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatorRequestId").build();
     private static final MarshallingInfo<java.util.Date> LASTEXECUTIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastExecutionDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> ADVANCEDBACKUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedBackupSettings").build();
 
     private static final BackupPlansListMemberMarshaller instance = new BackupPlansListMemberMarshaller();
 
@@ -68,6 +71,7 @@ public class BackupPlansListMemberMarshaller {
             protocolMarshaller.marshall(backupPlansListMember.getBackupPlanName(), BACKUPPLANNAME_BINDING);
             protocolMarshaller.marshall(backupPlansListMember.getCreatorRequestId(), CREATORREQUESTID_BINDING);
             protocolMarshaller.marshall(backupPlansListMember.getLastExecutionDate(), LASTEXECUTIONDATE_BINDING);
+            protocolMarshaller.marshall(backupPlansListMember.getAdvancedBackupSettings(), ADVANCEDBACKUPSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

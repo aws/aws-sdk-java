@@ -36,7 +36,7 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
     private String estimatedMonthlySavings;
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      */
     private String currencyCode;
@@ -83,11 +83,11 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
+     *        The currency code that AWS used to calculate the costs for this instance.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -96,10 +96,10 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
-     * @return The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * @return The currency code that AWS used to calculate the costs for this instance.
      */
 
     public String getCurrencyCode() {
@@ -108,11 +108,11 @@ public class TerminateRecommendationDetail implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
+     *        The currency code that AWS used to calculate the costs for this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

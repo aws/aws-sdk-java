@@ -27,7 +27,8 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The period of time that you want the forecast to cover.
+     * The period of time that you want the forecast to cover. The start date must be equal to or no later than the
+     * current date to avoid a validation error.
      * </p>
      */
     private DateInterval timePeriod;
@@ -99,11 +100,13 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The period of time that you want the forecast to cover.
+     * The period of time that you want the forecast to cover. The start date must be equal to or no later than the
+     * current date to avoid a validation error.
      * </p>
      * 
      * @param timePeriod
-     *        The period of time that you want the forecast to cover.
+     *        The period of time that you want the forecast to cover. The start date must be equal to or no later than
+     *        the current date to avoid a validation error.
      */
 
     public void setTimePeriod(DateInterval timePeriod) {
@@ -112,10 +115,12 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The period of time that you want the forecast to cover.
+     * The period of time that you want the forecast to cover. The start date must be equal to or no later than the
+     * current date to avoid a validation error.
      * </p>
      * 
-     * @return The period of time that you want the forecast to cover.
+     * @return The period of time that you want the forecast to cover. The start date must be equal to or no later than
+     *         the current date to avoid a validation error.
      */
 
     public DateInterval getTimePeriod() {
@@ -124,11 +129,13 @@ public class GetCostForecastRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The period of time that you want the forecast to cover.
+     * The period of time that you want the forecast to cover. The start date must be equal to or no later than the
+     * current date to avoid a validation error.
      * </p>
      * 
      * @param timePeriod
-     *        The period of time that you want the forecast to cover.
+     *        The period of time that you want the forecast to cover. The start date must be equal to or no later than
+     *        the current date to avoid a validation error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

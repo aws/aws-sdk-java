@@ -144,7 +144,8 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
      * </p>
      */
     private String resourceType;
@@ -154,6 +155,23 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Long bytesTransferred;
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.
+     * </p>
+     */
+    private java.util.Map<String, String> backupOptions;
+    /**
+     * <p>
+     * Represents the type of backup for a backup job.
+     * </p>
+     */
+    private String backupType;
 
     /**
      * <p>
@@ -919,12 +937,14 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
-     *        or an Amazon Relational Database Service (Amazon RDS) database.
+     *        or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     *        supported resource type is Amazon EC2.
      */
 
     public void setResourceType(String resourceType) {
@@ -934,11 +954,13 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
      * </p>
      * 
      * @return The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
-     *         or an Amazon Relational Database Service (Amazon RDS) database.
+     *         or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     *         supported resource type is Amazon EC2.
      */
 
     public String getResourceType() {
@@ -948,12 +970,14 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an
-     * Amazon Relational Database Service (Amazon RDS) database.
+     * Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource to be backed up; for example, an Amazon Elastic Block Store (Amazon EBS) volume
-     *        or an Amazon Relational Database Service (Amazon RDS) database.
+     *        or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     *        supported resource type is Amazon EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -999,6 +1023,144 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
 
     public BackupJob withBytesTransferred(Long bytesTransferred) {
         setBytesTransferred(bytesTransferred);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.
+     * </p>
+     * 
+     * @return Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *         jobs.</p>
+     *         <p>
+     *         Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
+     *         creates a regular backup. If you specify an invalid option, you get an
+     *         <code>InvalidParameterValueException</code> exception.
+     */
+
+    public java.util.Map<String, String> getBackupOptions() {
+        return backupOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *        jobs.</p>
+     *        <p>
+     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
+     *        creates a regular backup. If you specify an invalid option, you get an
+     *        <code>InvalidParameterValueException</code> exception.
+     */
+
+    public void setBackupOptions(java.util.Map<String, String> backupOptions) {
+        this.backupOptions = backupOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+     * exception.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *        jobs.</p>
+     *        <p>
+     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
+     *        creates a regular backup. If you specify an invalid option, you get an
+     *        <code>InvalidParameterValueException</code> exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withBackupOptions(java.util.Map<String, String> backupOptions) {
+        setBackupOptions(backupOptions);
+        return this;
+    }
+
+    /**
+     * Add a single BackupOptions entry
+     *
+     * @see BackupJob#withBackupOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob addBackupOptionsEntry(String key, String value) {
+        if (null == this.backupOptions) {
+            this.backupOptions = new java.util.HashMap<String, String>();
+        }
+        if (this.backupOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.backupOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BackupOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob clearBackupOptionsEntries() {
+        this.backupOptions = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the type of backup for a backup job.
+     * </p>
+     * 
+     * @param backupType
+     *        Represents the type of backup for a backup job.
+     */
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    /**
+     * <p>
+     * Represents the type of backup for a backup job.
+     * </p>
+     * 
+     * @return Represents the type of backup for a backup job.
+     */
+
+    public String getBackupType() {
+        return this.backupType;
+    }
+
+    /**
+     * <p>
+     * Represents the type of backup for a backup job.
+     * </p>
+     * 
+     * @param backupType
+     *        Represents the type of backup for a backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withBackupType(String backupType) {
+        setBackupType(backupType);
         return this;
     }
 
@@ -1049,7 +1211,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getBytesTransferred() != null)
-            sb.append("BytesTransferred: ").append(getBytesTransferred());
+            sb.append("BytesTransferred: ").append(getBytesTransferred()).append(",");
+        if (getBackupOptions() != null)
+            sb.append("BackupOptions: ").append(getBackupOptions()).append(",");
+        if (getBackupType() != null)
+            sb.append("BackupType: ").append(getBackupType());
         sb.append("}");
         return sb.toString();
     }
@@ -1136,6 +1302,14 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBytesTransferred() != null && other.getBytesTransferred().equals(this.getBytesTransferred()) == false)
             return false;
+        if (other.getBackupOptions() == null ^ this.getBackupOptions() == null)
+            return false;
+        if (other.getBackupOptions() != null && other.getBackupOptions().equals(this.getBackupOptions()) == false)
+            return false;
+        if (other.getBackupType() == null ^ this.getBackupType() == null)
+            return false;
+        if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
+            return false;
         return true;
     }
 
@@ -1162,6 +1336,8 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStartBy() == null) ? 0 : getStartBy().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
+        hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
+        hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
         return hashCode;
     }
 

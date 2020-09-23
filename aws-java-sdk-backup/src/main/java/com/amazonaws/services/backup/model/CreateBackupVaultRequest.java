@@ -48,8 +48,8 @@ public class CreateBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
     private String encryptionKeyArn;
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      */
     private String creatorRequestId;
@@ -223,13 +223,13 @@ public class CreateBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        executing the operation twice.
+     *        running the operation twice.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -238,12 +238,12 @@ public class CreateBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @return A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *         executing the operation twice.
+     *         running the operation twice.
      */
 
     public String getCreatorRequestId() {
@@ -252,13 +252,13 @@ public class CreateBackupVaultRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        executing the operation twice.
+     *        running the operation twice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

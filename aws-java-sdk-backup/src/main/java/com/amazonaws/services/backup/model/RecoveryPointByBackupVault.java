@@ -59,7 +59,8 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      */
     private String resourceType;
@@ -334,12 +335,14 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon
-     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the
+     *        only supported resource type is Amazon EC2.
      */
 
     public void setResourceType(String resourceType) {
@@ -349,11 +352,13 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      * 
      * @return The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon
-     *         EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+     *         EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the
+     *         only supported resource type is Amazon EC2.
      */
 
     public String getResourceType() {
@@ -363,12 +368,14 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     /**
      * <p>
      * The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon EBS)
-     * volume or an Amazon Relational Database Service (Amazon RDS) database.
+     * volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     * supported resource type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource saved as a recovery point; for example, an Amazon Elastic Block Store (Amazon
-     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database.
+     *        EBS) volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the
+     *        only supported resource type is Amazon EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

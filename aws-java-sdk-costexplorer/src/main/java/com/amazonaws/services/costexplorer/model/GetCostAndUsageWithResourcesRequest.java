@@ -53,7 +53,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      */
     private Expression filter;
@@ -245,7 +247,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      * 
      * @param filter
@@ -257,7 +261,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        >Expression</a>. </p>
      *        <p>
      *        The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     *        <code>ResourceId</code>.
+     *        <code>ResourceId</code>. It requires the <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        >Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      */
 
     public void setFilter(Expression filter) {
@@ -274,7 +280,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      * 
      * @return Filters Amazon Web Services costs by different dimensions. For example, you can specify
@@ -285,7 +293,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *         >Expression</a>. </p>
      *         <p>
      *         The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     *         <code>ResourceId</code>.
+     *         <code>ResourceId</code>. It requires the <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *         >Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      */
 
     public Expression getFilter() {
@@ -302,7 +312,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      * </p>
      * <p>
      * The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     * <code>ResourceId</code>.
+     * <code>ResourceId</code>. It requires the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * </p>
      * 
      * @param filter
@@ -314,7 +326,9 @@ public class GetCostAndUsageWithResourcesRequest extends com.amazonaws.AmazonWeb
      *        >Expression</a>. </p>
      *        <p>
      *        The <code>GetCostAndUsageWithResources</code> operation requires that you either group by or filter by a
-     *        <code>ResourceId</code>.
+     *        <code>ResourceId</code>. It requires the <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        >Expression</a> <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

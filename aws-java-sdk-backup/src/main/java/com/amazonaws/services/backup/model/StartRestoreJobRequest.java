@@ -49,7 +49,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -198,7 +198,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -245,8 +245,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned
-     *         in <code>GetRecoveryPointRestoreMetadata</code>.
+     *         <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup.
+     *         Returned in <code>GetRecoveryPointRestoreMetadata</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -300,7 +300,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -348,8 +348,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
-     *        <code>GetRecoveryPointRestoreMetadata</code>.
+     *        <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup.
+     *        Returned in <code>GetRecoveryPointRestoreMetadata</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -403,7 +403,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
+     * <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
      * <code>GetRecoveryPointRestoreMetadata</code>.
      * </p>
      * </li>
@@ -451,8 +451,8 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in
-     *        <code>GetRecoveryPointRestoreMetadata</code>.
+     *        <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed up by AWS Backup.
+     *        Returned in <code>GetRecoveryPointRestoreMetadata</code>.
      *        </p>
      *        </li>
      *        <li>

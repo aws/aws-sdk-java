@@ -88,6 +88,12 @@ public class AnalysisJsonUnmarshaller implements Unmarshaller<Analysis, JsonUnma
                     context.nextToken();
                     analysis.setLastUpdatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("Sheets", targetDepth)) {
+                    context.nextToken();
+                    analysis.setSheets(new ListUnmarshaller<Sheet>(SheetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -27,17 +27,17 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates the list of services along with the opt-in preferences for the region.
+     * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
      */
     private java.util.Map<String, Boolean> resourceTypeOptInPreference;
 
     /**
      * <p>
-     * Updates the list of services along with the opt-in preferences for the region.
+     * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
      * 
-     * @return Updates the list of services along with the opt-in preferences for the region.
+     * @return Updates the list of services along with the opt-in preferences for the Region.
      */
 
     public java.util.Map<String, Boolean> getResourceTypeOptInPreference() {
@@ -46,11 +46,11 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates the list of services along with the opt-in preferences for the region.
+     * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
      * 
      * @param resourceTypeOptInPreference
-     *        Updates the list of services along with the opt-in preferences for the region.
+     *        Updates the list of services along with the opt-in preferences for the Region.
      */
 
     public void setResourceTypeOptInPreference(java.util.Map<String, Boolean> resourceTypeOptInPreference) {
@@ -59,11 +59,11 @@ public class UpdateRegionSettingsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Updates the list of services along with the opt-in preferences for the region.
+     * Updates the list of services along with the opt-in preferences for the Region.
      * </p>
      * 
      * @param resourceTypeOptInPreference
-     *        Updates the list of services along with the opt-in preferences for the region.
+     *        Updates the list of services along with the opt-in preferences for the Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

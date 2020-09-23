@@ -55,7 +55,7 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
     private String estimatedROI;
     /**
      * <p>
-     * The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     * The currency code AWS used to generate the recommendations and present potential savings.
      * </p>
      */
     private String currencyCode;
@@ -298,11 +298,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     * The currency code AWS used to generate the recommendations and present potential savings.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     *        The currency code AWS used to generate the recommendations and present potential savings.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -311,10 +311,10 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     * The currency code AWS used to generate the recommendations and present potential savings.
      * </p>
      * 
-     * @return The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     * @return The currency code AWS used to generate the recommendations and present potential savings.
      */
 
     public String getCurrencyCode() {
@@ -323,11 +323,11 @@ public class SavingsPlansPurchaseRecommendationDetail implements Serializable, C
 
     /**
      * <p>
-     * The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     * The currency code AWS used to generate the recommendations and present potential savings.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code Amazon Web Services used to generate the recommendations and present potential savings.
+     *        The currency code AWS used to generate the recommendations and present potential savings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

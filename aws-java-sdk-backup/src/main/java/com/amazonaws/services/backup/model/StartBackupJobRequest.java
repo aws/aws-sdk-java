@@ -86,6 +86,16 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> recoveryPointTags;
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup.
+     * </p>
+     */
+    private java.util.Map<String, String> backupOptions;
 
     /**
      * <p>
@@ -514,6 +524,98 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup.
+     * </p>
+     * 
+     * @return Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *         jobs.</p>
+     *         <p>
+     *         Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
+     *         creates a regular backup.
+     */
+
+    public java.util.Map<String, String> getBackupOptions() {
+        return backupOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *        jobs.</p>
+     *        <p>
+     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
+     *        creates a regular backup.
+     */
+
+    public void setBackupOptions(java.util.Map<String, String> backupOptions) {
+        this.backupOptions = backupOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise, creates a
+     * regular backup.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *        jobs.</p>
+     *        <p>
+     *        Valid value: <code>"WindowsVSS”:“enabled"</code>. If enabled, creates a VSS Windows backup; otherwise,
+     *        creates a regular backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobRequest withBackupOptions(java.util.Map<String, String> backupOptions) {
+        setBackupOptions(backupOptions);
+        return this;
+    }
+
+    /**
+     * Add a single BackupOptions entry
+     *
+     * @see StartBackupJobRequest#withBackupOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobRequest addBackupOptionsEntry(String key, String value) {
+        if (null == this.backupOptions) {
+            this.backupOptions = new java.util.HashMap<String, String>();
+        }
+        if (this.backupOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.backupOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BackupOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobRequest clearBackupOptionsEntries() {
+        this.backupOptions = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -540,7 +642,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getLifecycle() != null)
             sb.append("Lifecycle: ").append(getLifecycle()).append(",");
         if (getRecoveryPointTags() != null)
-            sb.append("RecoveryPointTags: ").append("***Sensitive Data Redacted***");
+            sb.append("RecoveryPointTags: ").append("***Sensitive Data Redacted***").append(",");
+        if (getBackupOptions() != null)
+            sb.append("BackupOptions: ").append(getBackupOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -587,6 +691,10 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRecoveryPointTags() != null && other.getRecoveryPointTags().equals(this.getRecoveryPointTags()) == false)
             return false;
+        if (other.getBackupOptions() == null ^ this.getBackupOptions() == null)
+            return false;
+        if (other.getBackupOptions() != null && other.getBackupOptions().equals(this.getBackupOptions()) == false)
+            return false;
         return true;
     }
 
@@ -603,6 +711,7 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCompleteWindowMinutes() == null) ? 0 : getCompleteWindowMinutes().hashCode());
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointTags() == null) ? 0 : getRecoveryPointTags().hashCode());
+        hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
         return hashCode;
     }
 

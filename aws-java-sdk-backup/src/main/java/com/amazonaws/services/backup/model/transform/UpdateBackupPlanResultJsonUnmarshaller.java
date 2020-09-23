@@ -64,6 +64,13 @@ public class UpdateBackupPlanResultJsonUnmarshaller implements Unmarshaller<Upda
                     context.nextToken();
                     updateBackupPlanResult.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AdvancedBackupSettings", targetDepth)) {
+                    context.nextToken();
+                    updateBackupPlanResult.setAdvancedBackupSettings(new ListUnmarshaller<AdvancedBackupSetting>(AdvancedBackupSettingJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

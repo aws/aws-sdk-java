@@ -42,7 +42,7 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
     private String estimatedTotalMonthlySavingsAmount;
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the savings.
+     * The currency code that AWS used to calculate the savings.
      * </p>
      */
     private String savingsCurrencyCode;
@@ -136,11 +136,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the savings.
+     * The currency code that AWS used to calculate the savings.
      * </p>
      * 
      * @param savingsCurrencyCode
-     *        The currency code that Amazon Web Services used to calculate the savings.
+     *        The currency code that AWS used to calculate the savings.
      */
 
     public void setSavingsCurrencyCode(String savingsCurrencyCode) {
@@ -149,10 +149,10 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the savings.
+     * The currency code that AWS used to calculate the savings.
      * </p>
      * 
-     * @return The currency code that Amazon Web Services used to calculate the savings.
+     * @return The currency code that AWS used to calculate the savings.
      */
 
     public String getSavingsCurrencyCode() {
@@ -161,11 +161,11 @@ public class RightsizingRecommendationSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the savings.
+     * The currency code that AWS used to calculate the savings.
      * </p>
      * 
      * @param savingsCurrencyCode
-     *        The currency code that Amazon Web Services used to calculate the savings.
+     *        The currency code that AWS used to calculate the savings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

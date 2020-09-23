@@ -62,6 +62,40 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+     * </p>
+     * 
+     * @param createAnomalyMonitorRequest
+     * @return Result of the CreateAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAnomalyMonitorResult createAnomalyMonitor(CreateAnomalyMonitorRequest createAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
+     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
+     * notifications.
+     * </p>
+     * 
+     * @param createAnomalySubscriptionRequest
+     * @return Result of the CreateAnomalySubscription operation returned by the service.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateAnomalySubscriptionResult createAnomalySubscription(CreateAnomalySubscriptionRequest createAnomalySubscriptionRequest);
+
+    /**
+     * <p>
      * Creates a new Cost Category with the requested name and rules.
      * </p>
      * 
@@ -69,7 +103,7 @@ public interface AWSCostExplorer {
      * @return Result of the CreateCostCategoryDefinition operation returned by the service.
      * @throws ServiceQuotaExceededException
      *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
-     *         resources.
+     *         resource.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
      * @sample AWSCostExplorer.CreateCostCategoryDefinition
@@ -77,6 +111,40 @@ public interface AWSCostExplorer {
      *      target="_top">AWS API Documentation</a>
      */
     CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest createCostCategoryDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly monitor.
+     * </p>
+     * 
+     * @param deleteAnomalyMonitorRequest
+     * @return Result of the DeleteAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @sample AWSCostExplorer.DeleteAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAnomalyMonitorResult deleteAnomalyMonitor(DeleteAnomalyMonitorRequest deleteAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Deletes a cost anomaly subscription.
+     * </p>
+     * 
+     * @param deleteAnomalySubscriptionRequest
+     * @return Result of the DeleteAnomalySubscription operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @sample AWSCostExplorer.DeleteAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteAnomalySubscriptionResult deleteAnomalySubscription(DeleteAnomalySubscriptionRequest deleteAnomalySubscriptionRequest);
 
     /**
      * <p>
@@ -117,6 +185,64 @@ public interface AWSCostExplorer {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeCostCategoryDefinitionResult describeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest describeCostCategoryDefinitionRequest);
+
+    /**
+     * <p>
+     * Retrieves all of the cost anomalies detected on your account, during the time period specified by the
+     * <code>DateInterval</code> object.
+     * </p>
+     * 
+     * @param getAnomaliesRequest
+     * @return Result of the GetAnomalies operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAnomaliesResult getAnomalies(GetAnomaliesRequest getAnomaliesRequest);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalyMonitorsRequest
+     * @return Result of the GetAnomalyMonitors operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalyMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAnomalyMonitorsResult getAnomalyMonitors(GetAnomalyMonitorsRequest getAnomalyMonitorsRequest);
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalySubscriptionsRequest
+     * @return Result of the GetAnomalySubscriptions operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalySubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetAnomalySubscriptionsResult getAnomalySubscriptions(GetAnomalySubscriptionsRequest getAnomalySubscriptionsRequest);
 
     /**
      * <p>
@@ -583,6 +709,58 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Modifies the feedback property of a given cost anomaly.
+     * </p>
+     * 
+     * @param provideAnomalyFeedbackRequest
+     * @return Result of the ProvideAnomalyFeedback operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.ProvideAnomalyFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ProvideAnomalyFeedbackResult provideAnomalyFeedback(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor. The changes made are applied going forward, and does not change
+     * anomalies detected in the past.
+     * </p>
+     * 
+     * @param updateAnomalyMonitorRequest
+     * @return Result of the UpdateAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @sample AWSCostExplorer.UpdateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAnomalyMonitorResult updateAnomalyMonitor(UpdateAnomalyMonitorRequest updateAnomalyMonitorRequest);
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor subscription.
+     * </p>
+     * 
+     * @param updateAnomalySubscriptionRequest
+     * @return Result of the UpdateAnomalySubscription operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @sample AWSCostExplorer.UpdateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateAnomalySubscriptionResult updateAnomalySubscription(UpdateAnomalySubscriptionRequest updateAnomalySubscriptionRequest);
+
+    /**
+     * <p>
      * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
      * month’s expenses and future expenses. This won’t change categorization for the previous months.
      * </p>
@@ -593,7 +771,7 @@ public interface AWSCostExplorer {
      *         The specified ARN in the request doesn't exist.
      * @throws ServiceQuotaExceededException
      *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
-     *         resources.
+     *         resource.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
      * @sample AWSCostExplorer.UpdateCostCategoryDefinition

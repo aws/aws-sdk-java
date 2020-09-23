@@ -40,7 +40,7 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
     private String recoveryPointArn;
     /**
      * <p>
-     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These
      * values vary depending on the service that is being restored.
      * </p>
      */
@@ -140,11 +140,11 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These
      * values vary depending on the service that is being restored.
      * </p>
      * 
-     * @return The set of metadata key-value pairs that describes the original configuration of the backed-up resource.
+     * @return The set of metadata key-value pairs that describe the original configuration of the backed-up resource.
      *         These values vary depending on the service that is being restored.
      */
 
@@ -154,12 +154,12 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These
      * values vary depending on the service that is being restored.
      * </p>
      * 
      * @param restoreMetadata
-     *        The set of metadata key-value pairs that describes the original configuration of the backed-up resource.
+     *        The set of metadata key-value pairs that describe the original configuration of the backed-up resource.
      *        These values vary depending on the service that is being restored.
      */
 
@@ -169,12 +169,12 @@ public class GetRecoveryPointRestoreMetadataResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The set of metadata key-value pairs that describes the original configuration of the backed-up resource. These
+     * The set of metadata key-value pairs that describe the original configuration of the backed-up resource. These
      * values vary depending on the service that is being restored.
      * </p>
      * 
      * @param restoreMetadata
-     *        The set of metadata key-value pairs that describes the original configuration of the backed-up resource.
+     *        The set of metadata key-value pairs that describe the original configuration of the backed-up resource.
      *        These values vary depending on the service that is being restored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

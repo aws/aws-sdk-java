@@ -149,6 +149,20 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.Date startBy;
+    /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     */
+    private java.util.Map<String, String> backupOptions;
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.
+     * </p>
+     */
+    private String backupType;
 
     /**
      * <p>
@@ -998,6 +1012,126 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     * 
+     * @return Represents the options specified as part of backup plan or on-demand backup job.
+     */
+
+    public java.util.Map<String, String> getBackupOptions() {
+        return backupOptions;
+    }
+
+    /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Represents the options specified as part of backup plan or on-demand backup job.
+     */
+
+    public void setBackupOptions(java.util.Map<String, String> backupOptions) {
+        this.backupOptions = backupOptions;
+    }
+
+    /**
+     * <p>
+     * Represents the options specified as part of backup plan or on-demand backup job.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Represents the options specified as part of backup plan or on-demand backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult withBackupOptions(java.util.Map<String, String> backupOptions) {
+        setBackupOptions(backupOptions);
+        return this;
+    }
+
+    /**
+     * Add a single BackupOptions entry
+     *
+     * @see DescribeBackupJobResult#withBackupOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult addBackupOptionsEntry(String key, String value) {
+        if (null == this.backupOptions) {
+            this.backupOptions = new java.util.HashMap<String, String>();
+        }
+        if (this.backupOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.backupOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BackupOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult clearBackupOptionsEntries() {
+        this.backupOptions = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.
+     * </p>
+     * 
+     * @param backupType
+     *        Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
+     *        backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then
+     *        it is a regular backup.
+     */
+
+    public void setBackupType(String backupType) {
+        this.backupType = backupType;
+    }
+
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.
+     * </p>
+     * 
+     * @return Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
+     *         backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then
+     *         it is a regular backup.
+     */
+
+    public String getBackupType() {
+        return this.backupType;
+    }
+
+    /**
+     * <p>
+     * Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS backup was
+     * taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then it is a regular
+     * backup.
+     * </p>
+     * 
+     * @param backupType
+     *        Represents the actual backup type selected for a backup job. For example, if a successful WindowsVSS
+     *        backup was taken, <code>BackupType</code> returns “WindowsVSS”. If <code>BackupType</code> is empty, then
+     *        it is a regular backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBackupJobResult withBackupType(String backupType) {
+        setBackupType(backupType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1044,7 +1178,11 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         if (getExpectedCompletionDate() != null)
             sb.append("ExpectedCompletionDate: ").append(getExpectedCompletionDate()).append(",");
         if (getStartBy() != null)
-            sb.append("StartBy: ").append(getStartBy());
+            sb.append("StartBy: ").append(getStartBy()).append(",");
+        if (getBackupOptions() != null)
+            sb.append("BackupOptions: ").append(getBackupOptions()).append(",");
+        if (getBackupType() != null)
+            sb.append("BackupType: ").append(getBackupType());
         sb.append("}");
         return sb.toString();
     }
@@ -1131,6 +1269,14 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getStartBy() != null && other.getStartBy().equals(this.getStartBy()) == false)
             return false;
+        if (other.getBackupOptions() == null ^ this.getBackupOptions() == null)
+            return false;
+        if (other.getBackupOptions() != null && other.getBackupOptions().equals(this.getBackupOptions()) == false)
+            return false;
+        if (other.getBackupType() == null ^ this.getBackupType() == null)
+            return false;
+        if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
+            return false;
         return true;
     }
 
@@ -1157,6 +1303,8 @@ public class DescribeBackupJobResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
         hashCode = prime * hashCode + ((getExpectedCompletionDate() == null) ? 0 : getExpectedCompletionDate().hashCode());
         hashCode = prime * hashCode + ((getStartBy() == null) ? 0 : getStartBy().hashCode());
+        hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
+        hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
         return hashCode;
     }
 

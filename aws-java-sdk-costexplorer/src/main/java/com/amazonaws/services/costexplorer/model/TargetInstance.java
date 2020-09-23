@@ -42,13 +42,13 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
     private String estimatedMonthlySavings;
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      */
     private String currencyCode;
     /**
      * <p>
-     * Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * Indicates whether this recommendation is the defaulted AWS recommendation.
      * </p>
      */
     private Boolean defaultTargetInstance;
@@ -147,11 +147,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
+     *        The currency code that AWS used to calculate the costs for this instance.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -160,10 +160,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
-     * @return The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * @return The currency code that AWS used to calculate the costs for this instance.
      */
 
     public String getCurrencyCode() {
@@ -172,11 +172,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
+     *        The currency code that AWS used to calculate the costs for this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * Indicates whether this recommendation is the defaulted AWS recommendation.
      * </p>
      * 
      * @param defaultTargetInstance
-     *        Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     *        Indicates whether this recommendation is the defaulted AWS recommendation.
      */
 
     public void setDefaultTargetInstance(Boolean defaultTargetInstance) {
@@ -200,10 +200,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * Indicates whether this recommendation is the defaulted AWS recommendation.
      * </p>
      * 
-     * @return Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * @return Indicates whether this recommendation is the defaulted AWS recommendation.
      */
 
     public Boolean getDefaultTargetInstance() {
@@ -212,11 +212,11 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * Indicates whether this recommendation is the defaulted AWS recommendation.
      * </p>
      * 
      * @param defaultTargetInstance
-     *        Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     *        Indicates whether this recommendation is the defaulted AWS recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,10 +227,10 @@ public class TargetInstance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * Indicates whether this recommendation is the defaulted AWS recommendation.
      * </p>
      * 
-     * @return Indicates whether or not this recommendation is the defaulted Amazon Web Services recommendation.
+     * @return Indicates whether this recommendation is the defaulted AWS recommendation.
      */
 
     public Boolean isDefaultTargetInstance() {

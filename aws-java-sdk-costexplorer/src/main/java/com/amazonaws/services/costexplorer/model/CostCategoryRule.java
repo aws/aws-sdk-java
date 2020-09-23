@@ -34,7 +34,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object used to categorize costs. This supports dimensions, Tags, and nested expressions. Currently the only
+     * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
      * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
      * <code>LINKED_ACCOUNT_NAME</code>.
      * </p>
@@ -81,7 +81,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object used to categorize costs. This supports dimensions, Tags, and nested expressions. Currently the only
+     * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
      * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
      * <code>LINKED_ACCOUNT_NAME</code>.
      * </p>
@@ -98,7 +98,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * 
      * @param rule
      *        An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">
-     *        Expression</a> object used to categorize costs. This supports dimensions, Tags, and nested expressions.
+     *        Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions.
      *        Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      *        <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
      *        <p>
@@ -120,7 +120,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object used to categorize costs. This supports dimensions, Tags, and nested expressions. Currently the only
+     * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
      * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
      * <code>LINKED_ACCOUNT_NAME</code>.
      * </p>
@@ -137,7 +137,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * 
      * @return An <a
      *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression
-     *         </a> object used to categorize costs. This supports dimensions, Tags, and nested expressions. Currently
+     *         </a> object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently
      *         the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      *         <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
      *         <p>
@@ -159,7 +159,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * An <a
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-     * object used to categorize costs. This supports dimensions, Tags, and nested expressions. Currently the only
+     * object used to categorize costs. This supports dimensions, tags, and nested expressions. Currently the only
      * dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>, <code>RECORD_TYPE</code>, and
      * <code>LINKED_ACCOUNT_NAME</code>.
      * </p>
@@ -176,7 +176,7 @@ public class CostCategoryRule implements Serializable, Cloneable, StructuredPojo
      * 
      * @param rule
      *        An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">
-     *        Expression</a> object used to categorize costs. This supports dimensions, Tags, and nested expressions.
+     *        Expression</a> object used to categorize costs. This supports dimensions, tags, and nested expressions.
      *        Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
      *        <code>RECORD_TYPE</code>, and <code>LINKED_ACCOUNT_NAME</code>.</p>
      *        <p>

@@ -125,6 +125,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -482,6 +487,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -659,6 +669,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
      *        </p>
      *        </li>
      *        <li>
@@ -851,6 +866,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -1030,6 +1050,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *         response for this operation includes a unit attribute.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REGION - The AWS Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1222,6 +1247,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -1399,6 +1429,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1593,6 +1628,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -1770,6 +1810,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
      *        </p>
      *        </li>
      *        <li>

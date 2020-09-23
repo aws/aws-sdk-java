@@ -30,18 +30,18 @@ public class ResourceUtilization implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Utilization of current Amazon EC2 Instance
+     * Utilization of current Amazon EC2 instance.
      * </p>
      */
     private EC2ResourceUtilization eC2ResourceUtilization;
 
     /**
      * <p>
-     * Utilization of current Amazon EC2 Instance
+     * Utilization of current Amazon EC2 instance.
      * </p>
      * 
      * @param eC2ResourceUtilization
-     *        Utilization of current Amazon EC2 Instance
+     *        Utilization of current Amazon EC2 instance.
      */
 
     public void setEC2ResourceUtilization(EC2ResourceUtilization eC2ResourceUtilization) {
@@ -50,10 +50,10 @@ public class ResourceUtilization implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Utilization of current Amazon EC2 Instance
+     * Utilization of current Amazon EC2 instance.
      * </p>
      * 
-     * @return Utilization of current Amazon EC2 Instance
+     * @return Utilization of current Amazon EC2 instance.
      */
 
     public EC2ResourceUtilization getEC2ResourceUtilization() {
@@ -62,11 +62,11 @@ public class ResourceUtilization implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Utilization of current Amazon EC2 Instance
+     * Utilization of current Amazon EC2 instance.
      * </p>
      * 
      * @param eC2ResourceUtilization
-     *        Utilization of current Amazon EC2 Instance
+     *        Utilization of current Amazon EC2 instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

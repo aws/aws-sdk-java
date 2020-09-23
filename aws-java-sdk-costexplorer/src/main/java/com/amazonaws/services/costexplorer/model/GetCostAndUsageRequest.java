@@ -79,7 +79,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.List<String> metrics;
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.
+     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
+     * two group by types.
      * </p>
      * <p>
      * When you group by tag key, you get all tag values, including empty strings.
@@ -520,7 +521,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.
+     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
+     * two group by types.
      * </p>
      * <p>
      * When you group by tag key, you get all tag values, including empty strings.
@@ -532,7 +534,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>USAGE_TYPE</code>.
      * </p>
      * 
-     * @return You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.</p>
+     * @return You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories,
+     *         or any two group by types.</p>
      *         <p>
      *         When you group by tag key, you get all tag values, including empty strings.
      *         </p>
@@ -549,7 +552,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.
+     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
+     * two group by types.
      * </p>
      * <p>
      * When you group by tag key, you get all tag values, including empty strings.
@@ -562,7 +566,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param groupBy
-     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.</p>
+     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or
+     *        any two group by types.</p>
      *        <p>
      *        When you group by tag key, you get all tag values, including empty strings.
      *        </p>
@@ -584,7 +589,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.
+     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
+     * two group by types.
      * </p>
      * <p>
      * When you group by tag key, you get all tag values, including empty strings.
@@ -602,7 +608,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param groupBy
-     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.</p>
+     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or
+     *        any two group by types.</p>
      *        <p>
      *        When you group by tag key, you get all tag values, including empty strings.
      *        </p>
@@ -626,7 +633,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.
+     * You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or any
+     * two group by types.
      * </p>
      * <p>
      * When you group by tag key, you get all tag values, including empty strings.
@@ -639,7 +647,8 @@ public class GetCostAndUsageRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param groupBy
-     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, or both.</p>
+     *        You can group AWS costs using up to two different groups, either dimensions, tag keys, cost categories, or
+     *        any two group by types.</p>
      *        <p>
      *        When you group by tag key, you get all tag values, including empty strings.
      *        </p>

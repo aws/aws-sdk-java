@@ -72,7 +72,7 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
     private String savingsPlansCoveredHoursInLookbackPeriod;
     /**
      * <p>
-     * Number of hours during the lookback period billed at On Demand rates.
+     * Number of hours during the lookback period billed at On-Demand rates.
      * </p>
      */
     private String onDemandHoursInLookbackPeriod;
@@ -84,13 +84,13 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
     private String totalRunningHoursInLookbackPeriod;
     /**
      * <p>
-     * Current On Demand cost of operating this instance on a monthly basis.
+     * Current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      */
     private String monthlyCost;
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      */
     private String currencyCode;
@@ -408,11 +408,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period billed at On Demand rates.
+     * Number of hours during the lookback period billed at On-Demand rates.
      * </p>
      * 
      * @param onDemandHoursInLookbackPeriod
-     *        Number of hours during the lookback period billed at On Demand rates.
+     *        Number of hours during the lookback period billed at On-Demand rates.
      */
 
     public void setOnDemandHoursInLookbackPeriod(String onDemandHoursInLookbackPeriod) {
@@ -421,10 +421,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period billed at On Demand rates.
+     * Number of hours during the lookback period billed at On-Demand rates.
      * </p>
      * 
-     * @return Number of hours during the lookback period billed at On Demand rates.
+     * @return Number of hours during the lookback period billed at On-Demand rates.
      */
 
     public String getOnDemandHoursInLookbackPeriod() {
@@ -433,11 +433,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Number of hours during the lookback period billed at On Demand rates.
+     * Number of hours during the lookback period billed at On-Demand rates.
      * </p>
      * 
      * @param onDemandHoursInLookbackPeriod
-     *        Number of hours during the lookback period billed at On Demand rates.
+     *        Number of hours during the lookback period billed at On-Demand rates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -488,11 +488,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Current On Demand cost of operating this instance on a monthly basis.
+     * Current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      * 
      * @param monthlyCost
-     *        Current On Demand cost of operating this instance on a monthly basis.
+     *        Current On-Demand cost of operating this instance on a monthly basis.
      */
 
     public void setMonthlyCost(String monthlyCost) {
@@ -501,10 +501,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Current On Demand cost of operating this instance on a monthly basis.
+     * Current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      * 
-     * @return Current On Demand cost of operating this instance on a monthly basis.
+     * @return Current On-Demand cost of operating this instance on a monthly basis.
      */
 
     public String getMonthlyCost() {
@@ -513,11 +513,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Current On Demand cost of operating this instance on a monthly basis.
+     * Current On-Demand cost of operating this instance on a monthly basis.
      * </p>
      * 
      * @param monthlyCost
-     *        Current On Demand cost of operating this instance on a monthly basis.
+     *        Current On-Demand cost of operating this instance on a monthly basis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,11 +528,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
+     *        The currency code that AWS used to calculate the costs for this instance.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -541,10 +541,10 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
-     * @return The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * @return The currency code that AWS used to calculate the costs for this instance.
      */
 
     public String getCurrencyCode() {
@@ -553,11 +553,11 @@ public class CurrentInstance implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The currency code that Amazon Web Services used to calculate the costs for this instance.
+     * The currency code that AWS used to calculate the costs for this instance.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code that Amazon Web Services used to calculate the costs for this instance.
+     *        The currency code that AWS used to calculate the costs for this instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -28,7 +28,27 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
     }
 
     @Override
+    public CreateAnomalyMonitorResult createAnomalyMonitor(CreateAnomalyMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAnomalySubscriptionResult createAnomalySubscription(CreateAnomalySubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCostCategoryDefinitionResult createCostCategoryDefinition(CreateCostCategoryDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAnomalyMonitorResult deleteAnomalyMonitor(DeleteAnomalyMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAnomalySubscriptionResult deleteAnomalySubscription(DeleteAnomalySubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,6 +59,21 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
 
     @Override
     public DescribeCostCategoryDefinitionResult describeCostCategoryDefinition(DescribeCostCategoryDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAnomaliesResult getAnomalies(GetAnomaliesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAnomalyMonitorsResult getAnomalyMonitors(GetAnomalyMonitorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAnomalySubscriptionsResult getAnomalySubscriptions(GetAnomalySubscriptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +149,21 @@ public class AbstractAWSCostExplorer implements AWSCostExplorer {
 
     @Override
     public ListCostCategoryDefinitionsResult listCostCategoryDefinitions(ListCostCategoryDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ProvideAnomalyFeedbackResult provideAnomalyFeedback(ProvideAnomalyFeedbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnomalyMonitorResult updateAnomalyMonitor(UpdateAnomalyMonitorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAnomalySubscriptionResult updateAnomalySubscription(UpdateAnomalySubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

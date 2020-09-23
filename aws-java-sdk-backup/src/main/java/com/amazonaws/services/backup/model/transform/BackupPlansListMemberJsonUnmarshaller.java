@@ -80,6 +80,13 @@ public class BackupPlansListMemberJsonUnmarshaller implements Unmarshaller<Backu
                     context.nextToken();
                     backupPlansListMember.setLastExecutionDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("AdvancedBackupSettings", targetDepth)) {
+                    context.nextToken();
+                    backupPlansListMember.setAdvancedBackupSettings(new ListUnmarshaller<AdvancedBackupSetting>(AdvancedBackupSettingJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -36,13 +36,13 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
     private String recommendationId;
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      */
     private String generationTimestamp;
     /**
      * <p>
-     * How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      */
     private String lookbackPeriodInDays;
@@ -89,11 +89,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The timestamp for when Amazon Web Services made this recommendation.
+     *        The timestamp for when AWS made this recommendation.
      */
 
     public void setGenerationTimestamp(String generationTimestamp) {
@@ -102,10 +102,10 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      * 
-     * @return The timestamp for when Amazon Web Services made this recommendation.
+     * @return The timestamp for when AWS made this recommendation.
      */
 
     public String getGenerationTimestamp() {
@@ -114,11 +114,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The timestamp for when Amazon Web Services made this recommendation.
+     * The timestamp for when AWS made this recommendation.
      * </p>
      * 
      * @param generationTimestamp
-     *        The timestamp for when Amazon Web Services made this recommendation.
+     *        The timestamp for when AWS made this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     *        How many days of previous usage that AWS considers when making this recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -143,10 +143,10 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
-     * @return How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     * @return How many days of previous usage that AWS considers when making this recommendation.
      * @see LookbackPeriodInDays
      */
 
@@ -156,11 +156,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     *        How many days of previous usage that AWS considers when making this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */
@@ -172,11 +172,11 @@ public class RightsizingRecommendationMetadata implements Serializable, Cloneabl
 
     /**
      * <p>
-     * How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     * How many days of previous usage that AWS considers when making this recommendation.
      * </p>
      * 
      * @param lookbackPeriodInDays
-     *        How many days of previous usage that Amazon Web Services considers when making this recommendation.
+     *        How many days of previous usage that AWS considers when making this recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LookbackPeriodInDays
      */

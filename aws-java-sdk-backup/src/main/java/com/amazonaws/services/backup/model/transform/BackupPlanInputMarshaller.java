@@ -32,6 +32,8 @@ public class BackupPlanInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupPlanName").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rules").build();
+    private static final MarshallingInfo<List> ADVANCEDBACKUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedBackupSettings").build();
 
     private static final BackupPlanInputMarshaller instance = new BackupPlanInputMarshaller();
 
@@ -51,6 +53,7 @@ public class BackupPlanInputMarshaller {
         try {
             protocolMarshaller.marshall(backupPlanInput.getBackupPlanName(), BACKUPPLANNAME_BINDING);
             protocolMarshaller.marshall(backupPlanInput.getRules(), RULES_BINDING);
+            protocolMarshaller.marshall(backupPlanInput.getAdvancedBackupSettings(), ADVANCEDBACKUPSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

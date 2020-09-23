@@ -26,9 +26,9 @@ public class DescribeAccountSettingsResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. The QuickSight
-     * console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's
-     * technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
+     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. In the
+     * QuickSight console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though
+     * it's technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
      * account. The edition that you subscribe to applies to QuickSight in every AWS Region where you use it.
      * </p>
      */
@@ -49,19 +49,19 @@ public class DescribeAccountSettingsResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. The QuickSight
-     * console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's
-     * technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
+     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. In the
+     * QuickSight console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though
+     * it's technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
      * account. The edition that you subscribe to applies to QuickSight in every AWS Region where you use it.
      * </p>
      * 
      * @param accountSettings
      *        The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight
      *        that you subscribed to (Standard or Enterprise) and the notification email for the QuickSight
-     *        subscription. The QuickSight console, the QuickSight subscription is sometimes referred to as a QuickSight
-     *        "account" even though it's technically not an account by itself. Instead, it's a subscription to the
-     *        QuickSight service for your AWS account. The edition that you subscribe to applies to QuickSight in every
-     *        AWS Region where you use it.
+     *        subscription. In the QuickSight console, the QuickSight subscription is sometimes referred to as a
+     *        QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription
+     *        to the QuickSight service for your AWS account. The edition that you subscribe to applies to QuickSight in
+     *        every AWS Region where you use it.
      */
 
     public void setAccountSettings(AccountSettings accountSettings) {
@@ -71,15 +71,15 @@ public class DescribeAccountSettingsResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. The QuickSight
-     * console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's
-     * technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
+     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. In the
+     * QuickSight console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though
+     * it's technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
      * account. The edition that you subscribe to applies to QuickSight in every AWS Region where you use it.
      * </p>
      * 
      * @return The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight
      *         that you subscribed to (Standard or Enterprise) and the notification email for the QuickSight
-     *         subscription. The QuickSight console, the QuickSight subscription is sometimes referred to as a
+     *         subscription. In the QuickSight console, the QuickSight subscription is sometimes referred to as a
      *         QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription
      *         to the QuickSight service for your AWS account. The edition that you subscribe to applies to QuickSight
      *         in every AWS Region where you use it.
@@ -92,19 +92,19 @@ public class DescribeAccountSettingsResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight that you
-     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. The QuickSight
-     * console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though it's
-     * technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
+     * subscribed to (Standard or Enterprise) and the notification email for the QuickSight subscription. In the
+     * QuickSight console, the QuickSight subscription is sometimes referred to as a QuickSight "account" even though
+     * it's technically not an account by itself. Instead, it's a subscription to the QuickSight service for your AWS
      * account. The edition that you subscribe to applies to QuickSight in every AWS Region where you use it.
      * </p>
      * 
      * @param accountSettings
      *        The QuickSight settings for this AWS account. This information includes the edition of Amazon QuickSight
      *        that you subscribed to (Standard or Enterprise) and the notification email for the QuickSight
-     *        subscription. The QuickSight console, the QuickSight subscription is sometimes referred to as a QuickSight
-     *        "account" even though it's technically not an account by itself. Instead, it's a subscription to the
-     *        QuickSight service for your AWS account. The edition that you subscribe to applies to QuickSight in every
-     *        AWS Region where you use it.
+     *        subscription. In the QuickSight console, the QuickSight subscription is sometimes referred to as a
+     *        QuickSight "account" even though it's technically not an account by itself. Instead, it's a subscription
+     *        to the QuickSight service for your AWS account. The edition that you subscribe to applies to QuickSight in
+     *        every AWS Region where you use it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

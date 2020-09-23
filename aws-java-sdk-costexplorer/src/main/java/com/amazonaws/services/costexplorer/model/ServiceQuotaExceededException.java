@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You've reached the limit on the number of resources you can create, or exceeded the size of an individual resources.
+ * You've reached the limit on the number of resources you can create, or exceeded the size of an individual resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

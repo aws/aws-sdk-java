@@ -43,9 +43,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      * QuickSight namespace.
      * </p>
      * <p>
-     * For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
-     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you
-     * could add a custom theme by specifying
+     * For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
+     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can
+     * add a custom theme by specifying
      * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>
      * .
      * </p>
@@ -144,9 +144,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      * QuickSight namespace.
      * </p>
      * <p>
-     * For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
-     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you
-     * could add a custom theme by specifying
+     * For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
+     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can
+     * add a custom theme by specifying
      * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>
      * .
      * </p>
@@ -155,9 +155,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      *        The QuickSight customizations you're adding in the current AWS Region. You can add these to an AWS account
      *        and a QuickSight namespace. </p>
      *        <p>
-     *        For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight
-     *        theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>
-     *        . Or, you could add a custom theme by specifying
+     *        For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight
+     *        theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>.
+     *        Or, you can add a custom theme by specifying
      *        <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.
      */
 
@@ -171,9 +171,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      * QuickSight namespace.
      * </p>
      * <p>
-     * For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
-     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you
-     * could add a custom theme by specifying
+     * For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
+     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can
+     * add a custom theme by specifying
      * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>
      * .
      * </p>
@@ -181,10 +181,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      * @return The QuickSight customizations you're adding in the current AWS Region. You can add these to an AWS
      *         account and a QuickSight namespace. </p>
      *         <p>
-     *         For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight
-     *         theme:
-     *         <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or,
-     *         you could add a custom theme by specifying
+     *         For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight
+     *         theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>.
+     *         Or, you can add a custom theme by specifying
      *         <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.
      */
 
@@ -198,9 +197,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      * QuickSight namespace.
      * </p>
      * <p>
-     * For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
-     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>. Or, you
-     * could add a custom theme by specifying
+     * For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight theme:
+     * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>. Or, you can
+     * add a custom theme by specifying
      * <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>
      * .
      * </p>
@@ -209,9 +208,9 @@ public class CreateAccountCustomizationRequest extends com.amazonaws.AmazonWebSe
      *        The QuickSight customizations you're adding in the current AWS Region. You can add these to an AWS account
      *        and a QuickSight namespace. </p>
      *        <p>
-     *        For example, you could add a default theme by setting <code>AccountCustomization</code> to the midnight
-     *        theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }. </code>
-     *        . Or, you could add a custom theme by specifying
+     *        For example, you can add a default theme by setting <code>AccountCustomization</code> to the midnight
+     *        theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT" }</code>.
+     *        Or, you can add a custom theme by specifying
      *        <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639" }</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

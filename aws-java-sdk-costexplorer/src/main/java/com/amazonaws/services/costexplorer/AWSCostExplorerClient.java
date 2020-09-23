@@ -99,6 +99,12 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("UnresolvableUsageUnitException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.UnresolvableUsageUnitExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnknownMonitorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.UnknownMonitorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnknownSubscriptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.UnknownSubscriptionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestChangedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.RequestChangedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -169,6 +175,122 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Creates a new cost anomaly detection monitor with the requested type and monitor specification.
+     * </p>
+     * 
+     * @param createAnomalyMonitorRequest
+     * @return Result of the CreateAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAnomalyMonitorResult createAnomalyMonitor(CreateAnomalyMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAnomalyMonitor(request);
+    }
+
+    @SdkInternalApi
+    final CreateAnomalyMonitorResult executeCreateAnomalyMonitor(CreateAnomalyMonitorRequest createAnomalyMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAnomalyMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAnomalyMonitorRequest> request = null;
+        Response<CreateAnomalyMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAnomalyMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAnomalyMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnomalyMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAnomalyMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAnomalyMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
+     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
+     * notifications.
+     * </p>
+     * 
+     * @param createAnomalySubscriptionRequest
+     * @return Result of the CreateAnomalySubscription operation returned by the service.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.CreateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateAnomalySubscriptionResult createAnomalySubscription(CreateAnomalySubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAnomalySubscription(request);
+    }
+
+    @SdkInternalApi
+    final CreateAnomalySubscriptionResult executeCreateAnomalySubscription(CreateAnomalySubscriptionRequest createAnomalySubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAnomalySubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAnomalySubscriptionRequest> request = null;
+        Response<CreateAnomalySubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAnomalySubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAnomalySubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnomalySubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAnomalySubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAnomalySubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new Cost Category with the requested name and rules.
      * </p>
      * 
@@ -176,7 +298,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      * @return Result of the CreateCostCategoryDefinition operation returned by the service.
      * @throws ServiceQuotaExceededException
      *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
-     *         resources.
+     *         resource.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
      * @sample AWSCostExplorer.CreateCostCategoryDefinition
@@ -217,6 +339,122 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<CreateCostCategoryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateCostCategoryDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a cost anomaly monitor.
+     * </p>
+     * 
+     * @param deleteAnomalyMonitorRequest
+     * @return Result of the DeleteAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @sample AWSCostExplorer.DeleteAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAnomalyMonitorResult deleteAnomalyMonitor(DeleteAnomalyMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAnomalyMonitor(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAnomalyMonitorResult executeDeleteAnomalyMonitor(DeleteAnomalyMonitorRequest deleteAnomalyMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAnomalyMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAnomalyMonitorRequest> request = null;
+        Response<DeleteAnomalyMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAnomalyMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAnomalyMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnomalyMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAnomalyMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAnomalyMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a cost anomaly subscription.
+     * </p>
+     * 
+     * @param deleteAnomalySubscriptionRequest
+     * @return Result of the DeleteAnomalySubscription operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @sample AWSCostExplorer.DeleteAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteAnomalySubscriptionResult deleteAnomalySubscription(DeleteAnomalySubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAnomalySubscription(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAnomalySubscriptionResult executeDeleteAnomalySubscription(DeleteAnomalySubscriptionRequest deleteAnomalySubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAnomalySubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAnomalySubscriptionRequest> request = null;
+        Response<DeleteAnomalySubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAnomalySubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAnomalySubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnomalySubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAnomalySubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAnomalySubscriptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -341,6 +579,186 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<DescribeCostCategoryDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeCostCategoryDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all of the cost anomalies detected on your account, during the time period specified by the
+     * <code>DateInterval</code> object.
+     * </p>
+     * 
+     * @param getAnomaliesRequest
+     * @return Result of the GetAnomalies operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAnomaliesResult getAnomalies(GetAnomaliesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAnomalies(request);
+    }
+
+    @SdkInternalApi
+    final GetAnomaliesResult executeGetAnomalies(GetAnomaliesRequest getAnomaliesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAnomaliesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAnomaliesRequest> request = null;
+        Response<GetAnomaliesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAnomaliesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnomaliesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnomalies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAnomaliesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAnomaliesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalyMonitorsRequest
+     * @return Result of the GetAnomalyMonitors operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalyMonitors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalyMonitors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAnomalyMonitorsResult getAnomalyMonitors(GetAnomalyMonitorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAnomalyMonitors(request);
+    }
+
+    @SdkInternalApi
+    final GetAnomalyMonitorsResult executeGetAnomalyMonitors(GetAnomalyMonitorsRequest getAnomalyMonitorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAnomalyMonitorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAnomalyMonitorsRequest> request = null;
+        Response<GetAnomalyMonitorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAnomalyMonitorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnomalyMonitorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnomalyMonitors");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAnomalyMonitorsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAnomalyMonitorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly
+     * monitor Amazon Resource Names (ARNs).
+     * </p>
+     * 
+     * @param getAnomalySubscriptionsRequest
+     * @return Result of the GetAnomalySubscriptions operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.GetAnomalySubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetAnomalySubscriptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAnomalySubscriptionsResult getAnomalySubscriptions(GetAnomalySubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAnomalySubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final GetAnomalySubscriptionsResult executeGetAnomalySubscriptions(GetAnomalySubscriptionsRequest getAnomalySubscriptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAnomalySubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAnomalySubscriptionsRequest> request = null;
+        Response<GetAnomalySubscriptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAnomalySubscriptionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAnomalySubscriptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnomalySubscriptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAnomalySubscriptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAnomalySubscriptionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1436,6 +1854,181 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Modifies the feedback property of a given cost anomaly.
+     * </p>
+     * 
+     * @param provideAnomalyFeedbackRequest
+     * @return Result of the ProvideAnomalyFeedback operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @sample AWSCostExplorer.ProvideAnomalyFeedback
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ProvideAnomalyFeedback" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ProvideAnomalyFeedbackResult provideAnomalyFeedback(ProvideAnomalyFeedbackRequest request) {
+        request = beforeClientExecution(request);
+        return executeProvideAnomalyFeedback(request);
+    }
+
+    @SdkInternalApi
+    final ProvideAnomalyFeedbackResult executeProvideAnomalyFeedback(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(provideAnomalyFeedbackRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ProvideAnomalyFeedbackRequest> request = null;
+        Response<ProvideAnomalyFeedbackResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ProvideAnomalyFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provideAnomalyFeedbackRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvideAnomalyFeedback");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ProvideAnomalyFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ProvideAnomalyFeedbackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor. The changes made are applied going forward, and does not change
+     * anomalies detected in the past.
+     * </p>
+     * 
+     * @param updateAnomalyMonitorRequest
+     * @return Result of the UpdateAnomalyMonitor operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @sample AWSCostExplorer.UpdateAnomalyMonitor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalyMonitor" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAnomalyMonitorResult updateAnomalyMonitor(UpdateAnomalyMonitorRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAnomalyMonitor(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAnomalyMonitorResult executeUpdateAnomalyMonitor(UpdateAnomalyMonitorRequest updateAnomalyMonitorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAnomalyMonitorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAnomalyMonitorRequest> request = null;
+        Response<UpdateAnomalyMonitorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAnomalyMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAnomalyMonitorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnomalyMonitor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAnomalyMonitorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAnomalyMonitorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing cost anomaly monitor subscription.
+     * </p>
+     * 
+     * @param updateAnomalySubscriptionRequest
+     * @return Result of the UpdateAnomalySubscription operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws UnknownMonitorException
+     *         The cost anomaly monitor does not exist for the account.
+     * @throws UnknownSubscriptionException
+     *         The cost anomaly subscription does not exist for the account.
+     * @sample AWSCostExplorer.UpdateAnomalySubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateAnomalySubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateAnomalySubscriptionResult updateAnomalySubscription(UpdateAnomalySubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAnomalySubscription(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAnomalySubscriptionResult executeUpdateAnomalySubscription(UpdateAnomalySubscriptionRequest updateAnomalySubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAnomalySubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAnomalySubscriptionRequest> request = null;
+        Response<UpdateAnomalySubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAnomalySubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAnomalySubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnomalySubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAnomalySubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAnomalySubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing Cost Category. Changes made to the Cost Category rules will be used to categorize the current
      * month’s expenses and future expenses. This won’t change categorization for the previous months.
      * </p>
@@ -1446,7 +2039,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
      *         The specified ARN in the request doesn't exist.
      * @throws ServiceQuotaExceededException
      *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
-     *         resources.
+     *         resource.
      * @throws LimitExceededException
      *         You made too many calls in a short period of time. Try again later.
      * @sample AWSCostExplorer.UpdateCostCategoryDefinition

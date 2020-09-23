@@ -154,8 +154,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Backup plans are documents that contain information that AWS Backup uses to schedule tasks that create recovery
-     * points of resources.
+     * Creates a backup plan using a backup plan name and backup rules. A backup plan is a document that contains
+     * information that AWS Backup uses to schedule tasks that create recovery points for resources.
      * </p>
      * <p>
      * If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
@@ -260,12 +260,12 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that are tagged as
      * <code>"department=finance"</code>, <code>"importance=critical"</code>, in addition to an EBS volume with the
-     * specified volume Id.
+     * specified volume ID.
      * </p>
      * <p>
      * Resources and conditions are additive in that all resources that match the pattern are selected. This shouldn't
-     * be confused with a logical AND, where all conditions must match. The matching patterns are logically 'put
-     * together using the OR operator. In other words, all patterns that match are selected for backup.
+     * be confused with a logical AND, where all conditions must match. The matching patterns are logically put together
+     * using the OR operator. In other words, all patterns that match are selected for backup.
      * </p>
      * 
      * @param createBackupSelectionRequest
@@ -780,7 +780,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns metadata associated with creating a backup of a resource.
+     * Returns backup job details for the specified <code>BackupJobId</code>.
      * </p>
      * 
      * @param describeBackupJobRequest
@@ -1093,8 +1093,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
     /**
      * <p>
      * Returns the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup attempts to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not attempt to
+     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
      * protect that service's resources in this Region.
      * </p>
      * 
@@ -1278,7 +1278,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns the body of a backup plan in JSON format, in addition to plan metadata.
+     * Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. Returns the body of a backup
+     * plan in JSON format, in addition to plan metadata.
      * </p>
      * 
      * @param getBackupPlanRequest
@@ -1776,7 +1777,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns metadata about your backup jobs.
+     * Returns a list of existing backup jobs for an authenticated account.
      * </p>
      * 
      * @param listBackupJobsRequest
@@ -1960,8 +1961,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns metadata of your saved backup plans, including Amazon Resource Names (ARNs), plan IDs, creation and
-     * deletion dates, version IDs, plan names, and creator request IDs.
+     * Returns a list of existing backup plans for an authenticated account. The list is populated only if the advanced
+     * option is set for the backup plan. The list contains information such as Amazon Resource Names (ARNs), plan IDs,
+     * creation and deletion dates, version IDs, plan names, and creator request IDs.
      * </p>
      * 
      * @param listBackupPlansRequest
@@ -2643,7 +2645,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Starts a job to create a one-time backup of the specified resource.
+     * Starts an on-demand backup job for the specified resource.
      * </p>
      * 
      * @param startBackupJobRequest
@@ -3024,8 +3026,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Replaces the body of a saved backup plan identified by its <code>backupPlanId</code> with the input document in
-     * JSON format. The new version is uniquely identified by a <code>VersionId</code>.
+     * Updates an existing backup plan identified by its <code>backupPlanId</code> with the input document in JSON
+     * format. The new version is uniquely identified by a <code>VersionId</code>.
      * </p>
      * 
      * @param updateBackupPlanRequest
@@ -3159,8 +3161,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
     /**
      * <p>
      * Updates the current service opt-in settings for the Region. If the service has a value set to <code>true</code>,
-     * AWS Backup attempts to protect that service's resources in this Region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not attempt to
+     * AWS Backup tries to protect that service's resources in this Region, when included in an on-demand backup or
+     * scheduled backup plan. If the value is set to <code>false</code> for a service, AWS Backup does not try to
      * protect that service's resources in this Region.
      * </p>
      * 

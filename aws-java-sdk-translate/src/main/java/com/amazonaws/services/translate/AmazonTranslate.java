@@ -54,6 +54,9 @@ public interface AmazonTranslate {
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonTranslate.DeleteTerminology

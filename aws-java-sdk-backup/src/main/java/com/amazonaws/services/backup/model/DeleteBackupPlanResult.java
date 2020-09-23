@@ -46,7 +46,7 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date deletionDate;
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      */
@@ -192,12 +192,12 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      * 
      * @param versionId
-     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids
+     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs
      *        cannot be edited.
      */
 
@@ -207,11 +207,11 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      * 
-     * @return Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids
+     * @return Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs
      *         cannot be edited.
      */
 
@@ -221,12 +221,12 @@ public class DeleteBackupPlanResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids cannot
+     * Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs cannot
      * be edited.
      * </p>
      * 
      * @param versionId
-     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version Ids
+     *        Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most 1,024 bytes long. Version IDs
      *        cannot be edited.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

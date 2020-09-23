@@ -74,12 +74,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> terminologyNames;
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      */
     private String clientToken;
@@ -455,21 +450,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      * 
      * @param clientToken
-     *        The client token of the EC2 instance calling the request. This token is auto-generated when using the
-     *        Amazon Translate SDK. Otherwise, use the <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     *        operation to retreive an instance's client token. For more information, see <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     *        Tokens</a> in the EC2 User Guide.
+     *        A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      */
 
     public void setClientToken(String clientToken) {
@@ -478,20 +463,10 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      * 
-     * @return The client token of the EC2 instance calling the request. This token is auto-generated when using the
-     *         Amazon Translate SDK. Otherwise, use the <a
-     *         href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     *         EC2 operation to retreive an instance's client token. For more information, see <a
-     *         href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     *         Tokens</a> in the EC2 User Guide.
+     * @return A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      */
 
     public String getClientToken() {
@@ -500,21 +475,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      * 
      * @param clientToken
-     *        The client token of the EC2 instance calling the request. This token is auto-generated when using the
-     *        Amazon Translate SDK. Otherwise, use the <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     *        operation to retreive an instance's client token. For more information, see <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     *        Tokens</a> in the EC2 User Guide.
+     *        A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

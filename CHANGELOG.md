@@ -1,3 +1,20 @@
+# __1.11.868__ __2020-09-23__
+## __AWS Backup__
+  - ### Features
+    - This release allows customers to enable or disable advanced backup settings in backup plan. As part of this feature AWS Backup added support for  Windows VSS backup option for EC2 resources.
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - This release provides access to Cost Anomaly Detection Public Preview APIs. Cost Anomaly Detection finds cost anomalies based on your historical cost and usage using Machine Learning models.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Added Sheet information to DescribeDashboard, DescribeTemplate and DescribeAnalysis API response.
+
+## __Amazon Translate__
+  - ### Features
+    - Improvements to DeleteTerminology API.
+
 # __1.11.867__ __2020-09-22__
 ## __AWS SDK for Java__
   - ### Bugfixes

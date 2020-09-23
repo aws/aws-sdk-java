@@ -45,6 +45,8 @@ public class StartBackupJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Lifecycle").build();
     private static final MarshallingInfo<Map> RECOVERYPOINTTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RecoveryPointTags").build();
+    private static final MarshallingInfo<Map> BACKUPOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BackupOptions").build();
 
     private static final StartBackupJobRequestMarshaller instance = new StartBackupJobRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class StartBackupJobRequestMarshaller {
             protocolMarshaller.marshall(startBackupJobRequest.getCompleteWindowMinutes(), COMPLETEWINDOWMINUTES_BINDING);
             protocolMarshaller.marshall(startBackupJobRequest.getLifecycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(startBackupJobRequest.getRecoveryPointTags(), RECOVERYPOINTTAGS_BINDING);
+            protocolMarshaller.marshall(startBackupJobRequest.getBackupOptions(), BACKUPOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

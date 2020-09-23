@@ -56,8 +56,8 @@ public class BackupSelectionsListMember implements Serializable, Cloneable, Stru
     private java.util.Date creationDate;
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      */
     private String creatorRequestId;
@@ -243,13 +243,13 @@ public class BackupSelectionsListMember implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        executing the operation twice.
+     *        running the operation twice.
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -258,12 +258,12 @@ public class BackupSelectionsListMember implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @return A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *         executing the operation twice.
+     *         running the operation twice.
      */
 
     public String getCreatorRequestId() {
@@ -272,13 +272,13 @@ public class BackupSelectionsListMember implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * A unique string that identifies the request and allows failed requests to be retried without the risk of
-     * executing the operation twice.
+     * A unique string that identifies the request and allows failed requests to be retried without the risk of running
+     * the operation twice.
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and allows failed requests to be retried without the risk of
-     *        executing the operation twice.
+     *        running the operation twice.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -82,6 +82,12 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String themeArn;
+    /**
+     * <p>
+     * A list of the associated sheets with the unique identifier and name of each sheet.
+     * </p>
+     */
+    private java.util.List<Sheet> sheets;
 
     /**
      * <p>
@@ -527,6 +533,76 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * A list of the associated sheets with the unique identifier and name of each sheet.
+     * </p>
+     * 
+     * @return A list of the associated sheets with the unique identifier and name of each sheet.
+     */
+
+    public java.util.List<Sheet> getSheets() {
+        return sheets;
+    }
+
+    /**
+     * <p>
+     * A list of the associated sheets with the unique identifier and name of each sheet.
+     * </p>
+     * 
+     * @param sheets
+     *        A list of the associated sheets with the unique identifier and name of each sheet.
+     */
+
+    public void setSheets(java.util.Collection<Sheet> sheets) {
+        if (sheets == null) {
+            this.sheets = null;
+            return;
+        }
+
+        this.sheets = new java.util.ArrayList<Sheet>(sheets);
+    }
+
+    /**
+     * <p>
+     * A list of the associated sheets with the unique identifier and name of each sheet.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSheets(java.util.Collection)} or {@link #withSheets(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param sheets
+     *        A list of the associated sheets with the unique identifier and name of each sheet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersion withSheets(Sheet... sheets) {
+        if (this.sheets == null) {
+            setSheets(new java.util.ArrayList<Sheet>(sheets.length));
+        }
+        for (Sheet ele : sheets) {
+            this.sheets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the associated sheets with the unique identifier and name of each sheet.
+     * </p>
+     * 
+     * @param sheets
+     *        A list of the associated sheets with the unique identifier and name of each sheet.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardVersion withSheets(java.util.Collection<Sheet> sheets) {
+        setSheets(sheets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -555,7 +631,9 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getThemeArn() != null)
-            sb.append("ThemeArn: ").append(getThemeArn());
+            sb.append("ThemeArn: ").append(getThemeArn()).append(",");
+        if (getSheets() != null)
+            sb.append("Sheets: ").append(getSheets());
         sb.append("}");
         return sb.toString();
     }
@@ -606,6 +684,10 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
             return false;
+        if (other.getSheets() == null ^ this.getSheets() == null)
+            return false;
+        if (other.getSheets() != null && other.getSheets().equals(this.getSheets()) == false)
+            return false;
         return true;
     }
 
@@ -623,6 +705,7 @@ public class DashboardVersion implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDataSetArns() == null) ? 0 : getDataSetArns().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
+        hashCode = prime * hashCode + ((getSheets() == null) ? 0 : getSheets().hashCode());
         return hashCode;
     }
 

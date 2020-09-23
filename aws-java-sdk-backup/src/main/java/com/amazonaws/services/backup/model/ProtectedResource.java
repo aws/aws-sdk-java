@@ -38,7 +38,7 @@ public class ProtectedResource implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational
-     * Database Service (Amazon RDS) database.
+     * Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource type is Amazon EC2.
      * </p>
      */
     private String resourceType;
@@ -100,12 +100,13 @@ public class ProtectedResource implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational
-     * Database Service (Amazon RDS) database.
+     * Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
-     *        Relational Database Service (Amazon RDS) database.
+     *        Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     *        type is Amazon EC2.
      */
 
     public void setResourceType(String resourceType) {
@@ -115,11 +116,12 @@ public class ProtectedResource implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational
-     * Database Service (Amazon RDS) database.
+     * Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource type is Amazon EC2.
      * </p>
      * 
      * @return The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
-     *         Relational Database Service (Amazon RDS) database.
+     *         Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     *         type is Amazon EC2.
      */
 
     public String getResourceType() {
@@ -129,12 +131,13 @@ public class ProtectedResource implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon Relational
-     * Database Service (Amazon RDS) database.
+     * Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource type is Amazon EC2.
      * </p>
      * 
      * @param resourceType
      *        The type of AWS resource; for example, an Amazon Elastic Block Store (Amazon EBS) volume or an Amazon
-     *        Relational Database Service (Amazon RDS) database.
+     *        Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     *        type is Amazon EC2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

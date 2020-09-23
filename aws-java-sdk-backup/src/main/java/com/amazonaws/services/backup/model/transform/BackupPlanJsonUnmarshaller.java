@@ -58,6 +58,12 @@ public class BackupPlanJsonUnmarshaller implements Unmarshaller<BackupPlan, Json
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("AdvancedBackupSettings", targetDepth)) {
+                    context.nextToken();
+                    backupPlan.setAdvancedBackupSettings(new ListUnmarshaller<AdvancedBackupSetting>(AdvancedBackupSettingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

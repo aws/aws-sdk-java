@@ -30,17 +30,17 @@ public class ModifyRecommendationDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Identifies whether this instance type is the Amazon Web Services default recommendation.
+     * Identifies whether this instance type is the AWS default recommendation.
      * </p>
      */
     private java.util.List<TargetInstance> targetInstances;
 
     /**
      * <p>
-     * Identifies whether this instance type is the Amazon Web Services default recommendation.
+     * Identifies whether this instance type is the AWS default recommendation.
      * </p>
      * 
-     * @return Identifies whether this instance type is the Amazon Web Services default recommendation.
+     * @return Identifies whether this instance type is the AWS default recommendation.
      */
 
     public java.util.List<TargetInstance> getTargetInstances() {
@@ -49,11 +49,11 @@ public class ModifyRecommendationDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Identifies whether this instance type is the Amazon Web Services default recommendation.
+     * Identifies whether this instance type is the AWS default recommendation.
      * </p>
      * 
      * @param targetInstances
-     *        Identifies whether this instance type is the Amazon Web Services default recommendation.
+     *        Identifies whether this instance type is the AWS default recommendation.
      */
 
     public void setTargetInstances(java.util.Collection<TargetInstance> targetInstances) {
@@ -67,7 +67,7 @@ public class ModifyRecommendationDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Identifies whether this instance type is the Amazon Web Services default recommendation.
+     * Identifies whether this instance type is the AWS default recommendation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -76,7 +76,7 @@ public class ModifyRecommendationDetail implements Serializable, Cloneable, Stru
      * </p>
      * 
      * @param targetInstances
-     *        Identifies whether this instance type is the Amazon Web Services default recommendation.
+     *        Identifies whether this instance type is the AWS default recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class ModifyRecommendationDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Identifies whether this instance type is the Amazon Web Services default recommendation.
+     * Identifies whether this instance type is the AWS default recommendation.
      * </p>
      * 
      * @param targetInstances
-     *        Identifies whether this instance type is the Amazon Web Services default recommendation.
+     *        Identifies whether this instance type is the AWS default recommendation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

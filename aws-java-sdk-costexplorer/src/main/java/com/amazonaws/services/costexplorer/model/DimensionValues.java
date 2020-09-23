@@ -46,7 +46,7 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      */
@@ -200,12 +200,12 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @return The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *         for actions related to Cost Category. The default values for <code>MatchOptions</code> is
+     *         for actions related to Cost Category. The default values for <code>MatchOptions</code> are
      *         <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @see MatchOption
      */
@@ -217,13 +217,13 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
      *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> is
+     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
      *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @see MatchOption
      */
@@ -240,7 +240,7 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * <p>
@@ -251,7 +251,7 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param matchOptions
      *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> is
+     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
      *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
@@ -270,13 +270,13 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
      *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> is
+     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
      *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
@@ -290,13 +290,13 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> is <code>EQUALS</code> and
+     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
      * <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
      *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> is
+     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
      *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption

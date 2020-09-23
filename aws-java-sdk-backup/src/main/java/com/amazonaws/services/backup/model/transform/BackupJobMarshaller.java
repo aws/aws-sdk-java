@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.backup.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -63,6 +65,10 @@ public class BackupJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
     private static final MarshallingInfo<Long> BYTESTRANSFERRED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BytesTransferred").build();
+    private static final MarshallingInfo<Map> BACKUPOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BackupOptions").build();
+    private static final MarshallingInfo<String> BACKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupType").build();
 
     private static final BackupJobMarshaller instance = new BackupJobMarshaller();
 
@@ -98,6 +104,8 @@ public class BackupJobMarshaller {
             protocolMarshaller.marshall(backupJob.getStartBy(), STARTBY_BINDING);
             protocolMarshaller.marshall(backupJob.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(backupJob.getBytesTransferred(), BYTESTRANSFERRED_BINDING);
+            protocolMarshaller.marshall(backupJob.getBackupOptions(), BACKUPOPTIONS_BINDING);
+            protocolMarshaller.marshall(backupJob.getBackupType(), BACKUPTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
