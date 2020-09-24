@@ -54,9 +54,12 @@ final class AddOperations {
         Map<String, Shape> c2jShapes = serviceModel.getShapes();
 
         for (Map.Entry<String, Operation> entry : serviceModel.getOperations().entrySet()) {
-
             final String operationName = entry.getKey();
             final Operation op = entry.getValue();
+
+            if (shouldSkipOperation(op, c2jShapes)) {
+                continue;
+            }
 
             OperationModel operationModel = new OperationModel();
 
@@ -118,6 +121,22 @@ final class AddOperations {
         }
 
         return javaOperationModels;
+    }
+
+    private boolean shouldSkipOperation(Operation operation, Map<String, Shape> c2jShapes) {
+        Input operationInput = operation.getInput();
+        Output operationOutput = operation.getOutput();
+
+        Shape inputShape = operationInput == null ? null : c2jShapes.get(operationInput.getShape());
+        Shape outputShape = operationOutput == null ? null : c2jShapes.get(operationOutput.getShape());
+
+        Shape inputPayloadShape = inputShape == null ? null : getPayloadShape(c2jShapes, inputShape);
+        Shape outputPayloadShape = outputShape == null ? null : getPayloadShape(c2jShapes, outputShape);
+
+        // We skip operations with event stream inputs or outputs
+        boolean hasEventStreamInput = inputPayloadShape != null && inputPayloadShape.isEventStream();
+        boolean hasEventStreamOutput = outputPayloadShape != null && outputPayloadShape.isEventStream();
+        return hasEventStreamInput || hasEventStreamOutput;
     }
 
     /**

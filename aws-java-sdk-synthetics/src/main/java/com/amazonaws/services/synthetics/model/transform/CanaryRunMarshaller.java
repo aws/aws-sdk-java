@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CanaryRunMarshaller {
 
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -52,6 +54,7 @@ public class CanaryRunMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(canaryRun.getId(), ID_BINDING);
             protocolMarshaller.marshall(canaryRun.getName(), NAME_BINDING);
             protocolMarshaller.marshall(canaryRun.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(canaryRun.getTimeline(), TIMELINE_BINDING);

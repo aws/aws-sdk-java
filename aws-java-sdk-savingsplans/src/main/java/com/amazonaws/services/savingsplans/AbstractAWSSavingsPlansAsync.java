@@ -41,6 +41,19 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request) {
+
+        return deleteQueuedSavingsPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueuedSavingsPlanRequest, DeleteQueuedSavingsPlanResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeSavingsPlanRatesResult> describeSavingsPlanRatesAsync(DescribeSavingsPlanRatesRequest request) {
 
         return describeSavingsPlanRatesAsync(request, null);

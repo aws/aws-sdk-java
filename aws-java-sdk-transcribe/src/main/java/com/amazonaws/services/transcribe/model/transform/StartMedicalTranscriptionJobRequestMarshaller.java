@@ -39,6 +39,8 @@ public class StartMedicalTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Media").build();
     private static final MarshallingInfo<String> OUTPUTBUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputBucketName").build();
+    private static final MarshallingInfo<String> OUTPUTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OutputKey").build();
     private static final MarshallingInfo<String> OUTPUTENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputEncryptionKMSKeyId").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -70,6 +72,7 @@ public class StartMedicalTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getMediaFormat(), MEDIAFORMAT_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getMedia(), MEDIA_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getOutputBucketName(), OUTPUTBUCKETNAME_BINDING);
+            protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getOutputKey(), OUTPUTKEY_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getOutputEncryptionKMSKeyId(), OUTPUTENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getSpecialty(), SPECIALTY_BINDING);

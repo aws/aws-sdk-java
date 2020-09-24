@@ -43,6 +43,8 @@ public class ClusterMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCESVPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourcesVpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> KUBERNETESNETWORKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesNetworkConfig").build();
     private static final MarshallingInfo<StructuredPojo> LOGGING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logging").build();
     private static final MarshallingInfo<StructuredPojo> IDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -83,6 +85,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getEndpoint(), ENDPOINT_BINDING);
             protocolMarshaller.marshall(cluster.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(cluster.getResourcesVpcConfig(), RESOURCESVPCCONFIG_BINDING);
+            protocolMarshaller.marshall(cluster.getKubernetesNetworkConfig(), KUBERNETESNETWORKCONFIG_BINDING);
             protocolMarshaller.marshall(cluster.getLogging(), LOGGING_BINDING);
             protocolMarshaller.marshall(cluster.getIdentity(), IDENTITY_BINDING);
             protocolMarshaller.marshall(cluster.getStatus(), STATUS_BINDING);

@@ -23,7 +23,9 @@ public enum SavingsPlanState {
     PaymentPending("payment-pending"),
     PaymentFailed("payment-failed"),
     Active("active"),
-    Retired("retired");
+    Retired("retired"),
+    Queued("queued"),
+    QueuedDeleted("queued-deleted");
 
     private String value;
 

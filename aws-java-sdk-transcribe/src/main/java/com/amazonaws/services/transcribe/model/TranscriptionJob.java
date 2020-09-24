@@ -184,9 +184,8 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
     private java.util.List<String> languageOptions;
     /**
      * <p>
-     * The score that Amazon Transcribe gives for the predominant language that it identified in your collection of
-     * source audio files. This score reflects the confidence that the language that Amazon Transcribe identified is the
-     * correct language.
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
      * </p>
      */
     private Float identifiedLanguageScore;
@@ -1316,15 +1315,14 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The score that Amazon Transcribe gives for the predominant language that it identified in your collection of
-     * source audio files. This score reflects the confidence that the language that Amazon Transcribe identified is the
-     * correct language.
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
      * </p>
      * 
      * @param identifiedLanguageScore
-     *        The score that Amazon Transcribe gives for the predominant language that it identified in your collection
-     *        of source audio files. This score reflects the confidence that the language that Amazon Transcribe
-     *        identified is the correct language.
+     *        A value between zero and one that Amazon Transcribe assigned to the language that it identified in the
+     *        source audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it
+     *        identified.
      */
 
     public void setIdentifiedLanguageScore(Float identifiedLanguageScore) {
@@ -1333,14 +1331,13 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The score that Amazon Transcribe gives for the predominant language that it identified in your collection of
-     * source audio files. This score reflects the confidence that the language that Amazon Transcribe identified is the
-     * correct language.
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
      * </p>
      * 
-     * @return The score that Amazon Transcribe gives for the predominant language that it identified in your collection
-     *         of source audio files. This score reflects the confidence that the language that Amazon Transcribe
-     *         identified is the correct language.
+     * @return A value between zero and one that Amazon Transcribe assigned to the language that it identified in the
+     *         source audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it
+     *         identified.
      */
 
     public Float getIdentifiedLanguageScore() {
@@ -1349,15 +1346,14 @@ public class TranscriptionJob implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The score that Amazon Transcribe gives for the predominant language that it identified in your collection of
-     * source audio files. This score reflects the confidence that the language that Amazon Transcribe identified is the
-     * correct language.
+     * A value between zero and one that Amazon Transcribe assigned to the language that it identified in the source
+     * audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it identified.
      * </p>
      * 
      * @param identifiedLanguageScore
-     *        The score that Amazon Transcribe gives for the predominant language that it identified in your collection
-     *        of source audio files. This score reflects the confidence that the language that Amazon Transcribe
-     *        identified is the correct language.
+     *        A value between zero and one that Amazon Transcribe assigned to the language that it identified in the
+     *        source audio. Larger values indicate that Amazon Transcribe has higher confidence in the language it
+     *        identified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains information for a canary run.
+ * A structure that contains information about a canary run.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/synthetics-2017-10-11/CanaryRunConfigOutput" target="_top">AWS
@@ -36,11 +36,17 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
     private Integer timeoutInSeconds;
     /**
      * <p>
-     * The maximum amount of memory available to the canary while it is running, in MB. The value you must be a multiple
-     * of 64.
+     * The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of
+     * 64.
      * </p>
      */
     private Integer memoryInMB;
+    /**
+     * <p>
+     * Displays whether this canary run used active AWS X-Ray tracing.
+     * </p>
+     */
+    private Boolean activeTracing;
 
     /**
      * <p>
@@ -84,12 +90,12 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum amount of memory available to the canary while it is running, in MB. The value you must be a multiple
-     * of 64.
+     * The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of
+     * 64.
      * </p>
      * 
      * @param memoryInMB
-     *        The maximum amount of memory available to the canary while it is running, in MB. The value you must be a
+     *        The maximum amount of memory available to the canary while it is running, in MB. This value must be a
      *        multiple of 64.
      */
 
@@ -99,11 +105,11 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum amount of memory available to the canary while it is running, in MB. The value you must be a multiple
-     * of 64.
+     * The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of
+     * 64.
      * </p>
      * 
-     * @return The maximum amount of memory available to the canary while it is running, in MB. The value you must be a
+     * @return The maximum amount of memory available to the canary while it is running, in MB. This value must be a
      *         multiple of 64.
      */
 
@@ -113,12 +119,12 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The maximum amount of memory available to the canary while it is running, in MB. The value you must be a multiple
-     * of 64.
+     * The maximum amount of memory available to the canary while it is running, in MB. This value must be a multiple of
+     * 64.
      * </p>
      * 
      * @param memoryInMB
-     *        The maximum amount of memory available to the canary while it is running, in MB. The value you must be a
+     *        The maximum amount of memory available to the canary while it is running, in MB. This value must be a
      *        multiple of 64.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -126,6 +132,58 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
     public CanaryRunConfigOutput withMemoryInMB(Integer memoryInMB) {
         setMemoryInMB(memoryInMB);
         return this;
+    }
+
+    /**
+     * <p>
+     * Displays whether this canary run used active AWS X-Ray tracing.
+     * </p>
+     * 
+     * @param activeTracing
+     *        Displays whether this canary run used active AWS X-Ray tracing.
+     */
+
+    public void setActiveTracing(Boolean activeTracing) {
+        this.activeTracing = activeTracing;
+    }
+
+    /**
+     * <p>
+     * Displays whether this canary run used active AWS X-Ray tracing.
+     * </p>
+     * 
+     * @return Displays whether this canary run used active AWS X-Ray tracing.
+     */
+
+    public Boolean getActiveTracing() {
+        return this.activeTracing;
+    }
+
+    /**
+     * <p>
+     * Displays whether this canary run used active AWS X-Ray tracing.
+     * </p>
+     * 
+     * @param activeTracing
+     *        Displays whether this canary run used active AWS X-Ray tracing.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanaryRunConfigOutput withActiveTracing(Boolean activeTracing) {
+        setActiveTracing(activeTracing);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays whether this canary run used active AWS X-Ray tracing.
+     * </p>
+     * 
+     * @return Displays whether this canary run used active AWS X-Ray tracing.
+     */
+
+    public Boolean isActiveTracing() {
+        return this.activeTracing;
     }
 
     /**
@@ -143,7 +201,9 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
         if (getTimeoutInSeconds() != null)
             sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
         if (getMemoryInMB() != null)
-            sb.append("MemoryInMB: ").append(getMemoryInMB());
+            sb.append("MemoryInMB: ").append(getMemoryInMB()).append(",");
+        if (getActiveTracing() != null)
+            sb.append("ActiveTracing: ").append(getActiveTracing());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +226,10 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
             return false;
         if (other.getMemoryInMB() != null && other.getMemoryInMB().equals(this.getMemoryInMB()) == false)
             return false;
+        if (other.getActiveTracing() == null ^ this.getActiveTracing() == null)
+            return false;
+        if (other.getActiveTracing() != null && other.getActiveTracing().equals(this.getActiveTracing()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +240,7 @@ public class CanaryRunConfigOutput implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getMemoryInMB() == null) ? 0 : getMemoryInMB().hashCode());
+        hashCode = prime * hashCode + ((getActiveTracing() == null) ? 0 : getActiveTracing().hashCode());
         return hashCode;
     }
 

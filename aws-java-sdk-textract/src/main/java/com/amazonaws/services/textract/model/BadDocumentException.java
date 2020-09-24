@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Textract isn't able to read the document.
+ * Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see
+ * <a>limits</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

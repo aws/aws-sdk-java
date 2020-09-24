@@ -98,8 +98,9 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
     private String engineArn;
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For
-     * more information about runtime versions, see <a href=
+     * Specifies the runtime version to use for the canary. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
@@ -598,15 +599,17 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For
-     * more information about runtime versions, see <a href=
+     * Specifies the runtime version to use for the canary. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
      * 
      * @param runtimeVersion
-     *        Specifies the runtime version to use for the canary. Currently, the only valid value is
-     *        <code>syn-1.0</code>. For more information about runtime versions, see <a href=
+     *        Specifies the runtime version to use for the canary. Currently, the only valid values are
+     *        <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more
+     *        information about runtime versions, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
      *        > Canary Runtime Versions</a>.
      */
@@ -617,14 +620,16 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For
-     * more information about runtime versions, see <a href=
+     * Specifies the runtime version to use for the canary. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
      * 
-     * @return Specifies the runtime version to use for the canary. Currently, the only valid value is
-     *         <code>syn-1.0</code>. For more information about runtime versions, see <a href=
+     * @return Specifies the runtime version to use for the canary. Currently, the only valid values are
+     *         <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more
+     *         information about runtime versions, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
      *         > Canary Runtime Versions</a>.
      */
@@ -635,15 +640,17 @@ public class Canary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>. For
-     * more information about runtime versions, see <a href=
+     * Specifies the runtime version to use for the canary. Currently, the only valid values are
+     * <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more information
+     * about runtime versions, see <a href=
      * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html">
      * Canary Runtime Versions</a>.
      * </p>
      * 
      * @param runtimeVersion
-     *        Specifies the runtime version to use for the canary. Currently, the only valid value is
-     *        <code>syn-1.0</code>. For more information about runtime versions, see <a href=
+     *        Specifies the runtime version to use for the canary. Currently, the only valid values are
+     *        <code>syn-nodejs-2.0</code>, <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>. For more
+     *        information about runtime versions, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"
      *        > Canary Runtime Versions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

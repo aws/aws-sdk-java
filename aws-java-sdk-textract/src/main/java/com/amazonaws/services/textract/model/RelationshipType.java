@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum RelationshipType {
 
     VALUE("VALUE"),
-    CHILD("CHILD");
+    CHILD("CHILD"),
+    COMPLEX_FEATURES("COMPLEX_FEATURES");
 
     private String value;
 

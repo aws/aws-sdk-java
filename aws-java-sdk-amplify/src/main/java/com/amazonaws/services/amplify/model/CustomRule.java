@@ -44,6 +44,39 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String status;
     /**
@@ -137,9 +170,74 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        The status code for a URL rewrite or redirect rule.
+     *        The status code for a URL rewrite or redirect rule. </p>
+     *        <dl>
+     *        <dt>200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 200 rewrite rule.
+     *        </p>
+     *        </dd>
+     *        <dt>301</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *        target URL.
+     *        </p>
+     *        </dd>
+     *        <dt>302</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 302 temporary redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404-200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 rewrite rule.
+     *        </p>
+     *        </dd>
      */
 
     public void setStatus(String status) {
@@ -150,8 +248,73 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The status code for a URL rewrite or redirect rule.
+     * @return The status code for a URL rewrite or redirect rule. </p>
+     *         <dl>
+     *         <dt>200</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 200 rewrite rule.
+     *         </p>
+     *         </dd>
+     *         <dt>301</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *         target URL.
+     *         </p>
+     *         </dd>
+     *         <dt>302</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 302 temporary redirect rule.
+     *         </p>
+     *         </dd>
+     *         <dt>404</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 404 redirect rule.
+     *         </p>
+     *         </dd>
+     *         <dt>404-200</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 404 rewrite rule.
+     *         </p>
+     *         </dd>
      */
 
     public String getStatus() {
@@ -162,9 +325,74 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        The status code for a URL rewrite or redirect rule.
+     *        The status code for a URL rewrite or redirect rule. </p>
+     *        <dl>
+     *        <dt>200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 200 rewrite rule.
+     *        </p>
+     *        </dd>
+     *        <dt>301</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *        target URL.
+     *        </p>
+     *        </dd>
+     *        <dt>302</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 302 temporary redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404-200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 rewrite rule.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

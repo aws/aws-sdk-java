@@ -67,6 +67,27 @@ public interface AWSSavingsPlans {
 
     /**
      * <p>
+     * Deletes the queued purchase for the specified Savings Plan.
+     * </p>
+     * 
+     * @param deleteQueuedSavingsPlanRequest
+     * @return Result of the DeleteQueuedSavingsPlan operation returned by the service.
+     * @throws ValidationException
+     *         One of the input parameters is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         An unexpected error occurred.
+     * @throws ServiceQuotaExceededException
+     *         A service quota has been exceeded.
+     * @sample AWSSavingsPlans.DeleteQueuedSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteQueuedSavingsPlanResult deleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest deleteQueuedSavingsPlanRequest);
+
+    /**
+     * <p>
      * Describes the specified Savings Plans rates.
      * </p>
      * 

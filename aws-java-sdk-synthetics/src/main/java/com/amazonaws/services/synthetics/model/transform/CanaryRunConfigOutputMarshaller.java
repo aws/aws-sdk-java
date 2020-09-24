@@ -31,6 +31,8 @@ public class CanaryRunConfigOutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutInSeconds").build();
     private static final MarshallingInfo<Integer> MEMORYINMB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemoryInMB").build();
+    private static final MarshallingInfo<Boolean> ACTIVETRACING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveTracing").build();
 
     private static final CanaryRunConfigOutputMarshaller instance = new CanaryRunConfigOutputMarshaller();
 
@@ -50,6 +52,7 @@ public class CanaryRunConfigOutputMarshaller {
         try {
             protocolMarshaller.marshall(canaryRunConfigOutput.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(canaryRunConfigOutput.getMemoryInMB(), MEMORYINMB_BINDING);
+            protocolMarshaller.marshall(canaryRunConfigOutput.getActiveTracing(), ACTIVETRACING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

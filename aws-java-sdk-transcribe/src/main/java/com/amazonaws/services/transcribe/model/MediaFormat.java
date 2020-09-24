@@ -23,7 +23,10 @@ public enum MediaFormat {
     Mp3("mp3"),
     Mp4("mp4"),
     Wav("wav"),
-    Flac("flac");
+    Flac("flac"),
+    Ogg("ogg"),
+    Amr("amr"),
+    Webm("webm");
 
     private String value;
 

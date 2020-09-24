@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You aren't authorized to perform the action.
+ * You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to
+ * perform the operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

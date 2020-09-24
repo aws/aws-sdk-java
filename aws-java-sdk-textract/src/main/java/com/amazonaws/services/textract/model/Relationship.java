@@ -37,7 +37,8 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      * The type of relationship that the blocks in the IDs array have with the current block. The relationship can be
      * <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the
      * VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs
-     * that identify WORD blocks.
+     * that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+     * Selection Elements.
      * </p>
      */
     private String type;
@@ -53,14 +54,16 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      * The type of relationship that the blocks in the IDs array have with the current block. The relationship can be
      * <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the
      * VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs
-     * that identify WORD blocks.
+     * that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+     * Selection Elements.
      * </p>
      * 
      * @param type
      *        The type of relationship that the blocks in the IDs array have with the current block. The relationship
      *        can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the
      *        ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is
-     *        a list of IDs that identify WORD blocks.
+     *        a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD
+     *        blocks in the case of Selection Elements.
      * @see RelationshipType
      */
 
@@ -73,13 +76,15 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      * The type of relationship that the blocks in the IDs array have with the current block. The relationship can be
      * <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the
      * VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs
-     * that identify WORD blocks.
+     * that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+     * Selection Elements.
      * </p>
      * 
      * @return The type of relationship that the blocks in the IDs array have with the current block. The relationship
      *         can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the
      *         ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is
-     *         a list of IDs that identify WORD blocks.
+     *         a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD
+     *         blocks in the case of Selection Elements.
      * @see RelationshipType
      */
 
@@ -92,14 +97,16 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      * The type of relationship that the blocks in the IDs array have with the current block. The relationship can be
      * <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the
      * VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs
-     * that identify WORD blocks.
+     * that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+     * Selection Elements.
      * </p>
      * 
      * @param type
      *        The type of relationship that the blocks in the IDs array have with the current block. The relationship
      *        can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the
      *        ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is
-     *        a list of IDs that identify WORD blocks.
+     *        a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD
+     *        blocks in the case of Selection Elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationshipType
      */
@@ -114,14 +121,16 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
      * The type of relationship that the blocks in the IDs array have with the current block. The relationship can be
      * <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the
      * VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs
-     * that identify WORD blocks.
+     * that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of
+     * Selection Elements.
      * </p>
      * 
      * @param type
      *        The type of relationship that the blocks in the IDs array have with the current block. The relationship
      *        can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the
      *        ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is
-     *        a list of IDs that identify WORD blocks.
+     *        a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD
+     *        blocks in the case of Selection Elements.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RelationshipType
      */

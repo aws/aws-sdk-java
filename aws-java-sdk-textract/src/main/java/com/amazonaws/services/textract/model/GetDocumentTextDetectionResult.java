@@ -57,7 +57,7 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
     private java.util.List<Warning> warnings;
     /**
      * <p>
-     * The current status of an asynchronous text-detection operation for the document.
+     * Returns if the detection job could not be completed. Contains explanation for what error occured.
      * </p>
      */
     private String statusMessage;
@@ -357,11 +357,11 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of an asynchronous text-detection operation for the document.
+     * Returns if the detection job could not be completed. Contains explanation for what error occured.
      * </p>
      * 
      * @param statusMessage
-     *        The current status of an asynchronous text-detection operation for the document.
+     *        Returns if the detection job could not be completed. Contains explanation for what error occured.
      */
 
     public void setStatusMessage(String statusMessage) {
@@ -370,10 +370,10 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of an asynchronous text-detection operation for the document.
+     * Returns if the detection job could not be completed. Contains explanation for what error occured.
      * </p>
      * 
-     * @return The current status of an asynchronous text-detection operation for the document.
+     * @return Returns if the detection job could not be completed. Contains explanation for what error occured.
      */
 
     public String getStatusMessage() {
@@ -382,11 +382,11 @@ public class GetDocumentTextDetectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The current status of an asynchronous text-detection operation for the document.
+     * Returns if the detection job could not be completed. Contains explanation for what error occured.
      * </p>
      * 
      * @param statusMessage
-     *        The current status of an asynchronous text-detection operation for the document.
+     *        Returns if the detection job could not be completed. Contains explanation for what error occured.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

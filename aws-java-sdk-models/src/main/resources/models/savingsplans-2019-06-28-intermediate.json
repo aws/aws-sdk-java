@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -132,6 +132,55 @@
         "documentation" : null
       },
       "syncReturnType" : "CreateSavingsPlanResult"
+    },
+    "DeleteQueuedSavingsPlan" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteQueuedSavingsPlanResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteQueuedSavingsPlanResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteQueuedSavingsPlanRequest, DeleteQueuedSavingsPlanResult>",
+      "asyncReturnType" : "DeleteQueuedSavingsPlanResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes the queued purchase for the specified Savings Plan.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>One of the input parameters is not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource was not found.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>An unexpected error occurred.</p>",
+        "httpStatusCode" : 500
+      }, {
+        "exceptionName" : "ServiceQuotaExceededException",
+        "documentation" : "<p>A service quota has been exceeded.</p>",
+        "httpStatusCode" : 402
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteQueuedSavingsPlanRequest",
+        "variableName" : "deleteQueuedSavingsPlanRequest",
+        "variableType" : "DeleteQueuedSavingsPlanRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteQueuedSavingsPlanRequest",
+        "variableSetterType" : "DeleteQueuedSavingsPlanRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteQueuedSavingsPlan",
+      "operationName" : "DeleteQueuedSavingsPlan",
+      "returnType" : {
+        "returnType" : "DeleteQueuedSavingsPlanResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteQueuedSavingsPlanResult"
     },
     "DescribeSavingsPlanRates" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DescribeSavingsPlanRatesResult>",
@@ -673,6 +722,75 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "purchaseTime",
+        "c2jShape" : "DateTime",
+        "deprecated" : false,
+        "documentation" : "<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@param purchaseTime The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withPurchaseTime",
+        "getterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@return The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).*/",
+        "getterMethodName" : "getPurchaseTime",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "purchaseTime",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "purchaseTime",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
+        "name" : "PurchaseTime",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@param purchaseTime The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).*/",
+        "setterMethodName" : "setPurchaseTime",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "purchaseTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@param purchaseTime The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : "unixTimestamp",
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "purchaseTime",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "clientToken",
         "c2jShape" : "ClientToken",
         "deprecated" : false,
@@ -1033,6 +1151,76 @@
             "documentation" : "<p>The hourly commitment, in USD. This is a value between 0.001 and 1 million. You cannot specify more than three digits after the decimal point.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "PurchaseTime" : {
+          "c2jName" : "purchaseTime",
+          "c2jShape" : "DateTime",
+          "deprecated" : false,
+          "documentation" : "<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@param purchaseTime The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withPurchaseTime",
+          "getterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@return The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).*/",
+          "getterMethodName" : "getPurchaseTime",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "purchaseTime",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "purchaseTime",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
+          "name" : "PurchaseTime",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@param purchaseTime The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).*/",
+          "setterMethodName" : "setPurchaseTime",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "purchaseTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>\n@param purchaseTime The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : "unixTimestamp",
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "purchaseTime",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p>The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).</p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
           },
           "xmlNameSpaceUri" : null
         },
@@ -1581,6 +1769,238 @@
         "documentation" : null,
         "simpleType" : "CurrencyCode",
         "variableSetterType" : "CurrencyCode"
+      },
+      "wrapper" : false
+    },
+    "DeleteQueuedSavingsPlanRequest" : {
+      "c2jName" : "DeleteQueuedSavingsPlanRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.request.DeleteQueuedSavingsPlanRequest",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteQueuedSavingsPlan",
+        "locationName" : null,
+        "requestUri" : "/DeleteQueuedSavingsPlan",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "savingsPlanId",
+        "c2jShape" : "SavingsPlanId",
+        "deprecated" : false,
+        "documentation" : "<p>The ID of the Savings Plan.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withSavingsPlanId",
+        "getterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@return The ID of the Savings Plan.*/",
+        "getterMethodName" : "getSavingsPlanId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "savingsPlanId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "savingsPlanId",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "SavingsPlanId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.*/",
+        "setterMethodName" : "setSavingsPlanId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "savingsPlanId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "savingsPlanId",
+          "variableType" : "String",
+          "documentation" : "<p>The ID of the Savings Plan.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "SavingsPlanId" : {
+          "c2jName" : "savingsPlanId",
+          "c2jShape" : "SavingsPlanId",
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the Savings Plan.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withSavingsPlanId",
+          "getterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@return The ID of the Savings Plan.*/",
+          "getterMethodName" : "getSavingsPlanId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "savingsPlanId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "savingsPlanId",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "SavingsPlanId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.*/",
+          "setterMethodName" : "setSavingsPlanId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "savingsPlanId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The ID of the Savings Plan.</p>\n@param savingsPlanId The ID of the Savings Plan.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "savingsPlanId",
+            "variableType" : "String",
+            "documentation" : "<p>The ID of the Savings Plan.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.savingsplans.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "savingsPlanId" ],
+      "shapeName" : "DeleteQueuedSavingsPlanRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteQueuedSavingsPlanRequest",
+        "variableName" : "deleteQueuedSavingsPlanRequest",
+        "variableType" : "DeleteQueuedSavingsPlanRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteQueuedSavingsPlanRequest",
+        "variableSetterType" : "DeleteQueuedSavingsPlanRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteQueuedSavingsPlanResult" : {
+      "c2jName" : "DeleteQueuedSavingsPlanResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.savingsplans.response.DeleteQueuedSavingsPlanResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.savingsplans.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteQueuedSavingsPlanResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteQueuedSavingsPlanResult",
+        "variableName" : "deleteQueuedSavingsPlanResult",
+        "variableType" : "DeleteQueuedSavingsPlanResult",
+        "documentation" : null,
+        "simpleType" : "DeleteQueuedSavingsPlanResult",
+        "variableSetterType" : "DeleteQueuedSavingsPlanResult"
       },
       "wrapper" : false
     },
@@ -24624,9 +25044,6 @@
         "name" : "AmazonECS",
         "value" : "AmazonECS"
       }, {
-        "name" : "AmazonEKS",
-        "value" : "AmazonEKS"
-      }, {
         "name" : "AWSLambda",
         "value" : "AWSLambda"
       } ],
@@ -24738,6 +25155,12 @@
       }, {
         "name" : "Retired",
         "value" : "retired"
+      }, {
+        "name" : "Queued",
+        "value" : "queued"
+      }, {
+        "name" : "QueuedDeleted",
+        "value" : "queued-deleted"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.savingsplans.enum.SavingsPlanState",

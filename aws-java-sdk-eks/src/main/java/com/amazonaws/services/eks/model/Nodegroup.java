@@ -87,8 +87,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
-     * the node group. If the node group was deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      */
     private java.util.List<String> instanceTypes;
@@ -101,8 +100,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
-     * associated with the node group. If the node group was deployed with a launch template, then
-     * <code>remoteAccess</code> is <code>null</code>.
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      */
     private RemoteAccessConfig remoteAccess;
@@ -143,8 +142,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     * configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     * <code>null</code>.
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      */
     private Integer diskSize;
@@ -563,13 +561,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
-     * the node group. If the node group was deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @return If the node group wasn't deployed with a launch template, then this is the instance type that is
-     *         associated with the node group. If the node group was deployed with a launch template, then
-     *         <code>instanceTypes</code> is <code>null</code>.
+     *         associated with the node group. If the node group was deployed with a launch template, then this is
+     *         <code>null</code>.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -579,14 +576,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
-     * the node group. If the node group was deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param instanceTypes
      *        If the node group wasn't deployed with a launch template, then this is the instance type that is
-     *        associated with the node group. If the node group was deployed with a launch template, then
-     *        <code>instanceTypes</code> is <code>null</code>.
+     *        associated with the node group. If the node group was deployed with a launch template, then this is
+     *        <code>null</code>.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -601,8 +597,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
-     * the node group. If the node group was deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -612,8 +607,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param instanceTypes
      *        If the node group wasn't deployed with a launch template, then this is the instance type that is
-     *        associated with the node group. If the node group was deployed with a launch template, then
-     *        <code>instanceTypes</code> is <code>null</code>.
+     *        associated with the node group. If the node group was deployed with a launch template, then this is
+     *        <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -630,14 +625,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
-     * the node group. If the node group was deployed with a launch template, then <code>instanceTypes</code> is
-     * <code>null</code>.
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param instanceTypes
      *        If the node group wasn't deployed with a launch template, then this is the instance type that is
-     *        associated with the node group. If the node group was deployed with a launch template, then
-     *        <code>instanceTypes</code> is <code>null</code>.
+     *        associated with the node group. If the node group was deployed with a launch template, then this is
+     *        <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,14 +713,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
-     * associated with the node group. If the node group was deployed with a launch template, then
-     * <code>remoteAccess</code> is <code>null</code>.
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      * 
      * @param remoteAccess
      *        If the node group wasn't deployed with a launch template, then this is the remote access configuration
-     *        that is associated with the node group. If the node group was deployed with a launch template, then
-     *        <code>remoteAccess</code> is <code>null</code>.
+     *        that is associated with the node group. If the node group was deployed with a launch template, then this
+     *        is <code>null</code>.
      */
 
     public void setRemoteAccess(RemoteAccessConfig remoteAccess) {
@@ -736,13 +730,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
-     * associated with the node group. If the node group was deployed with a launch template, then
-     * <code>remoteAccess</code> is <code>null</code>.
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      * 
      * @return If the node group wasn't deployed with a launch template, then this is the remote access configuration
-     *         that is associated with the node group. If the node group was deployed with a launch template, then
-     *         <code>remoteAccess</code> is <code>null</code>.
+     *         that is associated with the node group. If the node group was deployed with a launch template, then this
+     *         is <code>null</code>.
      */
 
     public RemoteAccessConfig getRemoteAccess() {
@@ -752,14 +746,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
-     * associated with the node group. If the node group was deployed with a launch template, then
-     * <code>remoteAccess</code> is <code>null</code>.
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      * 
      * @param remoteAccess
      *        If the node group wasn't deployed with a launch template, then this is the remote access configuration
-     *        that is associated with the node group. If the node group was deployed with a launch template, then
-     *        <code>remoteAccess</code> is <code>null</code>.
+     *        that is associated with the node group. If the node group was deployed with a launch template, then this
+     *        is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1039,14 +1033,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     * configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     * <code>null</code>.
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param diskSize
      *        If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     *        configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     *        <code>null</code>.
+     *        configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      */
 
     public void setDiskSize(Integer diskSize) {
@@ -1056,13 +1048,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     * configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     * <code>null</code>.
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @return If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     *         configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     *         <code>null</code>.
+     *         configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      */
 
     public Integer getDiskSize() {
@@ -1072,14 +1062,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     * configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     * <code>null</code>.
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param diskSize
      *        If the node group wasn't deployed with a launch template, then this is the disk size in the node group
-     *        configuration. If the node group was deployed with a launch template, then <code>diskSize</code> is
-     *        <code>null</code>.
+     *        configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

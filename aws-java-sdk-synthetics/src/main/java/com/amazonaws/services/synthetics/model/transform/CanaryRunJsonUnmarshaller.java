@@ -48,6 +48,10 @@ public class CanaryRunJsonUnmarshaller implements Unmarshaller<CanaryRun, JsonUn
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Id", targetDepth)) {
+                    context.nextToken();
+                    canaryRun.setId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     canaryRun.setName(context.getUnmarshaller(String.class).unmarshall(context));

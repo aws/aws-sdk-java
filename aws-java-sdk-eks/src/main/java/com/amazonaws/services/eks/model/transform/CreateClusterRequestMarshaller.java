@@ -39,6 +39,8 @@ public class CreateClusterRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCESVPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourcesVpcConfig").build();
+    private static final MarshallingInfo<StructuredPojo> KUBERNETESNETWORKCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kubernetesNetworkConfig").build();
     private static final MarshallingInfo<StructuredPojo> LOGGING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logging").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +71,7 @@ public class CreateClusterRequestMarshaller {
             protocolMarshaller.marshall(createClusterRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getResourcesVpcConfig(), RESOURCESVPCCONFIG_BINDING);
+            protocolMarshaller.marshall(createClusterRequest.getKubernetesNetworkConfig(), KUBERNETESNETWORKCONFIG_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getLogging(), LOGGING_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createClusterRequest.getTags(), TAGS_BINDING);

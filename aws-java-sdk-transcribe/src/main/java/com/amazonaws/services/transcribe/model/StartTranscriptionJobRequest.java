@@ -90,6 +90,26 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private String outputBucketName;
     /**
      * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     */
+    private String outputKey;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to encrypt the output of the
      * transcription job. The user calling the <code>StartTranscriptionJob</code> operation must have permission to use
      * the specified KMS key.
@@ -616,6 +636,133 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     public StartTranscriptionJobRequest withOutputBucketName(String outputBucketName) {
         setOutputBucketName(outputBucketName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @param outputKey
+     *        You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+     *        <p>
+     *        If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the
+     *        Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        </p>
+     *        <p>
+     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
+     *        use an output key to change both the prefix and the file name, for example
+     *        "folder/my-other-job-name.json".
+     *        </p>
+     *        <p>
+     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *        parameter.
+     */
+
+    public void setOutputKey(String outputKey) {
+        this.outputKey = outputKey;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @return You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+     *         <p>
+     *         If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the
+     *         Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *         </p>
+     *         <p>
+     *         You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *         example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *         being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *         "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You
+     *         can use an output key to change both the prefix and the file name, for example
+     *         "folder/my-other-job-name.json".
+     *         </p>
+     *         <p>
+     *         If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *         parameter.
+     */
+
+    public String getOutputKey() {
+        return this.outputKey;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the Amazon
+     * S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @param outputKey
+     *        You can specify a location in an Amazon S3 bucket to store the output of your transcription job.</p>
+     *        <p>
+     *        If you don't specify an output key, Amazon Transcribe stores the output of your transcription job in the
+     *        Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        </p>
+     *        <p>
+     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
+     *        use an output key to change both the prefix and the file name, for example
+     *        "folder/my-other-job-name.json".
+     *        </p>
+     *        <p>
+     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *        parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTranscriptionJobRequest withOutputKey(String outputKey) {
+        setOutputKey(outputKey);
         return this;
     }
 
@@ -1271,6 +1418,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             sb.append("Media: ").append(getMedia()).append(",");
         if (getOutputBucketName() != null)
             sb.append("OutputBucketName: ").append(getOutputBucketName()).append(",");
+        if (getOutputKey() != null)
+            sb.append("OutputKey: ").append(getOutputKey()).append(",");
         if (getOutputEncryptionKMSKeyId() != null)
             sb.append("OutputEncryptionKMSKeyId: ").append(getOutputEncryptionKMSKeyId()).append(",");
         if (getSettings() != null)
@@ -1323,6 +1472,10 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getOutputBucketName() != null && other.getOutputBucketName().equals(this.getOutputBucketName()) == false)
             return false;
+        if (other.getOutputKey() == null ^ this.getOutputKey() == null)
+            return false;
+        if (other.getOutputKey() != null && other.getOutputKey().equals(this.getOutputKey()) == false)
+            return false;
         if (other.getOutputEncryptionKMSKeyId() == null ^ this.getOutputEncryptionKMSKeyId() == null)
             return false;
         if (other.getOutputEncryptionKMSKeyId() != null && other.getOutputEncryptionKMSKeyId().equals(this.getOutputEncryptionKMSKeyId()) == false)
@@ -1365,6 +1518,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());
         hashCode = prime * hashCode + ((getMedia() == null) ? 0 : getMedia().hashCode());
         hashCode = prime * hashCode + ((getOutputBucketName() == null) ? 0 : getOutputBucketName().hashCode());
+        hashCode = prime * hashCode + ((getOutputKey() == null) ? 0 : getOutputKey().hashCode());
         hashCode = prime * hashCode + ((getOutputEncryptionKMSKeyId() == null) ? 0 : getOutputEncryptionKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getModelSettings() == null) ? 0 : getModelSettings().hashCode());

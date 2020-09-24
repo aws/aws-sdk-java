@@ -38,6 +38,8 @@ public class StartDocumentAnalysisRequestMarshaller {
             .marshallLocationName("JobTag").build();
     private static final MarshallingInfo<StructuredPojo> NOTIFICATIONCHANNEL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationChannel").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputConfig").build();
 
     private static final StartDocumentAnalysisRequestMarshaller instance = new StartDocumentAnalysisRequestMarshaller();
 
@@ -60,6 +62,7 @@ public class StartDocumentAnalysisRequestMarshaller {
             protocolMarshaller.marshall(startDocumentAnalysisRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(startDocumentAnalysisRequest.getJobTag(), JOBTAG_BINDING);
             protocolMarshaller.marshall(startDocumentAnalysisRequest.getNotificationChannel(), NOTIFICATIONCHANNEL_BINDING);
+            protocolMarshaller.marshall(startDocumentAnalysisRequest.getOutputConfig(), OUTPUTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

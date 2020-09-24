@@ -222,7 +222,10 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
@@ -230,9 +233,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The document can't be processed because it's too large. The maximum document size for synchronous
      *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -317,7 +322,10 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
@@ -325,9 +333,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The document can't be processed because it's too large. The maximum document size for synchronous
      *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -446,7 +456,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -456,6 +467,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
      *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @sample AmazonTextract.GetDocumentAnalysis
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis" target="_top">AWS
      *      API Documentation</a>
@@ -545,7 +561,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -555,6 +572,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
      *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @sample AmazonTextract.GetDocumentTextDetection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection"
      *      target="_top">AWS API Documentation</a>
@@ -634,7 +656,10 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
@@ -642,9 +667,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The document can't be processed because it's too large. The maximum document size for synchronous
      *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -738,7 +765,10 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
@@ -746,9 +776,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The document can't be processed because it's too large. The maximum document size for synchronous
      *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.

@@ -47,6 +47,12 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String upfrontPaymentAmount;
     /**
      * <p>
+     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * </p>
+     */
+    private java.util.Date purchaseTime;
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      */
@@ -192,6 +198,46 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * </p>
+     * 
+     * @param purchaseTime
+     *        The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     */
+
+    public void setPurchaseTime(java.util.Date purchaseTime) {
+        this.purchaseTime = purchaseTime;
+    }
+
+    /**
+     * <p>
+     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * </p>
+     * 
+     * @return The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     */
+
+    public java.util.Date getPurchaseTime() {
+        return this.purchaseTime;
+    }
+
+    /**
+     * <p>
+     * The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * </p>
+     * 
+     * @param purchaseTime
+     *        The time at which to purchase the Savings Plan, in UTC format (YYYY-MM-DDTHH:MM:SSZ).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSavingsPlanRequest withPurchaseTime(java.util.Date purchaseTime) {
+        setPurchaseTime(purchaseTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
      * </p>
      * 
@@ -316,6 +362,8 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Commitment: ").append(getCommitment()).append(",");
         if (getUpfrontPaymentAmount() != null)
             sb.append("UpfrontPaymentAmount: ").append(getUpfrontPaymentAmount()).append(",");
+        if (getPurchaseTime() != null)
+            sb.append("PurchaseTime: ").append(getPurchaseTime()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
@@ -346,6 +394,10 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getUpfrontPaymentAmount() != null && other.getUpfrontPaymentAmount().equals(this.getUpfrontPaymentAmount()) == false)
             return false;
+        if (other.getPurchaseTime() == null ^ this.getPurchaseTime() == null)
+            return false;
+        if (other.getPurchaseTime() != null && other.getPurchaseTime().equals(this.getPurchaseTime()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -365,6 +417,7 @@ public class CreateSavingsPlanRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getSavingsPlanOfferingId() == null) ? 0 : getSavingsPlanOfferingId().hashCode());
         hashCode = prime * hashCode + ((getCommitment() == null) ? 0 : getCommitment().hashCode());
         hashCode = prime * hashCode + ((getUpfrontPaymentAmount() == null) ? 0 : getUpfrontPaymentAmount().hashCode());
+        hashCode = prime * hashCode + ((getPurchaseTime() == null) ? 0 : getPurchaseTime().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

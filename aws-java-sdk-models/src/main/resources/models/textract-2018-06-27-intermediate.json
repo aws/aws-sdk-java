@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -102,7 +102,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidS3ObjectException",
-        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request.</p>",
+        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedDocumentException",
@@ -114,11 +114,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadDocumentException",
-        "documentation" : "<p>Amazon Textract isn't able to read the document.</p>",
+        "documentation" : "<p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <a>limits</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p>You aren't authorized to perform the action.</p>",
+        "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ProvisionedThroughputExceededException",
@@ -175,7 +175,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidS3ObjectException",
-        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request.</p>",
+        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedDocumentException",
@@ -187,11 +187,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadDocumentException",
-        "documentation" : "<p>Amazon Textract isn't able to read the document.</p>",
+        "documentation" : "<p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <a>limits</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p>You aren't authorized to perform the action.</p>",
+        "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ProvisionedThroughputExceededException",
@@ -244,7 +244,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p>You aren't authorized to perform the action.</p>",
+        "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ProvisionedThroughputExceededException",
@@ -261,6 +261,10 @@
       }, {
         "exceptionName" : "ThrottlingException",
         "documentation" : "<p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidS3ObjectException",
+        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -301,7 +305,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p>You aren't authorized to perform the action.</p>",
+        "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ProvisionedThroughputExceededException",
@@ -318,6 +322,10 @@
       }, {
         "exceptionName" : "ThrottlingException",
         "documentation" : "<p>Amazon Textract is temporarily unable to process the request. Try your call again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidS3ObjectException",
+        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -358,7 +366,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidS3ObjectException",
-        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request.</p>",
+        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedDocumentException",
@@ -370,11 +378,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadDocumentException",
-        "documentation" : "<p>Amazon Textract isn't able to read the document.</p>",
+        "documentation" : "<p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <a>limits</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p>You aren't authorized to perform the action.</p>",
+        "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ProvisionedThroughputExceededException",
@@ -435,7 +443,7 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InvalidS3ObjectException",
-        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request.</p>",
+        "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "UnsupportedDocumentException",
@@ -447,11 +455,11 @@
         "httpStatusCode" : null
       }, {
         "exceptionName" : "BadDocumentException",
-        "documentation" : "<p>Amazon Textract isn't able to read the document.</p>",
+        "documentation" : "<p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <a>limits</a>.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
-        "documentation" : "<p>You aren't authorized to perform the action.</p>",
+        "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ProvisionedThroughputExceededException",
@@ -505,7 +513,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>You aren't authorized to perform the action.</p>",
+      "documentation" : "<p>You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or IAM role to perform the operation.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
@@ -1949,7 +1957,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Amazon Textract isn't able to read the document.</p>",
+      "documentation" : "<p>Amazon Textract isn't able to read the document. For more information on the document limits in Amazon Textract, see <a>limits</a>.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "BadDocumentException",
@@ -8029,12 +8037,12 @@
         "c2jName" : "StatusMessage",
         "c2jShape" : "StatusMessage",
         "deprecated" : false,
-        "documentation" : "<p>The current status of an asynchronous document-analysis operation.</p>",
+        "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@param statusMessage The current status of an asynchronous document-analysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withStatusMessage",
-        "getterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@return The current status of an asynchronous document-analysis operation.*/",
+        "getterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@return Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
         "getterMethodName" : "getStatusMessage",
         "getterModel" : {
           "returnType" : "String",
@@ -8068,7 +8076,7 @@
         "marshallingType" : "STRING",
         "name" : "StatusMessage",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@param statusMessage The current status of an asynchronous document-analysis operation.*/",
+        "setterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
         "setterMethodName" : "setStatusMessage",
         "setterModel" : {
           "timestampFormat" : null,
@@ -8083,13 +8091,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@param statusMessage The current status of an asynchronous document-analysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "statusMessage",
           "variableType" : "String",
-          "documentation" : "<p>The current status of an asynchronous document-analysis operation.</p>",
+          "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -8603,12 +8611,12 @@
           "c2jName" : "StatusMessage",
           "c2jShape" : "StatusMessage",
           "deprecated" : false,
-          "documentation" : "<p>The current status of an asynchronous document-analysis operation.</p>",
+          "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@param statusMessage The current status of an asynchronous document-analysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withStatusMessage",
-          "getterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@return The current status of an asynchronous document-analysis operation.*/",
+          "getterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@return Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
           "getterMethodName" : "getStatusMessage",
           "getterModel" : {
             "returnType" : "String",
@@ -8642,7 +8650,7 @@
           "marshallingType" : "STRING",
           "name" : "StatusMessage",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@param statusMessage The current status of an asynchronous document-analysis operation.*/",
+          "setterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
           "setterMethodName" : "setStatusMessage",
           "setterModel" : {
             "timestampFormat" : null,
@@ -8657,13 +8665,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The current status of an asynchronous document-analysis operation.</p>\n@param statusMessage The current status of an asynchronous document-analysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "statusMessage",
             "variableType" : "String",
-            "documentation" : "<p>The current status of an asynchronous document-analysis operation.</p>",
+            "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -9849,12 +9857,12 @@
         "c2jName" : "StatusMessage",
         "c2jShape" : "StatusMessage",
         "deprecated" : false,
-        "documentation" : "<p>The current status of an asynchronous text-detection operation for the document. </p>",
+        "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@param statusMessage The current status of an asynchronous text-detection operation for the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withStatusMessage",
-        "getterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@return The current status of an asynchronous text-detection operation for the document.*/",
+        "getterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@return Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
         "getterMethodName" : "getStatusMessage",
         "getterModel" : {
           "returnType" : "String",
@@ -9888,7 +9896,7 @@
         "marshallingType" : "STRING",
         "name" : "StatusMessage",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@param statusMessage The current status of an asynchronous text-detection operation for the document.*/",
+        "setterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
         "setterMethodName" : "setStatusMessage",
         "setterModel" : {
           "timestampFormat" : null,
@@ -9903,13 +9911,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@param statusMessage The current status of an asynchronous text-detection operation for the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "statusMessage",
           "variableType" : "String",
-          "documentation" : "<p>The current status of an asynchronous text-detection operation for the document. </p>",
+          "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -10423,12 +10431,12 @@
           "c2jName" : "StatusMessage",
           "c2jShape" : "StatusMessage",
           "deprecated" : false,
-          "documentation" : "<p>The current status of an asynchronous text-detection operation for the document. </p>",
+          "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@param statusMessage The current status of an asynchronous text-detection operation for the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withStatusMessage",
-          "getterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@return The current status of an asynchronous text-detection operation for the document.*/",
+          "getterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@return Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
           "getterMethodName" : "getStatusMessage",
           "getterModel" : {
             "returnType" : "String",
@@ -10462,7 +10470,7 @@
           "marshallingType" : "STRING",
           "name" : "StatusMessage",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@param statusMessage The current status of an asynchronous text-detection operation for the document.*/",
+          "setterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.*/",
           "setterMethodName" : "setStatusMessage",
           "setterModel" : {
             "timestampFormat" : null,
@@ -10477,13 +10485,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The current status of an asynchronous text-detection operation for the document. </p>\n@param statusMessage The current status of an asynchronous text-detection operation for the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>\n@param statusMessage Returns if the detection job could not be completed. Contains explanation for what error occured.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "statusMessage",
             "variableType" : "String",
-            "documentation" : "<p>The current status of an asynchronous text-detection operation for the document. </p>",
+            "documentation" : "<p>Returns if the detection job could not be completed. Contains explanation for what error occured. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12134,12 +12142,12 @@
         "c2jName" : "ResourceType",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The resource type.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withResourceType",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The resource type.</p>\n@return The resource type.*/",
         "getterMethodName" : "getResourceType",
         "getterModel" : {
           "returnType" : "String",
@@ -12173,7 +12181,7 @@
         "marshallingType" : "STRING",
         "name" : "ResourceType",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param resourceType */",
+        "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.*/",
         "setterMethodName" : "setResourceType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -12188,13 +12196,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "resourceType",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The resource type.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -12203,12 +12211,12 @@
         "c2jName" : "QuotaCode",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The quota code.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param quotaCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The quota code.</p>\n@param quotaCode The quota code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withQuotaCode",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The quota code.</p>\n@return The quota code.*/",
         "getterMethodName" : "getQuotaCode",
         "getterModel" : {
           "returnType" : "String",
@@ -12242,7 +12250,7 @@
         "marshallingType" : "STRING",
         "name" : "QuotaCode",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param quotaCode */",
+        "setterDocumentation" : "/**<p>The quota code.</p>\n@param quotaCode The quota code.*/",
         "setterMethodName" : "setQuotaCode",
         "setterModel" : {
           "timestampFormat" : null,
@@ -12257,13 +12265,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param quotaCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The quota code.</p>\n@param quotaCode The quota code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "quotaCode",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The quota code.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -12272,12 +12280,12 @@
         "c2jName" : "ServiceCode",
         "c2jShape" : "String",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The service code.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param serviceCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The service code.</p>\n@param serviceCode The service code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withServiceCode",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The service code.</p>\n@return The service code.*/",
         "getterMethodName" : "getServiceCode",
         "getterModel" : {
           "returnType" : "String",
@@ -12311,7 +12319,7 @@
         "marshallingType" : "STRING",
         "name" : "ServiceCode",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param serviceCode */",
+        "setterDocumentation" : "/**<p>The service code.</p>\n@param serviceCode The service code.*/",
         "setterMethodName" : "setServiceCode",
         "setterModel" : {
           "timestampFormat" : null,
@@ -12326,13 +12334,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param serviceCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The service code.</p>\n@param serviceCode The service code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "serviceCode",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The service code.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -12343,12 +12351,12 @@
           "c2jName" : "QuotaCode",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The quota code.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param quotaCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The quota code.</p>\n@param quotaCode The quota code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withQuotaCode",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The quota code.</p>\n@return The quota code.*/",
           "getterMethodName" : "getQuotaCode",
           "getterModel" : {
             "returnType" : "String",
@@ -12382,7 +12390,7 @@
           "marshallingType" : "STRING",
           "name" : "QuotaCode",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param quotaCode */",
+          "setterDocumentation" : "/**<p>The quota code.</p>\n@param quotaCode The quota code.*/",
           "setterMethodName" : "setQuotaCode",
           "setterModel" : {
             "timestampFormat" : null,
@@ -12397,13 +12405,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param quotaCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The quota code.</p>\n@param quotaCode The quota code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "quotaCode",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The quota code.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12413,12 +12421,12 @@
           "c2jName" : "ResourceType",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The resource type.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withResourceType",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The resource type.</p>\n@return The resource type.*/",
           "getterMethodName" : "getResourceType",
           "getterModel" : {
             "returnType" : "String",
@@ -12452,7 +12460,7 @@
           "marshallingType" : "STRING",
           "name" : "ResourceType",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param resourceType */",
+          "setterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.*/",
           "setterMethodName" : "setResourceType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -12467,13 +12475,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param resourceType \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The resource type.</p>\n@param resourceType The resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "resourceType",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The resource type.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12483,12 +12491,12 @@
           "c2jName" : "ServiceCode",
           "c2jShape" : "String",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The service code.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param serviceCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The service code.</p>\n@param serviceCode The service code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withServiceCode",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The service code.</p>\n@return The service code.*/",
           "getterMethodName" : "getServiceCode",
           "getterModel" : {
             "returnType" : "String",
@@ -12522,7 +12530,7 @@
           "marshallingType" : "STRING",
           "name" : "ServiceCode",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param serviceCode */",
+          "setterDocumentation" : "/**<p>The service code.</p>\n@param serviceCode The service code.*/",
           "setterMethodName" : "setServiceCode",
           "setterModel" : {
             "timestampFormat" : null,
@@ -12537,13 +12545,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param serviceCode \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The service code.</p>\n@param serviceCode The service code.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "serviceCode",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The service code.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -12742,7 +12750,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request.</p>",
+      "documentation" : "<p>Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html\">Configure Access to Amazon S3</a> For troubleshooting information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html\">Troubleshooting Amazon S3</a> </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidS3ObjectException",
@@ -13194,6 +13202,329 @@
       },
       "wrapper" : false
     },
+    "OutputConfig" : {
+      "c2jName" : "OutputConfig",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.textract.model.OutputConfig",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "S3Bucket",
+        "c2jShape" : "S3Bucket",
+        "deprecated" : false,
+        "documentation" : "<p>The name of the bucket your output will go to.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@param s3Bucket The name of the bucket your output will go to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withS3Bucket",
+        "getterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@return The name of the bucket your output will go to.*/",
+        "getterMethodName" : "getS3Bucket",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "S3Bucket",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "S3Bucket",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "S3Bucket",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@param s3Bucket The name of the bucket your output will go to.*/",
+        "setterMethodName" : "setS3Bucket",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "s3Bucket",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@param s3Bucket The name of the bucket your output will go to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "s3Bucket",
+          "variableType" : "String",
+          "documentation" : "<p>The name of the bucket your output will go to.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "S3Prefix",
+        "c2jShape" : "S3ObjectName",
+        "deprecated" : false,
+        "documentation" : "<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@param s3Prefix The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withS3Prefix",
+        "getterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@return The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".*/",
+        "getterMethodName" : "getS3Prefix",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "S3Prefix",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "S3Prefix",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "S3Prefix",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@param s3Prefix The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".*/",
+        "setterMethodName" : "setS3Prefix",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "s3Prefix",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@param s3Prefix The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "s3Prefix",
+          "variableType" : "String",
+          "documentation" : "<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "S3Bucket" : {
+          "c2jName" : "S3Bucket",
+          "c2jShape" : "S3Bucket",
+          "deprecated" : false,
+          "documentation" : "<p>The name of the bucket your output will go to.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@param s3Bucket The name of the bucket your output will go to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withS3Bucket",
+          "getterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@return The name of the bucket your output will go to.*/",
+          "getterMethodName" : "getS3Bucket",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "S3Bucket",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "S3Bucket",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "S3Bucket",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@param s3Bucket The name of the bucket your output will go to.*/",
+          "setterMethodName" : "setS3Bucket",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "s3Bucket",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The name of the bucket your output will go to.</p>\n@param s3Bucket The name of the bucket your output will go to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "s3Bucket",
+            "variableType" : "String",
+            "documentation" : "<p>The name of the bucket your output will go to.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "S3Prefix" : {
+          "c2jName" : "S3Prefix",
+          "c2jShape" : "S3ObjectName",
+          "deprecated" : false,
+          "documentation" : "<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@param s3Prefix The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withS3Prefix",
+          "getterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@return The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".*/",
+          "getterMethodName" : "getS3Prefix",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "S3Prefix",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "S3Prefix",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "S3Prefix",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@param s3Prefix The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".*/",
+          "setterMethodName" : "setS3Prefix",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "s3Prefix",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>\n@param s3Prefix The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "s3Prefix",
+            "variableType" : "String",
+            "documentation" : "<p>The prefix of the object key that the output will be saved to. When not enabled, the prefix will be “textract_output\".</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.textract.model",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "S3Bucket" ],
+      "shapeName" : "OutputConfig",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "OutputConfig",
+        "variableName" : "outputConfig",
+        "variableType" : "OutputConfig",
+        "documentation" : null,
+        "simpleType" : "OutputConfig",
+        "variableSetterType" : "OutputConfig"
+      },
+      "wrapper" : false
+    },
     "Point" : {
       "c2jName" : "Point",
       "customization" : {
@@ -13582,12 +13913,12 @@
         "c2jName" : "Type",
         "c2jShape" : "RelationshipType",
         "deprecated" : false,
-        "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>",
+        "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : "RelationshipType",
-        "fluentSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+        "fluentSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
         "fluentSetterMethodName" : "withType",
-        "getterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@return The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@see RelationshipType*/",
+        "getterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@return The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@see RelationshipType*/",
         "getterMethodName" : "getType",
         "getterModel" : {
           "returnType" : "String",
@@ -13621,7 +13952,7 @@
         "marshallingType" : "STRING",
         "name" : "Type",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@see RelationshipType*/",
+        "setterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@see RelationshipType*/",
         "setterMethodName" : "setType",
         "setterModel" : {
           "timestampFormat" : null,
@@ -13636,13 +13967,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+        "varargSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "type",
           "variableType" : "String",
-          "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>",
+          "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -13960,12 +14291,12 @@
           "c2jName" : "Type",
           "c2jShape" : "RelationshipType",
           "deprecated" : false,
-          "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>",
+          "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : "RelationshipType",
-          "fluentSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+          "fluentSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
           "fluentSetterMethodName" : "withType",
-          "getterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@return The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@see RelationshipType*/",
+          "getterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@return The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@see RelationshipType*/",
           "getterMethodName" : "getType",
           "getterModel" : {
             "returnType" : "String",
@@ -13999,7 +14330,7 @@
           "marshallingType" : "STRING",
           "name" : "Type",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@see RelationshipType*/",
+          "setterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@see RelationshipType*/",
           "setterMethodName" : "setType",
           "setterModel" : {
             "timestampFormat" : null,
@@ -14014,13 +14345,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
+          "varargSetterDocumentation" : "/**<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>\n@param type The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.\n@return Returns a reference to this object so that method calls can be chained together.\n@see RelationshipType*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "type",
             "variableType" : "String",
-            "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks.</p>",
+            "documentation" : "<p>The type of relationship that the blocks in the IDs array have with the current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>. A relationship of type VALUE is a list that contains the ID of the VALUE block that's associated with the KEY of a key-value pair. A relationship of type CHILD is a list of IDs that identify WORD blocks in the case of lines Cell blocks in the case of Tables, and WORD blocks in the case of Selection Elements.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -14066,6 +14397,9 @@
       }, {
         "name" : "CHILD",
         "value" : "CHILD"
+      }, {
+        "name" : "COMPLEX_FEATURES",
+        "value" : "COMPLEX_FEATURES"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.textract.enum.RelationshipType",
@@ -15067,6 +15401,75 @@
           "variableSetterType" : "NotificationChannel"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "OutputConfig",
+        "c2jShape" : "OutputConfig",
+        "deprecated" : false,
+        "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOutputConfig",
+        "getterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@return Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.*/",
+        "getterMethodName" : "getOutputConfig",
+        "getterModel" : {
+          "returnType" : "OutputConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OutputConfig",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OutputConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "OutputConfig",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.*/",
+        "setterMethodName" : "setOutputConfig",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "OutputConfig",
+          "variableName" : "outputConfig",
+          "variableType" : "OutputConfig",
+          "documentation" : "",
+          "simpleType" : "OutputConfig",
+          "variableSetterType" : "OutputConfig"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "OutputConfig",
+          "variableName" : "outputConfig",
+          "variableType" : "OutputConfig",
+          "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>",
+          "simpleType" : "OutputConfig",
+          "variableSetterType" : "OutputConfig"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ClientRequestToken" : {
@@ -15500,6 +15903,76 @@
             "documentation" : "<p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>",
             "simpleType" : "NotificationChannel",
             "variableSetterType" : "NotificationChannel"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "OutputConfig" : {
+          "c2jName" : "OutputConfig",
+          "c2jShape" : "OutputConfig",
+          "deprecated" : false,
+          "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOutputConfig",
+          "getterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@return Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.*/",
+          "getterMethodName" : "getOutputConfig",
+          "getterModel" : {
+            "returnType" : "OutputConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OutputConfig",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OutputConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "OutputConfig",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.*/",
+          "setterMethodName" : "setOutputConfig",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "OutputConfig",
+            "variableName" : "outputConfig",
+            "variableType" : "OutputConfig",
+            "documentation" : "",
+            "simpleType" : "OutputConfig",
+            "variableSetterType" : "OutputConfig"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "OutputConfig",
+            "variableName" : "outputConfig",
+            "variableType" : "OutputConfig",
+            "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results internally to be accessed by the GetDocumentAnalysis operation.</p>",
+            "simpleType" : "OutputConfig",
+            "variableSetterType" : "OutputConfig"
           },
           "xmlNameSpaceUri" : null
         }
@@ -16010,6 +16483,75 @@
           "variableSetterType" : "NotificationChannel"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "OutputConfig",
+        "c2jShape" : "OutputConfig",
+        "deprecated" : false,
+        "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withOutputConfig",
+        "getterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@return Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.*/",
+        "getterMethodName" : "getOutputConfig",
+        "getterModel" : {
+          "returnType" : "OutputConfig",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "OutputConfig",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "OutputConfig",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "OutputConfig",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.*/",
+        "setterMethodName" : "setOutputConfig",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "OutputConfig",
+          "variableName" : "outputConfig",
+          "variableType" : "OutputConfig",
+          "documentation" : "",
+          "simpleType" : "OutputConfig",
+          "variableSetterType" : "OutputConfig"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "OutputConfig",
+          "variableName" : "outputConfig",
+          "variableType" : "OutputConfig",
+          "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>",
+          "simpleType" : "OutputConfig",
+          "variableSetterType" : "OutputConfig"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
         "ClientRequestToken" : {
@@ -16289,6 +16831,76 @@
             "documentation" : "<p>The Amazon SNS topic ARN that you want Amazon Textract to publish the completion status of the operation to. </p>",
             "simpleType" : "NotificationChannel",
             "variableSetterType" : "NotificationChannel"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "OutputConfig" : {
+          "c2jName" : "OutputConfig",
+          "c2jShape" : "OutputConfig",
+          "deprecated" : false,
+          "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withOutputConfig",
+          "getterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@return Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.*/",
+          "getterMethodName" : "getOutputConfig",
+          "getterModel" : {
+            "returnType" : "OutputConfig",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "OutputConfig",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "OutputConfig",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "OutputConfig",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.*/",
+          "setterMethodName" : "setOutputConfig",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "OutputConfig",
+            "variableName" : "outputConfig",
+            "variableType" : "OutputConfig",
+            "documentation" : "",
+            "simpleType" : "OutputConfig",
+            "variableSetterType" : "OutputConfig"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>\n@param outputConfig Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "OutputConfig",
+            "variableName" : "outputConfig",
+            "variableType" : "OutputConfig",
+            "documentation" : "<p>Sets if the output will go to a customer defined bucket. By default Amazon Textract will save the results internally to be accessed with the GetDocumentTextDetection operation.</p>",
+            "simpleType" : "OutputConfig",
+            "variableSetterType" : "OutputConfig"
           },
           "xmlNameSpaceUri" : null
         }

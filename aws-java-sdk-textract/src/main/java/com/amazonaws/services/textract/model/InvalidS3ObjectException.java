@@ -16,7 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Textract is unable to access the S3 object that's specified in the request.
+ * Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For
+ * troubleshooting information, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

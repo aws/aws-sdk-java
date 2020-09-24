@@ -33,6 +33,11 @@ public class AbstractAWSSavingsPlans implements AWSSavingsPlans {
     }
 
     @Override
+    public DeleteQueuedSavingsPlanResult deleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSavingsPlanRatesResult describeSavingsPlanRates(DescribeSavingsPlanRatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

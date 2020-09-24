@@ -203,6 +203,69 @@ public class AWSSavingsPlansClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Deletes the queued purchase for the specified Savings Plan.
+     * </p>
+     * 
+     * @param deleteQueuedSavingsPlanRequest
+     * @return Result of the DeleteQueuedSavingsPlan operation returned by the service.
+     * @throws ValidationException
+     *         One of the input parameters is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         An unexpected error occurred.
+     * @throws ServiceQuotaExceededException
+     *         A service quota has been exceeded.
+     * @sample AWSSavingsPlans.DeleteQueuedSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteQueuedSavingsPlanResult deleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQueuedSavingsPlan(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQueuedSavingsPlanResult executeDeleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest deleteQueuedSavingsPlanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteQueuedSavingsPlanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteQueuedSavingsPlanRequest> request = null;
+        Response<DeleteQueuedSavingsPlanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteQueuedSavingsPlanRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteQueuedSavingsPlanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "savingsplans");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueuedSavingsPlan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteQueuedSavingsPlanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteQueuedSavingsPlanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified Savings Plans rates.
      * </p>
      * 

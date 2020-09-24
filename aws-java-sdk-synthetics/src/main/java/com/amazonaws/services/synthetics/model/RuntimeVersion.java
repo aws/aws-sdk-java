@@ -33,10 +33,8 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>.
-     * </p>
-     * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>.
+     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      * </p>
      */
     private String versionName;
@@ -61,17 +59,13 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>.
-     * </p>
-     * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>.
+     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      * </p>
      * 
      * @param versionName
-     *        The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>. </p>
-     *        <p>
-     *        Specifies the runtime version to use for the canary. Currently, the only valid value is
-     *        <code>syn-1.0</code>.
+     *        The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     *        <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      */
 
     public void setVersionName(String versionName) {
@@ -80,16 +74,12 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>.
-     * </p>
-     * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>.
+     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      * </p>
      * 
-     * @return The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>. </p>
-     *         <p>
-     *         Specifies the runtime version to use for the canary. Currently, the only valid value is
-     *         <code>syn-1.0</code>.
+     * @return The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     *         <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      */
 
     public String getVersionName() {
@@ -98,17 +88,13 @@ public class RuntimeVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>.
-     * </p>
-     * <p>
-     * Specifies the runtime version to use for the canary. Currently, the only valid value is <code>syn-1.0</code>.
+     * The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     * <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      * </p>
      * 
      * @param versionName
-     *        The name of the runtime version. Currently, the only valid value is <code>syn-1.0</code>. </p>
-     *        <p>
-     *        Specifies the runtime version to use for the canary. Currently, the only valid value is
-     *        <code>syn-1.0</code>.
+     *        The name of the runtime version. Currently, the only valid values are <code>syn-nodejs-2.0</code>,
+     *        <code>syn-nodejs-2.0-beta</code>, and <code>syn-1.0</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -76,6 +76,10 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setResourcesVpcConfig(VpcConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("kubernetesNetworkConfig", targetDepth)) {
+                    context.nextToken();
+                    cluster.setKubernetesNetworkConfig(KubernetesNetworkConfigResponseJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("logging", targetDepth)) {
                     context.nextToken();
                     cluster.setLogging(LoggingJsonUnmarshaller.getInstance().unmarshall(context));

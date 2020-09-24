@@ -64,6 +64,13 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private NotificationChannel notificationChannel;
+    /**
+     * <p>
+     * Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results
+     * internally to be accessed by the GetDocumentAnalysis operation.
+     * </p>
+     */
+    private OutputConfig outputConfig;
 
     /**
      * <p>
@@ -398,6 +405,52 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results
+     * internally to be accessed by the GetDocumentAnalysis operation.
+     * </p>
+     * 
+     * @param outputConfig
+     *        Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results
+     *        internally to be accessed by the GetDocumentAnalysis operation.
+     */
+
+    public void setOutputConfig(OutputConfig outputConfig) {
+        this.outputConfig = outputConfig;
+    }
+
+    /**
+     * <p>
+     * Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results
+     * internally to be accessed by the GetDocumentAnalysis operation.
+     * </p>
+     * 
+     * @return Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the
+     *         results internally to be accessed by the GetDocumentAnalysis operation.
+     */
+
+    public OutputConfig getOutputConfig() {
+        return this.outputConfig;
+    }
+
+    /**
+     * <p>
+     * Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results
+     * internally to be accessed by the GetDocumentAnalysis operation.
+     * </p>
+     * 
+     * @param outputConfig
+     *        Sets if the output will go to a customer defined bucket. By default, Amazon Textract will save the results
+     *        internally to be accessed by the GetDocumentAnalysis operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartDocumentAnalysisRequest withOutputConfig(OutputConfig outputConfig) {
+        setOutputConfig(outputConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -418,7 +471,9 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
         if (getJobTag() != null)
             sb.append("JobTag: ").append(getJobTag()).append(",");
         if (getNotificationChannel() != null)
-            sb.append("NotificationChannel: ").append(getNotificationChannel());
+            sb.append("NotificationChannel: ").append(getNotificationChannel()).append(",");
+        if (getOutputConfig() != null)
+            sb.append("OutputConfig: ").append(getOutputConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -453,6 +508,10 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getNotificationChannel() != null && other.getNotificationChannel().equals(this.getNotificationChannel()) == false)
             return false;
+        if (other.getOutputConfig() == null ^ this.getOutputConfig() == null)
+            return false;
+        if (other.getOutputConfig() != null && other.getOutputConfig().equals(this.getOutputConfig()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +525,7 @@ public class StartDocumentAnalysisRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
         hashCode = prime * hashCode + ((getNotificationChannel() == null) ? 0 : getNotificationChannel().hashCode());
+        hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());
         return hashCode;
     }
 
