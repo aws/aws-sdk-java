@@ -60,6 +60,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     private String jobRoleArn;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a>.
+     * </p>
+     */
+    private String executionRoleArn;
+    /**
+     * <p>
      * A list of volumes associated with the job.
      * </p>
      */
@@ -166,6 +174,53 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private LinuxParameters linuxParameters;
+    /**
+     * <p>
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
+     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
+     * logging driver for a container, the log system must be configured properly on the container instance (or on a
+     * different log server for remote logging options). For more information on the options for different supported log
+     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
+     * the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The Amazon ECS container agent running on a container instance must register the logging drivers available on
+     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
+     * on that instance can use these log configuration options. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     */
+    private LogConfiguration logConfiguration;
+    /**
+     * <p>
+     * The secrets to pass to the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private java.util.List<Secret> secrets;
 
     /**
      * <p>
@@ -394,6 +449,58 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
 
     public ContainerDetail withJobRoleArn(String jobRoleArn) {
         setJobRoleArn(jobRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a>.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *        ECS task execution IAM role</a>.
+     */
+
+    public void setExecutionRoleArn(String executionRoleArn) {
+        this.executionRoleArn = executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *         ECS task execution IAM role</a>.
+     */
+
+    public String getExecutionRoleArn() {
+        return this.executionRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon ECS task
+     * execution IAM role</a>.
+     * </p>
+     * 
+     * @param executionRoleArn
+     *        The Amazon Resource Name (ARN) of the execution role that AWS Batch can assume. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html">Amazon
+     *        ECS task execution IAM role</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withExecutionRoleArn(String executionRoleArn) {
+        setExecutionRoleArn(executionRoleArn);
         return this;
     }
 
@@ -1322,6 +1429,330 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
+     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
+     * logging driver for a container, the log system must be configured properly on the container instance (or on a
+     * different log server for remote logging options). For more information on the options for different supported log
+     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
+     * the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The Amazon ECS container agent running on a container instance must register the logging drivers available on
+     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
+     * on that instance can use these log configuration options. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param logConfiguration
+     *        The log configuration specification for the container.</p>
+     *        <p>
+     *        This parameter maps to <code>LogConfig</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
+     *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *        parameter in the container definition. To use a different logging driver for a container, the log system
+     *        must be configured properly on the container instance (or on a different log server for remote logging
+     *        options). For more information on the options for different supported log drivers, see <a
+     *        href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *        Amazon ECS container agent.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The Amazon ECS container agent running on a container instance must register the logging drivers available
+     *        on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     *        containers placed on that instance can use these log configuration options. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     */
+
+    public void setLogConfiguration(LogConfiguration logConfiguration) {
+        this.logConfiguration = logConfiguration;
+    }
+
+    /**
+     * <p>
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
+     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
+     * logging driver for a container, the log system must be configured properly on the container instance (or on a
+     * different log server for remote logging options). For more information on the options for different supported log
+     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
+     * the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The Amazon ECS container agent running on a container instance must register the logging drivers available on
+     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
+     * on that instance can use these log configuration options. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return The log configuration specification for the container.</p>
+     *         <p>
+     *         This parameter maps to <code>LogConfig</code> in the <a
+     *         href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *         <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *         <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
+     *         container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *         parameter in the container definition. To use a different logging driver for a container, the log system
+     *         must be configured properly on the container instance (or on a different log server for remote logging
+     *         options). For more information on the options for different supported log drivers, see <a
+     *         href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     *         documentation.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *         <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *         Amazon ECS container agent.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *         check the Docker Remote API version on your container instance, log into your container instance and run
+     *         the following command: <code>sudo docker version | grep "Server API version"</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         The Amazon ECS container agent running on a container instance must register the logging drivers
+     *         available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable
+     *         before containers placed on that instance can use these log configuration options. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+     *         ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         </p>
+     */
+
+    public LogConfiguration getLogConfiguration() {
+        return this.logConfiguration;
+    }
+
+    /**
+     * <p>
+     * The log configuration specification for the container.
+     * </p>
+     * <p>
+     * This parameter maps to <code>LogConfig</code> in the <a
+     * href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the <a
+     * href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the <code>--log-driver</code> option
+     * to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>. By default, containers use the same
+     * logging driver that the Docker daemon uses. However the container may use a different logging driver than the
+     * Docker daemon by specifying a log driver with this parameter in the container definition. To use a different
+     * logging driver for a container, the log system must be configured properly on the container instance (or on a
+     * different log server for remote logging options). For more information on the options for different supported log
+     * drivers, see <a href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in
+     * the Docker documentation.
+     * </p>
+     * <note>
+     * <p>
+     * AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     * <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the Amazon ECS
+     * container agent.
+     * </p>
+     * </note>
+     * <p>
+     * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * <note>
+     * <p>
+     * The Amazon ECS container agent running on a container instance must register the logging drivers available on
+     * that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed
+     * on that instance can use these log configuration options. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container
+     * Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param logConfiguration
+     *        The log configuration specification for the container.</p>
+     *        <p>
+     *        This parameter maps to <code>LogConfig</code> in the <a
+     *        href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a> section of the
+     *        <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a> and the
+     *        <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>. By default, containers use the same logging driver that the Docker daemon uses. However the
+     *        container may use a different logging driver than the Docker daemon by specifying a log driver with this
+     *        parameter in the container definition. To use a different logging driver for a container, the log system
+     *        must be configured properly on the container instance (or on a different log server for remote logging
+     *        options). For more information on the options for different supported log drivers, see <a
+     *        href="https://docs.docker.com/engine/admin/logging/overview/">Configure logging drivers</a> in the Docker
+     *        documentation.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        AWS Batch currently supports a subset of the logging drivers available to the Docker daemon (shown in the
+     *        <a>LogConfiguration</a> data type). Additional log drivers may be available in future releases of the
+     *        Amazon ECS container agent.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. To
+     *        check the Docker Remote API version on your container instance, log into your container instance and run
+     *        the following command: <code>sudo docker version | grep "Server API version"</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        The Amazon ECS container agent running on a container instance must register the logging drivers available
+     *        on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before
+     *        containers placed on that instance can use these log configuration options. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS
+     *        Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withLogConfiguration(LogConfiguration logConfiguration) {
+        setLogConfiguration(logConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The secrets to pass to the container. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
+     *         >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public java.util.List<Secret> getSecrets() {
+        return secrets;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param secrets
+     *        The secrets to pass to the container. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
+     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setSecrets(java.util.Collection<Secret> secrets) {
+        if (secrets == null) {
+            this.secrets = null;
+            return;
+        }
+
+        this.secrets = new java.util.ArrayList<Secret>(secrets);
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecrets(java.util.Collection)} or {@link #withSecrets(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param secrets
+     *        The secrets to pass to the container. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
+     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withSecrets(Secret... secrets) {
+        if (this.secrets == null) {
+            setSecrets(new java.util.ArrayList<Secret>(secrets.length));
+        }
+        for (Secret ele : secrets) {
+            this.secrets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The secrets to pass to the container. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+     * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param secrets
+     *        The secrets to pass to the container. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html"
+     *        >Specifying Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDetail withSecrets(java.util.Collection<Secret> secrets) {
+        setSecrets(secrets);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1343,6 +1774,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
             sb.append("Command: ").append(getCommand()).append(",");
         if (getJobRoleArn() != null)
             sb.append("JobRoleArn: ").append(getJobRoleArn()).append(",");
+        if (getExecutionRoleArn() != null)
+            sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getVolumes() != null)
             sb.append("Volumes: ").append(getVolumes()).append(",");
         if (getEnvironment() != null)
@@ -1374,7 +1807,11 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         if (getResourceRequirements() != null)
             sb.append("ResourceRequirements: ").append(getResourceRequirements()).append(",");
         if (getLinuxParameters() != null)
-            sb.append("LinuxParameters: ").append(getLinuxParameters());
+            sb.append("LinuxParameters: ").append(getLinuxParameters()).append(",");
+        if (getLogConfiguration() != null)
+            sb.append("LogConfiguration: ").append(getLogConfiguration()).append(",");
+        if (getSecrets() != null)
+            sb.append("Secrets: ").append(getSecrets());
         sb.append("}");
         return sb.toString();
     }
@@ -1408,6 +1845,10 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         if (other.getJobRoleArn() == null ^ this.getJobRoleArn() == null)
             return false;
         if (other.getJobRoleArn() != null && other.getJobRoleArn().equals(this.getJobRoleArn()) == false)
+            return false;
+        if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
+            return false;
+        if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
             return false;
         if (other.getVolumes() == null ^ this.getVolumes() == null)
             return false;
@@ -1473,6 +1914,14 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLinuxParameters() != null && other.getLinuxParameters().equals(this.getLinuxParameters()) == false)
             return false;
+        if (other.getLogConfiguration() == null ^ this.getLogConfiguration() == null)
+            return false;
+        if (other.getLogConfiguration() != null && other.getLogConfiguration().equals(this.getLogConfiguration()) == false)
+            return false;
+        if (other.getSecrets() == null ^ this.getSecrets() == null)
+            return false;
+        if (other.getSecrets() != null && other.getSecrets().equals(this.getSecrets()) == false)
+            return false;
         return true;
     }
 
@@ -1486,6 +1935,7 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getCommand() == null) ? 0 : getCommand().hashCode());
         hashCode = prime * hashCode + ((getJobRoleArn() == null) ? 0 : getJobRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getMountPoints() == null) ? 0 : getMountPoints().hashCode());
@@ -1502,6 +1952,8 @@ public class ContainerDetail implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
         hashCode = prime * hashCode + ((getLinuxParameters() == null) ? 0 : getLinuxParameters().hashCode());
+        hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSecrets() == null) ? 0 : getSecrets().hashCode());
         return hashCode;
     }
 

@@ -54,6 +54,28 @@ public class LinuxParametersJsonUnmarshaller implements Unmarshaller<LinuxParame
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("initProcessEnabled", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setInitProcessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("sharedMemorySize", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setSharedMemorySize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("tmpfs", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setTmpfs(new ListUnmarshaller<Tmpfs>(TmpfsJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("maxSwap", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setMaxSwap(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("swappiness", targetDepth)) {
+                    context.nextToken();
+                    linuxParameters.setSwappiness(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

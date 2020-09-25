@@ -43,10 +43,14 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
     private String launchTemplateName;
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      */
     private String version;
@@ -133,16 +137,24 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      * 
      * @param version
-     *        The version number of the launch template.</p>
+     *        The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
      *        <p>
-     *        Default: The default version of the launch template.
+     *        If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     *        <code>$Default</code>, the default version of the launch template is used.
+     *        </p>
+     *        <p>
+     *        Default: <code>$Default</code>.
      */
 
     public void setVersion(String version) {
@@ -151,15 +163,23 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      * 
-     * @return The version number of the launch template.</p>
+     * @return The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
      *         <p>
-     *         Default: The default version of the launch template.
+     *         If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     *         <code>$Default</code>, the default version of the launch template is used.
+     *         </p>
+     *         <p>
+     *         Default: <code>$Default</code>.
      */
 
     public String getVersion() {
@@ -168,16 +188,24 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      * 
      * @param version
-     *        The version number of the launch template.</p>
+     *        The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
      *        <p>
-     *        Default: The default version of the launch template.
+     *        If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     *        <code>$Default</code>, the default version of the launch template is used.
+     *        </p>
+     *        <p>
+     *        Default: <code>$Default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

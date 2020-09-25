@@ -42,7 +42,9 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String jobQueueArn;
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      */
     private String state;
@@ -154,11 +156,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        queue, but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -168,10 +174,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
-     * @return Describes the ability of the queue to accept new jobs.
+     * @return Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *         is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *         queue, but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -181,11 +191,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        queue, but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -197,11 +211,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        queue, but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -211,11 +229,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it is able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it
+     *        is able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs cannot be added to the
+     *        queue, but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */

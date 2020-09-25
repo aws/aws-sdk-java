@@ -50,6 +50,11 @@ public class LocalGatewayRouteTableStaxUnmarshaller implements Unmarshaller<Loca
                     continue;
                 }
 
+                if (context.testExpression("localGatewayRouteTableArn", targetDepth)) {
+                    localGatewayRouteTable.setLocalGatewayRouteTableArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("localGatewayId", targetDepth)) {
                     localGatewayRouteTable.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -57,6 +62,11 @@ public class LocalGatewayRouteTableStaxUnmarshaller implements Unmarshaller<Loca
 
                 if (context.testExpression("outpostArn", targetDepth)) {
                     localGatewayRouteTable.setOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    localGatewayRouteTable.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

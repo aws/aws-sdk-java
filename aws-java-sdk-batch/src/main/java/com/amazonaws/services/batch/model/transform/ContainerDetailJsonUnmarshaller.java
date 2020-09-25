@@ -70,6 +70,10 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                     context.nextToken();
                     containerDetail.setJobRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("executionRoleArn", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setExecutionRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
                     containerDetail.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance())
@@ -145,6 +149,16 @@ public class ContainerDetailJsonUnmarshaller implements Unmarshaller<ContainerDe
                 if (context.testExpression("linuxParameters", targetDepth)) {
                     context.nextToken();
                     containerDetail.setLinuxParameters(LinuxParametersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("logConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setLogConfiguration(LogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("secrets", targetDepth)) {
+                    context.nextToken();
+                    containerDetail.setSecrets(new ListUnmarshaller<Secret>(SecretJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

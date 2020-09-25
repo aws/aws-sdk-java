@@ -55,6 +55,11 @@ public class LocalGatewayRouteTableVpcAssociationStaxUnmarshaller implements Unm
                     continue;
                 }
 
+                if (context.testExpression("localGatewayRouteTableArn", targetDepth)) {
+                    localGatewayRouteTableVpcAssociation.setLocalGatewayRouteTableArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("localGatewayId", targetDepth)) {
                     localGatewayRouteTableVpcAssociation.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -62,6 +67,11 @@ public class LocalGatewayRouteTableVpcAssociationStaxUnmarshaller implements Unm
 
                 if (context.testExpression("vpcId", targetDepth)) {
                     localGatewayRouteTableVpcAssociation.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    localGatewayRouteTableVpcAssociation.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

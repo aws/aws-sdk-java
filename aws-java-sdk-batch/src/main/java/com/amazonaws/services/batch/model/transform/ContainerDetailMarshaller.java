@@ -38,6 +38,8 @@ public class ContainerDetailMarshaller {
             .marshallLocationName("command").build();
     private static final MarshallingInfo<String> JOBROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobRoleArn").build();
+    private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionRoleArn").build();
     private static final MarshallingInfo<List> VOLUMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("volumes").build();
     private static final MarshallingInfo<List> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -70,6 +72,10 @@ public class ContainerDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceRequirements").build();
     private static final MarshallingInfo<StructuredPojo> LINUXPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("linuxParameters").build();
+    private static final MarshallingInfo<StructuredPojo> LOGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logConfiguration").build();
+    private static final MarshallingInfo<List> SECRETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("secrets").build();
 
     private static final ContainerDetailMarshaller instance = new ContainerDetailMarshaller();
 
@@ -92,6 +98,7 @@ public class ContainerDetailMarshaller {
             protocolMarshaller.marshall(containerDetail.getMemory(), MEMORY_BINDING);
             protocolMarshaller.marshall(containerDetail.getCommand(), COMMAND_BINDING);
             protocolMarshaller.marshall(containerDetail.getJobRoleArn(), JOBROLEARN_BINDING);
+            protocolMarshaller.marshall(containerDetail.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(containerDetail.getVolumes(), VOLUMES_BINDING);
             protocolMarshaller.marshall(containerDetail.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(containerDetail.getMountPoints(), MOUNTPOINTS_BINDING);
@@ -108,6 +115,8 @@ public class ContainerDetailMarshaller {
             protocolMarshaller.marshall(containerDetail.getNetworkInterfaces(), NETWORKINTERFACES_BINDING);
             protocolMarshaller.marshall(containerDetail.getResourceRequirements(), RESOURCEREQUIREMENTS_BINDING);
             protocolMarshaller.marshall(containerDetail.getLinuxParameters(), LINUXPARAMETERS_BINDING);
+            protocolMarshaller.marshall(containerDetail.getLogConfiguration(), LOGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(containerDetail.getSecrets(), SECRETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,3 +1,28 @@
+# __1.11.870__ __2020-09-25__
+## __AWS Batch__
+  - ### Features
+    - Support custom logging, executionRole, secrets, and linuxParameters (initProcessEnabled, maxSwap, swappiness, sharedMemorySize, and tmpfs). Also, add new context keys for awslogs.
+
+## __AWS Config__
+  - ### Features
+    - Make the delivery-s3-bucket as an optional parameter for conformance packs and organizational conformance packs
+
+## __AWS Security Token Service__
+  - ### Features
+    - Documentation update for AssumeRole error
+
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - Documentation updates for docdb
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release supports returning additional information about local gateway resources, such as the local gateway route table.
+
+## __Amazon Fraud Detector__
+  - ### Features
+    - Increased maximum length of eventVariables values for GetEventPrediction from 256 to 1024.
+
 # __1.11.869__ __2020-09-24__
 ## __AWS Amplify__
   - ### Features

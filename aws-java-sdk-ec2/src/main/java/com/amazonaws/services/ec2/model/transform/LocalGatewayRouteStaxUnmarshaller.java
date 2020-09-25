@@ -67,6 +67,16 @@ public class LocalGatewayRouteStaxUnmarshaller implements Unmarshaller<LocalGate
                     localGatewayRoute.setLocalGatewayRouteTableId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("localGatewayRouteTableArn", targetDepth)) {
+                    localGatewayRoute.setLocalGatewayRouteTableArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    localGatewayRoute.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return localGatewayRoute;

@@ -37,6 +37,56 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.List<Device> devices;
+    /**
+     * <p>
+     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
+     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     */
+    private Boolean initProcessEnabled;
+    /**
+     * <p>
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     */
+    private Integer sharedMemorySize;
+    /**
+     * <p>
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     */
+    private java.util.List<Tmpfs> tmpfs;
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     */
+    private Integer maxSwap;
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     */
+    private Integer swappiness;
 
     /**
      * <p>
@@ -133,6 +183,382 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
+     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * 
+     * @param initProcessEnabled
+     *        Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     *        parameter maps to the <code>--init</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
+     *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
+     *        your container instance, log into your container instance and run the following command:
+     *        <code>sudo docker version | grep "Server API version"</code>
+     */
+
+    public void setInitProcessEnabled(Boolean initProcessEnabled) {
+        this.initProcessEnabled = initProcessEnabled;
+    }
+
+    /**
+     * <p>
+     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
+     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * 
+     * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     *         parameter maps to the <code>--init</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
+     *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
+     *         your container instance, log into your container instance and run the following command:
+     *         <code>sudo docker version | grep "Server API version"</code>
+     */
+
+    public Boolean getInitProcessEnabled() {
+        return this.initProcessEnabled;
+    }
+
+    /**
+     * <p>
+     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
+     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * 
+     * @param initProcessEnabled
+     *        Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     *        parameter maps to the <code>--init</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
+     *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
+     *        your container instance, log into your container instance and run the following command:
+     *        <code>sudo docker version | grep "Server API version"</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withInitProcessEnabled(Boolean initProcessEnabled) {
+        setInitProcessEnabled(initProcessEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
+     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
+     * Docker Remote API version on your container instance, log into your container instance and run the following
+     * command: <code>sudo docker version | grep "Server API version"</code>
+     * </p>
+     * 
+     * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
+     *         parameter maps to the <code>--init</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
+     *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
+     *         your container instance, log into your container instance and run the following command:
+     *         <code>sudo docker version | grep "Server API version"</code>
+     */
+
+    public Boolean isInitProcessEnabled() {
+        return this.initProcessEnabled;
+    }
+
+    /**
+     * <p>
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param sharedMemorySize
+     *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public void setSharedMemorySize(Integer sharedMemorySize) {
+        this.sharedMemorySize = sharedMemorySize;
+    }
+
+    /**
+     * <p>
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @return The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public Integer getSharedMemorySize() {
+        return this.sharedMemorySize;
+    }
+
+    /**
+     * <p>
+     * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param sharedMemorySize
+     *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
+     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withSharedMemorySize(Integer sharedMemorySize) {
+        setSharedMemorySize(sharedMemorySize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @return The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public java.util.List<Tmpfs> getTmpfs() {
+        return tmpfs;
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param tmpfs
+     *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     */
+
+    public void setTmpfs(java.util.Collection<Tmpfs> tmpfs) {
+        if (tmpfs == null) {
+            this.tmpfs = null;
+            return;
+        }
+
+        this.tmpfs = new java.util.ArrayList<Tmpfs>(tmpfs);
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTmpfs(java.util.Collection)} or {@link #withTmpfs(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tmpfs
+     *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withTmpfs(Tmpfs... tmpfs) {
+        if (this.tmpfs == null) {
+            setTmpfs(new java.util.ArrayList<Tmpfs>(tmpfs.length));
+        }
+        for (Tmpfs ele : tmpfs) {
+            this.tmpfs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param tmpfs
+     *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
+     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withTmpfs(java.util.Collection<Tmpfs> tmpfs) {
+        setTmpfs(tmpfs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * 
+     * @param maxSwap
+     *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        <p>
+     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     *        container will use the swap configuration for the container instance it is running on. A
+     *        <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     */
+
+    public void setMaxSwap(Integer maxSwap) {
+        this.maxSwap = maxSwap;
+    }
+
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * 
+     * @return The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *         <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *         <p>
+     *         If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *         values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     *         container will use the swap configuration for the container instance it is running on. A
+     *         <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     */
+
+    public Integer getMaxSwap() {
+        return this.maxSwap;
+    }
+
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * 
+     * @param maxSwap
+     *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        <p>
+     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     *        container will use the swap configuration for the container instance it is running on. A
+     *        <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withMaxSwap(Integer maxSwap) {
+        setMaxSwap(maxSwap);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param swappiness
+     *        This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     *        <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
+     *        value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
+     *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+     *        specified, a default value of <code>60</code> is used. If a value is not specified for
+     *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.
+     */
+
+    public void setSwappiness(Integer swappiness) {
+        this.swappiness = swappiness;
+    }
+
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @return This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     *         <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
+     *         value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
+     *         numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+     *         specified, a default value of <code>60</code> is used. If a value is not specified for
+     *         <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+     *         <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.
+     */
+
+    public Integer getSwappiness() {
+        return this.swappiness;
+    }
+
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * 
+     * @param swappiness
+     *        This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     *        <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
+     *        value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
+     *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+     *        specified, a default value of <code>60</code> is used. If a value is not specified for
+     *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withSwappiness(Integer swappiness) {
+        setSwappiness(swappiness);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -145,7 +571,17 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDevices() != null)
-            sb.append("Devices: ").append(getDevices());
+            sb.append("Devices: ").append(getDevices()).append(",");
+        if (getInitProcessEnabled() != null)
+            sb.append("InitProcessEnabled: ").append(getInitProcessEnabled()).append(",");
+        if (getSharedMemorySize() != null)
+            sb.append("SharedMemorySize: ").append(getSharedMemorySize()).append(",");
+        if (getTmpfs() != null)
+            sb.append("Tmpfs: ").append(getTmpfs()).append(",");
+        if (getMaxSwap() != null)
+            sb.append("MaxSwap: ").append(getMaxSwap()).append(",");
+        if (getSwappiness() != null)
+            sb.append("Swappiness: ").append(getSwappiness());
         sb.append("}");
         return sb.toString();
     }
@@ -164,6 +600,26 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDevices() != null && other.getDevices().equals(this.getDevices()) == false)
             return false;
+        if (other.getInitProcessEnabled() == null ^ this.getInitProcessEnabled() == null)
+            return false;
+        if (other.getInitProcessEnabled() != null && other.getInitProcessEnabled().equals(this.getInitProcessEnabled()) == false)
+            return false;
+        if (other.getSharedMemorySize() == null ^ this.getSharedMemorySize() == null)
+            return false;
+        if (other.getSharedMemorySize() != null && other.getSharedMemorySize().equals(this.getSharedMemorySize()) == false)
+            return false;
+        if (other.getTmpfs() == null ^ this.getTmpfs() == null)
+            return false;
+        if (other.getTmpfs() != null && other.getTmpfs().equals(this.getTmpfs()) == false)
+            return false;
+        if (other.getMaxSwap() == null ^ this.getMaxSwap() == null)
+            return false;
+        if (other.getMaxSwap() != null && other.getMaxSwap().equals(this.getMaxSwap()) == false)
+            return false;
+        if (other.getSwappiness() == null ^ this.getSwappiness() == null)
+            return false;
+        if (other.getSwappiness() != null && other.getSwappiness().equals(this.getSwappiness()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +629,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDevices() == null) ? 0 : getDevices().hashCode());
+        hashCode = prime * hashCode + ((getInitProcessEnabled() == null) ? 0 : getInitProcessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getSharedMemorySize() == null) ? 0 : getSharedMemorySize().hashCode());
+        hashCode = prime * hashCode + ((getTmpfs() == null) ? 0 : getTmpfs().hashCode());
+        hashCode = prime * hashCode + ((getMaxSwap() == null) ? 0 : getMaxSwap().hashCode());
+        hashCode = prime * hashCode + ((getSwappiness() == null) ? 0 : getSwappiness().hashCode());
         return hashCode;
     }
 

@@ -40,7 +40,7 @@ public class LocalGateway implements Serializable, Cloneable {
     private String outpostArn;
     /**
      * <p>
-     * The ID of the AWS account ID that owns the local gateway.
+     * The AWS account ID that owns the local gateway.
      * </p>
      */
     private String ownerId;
@@ -139,11 +139,11 @@ public class LocalGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account ID that owns the local gateway.
+     * The AWS account ID that owns the local gateway.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account ID that owns the local gateway.
+     *        The AWS account ID that owns the local gateway.
      */
 
     public void setOwnerId(String ownerId) {
@@ -152,10 +152,10 @@ public class LocalGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account ID that owns the local gateway.
+     * The AWS account ID that owns the local gateway.
      * </p>
      * 
-     * @return The ID of the AWS account ID that owns the local gateway.
+     * @return The AWS account ID that owns the local gateway.
      */
 
     public String getOwnerId() {
@@ -164,11 +164,11 @@ public class LocalGateway implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the AWS account ID that owns the local gateway.
+     * The AWS account ID that owns the local gateway.
      * </p>
      * 
      * @param ownerId
-     *        The ID of the AWS account ID that owns the local gateway.
+     *        The AWS account ID that owns the local gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

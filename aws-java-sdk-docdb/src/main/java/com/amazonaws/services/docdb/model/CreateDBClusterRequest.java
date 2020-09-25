@@ -117,7 +117,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String engine;
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      */
     private String engineVersion;
@@ -891,11 +893,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.
+     *        The version number of the database engine to use. The --engine-version will default to the latest major
+     *        engine version. For production workloads, we recommend explicitly declaring this parameter with the
+     *        intended major engine version.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -904,10 +910,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      * 
-     * @return The version number of the database engine to use.
+     * @return The version number of the database engine to use. The --engine-version will default to the latest major
+     *         engine version. For production workloads, we recommend explicitly declaring this parameter with the
+     *         intended major engine version.
      */
 
     public String getEngineVersion() {
@@ -916,11 +926,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.
+     *        The version number of the database engine to use. The --engine-version will default to the latest major
+     *        engine version. For production workloads, we recommend explicitly declaring this parameter with the
+     *        intended major engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

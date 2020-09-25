@@ -69,6 +69,17 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociationStaxUnmarshal
                     continue;
                 }
 
+                if (context.testExpression("localGatewayRouteTableArn", targetDepth)) {
+                    localGatewayRouteTableVirtualInterfaceGroupAssociation.setLocalGatewayRouteTableArn(StringStaxUnmarshaller.getInstance()
+                            .unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    localGatewayRouteTableVirtualInterfaceGroupAssociation.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("state", targetDepth)) {
                     localGatewayRouteTableVirtualInterfaceGroupAssociation.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
