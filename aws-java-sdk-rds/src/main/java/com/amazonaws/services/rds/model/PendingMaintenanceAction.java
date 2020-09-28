@@ -43,8 +43,12 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
     private java.util.Date autoAppliedAfterDate;
     /**
      * <p>
-     * The date when the maintenance action is automatically applied. The maintenance action is applied to the resource
-     * on this date regardless of the maintenance window for the resource.
+     * The date when the maintenance action is automatically applied.
+     * </p>
+     * <p>
+     * On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     * maintenance window for the resource. There might be a delay of one or more days from this date before the
+     * maintenance action is applied.
      * </p>
      */
     private java.util.Date forcedApplyDate;
@@ -171,13 +175,20 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the maintenance action is automatically applied. The maintenance action is applied to the resource
-     * on this date regardless of the maintenance window for the resource.
+     * The date when the maintenance action is automatically applied.
+     * </p>
+     * <p>
+     * On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     * maintenance window for the resource. There might be a delay of one or more days from this date before the
+     * maintenance action is applied.
      * </p>
      * 
      * @param forcedApplyDate
-     *        The date when the maintenance action is automatically applied. The maintenance action is applied to the
-     *        resource on this date regardless of the maintenance window for the resource.
+     *        The date when the maintenance action is automatically applied.</p>
+     *        <p>
+     *        On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     *        maintenance window for the resource. There might be a delay of one or more days from this date before the
+     *        maintenance action is applied.
      */
 
     public void setForcedApplyDate(java.util.Date forcedApplyDate) {
@@ -186,12 +197,19 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the maintenance action is automatically applied. The maintenance action is applied to the resource
-     * on this date regardless of the maintenance window for the resource.
+     * The date when the maintenance action is automatically applied.
+     * </p>
+     * <p>
+     * On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     * maintenance window for the resource. There might be a delay of one or more days from this date before the
+     * maintenance action is applied.
      * </p>
      * 
-     * @return The date when the maintenance action is automatically applied. The maintenance action is applied to the
-     *         resource on this date regardless of the maintenance window for the resource.
+     * @return The date when the maintenance action is automatically applied.</p>
+     *         <p>
+     *         On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     *         maintenance window for the resource. There might be a delay of one or more days from this date before the
+     *         maintenance action is applied.
      */
 
     public java.util.Date getForcedApplyDate() {
@@ -200,13 +218,20 @@ public class PendingMaintenanceAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the maintenance action is automatically applied. The maintenance action is applied to the resource
-     * on this date regardless of the maintenance window for the resource.
+     * The date when the maintenance action is automatically applied.
+     * </p>
+     * <p>
+     * On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     * maintenance window for the resource. There might be a delay of one or more days from this date before the
+     * maintenance action is applied.
      * </p>
      * 
      * @param forcedApplyDate
-     *        The date when the maintenance action is automatically applied. The maintenance action is applied to the
-     *        resource on this date regardless of the maintenance window for the resource.
+     *        The date when the maintenance action is automatically applied.</p>
+     *        <p>
+     *        On this date, the maintenance action is applied to the resource as soon as possible, regardless of the
+     *        maintenance window for the resource. There might be a delay of one or more days from this date before the
+     *        maintenance action is applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

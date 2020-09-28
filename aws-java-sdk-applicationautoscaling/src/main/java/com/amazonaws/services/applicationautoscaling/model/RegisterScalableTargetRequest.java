@@ -103,6 +103,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -191,6 +197,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -226,6 +238,14 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * This parameter is required if you are registering a scalable target.
+     * </p>
+     * <p>
+     * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
+     * can request an increase. For more information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private Integer maxCapacity;
@@ -434,6 +454,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -512,6 +538,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
      *        using the endpoint ARN. Example:
      *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using
+     *        the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -604,6 +637,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -682,6 +721,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         Amazon Comprehend document classification endpoint - The resource type and unique identifier are
      *         specified using the endpoint ARN. Example:
      *         <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified
+     *         using the endpoint ARN. Example:
+     *         <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -774,6 +820,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example: <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Lambda provisioned concurrency - The resource type is <code>function</code> and the unique identifier is the
      * function name with a function version or alias name suffix that is not <code>$LATEST</code>. Example:
      * <code>function:my-function:prod</code> or <code>function:my-function:1</code>.
@@ -852,6 +904,13 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Amazon Comprehend document classification endpoint - The resource type and unique identifier are specified
      *        using the endpoint ARN. Example:
      *        <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Comprehend entity recognizer endpoint - The resource type and unique identifier are specified using
+     *        the endpoint ARN. Example:
+     *        <code>arn:aws:comprehend:us-west-2:123456789012:entity-recognizer-endpoint/EXAMPLE</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -949,6 +1008,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1032,6 +1097,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
      *        </p>
      *        </li>
      *        <li>
@@ -1132,6 +1203,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1214,6 +1291,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference
      *         units for an Amazon Comprehend document classification endpoint.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *         for an Amazon Comprehend entity recognizer endpoint.
      *         </p>
      *         </li>
      *         <li>
@@ -1314,6 +1397,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1397,6 +1486,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
      *        </p>
      *        </li>
      *        <li>
@@ -1499,6 +1594,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1582,6 +1683,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
      *        </p>
      *        </li>
      *        <li>
@@ -1682,6 +1789,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
+     * <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units for an
+     * Amazon Comprehend entity recognizer endpoint.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>lambda:function:ProvisionedConcurrency</code> - The provisioned concurrency for a Lambda function.
      * </p>
      * </li>
@@ -1765,6 +1878,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> - The number of inference units
      *        for an Amazon Comprehend document classification endpoint.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>comprehend:entity-recognizer-endpoint:DesiredInferenceUnits</code> - The number of inference units
+     *        for an Amazon Comprehend entity recognizer endpoint.
      *        </p>
      *        </li>
      *        <li>
@@ -1877,6 +1996,14 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * This parameter is required if you are registering a scalable target.
      * </p>
+     * <p>
+     * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
+     * can request an increase. For more information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
      * 
      * @param maxCapacity
      *        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
@@ -1884,6 +2011,14 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        This parameter is required if you are registering a scalable target.
+     *        </p>
+     *        <p>
+     *        Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each
+     *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
+     *        higher limit, you can request an increase. For more information, consult the documentation for that
+     *        service. For information about the default quotas for each service, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     *        Quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -1898,12 +2033,28 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * This parameter is required if you are registering a scalable target.
      * </p>
+     * <p>
+     * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
+     * can request an increase. For more information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
      * 
      * @return The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
      *         Scaling can scale out (expand) as needed to the maximum capacity limit in response to changing demand.
      *         </p>
      *         <p>
      *         This parameter is required if you are registering a scalable target.
+     *         </p>
+     *         <p>
+     *         Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each
+     *         service has its own default quotas for the maximum capacity of the resource. If you want to specify a
+     *         higher limit, you can request an increase. For more information, consult the documentation for that
+     *         service. For information about the default quotas for each service, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     *         Quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public Integer getMaxCapacity() {
@@ -1918,6 +2069,14 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * This parameter is required if you are registering a scalable target.
      * </p>
+     * <p>
+     * Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each service
+     * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
+     * can request an increase. For more information, consult the documentation for that service. For information about
+     * the default quotas for each service, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * </p>
      * 
      * @param maxCapacity
      *        The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
@@ -1925,6 +2084,14 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        This parameter is required if you are registering a scalable target.
+     *        </p>
+     *        <p>
+     *        Although you can specify a large maximum capacity, note that service quotas may impose lower limits. Each
+     *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
+     *        higher limit, you can request an increase. For more information, consult the documentation for that
+     *        service. For information about the default quotas for each service, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
+     *        Quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

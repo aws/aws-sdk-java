@@ -1,3 +1,12 @@
+# __1.11.871__ __2020-09-28__
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release adds the InsufficientAvailableIPsInSubnetFault error for RDS Proxy.
+
+## __Application Auto Scaling__
+  - ### Features
+    - This release extends Application Auto Scaling support to AWS Comprehend Entity Recognizer endpoint, allowing automatic updates to provisioned Inference Units to maintain targeted utilization level.
+
 # __1.11.870__ __2020-09-25__
 ## __AWS Batch__
   - ### Features

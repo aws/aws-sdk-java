@@ -72,7 +72,7 @@ import com.amazonaws.services.applicationautoscaling.model.*;
  * </li>
  * <li>
  * <p>
- * Amazon Comprehend document classification endpoints
+ * Amazon Comprehend document classification and entity recognizer endpoints
  * </p>
  * </li>
  * <li>
@@ -540,8 +540,9 @@ public interface AWSApplicationAutoScaling {
      * uniquely identified by the combination of resource ID, scalable dimension, and namespace.
      * </p>
      * <p>
-     * When you register a new scalable target, you must specify values for minimum and maximum capacity. Application
-     * Auto Scaling scaling policies will not scale capacity to values that are outside of this range.
+     * When you register a new scalable target, you must specify values for minimum and maximum capacity. Current
+     * capacity will be adjusted within the specified range when scaling starts. Application Auto Scaling scaling
+     * policies will not scale capacity to values that are outside of this range.
      * </p>
      * <p>
      * After you register a scalable target, you do not need to register it again to use other Application Auto Scaling

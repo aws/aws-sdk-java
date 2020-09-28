@@ -1923,7 +1923,8 @@
         {"shape":"DBProxyTargetAlreadyRegisteredFault"},
         {"shape":"InvalidDBInstanceStateFault"},
         {"shape":"InvalidDBClusterStateFault"},
-        {"shape":"InvalidDBProxyStateFault"}
+        {"shape":"InvalidDBProxyStateFault"},
+        {"shape":"InsufficientAvailableIPsInSubnetFault"}
       ],
       "documentation":"<p>Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.</p>"
     },
@@ -8576,6 +8577,18 @@
       },
       "exception":true
     },
+    "InsufficientAvailableIPsInSubnetFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The requested operation can't be performed because there aren't enough available IP addresses in the proxy's subnets. Add more CIDR blocks to the VPC or remove IP address that aren't required from the subnets.</p>",
+      "error":{
+        "code":"InsufficientAvailableIPsInSubnetFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "InsufficientDBClusterCapacityFault":{
       "type":"structure",
       "members":{
@@ -10291,7 +10304,7 @@
         },
         "ForcedApplyDate":{
           "shape":"TStamp",
-          "documentation":"<p>The date when the maintenance action is automatically applied. The maintenance action is applied to the resource on this date regardless of the maintenance window for the resource.</p>"
+          "documentation":"<p>The date when the maintenance action is automatically applied.</p> <p>On this date, the maintenance action is applied to the resource as soon as possible, regardless of the maintenance window for the resource. There might be a delay of one or more days from this date before the maintenance action is applied.</p>"
         },
         "OptInStatus":{
           "shape":"String",

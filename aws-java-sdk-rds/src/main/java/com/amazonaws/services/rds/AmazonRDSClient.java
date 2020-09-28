@@ -424,6 +424,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new GlobalClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InsufficientAvailableIPsInSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
@@ -7787,6 +7788,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
+     * @throws InsufficientAvailableIPsInSubnetException
+     *         The requested operation can't be performed because there aren't enough available IP addresses in the
+     *         proxy's subnets. Add more CIDR blocks to the VPC or remove IP address that aren't required from the
+     *         subnets.
      * @sample AmazonRDS.RegisterDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
      *      Documentation</a>

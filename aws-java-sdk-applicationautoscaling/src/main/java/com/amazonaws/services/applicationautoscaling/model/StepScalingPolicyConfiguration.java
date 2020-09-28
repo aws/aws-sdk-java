@@ -31,9 +31,10 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
@@ -51,13 +52,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
     private java.util.List<StepAdjustment> stepAdjustments;
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      */
     private Integer minAdjustmentMagnitude;
@@ -136,7 +135,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -162,18 +161,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
@@ -185,17 +186,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
-     * @return Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * @return Specifies how the <code>ScalingAdjustment</code> value in a <a
      *         href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *         >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *         >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values
+     *         are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *         </p>
      *         <p>
      *         <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
@@ -207,18 +211,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -232,18 +238,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
@@ -255,18 +263,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -370,23 +380,19 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *        scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
-     *        <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
-     *        25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     *        Application Auto Scaling scales out the service by 2 tasks.</p>
-     *        <p>
-     *        Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     *        The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *        example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+     *        and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+     *        policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *        <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      */
 
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
@@ -395,22 +401,18 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      * 
-     * @return The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *         scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
-     *         <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
-     *         25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     *         Application Auto Scaling scales out the service by 2 tasks.</p>
-     *         <p>
-     *         Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * @return The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *         example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+     *         and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+     *         policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *         <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      */
 
     public Integer getMinAdjustmentMagnitude() {
@@ -419,23 +421,19 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *        scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
-     *        <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
-     *        25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     *        Application Auto Scaling scales out the service by 2 tasks.</p>
-     *        <p>
-     *        Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     *        The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *        example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+     *        and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+     *        policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *        <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -519,7 +517,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -609,7 +607,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -703,7 +701,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -792,7 +790,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Comprehend document classification endpoints
+     *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
@@ -886,7 +884,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -976,7 +974,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>

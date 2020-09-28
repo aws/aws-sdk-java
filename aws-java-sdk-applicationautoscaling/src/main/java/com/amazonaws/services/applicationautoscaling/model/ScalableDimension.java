@@ -32,6 +32,7 @@ public enum ScalableDimension {
     SagemakerVariantDesiredInstanceCount("sagemaker:variant:DesiredInstanceCount"),
     CustomResourceResourceTypeProperty("custom-resource:ResourceType:Property"),
     ComprehendDocumentClassifierEndpointDesiredInferenceUnits("comprehend:document-classifier-endpoint:DesiredInferenceUnits"),
+    ComprehendEntityRecognizerEndpointDesiredInferenceUnits("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits"),
     LambdaFunctionProvisionedConcurrency("lambda:function:ProvisionedConcurrency"),
     CassandraTableReadCapacityUnits("cassandra:table:ReadCapacityUnits"),
     CassandraTableWriteCapacityUnits("cassandra:table:WriteCapacityUnits");

@@ -76,7 +76,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
- * Amazon Comprehend document classification endpoints
+ * Amazon Comprehend document classification and entity recognizer endpoints
  * </p>
  * </li>
  * <li>

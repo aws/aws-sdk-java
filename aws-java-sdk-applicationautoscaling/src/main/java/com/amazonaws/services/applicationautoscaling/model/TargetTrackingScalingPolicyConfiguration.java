@@ -114,7 +114,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -196,7 +196,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -414,7 +414,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -494,7 +494,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -579,7 +579,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -658,7 +658,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Comprehend document classification endpoints
+     *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
@@ -743,7 +743,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -823,7 +823,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -910,7 +910,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -991,7 +991,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -1076,7 +1076,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -1156,7 +1156,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Comprehend document classification endpoints
+     *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
@@ -1241,7 +1241,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -1322,7 +1322,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
