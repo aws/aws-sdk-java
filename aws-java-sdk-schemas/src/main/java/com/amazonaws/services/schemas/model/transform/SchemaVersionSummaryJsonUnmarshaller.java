@@ -60,6 +60,10 @@ public class SchemaVersionSummaryJsonUnmarshaller implements Unmarshaller<Schema
                     context.nextToken();
                     schemaVersionSummary.setSchemaVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Type", targetDepth)) {
+                    context.nextToken();
+                    schemaVersionSummary.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

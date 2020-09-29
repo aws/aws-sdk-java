@@ -51,8 +51,7 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
     private String severity;
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
-     * patches that aren't applicable).
+     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * </p>
      */
     private String status;
@@ -227,13 +226,11 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
-     * patches that aren't applicable).
+     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * </p>
      * 
      * @param status
-     *        The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
-     *        Windows patches that aren't applicable).
+     *        The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * @see ComplianceStatus
      */
 
@@ -243,12 +240,10 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
-     * patches that aren't applicable).
+     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * </p>
      * 
-     * @return The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
-     *         Windows patches that aren't applicable).
+     * @return The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * @see ComplianceStatus
      */
 
@@ -258,13 +253,11 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
-     * patches that aren't applicable).
+     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * </p>
      * 
      * @param status
-     *        The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
-     *        Windows patches that aren't applicable).
+     *        The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -276,13 +269,11 @@ public class ComplianceItemEntry implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
-     * patches that aren't applicable).
+     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * </p>
      * 
      * @param status
-     *        The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
-     *        Windows patches that aren't applicable).
+     *        The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */

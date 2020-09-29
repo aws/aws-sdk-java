@@ -43,6 +43,12 @@ import java.util.concurrent.ExecutorService;
  * To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect endpoints, see <a
  * href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.
  * </p>
+ * <note>
+ * <p>
+ * Working with contact flows? Check out the <a
+ * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -37,6 +37,12 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
      * </p>
      */
     private String schemaVersion;
+    /**
+     * <p>
+     * The type of schema.
+     * </p>
+     */
+    private String type;
 
     /**
      * <p>
@@ -119,6 +125,65 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
+     * @param type
+     *        The type of schema.
+     * @see Type
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
+     * @return The type of schema.
+     * @see Type
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
+     * @param type
+     *        The type of schema.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Type
+     */
+
+    public SearchSchemaVersionSummary withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of schema.
+     * </p>
+     * 
+     * @param type
+     *        The type of schema.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Type
+     */
+
+    public SearchSchemaVersionSummary withType(Type type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +198,9 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
         if (getCreatedDate() != null)
             sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
         if (getSchemaVersion() != null)
-            sb.append("SchemaVersion: ").append(getSchemaVersion());
+            sb.append("SchemaVersion: ").append(getSchemaVersion()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +223,10 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
             return false;
         if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +237,7 @@ public class SearchSchemaVersionSummary implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }
 

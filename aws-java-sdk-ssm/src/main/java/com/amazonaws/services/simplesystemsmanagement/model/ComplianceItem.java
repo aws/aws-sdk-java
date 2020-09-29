@@ -64,7 +64,8 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
     private String title;
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
+     * patches that aren't applicable).
      * </p>
      */
     private String status;
@@ -312,11 +313,13 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
+     * patches that aren't applicable).
      * </p>
      * 
      * @param status
-     *        The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     *        The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
+     *        Windows patches that aren't applicable).
      * @see ComplianceStatus
      */
 
@@ -326,10 +329,12 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
+     * patches that aren't applicable).
      * </p>
      * 
-     * @return The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     * @return The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
+     *         Windows patches that aren't applicable).
      * @see ComplianceStatus
      */
 
@@ -339,11 +344,13 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
+     * patches that aren't applicable).
      * </p>
      * 
      * @param status
-     *        The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     *        The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
+     *        Windows patches that aren't applicable).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */
@@ -355,11 +362,13 @@ public class ComplianceItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     * The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows
+     * patches that aren't applicable).
      * </p>
      * 
      * @param status
-     *        The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.
+     *        The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for
+     *        Windows patches that aren't applicable).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComplianceStatus
      */

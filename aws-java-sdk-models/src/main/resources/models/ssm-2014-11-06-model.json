@@ -3601,7 +3601,7 @@
         },
         "Status":{
           "shape":"ComplianceStatus",
-          "documentation":"<p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>"
+          "documentation":"<p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>"
         },
         "Severity":{
           "shape":"ComplianceSeverity",
@@ -3648,7 +3648,7 @@
         },
         "Status":{
           "shape":"ComplianceStatus",
-          "documentation":"<p>The status of the compliance item. An item is either COMPLIANT, NON_COMPLIANT, or an empty string (for Windows patches that aren't applicable).</p>"
+          "documentation":"<p>The status of the compliance item. An item is either COMPLIANT or NON_COMPLIANT.</p>"
         },
         "Details":{
           "shape":"ComplianceItemDetails",
@@ -7619,7 +7619,7 @@
         },
         "PingStatus":{
           "shape":"PingStatus",
-          "documentation":"<p>Connection status of SSM Agent. </p>"
+          "documentation":"<p>Connection status of SSM Agent. </p> <note> <p>The status <code>Inactive</code> has been deprecated and is no longer in use.</p> </note>"
         },
         "LastPingDateTime":{
           "shape":"DateTime",
@@ -13326,7 +13326,7 @@
       "members":{
         "Message":{"shape":"String"}
       },
-      "documentation":"<p>The specified target instance for the session is not fully configured for use with Session Manager. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html\">Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.</p>",
+      "documentation":"<p>The specified target instance for the session is not fully configured for use with Session Manager. For more information, see <a href=\"https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html\">Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This error is also returned if you attempt to start a session on an instance that is located in a different account or Region</p>",
       "exception":true
     },
     "TargetParameterList":{

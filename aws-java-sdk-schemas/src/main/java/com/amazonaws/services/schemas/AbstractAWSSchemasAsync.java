@@ -184,6 +184,19 @@ public class AbstractAWSSchemasAsync extends AbstractAWSSchemas implements AWSSc
     }
 
     @Override
+    public java.util.concurrent.Future<ExportSchemaResult> exportSchemaAsync(ExportSchemaRequest request) {
+
+        return exportSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSchemaResult> exportSchemaAsync(ExportSchemaRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportSchemaRequest, ExportSchemaResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCodeBindingSourceResult> getCodeBindingSourceAsync(GetCodeBindingSourceRequest request) {
 
         return getCodeBindingSourceAsync(request, null);

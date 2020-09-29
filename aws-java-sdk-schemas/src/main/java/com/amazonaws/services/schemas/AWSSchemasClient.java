@@ -940,6 +940,69 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
     }
 
     /**
+     * @param exportSchemaRequest
+     * @return Result of the ExportSchema operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AWSSchemas.ExportSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ExportSchemaResult exportSchema(ExportSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportSchema(request);
+    }
+
+    @SdkInternalApi
+    final ExportSchemaResult executeExportSchema(ExportSchemaRequest exportSchemaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportSchemaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportSchemaRequest> request = null;
+        Response<ExportSchemaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportSchemaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportSchema");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExportSchemaResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Get the code binding source URI.
      * </p>

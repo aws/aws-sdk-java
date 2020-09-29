@@ -28,7 +28,7 @@ public class ModifyVpnConnectionOptionsRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Site-to-Site VPN VPN connection.
+     * The ID of the Site-to-Site VPN connection.
      * </p>
      */
     private String vpnConnectionId;
@@ -71,11 +71,11 @@ public class ModifyVpnConnectionOptionsRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Site-to-Site VPN VPN connection.
+     * The ID of the Site-to-Site VPN connection.
      * </p>
      * 
      * @param vpnConnectionId
-     *        The ID of the Site-to-Site VPN VPN connection.
+     *        The ID of the Site-to-Site VPN connection.
      */
 
     public void setVpnConnectionId(String vpnConnectionId) {
@@ -84,10 +84,10 @@ public class ModifyVpnConnectionOptionsRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Site-to-Site VPN VPN connection.
+     * The ID of the Site-to-Site VPN connection.
      * </p>
      * 
-     * @return The ID of the Site-to-Site VPN VPN connection.
+     * @return The ID of the Site-to-Site VPN connection.
      */
 
     public String getVpnConnectionId() {
@@ -96,11 +96,11 @@ public class ModifyVpnConnectionOptionsRequest extends AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The ID of the Site-to-Site VPN VPN connection.
+     * The ID of the Site-to-Site VPN connection.
      * </p>
      * 
      * @param vpnConnectionId
-     *        The ID of the Site-to-Site VPN VPN connection.
+     *        The ID of the Site-to-Site VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -38,6 +38,11 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * <p>
      * Connection status of SSM Agent.
      * </p>
+     * <note>
+     * <p>
+     * The status <code>Inactive</code> has been deprecated and is no longer in use.
+     * </p>
+     * </note>
      */
     private String pingStatus;
     /**
@@ -207,9 +212,17 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * <p>
      * Connection status of SSM Agent.
      * </p>
+     * <note>
+     * <p>
+     * The status <code>Inactive</code> has been deprecated and is no longer in use.
+     * </p>
+     * </note>
      * 
      * @param pingStatus
-     *        Connection status of SSM Agent.
+     *        Connection status of SSM Agent. </p> <note>
+     *        <p>
+     *        The status <code>Inactive</code> has been deprecated and is no longer in use.
+     *        </p>
      * @see PingStatus
      */
 
@@ -221,8 +234,16 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * <p>
      * Connection status of SSM Agent.
      * </p>
+     * <note>
+     * <p>
+     * The status <code>Inactive</code> has been deprecated and is no longer in use.
+     * </p>
+     * </note>
      * 
-     * @return Connection status of SSM Agent.
+     * @return Connection status of SSM Agent. </p> <note>
+     *         <p>
+     *         The status <code>Inactive</code> has been deprecated and is no longer in use.
+     *         </p>
      * @see PingStatus
      */
 
@@ -234,9 +255,17 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * <p>
      * Connection status of SSM Agent.
      * </p>
+     * <note>
+     * <p>
+     * The status <code>Inactive</code> has been deprecated and is no longer in use.
+     * </p>
+     * </note>
      * 
      * @param pingStatus
-     *        Connection status of SSM Agent.
+     *        Connection status of SSM Agent. </p> <note>
+     *        <p>
+     *        The status <code>Inactive</code> has been deprecated and is no longer in use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PingStatus
      */
@@ -250,9 +279,17 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * <p>
      * Connection status of SSM Agent.
      * </p>
+     * <note>
+     * <p>
+     * The status <code>Inactive</code> has been deprecated and is no longer in use.
+     * </p>
+     * </note>
      * 
      * @param pingStatus
-     *        Connection status of SSM Agent.
+     *        Connection status of SSM Agent. </p> <note>
+     *        <p>
+     *        The status <code>Inactive</code> has been deprecated and is no longer in use.
+     *        </p>
      * @see PingStatus
      */
 
@@ -264,9 +301,17 @@ public class InstanceInformation implements Serializable, Cloneable, StructuredP
      * <p>
      * Connection status of SSM Agent.
      * </p>
+     * <note>
+     * <p>
+     * The status <code>Inactive</code> has been deprecated and is no longer in use.
+     * </p>
+     * </note>
      * 
      * @param pingStatus
-     *        Connection status of SSM Agent.
+     *        Connection status of SSM Agent. </p> <note>
+     *        <p>
+     *        The status <code>Inactive</code> has been deprecated and is no longer in use.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PingStatus
      */

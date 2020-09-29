@@ -52,16 +52,21 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     * To add a route for the local network, enter the client CIDR range
      * </p>
+     * </li>
+     * </ul>
      */
     private String destinationCidrBlock;
     /**
      * <p>
      * The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target
      * network of the Client VPN endpoint.
+     * </p>
+     * <p>
+     * Alternatively, if you're adding a route for the local network, specify <code>local</code>.
      * </p>
      */
     private String targetVpcSubnetId;
@@ -141,10 +146,12 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     * To add a route for the local network, enter the client CIDR range
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationCidrBlock
      *        The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
@@ -164,9 +171,11 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      *        To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     *        To add a route for the local network, enter the client CIDR range
+     *        </p>
+     *        </li>
      */
 
     public void setDestinationCidrBlock(String destinationCidrBlock) {
@@ -193,10 +202,12 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     * To add a route for the local network, enter the client CIDR range
      * </p>
+     * </li>
+     * </ul>
      * 
      * @return The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
      *         <ul>
@@ -215,9 +226,11 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      *         To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      *         </p>
      *         </li>
-     *         </ul>
+     *         <li>
      *         <p>
-     *         Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     *         To add a route for the local network, enter the client CIDR range
+     *         </p>
+     *         </li>
      */
 
     public String getDestinationCidrBlock() {
@@ -244,10 +257,12 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     * To add a route for the local network, enter the client CIDR range
      * </p>
+     * </li>
+     * </ul>
      * 
      * @param destinationCidrBlock
      *        The IPv4 address range, in CIDR notation, of the route destination. For example:</p>
@@ -267,9 +282,11 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      *        To add a route for an on-premises network, enter the AWS Site-to-Site VPN connection's IPv4 CIDR range
      *        </p>
      *        </li>
-     *        </ul>
+     *        <li>
      *        <p>
-     *        Route address ranges cannot overlap with the CIDR range specified for client allocation.
+     *        To add a route for the local network, enter the client CIDR range
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,10 +300,15 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target
      * network of the Client VPN endpoint.
      * </p>
+     * <p>
+     * Alternatively, if you're adding a route for the local network, specify <code>local</code>.
+     * </p>
      * 
      * @param targetVpcSubnetId
      *        The ID of the subnet through which you want to route traffic. The specified subnet must be an existing
-     *        target network of the Client VPN endpoint.
+     *        target network of the Client VPN endpoint.</p>
+     *        <p>
+     *        Alternatively, if you're adding a route for the local network, specify <code>local</code>.
      */
 
     public void setTargetVpcSubnetId(String targetVpcSubnetId) {
@@ -298,9 +320,14 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target
      * network of the Client VPN endpoint.
      * </p>
+     * <p>
+     * Alternatively, if you're adding a route for the local network, specify <code>local</code>.
+     * </p>
      * 
      * @return The ID of the subnet through which you want to route traffic. The specified subnet must be an existing
-     *         target network of the Client VPN endpoint.
+     *         target network of the Client VPN endpoint.</p>
+     *         <p>
+     *         Alternatively, if you're adding a route for the local network, specify <code>local</code>.
      */
 
     public String getTargetVpcSubnetId() {
@@ -312,10 +339,15 @@ public class CreateClientVpnRouteRequest extends AmazonWebServiceRequest impleme
      * The ID of the subnet through which you want to route traffic. The specified subnet must be an existing target
      * network of the Client VPN endpoint.
      * </p>
+     * <p>
+     * Alternatively, if you're adding a route for the local network, specify <code>local</code>.
+     * </p>
      * 
      * @param targetVpcSubnetId
      *        The ID of the subnet through which you want to route traffic. The specified subnet must be an existing
-     *        target network of the Client VPN endpoint.
+     *        target network of the Client VPN endpoint.</p>
+     *        <p>
+     *        Alternatively, if you're adding a route for the local network, specify <code>local</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

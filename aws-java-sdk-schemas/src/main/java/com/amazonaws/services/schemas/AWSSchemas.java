@@ -344,6 +344,29 @@ public interface AWSSchemas {
     DescribeSchemaResult describeSchema(DescribeSchemaRequest describeSchemaRequest);
 
     /**
+     * @param exportSchemaRequest
+     * @return Result of the ExportSchema operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AWSSchemas.ExportSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExportSchemaResult exportSchema(ExportSchemaRequest exportSchemaRequest);
+
+    /**
      * <p>
      * Get the code binding source URI.
      * </p>

@@ -22344,7 +22344,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Modifies the connection options for your Site-to-Site VPN VPN connection.
+     * Modifies the connection options for your Site-to-Site VPN connection.
      * </p>
      * <p>
      * When you modify the VPN connection options, the VPN endpoint IP addresses on the AWS side do not change, and the

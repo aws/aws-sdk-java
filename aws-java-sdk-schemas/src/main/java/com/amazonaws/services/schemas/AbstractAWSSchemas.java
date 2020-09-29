@@ -89,6 +89,11 @@ public class AbstractAWSSchemas implements AWSSchemas {
     }
 
     @Override
+    public ExportSchemaResult exportSchema(ExportSchemaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCodeBindingSourceResult getCodeBindingSource(GetCodeBindingSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

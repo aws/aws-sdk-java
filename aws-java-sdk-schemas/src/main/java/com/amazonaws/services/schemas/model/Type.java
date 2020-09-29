@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Type {
 
-    OpenApi3("OpenApi3");
+    OpenApi3("OpenApi3"),
+    JSONSchemaDraft4("JSONSchemaDraft4");
 
     private String value;
 

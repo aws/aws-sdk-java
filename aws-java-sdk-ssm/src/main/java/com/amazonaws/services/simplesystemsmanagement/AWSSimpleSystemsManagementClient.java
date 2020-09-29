@@ -8112,7 +8112,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The specified target instance for the session is not fully configured for use with Session Manager. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
-     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This error is
+     *         also returned if you attempt to start a session on an instance that is located in a different account or
+     *         Region
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartSession

@@ -33,6 +33,8 @@ public class SchemaVersionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaName").build();
     private static final MarshallingInfo<String> SCHEMAVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SchemaVersion").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
 
     private static final SchemaVersionSummaryMarshaller instance = new SchemaVersionSummaryMarshaller();
 
@@ -53,6 +55,7 @@ public class SchemaVersionSummaryMarshaller {
             protocolMarshaller.marshall(schemaVersionSummary.getSchemaArn(), SCHEMAARN_BINDING);
             protocolMarshaller.marshall(schemaVersionSummary.getSchemaName(), SCHEMANAME_BINDING);
             protocolMarshaller.marshall(schemaVersionSummary.getSchemaVersion(), SCHEMAVERSION_BINDING);
+            protocolMarshaller.marshall(schemaVersionSummary.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
