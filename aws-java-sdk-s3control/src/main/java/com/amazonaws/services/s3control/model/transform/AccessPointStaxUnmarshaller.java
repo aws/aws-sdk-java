@@ -62,6 +62,11 @@ public class AccessPointStaxUnmarshaller implements Unmarshaller<AccessPoint, St
                     accessPoint.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("AccessPointArn", targetDepth)) {
+                    accessPoint.setAccessPointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return accessPoint;

@@ -40,7 +40,13 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String nextToken;
-
+    /**
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example,
+     * to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name
+     * <code>LocationType S3</code> and <code>Operator Equals</code>.
+     * </p>
+     */
     private java.util.List<LocationFilter> filters;
 
     /**
@@ -124,7 +130,15 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example,
+     * to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name
+     * <code>LocationType S3</code> and <code>Operator Equals</code>.
+     * </p>
+     * 
+     * @return You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For
+     *         example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with
+     *         filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
      */
 
     public java.util.List<LocationFilter> getFilters() {
@@ -132,7 +146,16 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example,
+     * to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name
+     * <code>LocationType S3</code> and <code>Operator Equals</code>.
+     * </p>
+     * 
      * @param filters
+     *        You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For
+     *        example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with
+     *        filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
      */
 
     public void setFilters(java.util.Collection<LocationFilter> filters) {
@@ -146,12 +169,20 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example,
+     * to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name
+     * <code>LocationType S3</code> and <code>Operator Equals</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
+     *        You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For
+     *        example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with
+     *        filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +197,16 @@ public class ListLocationsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example,
+     * to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with filter name
+     * <code>LocationType S3</code> and <code>Operator Equals</code>.
+     * </p>
+     * 
      * @param filters
+     *        You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For
+     *        example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code> with
+     *        filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

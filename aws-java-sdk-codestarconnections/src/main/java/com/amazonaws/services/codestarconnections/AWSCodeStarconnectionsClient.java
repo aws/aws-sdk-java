@@ -272,6 +272,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new CreateConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnection");
@@ -335,6 +336,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new CreateHostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createHostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHost");
@@ -390,6 +392,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new DeleteConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnection");
@@ -452,6 +455,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new DeleteHostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteHostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHost");
@@ -509,6 +513,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new GetConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnection");
@@ -565,6 +570,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new GetHostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHost");
@@ -618,6 +624,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new ListConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnections");
@@ -671,6 +678,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new ListHostsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHosts");
@@ -726,6 +734,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -783,6 +792,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -838,6 +848,7 @@ public class AWSCodeStarconnectionsClient extends AmazonWebServiceClient impleme
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeStar connections");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");

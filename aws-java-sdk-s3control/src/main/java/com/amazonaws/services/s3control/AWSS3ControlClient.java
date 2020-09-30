@@ -46,6 +46,10 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3control.model.*;
 import com.amazonaws.services.s3control.model.transform.*;
 
+import com.amazonaws.arn.Arn;
+import com.amazonaws.arn.AwsResource;
+import static com.amazonaws.services.s3control.S3ControlHandlerContextKey.S3_ARNABLE_FIELD;
+
 /**
  * Client for accessing AWS S3 Control. All service calls made using this client are blocking, and will not return until
  * the service call completes.
@@ -112,15 +116,17 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     }
 
     private void init() {
+        exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BucketAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTagsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new JobStatusExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidRequestExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IdempotencyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchPublicAccessBlockConfigurationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InternalServiceExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BucketAlreadyOwnedByYouExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyRequestsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidNextTokenExceptionUnmarshaller());
         exceptionUnmarshallers.add(new BadRequestExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.s3control.model.AWSS3ControlException.class));
 
@@ -136,8 +142,73 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Creates an access point and associates it with the specified bucket.
+     * Creates an access point and associates it with the specified bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
+     * <p/>
+     * <p>
+     * <b>Using this action with Amazon S3 on Outposts</b>
+     * </p>
+     * <p>
+     * This action:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports VPC style access points.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Does not support ACL on S3 on Outposts buckets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Does not support Public Access on S3 on Outposts buckets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Does not support object lock for S3 on Outposts buckets.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href="AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide </i>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p/>
+     * <p>
+     * The following actions are related to <code>CreateAccessPoint</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html">DeleteAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListAccessPoints.html">ListAccessPoints</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param createAccessPointRequest
      * @return Result of the CreateAccessPoint operation returned by the service.
@@ -163,20 +234,194 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String bucket = createAccessPointRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    createAccessPointRequest = createAccessPointRequest.clone();
+                    createAccessPointRequest.setBucket(resource.getBucketName());
+
+                    String accountId = createAccessPointRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    createAccessPointRequest.setAccountId(accountIdInArn);
+                }
                 request = new CreateAccessPointRequestMarshaller().marshall(super.beforeMarshalling(createAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessPoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(createAccessPointRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(createAccessPointRequest.getAccountId(), "AccountId", "createAccessPointRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", createAccessPointRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<CreateAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<CreateAccessPointResult>(
+                    new CreateAccessPointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API operation creates an Amazon S3 on Outposts bucket. To create an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a> in the <i>Amazon
+     * Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an Outposts bucket,
+     * you must have S3 on Outposts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Not every string is an acceptable bucket name. For information on bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working with
+     * Amazon S3 Buckets</a>.
+     * </p>
+     * <p>
+     * S3 on Outposts buckets do not support
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * ACLs. Instead, configure access point policies to manage access to buckets.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Public access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Object Lock
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Bucket Location constraint
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
+     * prefix and outpost-id in your API request, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html#API_control_CreateBucket_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>CreateBucket</code> for Amazon S3 on Outposts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html">CreateAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html">
+     * PutAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param createBucketRequest
+     * @return Result of the CreateBucket operation returned by the service.
+     * @throws BucketAlreadyExistsException
+     *         The requested Outposts bucket name is not available. The bucket namespace is shared by all users of the
+     *         AWS Outposts in this Region. Select a different name and try again.
+     * @throws BucketAlreadyOwnedByYouException
+     *         The Outposts bucket you tried to create already exists, and you own it.
+     * @sample AWSS3Control.CreateBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateBucketResult createBucket(CreateBucketRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBucket(request);
+    }
+
+    @SdkInternalApi
+    final CreateBucketResult executeCreateBucket(CreateBucketRequest createBucketRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBucketRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBucketRequest> request = null;
+        Response<CreateBucketResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBucketRequestMarshaller().marshall(super.beforeMarshalling(createBucketRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBucket");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
-            StaxResponseHandler<CreateAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<CreateAccessPointResult>(
-                    new CreateAccessPointResultStaxUnmarshaller());
+            StaxResponseHandler<CreateBucketResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<CreateBucketResult>(
+                    new CreateBucketResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -189,33 +434,38 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * You can use Amazon S3 Batch Operations to perform large-scale Batch Operations on Amazon S3 objects. Amazon S3
-     * Batch Operations can execute a single operation or action on lists of Amazon S3 objects that you specify. For
-     * more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon S3
-     * Batch Operations</a> in the Amazon Simple Storage Service Developer Guide.
+     * S3 Batch Operations performs large-scale Batch Operations on Amazon S3 objects. Batch Operations can run a single
+     * operation or action on lists of Amazon S3 objects that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
+     * <p>
+     * This operation creates a S3 Batch Operations job.
+     * </p>
+     * <p/>
      * <p>
      * Related actions include:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <a>DescribeJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListJobs</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html">ListJobs</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobPriority</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html">UpdateJobPriority</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobStatus</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
      * </p>
      * </li>
      * </ul>
@@ -251,6 +501,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new CreateJobRequestMarshaller().marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
@@ -260,9 +511,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(createJobRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(createJobRequest.getAccountId(), "AccountId", "createJobRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", createJobRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<CreateJobResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<CreateJobResult>(
                     new CreateJobResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -276,6 +538,35 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Deletes the specified access point.
      * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPoint</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteAccessPointRequest
      * @return Result of the DeleteAccessPoint operation returned by the service.
@@ -301,21 +592,58 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String name = deleteAccessPointRequest.getName();
+                Arn arn = null;
+                if (name != null && name.startsWith("arn:")) {
+                    arn = Arn.fromString(name);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3.S3AccessPointResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3.S3AccessPointResource.");
+                    }
+
+                    com.amazonaws.services.s3.S3AccessPointResource resource = (com.amazonaws.services.s3.S3AccessPointResource) awsResource;
+
+                    deleteAccessPointRequest = deleteAccessPointRequest.clone();
+                    deleteAccessPointRequest.setName(resource.getAccessPointName());
+
+                    String accountId = deleteAccessPointRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    deleteAccessPointRequest.setAccountId(accountIdInArn);
+                }
                 request = new DeleteAccessPointRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteAccessPointRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteAccessPointRequest.getAccountId(), "AccountId", "deleteAccessPointRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteAccessPointRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<DeleteAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointResult>(
                     new DeleteAccessPointResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -329,6 +657,32 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Deletes the access point policy for the specified access point.
      * </p>
+     * <p/>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteAccessPointPolicy</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">
+     * PutAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html">
+     * GetAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteAccessPointPolicyRequest
      * @return Result of the DeleteAccessPointPolicy operation returned by the service.
@@ -354,21 +708,594 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String name = deleteAccessPointPolicyRequest.getName();
+                Arn arn = null;
+                if (name != null && name.startsWith("arn:")) {
+                    arn = Arn.fromString(name);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3.S3AccessPointResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3.S3AccessPointResource.");
+                    }
+
+                    com.amazonaws.services.s3.S3AccessPointResource resource = (com.amazonaws.services.s3.S3AccessPointResource) awsResource;
+
+                    deleteAccessPointPolicyRequest = deleteAccessPointPolicyRequest.clone();
+                    deleteAccessPointPolicyRequest.setName(resource.getAccessPointName());
+
+                    String accountId = deleteAccessPointPolicyRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    deleteAccessPointPolicyRequest.setAccountId(accountIdInArn);
+                }
                 request = new DeleteAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteAccessPointPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPointPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteAccessPointPolicyRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteAccessPointPolicyRequest.getAccountId(), "AccountId", "deleteAccessPointPolicyRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteAccessPointPolicyRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<DeleteAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteAccessPointPolicyResult>(
                     new DeleteAccessPointPolicyResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API operation deletes an Amazon S3 on Outposts bucket. To delete an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <i>Amazon
+     * Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete markers) in the
+     * bucket must be deleted before the bucket itself can be deleted. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html#API_control_DeleteBucket_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p class="title">
+     * <b>Related Resources</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteBucketRequest
+     * @return Result of the DeleteBucket operation returned by the service.
+     * @sample AWSS3Control.DeleteBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteBucketResult deleteBucket(DeleteBucketRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBucket(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBucketResult executeDeleteBucket(DeleteBucketRequest deleteBucketRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBucketRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBucketRequest> request = null;
+        Response<DeleteBucketResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = deleteBucketRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    deleteBucketRequest = deleteBucketRequest.clone();
+                    deleteBucketRequest.setBucket(resource.getBucketName());
+
+                    String accountId = deleteBucketRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    deleteBucketRequest.setAccountId(accountIdInArn);
+                }
+                request = new DeleteBucketRequestMarshaller().marshall(super.beforeMarshalling(deleteBucketRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucket");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteBucketRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteBucketRequest.getAccountId(), "AccountId", "deleteBucketRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteBucketRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<DeleteBucketResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteBucketResult>(
+                    new DeleteBucketResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API action deletes an Amazon S3 on Outposts bucket's lifecycle configuration. To delete an S3 bucket's
+     * lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a>
+     * in the <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes the lifecycle configuration from the specified Outposts bucket. Amazon S3 on Outposts removes all the
+     * lifecycle configuration rules in the lifecycle subresource associated with the bucket. Your objects never expire,
+     * and Amazon S3 on Outposts no longer automatically deletes any objects on the basis of rules contained in the
+     * deleted lifecycle configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the
+     * <code>s3outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission and
+     * the Outposts bucket owner can grant this permission to others.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * For more information about object expiration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions">
+     * Elements to Describe Lifecycle Actions</a>.
+     * </p>
+     * <p>
+     * Related actions include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">
+     * PutBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">
+     * GetBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteBucketLifecycleConfigurationRequest
+     * @return Result of the DeleteBucketLifecycleConfiguration operation returned by the service.
+     * @sample AWSS3Control.DeleteBucketLifecycleConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketLifecycleConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteBucketLifecycleConfigurationResult deleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBucketLifecycleConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBucketLifecycleConfigurationResult executeDeleteBucketLifecycleConfiguration(
+            DeleteBucketLifecycleConfigurationRequest deleteBucketLifecycleConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBucketLifecycleConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBucketLifecycleConfigurationRequest> request = null;
+        Response<DeleteBucketLifecycleConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = deleteBucketLifecycleConfigurationRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    deleteBucketLifecycleConfigurationRequest = deleteBucketLifecycleConfigurationRequest.clone();
+                    deleteBucketLifecycleConfigurationRequest.setBucket(resource.getBucketName());
+
+                    String accountId = deleteBucketLifecycleConfigurationRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    deleteBucketLifecycleConfigurationRequest.setAccountId(accountIdInArn);
+                }
+                request = new DeleteBucketLifecycleConfigurationRequestMarshaller()
+                        .marshall(super.beforeMarshalling(deleteBucketLifecycleConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketLifecycleConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteBucketLifecycleConfigurationRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteBucketLifecycleConfigurationRequest.getAccountId(), "AccountId",
+                        "deleteBucketLifecycleConfigurationRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteBucketLifecycleConfigurationRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<DeleteBucketLifecycleConfigurationResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteBucketLifecycleConfigurationResult>(
+                    new DeleteBucketLifecycleConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API operation deletes an Amazon S3 on Outposts bucket policy. To delete an S3 bucket policy, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a> in the
+     * <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * This implementation of the DELETE operation uses the policy subresource to delete the policy of a specified
+     * Amazon S3 on Outposts bucket. If you are using an identity other than the root user of the AWS account that owns
+     * the bucket, the calling identity must have the <code>s3outposts:DeleteBucketPolicy</code> permissions on the
+     * specified Outposts bucket and belong to the bucket owner's account to use this operation. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a>
+     * in <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you don't have <code>DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
+     * error. If you have the correct permissions, but you're not using an identity that belongs to the bucket owner's
+     * account, Amazon S3 returns a <code>405 Method Not Allowed</code> error.
+     * </p>
+     * <important>
+     * <p>
+     * As a security precaution, the root user of the AWS account that owns a bucket can always use this operation, even
+     * if the policy explicitly denies the root user the ability to perform this action.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about bucket policies, see <a
+     * href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
+     * Policies</a>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteBucketPolicy</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html">GetBucketPolicy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html">PutBucketPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteBucketPolicyRequest
+     * @return Result of the DeleteBucketPolicy operation returned by the service.
+     * @sample AWSS3Control.DeleteBucketPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteBucketPolicyResult deleteBucketPolicy(DeleteBucketPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBucketPolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBucketPolicyResult executeDeleteBucketPolicy(DeleteBucketPolicyRequest deleteBucketPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBucketPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBucketPolicyRequest> request = null;
+        Response<DeleteBucketPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = deleteBucketPolicyRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    deleteBucketPolicyRequest = deleteBucketPolicyRequest.clone();
+                    deleteBucketPolicyRequest.setBucket(resource.getBucketName());
+
+                    String accountId = deleteBucketPolicyRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    deleteBucketPolicyRequest.setAccountId(accountIdInArn);
+                }
+                request = new DeleteBucketPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteBucketPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteBucketPolicyRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteBucketPolicyRequest.getAccountId(), "AccountId", "deleteBucketPolicyRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteBucketPolicyRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<DeleteBucketPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteBucketPolicyResult>(
+                    new DeleteBucketPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API operation deletes an Amazon S3 on Outposts bucket's tags. To delete an S3 bucket tags, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in
+     * the <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes the tags from the Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>PutBucketTagging</code> action. By default,
+     * the bucket owner has this permission and can grant this permission to others.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>DeleteBucketTagging</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html">GetBucketTagging</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html">PutBucketTagging</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteBucketTaggingRequest
+     * @return Result of the DeleteBucketTagging operation returned by the service.
+     * @sample AWSS3Control.DeleteBucketTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteBucketTagging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteBucketTaggingResult deleteBucketTagging(DeleteBucketTaggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBucketTagging(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBucketTaggingResult executeDeleteBucketTagging(DeleteBucketTaggingRequest deleteBucketTaggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBucketTaggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBucketTaggingRequest> request = null;
+        Response<DeleteBucketTaggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = deleteBucketTaggingRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    deleteBucketTaggingRequest = deleteBucketTaggingRequest.clone();
+                    deleteBucketTaggingRequest.setBucket(resource.getBucketName());
+
+                    String accountId = deleteBucketTaggingRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    deleteBucketTaggingRequest.setAccountId(accountIdInArn);
+                }
+                request = new DeleteBucketTaggingRequestMarshaller().marshall(super.beforeMarshalling(deleteBucketTaggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBucketTagging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteBucketTaggingRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteBucketTaggingRequest.getAccountId(), "AccountId", "deleteBucketTaggingRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteBucketTaggingRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<DeleteBucketTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteBucketTaggingResult>(
+                    new DeleteBucketTaggingResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -380,10 +1307,10 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Removes the entire tag set from the specified Amazon S3 Batch Operations job. To use this operation, you must
-     * have permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using Job
-     * Tags</a> in the Amazon Simple Storage Service Developer Guide.
+     * Removes the entire tag set from the specified S3 Batch Operations job. To use this operation, you must have
+     * permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
+     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -392,17 +1319,17 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetJobTagging</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>PutJobTagging</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html">PutJobTagging</a>
      * </p>
      * </li>
      * </ul>
@@ -437,6 +1364,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeleteJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(deleteJobTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobTagging");
@@ -446,9 +1374,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deleteJobTaggingRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deleteJobTaggingRequest.getAccountId(), "AccountId", "deleteJobTaggingRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deleteJobTaggingRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<DeleteJobTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeleteJobTaggingResult>(
                     new DeleteJobTaggingResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -460,8 +1399,27 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * Removes the <code>PublicAccessBlock</code> configuration for an AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3
+     * block public access</a>.
      * </p>
+     * <p>
+     * Related actions include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html">
+     * GetPublicAccessBlock</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">
+     * PutPublicAccessBlock</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deletePublicAccessBlockRequest
      * @return Result of the DeletePublicAccessBlock operation returned by the service.
@@ -490,6 +1448,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DeletePublicAccessBlockRequestMarshaller().marshall(super.beforeMarshalling(deletePublicAccessBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublicAccessBlock");
@@ -499,9 +1458,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(deletePublicAccessBlockRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(deletePublicAccessBlockRequest.getAccountId(), "AccountId", "deletePublicAccessBlockRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", deletePublicAccessBlockRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<DeletePublicAccessBlockResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DeletePublicAccessBlockResult>(
                     new DeletePublicAccessBlockResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -514,8 +1484,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
     /**
      * <p>
      * Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon S3 Batch Operations</a> in
-     * the Amazon Simple Storage Service Developer Guide.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -524,22 +1494,23 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListJobs</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html">ListJobs</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobPriority</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html">UpdateJobPriority</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobStatus</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
      * </p>
      * </li>
      * </ul>
@@ -575,6 +1546,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new DescribeJobRequestMarshaller().marshall(super.beforeMarshalling(describeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJob");
@@ -584,9 +1556,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(describeJobRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(describeJobRequest.getAccountId(), "AccountId", "describeJobRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", describeJobRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<DescribeJobResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<DescribeJobResult>(
                     new DescribeJobResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -600,6 +1583,37 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Returns configuration information about the specified access point.
      * </p>
+     * <p/>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPoint</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListAccessPoints.html">ListAccessPoints</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getAccessPointRequest
      * @return Result of the GetAccessPoint operation returned by the service.
@@ -625,21 +1639,58 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String name = getAccessPointRequest.getName();
+                Arn arn = null;
+                if (name != null && name.startsWith("arn:")) {
+                    arn = Arn.fromString(name);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3.S3AccessPointResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3.S3AccessPointResource.");
+                    }
+
+                    com.amazonaws.services.s3.S3AccessPointResource resource = (com.amazonaws.services.s3.S3AccessPointResource) awsResource;
+
+                    getAccessPointRequest = getAccessPointRequest.clone();
+                    getAccessPointRequest.setName(resource.getAccessPointName());
+
+                    String accountId = getAccessPointRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    getAccessPointRequest.setAccountId(accountIdInArn);
+                }
                 request = new GetAccessPointRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPoint");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointRequest.getAccountId(), "AccountId", "getAccessPointRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<GetAccessPointResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointResult>(
                     new GetAccessPointResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -653,6 +1704,23 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Returns the access point policy associated with the specified access point.
      * </p>
+     * <p>
+     * The following actions are related to <code>GetAccessPointPolicy</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutAccessPointPolicy.html">
+     * PutAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">
+     * DeleteAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getAccessPointPolicyRequest
      * @return Result of the GetAccessPointPolicy operation returned by the service.
@@ -678,21 +1746,58 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String name = getAccessPointPolicyRequest.getName();
+                Arn arn = null;
+                if (name != null && name.startsWith("arn:")) {
+                    arn = Arn.fromString(name);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3.S3AccessPointResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3.S3AccessPointResource.");
+                    }
+
+                    com.amazonaws.services.s3.S3AccessPointResource resource = (com.amazonaws.services.s3.S3AccessPointResource) awsResource;
+
+                    getAccessPointPolicyRequest = getAccessPointPolicyRequest.clone();
+                    getAccessPointPolicyRequest.setName(resource.getAccessPointName());
+
+                    String accountId = getAccessPointPolicyRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    getAccessPointPolicyRequest.setAccountId(accountIdInArn);
+                }
                 request = new GetAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointPolicyRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointPolicyRequest.getAccountId(), "AccountId", "getAccessPointPolicyRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointPolicyRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<GetAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointPolicyResult>(
                     new GetAccessPointPolicyResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -737,6 +1842,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetAccessPointPolicyStatusRequestMarshaller().marshall(super.beforeMarshalling(getAccessPointPolicyStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessPointPolicyStatus");
@@ -746,9 +1852,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getAccessPointPolicyStatusRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getAccessPointPolicyStatusRequest.getAccountId(), "AccountId", "getAccessPointPolicyStatusRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getAccessPointPolicyStatusRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<GetAccessPointPolicyStatusResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetAccessPointPolicyStatusResult>(
                     new GetAccessPointPolicyStatusResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -760,10 +1877,581 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Returns the tags on an Amazon S3 Batch Operations job. To use this operation, you must have permission to perform
-     * the <code>s3:GetJobTagging</code> action. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using Job
-     * Tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Gets an Amazon S3 on Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetBucket</code> for Amazon S3 on Outposts:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html">CreateBucket</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getBucketRequest
+     * @return Result of the GetBucket operation returned by the service.
+     * @sample AWSS3Control.GetBucket
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucket" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetBucketResult getBucket(GetBucketRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBucket(request);
+    }
+
+    @SdkInternalApi
+    final GetBucketResult executeGetBucket(GetBucketRequest getBucketRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBucketRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBucketRequest> request = null;
+        Response<GetBucketResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = getBucketRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    getBucketRequest = getBucketRequest.clone();
+                    getBucketRequest.setBucket(resource.getBucketName());
+
+                    String accountId = getBucketRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    getBucketRequest.setAccountId(accountIdInArn);
+                }
+                request = new GetBucketRequestMarshaller().marshall(super.beforeMarshalling(getBucketRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucket");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getBucketRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getBucketRequest.getAccountId(), "AccountId", "getBucketRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getBucketRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetBucketResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetBucketResult>(
+                    new GetBucketResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API operation gets an Amazon S3 on Outposts bucket's lifecycle configuration. To get an S3 bucket's
+     * lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html"
+     * >GetBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the lifecycle configuration information set on the Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> and for
+     * information about lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle
+     * Management</a> in <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>s3outposts:GetLifecycleConfiguration</code>
+     * action. The Outposts bucket owner has this permission, by default. The bucket owner can grant this permission to
+     * others. For more information about permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * >Permissions Related to Bucket Subresource Operations</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
+     * Amazon S3 Resources</a>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * <code>GetBucketLifecycleConfiguration</code> has the following special error:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Error code: <code>NoSuchLifecycleConfiguration</code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Description: The lifecycle configuration does not exist.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * HTTP Status Code: 404 Not Found
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SOAP Fault Code Prefix: Client
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * The following actions are related to <code>GetBucketLifecycleConfiguration</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">
+     * PutBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html">
+     * DeleteBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getBucketLifecycleConfigurationRequest
+     * @return Result of the GetBucketLifecycleConfiguration operation returned by the service.
+     * @sample AWSS3Control.GetBucketLifecycleConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketLifecycleConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetBucketLifecycleConfigurationResult getBucketLifecycleConfiguration(GetBucketLifecycleConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBucketLifecycleConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetBucketLifecycleConfigurationResult executeGetBucketLifecycleConfiguration(
+            GetBucketLifecycleConfigurationRequest getBucketLifecycleConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBucketLifecycleConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBucketLifecycleConfigurationRequest> request = null;
+        Response<GetBucketLifecycleConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = getBucketLifecycleConfigurationRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    getBucketLifecycleConfigurationRequest = getBucketLifecycleConfigurationRequest.clone();
+                    getBucketLifecycleConfigurationRequest.setBucket(resource.getBucketName());
+
+                    String accountId = getBucketLifecycleConfigurationRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    getBucketLifecycleConfigurationRequest.setAccountId(accountIdInArn);
+                }
+                request = new GetBucketLifecycleConfigurationRequestMarshaller().marshall(super.beforeMarshalling(getBucketLifecycleConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketLifecycleConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getBucketLifecycleConfigurationRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getBucketLifecycleConfigurationRequest.getAccountId(), "AccountId",
+                        "getBucketLifecycleConfigurationRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getBucketLifecycleConfigurationRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetBucketLifecycleConfigurationResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetBucketLifecycleConfigurationResult>(
+                    new GetBucketLifecycleConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API action gets a bucket policy for an Amazon S3 on Outposts bucket. To get a policy for an S3 bucket, see
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the
+     * <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the policy of a specified Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you are using an identity other than the root user of the AWS account that owns the bucket, the calling
+     * identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to the bucket
+     * owner's account in order to use this operation.
+     * </p>
+     * <p>
+     * If you don't have <code>s3outposts:GetBucketPolicy</code> permissions, Amazon S3 returns a
+     * <code>403 Access Denied</code> error. If you have the correct permissions, but you're not using an identity that
+     * belongs to the bucket owner's account, Amazon S3 returns a <code>405 Method Not Allowed</code> error.
+     * </p>
+     * <important>
+     * <p>
+     * As a security precaution, the root user of the AWS account that owns a bucket can always use this operation, even
+     * if the policy explicitly denies the root user the ability to perform this action.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about bucket policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
+     * Policies</a>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetBucketPolicy</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html">PutBucketPolicy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getBucketPolicyRequest
+     * @return Result of the GetBucketPolicy operation returned by the service.
+     * @sample AWSS3Control.GetBucketPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetBucketPolicyResult getBucketPolicy(GetBucketPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBucketPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetBucketPolicyResult executeGetBucketPolicy(GetBucketPolicyRequest getBucketPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBucketPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBucketPolicyRequest> request = null;
+        Response<GetBucketPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = getBucketPolicyRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    getBucketPolicyRequest = getBucketPolicyRequest.clone();
+                    getBucketPolicyRequest.setBucket(resource.getBucketName());
+
+                    String accountId = getBucketPolicyRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    getBucketPolicyRequest.setAccountId(accountIdInArn);
+                }
+                request = new GetBucketPolicyRequestMarshaller().marshall(super.beforeMarshalling(getBucketPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getBucketPolicyRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getBucketPolicyRequest.getAccountId(), "AccountId", "getBucketPolicyRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getBucketPolicyRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetBucketPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetBucketPolicyResult>(
+                    new GetBucketPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API operation gets an Amazon S3 on Outposts bucket's tags. To get an S3 bucket tags, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the
+     * <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Returns the tag set associated with the Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * To use this operation, you must have permission to perform the <code>GetBucketTagging</code> action. By default,
+     * the bucket owner has this permission and can grant this permission to others.
+     * </p>
+     * <p>
+     * <code>GetBucketTagging</code> has the following special error:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Error code: <code>NoSuchTagSetError</code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Description: There is no tag set associated with the bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketTagging.html#API_control_GetBucketTagging_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>GetBucketTagging</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html">PutBucketTagging</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketTagging.html">DeleteBucketTagging
+     * </a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getBucketTaggingRequest
+     * @return Result of the GetBucketTagging operation returned by the service.
+     * @sample AWSS3Control.GetBucketTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetBucketTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetBucketTaggingResult getBucketTagging(GetBucketTaggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBucketTagging(request);
+    }
+
+    @SdkInternalApi
+    final GetBucketTaggingResult executeGetBucketTagging(GetBucketTaggingRequest getBucketTaggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBucketTaggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBucketTaggingRequest> request = null;
+        Response<GetBucketTaggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = getBucketTaggingRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    getBucketTaggingRequest = getBucketTaggingRequest.clone();
+                    getBucketTaggingRequest.setBucket(resource.getBucketName());
+
+                    String accountId = getBucketTaggingRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    getBucketTaggingRequest.setAccountId(accountIdInArn);
+                }
+                request = new GetBucketTaggingRequestMarshaller().marshall(super.beforeMarshalling(getBucketTaggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketTagging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getBucketTaggingRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getBucketTaggingRequest.getAccountId(), "AccountId", "getBucketTaggingRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getBucketTaggingRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<GetBucketTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetBucketTaggingResult>(
+                    new GetBucketTaggingResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the tags on an S3 Batch Operations job. To use this operation, you must have permission to perform the
+     * <code>s3:GetJobTagging</code> action. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags"
+     * >Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -772,17 +2460,17 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>PutJobTagging</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutJobTagging.html">PutJobTagging</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DeleteJobTagging</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
      * </p>
      * </li>
      * </ul>
@@ -817,6 +2505,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(getJobTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobTagging");
@@ -826,9 +2515,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getJobTaggingRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getJobTaggingRequest.getAccountId(), "AccountId", "getJobTaggingRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getJobTaggingRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<GetJobTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetJobTaggingResult>(
                     new GetJobTaggingResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -840,8 +2540,27 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * Retrieves the <code>PublicAccessBlock</code> configuration for an AWS account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3
+     * block public access</a>.
      * </p>
+     * <p>
+     * Related actions include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html">
+     * DeletePublicAccessBlock</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutPublicAccessBlock.html">
+     * PutPublicAccessBlock</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getPublicAccessBlockRequest
      * @return Result of the GetPublicAccessBlock operation returned by the service.
@@ -873,6 +2592,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new GetPublicAccessBlockRequestMarshaller().marshall(super.beforeMarshalling(getPublicAccessBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicAccessBlock");
@@ -882,9 +2602,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(getPublicAccessBlockRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(getPublicAccessBlockRequest.getAccountId(), "AccountId", "getPublicAccessBlockRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", getPublicAccessBlockRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<GetPublicAccessBlockResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<GetPublicAccessBlockResult>(
                     new GetPublicAccessBlockResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -901,6 +2632,37 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
      * list the additional access points.
      * </p>
+     * <p/>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>ListAccessPoints</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateAccessPoint.html">CreateAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPoint.html">DeleteAccessPoint</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPoint.html">GetAccessPoint</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listAccessPointsRequest
      * @return Result of the ListAccessPoints operation returned by the service.
@@ -926,21 +2688,58 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String bucket = listAccessPointsRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    listAccessPointsRequest = listAccessPointsRequest.clone();
+                    listAccessPointsRequest.setBucket(resource.getBucketName());
+
+                    String accountId = listAccessPointsRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    listAccessPointsRequest.setAccountId(accountIdInArn);
+                }
                 request = new ListAccessPointsRequestMarshaller().marshall(super.beforeMarshalling(listAccessPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessPoints");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(listAccessPointsRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(listAccessPointsRequest.getAccountId(), "AccountId", "listAccessPointsRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", listAccessPointsRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<ListAccessPointsResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<ListAccessPointsResult>(
                     new ListAccessPointsResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -952,10 +2751,10 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Lists current Amazon S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS
-     * account making the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon S3 Batch Operations</a> in
-     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the AWS account
+     * making the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p>
      * Related actions include:
@@ -964,22 +2763,23 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DescribeJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobPriority</a>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobPriority.html">UpdateJobPriority</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobStatus</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
      * </p>
      * </li>
      * </ul>
@@ -1014,6 +2814,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new ListJobsRequestMarshaller().marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -1023,9 +2824,93 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(listJobsRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(listJobsRequest.getAccountId(), "AccountId", "listJobsRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", listJobsRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<ListJobsResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<ListJobsResult>(
                     new ListJobsResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all Outposts buckets in an Outposts that are owned by the authenticated sender of the request.
+     * For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+     * Amazon S3 on Outposts</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname
+     * prefix and outpost-id in your API request, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples"
+     * > Example</a> section below.
+     * </p>
+     * 
+     * @param listRegionalBucketsRequest
+     * @return Result of the ListRegionalBuckets operation returned by the service.
+     * @sample AWSS3Control.ListRegionalBuckets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListRegionalBuckets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListRegionalBucketsResult listRegionalBuckets(ListRegionalBucketsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRegionalBuckets(request);
+    }
+
+    @SdkInternalApi
+    final ListRegionalBucketsResult executeListRegionalBuckets(ListRegionalBucketsRequest listRegionalBucketsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRegionalBucketsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRegionalBucketsRequest> request = null;
+        Response<ListRegionalBucketsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRegionalBucketsRequestMarshaller().marshall(super.beforeMarshalling(listRegionalBucketsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegionalBuckets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(listRegionalBucketsRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(listRegionalBucketsRequest.getAccountId(), "AccountId", "listRegionalBucketsRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", listRegionalBucketsRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<ListRegionalBucketsResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<ListRegionalBucketsResult>(
+                    new ListRegionalBucketsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -1040,6 +2925,32 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * Associates an access policy with the specified access point. Each access point can have only one policy, so a
      * request made to this API replaces any existing policy associated with the specified access point.
      * </p>
+     * <p/>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutAccessPointPolicy</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetAccessPointPolicy.html">
+     * GetAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteAccessPointPolicy.html">
+     * DeleteAccessPointPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putAccessPointPolicyRequest
      * @return Result of the PutAccessPointPolicy operation returned by the service.
@@ -1065,21 +2976,539 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
         try {
             awsRequestMetrics.startEvent(Field.RequestMarshallTime);
             try {
+                String name = putAccessPointPolicyRequest.getName();
+                Arn arn = null;
+                if (name != null && name.startsWith("arn:")) {
+                    arn = Arn.fromString(name);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3.S3AccessPointResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3.S3AccessPointResource.");
+                    }
+
+                    com.amazonaws.services.s3.S3AccessPointResource resource = (com.amazonaws.services.s3.S3AccessPointResource) awsResource;
+
+                    putAccessPointPolicyRequest = putAccessPointPolicyRequest.clone();
+                    putAccessPointPolicyRequest.setName(resource.getAccessPointName());
+
+                    String accountId = putAccessPointPolicyRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    putAccessPointPolicyRequest.setAccountId(accountIdInArn);
+                }
                 request = new PutAccessPointPolicyRequestMarshaller().marshall(super.beforeMarshalling(putAccessPointPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccessPointPolicy");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
 
             } finally {
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putAccessPointPolicyRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putAccessPointPolicyRequest.getAccountId(), "AccountId", "putAccessPointPolicyRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putAccessPointPolicyRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<PutAccessPointPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutAccessPointPolicyResult>(
                     new PutAccessPointPolicyResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API action puts a lifecycle configuration to an Amazon S3 on Outposts bucket. To put a lifecycle
+     * configuration to an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
+     * >PutBucketLifecycleConfiguration</a> in the <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle configuration.
+     * Outposts buckets can only support a lifecycle that deletes objects after a certain period of time. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle
+     * Permissions for Amazon S3 on Outposts</a>.
+     * </p>
+     * <p/>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutBucketLifecycleConfiguration</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html">
+     * GetBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketLifecycleConfiguration.html">
+     * DeleteBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putBucketLifecycleConfigurationRequest
+     * @return Result of the PutBucketLifecycleConfiguration operation returned by the service.
+     * @sample AWSS3Control.PutBucketLifecycleConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketLifecycleConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutBucketLifecycleConfigurationResult putBucketLifecycleConfiguration(PutBucketLifecycleConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutBucketLifecycleConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutBucketLifecycleConfigurationResult executePutBucketLifecycleConfiguration(
+            PutBucketLifecycleConfigurationRequest putBucketLifecycleConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putBucketLifecycleConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutBucketLifecycleConfigurationRequest> request = null;
+        Response<PutBucketLifecycleConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = putBucketLifecycleConfigurationRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    putBucketLifecycleConfigurationRequest = putBucketLifecycleConfigurationRequest.clone();
+                    putBucketLifecycleConfigurationRequest.setBucket(resource.getBucketName());
+
+                    String accountId = putBucketLifecycleConfigurationRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    putBucketLifecycleConfigurationRequest.setAccountId(accountIdInArn);
+                }
+                request = new PutBucketLifecycleConfigurationRequestMarshaller().marshall(super.beforeMarshalling(putBucketLifecycleConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketLifecycleConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putBucketLifecycleConfigurationRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putBucketLifecycleConfigurationRequest.getAccountId(), "AccountId",
+                        "putBucketLifecycleConfigurationRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putBucketLifecycleConfigurationRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<PutBucketLifecycleConfigurationResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutBucketLifecycleConfigurationResult>(
+                    new PutBucketLifecycleConfigurationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API action puts a bucket policy to an Amazon S3 on Outposts bucket. To put a policy on an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a> in the
+     * <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * If you are using an identity other than the root user of the AWS account that owns the Outposts bucket, the
+     * calling identity must have the <code>PutBucketPolicy</code> permissions on the specified Outposts bucket and
+     * belong to the bucket owner's account in order to use this operation.
+     * </p>
+     * <p>
+     * If you don't have <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access Denied</code>
+     * error. If you have the correct permissions, but you're not using an identity that belongs to the bucket owner's
+     * account, Amazon S3 returns a <code>405 Method Not Allowed</code> error.
+     * </p>
+     * <important>
+     * <p>
+     * As a security precaution, the root user of the AWS account that owns a bucket can always use this operation, even
+     * if the policy explicitly denies the root user the ability to perform this action.
+     * </p>
+     * </important>
+     * <p>
+     * For more information about bucket policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User
+     * Policies</a>.
+     * </p>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutBucketPolicy</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html">GetBucketPolicy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html">DeleteBucketPolicy</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putBucketPolicyRequest
+     * @return Result of the PutBucketPolicy operation returned by the service.
+     * @sample AWSS3Control.PutBucketPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketPolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutBucketPolicyResult putBucketPolicy(PutBucketPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutBucketPolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutBucketPolicyResult executePutBucketPolicy(PutBucketPolicyRequest putBucketPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putBucketPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutBucketPolicyRequest> request = null;
+        Response<PutBucketPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = putBucketPolicyRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    putBucketPolicyRequest = putBucketPolicyRequest.clone();
+                    putBucketPolicyRequest.setBucket(resource.getBucketName());
+
+                    String accountId = putBucketPolicyRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    putBucketPolicyRequest.setAccountId(accountIdInArn);
+                }
+                request = new PutBucketPolicyRequestMarshaller().marshall(super.beforeMarshalling(putBucketPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putBucketPolicyRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putBucketPolicyRequest.getAccountId(), "AccountId", "putBucketPolicyRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putBucketPolicyRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<PutBucketPolicyResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutBucketPolicyResult>(
+                    new PutBucketPolicyResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <note>
+     * <p>
+     * This API action puts tags on an Amazon S3 on Outposts bucket. To put tags on an S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the
+     * <i>Amazon Simple Storage Service API</i>.
+     * </p>
+     * </note>
+     * <p>
+     * Sets the tags for an Outposts bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get your AWS
+     * account bill with tag key values included. Then, to see the cost of combined resources, organize your billing
+     * information according to resources with the same tag key values. For example, you can tag several resources with
+     * a specific application name, and then organize your billing information to see the total cost of that application
+     * across several services. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost Allocation and
+     * Tagging</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Within a bucket, if you add a tag that has the same key as an existing tag, the new value overwrites the old
+     * value. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using Cost Allocation in Amazon S3
+     * Bucket Tags</a>.
+     * </p>
+     * </note>
+     * <p>
+     * To use this operation, you must have permissions to perform the <code>s3outposts:PutBucketTagging</code> action.
+     * The Outposts bucket owner has this permission by default and can grant this permission to others. For more
+     * information about permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * > Permissions Related to Bucket Subresource Operations</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
+     * Amazon S3 Resources</a>.
+     * </p>
+     * <p>
+     * <code>PutBucketTagging</code> has the following special errors:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Error code: <code>InvalidTagError</code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Description: The tag provided was not a valid tag. This error can occur if the tag did not pass input validation.
+     * For information about tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
+     * User-Defined Tag Restrictions</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html"> AWS-Generated Cost
+     * Allocation Tag Restrictions</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Error code: <code>MalformedXMLError</code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Description: The XML provided does not match the schema.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Error code: <code>OperationAbortedError </code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Description: A conflicting conditional operation is currently in progress against this resource. Try again.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Error code: <code>InternalError</code>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Description: The service was unable to apply the provided tag to the bucket.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * All Amazon S3 on Outposts REST API requests for this action require an additional parameter of outpost-id to be
+     * passed with the request and an S3 on Outposts endpoint hostname prefix instead of s3-control. For an example of
+     * the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint hostname prefix and the
+     * outpost-id derived using the access point ARN, see the <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketTagging.html#API_control_PutBucketTagging_Examples"
+     * > Example</a> section below.
+     * </p>
+     * <p>
+     * The following actions are related to <code>PutBucketTagging</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketTagging.html">GetBucketTagging</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketTagging.html">DeleteBucketTagging
+     * </a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param putBucketTaggingRequest
+     * @return Result of the PutBucketTagging operation returned by the service.
+     * @sample AWSS3Control.PutBucketTagging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutBucketTagging" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutBucketTaggingResult putBucketTagging(PutBucketTaggingRequest request) {
+        request = beforeClientExecution(request);
+        return executePutBucketTagging(request);
+    }
+
+    @SdkInternalApi
+    final PutBucketTaggingResult executePutBucketTagging(PutBucketTaggingRequest putBucketTaggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putBucketTaggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutBucketTaggingRequest> request = null;
+        Response<PutBucketTaggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                String bucket = putBucketTaggingRequest.getBucket();
+                Arn arn = null;
+                if (bucket != null && bucket.startsWith("arn:")) {
+                    arn = Arn.fromString(bucket);
+                    AwsResource awsResource = com.amazonaws.services.s3control.internal.S3ControlArnConverter.getInstance().convertArn(arn);
+
+                    if (!(awsResource instanceof com.amazonaws.services.s3control.internal.S3ControlBucketResource)) {
+                        throw new IllegalArgumentException("Unsupported ARN type: " + awsResource.getClass()
+                                + ". Expected com.amazonaws.services.s3control.internal.S3ControlBucketResource.");
+                    }
+
+                    com.amazonaws.services.s3control.internal.S3ControlBucketResource resource = (com.amazonaws.services.s3control.internal.S3ControlBucketResource) awsResource;
+
+                    putBucketTaggingRequest = putBucketTaggingRequest.clone();
+                    putBucketTaggingRequest.setBucket(resource.getBucketName());
+
+                    String accountId = putBucketTaggingRequest.getAccountId();
+                    String accountIdInArn = resource.getAccountId();
+                    if (accountId != null && !accountId.equals(accountIdInArn)) {
+                        throw new IllegalArgumentException(String.format("%s field provided from the request (%s) is different from the one in the ARN (%s)",
+                                "accountId", accountId, accountIdInArn));
+                    }
+                    putBucketTaggingRequest.setAccountId(accountIdInArn);
+                }
+                request = new PutBucketTaggingRequestMarshaller().marshall(super.beforeMarshalling(putBucketTaggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBucketTagging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+                request.addHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD, new S3ArnableField().withArn(arn));
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putBucketTaggingRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putBucketTaggingRequest.getAccountId(), "AccountId", "putBucketTaggingRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putBucketTaggingRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            StaxResponseHandler<PutBucketTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutBucketTaggingResult>(
+                    new PutBucketTaggingResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -1091,16 +3520,17 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Set the supplied tag-set on an Amazon S3 Batch Operations job.
+     * Sets the supplied tag-set on an S3 Batch Operations job.
      * </p>
      * <p>
-     * A tag is a key-value pair. You can associate Amazon S3 Batch Operations tags with any job by sending a PUT
-     * request against the tagging subresource that is associated with the job. To modify the existing tag set, you can
-     * either replace the existing tag set entirely, or make changes within the existing tag set by retrieving the
-     * existing tag set using <a>GetJobTagging</a>, modify that tag set, and use this API action to replace the tag set
-     * with the one you have modified.. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Using Job
-     * Tags</a> in the Amazon Simple Storage Service Developer Guide.
+     * A tag is a key-value pair. You can associate S3 Batch Operations tags with any job by sending a PUT request
+     * against the tagging subresource that is associated with the job. To modify the existing tag set, you can either
+     * replace the existing tag set entirely, or make changes within the existing tag set by retrieving the existing tag
+     * set using <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify
+     * that tag set, and use this API action to replace the tag set with the one you modified. For more information, see
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">
+     * Controlling access and labeling jobs using tags</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <note>
@@ -1108,14 +3538,15 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <li>
      * <p>
      * If you send this request with an empty tag set, Amazon S3 deletes the existing tag set on the Batch Operations
-     * job. If you use this method, you will be charged for a Tier 1 Request (PUT). For more information, see <a
+     * job. If you use this method, you are charged for a Tier 1 Request (PUT). For more information, see <a
      * href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * For deleting existing tags for your batch operations job, <a>DeleteJobTagging</a> request is preferred because it
-     * achieves the same result without incurring charges.
+     * For deleting existing tags for your Batch Operations job, a <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
+     * request is preferred because it achieves the same result without incurring charges.
      * </p>
      * </li>
      * <li>
@@ -1148,7 +3579,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * For tagging-related restrictions related to characters and encodings, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
-     * Tag Restrictions</a>.
+     * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * </li>
      * </ul>
@@ -1165,17 +3596,17 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>GetJobTagging</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DeleteJobTagging</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
      * </p>
      * </li>
      * </ul>
@@ -1186,6 +3617,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * @throws TooManyRequestsException
      * @throws NotFoundException
      * @throws TooManyTagsException
+     *         Amazon S3 throws this exception if you have too many tags in your tag set.
      * @sample AWSS3Control.PutJobTagging
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutJobTagging" target="_top">AWS API
      *      Documentation</a>
@@ -1211,6 +3643,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutJobTaggingRequestMarshaller().marshall(super.beforeMarshalling(putJobTaggingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutJobTagging");
@@ -1220,9 +3653,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putJobTaggingRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putJobTaggingRequest.getAccountId(), "AccountId", "putJobTaggingRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putJobTaggingRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<PutJobTaggingResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutJobTaggingResult>(
                     new PutJobTaggingResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -1234,8 +3678,27 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account.
+     * Creates or modifies the <code>PublicAccessBlock</code> configuration for an AWS account. For more information,
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using
+     * Amazon S3 block public access</a>.
      * </p>
+     * <p>
+     * Related actions include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetPublicAccessBlock.html">
+     * GetPublicAccessBlock</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeletePublicAccessBlock.html">
+     * DeletePublicAccessBlock</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param putPublicAccessBlockRequest
      * @return Result of the PutPublicAccessBlock operation returned by the service.
@@ -1264,6 +3727,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new PutPublicAccessBlockRequestMarshaller().marshall(super.beforeMarshalling(putPublicAccessBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPublicAccessBlock");
@@ -1273,9 +3737,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(putPublicAccessBlockRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(putPublicAccessBlockRequest.getAccountId(), "AccountId", "putPublicAccessBlockRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", putPublicAccessBlockRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<PutPublicAccessBlockResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<PutPublicAccessBlockResult>(
                     new PutPublicAccessBlockResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -1287,9 +3762,9 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
 
     /**
      * <p>
-     * Updates an existing Amazon S3 Batch Operations job's priority. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon S3 Batch Operations</a> in
-     * the Amazon Simple Storage Service Developer Guide.
+     * Updates an existing S3 Batch Operations job's priority. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -1298,22 +3773,22 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListJobs</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html">ListJobs</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DescribeJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobStatus</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
      * </p>
      * </li>
      * </ul>
@@ -1349,6 +3824,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new UpdateJobPriorityRequestMarshaller().marshall(super.beforeMarshalling(updateJobPriorityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobPriority");
@@ -1358,9 +3834,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(updateJobPriorityRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(updateJobPriorityRequest.getAccountId(), "AccountId", "updateJobPriorityRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", updateJobPriorityRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<UpdateJobPriorityResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<UpdateJobPriorityResult>(
                     new UpdateJobPriorityResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 
@@ -1374,8 +3861,8 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <p>
      * Updates the status for the specified job. Use this operation to confirm that you want to run a job or to cancel
      * an existing job. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">Amazon S3 Batch Operations</a> in
-     * the Amazon Simple Storage Service Developer Guide.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the
+     * <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      * <p/>
      * <p>
@@ -1384,22 +3871,22 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
      * <ul>
      * <li>
      * <p>
-     * <a>CreateJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>ListJobs</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_ListJobs.html">ListJobs</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>DescribeJob</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DescribeJob.html">DescribeJob</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * <a>UpdateJobStatus</a>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UpdateJobStatus.html">UpdateJobStatus</a>
      * </p>
      * </li>
      * </ul>
@@ -1436,6 +3923,7 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 request = new UpdateJobStatusRequestMarshaller().marshall(super.beforeMarshalling(updateJobStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "S3 Control");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobStatus");
@@ -1445,9 +3933,20 @@ public class AWSS3ControlClient extends AmazonWebServiceClient implements AWSS3C
                 awsRequestMetrics.endEvent(Field.RequestMarshallTime);
             }
 
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+                ValidationUtils.assertStringNotEmpty(updateJobStatusRequest.getAccountId(), "AccountId");
+                HostnameValidator.validateHostnameCompliant(updateJobStatusRequest.getAccountId(), "AccountId", "updateJobStatusRequest");
+
+                String hostPrefix = "{AccountId}.";
+                String resolvedHostPrefix = String.format("%s.", updateJobStatusRequest.getAccountId());
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
             StaxResponseHandler<UpdateJobStatusResult> responseHandler = new com.amazonaws.services.s3control.internal.S3ControlStaxResponseHandler<UpdateJobStatusResult>(
                     new UpdateJobStatusResultStaxUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
 

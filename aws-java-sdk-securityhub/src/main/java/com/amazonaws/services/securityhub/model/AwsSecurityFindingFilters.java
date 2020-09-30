@@ -22,6 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
  * subset of findings that are included in this insight.
  * </p>
+ * <p>
+ * You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters"
  *      target="_top">AWS API Documentation</a>

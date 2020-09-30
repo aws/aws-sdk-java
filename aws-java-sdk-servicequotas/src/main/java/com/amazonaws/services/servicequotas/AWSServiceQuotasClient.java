@@ -238,6 +238,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(associateServiceQuotaTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateServiceQuotaTemplate");
@@ -317,6 +318,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(deleteServiceQuotaIncreaseRequestFromTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceQuotaIncreaseRequestFromTemplate");
@@ -411,6 +413,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(disassociateServiceQuotaTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateServiceQuotaTemplate");
@@ -478,6 +481,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getAWSDefaultServiceQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAWSDefaultServiceQuota");
@@ -557,6 +561,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getAssociationForServiceQuotaTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociationForServiceQuotaTemplate");
@@ -623,6 +628,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getRequestedServiceQuotaChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRequestedServiceQuotaChange");
@@ -690,6 +696,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                 request = new GetServiceQuotaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServiceQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceQuota");
@@ -767,6 +774,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getServiceQuotaIncreaseRequestFromTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceQuotaIncreaseRequestFromTemplate");
@@ -847,6 +855,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listAWSDefaultServiceQuotasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAWSDefaultServiceQuotas");
@@ -917,6 +926,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listRequestedServiceQuotaChangeHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRequestedServiceQuotaChangeHistory");
@@ -990,6 +1000,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listRequestedServiceQuotaChangeHistoryByQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRequestedServiceQuotaChangeHistoryByQuota");
@@ -1066,6 +1077,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listServiceQuotaIncreaseRequestsInTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceQuotaIncreaseRequestsInTemplate");
@@ -1142,6 +1154,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                 request = new ListServiceQuotasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServiceQuotasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceQuotas");
@@ -1207,6 +1220,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                 request = new ListServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServices");
@@ -1290,6 +1304,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(putServiceQuotaIncreaseRequestIntoTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutServiceQuotaIncreaseRequestIntoTemplate");
@@ -1366,6 +1381,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(requestServiceQuotaIncreaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Quotas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RequestServiceQuotaIncrease");

@@ -52,6 +52,10 @@ public class StartConditionJsonUnmarshaller implements Unmarshaller<StartConditi
                     context.nextToken();
                     startCondition.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("EventStartCondition", targetDepth)) {
+                    context.nextToken();
+                    startCondition.setEventStartCondition(EventStartConditionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("SegmentStartCondition", targetDepth)) {
                     context.nextToken();
                     startCondition.setSegmentStartCondition(SegmentConditionJsonUnmarshaller.getInstance().unmarshall(context));

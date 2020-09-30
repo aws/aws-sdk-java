@@ -203,6 +203,7 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(createParticipantConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateParticipantConnection");
@@ -265,6 +266,7 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                 request = new DisconnectParticipantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disconnectParticipantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisconnectParticipant");
@@ -328,6 +330,7 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                 request = new GetTranscriptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTranscriptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTranscript");
@@ -389,6 +392,7 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                 request = new SendEventRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendEventRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendEvent");
@@ -450,6 +454,7 @@ public class AmazonConnectParticipantClient extends AmazonWebServiceClient imple
                 request = new SendMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ConnectParticipant");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessage");

@@ -207,6 +207,66 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<DescribeFlowRequest, DescribeFlowResult> asyncHandler);
 
     /**
+     * Displays the details of an offering. The response includes the offering description, duration, outbound
+     * bandwidth, price, and Amazon Resource Name (ARN).
+     * 
+     * @param describeOfferingRequest
+     * @return A Java Future containing the result of the DescribeOffering operation returned by the service.
+     * @sample AWSMediaConnectAsync.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOfferingResult> describeOfferingAsync(DescribeOfferingRequest describeOfferingRequest);
+
+    /**
+     * Displays the details of an offering. The response includes the offering description, duration, outbound
+     * bandwidth, price, and Amazon Resource Name (ARN).
+     * 
+     * @param describeOfferingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOffering operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOfferingResult> describeOfferingAsync(DescribeOfferingRequest describeOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOfferingRequest, DescribeOfferingResult> asyncHandler);
+
+    /**
+     * Displays the details of a reservation. The response includes the reservation name, state, start date and time,
+     * and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound
+     * bandwidth).
+     * 
+     * @param describeReservationRequest
+     * @return A Java Future containing the result of the DescribeReservation operation returned by the service.
+     * @sample AWSMediaConnectAsync.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservationResult> describeReservationAsync(DescribeReservationRequest describeReservationRequest);
+
+    /**
+     * Displays the details of a reservation. The response includes the reservation name, state, start date and time,
+     * and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound
+     * bandwidth).
+     * 
+     * @param describeReservationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReservation operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservationResult> describeReservationAsync(DescribeReservationRequest describeReservationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservationRequest, DescribeReservationResult> asyncHandler);
+
+    /**
      * Grants entitlements to an existing flow.
      * 
      * @param grantFlowEntitlementsRequest
@@ -292,6 +352,66 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
             com.amazonaws.handlers.AsyncHandler<ListFlowsRequest, ListFlowsResult> asyncHandler);
 
     /**
+     * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an
+     * active reservation (which means you've purchased an offering that has already started and hasn't expired yet),
+     * your account isn't eligible for other offerings.
+     * 
+     * @param listOfferingsRequest
+     * @return A Java Future containing the result of the ListOfferings operation returned by the service.
+     * @sample AWSMediaConnectAsync.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest listOfferingsRequest);
+
+    /**
+     * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an
+     * active reservation (which means you've purchased an offering that has already started and hasn't expired yet),
+     * your account isn't eligible for other offerings.
+     * 
+     * @param listOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOfferings operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOfferingsResult> listOfferingsAsync(ListOfferingsRequest listOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOfferingsRequest, ListOfferingsResult> asyncHandler);
+
+    /**
+     * Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list
+     * includes all reservations in all states (such as active and expired).
+     * 
+     * @param listReservationsRequest
+     * @return A Java Future containing the result of the ListReservations operation returned by the service.
+     * @sample AWSMediaConnectAsync.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReservationsResult> listReservationsAsync(ListReservationsRequest listReservationsRequest);
+
+    /**
+     * Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list
+     * includes all reservations in all states (such as active and expired).
+     * 
+     * @param listReservationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReservations operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReservationsResult> listReservationsAsync(ListReservationsRequest listReservationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReservationsRequest, ListReservationsResult> asyncHandler);
+
+    /**
      * List all tags on an AWS Elemental MediaConnect resource
      * 
      * @param listTagsForResourceRequest
@@ -317,6 +437,37 @@ public interface AWSMediaConnectAsync extends AWSMediaConnect {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another
+     * offering.
+     * 
+     * @param purchaseOfferingRequest
+     *        A request to purchase a offering.
+     * @return A Java Future containing the result of the PurchaseOffering operation returned by the service.
+     * @sample AWSMediaConnectAsync.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest purchaseOfferingRequest);
+
+    /**
+     * Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another
+     * offering.
+     * 
+     * @param purchaseOfferingRequest
+     *        A request to purchase a offering.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurchaseOffering operation returned by the service.
+     * @sample AWSMediaConnectAsyncHandler.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseOfferingResult> purchaseOfferingAsync(PurchaseOfferingRequest purchaseOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseOfferingRequest, PurchaseOfferingResult> asyncHandler);
 
     /**
      * Removes an output from an existing flow. This request can be made only on an output that does not have an

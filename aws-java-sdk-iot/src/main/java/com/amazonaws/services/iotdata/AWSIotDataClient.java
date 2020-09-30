@@ -375,6 +375,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new DeleteThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThingShadow");
@@ -448,6 +449,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new GetThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThingShadow");
@@ -514,6 +516,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                         .beforeMarshalling(listNamedShadowsForThingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamedShadowsForThing");
@@ -579,6 +582,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new PublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
@@ -654,6 +658,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new UpdateThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingShadow");

@@ -25,7 +25,8 @@ public enum S3StorageClass {
     ONEZONE_IA("ONEZONE_IA"),
     INTELLIGENT_TIERING("INTELLIGENT_TIERING"),
     GLACIER("GLACIER"),
-    DEEP_ARCHIVE("DEEP_ARCHIVE");
+    DEEP_ARCHIVE("DEEP_ARCHIVE"),
+    OUTPOSTS("OUTPOSTS");
 
     private String value;
 

@@ -139,6 +139,45 @@ public final class AWSS3ControlAsyncClientBuilder extends AwsAsyncClientBuilder<
     }
 
     /**
+     * <p>
+     * This setting will enable the client to make calls to a region specified in an ARN that represents an S3 resource
+     * even if that region is different to the region the client was initialized with. This setting is disabled by
+     * default.
+     * </p>
+     *
+     * @return this Builder instance that can be used for method chaining
+     */
+    public AWSS3ControlAsyncClientBuilder enableUseArnRegion() {
+        setUseArnRegionEnabled(true);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This setting will enable the client to make calls to a region specified in an ARN that represents an S3 resource
+     * even if that region is different to the region the client was initialized with. This setting is disabled by
+     * default.
+     * </p>
+     */
+    public void setUseArnRegionEnabled(Boolean useArnRegionEnabled) {
+        super.putAdvancedConfig(S3ControlClientOptions.USE_ARN_REGION_ENABLED, useArnRegionEnabled);
+    }
+
+    /**
+     * <p>
+     * This setting will enable the client to make calls to a region specified in an ARN that represents an S3 resource
+     * even if that region is different to the region the client was initialized with. This setting is disabled by
+     * default.
+     * </p>
+     *
+     * @return this Builder instance that can be used for method chaining
+     */
+    public AWSS3ControlAsyncClientBuilder withUseArnRegionEnabled(Boolean useArnRegionEnabled) {
+        setUseArnRegionEnabled(true);
+        return this;
+    }
+
+    /**
      * Construct an asynchronous implementation of AWSS3ControlAsync using the current builder configuration.
      *
      * @param params

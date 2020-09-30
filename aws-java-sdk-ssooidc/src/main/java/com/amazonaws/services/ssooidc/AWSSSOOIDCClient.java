@@ -242,6 +242,7 @@ public class AWSSSOOIDCClient extends AmazonWebServiceClient implements AWSSSOOI
                 request = new CreateTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO OIDC");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateToken");
@@ -305,6 +306,7 @@ public class AWSSSOOIDCClient extends AmazonWebServiceClient implements AWSSSOOI
                 request = new RegisterClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO OIDC");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterClient");
@@ -373,6 +375,7 @@ public class AWSSSOOIDCClient extends AmazonWebServiceClient implements AWSSSOOI
                         .beforeMarshalling(startDeviceAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO OIDC");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeviceAuthorization");

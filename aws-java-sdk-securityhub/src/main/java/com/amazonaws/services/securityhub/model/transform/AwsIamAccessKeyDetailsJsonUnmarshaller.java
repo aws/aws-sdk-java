@@ -72,6 +72,18 @@ public class AwsIamAccessKeyDetailsJsonUnmarshaller implements Unmarshaller<AwsI
                     context.nextToken();
                     awsIamAccessKeyDetails.setPrincipalName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    awsIamAccessKeyDetails.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AccessKeyId", targetDepth)) {
+                    context.nextToken();
+                    awsIamAccessKeyDetails.setAccessKeyId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SessionContext", targetDepth)) {
+                    context.nextToken();
+                    awsIamAccessKeyDetails.setSessionContext(AwsIamAccessKeySessionContextJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

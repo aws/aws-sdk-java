@@ -60,6 +60,11 @@ public class AwsCloudFrontDistributionOriginItemJsonUnmarshaller implements Unma
                     context.nextToken();
                     awsCloudFrontDistributionOriginItem.setOriginPath(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("S3OriginConfig", targetDepth)) {
+                    context.nextToken();
+                    awsCloudFrontDistributionOriginItem.setS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfigJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

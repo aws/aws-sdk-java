@@ -221,6 +221,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new AssociateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRepository");
@@ -287,6 +288,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new CreateCodeReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCodeReviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCodeReview");
@@ -350,6 +352,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new DescribeCodeReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCodeReviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeReview");
@@ -414,6 +417,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(describeRecommendationFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecommendationFeedback");
@@ -481,6 +485,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(describeRepositoryAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRepositoryAssociation");
@@ -548,6 +553,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new DisassociateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRepository");
@@ -610,6 +616,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new ListCodeReviewsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCodeReviewsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodeReviews");
@@ -677,6 +684,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listRecommendationFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecommendationFeedback");
@@ -741,6 +749,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new ListRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecommendationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecommendations");
@@ -812,6 +821,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listRepositoryAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositoryAssociations");
@@ -878,6 +888,7 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(putRecommendationFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecommendationFeedback");

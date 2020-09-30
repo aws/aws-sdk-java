@@ -170,6 +170,12 @@ public class ClusterJsonUnmarshaller implements Unmarshaller<Cluster, JsonUnmars
                     context.nextToken();
                     cluster.setStepConcurrencyLevel(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("PlacementGroups", targetDepth)) {
+                    context.nextToken();
+                    cluster.setPlacementGroups(new ListUnmarshaller<PlacementGroupConfig>(PlacementGroupConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

@@ -56,6 +56,11 @@ public class HandlerContextKey<T> {
     public static final HandlerContextKey<String> SIGNING_REGION = new HandlerContextKey<String>("SigningRegion");
 
     /**
+     * The optional service name to sign the request. If present, it will override the service name in the client
+     */
+    public static final HandlerContextKey<String> SIGNING_NAME = new HandlerContextKey<String>("SIGNING_NAME");
+
+    /**
      * The name of the operation for the request.
      */
     public static final HandlerContextKey<String> OPERATION_NAME = new HandlerContextKey<String>("OperationName");
@@ -85,6 +90,11 @@ public class HandlerContextKey<T> {
      * Advanced client configuration. Contents will be service specific.
      */
     public static final HandlerContextKey<AdvancedConfig> ADVANCED_CONFIG = new HandlerContextKey<AdvancedConfig>("AdvancedConfig");
+
+    /**
+     * A boolean value indicating if an endpoint is overridden or not
+     */
+    public static final HandlerContextKey<Boolean> ENDPOINT_OVERRIDDEN = new HandlerContextKey<Boolean>("EndpointOverridden");
 
     private final String name;
 

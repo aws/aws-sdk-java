@@ -198,6 +198,7 @@ public class AWSSSOClient extends AmazonWebServiceClient implements AWSSSO {
                 request = new GetRoleCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRoleCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRoleCredentials");
@@ -261,6 +262,7 @@ public class AWSSSOClient extends AmazonWebServiceClient implements AWSSSO {
                 request = new ListAccountRolesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountRolesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountRoles");
@@ -327,6 +329,7 @@ public class AWSSSOClient extends AmazonWebServiceClient implements AWSSSO {
                 request = new ListAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccounts");
@@ -388,6 +391,7 @@ public class AWSSSOClient extends AmazonWebServiceClient implements AWSSSO {
                 request = new LogoutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(logoutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Logout");

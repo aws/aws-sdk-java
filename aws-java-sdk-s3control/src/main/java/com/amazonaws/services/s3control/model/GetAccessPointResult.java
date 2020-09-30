@@ -44,6 +44,9 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
+     * <p>
+     * This will always be true for an Amazon S3 on Outposts access point
+     * </p>
      */
     private String networkOrigin;
     /**
@@ -149,13 +152,18 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
+     * <p>
+     * This will always be true for an Amazon S3 on Outposts access point
+     * </p>
      * 
      * @param networkOrigin
      *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
      *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.</p>
+     *        <p>
+     *        This will always be true for an Amazon S3 on Outposts access point
      * @see NetworkOrigin
      */
 
@@ -171,12 +179,17 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
+     * <p>
+     * This will always be true for an Amazon S3 on Outposts access point
+     * </p>
      * 
      * @return Indicates whether this access point allows access from the public internet. If
      *         <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
      *         <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *         <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *         internet, subject to the access point and bucket access policies.
+     *         internet, subject to the access point and bucket access policies.</p>
+     *         <p>
+     *         This will always be true for an Amazon S3 on Outposts access point
      * @see NetworkOrigin
      */
 
@@ -192,13 +205,18 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
+     * <p>
+     * This will always be true for an Amazon S3 on Outposts access point
+     * </p>
      * 
      * @param networkOrigin
      *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
      *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.</p>
+     *        <p>
+     *        This will always be true for an Amazon S3 on Outposts access point
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkOrigin
      */
@@ -216,13 +234,18 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * and the access point allows access from the public internet, subject to the access point and bucket access
      * policies.
      * </p>
+     * <p>
+     * This will always be true for an Amazon S3 on Outposts access point
+     * </p>
      * 
      * @param networkOrigin
      *        Indicates whether this access point allows access from the public internet. If
      *        <code>VpcConfiguration</code> is specified for this access point, then <code>NetworkOrigin</code> is
      *        <code>VPC</code>, and the access point doesn't allow access from the public internet. Otherwise,
      *        <code>NetworkOrigin</code> is <code>Internet</code>, and the access point allows access from the public
-     *        internet, subject to the access point and bucket access policies.
+     *        internet, subject to the access point and bucket access policies.</p>
+     *        <p>
+     *        This will always be true for an Amazon S3 on Outposts access point
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkOrigin
      */

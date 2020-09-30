@@ -444,6 +444,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new BatchMeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchMeterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchMeterUsage");
@@ -521,6 +522,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new MeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(meterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MeterUsage");
@@ -623,6 +625,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new RegisterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterUsage");
@@ -693,6 +696,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new ResolveCustomerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCustomerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCustomer");

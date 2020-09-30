@@ -52,6 +52,12 @@ import com.amazonaws.services.securityhub.model.*;
  * <ul>
  * <li>
  * <p>
+ * <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of 1 request per second, <code>BurstLimit</code>
+ * of 1 request per second.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
  * requests per second.
  * </p>
@@ -60,6 +66,12 @@ import com.amazonaws.services.securityhub.model.*;
  * <p>
  * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
  * requests per second.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code> of 1 request per second,
+ * <code>BurstLimit</code> of 5 requests per second.
  * </p>
  * </li>
  * <li>
@@ -349,7 +361,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
      * </p>
      * <p>
-     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * Master and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and
+     * objects.
      * </p>
      * <ul>
      * <li>
@@ -399,7 +412,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </li>
      * </ul>
      * <p>
-     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * You can configure IAM policies to restrict access to fields and field values. For example, you might not want
+     * member accounts to be able to suppress findings or change the finding severity. See <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access"
+     * >Configuring access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchUpdateFindingsRequest
@@ -420,7 +436,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
      * </p>
      * <p>
-     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * Master and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and
+     * objects.
      * </p>
      * <ul>
      * <li>
@@ -470,7 +487,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </li>
      * </ul>
      * <p>
-     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * You can configure IAM policies to restrict access to fields and field values. For example, you might not want
+     * member accounts to be able to suppress findings or change the finding severity. See <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access"
+     * >Configuring access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchUpdateFindingsRequest

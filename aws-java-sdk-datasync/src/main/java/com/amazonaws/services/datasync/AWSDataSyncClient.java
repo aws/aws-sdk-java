@@ -181,6 +181,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CancelTaskExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelTaskExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelTaskExecution");
@@ -211,7 +212,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * </p>
      * <p>
      * You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC endpoint so you
-     * can run tasks without going over the public Internet.
+     * can run tasks without going over the public internet.
      * </p>
      * <p>
      * You can use an agent for more than one location. If a task uses multiple agents, all of them need to have status
@@ -256,6 +257,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CreateAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAgent");
@@ -314,6 +316,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CreateLocationEfsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLocationEfsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationEfs");
@@ -372,6 +375,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                         .beforeMarshalling(createLocationFsxWindowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationFsxWindows");
@@ -431,6 +435,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CreateLocationNfsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLocationNfsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationNfs");
@@ -454,7 +459,8 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Creates an endpoint for a self-managed object storage bucket.
+     * Creates an endpoint for a self-managed object storage bucket. For more information about self-managed object
+     * storage locations, see <a>create-object-location</a>.
      * </p>
      * 
      * @param createLocationObjectStorageRequest
@@ -490,6 +496,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                         .beforeMarshalling(createLocationObjectStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationObjectStorage");
@@ -517,15 +524,9 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * Creates an endpoint for an Amazon S3 bucket.
      * </p>
      * <p>
-     * For AWS DataSync to access a destination S3 bucket, it needs an AWS Identity and Access Management (IAM) role
-     * that has the required permissions. You can set up the required permissions by creating an IAM policy that grants
-     * the required permissions and attaching the policy to the role. An example of such a policy is shown in the
-     * examples section.
-     * </p>
-     * <p>
      * For more information, see
-     * https://docs.aws.amazon.com/datasync/latest/userguide/working-with-locations.html#create-s3-location in the
-     * <i>AWS DataSync User Guide.</i>
+     * https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli in the
+     * <i>AWS DataSync User Guide</i>.
      * </p>
      * 
      * @param createLocationS3Request
@@ -560,6 +561,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CreateLocationS3RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLocationS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationS3");
@@ -618,6 +620,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CreateLocationSmbRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLocationSmbRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLocationSmb");
@@ -654,7 +657,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
      * If an agent that is associated with a source (NFS) location goes offline, the task transitions to the UNAVAILABLE
      * status. If the status of the task remains in the CREATING status for more than a few minutes, it means that your
      * agent might be having trouble mounting the source NFS file system. Check the task's ErrorCode and ErrorDetail.
-     * Mount issues are often caused by either a misconfigured firewall or a mistyped NFS server host name.
+     * Mount issues are often caused by either a misconfigured firewall or a mistyped NFS server hostname.
      * </p>
      * 
      * @param createTaskRequest
@@ -689,6 +692,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new CreateTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTask");
@@ -749,6 +753,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DeleteAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAgent");
@@ -807,6 +812,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DeleteLocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLocation");
@@ -865,6 +871,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DeleteTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTask");
@@ -925,6 +932,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAgent");
@@ -983,6 +991,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeLocationEfsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationEfsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationEfs");
@@ -1041,6 +1050,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                         .beforeMarshalling(describeLocationFsxWindowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationFsxWindows");
@@ -1100,6 +1110,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeLocationNfsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationNfsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationNfs");
@@ -1123,7 +1134,8 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
 
     /**
      * <p>
-     * Returns metadata about a self-managed object storage server location.
+     * Returns metadata about a self-managed object storage server location. For more information about self-managed
+     * object storage locations, see <a>create-object-location</a>.
      * </p>
      * 
      * @param describeLocationObjectStorageRequest
@@ -1159,6 +1171,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                         .beforeMarshalling(describeLocationObjectStorageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationObjectStorage");
@@ -1218,6 +1231,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeLocationS3RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationS3");
@@ -1276,6 +1290,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeLocationSmbRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationSmbRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocationSmb");
@@ -1334,6 +1349,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTask");
@@ -1392,6 +1408,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new DescribeTaskExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTaskExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTaskExecution");
@@ -1461,6 +1478,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new ListAgentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAgentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAgents");
@@ -1524,6 +1542,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new ListLocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLocations");
@@ -1582,6 +1601,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1640,6 +1660,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new ListTaskExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTaskExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTaskExecutions");
@@ -1698,6 +1719,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new ListTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTasks");
@@ -1765,6 +1787,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new StartTaskExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTaskExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTaskExecution");
@@ -1823,6 +1846,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1881,6 +1905,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1939,6 +1964,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new UpdateAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAgent");
@@ -1997,6 +2023,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                 request = new UpdateTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DataSync");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTask");

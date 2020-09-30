@@ -419,6 +419,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new CreateAccessPointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccessPoint");
@@ -548,6 +549,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new CreateFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFileSystemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFileSystem");
@@ -782,6 +784,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new CreateMountTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMountTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMountTarget");
@@ -849,6 +852,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
@@ -914,6 +918,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DeleteAccessPointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccessPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessPoint");
@@ -992,6 +997,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DeleteFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileSystemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFileSystem");
@@ -1058,6 +1064,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DeleteFileSystemPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFileSystemPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFileSystemPolicy");
@@ -1157,6 +1164,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DeleteMountTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMountTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMountTarget");
@@ -1224,6 +1232,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -1291,6 +1300,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DescribeAccessPointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccessPointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccessPoints");
@@ -1355,6 +1365,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DescribeBackupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackupPolicy");
@@ -1418,6 +1429,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                         .beforeMarshalling(describeFileSystemPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystemPolicy");
@@ -1501,6 +1513,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DescribeFileSystemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFileSystemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFileSystems");
@@ -1574,6 +1587,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                         .beforeMarshalling(describeLifecycleConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLifecycleConfiguration");
@@ -1657,6 +1671,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                         .beforeMarshalling(describeMountTargetSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMountTargetSecurityGroups");
@@ -1728,6 +1743,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DescribeMountTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMountTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMountTargets");
@@ -1794,6 +1810,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
@@ -1860,6 +1877,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1951,6 +1969,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                         .beforeMarshalling(modifyMountTargetSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyMountTargetSecurityGroups");
@@ -2016,6 +2035,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new PutBackupPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putBackupPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBackupPolicy");
@@ -2088,6 +2108,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new PutFileSystemPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putFileSystemPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFileSystemPolicy");
@@ -2184,6 +2205,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                         .beforeMarshalling(putLifecycleConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLifecycleConfiguration");
@@ -2251,6 +2273,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2317,6 +2340,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2390,6 +2414,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                 request = new UpdateFileSystemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFileSystemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EFS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFileSystem");

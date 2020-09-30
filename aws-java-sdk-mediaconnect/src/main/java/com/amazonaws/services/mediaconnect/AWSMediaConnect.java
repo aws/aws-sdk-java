@@ -189,6 +189,51 @@ public interface AWSMediaConnect {
     DescribeFlowResult describeFlow(DescribeFlowRequest describeFlowRequest);
 
     /**
+     * Displays the details of an offering. The response includes the offering description, duration, outbound
+     * bandwidth, price, and Amazon Resource Name (ARN).
+     * 
+     * @param describeOfferingRequest
+     * @return Result of the DescribeOffering operation returned by the service.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeOfferingResult describeOffering(DescribeOfferingRequest describeOfferingRequest);
+
+    /**
+     * Displays the details of a reservation. The response includes the reservation name, state, start date and time,
+     * and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound
+     * bandwidth).
+     * 
+     * @param describeReservationRequest
+     * @return Result of the DescribeReservation operation returned by the service.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReservationResult describeReservation(DescribeReservationRequest describeReservationRequest);
+
+    /**
      * Grants entitlements to an existing flow.
      * 
      * @param grantFlowEntitlementsRequest
@@ -255,6 +300,47 @@ public interface AWSMediaConnect {
     ListFlowsResult listFlows(ListFlowsRequest listFlowsRequest);
 
     /**
+     * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an
+     * active reservation (which means you've purchased an offering that has already started and hasn't expired yet),
+     * your account isn't eligible for other offerings.
+     * 
+     * @param listOfferingsRequest
+     * @return Result of the ListOfferings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOfferingsResult listOfferings(ListOfferingsRequest listOfferingsRequest);
+
+    /**
+     * Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list
+     * includes all reservations in all states (such as active and expired).
+     * 
+     * @param listReservationsRequest
+     * @return Result of the ListReservations operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListReservationsResult listReservations(ListReservationsRequest listReservationsRequest);
+
+    /**
      * List all tags on an AWS Elemental MediaConnect resource
      * 
      * @param listTagsForResourceRequest
@@ -270,6 +356,31 @@ public interface AWSMediaConnect {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another
+     * offering.
+     * 
+     * @param purchaseOfferingRequest
+     *        A request to purchase a offering.
+     * @return Result of the PurchaseOffering operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
 
     /**
      * Removes an output from an existing flow. This request can be made only on an output that does not have an

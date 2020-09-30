@@ -202,6 +202,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new GetScreenDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getScreenDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetScreenData");
@@ -276,6 +277,7 @@ public class AmazonHoneycodeClient extends AmazonWebServiceClient implements Ama
                 request = new InvokeScreenAutomationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invokeScreenAutomationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Honeycode");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvokeScreenAutomation");

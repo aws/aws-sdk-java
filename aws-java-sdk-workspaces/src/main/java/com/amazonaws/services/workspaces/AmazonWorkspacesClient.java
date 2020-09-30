@@ -378,6 +378,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(associateConnectionAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateConnectionAlias");
@@ -444,6 +445,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new AssociateIpGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateIpGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateIpGroups");
@@ -511,6 +513,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new AuthorizeIpRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(authorizeIpRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeIpRules");
@@ -578,6 +581,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new CopyWorkspaceImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyWorkspaceImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyWorkspaceImage");
@@ -645,6 +649,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new CreateConnectionAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectionAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectionAlias");
@@ -721,6 +726,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new CreateIpGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIpGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIpGroup");
@@ -780,6 +786,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
@@ -840,6 +847,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new CreateWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkspaces");
@@ -923,6 +931,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DeleteConnectionAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnectionAlias");
@@ -988,6 +997,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DeleteIpGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIpGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIpGroup");
@@ -1045,6 +1055,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -1105,6 +1116,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DeleteWorkspaceImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkspaceImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkspaceImage");
@@ -1171,6 +1183,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deregisterWorkspaceDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterWorkspaceDirectory");
@@ -1227,6 +1240,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccount");
@@ -1284,6 +1298,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeAccountModificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountModifications");
@@ -1345,6 +1360,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeClientPropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientProperties");
@@ -1412,6 +1428,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeConnectionAliasPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectionAliasPermissions");
@@ -1475,6 +1492,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeConnectionAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectionAliases");
@@ -1533,6 +1551,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DescribeIpGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIpGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIpGroups");
@@ -1588,6 +1607,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
@@ -1647,6 +1667,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeWorkspaceBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceBundles");
@@ -1709,6 +1730,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeWorkspaceDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceDirectories");
@@ -1776,6 +1798,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeWorkspaceImagePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceImagePermissions");
@@ -1834,6 +1857,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeWorkspaceImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceImages");
@@ -1895,6 +1919,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeWorkspaceSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceSnapshots");
@@ -1957,6 +1982,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DescribeWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaces");
@@ -2019,6 +2045,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeWorkspacesConnectionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspacesConnectionStatus");
@@ -2095,6 +2122,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(disassociateConnectionAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateConnectionAlias");
@@ -2157,6 +2185,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new DisassociateIpGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateIpGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateIpGroups");
@@ -2226,6 +2255,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new ImportWorkspaceImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importWorkspaceImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportWorkspaceImage");
@@ -2291,6 +2321,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listAvailableManagementCidrRangesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableManagementCidrRanges");
@@ -2369,6 +2400,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new MigrateWorkspaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(migrateWorkspaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MigrateWorkspace");
@@ -2432,6 +2464,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new ModifyAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyAccount");
@@ -2491,6 +2524,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new ModifyClientPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyClientPropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClientProperties");
@@ -2554,6 +2588,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(modifySelfservicePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifySelfservicePermissions");
@@ -2617,6 +2652,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(modifyWorkspaceAccessPropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyWorkspaceAccessProperties");
@@ -2681,6 +2717,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(modifyWorkspaceCreationPropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyWorkspaceCreationProperties");
@@ -2754,6 +2791,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(modifyWorkspacePropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyWorkspaceProperties");
@@ -2820,6 +2858,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new ModifyWorkspaceStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyWorkspaceStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyWorkspaceState");
@@ -2879,6 +2918,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new RebootWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootWorkspaces");
@@ -2944,6 +2984,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new RebuildWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebuildWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebuildWorkspaces");
@@ -3025,6 +3066,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(registerWorkspaceDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterWorkspaceDirectory");
@@ -3097,6 +3139,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new RestoreWorkspaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreWorkspaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreWorkspace");
@@ -3158,6 +3201,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new RevokeIpRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeIpRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeIpRules");
@@ -3215,6 +3259,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new StartWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartWorkspaces");
@@ -3272,6 +3317,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new StopWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopWorkspaces");
@@ -3335,6 +3381,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new TerminateWorkspacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateWorkspacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateWorkspaces");
@@ -3429,6 +3476,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateConnectionAliasPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectionAliasPermission");
@@ -3493,6 +3541,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                 request = new UpdateRulesOfIpGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRulesOfIpGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRulesOfIpGroup");
@@ -3574,6 +3623,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateWorkspaceImagePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkSpaces");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkspaceImagePermission");

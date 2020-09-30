@@ -43,6 +43,10 @@ public class CreateAccessPointResultStaxUnmarshaller implements Unmarshaller<Cre
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
 
+                if (context.testExpression("AccessPointArn", targetDepth)) {
+                    createAccessPointResult.setAccessPointArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createAccessPointResult;

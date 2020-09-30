@@ -384,6 +384,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new AssociateDRTLogBucketRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateDRTLogBucketRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDRTLogBucket");
@@ -489,6 +490,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new AssociateDRTRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateDRTRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDRTRole");
@@ -568,6 +570,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new AssociateHealthCheckRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateHealthCheck");
@@ -651,6 +654,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(associateProactiveEngagementDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateProactiveEngagementDetails");
@@ -738,6 +742,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new CreateProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProtection");
@@ -800,6 +805,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new CreateSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscription");
@@ -861,6 +867,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DeleteProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProtection");
@@ -925,6 +932,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DeleteSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscription");
@@ -984,6 +992,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeAttackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAttackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAttack");
@@ -1043,6 +1052,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeDRTAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDRTAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDRTAccess");
@@ -1104,6 +1114,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(describeEmergencyContactSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEmergencyContactSettings");
@@ -1165,6 +1176,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeProtectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtection");
@@ -1223,6 +1235,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DescribeSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscription");
@@ -1290,6 +1303,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(disableProactiveEngagementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableProactiveEngagement");
@@ -1370,6 +1384,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(disassociateDRTLogBucketRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDRTLogBucket");
@@ -1441,6 +1456,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new DisassociateDRTRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateDRTRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDRTRole");
@@ -1514,6 +1530,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(disassociateHealthCheckRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateHealthCheck");
@@ -1582,6 +1599,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(enableProactiveEngagementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableProactiveEngagement");
@@ -1639,6 +1657,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new GetSubscriptionStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSubscriptionStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionState");
@@ -1699,6 +1718,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new ListAttacksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttacks");
@@ -1760,6 +1780,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new ListProtectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtections");
@@ -1826,6 +1847,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                         .beforeMarshalling(updateEmergencyContactSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEmergencyContactSettings");
@@ -1895,6 +1917,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                 request = new UpdateSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Shield");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscription");

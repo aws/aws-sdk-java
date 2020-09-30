@@ -3801,7 +3801,7 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time
-     * period. (Findings are retained for 180 days.)
+     * period. (Findings are retained for 90 days.)
      * </p>
      * 
      * @param listAuditFindingsRequest
@@ -3813,7 +3813,7 @@ public interface AWSIotAsync extends AWSIot {
     /**
      * <p>
      * Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time
-     * period. (Findings are retained for 180 days.)
+     * period. (Findings are retained for 90 days.)
      * </p>
      * 
      * @param listAuditFindingsRequest

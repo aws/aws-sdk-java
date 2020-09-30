@@ -48,6 +48,12 @@ import ${serviceBaseExceptionFqcn};
 import ${metadata.packageName}.model.*;
 import ${transformPackage}.*;
 
+<#if customizationConfig.s3ArnableFields??>
+import com.amazonaws.arn.Arn;
+import com.amazonaws.arn.AwsResource;
+import static com.amazonaws.services.s3control.S3ControlHandlerContextKey.S3_ARNABLE_FIELD;
+</#if>
+
 <#assign documentation = (metadata.documentation)!""/>
 
 /**

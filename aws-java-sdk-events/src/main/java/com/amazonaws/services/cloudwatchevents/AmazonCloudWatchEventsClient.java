@@ -377,6 +377,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ActivateEventSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateEventSource");
@@ -446,6 +447,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new CreateEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventBus");
@@ -535,6 +537,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(createPartnerEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePartnerEventSource");
@@ -607,6 +610,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DeactivateEventSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deactivateEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateEventSource");
@@ -666,6 +670,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DeleteEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventBus");
@@ -732,6 +737,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deletePartnerEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePartnerEventSource");
@@ -811,6 +817,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
@@ -876,6 +883,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DescribeEventBusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventBusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventBus");
@@ -935,6 +943,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DescribeEventSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventSource");
@@ -997,6 +1006,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(describePartnerEventSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePartnerEventSource");
@@ -1059,6 +1069,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DescribeRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRule");
@@ -1129,6 +1140,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new DisableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRule");
@@ -1198,6 +1210,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new EnableRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRule");
@@ -1254,6 +1267,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListEventBusesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventBusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventBuses");
@@ -1312,6 +1326,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListEventSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventSources");
@@ -1373,6 +1388,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listPartnerEventSourceAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPartnerEventSourceAccounts");
@@ -1433,6 +1449,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listPartnerEventSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPartnerEventSources");
@@ -1492,6 +1509,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListRuleNamesByTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleNamesByTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleNamesByTarget");
@@ -1555,6 +1573,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
@@ -1612,6 +1631,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1669,6 +1689,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new ListTargetsByRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsByRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsByRule");
@@ -1724,6 +1745,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvents");
@@ -1782,6 +1804,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutPartnerEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPartnerEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPartnerEvents");
@@ -1865,6 +1888,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
@@ -1987,6 +2011,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRule");
@@ -2237,6 +2262,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new PutTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutTargets");
@@ -2299,6 +2325,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -2374,6 +2401,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new RemoveTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTargets");
@@ -2453,6 +2481,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2515,6 +2544,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new TestEventPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testEventPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestEventPattern");
@@ -2581,6 +2611,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");

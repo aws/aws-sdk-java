@@ -231,6 +231,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new CancelImageCreationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelImageCreationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelImageCreation");
@@ -312,6 +313,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new CreateComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComponent");
@@ -396,6 +398,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(createDistributionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistributionConfiguration");
@@ -475,6 +478,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new CreateImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImage");
@@ -554,6 +558,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new CreateImagePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImagePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImagePipeline");
@@ -635,6 +640,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new CreateImageRecipeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImageRecipeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImageRecipe");
@@ -717,6 +723,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(createInfrastructureConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInfrastructureConfiguration");
@@ -788,6 +795,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComponent");
@@ -860,6 +868,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deleteDistributionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDistributionConfiguration");
@@ -931,6 +940,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImage");
@@ -1001,6 +1011,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteImagePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImagePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImagePipeline");
@@ -1071,6 +1082,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteImageRecipeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteImageRecipeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImageRecipe");
@@ -1143,6 +1155,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deleteInfrastructureConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInfrastructureConfiguration");
@@ -1211,6 +1224,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComponent");
@@ -1276,6 +1290,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetComponentPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getComponentPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComponentPolicy");
@@ -1344,6 +1359,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getDistributionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionConfiguration");
@@ -1412,6 +1428,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetImageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImage");
@@ -1479,6 +1496,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetImagePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImagePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImagePipeline");
@@ -1544,6 +1562,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetImagePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImagePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImagePolicy");
@@ -1611,6 +1630,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetImageRecipeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImageRecipeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImageRecipe");
@@ -1676,6 +1696,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new GetImageRecipePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImageRecipePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImageRecipePolicy");
@@ -1745,6 +1766,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getInfrastructureConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInfrastructureConfiguration");
@@ -1823,6 +1845,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ImportComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportComponent");
@@ -1893,6 +1916,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listComponentBuildVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponentBuildVersions");
@@ -1963,6 +1987,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ListComponentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComponentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponents");
@@ -2033,6 +2058,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listDistributionConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionConfigurations");
@@ -2103,6 +2129,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ListImageBuildVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImageBuildVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImageBuildVersions");
@@ -2176,6 +2203,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listImagePipelineImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImagePipelineImages");
@@ -2246,6 +2274,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ListImagePipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImagePipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImagePipelines");
@@ -2315,6 +2344,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ListImageRecipesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImageRecipesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImageRecipes");
@@ -2384,6 +2414,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ListImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImages");
@@ -2455,6 +2486,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listInfrastructureConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInfrastructureConfigurations");
@@ -2515,6 +2547,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2591,6 +2624,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new PutComponentPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putComponentPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutComponentPolicy");
@@ -2667,6 +2701,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new PutImagePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putImagePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutImagePolicy");
@@ -2744,6 +2779,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new PutImageRecipePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putImageRecipePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutImageRecipePolicy");
@@ -2820,6 +2856,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(startImagePipelineExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartImagePipelineExecution");
@@ -2880,6 +2917,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2939,6 +2977,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3017,6 +3056,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(updateDistributionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistributionConfiguration");
@@ -3091,6 +3131,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateImagePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateImagePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateImagePipeline");
@@ -3167,6 +3208,7 @@ public class AWSimagebuilderClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(updateInfrastructureConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "imagebuilder");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInfrastructureConfiguration");

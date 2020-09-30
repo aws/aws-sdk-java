@@ -35,7 +35,8 @@ public enum ScalableDimension {
     ComprehendEntityRecognizerEndpointDesiredInferenceUnits("comprehend:entity-recognizer-endpoint:DesiredInferenceUnits"),
     LambdaFunctionProvisionedConcurrency("lambda:function:ProvisionedConcurrency"),
     CassandraTableReadCapacityUnits("cassandra:table:ReadCapacityUnits"),
-    CassandraTableWriteCapacityUnits("cassandra:table:WriteCapacityUnits");
+    CassandraTableWriteCapacityUnits("cassandra:table:WriteCapacityUnits"),
+    KafkaBrokerStorageVolumeSize("kafka:broker-storage:VolumeSize");
 
     private String value;
 

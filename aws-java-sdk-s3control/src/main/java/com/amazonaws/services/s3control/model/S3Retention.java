@@ -16,7 +16,13 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't
+ * provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the
+ * retention from your objects. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention
+ * with S3 Batch Operations</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3Retention" target="_top">AWS API
  *      Documentation</a>
@@ -26,24 +32,25 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     * The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.
      * </p>
      */
     private java.util.Date retainUntilDate;
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      */
     private String mode;
 
     /**
      * <p>
-     * The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     * The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.
      * </p>
      * 
      * @param retainUntilDate
-     *        The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     *        The date when the applied Object Lock retention will expire on all objects set by the Batch Operations
+     *        job.
      */
 
     public void setRetainUntilDate(java.util.Date retainUntilDate) {
@@ -52,10 +59,11 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     * The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.
      * </p>
      * 
-     * @return The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     * @return The date when the applied Object Lock retention will expire on all objects set by the Batch Operations
+     *         job.
      */
 
     public java.util.Date getRetainUntilDate() {
@@ -64,11 +72,12 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     * The date when the applied Object Lock retention will expire on all objects set by the Batch Operations job.
      * </p>
      * 
      * @param retainUntilDate
-     *        The date when the applied Object Retention will expire on all objects in the Batch Operations job.
+     *        The date when the applied Object Lock retention will expire on all objects set by the Batch Operations
+     *        job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,11 +88,11 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param mode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockRetentionMode
      */
 
@@ -93,10 +102,10 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The Retention mode to be applied to all objects in the Batch Operations job.
+     * @return The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockRetentionMode
      */
 
@@ -106,11 +115,11 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param mode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockRetentionMode
      */
@@ -122,11 +131,11 @@ public class S3Retention implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param mode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The Object Lock retention mode to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockRetentionMode
      */

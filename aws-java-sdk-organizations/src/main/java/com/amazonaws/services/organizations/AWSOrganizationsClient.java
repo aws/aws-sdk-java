@@ -700,6 +700,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new AcceptHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptHandshake");
@@ -1160,6 +1161,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new AttachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachPolicy");
@@ -1376,6 +1378,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CancelHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelHandshake");
@@ -1882,6 +1885,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreateAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccount");
@@ -2453,6 +2457,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreateGovCloudAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGovCloudAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGovCloudAccount");
@@ -2883,6 +2888,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreateOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganization");
@@ -3313,6 +3319,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(createOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganizationalUnit");
@@ -3752,6 +3759,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreatePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicy");
@@ -3969,6 +3977,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DeclineHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(declineHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineHandshake");
@@ -4175,6 +4184,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DeleteOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganization");
@@ -4387,6 +4397,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(deleteOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationalUnit");
@@ -4601,6 +4612,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DeletePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
@@ -5037,6 +5049,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(deregisterDelegatedAdministratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterDelegatedAdministrator");
@@ -5245,6 +5258,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccount");
@@ -5454,6 +5468,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeCreateAccountStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCreateAccountStatus");
@@ -5889,6 +5904,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeEffectivePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEffectivePolicy");
@@ -6099,6 +6115,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHandshake");
@@ -6180,6 +6197,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganization");
@@ -6387,6 +6405,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationalUnit");
@@ -6596,6 +6615,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePolicy");
@@ -7039,6 +7059,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DetachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachPolicy");
@@ -7482,6 +7503,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(disableAWSServiceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAWSServiceAccess");
@@ -7923,6 +7945,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DisablePolicyTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disablePolicyTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisablePolicyType");
@@ -8360,6 +8383,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new EnableAWSServiceAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableAWSServiceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAWSServiceAccess");
@@ -8657,6 +8681,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new EnableAllFeaturesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableAllFeaturesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAllFeatures");
@@ -9096,6 +9121,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new EnablePolicyTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enablePolicyTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnablePolicyType");
@@ -9614,6 +9640,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(inviteAccountToOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteAccountToOrganization");
@@ -10096,6 +10123,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new LeaveOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(leaveOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LeaveOrganization");
@@ -10522,6 +10550,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listAWSServiceAccessForOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAWSServiceAccessForOrganization");
@@ -10736,6 +10765,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccounts");
@@ -10953,6 +10983,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListAccountsForParentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountsForParentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountsForParent");
@@ -11169,6 +11200,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListChildrenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChildrenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChildren");
@@ -11385,6 +11417,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listCreateAccountStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCreateAccountStatus");
@@ -11802,6 +11835,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listDelegatedAdministratorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDelegatedAdministrators");
@@ -12225,6 +12259,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listDelegatedServicesForAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDelegatedServicesForAccount");
@@ -12441,6 +12476,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listHandshakesForAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHandshakesForAccount");
@@ -12663,6 +12699,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listHandshakesForOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHandshakesForOrganization");
@@ -12880,6 +12917,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listOrganizationalUnitsForParentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationalUnitsForParent");
@@ -13103,6 +13141,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListParentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listParentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListParents");
@@ -13317,6 +13356,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
@@ -13534,6 +13574,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListPoliciesForTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesForTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPoliciesForTarget");
@@ -13755,6 +13796,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListRootsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRootsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoots");
@@ -13986,6 +14028,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -14202,6 +14245,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListTargetsForPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsForPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsForPolicy");
@@ -14417,6 +14461,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new MoveAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(moveAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MoveAccount");
@@ -14847,6 +14892,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(registerDelegatedAdministratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDelegatedAdministrator");
@@ -15300,6 +15346,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(removeAccountFromOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAccountFromOrganization");
@@ -15742,6 +15789,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -16183,6 +16231,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -16394,6 +16443,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(updateOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOrganizationalUnit");
@@ -16824,6 +16874,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new UpdatePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePolicy");

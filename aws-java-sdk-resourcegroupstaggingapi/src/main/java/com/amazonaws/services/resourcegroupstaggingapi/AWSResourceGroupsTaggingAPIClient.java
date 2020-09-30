@@ -953,6 +953,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new DescribeReportCreationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReportCreationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReportCreation");
@@ -1077,6 +1078,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new GetComplianceSummaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getComplianceSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummary");
@@ -1195,6 +1197,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new GetResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResources");
@@ -1287,6 +1290,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new GetTagKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTagKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTagKeys");
@@ -1379,6 +1383,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new GetTagValuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTagValuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTagValues");
@@ -1506,6 +1511,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new StartReportCreationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startReportCreationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartReportCreation");
@@ -1629,6 +1635,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new TagResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResources");
@@ -1734,6 +1741,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                 request = new UntagResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups Tagging API");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResources");

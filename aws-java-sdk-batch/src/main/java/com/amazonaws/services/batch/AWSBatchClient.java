@@ -336,6 +336,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
@@ -452,6 +453,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(createComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputeEnvironment");
@@ -519,6 +521,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new CreateJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobQueue");
@@ -584,6 +587,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(deleteComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComputeEnvironment");
@@ -649,6 +653,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DeleteJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobQueue");
@@ -709,6 +714,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(deregisterJobDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterJobDefinition");
@@ -775,6 +781,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(describeComputeEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComputeEnvironments");
@@ -836,6 +843,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DescribeJobDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobDefinitions");
@@ -896,6 +904,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DescribeJobQueuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobQueues");
@@ -955,6 +964,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new DescribeJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobs");
@@ -1038,6 +1048,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -1097,6 +1108,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new RegisterJobDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerJobDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterJobDefinition");
@@ -1158,6 +1170,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new SubmitJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitJob");
@@ -1219,6 +1232,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new TerminateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateJob");
@@ -1279,6 +1293,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                         .beforeMarshalling(updateComputeEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComputeEnvironment");
@@ -1339,6 +1354,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                 request = new UpdateJobQueueRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Batch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJobQueue");

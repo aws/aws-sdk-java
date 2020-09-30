@@ -264,6 +264,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new CreateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
@@ -364,6 +365,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new CreateFargateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFargateProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFargateProfile");
@@ -445,6 +447,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new CreateNodegroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNodegroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNodegroup");
@@ -523,6 +526,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DeleteClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
@@ -597,6 +601,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DeleteFargateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFargateProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFargateProfile");
@@ -666,6 +671,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DeleteNodegroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNodegroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNodegroup");
@@ -743,6 +749,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DescribeClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCluster");
@@ -808,6 +815,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DescribeFargateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFargateProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFargateProfile");
@@ -876,6 +884,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DescribeNodegroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNodegroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNodegroup");
@@ -945,6 +954,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new DescribeUpdateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUpdateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUpdate");
@@ -1008,6 +1018,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
@@ -1073,6 +1084,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new ListFargateProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFargateProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFargateProfiles");
@@ -1141,6 +1153,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new ListNodegroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNodegroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNodegroups");
@@ -1200,6 +1213,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1266,6 +1280,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new ListUpdatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUpdatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUpdates");
@@ -1329,6 +1344,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1388,6 +1404,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1489,6 +1506,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new UpdateClusterConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClusterConfig");
@@ -1571,6 +1589,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new UpdateClusterVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClusterVersion");
@@ -1644,6 +1663,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new UpdateNodegroupConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodegroupConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNodegroupConfig");
@@ -1738,6 +1758,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                 request = new UpdateNodegroupVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodegroupVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNodegroupVersion");

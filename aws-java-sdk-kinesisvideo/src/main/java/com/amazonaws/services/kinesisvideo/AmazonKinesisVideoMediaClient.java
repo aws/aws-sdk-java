@@ -252,6 +252,7 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
                 request = new GetMediaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMediaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video Media");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMedia");

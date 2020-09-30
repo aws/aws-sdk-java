@@ -167,6 +167,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new AssociateRoleToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateRoleToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRoleToGroup");
@@ -225,6 +226,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(associateServiceRoleToAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateServiceRoleToAccount");
@@ -281,6 +283,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createConnectorDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectorDefinition");
@@ -337,6 +340,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createConnectorDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectorDefinitionVersion");
@@ -393,6 +397,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreDefinition");
@@ -448,6 +453,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createCoreDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCoreDefinitionVersion");
@@ -503,6 +509,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
@@ -557,6 +564,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceDefinition");
@@ -612,6 +620,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createDeviceDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeviceDefinitionVersion");
@@ -669,6 +678,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunctionDefinition");
@@ -726,6 +736,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createFunctionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFunctionDefinitionVersion");
@@ -782,6 +793,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -839,6 +851,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createGroupCertificateAuthorityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupCertificateAuthority");
@@ -893,6 +906,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateGroupVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupVersion");
@@ -947,6 +961,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new CreateLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggerDefinition");
@@ -1002,6 +1017,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createLoggerDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggerDefinitionVersion");
@@ -1058,6 +1074,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createResourceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDefinition");
@@ -1114,6 +1131,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createResourceDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDefinitionVersion");
@@ -1173,6 +1191,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createSoftwareUpdateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSoftwareUpdateJob");
@@ -1229,6 +1248,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionDefinition");
@@ -1285,6 +1305,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(createSubscriptionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriptionDefinitionVersion");
@@ -1340,6 +1361,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(deleteConnectorDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnectorDefinition");
@@ -1394,6 +1416,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCoreDefinition");
@@ -1447,6 +1470,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceDefinition");
@@ -1502,6 +1526,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(deleteFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFunctionDefinition");
@@ -1556,6 +1581,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -1609,6 +1635,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new DeleteLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggerDefinition");
@@ -1664,6 +1691,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(deleteResourceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceDefinition");
@@ -1719,6 +1747,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(deleteSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriptionDefinition");
@@ -1776,6 +1805,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(disassociateRoleFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRoleFromGroup");
@@ -1832,6 +1862,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(disassociateServiceRoleFromAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateServiceRoleFromAccount");
@@ -1888,6 +1919,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetAssociatedRoleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAssociatedRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAssociatedRole");
@@ -1942,6 +1974,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getBulkDeploymentStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBulkDeploymentStatus");
@@ -1998,6 +2031,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetConnectivityInfoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectivityInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectivityInfo");
@@ -2051,6 +2085,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetConnectorDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectorDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectorDefinition");
@@ -2108,6 +2143,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getConnectorDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectorDefinitionVersion");
@@ -2162,6 +2198,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreDefinition");
@@ -2216,6 +2253,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getCoreDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCoreDefinitionVersion");
@@ -2270,6 +2308,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetDeploymentStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentStatus");
@@ -2323,6 +2362,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceDefinition");
@@ -2377,6 +2417,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getDeviceDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeviceDefinitionVersion");
@@ -2431,6 +2472,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetFunctionDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionDefinition");
@@ -2487,6 +2529,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getFunctionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFunctionDefinitionVersion");
@@ -2541,6 +2584,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
@@ -2597,6 +2641,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getGroupCertificateAuthorityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupCertificateAuthority");
@@ -2655,6 +2700,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getGroupCertificateConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupCertificateConfiguration");
@@ -2709,6 +2755,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetGroupVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupVersion");
@@ -2762,6 +2809,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggerDefinition");
@@ -2816,6 +2864,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getLoggerDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggerDefinitionVersion");
@@ -2870,6 +2919,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new GetResourceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceDefinition");
@@ -2925,6 +2975,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getResourceDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceDefinitionVersion");
@@ -2980,6 +3031,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getServiceRoleForAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceRoleForAccount");
@@ -3035,6 +3087,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionDefinition");
@@ -3091,6 +3144,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getSubscriptionDefinitionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionDefinitionVersion");
@@ -3148,6 +3202,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(getThingRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThingRuntimeConfiguration");
@@ -3205,6 +3260,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listBulkDeploymentDetailedReportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkDeploymentDetailedReports");
@@ -3259,6 +3315,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListBulkDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBulkDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBulkDeployments");
@@ -3316,6 +3373,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listConnectorDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectorDefinitionVersions");
@@ -3369,6 +3427,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listConnectorDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectorDefinitions");
@@ -3424,6 +3483,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listCoreDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreDefinitionVersions");
@@ -3476,6 +3536,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListCoreDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCoreDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCoreDefinitions");
@@ -3529,6 +3590,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeployments");
@@ -3583,6 +3645,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listDeviceDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceDefinitionVersions");
@@ -3635,6 +3698,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListDeviceDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeviceDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceDefinitions");
@@ -3690,6 +3754,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listFunctionDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionDefinitionVersions");
@@ -3743,6 +3808,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listFunctionDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFunctionDefinitions");
@@ -3801,6 +3867,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listGroupCertificateAuthoritiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupCertificateAuthorities");
@@ -3855,6 +3922,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListGroupVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupVersions");
@@ -3906,6 +3974,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -3960,6 +4029,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listLoggerDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggerDefinitionVersions");
@@ -4012,6 +4082,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListLoggerDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLoggerDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggerDefinitions");
@@ -4067,6 +4138,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listResourceDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDefinitionVersions");
@@ -4120,6 +4192,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listResourceDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDefinitions");
@@ -4176,6 +4249,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listSubscriptionDefinitionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionDefinitionVersions");
@@ -4229,6 +4303,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(listSubscriptionDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionDefinitions");
@@ -4283,6 +4358,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -4337,6 +4413,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new ResetDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDeployments");
@@ -4393,6 +4470,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new StartBulkDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBulkDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBulkDeployment");
@@ -4448,6 +4526,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new StopBulkDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBulkDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBulkDeployment");
@@ -4504,6 +4583,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -4557,6 +4637,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4614,6 +4695,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateConnectivityInfoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConnectivityInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectivityInfo");
@@ -4669,6 +4751,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateConnectorDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectorDefinition");
@@ -4723,6 +4806,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateCoreDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCoreDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCoreDefinition");
@@ -4776,6 +4860,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateDeviceDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceDefinition");
@@ -4831,6 +4916,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateFunctionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFunctionDefinition");
@@ -4885,6 +4971,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
@@ -4942,6 +5029,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateGroupCertificateConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroupCertificateConfiguration");
@@ -4996,6 +5084,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                 request = new UpdateLoggerDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLoggerDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoggerDefinition");
@@ -5051,6 +5140,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateResourceDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceDefinition");
@@ -5106,6 +5196,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateSubscriptionDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriptionDefinition");
@@ -5164,6 +5255,7 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                         .beforeMarshalling(updateThingRuntimeConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Greengrass");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingRuntimeConfiguration");

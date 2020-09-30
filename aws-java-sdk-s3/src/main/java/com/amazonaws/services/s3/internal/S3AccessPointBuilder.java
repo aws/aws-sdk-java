@@ -14,11 +14,11 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.net.URI;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+
+import static com.amazonaws.util.HostnameValidator.validateHostnameCompliant;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import java.net.URI;
 
 /**
  * This class is used to construct an endpoint host for an S3 access point.
@@ -26,16 +26,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class S3AccessPointBuilder {
 
-    private static final Pattern HOSTNAME_COMPLIANT_PATTERN = Pattern.compile("[A-Za-z0-9\\-]+");
-    private static final int HOSTNAME_MAX_LENGTH = 63;
-
     private Boolean dualstackEnabled;
+    private Boolean fipsEnabled;
     private String accessPointName;
     private String region;
     private String accountId;
     private String protocol;
     private String domain;
-    private Boolean fipsEnabled;
+
+    private S3AccessPointBuilder() {
+    }
 
     /**
      * Create a new instance of this builder class.
@@ -132,8 +132,8 @@ public class S3AccessPointBuilder {
      * Generate an endpoint URI with no path that maps to the Access Point information stored in this builder.
      */
     public URI toURI() {
-        validateHostnameCompliant(accountId, "accountId");
-        validateHostnameCompliant(accessPointName, "accessPointName");
+        validateHostnameCompliant(accountId, "accountId", "access point ARN");
+        validateHostnameCompliant(accessPointName, "accessPointName", "access point ARN");
 
         String dualStackSegment = Boolean.TRUE.equals(dualstackEnabled) ? ".dualstack" : "";
 
@@ -141,26 +141,5 @@ public class S3AccessPointBuilder {
         String uriString = String.format("%s://%s-%s.s3-accesspoint%s.%s%s.%s", protocol, accessPointName, accountId,
                                          dualStackSegment, fipsSegment, region, domain);
         return URI.create(uriString);
-    }
-
-    private static void validateHostnameCompliant(String hostnameComponent, String paramName) {
-        if (hostnameComponent.isEmpty()) {
-            throw new IllegalArgumentException(
-                String.format("An S3 Access Point ARN has been passed that is not valid: the required '%s' "
-                              + "component is missing.", paramName));
-        }
-
-        if (hostnameComponent.length() > HOSTNAME_MAX_LENGTH) {
-            throw new IllegalArgumentException(
-                String.format("An S3 Access Point ARN has been passed that is not valid: the '%s' "
-                              + "component exceeds the maximum length of %d characters.", paramName, HOSTNAME_MAX_LENGTH));
-        }
-
-        Matcher m = HOSTNAME_COMPLIANT_PATTERN.matcher(hostnameComponent);
-        if (!m.matches()) {
-            throw new IllegalArgumentException(
-                String.format("An S3 Access Point ARN has been passed that is not valid: the '%s' "
-                              + "component must only contain alphanumeric characters and dashes.", paramName));
-        }
     }
 }

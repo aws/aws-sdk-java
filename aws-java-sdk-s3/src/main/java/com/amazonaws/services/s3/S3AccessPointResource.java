@@ -14,7 +14,10 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.util.ValidationUtils.assertAllAreNull;
+
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.s3.internal.S3OutpostResource;
 import com.amazonaws.util.ValidationUtils;
 
 /**
@@ -28,12 +31,32 @@ public final class S3AccessPointResource implements S3Resource {
     private final String region;
     private final String accountId;
     private final String accessPointName;
+    private final S3Resource parentS3Resource;
 
     private S3AccessPointResource(Builder b) {
         this.accessPointName = ValidationUtils.assertStringNotEmpty(b.accessPointName, "accessPointName");
-        this.partition = ValidationUtils.assertStringNotEmpty(b.partition, "partition");
-        this.region = ValidationUtils.assertStringNotEmpty(b.region, "region");
-        this.accountId = ValidationUtils.assertStringNotEmpty(b.accountId, "accountId");
+        if (b.parentS3Resource == null) {
+            this.parentS3Resource = null;
+            this.partition = ValidationUtils.assertStringNotEmpty(b.partition, "partition");
+            this.region = ValidationUtils.assertStringNotEmpty(b.region, "region");
+            this.accountId = ValidationUtils.assertStringNotEmpty(b.accountId, "accountId");
+        } else {
+            this.parentS3Resource = validateParentS3Resource(b.parentS3Resource);
+            assertAllAreNull("partition cannot be set on builder if it has parent resource", b.partition);
+            assertAllAreNull("region cannot be set on builder if it has parent resource", b.region);
+            assertAllAreNull("accountId cannot be set on builder if it has parent resource", b.accountId);
+            this.partition = parentS3Resource.getPartition();
+            this.region = parentS3Resource.getRegion();
+            this.accountId = parentS3Resource.getAccountId();
+        }
+    }
+
+    private S3Resource validateParentS3Resource(S3Resource parentS3Resource) {
+        if (!S3ResourceType.OUTPOST.toString().equals(parentS3Resource.getType())) {
+            throw new IllegalArgumentException("Invalid 'parentS3Resource' type. An S3 access point resource must be " +
+                                               "associated with an outpost parent resource.");
+        }
+        return parentS3Resource;
     }
 
     /**
@@ -88,6 +111,14 @@ public final class S3AccessPointResource implements S3Resource {
         return this.accessPointName;
     }
 
+    /**
+     * Gets the optional parent s3 resource
+     * @return the parent s3 resource if exists, otherwise null
+     */
+    public S3Resource getParentS3Resource() {
+        return this.parentS3Resource;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -98,6 +129,7 @@ public final class S3AccessPointResource implements S3Resource {
         if (partition != null ? ! partition.equals(that.partition) : that.partition != null) return false;
         if (region != null ? ! region.equals(that.region) : that.region != null) return false;
         if (accountId != null ? ! accountId.equals(that.accountId) : that.accountId != null) return false;
+        if (parentS3Resource != null ? ! parentS3Resource.equals(that.parentS3Resource) : that.parentS3Resource != null) return false;
         return accessPointName.equals(that.accessPointName);
     }
 
@@ -107,6 +139,7 @@ public final class S3AccessPointResource implements S3Resource {
         result = 31 * result + (region != null ? region.hashCode() : 0);
         result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
         result = 31 * result + accessPointName.hashCode();
+        result = 31 * result + (parentS3Resource != null ? parentS3Resource.hashCode() : 0);
         return result;
     }
 
@@ -118,6 +151,7 @@ public final class S3AccessPointResource implements S3Resource {
         private String region;
         private String accountId;
         private String accessPointName;
+        private S3Resource parentS3Resource;
 
         public void setPartition(String partition) {
             this.partition = partition;
@@ -164,6 +198,15 @@ public final class S3AccessPointResource implements S3Resource {
          */
         public Builder withAccessPointName(String accessPointName) {
             setAccessPointName(accessPointName);
+            return this;
+        }
+
+        /**
+         * The S3 resource this access point is associated with (contained within). Only {@link S3OutpostResource}
+         * is a valid parent resource types.
+         */
+        public Builder withParentS3Resource(S3Resource parentS3Resource) {
+            this.parentS3Resource = parentS3Resource;
             return this;
         }
 

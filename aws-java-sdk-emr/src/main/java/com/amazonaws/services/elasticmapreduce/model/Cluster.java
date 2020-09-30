@@ -243,6 +243,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer stepConcurrencyLevel;
 
+    private com.amazonaws.internal.SdkInternalList<PlacementGroupConfig> placementGroups;
+
     /**
      * <p>
      * The unique identifier for the cluster.
@@ -1972,6 +1974,61 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<PlacementGroupConfig> getPlacementGroups() {
+        if (placementGroups == null) {
+            placementGroups = new com.amazonaws.internal.SdkInternalList<PlacementGroupConfig>();
+        }
+        return placementGroups;
+    }
+
+    /**
+     * @param placementGroups
+     */
+
+    public void setPlacementGroups(java.util.Collection<PlacementGroupConfig> placementGroups) {
+        if (placementGroups == null) {
+            this.placementGroups = null;
+            return;
+        }
+
+        this.placementGroups = new com.amazonaws.internal.SdkInternalList<PlacementGroupConfig>(placementGroups);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementGroups(java.util.Collection)} or {@link #withPlacementGroups(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param placementGroups
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPlacementGroups(PlacementGroupConfig... placementGroups) {
+        if (this.placementGroups == null) {
+            setPlacementGroups(new com.amazonaws.internal.SdkInternalList<PlacementGroupConfig>(placementGroups.length));
+        }
+        for (PlacementGroupConfig ele : placementGroups) {
+            this.placementGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param placementGroups
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withPlacementGroups(java.util.Collection<PlacementGroupConfig> placementGroups) {
+        setPlacementGroups(placementGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2040,7 +2097,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getOutpostArn() != null)
             sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getStepConcurrencyLevel() != null)
-            sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel());
+            sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel()).append(",");
+        if (getPlacementGroups() != null)
+            sb.append("PlacementGroups: ").append(getPlacementGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -2171,6 +2230,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStepConcurrencyLevel() != null && other.getStepConcurrencyLevel().equals(this.getStepConcurrencyLevel()) == false)
             return false;
+        if (other.getPlacementGroups() == null ^ this.getPlacementGroups() == null)
+            return false;
+        if (other.getPlacementGroups() != null && other.getPlacementGroups().equals(this.getPlacementGroups()) == false)
+            return false;
         return true;
     }
 
@@ -2208,6 +2271,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClusterArn() == null) ? 0 : getClusterArn().hashCode());
         hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
+        hashCode = prime * hashCode + ((getPlacementGroups() == null) ? 0 : getPlacementGroups().hashCode());
         return hashCode;
     }
 

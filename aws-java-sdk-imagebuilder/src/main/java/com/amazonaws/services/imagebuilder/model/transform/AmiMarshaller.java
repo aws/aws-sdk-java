@@ -37,6 +37,8 @@ public class AmiMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("state").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("accountId").build();
 
     private static final AmiMarshaller instance = new AmiMarshaller();
 
@@ -59,6 +61,7 @@ public class AmiMarshaller {
             protocolMarshaller.marshall(ami.getName(), NAME_BINDING);
             protocolMarshaller.marshall(ami.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(ami.getState(), STATE_BINDING);
+            protocolMarshaller.marshall(ami.getAccountId(), ACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

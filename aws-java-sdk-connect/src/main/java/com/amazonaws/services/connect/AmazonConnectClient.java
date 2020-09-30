@@ -228,6 +228,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(associateRoutingProfileQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRoutingProfileQueues");
@@ -302,6 +303,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new CreateContactFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContactFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContactFlow");
@@ -369,6 +371,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new CreateRoutingProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRoutingProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoutingProfile");
@@ -441,6 +444,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
@@ -509,6 +513,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -578,6 +583,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeContactFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeContactFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContactFlow");
@@ -641,6 +647,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeRoutingProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRoutingProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRoutingProfile");
@@ -706,6 +713,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
@@ -770,6 +778,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(describeUserHierarchyGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserHierarchyGroup");
@@ -835,6 +844,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(describeUserHierarchyStructureRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserHierarchyStructure");
@@ -901,6 +911,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(disassociateRoutingProfileQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRoutingProfileQueues");
@@ -961,6 +972,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new GetContactAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactAttributes");
@@ -1029,6 +1041,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new GetCurrentMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCurrentMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCurrentMetricData");
@@ -1094,6 +1107,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new GetFederationTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFederationTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFederationToken");
@@ -1162,6 +1176,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new GetMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricData");
@@ -1234,6 +1249,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListContactFlowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContactFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContactFlows");
@@ -1302,6 +1318,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListHoursOfOperationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHoursOfOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHoursOfOperations");
@@ -1371,6 +1388,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListPhoneNumbersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPhoneNumbersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumbers");
@@ -1434,6 +1452,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListPromptsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPromptsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrompts");
@@ -1502,6 +1521,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListQueuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueues");
@@ -1566,6 +1586,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(listRoutingProfileQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoutingProfileQueues");
@@ -1636,6 +1657,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListRoutingProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRoutingProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoutingProfiles");
@@ -1704,6 +1726,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListSecurityProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSecurityProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSecurityProfiles");
@@ -1772,6 +1795,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1841,6 +1865,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(listUserHierarchyGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserHierarchyGroups");
@@ -1905,6 +1930,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -1968,6 +1994,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new ResumeContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeContactRecordingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeContactRecording");
@@ -2063,6 +2090,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new StartChatContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startChatContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChatContact");
@@ -2136,6 +2164,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new StartContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startContactRecordingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartContactRecording");
@@ -2222,6 +2251,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(startOutboundVoiceContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartOutboundVoiceContact");
@@ -2286,6 +2316,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new StopContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopContact");
@@ -2352,6 +2383,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new StopContactRecordingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopContactRecordingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopContactRecording");
@@ -2420,6 +2452,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(suspendContactRecordingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SuspendContactRecording");
@@ -2492,6 +2525,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2555,6 +2589,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2639,6 +2674,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateContactAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactAttributes");
@@ -2710,6 +2746,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateContactFlowContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactFlowContent");
@@ -2776,6 +2813,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new UpdateContactFlowNameRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContactFlowNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContactFlowName");
@@ -2842,6 +2880,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateRoutingProfileConcurrencyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoutingProfileConcurrency");
@@ -2908,6 +2947,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateRoutingProfileDefaultOutboundQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoutingProfileDefaultOutboundQueue");
@@ -2976,6 +3016,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateRoutingProfileNameRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoutingProfileName");
@@ -3041,6 +3082,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateRoutingProfileQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoutingProfileQueues");
@@ -3105,6 +3147,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new UpdateUserHierarchyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserHierarchyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserHierarchy");
@@ -3178,6 +3221,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new UpdateUserIdentityInfoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserIdentityInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserIdentityInfo");
@@ -3242,6 +3286,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                 request = new UpdateUserPhoneConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPhoneConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPhoneConfig");
@@ -3307,6 +3352,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateUserRoutingProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserRoutingProfile");
@@ -3372,6 +3418,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(updateUserSecurityProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserSecurityProfiles");

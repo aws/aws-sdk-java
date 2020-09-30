@@ -31,13 +31,13 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The destination to send the custom message to. This value can be one of the following:
+     * The destination to send the campaign or treatment to. This value can be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the custom
-     * message.
+     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.
      * </p>
      * </li>
      * <li>
@@ -93,13 +93,13 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The destination to send the custom message to. This value can be one of the following:
+     * The destination to send the campaign or treatment to. This value can be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the custom
-     * message.
+     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.
      * </p>
      * </li>
      * <li>
@@ -111,12 +111,12 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
      * </ul>
      * 
      * @param deliveryUri
-     *        The destination to send the custom message to. This value can be one of the following:</p>
+     *        The destination to send the campaign or treatment to. This value can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the
-     *        custom message.
+     *        campaign or treatment.
      *        </p>
      *        </li>
      *        <li>
@@ -133,13 +133,13 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The destination to send the custom message to. This value can be one of the following:
+     * The destination to send the campaign or treatment to. This value can be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the custom
-     * message.
+     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.
      * </p>
      * </li>
      * <li>
@@ -150,12 +150,12 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
      * </li>
      * </ul>
      * 
-     * @return The destination to send the custom message to. This value can be one of the following:</p>
+     * @return The destination to send the campaign or treatment to. This value can be one of the following:</p>
      *         <ul>
      *         <li>
      *         <p>
      *         The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the
-     *         custom message.
+     *         campaign or treatment.
      *         </p>
      *         </li>
      *         <li>
@@ -172,13 +172,13 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The destination to send the custom message to. This value can be one of the following:
+     * The destination to send the campaign or treatment to. This value can be one of the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the custom
-     * message.
+     * The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the campaign or
+     * treatment.
      * </p>
      * </li>
      * <li>
@@ -190,12 +190,12 @@ public class CustomMessageActivity implements Serializable, Cloneable, Structure
      * </ul>
      * 
      * @param deliveryUri
-     *        The destination to send the custom message to. This value can be one of the following:</p>
+     *        The destination to send the campaign or treatment to. This value can be one of the following:</p>
      *        <ul>
      *        <li>
      *        <p>
      *        The name or Amazon Resource Name (ARN) of an AWS Lambda function to invoke to handle delivery of the
-     *        custom message.
+     *        campaign or treatment.
      *        </p>
      *        </li>
      *        <li>

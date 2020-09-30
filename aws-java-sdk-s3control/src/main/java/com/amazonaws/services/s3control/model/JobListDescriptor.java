@@ -71,8 +71,8 @@ public class JobListDescriptor implements Serializable, Cloneable {
     private java.util.Date terminationDate;
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      */
     private JobProgressSummary progressSummary;
@@ -403,13 +403,13 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
      * @param progressSummary
-     *        Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *        succeeded, and the number of tasks that failed.
+     *        Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *        and the number of tasks that failed.
      */
 
     public void setProgressSummary(JobProgressSummary progressSummary) {
@@ -418,12 +418,12 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
-     * @return Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *         succeeded, and the number of tasks that failed.
+     * @return Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *         and the number of tasks that failed.
      */
 
     public JobProgressSummary getProgressSummary() {
@@ -432,13 +432,13 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
      * @param progressSummary
-     *        Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *        succeeded, and the number of tasks that failed.
+     *        Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *        and the number of tasks that failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

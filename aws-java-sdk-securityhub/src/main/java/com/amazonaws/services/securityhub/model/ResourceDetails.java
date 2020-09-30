@@ -142,12 +142,30 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsIamPolicyDetails awsIamPolicy;
+    /** <p/> */
+    private AwsApiGatewayV2StageDetails awsApiGatewayV2Stage;
+    /** <p/> */
+    private AwsApiGatewayV2ApiDetails awsApiGatewayV2Api;
     /**
      * <p>
      * Details about a DynamoDB table.
      * </p>
      */
     private AwsDynamoDbTableDetails awsDynamoDbTable;
+    /** <p/> */
+    private AwsApiGatewayStageDetails awsApiGatewayStage;
+    /** <p/> */
+    private AwsApiGatewayRestApiDetails awsApiGatewayRestApi;
+    /** <p/> */
+    private AwsCloudTrailTrailDetails awsCloudTrailTrail;
+    /** <p/> */
+    private AwsCertificateManagerCertificateDetails awsCertificateManagerCertificate;
+    /** <p/> */
+    private AwsRedshiftClusterDetails awsRedshiftCluster;
+    /** <p/> */
+    private AwsElbLoadBalancerDetails awsElbLoadBalancer;
+    /** <p/> */
+    private AwsIamGroupDetails awsIamGroup;
     /**
      * <p>
      * Details about an IAM role.
@@ -924,6 +942,70 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p/>
+     * 
+     * @param awsApiGatewayV2Stage
+     */
+
+    public void setAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails awsApiGatewayV2Stage) {
+        this.awsApiGatewayV2Stage = awsApiGatewayV2Stage;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsApiGatewayV2StageDetails getAwsApiGatewayV2Stage() {
+        return this.awsApiGatewayV2Stage;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayV2Stage
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetails awsApiGatewayV2Stage) {
+        setAwsApiGatewayV2Stage(awsApiGatewayV2Stage);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayV2Api
+     */
+
+    public void setAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails awsApiGatewayV2Api) {
+        this.awsApiGatewayV2Api = awsApiGatewayV2Api;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsApiGatewayV2ApiDetails getAwsApiGatewayV2Api() {
+        return this.awsApiGatewayV2Api;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayV2Api
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetails awsApiGatewayV2Api) {
+        setAwsApiGatewayV2Api(awsApiGatewayV2Api);
+        return this;
+    }
+
+    /**
      * <p>
      * Details about a DynamoDB table.
      * </p>
@@ -960,6 +1042,230 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResourceDetails withAwsDynamoDbTable(AwsDynamoDbTableDetails awsDynamoDbTable) {
         setAwsDynamoDbTable(awsDynamoDbTable);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayStage
+     */
+
+    public void setAwsApiGatewayStage(AwsApiGatewayStageDetails awsApiGatewayStage) {
+        this.awsApiGatewayStage = awsApiGatewayStage;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsApiGatewayStageDetails getAwsApiGatewayStage() {
+        return this.awsApiGatewayStage;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayStage
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsApiGatewayStage(AwsApiGatewayStageDetails awsApiGatewayStage) {
+        setAwsApiGatewayStage(awsApiGatewayStage);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayRestApi
+     */
+
+    public void setAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails awsApiGatewayRestApi) {
+        this.awsApiGatewayRestApi = awsApiGatewayRestApi;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsApiGatewayRestApiDetails getAwsApiGatewayRestApi() {
+        return this.awsApiGatewayRestApi;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsApiGatewayRestApi
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsApiGatewayRestApi(AwsApiGatewayRestApiDetails awsApiGatewayRestApi) {
+        setAwsApiGatewayRestApi(awsApiGatewayRestApi);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsCloudTrailTrail
+     */
+
+    public void setAwsCloudTrailTrail(AwsCloudTrailTrailDetails awsCloudTrailTrail) {
+        this.awsCloudTrailTrail = awsCloudTrailTrail;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsCloudTrailTrailDetails getAwsCloudTrailTrail() {
+        return this.awsCloudTrailTrail;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsCloudTrailTrail
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsCloudTrailTrail(AwsCloudTrailTrailDetails awsCloudTrailTrail) {
+        setAwsCloudTrailTrail(awsCloudTrailTrail);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsCertificateManagerCertificate
+     */
+
+    public void setAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails awsCertificateManagerCertificate) {
+        this.awsCertificateManagerCertificate = awsCertificateManagerCertificate;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsCertificateManagerCertificateDetails getAwsCertificateManagerCertificate() {
+        return this.awsCertificateManagerCertificate;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsCertificateManagerCertificate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetails awsCertificateManagerCertificate) {
+        setAwsCertificateManagerCertificate(awsCertificateManagerCertificate);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsRedshiftCluster
+     */
+
+    public void setAwsRedshiftCluster(AwsRedshiftClusterDetails awsRedshiftCluster) {
+        this.awsRedshiftCluster = awsRedshiftCluster;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsRedshiftClusterDetails getAwsRedshiftCluster() {
+        return this.awsRedshiftCluster;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsRedshiftCluster
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsRedshiftCluster(AwsRedshiftClusterDetails awsRedshiftCluster) {
+        setAwsRedshiftCluster(awsRedshiftCluster);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsElbLoadBalancer
+     */
+
+    public void setAwsElbLoadBalancer(AwsElbLoadBalancerDetails awsElbLoadBalancer) {
+        this.awsElbLoadBalancer = awsElbLoadBalancer;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsElbLoadBalancerDetails getAwsElbLoadBalancer() {
+        return this.awsElbLoadBalancer;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsElbLoadBalancer
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsElbLoadBalancer(AwsElbLoadBalancerDetails awsElbLoadBalancer) {
+        setAwsElbLoadBalancer(awsElbLoadBalancer);
+        return this;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsIamGroup
+     */
+
+    public void setAwsIamGroup(AwsIamGroupDetails awsIamGroup) {
+        this.awsIamGroup = awsIamGroup;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public AwsIamGroupDetails getAwsIamGroup() {
+        return this.awsIamGroup;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param awsIamGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsIamGroup(AwsIamGroupDetails awsIamGroup) {
+        setAwsIamGroup(awsIamGroup);
         return this;
     }
 
@@ -1650,8 +1956,26 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("AwsIamUser: ").append(getAwsIamUser()).append(",");
         if (getAwsIamPolicy() != null)
             sb.append("AwsIamPolicy: ").append(getAwsIamPolicy()).append(",");
+        if (getAwsApiGatewayV2Stage() != null)
+            sb.append("AwsApiGatewayV2Stage: ").append(getAwsApiGatewayV2Stage()).append(",");
+        if (getAwsApiGatewayV2Api() != null)
+            sb.append("AwsApiGatewayV2Api: ").append(getAwsApiGatewayV2Api()).append(",");
         if (getAwsDynamoDbTable() != null)
             sb.append("AwsDynamoDbTable: ").append(getAwsDynamoDbTable()).append(",");
+        if (getAwsApiGatewayStage() != null)
+            sb.append("AwsApiGatewayStage: ").append(getAwsApiGatewayStage()).append(",");
+        if (getAwsApiGatewayRestApi() != null)
+            sb.append("AwsApiGatewayRestApi: ").append(getAwsApiGatewayRestApi()).append(",");
+        if (getAwsCloudTrailTrail() != null)
+            sb.append("AwsCloudTrailTrail: ").append(getAwsCloudTrailTrail()).append(",");
+        if (getAwsCertificateManagerCertificate() != null)
+            sb.append("AwsCertificateManagerCertificate: ").append(getAwsCertificateManagerCertificate()).append(",");
+        if (getAwsRedshiftCluster() != null)
+            sb.append("AwsRedshiftCluster: ").append(getAwsRedshiftCluster()).append(",");
+        if (getAwsElbLoadBalancer() != null)
+            sb.append("AwsElbLoadBalancer: ").append(getAwsElbLoadBalancer()).append(",");
+        if (getAwsIamGroup() != null)
+            sb.append("AwsIamGroup: ").append(getAwsIamGroup()).append(",");
         if (getAwsIamRole() != null)
             sb.append("AwsIamRole: ").append(getAwsIamRole()).append(",");
         if (getAwsKmsKey() != null)
@@ -1761,9 +2085,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsIamPolicy() != null && other.getAwsIamPolicy().equals(this.getAwsIamPolicy()) == false)
             return false;
+        if (other.getAwsApiGatewayV2Stage() == null ^ this.getAwsApiGatewayV2Stage() == null)
+            return false;
+        if (other.getAwsApiGatewayV2Stage() != null && other.getAwsApiGatewayV2Stage().equals(this.getAwsApiGatewayV2Stage()) == false)
+            return false;
+        if (other.getAwsApiGatewayV2Api() == null ^ this.getAwsApiGatewayV2Api() == null)
+            return false;
+        if (other.getAwsApiGatewayV2Api() != null && other.getAwsApiGatewayV2Api().equals(this.getAwsApiGatewayV2Api()) == false)
+            return false;
         if (other.getAwsDynamoDbTable() == null ^ this.getAwsDynamoDbTable() == null)
             return false;
         if (other.getAwsDynamoDbTable() != null && other.getAwsDynamoDbTable().equals(this.getAwsDynamoDbTable()) == false)
+            return false;
+        if (other.getAwsApiGatewayStage() == null ^ this.getAwsApiGatewayStage() == null)
+            return false;
+        if (other.getAwsApiGatewayStage() != null && other.getAwsApiGatewayStage().equals(this.getAwsApiGatewayStage()) == false)
+            return false;
+        if (other.getAwsApiGatewayRestApi() == null ^ this.getAwsApiGatewayRestApi() == null)
+            return false;
+        if (other.getAwsApiGatewayRestApi() != null && other.getAwsApiGatewayRestApi().equals(this.getAwsApiGatewayRestApi()) == false)
+            return false;
+        if (other.getAwsCloudTrailTrail() == null ^ this.getAwsCloudTrailTrail() == null)
+            return false;
+        if (other.getAwsCloudTrailTrail() != null && other.getAwsCloudTrailTrail().equals(this.getAwsCloudTrailTrail()) == false)
+            return false;
+        if (other.getAwsCertificateManagerCertificate() == null ^ this.getAwsCertificateManagerCertificate() == null)
+            return false;
+        if (other.getAwsCertificateManagerCertificate() != null
+                && other.getAwsCertificateManagerCertificate().equals(this.getAwsCertificateManagerCertificate()) == false)
+            return false;
+        if (other.getAwsRedshiftCluster() == null ^ this.getAwsRedshiftCluster() == null)
+            return false;
+        if (other.getAwsRedshiftCluster() != null && other.getAwsRedshiftCluster().equals(this.getAwsRedshiftCluster()) == false)
+            return false;
+        if (other.getAwsElbLoadBalancer() == null ^ this.getAwsElbLoadBalancer() == null)
+            return false;
+        if (other.getAwsElbLoadBalancer() != null && other.getAwsElbLoadBalancer().equals(this.getAwsElbLoadBalancer()) == false)
+            return false;
+        if (other.getAwsIamGroup() == null ^ this.getAwsIamGroup() == null)
+            return false;
+        if (other.getAwsIamGroup() != null && other.getAwsIamGroup().equals(this.getAwsIamGroup()) == false)
             return false;
         if (other.getAwsIamRole() == null ^ this.getAwsIamRole() == null)
             return false;
@@ -1842,7 +2203,16 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsIamAccessKey() == null) ? 0 : getAwsIamAccessKey().hashCode());
         hashCode = prime * hashCode + ((getAwsIamUser() == null) ? 0 : getAwsIamUser().hashCode());
         hashCode = prime * hashCode + ((getAwsIamPolicy() == null) ? 0 : getAwsIamPolicy().hashCode());
+        hashCode = prime * hashCode + ((getAwsApiGatewayV2Stage() == null) ? 0 : getAwsApiGatewayV2Stage().hashCode());
+        hashCode = prime * hashCode + ((getAwsApiGatewayV2Api() == null) ? 0 : getAwsApiGatewayV2Api().hashCode());
         hashCode = prime * hashCode + ((getAwsDynamoDbTable() == null) ? 0 : getAwsDynamoDbTable().hashCode());
+        hashCode = prime * hashCode + ((getAwsApiGatewayStage() == null) ? 0 : getAwsApiGatewayStage().hashCode());
+        hashCode = prime * hashCode + ((getAwsApiGatewayRestApi() == null) ? 0 : getAwsApiGatewayRestApi().hashCode());
+        hashCode = prime * hashCode + ((getAwsCloudTrailTrail() == null) ? 0 : getAwsCloudTrailTrail().hashCode());
+        hashCode = prime * hashCode + ((getAwsCertificateManagerCertificate() == null) ? 0 : getAwsCertificateManagerCertificate().hashCode());
+        hashCode = prime * hashCode + ((getAwsRedshiftCluster() == null) ? 0 : getAwsRedshiftCluster().hashCode());
+        hashCode = prime * hashCode + ((getAwsElbLoadBalancer() == null) ? 0 : getAwsElbLoadBalancer().hashCode());
+        hashCode = prime * hashCode + ((getAwsIamGroup() == null) ? 0 : getAwsIamGroup().hashCode());
         hashCode = prime * hashCode + ((getAwsIamRole() == null) ? 0 : getAwsIamRole().hashCode());
         hashCode = prime * hashCode + ((getAwsKmsKey() == null) ? 0 : getAwsKmsKey().hashCode());
         hashCode = prime * hashCode + ((getAwsLambdaFunction() == null) ? 0 : getAwsLambdaFunction().hashCode());

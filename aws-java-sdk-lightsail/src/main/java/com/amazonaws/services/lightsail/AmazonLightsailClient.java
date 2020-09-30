@@ -367,6 +367,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new AllocateStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(allocateStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateStaticIp");
@@ -454,6 +455,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(attachCertificateToDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachCertificateToDistribution");
@@ -535,6 +537,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new AttachDiskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachDiskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachDisk");
@@ -618,6 +621,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(attachInstancesToLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachInstancesToLoadBalancer");
@@ -706,6 +710,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(attachLoadBalancerTlsCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachLoadBalancerTlsCertificate");
@@ -780,6 +785,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new AttachStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachStaticIp");
@@ -860,6 +866,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(closeInstancePublicPortsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CloseInstancePublicPorts");
@@ -945,6 +952,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CopySnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copySnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopySnapshot");
@@ -1025,6 +1033,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCertificate");
@@ -1108,6 +1117,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createCloudFormationStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationStack");
@@ -1188,6 +1198,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateContactMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContactMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContactMethod");
@@ -1268,6 +1279,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDiskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDiskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDisk");
@@ -1349,6 +1361,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDiskFromSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDiskFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDiskFromSnapshot");
@@ -1447,6 +1460,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDiskSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDiskSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDiskSnapshot");
@@ -1524,6 +1538,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistribution");
@@ -1603,6 +1618,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
@@ -1683,6 +1699,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDomainEntryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomainEntry");
@@ -1763,6 +1780,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateInstanceSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstanceSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstanceSnapshot");
@@ -1843,6 +1861,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstances");
@@ -1924,6 +1943,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createInstancesFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInstancesFromSnapshot");
@@ -2004,6 +2024,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKeyPair");
@@ -2090,6 +2111,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new CreateLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoadBalancer");
@@ -2174,6 +2196,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createLoadBalancerTlsCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoadBalancerTlsCertificate");
@@ -2255,6 +2278,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRelationalDatabase");
@@ -2342,6 +2366,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createRelationalDatabaseFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRelationalDatabaseFromSnapshot");
@@ -2425,6 +2450,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createRelationalDatabaseSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRelationalDatabaseSnapshot");
@@ -2503,6 +2529,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAlarmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlarm");
@@ -2576,6 +2603,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteAutoSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAutoSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAutoSnapshot");
@@ -2649,6 +2677,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCertificate");
@@ -2728,6 +2757,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteContactMethodRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContactMethodRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContactMethod");
@@ -2813,6 +2843,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDiskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDiskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDisk");
@@ -2898,6 +2929,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDiskSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDiskSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDiskSnapshot");
@@ -2969,6 +3001,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDistribution");
@@ -3048,6 +3081,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
@@ -3127,6 +3161,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDomainEntryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomainEntry");
@@ -3206,6 +3241,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstance");
@@ -3285,6 +3321,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteInstanceSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInstanceSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstanceSnapshot");
@@ -3365,6 +3402,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteKeyPair");
@@ -3448,6 +3486,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteKnownHostKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteKnownHostKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteKnownHostKeys");
@@ -3528,6 +3567,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoadBalancer");
@@ -3609,6 +3649,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteLoadBalancerTlsCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoadBalancerTlsCertificate");
@@ -3690,6 +3731,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRelationalDatabase");
@@ -3772,6 +3814,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteRelationalDatabaseSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRelationalDatabaseSnapshot");
@@ -3850,6 +3893,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(detachCertificateFromDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachCertificateFromDistribution");
@@ -3931,6 +3975,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DetachDiskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachDiskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachDisk");
@@ -4016,6 +4061,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(detachInstancesFromLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachInstancesFromLoadBalancer");
@@ -4090,6 +4136,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DetachStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachStaticIp");
@@ -4163,6 +4210,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DisableAddOnRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableAddOnRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAddOn");
@@ -4236,6 +4284,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new DownloadDefaultKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(downloadDefaultKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DownloadDefaultKeyPair");
@@ -4310,6 +4359,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new EnableAddOnRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableAddOnRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAddOn");
@@ -4404,6 +4454,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new ExportSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportSnapshot");
@@ -4477,6 +4528,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetActiveNamesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActiveNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetActiveNames");
@@ -4556,6 +4608,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetAlarmsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAlarmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAlarms");
@@ -4629,6 +4682,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetAutoSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAutoSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAutoSnapshots");
@@ -4711,6 +4765,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetBlueprintsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlueprintsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlueprints");
@@ -4785,6 +4840,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetBundlesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBundles");
@@ -4860,6 +4916,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCertificates");
@@ -4938,6 +4995,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getCloudFormationStackRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFormationStackRecords");
@@ -5019,6 +5077,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetContactMethodsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactMethodsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContactMethods");
@@ -5092,6 +5151,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDiskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDisk");
@@ -5165,6 +5225,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDiskSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiskSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiskSnapshot");
@@ -5238,6 +5299,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDiskSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiskSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiskSnapshots");
@@ -5311,6 +5373,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDisksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDisksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDisks");
@@ -5386,6 +5449,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDistributionBundlesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDistributionBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionBundles");
@@ -5461,6 +5525,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getDistributionLatestCacheResetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionLatestCacheReset");
@@ -5538,6 +5603,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getDistributionMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionMetricData");
@@ -5610,6 +5676,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDistributionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDistributionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributions");
@@ -5683,6 +5750,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomain");
@@ -5756,6 +5824,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomains");
@@ -5834,6 +5903,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getExportSnapshotRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetExportSnapshotRecords");
@@ -5908,6 +5978,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstance");
@@ -5988,6 +6059,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getInstanceAccessDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceAccessDetails");
@@ -6066,6 +6138,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstanceMetricDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceMetricData");
@@ -6141,6 +6214,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstancePortStatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstancePortStatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstancePortStates");
@@ -6215,6 +6289,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstanceSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceSnapshot");
@@ -6288,6 +6363,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstanceSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceSnapshots");
@@ -6361,6 +6437,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstanceStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstanceStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstanceState");
@@ -6434,6 +6511,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInstances");
@@ -6507,6 +6585,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyPair");
@@ -6580,6 +6659,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetKeyPairsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPairsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyPairs");
@@ -6653,6 +6733,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetLoadBalancerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoadBalancerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoadBalancer");
@@ -6731,6 +6812,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getLoadBalancerMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoadBalancerMetricData");
@@ -6813,6 +6895,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getLoadBalancerTlsCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoadBalancerTlsCertificates");
@@ -6887,6 +6970,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetLoadBalancersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLoadBalancersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoadBalancers");
@@ -6961,6 +7045,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetOperationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOperation");
@@ -7039,6 +7124,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetOperationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOperations");
@@ -7113,6 +7199,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getOperationsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOperationsForResource");
@@ -7188,6 +7275,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetRegionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegions");
@@ -7261,6 +7349,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetRelationalDatabaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabase");
@@ -7341,6 +7430,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseBlueprintsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseBlueprints");
@@ -7420,6 +7510,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseBundlesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseBundles");
@@ -7495,6 +7586,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseEvents");
@@ -7570,6 +7662,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseLogEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseLogEvents");
@@ -7646,6 +7739,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseLogStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseLogStreams");
@@ -7727,6 +7821,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseMasterUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseMasterUserPassword");
@@ -7807,6 +7902,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseMetricData");
@@ -7889,6 +7985,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseParameters");
@@ -7964,6 +8061,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseSnapshot");
@@ -8039,6 +8137,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getRelationalDatabaseSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabaseSnapshots");
@@ -8113,6 +8212,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetRelationalDatabasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRelationalDatabasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRelationalDatabases");
@@ -8187,6 +8287,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStaticIp");
@@ -8260,6 +8361,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new GetStaticIpsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStaticIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStaticIps");
@@ -8333,6 +8435,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new ImportKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportKeyPair");
@@ -8406,6 +8509,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new IsVpcPeeredRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(isVpcPeeredRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IsVpcPeered");
@@ -8487,6 +8591,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(openInstancePublicPortsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "OpenInstancePublicPorts");
@@ -8561,6 +8666,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new PeerVpcRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(peerVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PeerVpc");
@@ -8647,6 +8753,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new PutAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAlarmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAlarm");
@@ -8730,6 +8837,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new PutInstancePublicPortsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putInstancePublicPortsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInstancePublicPorts");
@@ -8810,6 +8918,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new RebootInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rebootInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootInstance");
@@ -8890,6 +8999,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(rebootRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootRelationalDatabase");
@@ -8964,6 +9074,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new ReleaseStaticIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(releaseStaticIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReleaseStaticIp");
@@ -9039,6 +9150,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new ResetDistributionCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetDistributionCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDistributionCache");
@@ -9130,6 +9242,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(sendContactMethodVerificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendContactMethodVerification");
@@ -9219,6 +9332,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new StartInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInstance");
@@ -9300,6 +9414,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(startRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRelationalDatabase");
@@ -9388,6 +9503,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new StopInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopInstance");
@@ -9467,6 +9583,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new StopRelationalDatabaseRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRelationalDatabase");
@@ -9550,6 +9667,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -9629,6 +9747,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new TestAlarmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(testAlarmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestAlarm");
@@ -9702,6 +9821,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new UnpeerVpcRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unpeerVpcRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnpeerVpc");
@@ -9781,6 +9901,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -9855,6 +9976,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistribution");
@@ -9940,6 +10062,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateDistributionBundleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistributionBundle");
@@ -10020,6 +10143,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateDomainEntryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainEntryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainEntry");
@@ -10100,6 +10224,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateLoadBalancerAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoadBalancerAttribute");
@@ -10185,6 +10310,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateRelationalDatabaseRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRelationalDatabase");
@@ -10274,6 +10400,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateRelationalDatabaseParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lightsail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRelationalDatabaseParameters");

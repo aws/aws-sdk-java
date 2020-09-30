@@ -207,6 +207,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new CreateCanaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCanaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCanary");
@@ -308,6 +309,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new DeleteCanaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCanaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCanary");
@@ -370,6 +372,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new DescribeCanariesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCanariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCanaries");
@@ -428,6 +431,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                         .beforeMarshalling(describeCanariesLastRunRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCanariesLastRun");
@@ -489,6 +493,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                         .beforeMarshalling(describeRuntimeVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRuntimeVersions");
@@ -550,6 +555,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new GetCanaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCanaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCanary");
@@ -609,6 +615,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new GetCanaryRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCanaryRunsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCanaryRuns");
@@ -668,6 +675,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -731,6 +739,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new StartCanaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCanaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCanary");
@@ -798,6 +807,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new StopCanaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopCanaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCanary");
@@ -873,6 +883,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -932,6 +943,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -998,6 +1010,7 @@ public class AWSSyntheticsClient extends AmazonWebServiceClient implements AWSSy
                 request = new UpdateCanaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCanaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "synthetics");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCanary");

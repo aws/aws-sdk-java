@@ -116,9 +116,46 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                     context.nextToken();
                     resourceDetails.setAwsIamPolicy(AwsIamPolicyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AwsApiGatewayV2Stage", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsApiGatewayV2Stage(AwsApiGatewayV2StageDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsApiGatewayV2Api", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsApiGatewayV2Api(AwsApiGatewayV2ApiDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("AwsDynamoDbTable", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsDynamoDbTable(AwsDynamoDbTableDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsApiGatewayStage", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsApiGatewayStage(AwsApiGatewayStageDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsApiGatewayRestApi", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsApiGatewayRestApi(AwsApiGatewayRestApiDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsCloudTrailTrail", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsCloudTrailTrail(AwsCloudTrailTrailDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsCertificateManagerCertificate", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsCertificateManagerCertificate(AwsCertificateManagerCertificateDetailsJsonUnmarshaller.getInstance().unmarshall(
+                            context));
+                }
+                if (context.testExpression("AwsRedshiftCluster", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsRedshiftCluster(AwsRedshiftClusterDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsElbLoadBalancer", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsElbLoadBalancer(AwsElbLoadBalancerDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsIamGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsIamGroup(AwsIamGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("AwsIamRole", targetDepth)) {
                     context.nextToken();

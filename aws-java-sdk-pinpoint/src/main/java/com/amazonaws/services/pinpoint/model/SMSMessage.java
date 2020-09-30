@@ -42,7 +42,7 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     private String keyword;
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      */
     private String mediaUrl;
@@ -159,11 +159,11 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      * 
      * @param mediaUrl
-     *        The URL of an image or video to display in the SMS message.
+     *        This field is reserved for future use.
      */
 
     public void setMediaUrl(String mediaUrl) {
@@ -172,10 +172,10 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      * 
-     * @return The URL of an image or video to display in the SMS message.
+     * @return This field is reserved for future use.
      */
 
     public String getMediaUrl() {
@@ -184,11 +184,11 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      * 
      * @param mediaUrl
-     *        The URL of an image or video to display in the SMS message.
+     *        This field is reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

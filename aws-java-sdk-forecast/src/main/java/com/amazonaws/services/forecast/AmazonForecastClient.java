@@ -220,6 +220,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataset");
@@ -298,6 +299,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetGroup");
@@ -385,6 +387,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDatasetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetImportJob");
@@ -476,6 +479,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateForecast");
@@ -565,6 +569,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createForecastExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateForecastExportJob");
@@ -700,6 +705,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreatePredictorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPredictorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePredictor");
@@ -768,6 +774,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
@@ -833,6 +840,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetGroup");
@@ -895,6 +903,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDatasetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetImportJob");
@@ -962,6 +971,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteForecast");
@@ -1025,6 +1035,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteForecastExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteForecastExportJob");
@@ -1088,6 +1099,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeletePredictorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePredictorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePredictor");
@@ -1167,6 +1179,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
@@ -1251,6 +1264,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetGroup");
@@ -1346,6 +1360,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetImportJob");
@@ -1436,6 +1451,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeForecast");
@@ -1521,6 +1537,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeForecastExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeForecastExportJob");
@@ -1616,6 +1633,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribePredictorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePredictorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePredictor");
@@ -1696,6 +1714,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new GetAccuracyMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccuracyMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccuracyMetrics");
@@ -1753,6 +1772,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDatasetGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetGroups");
@@ -1814,6 +1834,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDatasetImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetImportJobs");
@@ -1872,6 +1893,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDatasetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
@@ -1933,6 +1955,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListForecastExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listForecastExportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListForecastExportJobs");
@@ -1995,6 +2018,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListForecastsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listForecastsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListForecasts");
@@ -2056,6 +2080,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListPredictorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPredictorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPredictors");
@@ -2114,6 +2139,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2176,6 +2202,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2234,6 +2261,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2300,6 +2328,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatasetGroup");

@@ -473,6 +473,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(createCachePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCachePolicy");
@@ -551,6 +552,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(createCloudFrontOriginAccessIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFrontOriginAccessIdentity");
@@ -737,6 +739,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateDistributionRequestMarshaller().marshall(super.beforeMarshalling(createDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistribution");
@@ -910,6 +913,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateDistributionWithTagsRequestMarshaller().marshall(super.beforeMarshalling(createDistributionWithTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDistributionWithTags");
@@ -980,6 +984,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(createFieldLevelEncryptionConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFieldLevelEncryptionConfig");
@@ -1050,6 +1055,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(createFieldLevelEncryptionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFieldLevelEncryptionProfile");
@@ -1120,6 +1126,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateInvalidationRequestMarshaller().marshall(super.beforeMarshalling(createInvalidationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInvalidation");
@@ -1183,6 +1190,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateMonitoringSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createMonitoringSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMonitoringSubscription");
@@ -1299,6 +1307,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(createOriginRequestPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOriginRequestPolicy");
@@ -1360,6 +1369,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreatePublicKeyRequestMarshaller().marshall(super.beforeMarshalling(createPublicKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePublicKey");
@@ -1432,6 +1442,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(createRealtimeLogConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRealtimeLogConfig");
@@ -1540,6 +1551,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new CreateStreamingDistributionRequestMarshaller().marshall(super.beforeMarshalling(createStreamingDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingDistribution");
@@ -1624,6 +1636,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(createStreamingDistributionWithTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamingDistributionWithTags");
@@ -1697,6 +1710,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteCachePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCachePolicy");
@@ -1763,6 +1777,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteCloudFrontOriginAccessIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCloudFrontOriginAccessIdentity");
@@ -1888,6 +1903,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDistributionRequestMarshaller().marshall(super.beforeMarshalling(deleteDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDistribution");
@@ -1952,6 +1968,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteFieldLevelEncryptionConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFieldLevelEncryptionConfig");
@@ -2016,6 +2033,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(deleteFieldLevelEncryptionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFieldLevelEncryptionProfile");
@@ -2073,6 +2091,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteMonitoringSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteMonitoringSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMonitoringSubscription");
@@ -2147,6 +2166,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteOriginRequestPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOriginRequestPolicy");
@@ -2210,6 +2230,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeletePublicKeyRequestMarshaller().marshall(super.beforeMarshalling(deletePublicKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePublicKey");
@@ -2279,6 +2300,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(deleteRealtimeLogConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRealtimeLogConfig");
@@ -2405,6 +2427,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new DeleteStreamingDistributionRequestMarshaller().marshall(super.beforeMarshalling(deleteStreamingDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStreamingDistribution");
@@ -2480,6 +2503,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(getCachePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCachePolicy");
@@ -2543,6 +2567,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetCachePolicyConfigRequestMarshaller().marshall(super.beforeMarshalling(getCachePolicyConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCachePolicyConfig");
@@ -2602,6 +2627,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetCloudFrontOriginAccessIdentityRequestMarshaller().marshall(super.beforeMarshalling(getCloudFrontOriginAccessIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFrontOriginAccessIdentity");
@@ -2665,6 +2691,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(getCloudFrontOriginAccessIdentityConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFrontOriginAccessIdentityConfig");
@@ -2723,6 +2750,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetDistributionRequestMarshaller().marshall(super.beforeMarshalling(getDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistribution");
@@ -2781,6 +2809,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetDistributionConfigRequestMarshaller().marshall(super.beforeMarshalling(getDistributionConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDistributionConfig");
@@ -2838,6 +2867,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetFieldLevelEncryptionRequestMarshaller().marshall(super.beforeMarshalling(getFieldLevelEncryptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryption");
@@ -2895,6 +2925,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(getFieldLevelEncryptionConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionConfig");
@@ -2952,6 +2983,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(getFieldLevelEncryptionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionProfile");
@@ -3011,6 +3043,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(getFieldLevelEncryptionProfileConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFieldLevelEncryptionProfileConfig");
@@ -3071,6 +3104,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetInvalidationRequestMarshaller().marshall(super.beforeMarshalling(getInvalidationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvalidation");
@@ -3129,6 +3163,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetMonitoringSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(getMonitoringSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMonitoringSubscription");
@@ -3204,6 +3239,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(getOriginRequestPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOriginRequestPolicy");
@@ -3267,6 +3303,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetOriginRequestPolicyConfigRequestMarshaller().marshall(super.beforeMarshalling(getOriginRequestPolicyConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOriginRequestPolicyConfig");
@@ -3324,6 +3361,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetPublicKeyRequestMarshaller().marshall(super.beforeMarshalling(getPublicKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKey");
@@ -3380,6 +3418,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetPublicKeyConfigRequestMarshaller().marshall(super.beforeMarshalling(getPublicKeyConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKeyConfig");
@@ -3442,6 +3481,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(getRealtimeLogConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRealtimeLogConfig");
@@ -3500,6 +3540,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetStreamingDistributionRequestMarshaller().marshall(super.beforeMarshalling(getStreamingDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingDistribution");
@@ -3558,6 +3599,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new GetStreamingDistributionConfigRequestMarshaller().marshall(super.beforeMarshalling(getStreamingDistributionConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingDistributionConfig");
@@ -3627,6 +3669,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListCachePoliciesRequestMarshaller().marshall(super.beforeMarshalling(listCachePoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCachePolicies");
@@ -3685,6 +3728,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listCloudFrontOriginAccessIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCloudFrontOriginAccessIdentities");
@@ -3741,6 +3785,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListDistributionsRequestMarshaller().marshall(super.beforeMarshalling(listDistributionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributions");
@@ -3808,6 +3853,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListDistributionsByCachePolicyIdRequestMarshaller().marshall(super.beforeMarshalling(listDistributionsByCachePolicyIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByCachePolicyId");
@@ -3877,6 +3923,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listDistributionsByOriginRequestPolicyIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByOriginRequestPolicyId");
@@ -3946,6 +3993,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listDistributionsByRealtimeLogConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByRealtimeLogConfig");
@@ -4008,6 +4056,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListDistributionsByWebACLIdRequestMarshaller().marshall(super.beforeMarshalling(listDistributionsByWebACLIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDistributionsByWebACLId");
@@ -4064,6 +4113,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListFieldLevelEncryptionConfigsRequestMarshaller().marshall(super.beforeMarshalling(listFieldLevelEncryptionConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFieldLevelEncryptionConfigs");
@@ -4120,6 +4170,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListFieldLevelEncryptionProfilesRequestMarshaller().marshall(super.beforeMarshalling(listFieldLevelEncryptionProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFieldLevelEncryptionProfiles");
@@ -4180,6 +4231,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListInvalidationsRequestMarshaller().marshall(super.beforeMarshalling(listInvalidationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvalidations");
@@ -4249,6 +4301,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListOriginRequestPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listOriginRequestPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginRequestPolicies");
@@ -4304,6 +4357,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListPublicKeysRequestMarshaller().marshall(super.beforeMarshalling(listPublicKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPublicKeys");
@@ -4363,6 +4417,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListRealtimeLogConfigsRequestMarshaller().marshall(super.beforeMarshalling(listRealtimeLogConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRealtimeLogConfigs");
@@ -4419,6 +4474,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListStreamingDistributionsRequestMarshaller().marshall(super.beforeMarshalling(listStreamingDistributionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreamingDistributions");
@@ -4481,6 +4537,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -4543,6 +4600,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new TagResourceRequestMarshaller().marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -4604,6 +4662,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UntagResourceRequestMarshaller().marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4707,6 +4766,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateCachePolicyRequestMarshaller().marshall(super.beforeMarshalling(updateCachePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCachePolicy");
@@ -4780,6 +4840,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateCloudFrontOriginAccessIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCloudFrontOriginAccessIdentity");
@@ -5057,6 +5118,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDistributionRequestMarshaller().marshall(super.beforeMarshalling(updateDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDistribution");
@@ -5133,6 +5195,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateFieldLevelEncryptionConfigRequestMarshaller().marshall(super.beforeMarshalling(updateFieldLevelEncryptionConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFieldLevelEncryptionConfig");
@@ -5211,6 +5274,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateFieldLevelEncryptionProfileRequestMarshaller().marshall(super.beforeMarshalling(updateFieldLevelEncryptionProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFieldLevelEncryptionProfile");
@@ -5319,6 +5383,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateOriginRequestPolicyRequestMarshaller().marshall(super.beforeMarshalling(updateOriginRequestPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOriginRequestPolicy");
@@ -5386,6 +5451,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdatePublicKeyRequestMarshaller().marshall(super.beforeMarshalling(updatePublicKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePublicKey");
@@ -5468,6 +5534,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateRealtimeLogConfigRequestMarshaller().marshall(super.beforeMarshalling(updateRealtimeLogConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRealtimeLogConfig");
@@ -5549,6 +5616,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
                 request = new UpdateStreamingDistributionRequestMarshaller().marshall(super.beforeMarshalling(updateStreamingDistributionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFront");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStreamingDistribution");

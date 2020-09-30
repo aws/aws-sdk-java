@@ -66,12 +66,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -146,6 +148,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
      * </p>
      * </li>
      * </ul>
@@ -448,12 +455,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -530,19 +539,25 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect.</p>
+     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
      *        <p>
      *        With scale-out policies, the intention is to continuously (but not excessively) scale out. After
      *        Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *        cooldown time. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     *        is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     *        triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully,
-     *        and a cooldown period starts. If the alarm triggers again during the cooldown period but at a more
-     *        aggressive step adjustment of 3, the previous increase of 2 is considered part of the current capacity.
-     *        Therefore, only 1 is added to the capacity.
+     *        cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
+     *        out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
+     *        the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
+     *        activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
+     *        scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
+     *        the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
+     *        considered part of the current capacity. Therefore, only 1 is added to the capacity.
      *        </p>
      *        <p>
      *        With scale-in policies, the intention is to scale in conservatively to protect your application’s
@@ -620,6 +635,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        Amazon Keyspaces tables
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster storage
+     *        </p>
+     *        </li>
      */
 
     public void setCooldown(Integer cooldown) {
@@ -632,12 +652,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -714,18 +736,24 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect.</p>
+     * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
      *         <p>
      *         With scale-out policies, the intention is to continuously (but not excessively) scale out. After
      *         Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *         cooldown time. While the cooldown period is in effect, capacity added by the initiating scale-out
-     *         activity is calculated as part of the desired capacity for the next scale-out activity. For example, when
-     *         an alarm triggers a step scaling policy to increase the capacity by 2, the scaling activity completes
-     *         successfully, and a cooldown period starts. If the alarm triggers again during the cooldown period but at
-     *         a more aggressive step adjustment of 3, the previous increase of 2 is considered part of the current
-     *         capacity. Therefore, only 1 is added to the capacity.
+     *         cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
+     *         out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
+     *         the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
+     *         activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
+     *         scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
+     *         the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
+     *         considered part of the current capacity. Therefore, only 1 is added to the capacity.
      *         </p>
      *         <p>
      *         With scale-in policies, the intention is to scale in conservatively to protect your application’s
@@ -803,6 +831,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *         Amazon Keyspaces tables
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK cluster storage
+     *         </p>
+     *         </li>
      */
 
     public Integer getCooldown() {
@@ -815,12 +848,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -897,19 +932,25 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect.</p>
+     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
      *        <p>
      *        With scale-out policies, the intention is to continuously (but not excessively) scale out. After
      *        Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *        cooldown time. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     *        is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     *        triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully,
-     *        and a cooldown period starts. If the alarm triggers again during the cooldown period but at a more
-     *        aggressive step adjustment of 3, the previous increase of 2 is considered part of the current capacity.
-     *        Therefore, only 1 is added to the capacity.
+     *        cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
+     *        out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
+     *        the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
+     *        activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
+     *        scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
+     *        the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
+     *        considered part of the current capacity. Therefore, only 1 is added to the capacity.
      *        </p>
      *        <p>
      *        With scale-in policies, the intention is to scale in conservatively to protect your application’s
@@ -985,6 +1026,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

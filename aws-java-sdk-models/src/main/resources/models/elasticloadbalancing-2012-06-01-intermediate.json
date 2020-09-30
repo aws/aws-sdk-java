@@ -100,6 +100,7 @@
     },
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : {
       "SetLoadBalancerPoliciesForBackendServerRequest" : [ "PolicyNames" ],

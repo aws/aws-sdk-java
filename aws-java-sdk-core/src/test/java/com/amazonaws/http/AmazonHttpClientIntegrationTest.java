@@ -17,10 +17,20 @@ package com.amazonaws.http;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
+import com.amazonaws.auth.AWS4Signer;
+import com.amazonaws.auth.AWSStaticCredentialsProvider;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.auth.Signer;
+import com.amazonaws.handlers.HandlerContextKey;
+import com.amazonaws.internal.StaticCredentialsProvider;
+import com.amazonaws.internal.auth.DefaultSignerProvider;
+import com.amazonaws.internal.auth.SignerProvider;
+import com.amazonaws.internal.auth.SignerProviderContext;
 import org.junit.Before;
 import org.junit.Test;
 import utils.http.WireMockTestBase;
 
+import static com.amazonaws.auth.internal.SignerConstants.AUTHORIZATION;
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 
 public class AmazonHttpClientIntegrationTest extends WireMockTestBase {
@@ -67,8 +77,60 @@ public class AmazonHttpClientIntegrationTest extends WireMockTestBase {
         verify(optionsRequestedFor(urlPathEqualTo(OPERATION)));
     }
 
+    @Test
+    public void signerServiceNameHandlerContextKeyAbsent_shouldNotOverride() throws Exception {
+        Request<?> request = newGetRequest(OPERATION);
+        AmazonHttpClient client = createClient(HEADER, CONFIG_HEADER_VALUE);
+        ExecutionContext context = ExecutionContext.builder()
+                                                            .withSignerProvider(new TestSignerProvider())
+                                                            .build();
+        context.setCredentialsProvider(new AWSStaticCredentialsProvider(new BasicAWSCredentials("test", "test")));
+        client.requestExecutionBuilder().request(request).executionContext(context).execute();
+        verify(getRequestedFor(urlPathEqualTo(OPERATION)).withHeader(AUTHORIZATION, containing("foo-service")));
+    }
+
+    @Test
+    public void signerServiceNameHandlerContextKeyPresent_shouldOverride() throws Exception {
+        Request<?> request = newGetRequest(OPERATION);
+        request.addHandlerContext(HandlerContextKey.SIGNING_NAME, "bar-service");
+
+        AmazonHttpClient client = createClient(HEADER, CONFIG_HEADER_VALUE);
+        ExecutionContext context = ExecutionContext.builder()
+                                                 .withSignerProvider(new TestSignerProvider())
+                                                 .build();
+        context.setCredentialsProvider(new AWSStaticCredentialsProvider(new BasicAWSCredentials("test", "test")));
+        client.requestExecutionBuilder().request(request).executionContext(context).execute();
+
+        verify(getRequestedFor(urlPathEqualTo(OPERATION)).withHeader(AUTHORIZATION, containing("bar-service")));
+    }
+
+    @Test
+    public void signerServiceNameHandlerContextKeyPresent_signerOverridden_shouldNotOverride() throws Exception {
+        Request<?> request = newGetRequest(OPERATION);
+        request.addHandlerContext(HandlerContextKey.SIGNING_NAME, "bar-service");
+
+        AmazonHttpClient client = new AmazonHttpClient(new ClientConfiguration().withSignerOverride("AWS4Signer"));
+
+        ExecutionContext context = ExecutionContext.builder()
+                                                   .withSignerProvider(new TestSignerProvider())
+                                                   .build();
+        context.setCredentialsProvider(new AWSStaticCredentialsProvider(new BasicAWSCredentials("test", "test")));
+        client.requestExecutionBuilder().request(request).executionContext(context).execute();
+
+        verify(getRequestedFor(urlPathEqualTo(OPERATION)).withHeader(AUTHORIZATION, containing("foo-service")));
+    }
+
     private AmazonHttpClient createClient(String headerName, String headerValue) {
         ClientConfiguration clientConfiguration = new ClientConfiguration().withHeader(headerName, headerValue);
         return new AmazonHttpClient(clientConfiguration);
+    }
+
+    private class TestSignerProvider extends SignerProvider {
+        @Override
+        public Signer getSigner(SignerProviderContext context) {
+            AWS4Signer signer = new AWS4Signer();
+            signer.setServiceName("foo-service");
+            return signer;
+        }
     }
 }

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the policy used to set the permissions boundary for an IAM user.
+ * Information about the policy used to set the permissions boundary for an IAM principal.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsIamPermissionsBoundary"
@@ -30,7 +30,7 @@ public class AwsIamPermissionsBoundary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
+     * The ARN of the policy used to set the permissions boundary.
      * </p>
      */
     private String permissionsBoundaryArn;
@@ -43,11 +43,11 @@ public class AwsIamPermissionsBoundary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
+     * The ARN of the policy used to set the permissions boundary.
      * </p>
      * 
      * @param permissionsBoundaryArn
-     *        The ARN of the policy used to set the permissions boundary for the user.
+     *        The ARN of the policy used to set the permissions boundary.
      */
 
     public void setPermissionsBoundaryArn(String permissionsBoundaryArn) {
@@ -56,10 +56,10 @@ public class AwsIamPermissionsBoundary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
+     * The ARN of the policy used to set the permissions boundary.
      * </p>
      * 
-     * @return The ARN of the policy used to set the permissions boundary for the user.
+     * @return The ARN of the policy used to set the permissions boundary.
      */
 
     public String getPermissionsBoundaryArn() {
@@ -68,11 +68,11 @@ public class AwsIamPermissionsBoundary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
+     * The ARN of the policy used to set the permissions boundary.
      * </p>
      * 
      * @param permissionsBoundaryArn
-     *        The ARN of the policy used to set the permissions boundary for the user.
+     *        The ARN of the policy used to set the permissions boundary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

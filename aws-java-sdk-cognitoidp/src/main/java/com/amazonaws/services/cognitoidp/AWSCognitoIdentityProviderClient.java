@@ -445,6 +445,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AddCustomAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCustomAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCustomAttributes");
@@ -513,6 +514,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminAddUserToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminAddUserToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminAddUserToGroup");
@@ -595,6 +597,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminConfirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminConfirmSignUp");
@@ -704,6 +707,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminCreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminCreateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminCreateUser");
@@ -773,6 +777,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminDeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDeleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDeleteUser");
@@ -843,6 +848,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminDeleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDeleteUserAttributes");
@@ -945,6 +951,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminDisableProviderForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDisableProviderForUser");
@@ -1015,6 +1022,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminDisableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDisableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDisableUser");
@@ -1084,6 +1092,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminEnableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminEnableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminEnableUser");
@@ -1155,6 +1164,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminForgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminForgetDevice");
@@ -1224,6 +1234,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminGetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminGetDevice");
@@ -1293,6 +1304,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminGetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminGetUser");
@@ -1385,6 +1397,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminInitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminInitiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminInitiateAuth");
@@ -1479,6 +1492,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminLinkProviderForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminLinkProviderForUser");
@@ -1549,6 +1563,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListDevices");
@@ -1617,6 +1632,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminListGroupsForUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListGroupsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListGroupsForUser");
@@ -1686,6 +1702,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminListUserAuthEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListUserAuthEvents");
@@ -1756,6 +1773,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminRemoveUserFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminRemoveUserFromGroup");
@@ -1854,6 +1872,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminResetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminResetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminResetUserPassword");
@@ -1961,6 +1980,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminRespondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminRespondToAuthChallenge");
@@ -2033,6 +2053,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminSetUserMFAPreferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserMFAPreference");
@@ -2111,6 +2132,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminSetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserPassword");
@@ -2178,6 +2200,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminSetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserSettings");
@@ -2247,6 +2270,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateAuthEventFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateAuthEventFeedback");
@@ -2320,6 +2344,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateDeviceStatus");
@@ -2419,6 +2444,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateUserAttributes");
@@ -2491,6 +2517,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminUserGlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUserGlobalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUserGlobalSignOut");
@@ -2559,6 +2586,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AssociateSoftwareTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateSoftwareTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSoftwareToken");
@@ -2634,6 +2662,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ChangePasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(changePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangePassword");
@@ -2712,6 +2741,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmDevice");
@@ -2799,6 +2829,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmForgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmForgotPassword");
@@ -2887,6 +2918,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmSignUp");
@@ -2957,6 +2989,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -3024,6 +3057,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIdentityProvider");
@@ -3090,6 +3124,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceServer");
@@ -3158,6 +3193,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserImportJob");
@@ -3234,6 +3270,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPool");
@@ -3304,6 +3341,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPoolClient");
@@ -3367,6 +3405,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPoolDomain");
@@ -3433,6 +3472,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -3498,6 +3538,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityProvider");
@@ -3562,6 +3603,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceServer");
@@ -3632,6 +3674,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -3702,6 +3745,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserAttributes");
@@ -3769,6 +3813,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPool");
@@ -3833,6 +3878,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPoolClient");
@@ -3894,6 +3940,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPoolDomain");
@@ -3958,6 +4005,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityProvider");
@@ -4022,6 +4070,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourceServer");
@@ -4089,6 +4138,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeRiskConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRiskConfiguration");
@@ -4154,6 +4204,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserImportJob");
@@ -4221,6 +4272,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPool");
@@ -4285,6 +4337,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPoolClient");
@@ -4347,6 +4400,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPoolDomain");
@@ -4420,6 +4474,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgetDevice");
@@ -4519,6 +4574,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgotPassword");
@@ -4583,6 +4639,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetCSVHeaderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCSVHeaderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCSVHeader");
@@ -4655,6 +4712,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
@@ -4721,6 +4779,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
@@ -4786,6 +4845,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getIdentityProviderByIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityProviderByIdentifier");
@@ -4847,6 +4907,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetSigningCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSigningCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningCertificate");
@@ -4913,6 +4974,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUICustomizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUICustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUICustomization");
@@ -4983,6 +5045,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
@@ -5077,6 +5140,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getUserAttributeVerificationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserAttributeVerificationCode");
@@ -5141,6 +5205,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUserPoolMfaConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserPoolMfaConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserPoolMfaConfig");
@@ -5210,6 +5275,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(globalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GlobalSignOut");
@@ -5297,6 +5363,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new InitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateAuth");
@@ -5369,6 +5436,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
@@ -5435,6 +5503,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -5498,6 +5567,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListIdentityProvidersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityProviders");
@@ -5562,6 +5632,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListResourceServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceServersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceServers");
@@ -5632,6 +5703,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -5696,6 +5768,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserImportJobs");
@@ -5760,6 +5833,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserPoolClientsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPoolClients");
@@ -5822,6 +5896,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserPoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPools");
@@ -5886,6 +5961,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -5952,6 +6028,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUsersInGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersInGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsersInGroup");
@@ -6040,6 +6117,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ResendConfirmationCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendConfirmationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendConfirmationCode");
@@ -6143,6 +6221,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new RespondToAuthChallengeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(respondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondToAuthChallenge");
@@ -6219,6 +6298,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetRiskConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setRiskConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetRiskConfiguration");
@@ -6295,6 +6375,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUICustomizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUICustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUICustomization");
@@ -6365,6 +6446,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserMFAPreferenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserMFAPreferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserMFAPreference");
@@ -6435,6 +6517,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserPoolMfaConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserPoolMfaConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserPoolMfaConfig");
@@ -6506,6 +6589,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserSettings");
@@ -6594,6 +6678,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(signUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignUp");
@@ -6660,6 +6745,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new StartUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartUserImportJob");
@@ -6726,6 +6812,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new StopUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopUserImportJob");
@@ -6804,6 +6891,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -6868,6 +6956,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -6937,6 +7026,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateAuthEventFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuthEventFeedback");
@@ -7010,6 +7100,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateDeviceStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceStatus");
@@ -7081,6 +7172,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
@@ -7146,6 +7238,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityProvider");
@@ -7215,6 +7308,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceServer");
@@ -7313,6 +7407,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserAttributes");
@@ -7402,6 +7497,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPool");
@@ -7480,6 +7576,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPoolClient");
@@ -7575,6 +7672,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPoolDomain");
@@ -7657,6 +7755,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new VerifySoftwareTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifySoftwareTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifySoftwareToken");
@@ -7733,6 +7832,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new VerifyUserAttributeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyUserAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyUserAttribute");

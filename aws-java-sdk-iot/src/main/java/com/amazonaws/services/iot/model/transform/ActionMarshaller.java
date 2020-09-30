@@ -63,6 +63,8 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iotSiteWise").build();
     private static final MarshallingInfo<StructuredPojo> STEPFUNCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stepFunctions").build();
+    private static final MarshallingInfo<StructuredPojo> TIMESTREAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timestream").build();
     private static final MarshallingInfo<StructuredPojo> HTTP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("http").build();
 
@@ -100,6 +102,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getIotEvents(), IOTEVENTS_BINDING);
             protocolMarshaller.marshall(action.getIotSiteWise(), IOTSITEWISE_BINDING);
             protocolMarshaller.marshall(action.getStepFunctions(), STEPFUNCTIONS_BINDING);
+            protocolMarshaller.marshall(action.getTimestream(), TIMESTREAM_BINDING);
             protocolMarshaller.marshall(action.getHttp(), HTTP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

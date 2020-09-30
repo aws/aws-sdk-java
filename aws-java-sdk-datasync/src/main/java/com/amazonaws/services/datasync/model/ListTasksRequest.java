@@ -40,7 +40,13 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String nextToken;
-
+    /**
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to
+     * retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+     * </p>
+     */
     private java.util.List<TaskFilter> filters;
 
     /**
@@ -124,7 +130,15 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * @return
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to
+     * retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+     * </p>
+     * 
+     * @return You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For
+     *         example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with
+     *         filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
      */
 
     public java.util.List<TaskFilter> getFilters() {
@@ -132,7 +146,16 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to
+     * retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+     * </p>
+     * 
      * @param filters
+     *        You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For
+     *        example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with
+     *        filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
      */
 
     public void setFilters(java.util.Collection<TaskFilter> filters) {
@@ -146,12 +169,20 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to
+     * retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param filters
+     *        You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For
+     *        example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with
+     *        filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +197,16 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For example, to
+     * retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with filter name
+     * <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
+     * </p>
+     * 
      * @param filters
+     *        You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>. For
+     *        example, to retrieve all tasks on a specific source location, you can use <code>ListTasks</code> with
+     *        filter name <code>LocationId</code> and <code>Operator Equals</code> with the ARN for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

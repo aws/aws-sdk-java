@@ -136,6 +136,15 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private StepFunctionsAction stepFunctions;
     /**
      * <p>
+     * The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For
+     * more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic
+     * rule action documentation.
+     * </p>
+     */
+    private TimestreamAction timestream;
+    /**
+     * <p>
      * Send data to an HTTPS endpoint.
      * </p>
      */
@@ -869,6 +878,64 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For
+     * more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic
+     * rule action documentation.
+     * </p>
+     * 
+     * @param timestream
+     *        The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream
+     *        table. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     *        topic rule action documentation.
+     */
+
+    public void setTimestream(TimestreamAction timestream) {
+        this.timestream = timestream;
+    }
+
+    /**
+     * <p>
+     * The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For
+     * more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic
+     * rule action documentation.
+     * </p>
+     * 
+     * @return The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream
+     *         table. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     *         topic rule action documentation.
+     */
+
+    public TimestreamAction getTimestream() {
+        return this.timestream;
+    }
+
+    /**
+     * <p>
+     * The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream table. For
+     * more information, see the <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a> topic
+     * rule action documentation.
+     * </p>
+     * 
+     * @param timestream
+     *        The Timestream rule action writes attributes (measures) from an MQTT message into an Amazon Timestream
+     *        table. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/timestream-rule-action.html">Timestream</a>
+     *        topic rule action documentation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Action withTimestream(TimestreamAction timestream) {
+        setTimestream(timestream);
+        return this;
+    }
+
+    /**
+     * <p>
      * Send data to an HTTPS endpoint.
      * </p>
      * 
@@ -955,6 +1022,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             sb.append("IotSiteWise: ").append(getIotSiteWise()).append(",");
         if (getStepFunctions() != null)
             sb.append("StepFunctions: ").append(getStepFunctions()).append(",");
+        if (getTimestream() != null)
+            sb.append("Timestream: ").append(getTimestream()).append(",");
         if (getHttp() != null)
             sb.append("Http: ").append(getHttp());
         sb.append("}");
@@ -1043,6 +1112,10 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStepFunctions() != null && other.getStepFunctions().equals(this.getStepFunctions()) == false)
             return false;
+        if (other.getTimestream() == null ^ this.getTimestream() == null)
+            return false;
+        if (other.getTimestream() != null && other.getTimestream().equals(this.getTimestream()) == false)
+            return false;
         if (other.getHttp() == null ^ this.getHttp() == null)
             return false;
         if (other.getHttp() != null && other.getHttp().equals(this.getHttp()) == false)
@@ -1073,6 +1146,7 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIotEvents() == null) ? 0 : getIotEvents().hashCode());
         hashCode = prime * hashCode + ((getIotSiteWise() == null) ? 0 : getIotSiteWise().hashCode());
         hashCode = prime * hashCode + ((getStepFunctions() == null) ? 0 : getStepFunctions().hashCode());
+        hashCode = prime * hashCode + ((getTimestream() == null) ? 0 : getTimestream().hashCode());
         hashCode = prime * hashCode + ((getHttp() == null) ? 0 : getHttp().hashCode());
         return hashCode;
     }

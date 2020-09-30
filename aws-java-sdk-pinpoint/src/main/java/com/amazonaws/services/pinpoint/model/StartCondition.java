@@ -35,6 +35,8 @@ public class StartCondition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+
+    private EventStartCondition eventStartCondition;
     /**
      * <p>
      * The segment that's associated with the first activity in the journey. This segment determines which users are
@@ -80,6 +82,32 @@ public class StartCondition implements Serializable, Cloneable, StructuredPojo {
 
     public StartCondition withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * @param eventStartCondition
+     */
+
+    public void setEventStartCondition(EventStartCondition eventStartCondition) {
+        this.eventStartCondition = eventStartCondition;
+    }
+
+    /**
+     * @return
+     */
+
+    public EventStartCondition getEventStartCondition() {
+        return this.eventStartCondition;
+    }
+
+    /**
+     * @param eventStartCondition
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartCondition withEventStartCondition(EventStartCondition eventStartCondition) {
+        setEventStartCondition(eventStartCondition);
         return this;
     }
 
@@ -143,6 +171,8 @@ public class StartCondition implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getEventStartCondition() != null)
+            sb.append("EventStartCondition: ").append(getEventStartCondition()).append(",");
         if (getSegmentStartCondition() != null)
             sb.append("SegmentStartCondition: ").append(getSegmentStartCondition());
         sb.append("}");
@@ -163,6 +193,10 @@ public class StartCondition implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getEventStartCondition() == null ^ this.getEventStartCondition() == null)
+            return false;
+        if (other.getEventStartCondition() != null && other.getEventStartCondition().equals(this.getEventStartCondition()) == false)
+            return false;
         if (other.getSegmentStartCondition() == null ^ this.getSegmentStartCondition() == null)
             return false;
         if (other.getSegmentStartCondition() != null && other.getSegmentStartCondition().equals(this.getSegmentStartCondition()) == false)
@@ -176,6 +210,7 @@ public class StartCondition implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getEventStartCondition() == null) ? 0 : getEventStartCondition().hashCode());
         hashCode = prime * hashCode + ((getSegmentStartCondition() == null) ? 0 : getSegmentStartCondition().hashCode());
         return hashCode;
     }

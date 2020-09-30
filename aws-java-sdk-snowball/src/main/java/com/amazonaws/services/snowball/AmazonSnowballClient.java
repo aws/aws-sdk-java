@@ -350,6 +350,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new CancelClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCluster");
@@ -413,6 +414,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new CancelJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelJob");
@@ -473,6 +475,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateAddressRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAddress");
@@ -539,6 +542,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
@@ -608,6 +612,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJob");
@@ -665,6 +670,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeAddressRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddress");
@@ -725,6 +731,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeAddressesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddresses");
@@ -782,6 +789,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCluster");
@@ -839,6 +847,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJob");
@@ -914,6 +923,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new GetJobManifestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobManifestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobManifest");
@@ -983,6 +993,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new GetJobUnlockCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobUnlockCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobUnlockCode");
@@ -1041,6 +1052,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new GetSnowballUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnowballUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSnowballUsage");
@@ -1099,6 +1111,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new GetSoftwareUpdatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSoftwareUpdatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSoftwareUpdates");
@@ -1159,6 +1172,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new ListClusterJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClusterJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusterJobs");
@@ -1217,6 +1231,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
@@ -1278,6 +1293,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new ListCompatibleImagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCompatibleImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCompatibleImages");
@@ -1337,6 +1353,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -1406,6 +1423,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCluster");
@@ -1479,6 +1497,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Snowball");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateJob");

@@ -16,16 +16,24 @@
 package com.amazonaws.services.s3control.internal.handlers;
 
 import static com.amazonaws.services.s3control.AWSS3Control.ENDPOINT_PREFIX;
+import static com.amazonaws.services.s3control.internal.HandlerUtils.S3_OUTPOSTS;
+import static com.amazonaws.services.s3control.internal.HandlerUtils.isDualstackEnabled;
+import static com.amazonaws.services.s3control.internal.HandlerUtils.isFipsEnabledInClientConfig;
+import static com.amazonaws.services.s3control.internal.HandlerUtils.isFipsRegion;
 
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.annotation.SdkInternalApi;
-import com.amazonaws.client.builder.AdvancedConfig;
+import com.amazonaws.annotation.SdkTestInternalApi;
 import com.amazonaws.handlers.HandlerContextKey;
 import com.amazonaws.handlers.RequestHandler2;
-import com.amazonaws.services.s3control.S3ControlClientOptions;
-import com.amazonaws.util.SdkHttpUtils;
-
+import com.amazonaws.services.s3control.S3ArnableField;
+import com.amazonaws.services.s3control.S3ControlHandlerContextKey;
+import com.amazonaws.services.s3control.internal.ArnHandler;
+import com.amazonaws.services.s3control.model.CreateBucketRequest;
+import com.amazonaws.services.s3control.model.ListRegionalBucketsRequest;
+import com.amazonaws.util.StringUtils;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -35,31 +43,94 @@ import java.net.URISyntaxException;
  */
 @SdkInternalApi
 public final class EndpointHandler extends RequestHandler2 {
+    private final ArnHandler arnHandler;
 
-    private static final String X_AMZ_ACCOUNT_ID = "x-amz-account-id";
+    public EndpointHandler() {
+        arnHandler = ArnHandler.getInstance();
+    }
+
+    @SdkTestInternalApi
+    public EndpointHandler(ArnHandler arnHandler) {
+        this.arnHandler = arnHandler;
+    }
 
     @Override
     public void beforeRequest(Request<?> request) {
-        if (!request.getHeaders().containsKey(X_AMZ_ACCOUNT_ID)) {
-            throw new SdkClientException("Account ID must be specified for all requests");
+
+        S3ArnableField arnableField = request.getHandlerContext(S3ControlHandlerContextKey.S3_ARNABLE_FIELD);
+        if (arnableField != null && arnableField.getArn() != null) {
+            arnHandler.resolveHostForArn(request, arnableField.getArn());
+            return;
         }
 
-        String accountId = request.getHeaders().remove(X_AMZ_ACCOUNT_ID);
+        // If the request is an non-arn outpost request
+        if (isNonArnOutpostRequest(request)) {
+            resolveHostForNonArnOutpostRequest(request);
+            return;
+        }
+
+        resolveHost(request);
+    }
+
+    private void resolveHostForNonArnOutpostRequest(Request<?> request) {
+        if (isDualstackEnabled(request)) {
+            throw new IllegalArgumentException("Dualstack endpoints are not supported");
+        }
+
+        if (isFipsEnabledInClientConfig(request) || isFipsRegion(request.getHandlerContext(HandlerContextKey.SIGNING_REGION))) {
+            throw new IllegalArgumentException("FIPS endpoints are not supported");
+        }
+
+        if (Boolean.TRUE.equals(request.getHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN))) {
+            throw new IllegalArgumentException("OutpostId cannot be passed to this operation if the client has been configured "
+                                               + "with an endpoint override");
+        }
+
+        request.addHandlerContext(HandlerContextKey.SIGNING_NAME, S3_OUTPOSTS);
+        URI endpoint = request.getEndpoint();
+        String host = endpoint.getHost();
+        String newHost = host.replace(ENDPOINT_PREFIX, S3_OUTPOSTS);
+
+        // Remove the accountId host prefixing
+        int index = newHost.indexOf(S3_OUTPOSTS);
+        newHost = newHost.substring(index);
+
+        try {
+            request.setEndpoint(new URI(endpoint.getScheme(), endpoint.getUserInfo(),
+                                           newHost, endpoint.getPort(), endpoint.getPath(), endpoint.getQuery(), endpoint.getFragment()));
+        } catch (Exception e) {
+            throw new SdkClientException("Endpoint was invalid", e);
+        }
+    }
+
+    /**
+     * It should redirect signer if the request is CreateBucketRequest or ListRegionalBucketsRequest with outpostId present
+     */
+    private boolean isNonArnOutpostRequest(Request<?> request) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        if (originalRequest instanceof CreateBucketRequest && (!StringUtils.isNullOrEmpty(((CreateBucketRequest) originalRequest).getOutpostId()))) {
+            return true;
+        }
+
+        return originalRequest instanceof ListRegionalBucketsRequest && (!StringUtils.isNullOrEmpty(((ListRegionalBucketsRequest) originalRequest).getOutpostId()));
+    }
+
+    private void resolveHost(Request<?> request) {
         URI endpoint = request.getEndpoint();
 
-        String host = resolveHost(request, accountId);
+        String host = doResolveHost(request);
 
         try {
             request.setEndpoint(new URI(endpoint.getScheme(), endpoint.getUserInfo(),
                                         host, endpoint.getPort(), endpoint.getPath(), endpoint.getQuery(), endpoint.getFragment()));
         } catch (URISyntaxException e) {
             throw new SdkClientException(
-                String.format("Endpoint was invalid, account id (%s) is likely incorrect", accountId), e);
+                String.format("Endpoint was invalid: %s", host), e);
         }
     }
 
-    private String resolveHost(Request<?> request, String accountId) {
-        if (isDualstackEnabled(request) && isFipsEnabled(request)) {
+    private String doResolveHost(Request<?> request) {
+        if (isDualstackEnabled(request) && isFipsEnabledInClientConfig(request)) {
             throw new SdkClientException("Cannot use both Dual-Stack endpoints and FIPS endpoints");
         }
         String host = request.getEndpoint().getHost();
@@ -69,12 +140,17 @@ public final class EndpointHandler extends RequestHandler2 {
         }
 
         if (isDualstackEnabled(request)) {
+            // We should really use HandlerContextKey.ENDPOINT_OVERRIDDEN to check if an endpoint is overridden or not
+            // because the dualstack option cannot be used with custom endpoints and currently, customers can provide an endpoint
+            // as long as "s3-control" is in it.
+            // Changing to use HandlerContextKey.ENDPOINT_OVERRIDDEN will likely break existing customers who provide legit
+            // s3-control endpoint, so we will keep it as it is.
             if (!host.contains(ENDPOINT_PREFIX)) {
                 throw new SdkClientException(String.format("The Dual-Stack option cannot be used with custom endpoints (%s)",
                                                            request.getEndpoint()));
             }
             host = host.replace(ENDPOINT_PREFIX, String.format("%s.%s", ENDPOINT_PREFIX, "dualstack"));
-        } else if (isFipsEnabled(request)) {
+        } else if (isFipsEnabledInClientConfig(request)) {
             if (!host.contains(ENDPOINT_PREFIX)) {
                 throw new SdkClientException(String.format("The FIPS option cannot be used with custom endpoints (%s)",
                                                            request.getEndpoint()));
@@ -83,29 +159,6 @@ public final class EndpointHandler extends RequestHandler2 {
 
         }
         
-        return String.format("%s.%s", SdkHttpUtils.urlEncode(accountId, false), host);
-    }
-
-    private boolean isDualstackEnabled(Request<?> request) {
-        return isAdvancedConfigFlagTrue(request, S3ControlClientOptions.DUALSTACK_ENABLED);
-    }
-
-    private boolean isFipsEnabled(Request<?> request) {
-        return isAdvancedConfigFlagTrue(request, S3ControlClientOptions.FIPS_ENABLED);
-    }
-
-    /**
-     * @param request Marshalled request.
-     * @param key Key to check.
-     * @return True if advanced config is available in the context AND the specified key is present AND has the value true,
-     * false otherwise.
-     */
-    private boolean isAdvancedConfigFlagTrue(Request<?> request, AdvancedConfig.Key<Boolean> key) {
-        AdvancedConfig advancedConfig = request.getHandlerContext(HandlerContextKey.ADVANCED_CONFIG);
-        if (advancedConfig == null) {
-            return false;
-        }
-        Boolean flag = advancedConfig.get(key);
-        return Boolean.TRUE.equals(flag);
+        return host;
     }
 }

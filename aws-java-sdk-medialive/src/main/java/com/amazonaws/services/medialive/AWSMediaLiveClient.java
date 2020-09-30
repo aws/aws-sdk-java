@@ -200,6 +200,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new BatchDeleteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDelete");
@@ -268,6 +269,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new BatchStartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStartRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStart");
@@ -336,6 +338,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new BatchStopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStopRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStop");
@@ -404,6 +407,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new BatchUpdateScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateSchedule");
@@ -472,6 +476,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
@@ -536,6 +541,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInput");
@@ -601,6 +607,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(createInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInputSecurityGroup");
@@ -671,6 +678,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultiplex");
@@ -740,6 +748,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultiplexProgram");
@@ -801,6 +810,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
@@ -869,6 +879,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
@@ -937,6 +948,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInput");
@@ -1004,6 +1016,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(deleteInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInputSecurityGroup");
@@ -1073,6 +1086,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMultiplex");
@@ -1141,6 +1155,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMultiplexProgram");
@@ -1210,6 +1225,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReservation");
@@ -1276,6 +1292,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchedule");
@@ -1336,6 +1353,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -1402,6 +1420,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
@@ -1468,6 +1487,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInput");
@@ -1534,6 +1554,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInputDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputDevice");
@@ -1601,6 +1622,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(describeInputDeviceThumbnailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputDeviceThumbnail");
@@ -1671,6 +1693,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(describeInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputSecurityGroup");
@@ -1738,6 +1761,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMultiplex");
@@ -1806,6 +1830,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(describeMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMultiplexProgram");
@@ -1873,6 +1898,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOffering");
@@ -1939,6 +1965,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservation");
@@ -2005,6 +2032,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSchedule");
@@ -2069,6 +2097,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListChannelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
@@ -2133,6 +2162,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListInputDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputDevices");
@@ -2198,6 +2228,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(listInputSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputSecurityGroups");
@@ -2263,6 +2294,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListInputsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputs");
@@ -2331,6 +2363,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListMultiplexProgramsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultiplexProgramsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultiplexPrograms");
@@ -2397,6 +2430,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListMultiplexesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultiplexesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultiplexes");
@@ -2461,6 +2495,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
@@ -2525,6 +2560,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListReservationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReservationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReservations");
@@ -2585,6 +2621,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2653,6 +2690,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new PurchaseOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purchaseOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
@@ -2721,6 +2759,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StartChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChannel");
@@ -2791,6 +2830,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StartMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMultiplex");
@@ -2859,6 +2899,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StopChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopChannel");
@@ -2928,6 +2969,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StopMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMultiplex");
@@ -2994,6 +3036,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
@@ -3064,6 +3107,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateChannelClassRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelClassRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannelClass");
@@ -3130,6 +3174,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInput");
@@ -3198,6 +3243,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInputDevice");
@@ -3266,6 +3312,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(updateInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInputSecurityGroup");
@@ -3336,6 +3383,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMultiplex");
@@ -3406,6 +3454,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMultiplexProgram");
@@ -3475,6 +3524,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReservation");

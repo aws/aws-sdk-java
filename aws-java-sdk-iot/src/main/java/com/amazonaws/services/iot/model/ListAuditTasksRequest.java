@@ -22,7 +22,7 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start
      * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      */
@@ -62,13 +62,13 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start
      * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting
-     *        a start time prior to what is retained results in an "InvalidRequestException".
+     *        The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a
+     *        start time prior to what is retained results in an "InvalidRequestException".
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -77,11 +77,11 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start
      * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      * 
-     * @return The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting
+     * @return The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting
      *         a start time prior to what is retained results in an "InvalidRequestException".
      */
 
@@ -91,13 +91,13 @@ public class ListAuditTasksRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting a start
+     * The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a start
      * time prior to what is retained results in an "InvalidRequestException".
      * </p>
      * 
      * @param startTime
-     *        The beginning of the time period. Audit information is retained for a limited time (180 days). Requesting
-     *        a start time prior to what is retained results in an "InvalidRequestException".
+     *        The beginning of the time period. Audit information is retained for a limited time (90 days). Requesting a
+     *        start time prior to what is retained results in an "InvalidRequestException".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

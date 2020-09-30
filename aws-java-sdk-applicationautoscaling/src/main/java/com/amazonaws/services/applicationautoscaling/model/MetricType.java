@@ -35,7 +35,8 @@ public enum MetricType {
     ComprehendInferenceUtilization("ComprehendInferenceUtilization"),
     LambdaProvisionedConcurrencyUtilization("LambdaProvisionedConcurrencyUtilization"),
     CassandraReadCapacityUtilization("CassandraReadCapacityUtilization"),
-    CassandraWriteCapacityUtilization("CassandraWriteCapacityUtilization");
+    CassandraWriteCapacityUtilization("CassandraWriteCapacityUtilization"),
+    KafkaBrokerStorageUtilization("KafkaBrokerStorageUtilization");
 
     private String value;
 

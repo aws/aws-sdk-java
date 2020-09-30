@@ -126,6 +126,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String resourceId;
@@ -220,6 +226,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
      * </p>
      * </li>
      * </ul>
@@ -485,6 +497,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -572,6 +590,13 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     *        <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *        .
      *        </p>
      *        </li>
      */
@@ -668,6 +693,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The identifier of the resource associated with the scaling policy. This string consists of the resource
@@ -755,6 +786,14 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *         name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN.
+     *         Example:
+     *         <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *         .
      *         </p>
      *         </li>
      */
@@ -851,6 +890,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * Example: <code>keyspace/mykeyspace/table/mytable</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     * <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param resourceId
@@ -938,6 +983,13 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        Amazon Keyspaces table - The resource type is <code>table</code> and the unique identifier is the table
      *        name. Example: <code>keyspace/mykeyspace/table/mytable</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster - The resource type and unique identifier are specified using the cluster ARN. Example:
+     *        <code>arn:aws:kafka:us-east-1:123456789012:cluster/demo-cluster-1/6357e0b2-0e6a-4b86-a0b4-70df934c2e31-5</code>
+     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1041,6 +1093,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1134,6 +1192,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1236,6 +1300,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The scalable dimension. This string consists of the service namespace, resource type, and scaling
@@ -1328,6 +1398,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *         table.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *         Amazon MSK cluster.
      *         </p>
      *         </li>
      * @see ScalableDimension
@@ -1430,6 +1506,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1523,6 +1605,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1627,6 +1715,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1720,6 +1814,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @see ScalableDimension
@@ -1822,6 +1922,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      * <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces table.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an Amazon MSK
+     * cluster.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scalableDimension
@@ -1915,6 +2021,12 @@ public class DescribeScalingPoliciesRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>cassandra:table:WriteCapacityUnits</code> - The provisioned write capacity for an Amazon Keyspaces
      *        table.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>kafka:broker-storage:VolumeSize</code> - The provisioned volume size (in GiB) for brokers in an
+     *        Amazon MSK cluster.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

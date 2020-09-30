@@ -3229,6 +3229,9 @@ public interface AmazonPinpoint {
      * @throws TooManyRequestsException
      *         The request failed because too many requests were sent during a certain amount of time
      *         (TooManyRequestsException).
+     * @throws ConflictException
+     *         The request failed due to a conflict with the current state of the specified resource
+     *         (ConflictException).
      * @sample AmazonPinpoint.UpdateJourney
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourney" target="_top">AWS API
      *      Documentation</a>

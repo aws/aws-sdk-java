@@ -14,12 +14,17 @@
  */
 package com.amazonaws.services.s3;
 
+import static com.amazonaws.services.s3.S3ArnUtils.parseOutpostArn;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.arn.Arn;
 import com.amazonaws.arn.ArnConverter;
+import com.amazonaws.arn.ArnResource;
+import com.amazonaws.services.s3.internal.IntermediateOutpostResource;
+import com.amazonaws.services.s3.internal.OutpostResourceType;
+import com.amazonaws.services.s3.internal.S3OutpostResource;
 
 /**
  * An implementation of {@link ArnConverter} that can be used to convert valid {@link Arn} representations of s3
@@ -70,6 +75,8 @@ public class S3ArnConverter implements ArnConverter<S3Resource> {
                 return parseS3AccessPointArn(arn);
             case BUCKET:
                 return parseS3BucketArn(arn);
+            case OUTPOST:
+                return parseS3OutpostAccessPointArn(arn);
             default:
                 throw new IllegalArgumentException("Unknown ARN type '" + arn.getResource().getResourceType() + "'");
         }
@@ -97,6 +104,25 @@ public class S3ArnConverter implements ArnConverter<S3Resource> {
                                    .withBucketName(resource)
                                    .build();
         }
+    }
+
+    private S3Resource parseS3OutpostAccessPointArn(Arn arn) {
+        IntermediateOutpostResource intermediateOutpostResource = parseOutpostArn(arn);
+        ArnResource outpostSubResource = intermediateOutpostResource.getOutpostSubresource();
+
+        if (!OutpostResourceType.OUTPOST_ACCESS_POINT.toString().equals(outpostSubResource.getResourceType())) {
+            throw new IllegalArgumentException("Unknown outpost ARN type '" + outpostSubResource.getResourceType() + "'");
+        }
+
+        return S3AccessPointResource.builder()
+                                    .withAccessPointName(outpostSubResource.getResource())
+                                    .withParentS3Resource(S3OutpostResource.builder()
+                                                                           .withPartition(arn.getPartition())
+                                                                           .withRegion(arn.getRegion())
+                                                                           .withAccountId(arn.getAccountId())
+                                                                           .withOutpostId(intermediateOutpostResource.getOutpostId())
+                                                                           .build())
+                                    .build();
     }
 
     private S3BucketResource parseS3BucketArn(Arn arn) {
@@ -137,7 +163,8 @@ public class S3ArnConverter implements ArnConverter<S3Resource> {
                                     .build();
     }
 
-    private boolean isV1Arn(Arn arn) {
+    private static boolean isV1Arn(Arn arn) {
         return arn.getAccountId() == null && arn.getRegion() == null;
     }
+
 }

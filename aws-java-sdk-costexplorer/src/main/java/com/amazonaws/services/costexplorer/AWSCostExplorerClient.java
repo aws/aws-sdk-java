@@ -207,6 +207,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new CreateAnomalyMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAnomalyMonitorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnomalyMonitor");
@@ -267,6 +268,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(createAnomalySubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnomalySubscription");
@@ -327,6 +329,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(createCostCategoryDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCostCategoryDefinition");
@@ -385,6 +388,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteAnomalyMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAnomalyMonitorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnomalyMonitor");
@@ -443,6 +447,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deleteAnomalySubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnomalySubscription");
@@ -503,6 +508,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deleteCostCategoryDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCostCategoryDefinition");
@@ -567,6 +573,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(describeCostCategoryDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCostCategoryDefinition");
@@ -626,6 +633,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetAnomaliesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnomaliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnomalies");
@@ -686,6 +694,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetAnomalyMonitorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAnomalyMonitorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnomalyMonitors");
@@ -747,6 +756,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getAnomalySubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAnomalySubscriptions");
@@ -818,6 +828,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetCostAndUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCostAndUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostAndUsage");
@@ -897,6 +908,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getCostAndUsageWithResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostAndUsageWithResources");
@@ -956,6 +968,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetCostForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCostForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCostForecast");
@@ -1021,6 +1034,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetDimensionValuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDimensionValuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDimensionValues");
@@ -1151,6 +1165,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetReservationCoverageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReservationCoverageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservationCoverage");
@@ -1228,6 +1243,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getReservationPurchaseRecommendationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservationPurchaseRecommendation");
@@ -1291,6 +1307,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getReservationUtilizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReservationUtilization");
@@ -1356,6 +1373,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getRightsizingRecommendationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRightsizingRecommendation");
@@ -1445,6 +1463,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getSavingsPlansCoverageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSavingsPlansCoverage");
@@ -1505,6 +1524,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getSavingsPlansPurchaseRecommendationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSavingsPlansPurchaseRecommendation");
@@ -1571,6 +1591,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getSavingsPlansUtilizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSavingsPlansUtilization");
@@ -1642,6 +1663,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getSavingsPlansUtilizationDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSavingsPlansUtilizationDetails");
@@ -1708,6 +1730,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTags");
@@ -1769,6 +1792,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new GetUsageForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUsageForecast");
@@ -1830,6 +1854,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(listCostCategoryDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCostCategoryDefinitions");
@@ -1886,6 +1911,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new ProvideAnomalyFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provideAnomalyFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvideAnomalyFeedback");
@@ -1945,6 +1971,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateAnomalyMonitorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAnomalyMonitorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnomalyMonitor");
@@ -2005,6 +2032,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(updateAnomalySubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnomalySubscription");
@@ -2068,6 +2096,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(updateCostCategoryDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCostCategoryDefinition");

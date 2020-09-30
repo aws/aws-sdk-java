@@ -235,6 +235,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -301,6 +302,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -366,6 +368,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
@@ -441,6 +444,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new GetGroupConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupConfiguration");
@@ -507,6 +511,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new GetGroupQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupQueryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroupQuery");
@@ -572,6 +577,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new GetTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTags");
@@ -637,6 +643,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new GroupResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(groupResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GroupResources");
@@ -704,6 +711,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new ListGroupResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupResources");
@@ -767,6 +775,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -833,6 +842,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new SearchResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchResources");
@@ -906,6 +916,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new TagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Tag");
@@ -971,6 +982,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new UngroupResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(ungroupResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UngroupResources");
@@ -1036,6 +1048,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new UntagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Untag");
@@ -1101,6 +1114,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
@@ -1166,6 +1180,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                 request = new UpdateGroupQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupQueryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Resource Groups");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroupQuery");

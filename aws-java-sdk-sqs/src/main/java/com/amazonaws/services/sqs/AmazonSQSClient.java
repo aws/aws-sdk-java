@@ -464,6 +464,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
@@ -589,6 +590,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ChangeMessageVisibilityRequestMarshaller().marshall(super.beforeMarshalling(changeMessageVisibilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibility");
@@ -675,6 +677,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ChangeMessageVisibilityBatchRequestMarshaller().marshall(super.beforeMarshalling(changeMessageVisibilityBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibilityBatch");
@@ -811,6 +814,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new CreateQueueRequestMarshaller().marshall(super.beforeMarshalling(createQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQueue");
@@ -892,6 +896,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new DeleteMessageRequestMarshaller().marshall(super.beforeMarshalling(deleteMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessage");
@@ -975,6 +980,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new DeleteMessageBatchRequestMarshaller().marshall(super.beforeMarshalling(deleteMessageBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessageBatch");
@@ -1055,6 +1061,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new DeleteQueueRequestMarshaller().marshall(super.beforeMarshalling(deleteQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueue");
@@ -1121,6 +1128,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new GetQueueAttributesRequestMarshaller().marshall(super.beforeMarshalling(getQueueAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueAttributes");
@@ -1189,6 +1197,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new GetQueueUrlRequestMarshaller().marshall(super.beforeMarshalling(getQueueUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueUrl");
@@ -1262,6 +1271,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ListDeadLetterSourceQueuesRequestMarshaller().marshall(super.beforeMarshalling(listDeadLetterSourceQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeadLetterSourceQueues");
@@ -1325,6 +1335,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ListQueueTagsRequestMarshaller().marshall(super.beforeMarshalling(listQueueTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueueTags");
@@ -1399,6 +1410,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ListQueuesRequestMarshaller().marshall(super.beforeMarshalling(listQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueues");
@@ -1483,6 +1495,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new PurgeQueueRequestMarshaller().marshall(super.beforeMarshalling(purgeQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurgeQueue");
@@ -1609,6 +1622,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ReceiveMessageRequestMarshaller().marshall(super.beforeMarshalling(receiveMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReceiveMessage");
@@ -1690,6 +1704,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new RemovePermissionRequestMarshaller().marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -1765,6 +1780,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new SendMessageRequestMarshaller().marshall(super.beforeMarshalling(sendMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessage");
@@ -1871,6 +1887,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new SendMessageBatchRequestMarshaller().marshall(super.beforeMarshalling(sendMessageBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessageBatch");
@@ -1957,6 +1974,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new SetQueueAttributesRequestMarshaller().marshall(super.beforeMarshalling(setQueueAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetQueueAttributes");
@@ -2055,6 +2073,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new TagQueueRequestMarshaller().marshall(super.beforeMarshalling(tagQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagQueue");
@@ -2122,6 +2141,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new UntagQueueRequestMarshaller().marshall(super.beforeMarshalling(untagQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagQueue");

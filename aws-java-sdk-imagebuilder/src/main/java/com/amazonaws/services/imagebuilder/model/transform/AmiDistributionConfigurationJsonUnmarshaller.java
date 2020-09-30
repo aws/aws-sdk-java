@@ -56,6 +56,12 @@ public class AmiDistributionConfigurationJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     amiDistributionConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("targetAccountIds", targetDepth)) {
+                    context.nextToken();
+                    amiDistributionConfiguration.setTargetAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("amiTags", targetDepth)) {
                     context.nextToken();
                     amiDistributionConfiguration.setAmiTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context

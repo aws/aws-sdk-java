@@ -27,6 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AwsCloudFrontDistributionDetailsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CACHEBEHAVIORS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CacheBehaviors").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTCACHEBEHAVIOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultCacheBehavior").build();
+    private static final MarshallingInfo<String> DEFAULTROOTOBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRootObject").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
     private static final MarshallingInfo<String> ETAG_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -37,6 +43,8 @@ public class AwsCloudFrontDistributionDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Logging").build();
     private static final MarshallingInfo<StructuredPojo> ORIGINS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Origins").build();
+    private static final MarshallingInfo<StructuredPojo> ORIGINGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginGroups").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> WEBACLID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,11 +66,15 @@ public class AwsCloudFrontDistributionDetailsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getCacheBehaviors(), CACHEBEHAVIORS_BINDING);
+            protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getDefaultCacheBehavior(), DEFAULTCACHEBEHAVIOR_BINDING);
+            protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getDefaultRootObject(), DEFAULTROOTOBJECT_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getETag(), ETAG_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getLogging(), LOGGING_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getOrigins(), ORIGINS_BINDING);
+            protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getOriginGroups(), ORIGINGROUPS_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(awsCloudFrontDistributionDetails.getWebAclId(), WEBACLID_BINDING);
         } catch (Exception e) {

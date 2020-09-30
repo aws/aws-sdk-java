@@ -64,6 +64,10 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                     context.nextToken();
                     resource.setRegion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ResourceRole", targetDepth)) {
+                    context.nextToken();
+                    resource.setResourceRole(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
                     resource.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))

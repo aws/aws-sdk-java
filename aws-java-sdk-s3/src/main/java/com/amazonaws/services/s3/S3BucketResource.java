@@ -53,6 +53,11 @@ public final class S3BucketResource implements S3Resource {
         return S3_RESOURCE_TYPE.toString();
     }
 
+    @Override
+    public S3Resource getParentS3Resource() {
+        return null;
+    }
+
     /**
      * Gets the AWS partition name associated with this bucket (e.g.: 'aws').
      * @return the name of the partition.

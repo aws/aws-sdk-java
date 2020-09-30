@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.872</version>
+    <version>1.11.873</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-s3outposts</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-timestreamquery</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1520,6 +1526,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>Amazon S3 on Outposts</title>
+                                  <packages>com.amazonaws.services.s3outposts*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Timestream Query</title>
                                   <packages>com.amazonaws.services.timestreamquery*</packages>

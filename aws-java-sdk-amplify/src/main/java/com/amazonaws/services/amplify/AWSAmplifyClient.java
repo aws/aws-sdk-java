@@ -193,6 +193,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new CreateAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApp");
@@ -258,6 +259,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                         .beforeMarshalling(createBackendEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackendEnvironment");
@@ -325,6 +327,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new CreateBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBranch");
@@ -388,6 +391,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new CreateDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeployment");
@@ -455,6 +459,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                         .beforeMarshalling(createDomainAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomainAssociation");
@@ -522,6 +527,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new CreateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebhook");
@@ -586,6 +592,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new DeleteAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApp");
@@ -651,6 +658,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                         .beforeMarshalling(deleteBackendEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackendEnvironment");
@@ -716,6 +724,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new DeleteBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBranch");
@@ -781,6 +790,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                         .beforeMarshalling(deleteDomainAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomainAssociation");
@@ -846,6 +856,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new DeleteJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJob");
@@ -910,6 +921,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new DeleteWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebhook");
@@ -972,6 +984,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GenerateAccessLogsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateAccessLogsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateAccessLogs");
@@ -1034,6 +1047,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApp");
@@ -1098,6 +1112,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetArtifactUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getArtifactUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetArtifactUrl");
@@ -1160,6 +1175,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetBackendEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackendEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackendEnvironment");
@@ -1223,6 +1239,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBranch");
@@ -1285,6 +1302,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetDomainAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDomainAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainAssociation");
@@ -1349,6 +1367,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJob");
@@ -1413,6 +1432,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new GetWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebhook");
@@ -1473,6 +1493,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListAppsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApps");
@@ -1535,6 +1556,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListArtifacts");
@@ -1596,6 +1618,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                         .beforeMarshalling(listBackendEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackendEnvironments");
@@ -1657,6 +1680,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListBranchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBranchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBranches");
@@ -1717,6 +1741,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListDomainAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainAssociations");
@@ -1780,6 +1805,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobs");
@@ -1840,6 +1866,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1902,6 +1929,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new ListWebhooksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebhooksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebhooks");
@@ -1966,6 +1994,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new StartDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeployment");
@@ -2030,6 +2059,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new StartJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartJob");
@@ -2094,6 +2124,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new StopJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopJob");
@@ -2154,6 +2185,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2214,6 +2246,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2276,6 +2309,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new UpdateAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApp");
@@ -2340,6 +2374,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new UpdateBranchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBranchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBranch");
@@ -2405,6 +2440,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                         .beforeMarshalling(updateDomainAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainAssociation");
@@ -2470,6 +2506,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                 request = new UpdateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Amplify");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebhook");

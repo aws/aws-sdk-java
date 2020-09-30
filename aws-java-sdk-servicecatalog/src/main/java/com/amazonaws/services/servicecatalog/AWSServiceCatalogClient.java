@@ -346,6 +346,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new AcceptPortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptPortfolioShare");
@@ -409,6 +410,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associateBudgetWithResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateBudgetWithResource");
@@ -472,6 +474,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associatePrincipalWithPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePrincipalWithPortfolio");
@@ -537,6 +540,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associateProductWithPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateProductWithPortfolio");
@@ -602,6 +606,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associateServiceActionWithProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateServiceActionWithProvisioningArtifact");
@@ -673,6 +678,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(associateTagOptionWithResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTagOptionWithResource");
@@ -733,6 +739,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(batchAssociateServiceActionWithProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchAssociateServiceActionWithProvisioningArtifact");
@@ -793,6 +800,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(batchDisassociateServiceActionFromProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisassociateServiceActionFromProvisioningArtifact");
@@ -859,6 +867,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CopyProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(copyProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyProduct");
@@ -924,6 +933,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConstraint");
@@ -989,6 +999,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreatePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePortfolio");
@@ -1065,6 +1076,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreatePortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePortfolioShare");
@@ -1130,6 +1142,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProduct");
@@ -1200,6 +1213,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createProvisionedProductPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisionedProductPlan");
@@ -1265,6 +1279,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProvisioningArtifact");
@@ -1324,6 +1339,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateServiceActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createServiceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateServiceAction");
@@ -1386,6 +1402,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new CreateTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTagOption");
@@ -1446,6 +1463,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeleteConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConstraint");
@@ -1516,6 +1534,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeletePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePortfolio");
@@ -1582,6 +1601,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeletePortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePortfolioShare");
@@ -1651,6 +1671,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeleteProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProduct");
@@ -1709,6 +1730,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(deleteProvisionedProductPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisionedProductPlan");
@@ -1774,6 +1796,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(deleteProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProvisioningArtifact");
@@ -1832,6 +1855,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeleteServiceActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServiceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteServiceAction");
@@ -1896,6 +1920,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DeleteTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTagOption");
@@ -1951,6 +1976,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConstraint");
@@ -2007,6 +2033,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeCopyProductStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCopyProductStatus");
@@ -2066,6 +2093,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePortfolio");
@@ -2127,6 +2155,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describePortfolioShareStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePortfolioShareStatus");
@@ -2185,6 +2214,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProduct");
@@ -2242,6 +2272,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeProductAsAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductAsAdminRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProductAsAdmin");
@@ -2300,6 +2331,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeProductViewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductViewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProductView");
@@ -2361,6 +2393,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisionedProduct");
@@ -2420,6 +2453,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisionedProductPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisionedProductPlan");
@@ -2479,6 +2513,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisioningArtifact");
@@ -2546,6 +2581,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeProvisioningParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProvisioningParameters");
@@ -2614,6 +2650,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecord");
@@ -2669,6 +2706,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeServiceActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServiceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServiceAction");
@@ -2731,6 +2769,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeServiceActionExecutionParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServiceActionExecutionParameters");
@@ -2791,6 +2830,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new DescribeTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTagOption");
@@ -2861,6 +2901,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disableAWSOrganizationsAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAWSOrganizationsAccess");
@@ -2918,6 +2959,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociateBudgetFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateBudgetFromResource");
@@ -2979,6 +3021,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociatePrincipalFromPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePrincipalFromPortfolio");
@@ -3044,6 +3087,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociateProductFromPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateProductFromPortfolio");
@@ -3104,6 +3148,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociateServiceActionFromProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateServiceActionFromProvisioningArtifact");
@@ -3166,6 +3211,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(disassociateTagOptionFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTagOptionFromResource");
@@ -3237,6 +3283,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(enableAWSOrganizationsAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAWSOrganizationsAccess");
@@ -3299,6 +3346,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(executeProvisionedProductPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteProvisionedProductPlan");
@@ -3363,6 +3411,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(executeProvisionedProductServiceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteProvisionedProductServiceAction");
@@ -3424,6 +3473,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(getAWSOrganizationsAccessStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAWSOrganizationsAccessStatus");
@@ -3483,6 +3533,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listAcceptedPortfolioSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAcceptedPortfolioShares");
@@ -3541,6 +3592,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListBudgetsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBudgetsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBudgetsForResource");
@@ -3600,6 +3652,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listConstraintsForPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConstraintsForPortfolio");
@@ -3659,6 +3712,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListLaunchPathsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLaunchPathsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLaunchPaths");
@@ -3724,6 +3778,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listOrganizationPortfolioAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationPortfolioAccess");
@@ -3786,6 +3841,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListPortfolioAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfolioAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortfolioAccess");
@@ -3841,6 +3897,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListPortfoliosRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPortfoliosRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortfolios");
@@ -3899,6 +3956,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listPortfoliosForProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPortfoliosForProduct");
@@ -3958,6 +4016,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listPrincipalsForPortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrincipalsForPortfolio");
@@ -4017,6 +4076,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listProvisionedProductPlansRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisionedProductPlans");
@@ -4076,6 +4136,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listProvisioningArtifactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisioningArtifacts");
@@ -4137,6 +4198,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listProvisioningArtifactsForServiceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProvisioningArtifactsForServiceAction");
@@ -4193,6 +4255,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListRecordHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecordHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecordHistory");
@@ -4255,6 +4318,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listResourcesForTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourcesForTagOption");
@@ -4311,6 +4375,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListServiceActionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServiceActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceActions");
@@ -4372,6 +4437,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listServiceActionsForProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServiceActionsForProvisioningArtifact");
@@ -4435,6 +4501,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(listStackInstancesForProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstancesForProvisionedProduct");
@@ -4495,6 +4562,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ListTagOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagOptions");
@@ -4564,6 +4632,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new ProvisionProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvisionProduct");
@@ -4619,6 +4688,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new RejectPortfolioShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectPortfolioShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectPortfolioShare");
@@ -4678,6 +4748,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(scanProvisionedProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScanProvisionedProducts");
@@ -4734,6 +4805,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new SearchProductsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProducts");
@@ -4791,6 +4863,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new SearchProductsAsAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProductsAsAdminRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProductsAsAdmin");
@@ -4848,6 +4921,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(searchProvisionedProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProvisionedProducts");
@@ -4911,6 +4985,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(terminateProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateProvisionedProduct");
@@ -4969,6 +5044,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateConstraintRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConstraintRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConstraint");
@@ -5036,6 +5112,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdatePortfolioRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePortfolioRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePortfolio");
@@ -5097,6 +5174,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateProductRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProduct");
@@ -5163,6 +5241,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateProvisionedProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProvisionedProduct");
@@ -5227,6 +5306,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateProvisionedProductPropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProvisionedProductProperties");
@@ -5289,6 +5369,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(updateProvisioningArtifactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProvisioningArtifact");
@@ -5347,6 +5428,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateServiceActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServiceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceAction");
@@ -5410,6 +5492,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                 request = new UpdateTagOptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTagOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTagOption");

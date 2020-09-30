@@ -33,9 +33,8 @@ public class ListAccessPointsResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<AccessPoint> accessPointList;
     /**
      * <p>
-     * If the specified bucket has more access points than can be returned in one call to this API, then this field
-     * contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access
-     * points.
+     * If the specified bucket has more access points than can be returned in one call to this API, this field contains
+     * a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.
      * </p>
      */
     private String nextToken;
@@ -120,15 +119,14 @@ public class ListAccessPointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If the specified bucket has more access points than can be returned in one call to this API, then this field
-     * contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access
-     * points.
+     * If the specified bucket has more access points than can be returned in one call to this API, this field contains
+     * a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.
      * </p>
      * 
      * @param nextToken
-     *        If the specified bucket has more access points than can be returned in one call to this API, then this
-     *        field contains a continuation token that you can provide in subsequent calls to this API to retrieve
-     *        additional access points.
+     *        If the specified bucket has more access points than can be returned in one call to this API, this field
+     *        contains a continuation token that you can provide in subsequent calls to this API to retrieve additional
+     *        access points.
      */
 
     public void setNextToken(String nextToken) {
@@ -137,14 +135,13 @@ public class ListAccessPointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If the specified bucket has more access points than can be returned in one call to this API, then this field
-     * contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access
-     * points.
+     * If the specified bucket has more access points than can be returned in one call to this API, this field contains
+     * a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.
      * </p>
      * 
-     * @return If the specified bucket has more access points than can be returned in one call to this API, then this
-     *         field contains a continuation token that you can provide in subsequent calls to this API to retrieve
-     *         additional access points.
+     * @return If the specified bucket has more access points than can be returned in one call to this API, this field
+     *         contains a continuation token that you can provide in subsequent calls to this API to retrieve additional
+     *         access points.
      */
 
     public String getNextToken() {
@@ -153,15 +150,14 @@ public class ListAccessPointsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * If the specified bucket has more access points than can be returned in one call to this API, then this field
-     * contains a continuation token that you can provide in subsequent calls to this API to retrieve additional access
-     * points.
+     * If the specified bucket has more access points than can be returned in one call to this API, this field contains
+     * a continuation token that you can provide in subsequent calls to this API to retrieve additional access points.
      * </p>
      * 
      * @param nextToken
-     *        If the specified bucket has more access points than can be returned in one call to this API, then this
-     *        field contains a continuation token that you can provide in subsequent calls to this API to retrieve
-     *        additional access points.
+     *        If the specified bucket has more access points than can be returned in one call to this API, this field
+     *        contains a continuation token that you can provide in subsequent calls to this API to retrieve additional
+     *        access points.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

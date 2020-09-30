@@ -2970,7 +2970,7 @@ public interface AWSIot {
     /**
      * <p>
      * Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time
-     * period. (Findings are retained for 180 days.)
+     * period. (Findings are retained for 90 days.)
      * </p>
      * 
      * @param listAuditFindingsRequest
@@ -4284,6 +4284,8 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
      * @sample AWSIot.SetV2LoggingLevel
      */
     SetV2LoggingLevelResult setV2LoggingLevel(SetV2LoggingLevelRequest setV2LoggingLevelRequest);

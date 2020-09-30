@@ -335,6 +335,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(acceptDirectConnectGatewayAssociationProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptDirectConnectGatewayAssociationProposal");
@@ -408,6 +409,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(allocateConnectionOnInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateConnectionOnInterconnect");
@@ -481,6 +483,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(allocateHostedConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateHostedConnection");
@@ -550,6 +553,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(allocatePrivateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocatePrivateVirtualInterface");
@@ -626,6 +630,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(allocatePublicVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocatePublicVirtualInterface");
@@ -699,6 +704,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(allocateTransitVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AllocateTransitVirtualInterface");
@@ -772,6 +778,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(associateConnectionWithLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateConnectionWithLag");
@@ -839,6 +846,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(associateHostedConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateHostedConnection");
@@ -909,6 +917,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(associateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateVirtualInterface");
@@ -971,6 +980,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new ConfirmConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmConnection");
@@ -1033,6 +1043,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(confirmPrivateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmPrivateVirtualInterface");
@@ -1096,6 +1107,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(confirmPublicVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmPublicVirtualInterface");
@@ -1159,6 +1171,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(confirmTransitVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmTransitVirtualInterface");
@@ -1233,6 +1246,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new CreateBGPPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBGPPeerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBGPPeer");
@@ -1306,6 +1320,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new CreateConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnection");
@@ -1368,6 +1383,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createDirectConnectGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectConnectGateway");
@@ -1430,6 +1446,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createDirectConnectGatewayAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectConnectGatewayAssociation");
@@ -1497,6 +1514,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createDirectConnectGatewayAssociationProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectConnectGatewayAssociationProposal");
@@ -1583,6 +1601,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new CreateInterconnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInterconnect");
@@ -1606,24 +1625,25 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
-     * Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the
-     * customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link
-     * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single
-     * interface.
+     * Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections
+     * between the customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses
+     * the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a
+     * single interface.
      * </p>
      * <p>
-     * All connections in a LAG must use the same bandwidth and must terminate at the same AWS Direct Connect endpoint.
+     * All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same AWS
+     * Direct Connect endpoint.
      * </p>
      * <p>
-     * You can have up to 10 connections per LAG. Regardless of this limit, if you request more connections for the LAG
-     * than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
+     * You can have up to 10 dedicated connections per LAG. Regardless of this limit, if you request more connections
+     * for the LAG than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
      * </p>
      * <p>
-     * You can specify an existing physical connection or interconnect to include in the LAG (which counts towards the
-     * total number of connections). Doing so interrupts the current physical connection or hosted connections, and
+     * You can specify an existing physical dedicated connection or interconnect to include in the LAG (which counts
+     * towards the total number of connections). Doing so interrupts the current physical dedicated connection, and
      * re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to
-     * which the connection terminates. Any virtual interfaces associated with the connection are automatically
-     * disassociated and re-associated with the LAG. The connection ID does not change.
+     * which the dedicated connection terminates. Any virtual interfaces associated with the dedicated connection are
+     * automatically disassociated and re-associated with the LAG. The connection ID does not change.
      * </p>
      * <p>
      * If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically
@@ -1666,6 +1686,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new CreateLagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLag");
@@ -1739,6 +1760,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createPrivateVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePrivateVirtualInterface");
@@ -1808,6 +1830,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createPublicVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePublicVirtualInterface");
@@ -1887,6 +1910,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createTransitVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransitVirtualInterface");
@@ -1948,6 +1972,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DeleteBGPPeerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBGPPeerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBGPPeer");
@@ -2010,6 +2035,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DeleteConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnection");
@@ -2070,6 +2096,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(deleteDirectConnectGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectConnectGateway");
@@ -2136,6 +2163,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(deleteDirectConnectGatewayAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectConnectGatewayAssociation");
@@ -2199,6 +2227,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(deleteDirectConnectGatewayAssociationProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectConnectGatewayAssociationProposal");
@@ -2262,6 +2291,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DeleteInterconnectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInterconnect");
@@ -2320,6 +2350,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DeleteLagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLag");
@@ -2377,6 +2408,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DeleteVirtualInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualInterface");
@@ -2445,6 +2477,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeConnectionLoaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionLoaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectionLoa");
@@ -2503,6 +2536,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeConnectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnections");
@@ -2576,6 +2610,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeConnectionsOnInterconnectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectionsOnInterconnect");
@@ -2639,6 +2674,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeDirectConnectGatewayAssociationProposalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectConnectGatewayAssociationProposals");
@@ -2705,6 +2741,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeDirectConnectGatewayAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectConnectGatewayAssociations");
@@ -2770,6 +2807,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeDirectConnectGatewayAttachmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectConnectGatewayAttachments");
@@ -2830,6 +2868,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeDirectConnectGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectConnectGateways");
@@ -2895,6 +2934,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeHostedConnectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHostedConnections");
@@ -2964,6 +3004,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeInterconnectLoaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInterconnectLoa");
@@ -3022,6 +3063,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeInterconnectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInterconnectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInterconnects");
@@ -3085,6 +3127,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeLagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLags");
@@ -3148,6 +3191,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeLoaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLoaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoa");
@@ -3206,6 +3250,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeLocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLocations");
@@ -3268,6 +3313,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
@@ -3329,6 +3375,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeVirtualGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVirtualGateways");
@@ -3400,6 +3447,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeVirtualInterfacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVirtualInterfaces");
@@ -3473,6 +3521,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(disassociateConnectionFromLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateConnectionFromLag");
@@ -3533,6 +3582,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(listVirtualInterfaceTestHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualInterfaceTestHistory");
@@ -3605,6 +3655,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new StartBgpFailoverTestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBgpFailoverTestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBgpFailoverTest");
@@ -3662,6 +3713,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new StopBgpFailoverTestRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBgpFailoverTestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBgpFailoverTest");
@@ -3728,6 +3780,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3785,6 +3838,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3848,6 +3902,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateDirectConnectGatewayAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDirectConnectGatewayAssociation");
@@ -3927,6 +3982,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                 request = new UpdateLagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLagRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLag");
@@ -3993,6 +4049,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateVirtualInterfaceAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Direct Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVirtualInterfaceAttributes");

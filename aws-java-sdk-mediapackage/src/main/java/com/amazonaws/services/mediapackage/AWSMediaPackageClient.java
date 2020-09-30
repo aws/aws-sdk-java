@@ -184,6 +184,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new CreateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
@@ -248,6 +249,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new CreateHarvestJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createHarvestJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHarvestJob");
@@ -312,6 +314,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new CreateOriginEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOriginEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOriginEndpoint");
@@ -375,6 +378,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
@@ -438,6 +442,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteOriginEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOriginEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOriginEndpoint");
@@ -501,6 +506,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new DescribeChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
@@ -564,6 +570,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new DescribeHarvestJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHarvestJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHarvestJob");
@@ -627,6 +634,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new DescribeOriginEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOriginEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOriginEndpoint");
@@ -691,6 +699,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new ListChannelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
@@ -754,6 +763,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new ListHarvestJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHarvestJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHarvestJobs");
@@ -817,6 +827,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new ListOriginEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOriginEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginEndpoints");
@@ -866,6 +877,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -932,6 +944,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(rotateChannelCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateChannelCredentials");
@@ -998,6 +1011,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(rotateIngestEndpointCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RotateIngestEndpointCredentials");
@@ -1048,6 +1062,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1097,6 +1112,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1161,6 +1177,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
@@ -1225,6 +1242,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateOriginEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateOriginEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOriginEndpoint");

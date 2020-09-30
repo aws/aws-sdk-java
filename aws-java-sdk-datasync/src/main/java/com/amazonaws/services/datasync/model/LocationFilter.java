@@ -18,6 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>. For example, to
+ * retrieve all your Amazon S3 locations, you can use <code>ListLocations</code> with filter name
+ * <code>LocationType S3</code> and <code>Operator Equals</code>.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/LocationFilter" target="_top">AWS API
  *      Documentation</a>
@@ -25,14 +30,36 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     * example, <code>LocationType</code> for <code>ListLocations</code>).
+     * </p>
+     */
     private String name;
-
+    /**
+     * <p>
+     * The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
+     * </p>
+     */
     private java.util.List<String> values;
-
+    /**
+     * <p>
+     * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
+     * For more about API filtering operators, see <a>query-resources</a>.
+     * </p>
+     */
     private String operator;
 
     /**
+     * <p>
+     * The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     * example, <code>LocationType</code> for <code>ListLocations</code>).
+     * </p>
+     * 
      * @param name
+     *        The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     *        example, <code>LocationType</code> for <code>ListLocations</code>).
      * @see LocationFilterName
      */
 
@@ -41,7 +68,13 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     * example, <code>LocationType</code> for <code>ListLocations</code>).
+     * </p>
+     * 
+     * @return The name of the filter being used. Each API call supports a list of filters that are available for it
+     *         (for example, <code>LocationType</code> for <code>ListLocations</code>).
      * @see LocationFilterName
      */
 
@@ -50,7 +83,14 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     * example, <code>LocationType</code> for <code>ListLocations</code>).
+     * </p>
+     * 
      * @param name
+     *        The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     *        example, <code>LocationType</code> for <code>ListLocations</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationFilterName
      */
@@ -61,7 +101,14 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     * example, <code>LocationType</code> for <code>ListLocations</code>).
+     * </p>
+     * 
      * @param name
+     *        The name of the filter being used. Each API call supports a list of filters that are available for it (for
+     *        example, <code>LocationType</code> for <code>ListLocations</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationFilterName
      */
@@ -72,7 +119,11 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
+     * </p>
+     * 
+     * @return The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
      */
 
     public java.util.List<String> getValues() {
@@ -80,7 +131,12 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
+     * </p>
+     * 
      * @param values
+     *        The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -94,12 +150,16 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param values
+     *        The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +174,12 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
+     * </p>
+     * 
      * @param values
+     *        The values that you want to filter for. For example, you might want to display only Amazon S3 locations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,7 +189,14 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
+     * For more about API filtering operators, see <a>query-resources</a>.
+     * </p>
+     * 
      * @param operator
+     *        The operator that is used to compare filter values (for example, <code>Equals</code> or
+     *        <code>Contains</code>). For more about API filtering operators, see <a>query-resources</a>.
      * @see Operator
      */
 
@@ -133,7 +205,13 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
+     * For more about API filtering operators, see <a>query-resources</a>.
+     * </p>
+     * 
+     * @return The operator that is used to compare filter values (for example, <code>Equals</code> or
+     *         <code>Contains</code>). For more about API filtering operators, see <a>query-resources</a>.
      * @see Operator
      */
 
@@ -142,7 +220,14 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
+     * For more about API filtering operators, see <a>query-resources</a>.
+     * </p>
+     * 
      * @param operator
+     *        The operator that is used to compare filter values (for example, <code>Equals</code> or
+     *        <code>Contains</code>). For more about API filtering operators, see <a>query-resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */
@@ -153,7 +238,14 @@ public class LocationFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The operator that is used to compare filter values (for example, <code>Equals</code> or <code>Contains</code>).
+     * For more about API filtering operators, see <a>query-resources</a>.
+     * </p>
+     * 
      * @param operator
+     *        The operator that is used to compare filter values (for example, <code>Equals</code> or
+     *        <code>Contains</code>). For more about API filtering operators, see <a>query-resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */

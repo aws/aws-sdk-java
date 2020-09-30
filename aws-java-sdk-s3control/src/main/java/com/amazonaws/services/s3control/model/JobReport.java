@@ -47,7 +47,7 @@ public class JobReport implements Serializable, Cloneable {
     /**
      * <p>
      * An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3
-     * will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     * stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      * </p>
      */
     private String prefix;
@@ -212,12 +212,12 @@ public class JobReport implements Serializable, Cloneable {
     /**
      * <p>
      * An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3
-     * will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     * stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      * </p>
      * 
      * @param prefix
      *        An optional prefix to describe where in the specified bucket the job-completion report will be stored.
-     *        Amazon S3 will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     *        Amazon S3 stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      */
 
     public void setPrefix(String prefix) {
@@ -227,11 +227,11 @@ public class JobReport implements Serializable, Cloneable {
     /**
      * <p>
      * An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3
-     * will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     * stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      * </p>
      * 
      * @return An optional prefix to describe where in the specified bucket the job-completion report will be stored.
-     *         Amazon S3 will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     *         Amazon S3 stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      */
 
     public String getPrefix() {
@@ -241,12 +241,12 @@ public class JobReport implements Serializable, Cloneable {
     /**
      * <p>
      * An optional prefix to describe where in the specified bucket the job-completion report will be stored. Amazon S3
-     * will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     * stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      * </p>
      * 
      * @param prefix
      *        An optional prefix to describe where in the specified bucket the job-completion report will be stored.
-     *        Amazon S3 will store the job-completion report at &lt;prefix&gt;/job-&lt;job-id&gt;/report.json.
+     *        Amazon S3 stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -301,6 +301,8 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private ManagedScalingPolicy managedScalingPolicy;
 
+    private com.amazonaws.internal.SdkInternalList<PlacementGroupConfig> placementGroupConfigs;
+
     /**
      * Default constructor for RunJobFlowRequest object. Callers should use the setter or fluent setter (with...)
      * methods to initialize the object after creating it.
@@ -2582,6 +2584,61 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<PlacementGroupConfig> getPlacementGroupConfigs() {
+        if (placementGroupConfigs == null) {
+            placementGroupConfigs = new com.amazonaws.internal.SdkInternalList<PlacementGroupConfig>();
+        }
+        return placementGroupConfigs;
+    }
+
+    /**
+     * @param placementGroupConfigs
+     */
+
+    public void setPlacementGroupConfigs(java.util.Collection<PlacementGroupConfig> placementGroupConfigs) {
+        if (placementGroupConfigs == null) {
+            this.placementGroupConfigs = null;
+            return;
+        }
+
+        this.placementGroupConfigs = new com.amazonaws.internal.SdkInternalList<PlacementGroupConfig>(placementGroupConfigs);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlacementGroupConfigs(java.util.Collection)} or
+     * {@link #withPlacementGroupConfigs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param placementGroupConfigs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withPlacementGroupConfigs(PlacementGroupConfig... placementGroupConfigs) {
+        if (this.placementGroupConfigs == null) {
+            setPlacementGroupConfigs(new com.amazonaws.internal.SdkInternalList<PlacementGroupConfig>(placementGroupConfigs.length));
+        }
+        for (PlacementGroupConfig ele : placementGroupConfigs) {
+            this.placementGroupConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param placementGroupConfigs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunJobFlowRequest withPlacementGroupConfigs(java.util.Collection<PlacementGroupConfig> placementGroupConfigs) {
+        setPlacementGroupConfigs(placementGroupConfigs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2644,7 +2701,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getStepConcurrencyLevel() != null)
             sb.append("StepConcurrencyLevel: ").append(getStepConcurrencyLevel()).append(",");
         if (getManagedScalingPolicy() != null)
-            sb.append("ManagedScalingPolicy: ").append(getManagedScalingPolicy());
+            sb.append("ManagedScalingPolicy: ").append(getManagedScalingPolicy()).append(",");
+        if (getPlacementGroupConfigs() != null)
+            sb.append("PlacementGroupConfigs: ").append(getPlacementGroupConfigs());
         sb.append("}");
         return sb.toString();
     }
@@ -2763,6 +2822,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getManagedScalingPolicy() != null && other.getManagedScalingPolicy().equals(this.getManagedScalingPolicy()) == false)
             return false;
+        if (other.getPlacementGroupConfigs() == null ^ this.getPlacementGroupConfigs() == null)
+            return false;
+        if (other.getPlacementGroupConfigs() != null && other.getPlacementGroupConfigs().equals(this.getPlacementGroupConfigs()) == false)
+            return false;
         return true;
     }
 
@@ -2797,6 +2860,7 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getKerberosAttributes() == null) ? 0 : getKerberosAttributes().hashCode());
         hashCode = prime * hashCode + ((getStepConcurrencyLevel() == null) ? 0 : getStepConcurrencyLevel().hashCode());
         hashCode = prime * hashCode + ((getManagedScalingPolicy() == null) ? 0 : getManagedScalingPolicy().hashCode());
+        hashCode = prime * hashCode + ((getPlacementGroupConfigs() == null) ? 0 : getPlacementGroupConfigs().hashCode());
         return hashCode;
     }
 

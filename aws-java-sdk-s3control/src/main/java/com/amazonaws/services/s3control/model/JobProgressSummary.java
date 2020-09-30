@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and the
+ * Describes the total number of tasks that the specified job has started, the number of tasks that succeeded, and the
  * number of tasks that failed.
  * </p>
  * 

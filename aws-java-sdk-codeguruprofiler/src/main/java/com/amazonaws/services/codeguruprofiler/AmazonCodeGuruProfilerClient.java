@@ -196,6 +196,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(addNotificationChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddNotificationChannels");
@@ -260,6 +261,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(batchGetFrameMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetFrameMetricData");
@@ -325,6 +327,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new ConfigureAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(configureAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfigureAgent");
@@ -392,6 +395,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new CreateProfilingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProfilingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProfilingGroup");
@@ -454,6 +458,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new DeleteProfilingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProfilingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProfilingGroup");
@@ -517,6 +522,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new DescribeProfilingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProfilingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProfilingGroup");
@@ -583,6 +589,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(getFindingsReportAccountSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingsReportAccountSummary");
@@ -647,6 +654,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(getNotificationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNotificationConfiguration");
@@ -708,6 +716,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
@@ -775,6 +784,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new GetProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProfile");
@@ -841,6 +851,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new GetRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRecommendationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecommendations");
@@ -903,6 +914,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new ListFindingsReportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsReportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFindingsReports");
@@ -966,6 +978,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new ListProfileTimesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProfileTimesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProfileTimes");
@@ -1026,6 +1039,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new ListProfilingGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProfilingGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProfilingGroups");
@@ -1085,6 +1099,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1150,6 +1165,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new PostAgentProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(postAgentProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PostAgentProfile");
@@ -1221,6 +1237,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new PutPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermission");
@@ -1284,6 +1301,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(removeNotificationChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveNotificationChannel");
@@ -1352,6 +1370,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new RemovePermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -1414,6 +1433,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new SubmitFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitFeedback");
@@ -1473,6 +1493,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1532,6 +1553,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1597,6 +1619,7 @@ public class AmazonCodeGuruProfilerClient extends AmazonWebServiceClient impleme
                 request = new UpdateProfilingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProfilingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuruProfiler");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProfilingGroup");

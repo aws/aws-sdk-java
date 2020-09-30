@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.s3.internal.S3OutpostResource;
 
 /**
  * An enum representing the types of resources supported by S3. Each resource type below will have a
@@ -33,7 +34,12 @@ public enum S3ResourceType {
     /**
      * A specific S3 object (bucket/access-point and key). Implemented by {@link S3ObjectResource}.
      */
-    OBJECT("object");
+    OBJECT("object"),
+
+    /**
+     * An outpost access point. Implemented by {@link S3OutpostResource}.
+     */
+    OUTPOST("outpost");
 
     private final String value;
 

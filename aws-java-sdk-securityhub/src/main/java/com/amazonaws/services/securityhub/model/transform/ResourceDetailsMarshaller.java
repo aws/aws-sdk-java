@@ -63,8 +63,26 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamUser").build();
     private static final MarshallingInfo<StructuredPojo> AWSIAMPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> AWSAPIGATEWAYV2STAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsApiGatewayV2Stage").build();
+    private static final MarshallingInfo<StructuredPojo> AWSAPIGATEWAYV2API_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsApiGatewayV2Api").build();
     private static final MarshallingInfo<StructuredPojo> AWSDYNAMODBTABLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsDynamoDbTable").build();
+    private static final MarshallingInfo<StructuredPojo> AWSAPIGATEWAYSTAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsApiGatewayStage").build();
+    private static final MarshallingInfo<StructuredPojo> AWSAPIGATEWAYRESTAPI_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsApiGatewayRestApi").build();
+    private static final MarshallingInfo<StructuredPojo> AWSCLOUDTRAILTRAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCloudTrailTrail").build();
+    private static final MarshallingInfo<StructuredPojo> AWSCERTIFICATEMANAGERCERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsCertificateManagerCertificate").build();
+    private static final MarshallingInfo<StructuredPojo> AWSREDSHIFTCLUSTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsRedshiftCluster").build();
+    private static final MarshallingInfo<StructuredPojo> AWSELBLOADBALANCER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsElbLoadBalancer").build();
+    private static final MarshallingInfo<StructuredPojo> AWSIAMGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamGroup").build();
     private static final MarshallingInfo<StructuredPojo> AWSIAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsIamRole").build();
     private static final MarshallingInfo<StructuredPojo> AWSKMSKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -125,7 +143,16 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsIamAccessKey(), AWSIAMACCESSKEY_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamUser(), AWSIAMUSER_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamPolicy(), AWSIAMPOLICY_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsApiGatewayV2Stage(), AWSAPIGATEWAYV2STAGE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsApiGatewayV2Api(), AWSAPIGATEWAYV2API_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsDynamoDbTable(), AWSDYNAMODBTABLE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsApiGatewayStage(), AWSAPIGATEWAYSTAGE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsApiGatewayRestApi(), AWSAPIGATEWAYRESTAPI_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsCloudTrailTrail(), AWSCLOUDTRAILTRAIL_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsCertificateManagerCertificate(), AWSCERTIFICATEMANAGERCERTIFICATE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsRedshiftCluster(), AWSREDSHIFTCLUSTER_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsElbLoadBalancer(), AWSELBLOADBALANCER_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsIamGroup(), AWSIAMGROUP_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsIamRole(), AWSIAMROLE_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsKmsKey(), AWSKMSKEY_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsLambdaFunction(), AWSLAMBDAFUNCTION_BINDING);

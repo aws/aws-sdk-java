@@ -56,6 +56,10 @@ public class WriteApplicationSettingsRequestJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     writeApplicationSettingsRequest.setCloudWatchMetricsEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EventTaggingEnabled", targetDepth)) {
+                    context.nextToken();
+                    writeApplicationSettingsRequest.setEventTaggingEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("Limits", targetDepth)) {
                     context.nextToken();
                     writeApplicationSettingsRequest.setLimits(CampaignLimitsJsonUnmarshaller.getInstance().unmarshall(context));

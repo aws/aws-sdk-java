@@ -55,8 +55,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -125,6 +126,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
      * </p>
      * </li>
      * </ul>
@@ -207,6 +213,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
      * </p>
      * </li>
      * </ul>
@@ -355,8 +366,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -427,6 +439,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scaleOutCooldown
@@ -434,9 +451,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <p>
      *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
      *        out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *        starts to calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity
-     *        added by the initiating scale-out activity is calculated as part of the desired capacity for the next
-     *        scale-out activity.
+     *        starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless
+     *        either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in
+     *        effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
+     *        capacity for the next scale-out activity.
      *        </p>
      *        <p>
      *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -507,6 +525,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        Amazon Keyspaces tables
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster storage
+     *        </p>
+     *        </li>
      */
 
     public void setScaleOutCooldown(Integer scaleOutCooldown) {
@@ -520,8 +543,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -592,15 +616,21 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
      *         <p>
      *         With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
      *         out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *         starts to calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity
-     *         added by the initiating scale-out activity is calculated as part of the desired capacity for the next
-     *         scale-out activity.
+     *         starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again
+     *         unless either a larger scale out is triggered or the cooldown period ends. While the cooldown period is
+     *         in effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
+     *         capacity for the next scale-out activity.
      *         </p>
      *         <p>
      *         Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -671,6 +701,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         Amazon Keyspaces tables
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK cluster storage
+     *         </p>
+     *         </li>
      */
 
     public Integer getScaleOutCooldown() {
@@ -684,8 +719,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -756,6 +792,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scaleOutCooldown
@@ -763,9 +804,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <p>
      *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
      *        out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *        starts to calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity
-     *        added by the initiating scale-out activity is calculated as part of the desired capacity for the next
-     *        scale-out activity.
+     *        starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless
+     *        either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in
+     *        effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
+     *        capacity for the next scale-out activity.
      *        </p>
      *        <p>
      *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -834,6 +876,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -923,6 +970,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scaleInCooldown
@@ -1002,6 +1054,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster storage
      *        </p>
      *        </li>
      */
@@ -1089,6 +1146,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The amount of time, in seconds, after a scale-in activity completes before another scale-in activity can
@@ -1167,6 +1229,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <li>
      *         <p>
      *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK cluster storage
      *         </p>
      *         </li>
      */
@@ -1254,6 +1321,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK cluster storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scaleInCooldown
@@ -1333,6 +1405,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK cluster storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

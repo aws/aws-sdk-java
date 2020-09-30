@@ -227,6 +227,7 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
                 request = new DeleteHumanLoopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteHumanLoopRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker A2I Runtime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHumanLoop");
@@ -288,6 +289,7 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
                 request = new DescribeHumanLoopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHumanLoopRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker A2I Runtime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHumanLoop");
@@ -350,6 +352,7 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
                 request = new ListHumanLoopsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHumanLoopsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker A2I Runtime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHumanLoops");
@@ -414,6 +417,7 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
                 request = new StartHumanLoopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startHumanLoopRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker A2I Runtime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartHumanLoop");
@@ -475,6 +479,7 @@ public class AmazonAugmentedAIRuntimeClient extends AmazonWebServiceClient imple
                 request = new StopHumanLoopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopHumanLoopRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker A2I Runtime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopHumanLoop");

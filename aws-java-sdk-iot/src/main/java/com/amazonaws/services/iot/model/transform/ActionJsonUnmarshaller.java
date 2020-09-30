@@ -120,6 +120,10 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                     context.nextToken();
                     action.setStepFunctions(StepFunctionsActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("timestream", targetDepth)) {
+                    context.nextToken();
+                    action.setTimestream(TimestreamActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("http", targetDepth)) {
                     context.nextToken();
                     action.setHttp(HttpActionJsonUnmarshaller.getInstance().unmarshall(context));

@@ -200,6 +200,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new CreateDetectorModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDetectorModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDetectorModel");
@@ -263,6 +264,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new CreateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInput");
@@ -328,6 +330,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new DeleteDetectorModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDetectorModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDetectorModel");
@@ -393,6 +396,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new DeleteInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInput");
@@ -457,6 +461,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new DescribeDetectorModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDetectorModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDetectorModel");
@@ -521,6 +526,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new DescribeInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInput");
@@ -586,6 +592,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new DescribeLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLoggingOptions");
@@ -652,6 +659,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                         .beforeMarshalling(listDetectorModelVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDetectorModelVersions");
@@ -714,6 +722,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new ListDetectorModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDetectorModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDetectorModels");
@@ -775,6 +784,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new ListInputsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputs");
@@ -838,6 +848,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -908,6 +919,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new PutLoggingOptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putLoggingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingOptions");
@@ -973,6 +985,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1036,6 +1049,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1102,6 +1116,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new UpdateDetectorModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDetectorModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDetectorModel");
@@ -1167,6 +1182,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                 request = new UpdateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInput");

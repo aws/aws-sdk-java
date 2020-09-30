@@ -490,6 +490,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchGetItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetItem");
@@ -672,6 +673,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchWriteItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchWriteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchWriteItem");
@@ -807,6 +809,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackup");
@@ -963,6 +966,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGlobalTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalTable");
@@ -1058,6 +1062,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTable");
@@ -1148,6 +1153,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
@@ -1241,6 +1247,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteItem");
@@ -1354,6 +1361,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTable");
@@ -1424,6 +1432,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackup");
@@ -1501,6 +1510,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeContinuousBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContinuousBackups");
@@ -1566,6 +1576,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeContributorInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContributorInsights");
@@ -1620,6 +1631,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoints");
@@ -1688,6 +1700,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGlobalTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalTable");
@@ -1758,6 +1771,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeGlobalTableSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalTableSettings");
@@ -1908,6 +1922,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLimits");
@@ -1981,6 +1996,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTable");
@@ -2058,6 +2074,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeTableReplicaAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTableReplicaAutoScaling");
@@ -2117,6 +2134,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeTimeToLiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTimeToLiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTimeToLive");
@@ -2197,6 +2215,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new GetItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetItem");
@@ -2276,6 +2295,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListBackupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackups");
@@ -2340,6 +2360,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(listContributorInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContributorInsights");
@@ -2403,6 +2424,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListGlobalTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGlobalTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGlobalTables");
@@ -2465,6 +2487,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTables");
@@ -2554,6 +2577,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTagsOfResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsOfResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsOfResource");
@@ -2728,6 +2752,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new PutItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutItem");
@@ -2864,6 +2889,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new QueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Query");
@@ -2987,6 +3013,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new RestoreTableFromBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreTableFromBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableFromBackup");
@@ -3151,6 +3178,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(restoreTableToPointInTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableToPointInTime");
@@ -3254,6 +3282,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ScanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Scan");
@@ -3357,6 +3386,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3756,6 +3786,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new TransactGetItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transactGetItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransactGetItems");
@@ -4208,6 +4239,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new TransactWriteItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transactWriteItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransactWriteItems");
@@ -4295,6 +4327,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4372,6 +4405,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateContinuousBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContinuousBackups");
@@ -4437,6 +4471,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateContributorInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContributorInsights");
@@ -4530,6 +4565,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGlobalTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalTable");
@@ -4615,6 +4651,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateGlobalTableSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalTableSettings");
@@ -4703,6 +4740,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateItem");
@@ -4829,6 +4867,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTable");
@@ -4923,6 +4962,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateTableReplicaAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTableReplicaAutoScaling");
@@ -5034,6 +5074,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateTimeToLiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTimeToLiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTimeToLive");

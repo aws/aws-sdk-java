@@ -37,6 +37,8 @@ public class ResourceMarshaller {
             .marshallLocationName("Partition").build();
     private static final MarshallingInfo<String> REGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Region").build();
+    private static final MarshallingInfo<String> RESOURCEROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceRole").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -62,6 +64,7 @@ public class ResourceMarshaller {
             protocolMarshaller.marshall(resource.getId(), ID_BINDING);
             protocolMarshaller.marshall(resource.getPartition(), PARTITION_BINDING);
             protocolMarshaller.marshall(resource.getRegion(), REGION_BINDING);
+            protocolMarshaller.marshall(resource.getResourceRole(), RESOURCEROLE_BINDING);
             protocolMarshaller.marshall(resource.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(resource.getDetails(), DETAILS_BINDING);
         } catch (Exception e) {

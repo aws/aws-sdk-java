@@ -25,7 +25,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * The AWS account ID that creates the job.
+     * </p>
+     */
     private String accountId;
     /**
      * <p>
@@ -38,8 +42,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The operation that you want this job to perform on each object listed in the manifest. For more information about
      * the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the
-     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private JobOperation operation;
@@ -78,21 +82,24 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to execute this job's operation on each object in the manifest.
+     * use to run this job's operation on each object in the manifest.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     * A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * </p>
      */
     private java.util.List<S3Tag> tags;
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID that creates the job.
+     * </p>
      * 
      * @param accountId
+     *        The AWS account ID that creates the job.
      */
 
     public void setAccountId(String accountId) {
@@ -100,9 +107,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID that creates the job.
+     * </p>
      * 
-     * @return
+     * @return The AWS account ID that creates the job.
      */
 
     public String getAccountId() {
@@ -110,9 +119,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
-     * <p/>
+     * <p>
+     * The AWS account ID that creates the job.
+     * </p>
      * 
      * @param accountId
+     *        The AWS account ID that creates the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,15 +197,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The operation that you want this job to perform on each object listed in the manifest. For more information about
      * the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the
-     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param operation
      *        The operation that you want this job to perform on each object listed in the manifest. For more
      *        information about the available operations, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a>
-     *        in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the
+     *        <i>Amazon Simple Storage Service Developer Guide</i>.
      */
 
     public void setOperation(JobOperation operation) {
@@ -204,14 +216,14 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The operation that you want this job to perform on each object listed in the manifest. For more information about
      * the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the
-     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @return The operation that you want this job to perform on each object listed in the manifest. For more
      *         information about the available operations, see <a
-     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a>
-     *         in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the
+     *         <i>Amazon Simple Storage Service Developer Guide</i>.
      */
 
     public JobOperation getOperation() {
@@ -222,15 +234,15 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The operation that you want this job to perform on each object listed in the manifest. For more information about
      * the available operations, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a> in the
-     * <i>Amazon Simple Storage Service Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the <i>Amazon
+     * Simple Storage Service Developer Guide</i>.
      * </p>
      * 
      * @param operation
      *        The operation that you want this job to perform on each object listed in the manifest. For more
      *        information about the available operations, see <a
-     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Available Operations</a>
-     *        in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html">Operations</a> in the
+     *        <i>Amazon Simple Storage Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -454,12 +466,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to execute this job's operation on each object in the manifest.
+     * use to run this job's operation on each object in the manifest.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
-     *        will use to execute this job's operation on each object in the manifest.
+     *        will use to run this job's operation on each object in the manifest.
      */
 
     public void setRoleArn(String roleArn) {
@@ -469,11 +481,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to execute this job's operation on each object in the manifest.
+     * use to run this job's operation on each object in the manifest.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch
-     *         Operations will use to execute this job's operation on each object in the manifest.
+     *         Operations will use to run this job's operation on each object in the manifest.
      */
 
     public String getRoleArn() {
@@ -483,12 +495,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations will
-     * use to execute this job's operation on each object in the manifest.
+     * use to run this job's operation on each object in the manifest.
      * </p>
      * 
      * @param roleArn
      *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role that Batch Operations
-     *        will use to execute this job's operation on each object in the manifest.
+     *        will use to run this job's operation on each object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -499,10 +511,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     * A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * </p>
      * 
-     * @return A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     * @return A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      */
 
     public java.util.List<S3Tag> getTags() {
@@ -511,11 +523,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     * A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * </p>
      * 
      * @param tags
-     *        A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     *        A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      */
 
     public void setTags(java.util.Collection<S3Tag> tags) {
@@ -529,7 +541,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     * A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -538,7 +550,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tags
-     *        A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     *        A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,11 +566,11 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     * A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * </p>
      * 
      * @param tags
-     *        A set of tags to associate with the Amazon S3 Batch Operations job. This is an optional parameter.
+     *        A set of tags to associate with the S3 Batch Operations job. This is an optional parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

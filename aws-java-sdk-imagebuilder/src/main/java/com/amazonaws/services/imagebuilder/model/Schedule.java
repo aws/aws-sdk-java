@@ -30,8 +30,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
-     * .
+     * The cron expression determines how often EC2 Image Builder evaluates your
+     * <code>pipelineExecutionStartCondition</code>.
+     * </p>
+     * <p>
+     * For information on how to format a cron expression in Image Builder, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in
+     * EC2 Image Builder</a>.
      * </p>
      */
     private String scheduleExpression;
@@ -39,22 +44,35 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The condition configures when the pipeline should trigger a new image build. When the
      * <code>pipelineExecutionStartCondition</code> is set to
-     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
-     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
-     * image every time the CRON expression matches the current time.
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the
+     * source image or components in your image recipe, EC2 Image Builder will build a new image only when there are new
+     * versions of the image or components in your recipe that match the semantic version filter. When it is set to
+     * <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current
+     * time. For semantic version syntax, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
+     * in the <i> EC2 Image Builder API Reference</i>.
      * </p>
      */
     private String pipelineExecutionStartCondition;
 
     /**
      * <p>
-     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
-     * .
+     * The cron expression determines how often EC2 Image Builder evaluates your
+     * <code>pipelineExecutionStartCondition</code>.
+     * </p>
+     * <p>
+     * For information on how to format a cron expression in Image Builder, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in
+     * EC2 Image Builder</a>.
      * </p>
      * 
      * @param scheduleExpression
-     *        The expression determines how often EC2 Image Builder evaluates your
-     *        <code>pipelineExecutionStartCondition</code>.
+     *        The cron expression determines how often EC2 Image Builder evaluates your
+     *        <code>pipelineExecutionStartCondition</code>.</p>
+     *        <p>
+     *        For information on how to format a cron expression in Image Builder, see <a
+     *        href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron
+     *        expressions in EC2 Image Builder</a>.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -63,12 +81,21 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
-     * .
+     * The cron expression determines how often EC2 Image Builder evaluates your
+     * <code>pipelineExecutionStartCondition</code>.
+     * </p>
+     * <p>
+     * For information on how to format a cron expression in Image Builder, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in
+     * EC2 Image Builder</a>.
      * </p>
      * 
-     * @return The expression determines how often EC2 Image Builder evaluates your
-     *         <code>pipelineExecutionStartCondition</code>.
+     * @return The cron expression determines how often EC2 Image Builder evaluates your
+     *         <code>pipelineExecutionStartCondition</code>.</p>
+     *         <p>
+     *         For information on how to format a cron expression in Image Builder, see <a
+     *         href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron
+     *         expressions in EC2 Image Builder</a>.
      */
 
     public String getScheduleExpression() {
@@ -77,13 +104,22 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>
-     * .
+     * The cron expression determines how often EC2 Image Builder evaluates your
+     * <code>pipelineExecutionStartCondition</code>.
+     * </p>
+     * <p>
+     * For information on how to format a cron expression in Image Builder, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron expressions in
+     * EC2 Image Builder</a>.
      * </p>
      * 
      * @param scheduleExpression
-     *        The expression determines how often EC2 Image Builder evaluates your
-     *        <code>pipelineExecutionStartCondition</code>.
+     *        The cron expression determines how often EC2 Image Builder evaluates your
+     *        <code>pipelineExecutionStartCondition</code>.</p>
+     *        <p>
+     *        For information on how to format a cron expression in Image Builder, see <a
+     *        href="https://docs.aws.amazon.com/imagebuilder/latest/userguide/image-builder-cron.html">Use cron
+     *        expressions in EC2 Image Builder</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,17 +132,25 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The condition configures when the pipeline should trigger a new image build. When the
      * <code>pipelineExecutionStartCondition</code> is set to
-     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
-     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
-     * image every time the CRON expression matches the current time.
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the
+     * source image or components in your image recipe, EC2 Image Builder will build a new image only when there are new
+     * versions of the image or components in your recipe that match the semantic version filter. When it is set to
+     * <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current
+     * time. For semantic version syntax, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
+     * in the <i> EC2 Image Builder API Reference</i>.
      * </p>
      * 
      * @param pipelineExecutionStartCondition
      *        The condition configures when the pipeline should trigger a new image build. When the
      *        <code>pipelineExecutionStartCondition</code> is set to
-     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
-     *        only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
-     *        build a new image every time the CRON expression matches the current time.
+     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on
+     *        the source image or components in your image recipe, EC2 Image Builder will build a new image only when
+     *        there are new versions of the image or components in your recipe that match the semantic version filter.
+     *        When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON
+     *        expression matches the current time. For semantic version syntax, see <a
+     *        href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html"
+     *        >CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.
      * @see PipelineExecutionStartCondition
      */
 
@@ -118,16 +162,24 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The condition configures when the pipeline should trigger a new image build. When the
      * <code>pipelineExecutionStartCondition</code> is set to
-     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
-     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
-     * image every time the CRON expression matches the current time.
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the
+     * source image or components in your image recipe, EC2 Image Builder will build a new image only when there are new
+     * versions of the image or components in your recipe that match the semantic version filter. When it is set to
+     * <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current
+     * time. For semantic version syntax, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
+     * in the <i> EC2 Image Builder API Reference</i>.
      * </p>
      * 
      * @return The condition configures when the pipeline should trigger a new image build. When the
      *         <code>pipelineExecutionStartCondition</code> is set to
-     *         <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
-     *         only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
-     *         build a new image every time the CRON expression matches the current time.
+     *         <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on
+     *         the source image or components in your image recipe, EC2 Image Builder will build a new image only when
+     *         there are new versions of the image or components in your recipe that match the semantic version filter.
+     *         When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON
+     *         expression matches the current time. For semantic version syntax, see <a
+     *         href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html"
+     *         >CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.
      * @see PipelineExecutionStartCondition
      */
 
@@ -139,17 +191,25 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The condition configures when the pipeline should trigger a new image build. When the
      * <code>pipelineExecutionStartCondition</code> is set to
-     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
-     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
-     * image every time the CRON expression matches the current time.
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the
+     * source image or components in your image recipe, EC2 Image Builder will build a new image only when there are new
+     * versions of the image or components in your recipe that match the semantic version filter. When it is set to
+     * <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current
+     * time. For semantic version syntax, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
+     * in the <i> EC2 Image Builder API Reference</i>.
      * </p>
      * 
      * @param pipelineExecutionStartCondition
      *        The condition configures when the pipeline should trigger a new image build. When the
      *        <code>pipelineExecutionStartCondition</code> is set to
-     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
-     *        only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
-     *        build a new image every time the CRON expression matches the current time.
+     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on
+     *        the source image or components in your image recipe, EC2 Image Builder will build a new image only when
+     *        there are new versions of the image or components in your recipe that match the semantic version filter.
+     *        When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON
+     *        expression matches the current time. For semantic version syntax, see <a
+     *        href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html"
+     *        >CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PipelineExecutionStartCondition
      */
@@ -163,17 +223,25 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The condition configures when the pipeline should trigger a new image build. When the
      * <code>pipelineExecutionStartCondition</code> is set to
-     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image only
-     * when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new
-     * image every time the CRON expression matches the current time.
+     * <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on the
+     * source image or components in your image recipe, EC2 Image Builder will build a new image only when there are new
+     * versions of the image or components in your recipe that match the semantic version filter. When it is set to
+     * <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON expression matches the current
+     * time. For semantic version syntax, see <a
+     * href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
+     * in the <i> EC2 Image Builder API Reference</i>.
      * </p>
      * 
      * @param pipelineExecutionStartCondition
      *        The condition configures when the pipeline should trigger a new image build. When the
      *        <code>pipelineExecutionStartCondition</code> is set to
-     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, EC2 Image Builder will build a new image
-     *        only when there are known changes pending. When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will
-     *        build a new image every time the CRON expression matches the current time.
+     *        <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>, and you use semantic version filters on
+     *        the source image or components in your image recipe, EC2 Image Builder will build a new image only when
+     *        there are new versions of the image or components in your recipe that match the semantic version filter.
+     *        When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every time the CRON
+     *        expression matches the current time. For semantic version syntax, see <a
+     *        href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html"
+     *        >CreateComponent</a> in the <i> EC2 Image Builder API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PipelineExecutionStartCondition
      */

@@ -241,6 +241,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new CreateConnectorProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConnectorProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConnectorProfile");
@@ -313,6 +314,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new CreateFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFlow");
@@ -373,6 +375,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new DeleteConnectorProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectorProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnectorProfile");
@@ -435,6 +438,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new DeleteFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFlow");
@@ -500,6 +504,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(describeConnectorEntityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectorEntity");
@@ -564,6 +569,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(describeConnectorProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectorProfiles");
@@ -625,6 +631,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeConnectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConnectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConnectors");
@@ -682,6 +689,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new DescribeFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFlow");
@@ -742,6 +750,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                         .beforeMarshalling(describeFlowExecutionRecordsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFlowExecutionRecords");
@@ -808,6 +817,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new ListConnectorEntitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConnectorEntitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConnectorEntities");
@@ -866,6 +876,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new ListFlowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFlows");
@@ -925,6 +936,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -988,6 +1000,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new StartFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFlow");
@@ -1052,6 +1065,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new StopFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopFlow");
@@ -1111,6 +1125,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1170,6 +1185,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1234,6 +1250,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new UpdateConnectorProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateConnectorProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConnectorProfile");
@@ -1303,6 +1320,7 @@ public class AmazonAppflowClient extends AmazonWebServiceClient implements Amazo
                 request = new UpdateFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Appflow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFlow");

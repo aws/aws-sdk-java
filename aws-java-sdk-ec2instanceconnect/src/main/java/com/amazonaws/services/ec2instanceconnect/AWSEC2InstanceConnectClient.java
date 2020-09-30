@@ -185,6 +185,7 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
                 request = new SendSSHPublicKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendSSHPublicKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2 Instance Connect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendSSHPublicKey");

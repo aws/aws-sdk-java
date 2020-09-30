@@ -49,6 +49,12 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
      * </p>
      */
     private String originPath;
+    /**
+     * <p>
+     * An origin that is an S3 bucket that is not configured with static website hosting.
+     * </p>
+     */
+    private AwsCloudFrontDistributionOriginS3OriginConfig s3OriginConfig;
 
     /**
      * <p>
@@ -183,6 +189,46 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
     }
 
     /**
+     * <p>
+     * An origin that is an S3 bucket that is not configured with static website hosting.
+     * </p>
+     * 
+     * @param s3OriginConfig
+     *        An origin that is an S3 bucket that is not configured with static website hosting.
+     */
+
+    public void setS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig s3OriginConfig) {
+        this.s3OriginConfig = s3OriginConfig;
+    }
+
+    /**
+     * <p>
+     * An origin that is an S3 bucket that is not configured with static website hosting.
+     * </p>
+     * 
+     * @return An origin that is an S3 bucket that is not configured with static website hosting.
+     */
+
+    public AwsCloudFrontDistributionOriginS3OriginConfig getS3OriginConfig() {
+        return this.s3OriginConfig;
+    }
+
+    /**
+     * <p>
+     * An origin that is an S3 bucket that is not configured with static website hosting.
+     * </p>
+     * 
+     * @param s3OriginConfig
+     *        An origin that is an S3 bucket that is not configured with static website hosting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsCloudFrontDistributionOriginItem withS3OriginConfig(AwsCloudFrontDistributionOriginS3OriginConfig s3OriginConfig) {
+        setS3OriginConfig(s3OriginConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -199,7 +245,9 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getOriginPath() != null)
-            sb.append("OriginPath: ").append(getOriginPath());
+            sb.append("OriginPath: ").append(getOriginPath()).append(",");
+        if (getS3OriginConfig() != null)
+            sb.append("S3OriginConfig: ").append(getS3OriginConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -226,6 +274,10 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
             return false;
         if (other.getOriginPath() != null && other.getOriginPath().equals(this.getOriginPath()) == false)
             return false;
+        if (other.getS3OriginConfig() == null ^ this.getS3OriginConfig() == null)
+            return false;
+        if (other.getS3OriginConfig() != null && other.getS3OriginConfig().equals(this.getS3OriginConfig()) == false)
+            return false;
         return true;
     }
 
@@ -237,6 +289,7 @@ public class AwsCloudFrontDistributionOriginItem implements Serializable, Clonea
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getOriginPath() == null) ? 0 : getOriginPath().hashCode());
+        hashCode = prime * hashCode + ((getS3OriginConfig() == null) ? 0 : getS3OriginConfig().hashCode());
         return hashCode;
     }
 

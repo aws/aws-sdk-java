@@ -29,6 +29,8 @@ public class StartConditionMarshaller {
 
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTSTARTCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventStartCondition").build();
     private static final MarshallingInfo<StructuredPojo> SEGMENTSTARTCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentStartCondition").build();
 
@@ -49,6 +51,7 @@ public class StartConditionMarshaller {
 
         try {
             protocolMarshaller.marshall(startCondition.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(startCondition.getEventStartCondition(), EVENTSTARTCONDITION_BINDING);
             protocolMarshaller.marshall(startCondition.getSegmentStartCondition(), SEGMENTSTARTCONDITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

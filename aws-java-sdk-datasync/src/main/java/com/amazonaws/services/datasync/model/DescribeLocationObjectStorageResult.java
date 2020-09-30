@@ -41,7 +41,9 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     private String locationUri;
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server.
+     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
+     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.
      * </p>
      */
     private String accessKey;
@@ -153,12 +155,15 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server.
+     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
+     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.
      * </p>
      * 
      * @param accessKey
      *        Optional. The access key is used if credentials are required to access the self-managed object storage
-     *        server.
+     *        server. If your object storage requires a user name and password to authenticate, use
+     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
      */
 
     public void setAccessKey(String accessKey) {
@@ -167,11 +172,14 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server.
+     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
+     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.
      * </p>
      * 
      * @return Optional. The access key is used if credentials are required to access the self-managed object storage
-     *         server.
+     *         server. If your object storage requires a user name and password to authenticate, use
+     *         <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
      */
 
     public String getAccessKey() {
@@ -180,12 +188,15 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * Optional. The access key is used if credentials are required to access the self-managed object storage server.
+     * Optional. The access key is used if credentials are required to access the self-managed object storage server. If
+     * your object storage requires a user name and password to authenticate, use <code>AccessKey</code> and
+     * <code>SecretKey</code> to provide the user name and password, respectively.
      * </p>
      * 
      * @param accessKey
      *        Optional. The access key is used if credentials are required to access the self-managed object storage
-     *        server.
+     *        server. If your object storage requires a user name and password to authenticate, use
+     *        <code>AccessKey</code> and <code>SecretKey</code> to provide the user name and password, respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -427,6 +427,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new AcceptSharedDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptSharedDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptSharedDirectory");
@@ -505,6 +506,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new AddIpRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addIpRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddIpRoutes");
@@ -569,6 +571,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
@@ -631,6 +634,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CancelSchemaExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSchemaExtensionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSchemaExtension");
@@ -702,6 +706,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ConnectDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(connectDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConnectDirectory");
@@ -773,6 +778,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
@@ -843,6 +849,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateComputerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComputerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComputer");
@@ -915,6 +922,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(createConditionalForwarderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConditionalForwarder");
@@ -988,6 +996,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDirectory");
@@ -1054,6 +1063,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateLogSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLogSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLogSubscription");
@@ -1129,6 +1139,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateMicrosoftADRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMicrosoftADRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMicrosoftAD");
@@ -1199,6 +1210,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSnapshot");
@@ -1278,6 +1290,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new CreateTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrust");
@@ -1345,6 +1358,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(deleteConditionalForwarderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConditionalForwarder");
@@ -1413,6 +1427,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DeleteDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDirectory");
@@ -1474,6 +1489,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DeleteLogSubscriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLogSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLogSubscription");
@@ -1537,6 +1553,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DeleteSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSnapshot");
@@ -1602,6 +1619,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DeleteTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrust");
@@ -1672,6 +1690,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DeregisterCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterCertificate");
@@ -1735,6 +1754,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DeregisterEventTopicRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterEventTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterEventTopic");
@@ -1800,6 +1820,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DescribeCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificate");
@@ -1871,6 +1892,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeConditionalForwardersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConditionalForwarders");
@@ -1948,6 +1970,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DescribeDirectoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDirectories");
@@ -2019,6 +2042,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeDomainControllersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomainControllers");
@@ -2086,6 +2110,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DescribeEventTopicsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTopicsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventTopics");
@@ -2151,6 +2176,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DescribeLDAPSSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLDAPSSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLDAPSSettings");
@@ -2218,6 +2244,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeSharedDirectoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSharedDirectories");
@@ -2291,6 +2318,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DescribeSnapshotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSnapshots");
@@ -2368,6 +2396,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DescribeTrustsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrustsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrusts");
@@ -2435,6 +2464,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DisableLDAPSRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableLDAPSRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableLDAPS");
@@ -2496,6 +2526,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DisableRadiusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableRadius");
@@ -2560,6 +2591,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new DisableSsoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableSsoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSso");
@@ -2630,6 +2662,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new EnableLDAPSRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableLDAPSRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableLDAPS");
@@ -2695,6 +2728,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new EnableRadiusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableRadius");
@@ -2760,6 +2794,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new EnableSsoRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableSsoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSso");
@@ -2820,6 +2855,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new GetDirectoryLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDirectoryLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDirectoryLimits");
@@ -2885,6 +2921,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new GetSnapshotLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnapshotLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSnapshotLimits");
@@ -2950,6 +2987,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ListCertificatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCertificates");
@@ -3013,6 +3051,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ListIpRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIpRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIpRoutes");
@@ -3074,6 +3113,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ListLogSubscriptionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLogSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLogSubscriptions");
@@ -3135,6 +3175,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ListSchemaExtensionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemaExtensionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSchemaExtensions");
@@ -3198,6 +3239,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3269,6 +3311,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new RegisterCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterCertificate");
@@ -3334,6 +3377,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new RegisterEventTopicRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerEventTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterEventTopic");
@@ -3397,6 +3441,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new RejectSharedDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectSharedDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectSharedDirectory");
@@ -3461,6 +3506,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new RemoveIpRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeIpRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveIpRoutes");
@@ -3522,6 +3568,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
@@ -3612,6 +3659,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ResetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetUserPassword");
@@ -3683,6 +3731,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new RestoreFromSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreFromSnapshot");
@@ -3772,6 +3821,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new ShareDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(shareDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ShareDirectory");
@@ -3838,6 +3888,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new StartSchemaExtensionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSchemaExtensionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSchemaExtension");
@@ -3901,6 +3952,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new UnshareDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unshareDirectoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnshareDirectory");
@@ -3968,6 +4020,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateConditionalForwarderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConditionalForwarder");
@@ -4042,6 +4095,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(updateNumberOfDomainControllersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNumberOfDomainControllers");
@@ -4106,6 +4160,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new UpdateRadiusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRadiusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRadius");
@@ -4168,6 +4223,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new UpdateTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrust");
@@ -4236,6 +4292,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                 request = new VerifyTrustRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyTrustRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyTrust");

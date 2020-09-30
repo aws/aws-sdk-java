@@ -52,9 +52,26 @@ public class AwsIamRoleDetailsJsonUnmarshaller implements Unmarshaller<AwsIamRol
                     context.nextToken();
                     awsIamRoleDetails.setAssumeRolePolicyDocument(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AttachedManagedPolicies", targetDepth)) {
+                    context.nextToken();
+                    awsIamRoleDetails.setAttachedManagedPolicies(new ListUnmarshaller<AwsIamAttachedManagedPolicy>(AwsIamAttachedManagedPolicyJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("CreateDate", targetDepth)) {
                     context.nextToken();
                     awsIamRoleDetails.setCreateDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("InstanceProfileList", targetDepth)) {
+                    context.nextToken();
+                    awsIamRoleDetails.setInstanceProfileList(new ListUnmarshaller<AwsIamInstanceProfile>(AwsIamInstanceProfileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PermissionsBoundary", targetDepth)) {
+                    context.nextToken();
+                    awsIamRoleDetails.setPermissionsBoundary(AwsIamPermissionsBoundaryJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("RoleId", targetDepth)) {
                     context.nextToken();
@@ -63,6 +80,12 @@ public class AwsIamRoleDetailsJsonUnmarshaller implements Unmarshaller<AwsIamRol
                 if (context.testExpression("RoleName", targetDepth)) {
                     context.nextToken();
                     awsIamRoleDetails.setRoleName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RolePolicyList", targetDepth)) {
+                    context.nextToken();
+                    awsIamRoleDetails.setRolePolicyList(new ListUnmarshaller<AwsIamRolePolicy>(AwsIamRolePolicyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MaxSessionDuration", targetDepth)) {
                     context.nextToken();

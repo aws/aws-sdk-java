@@ -232,6 +232,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
@@ -317,6 +318,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createConfigurationProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationProfile");
@@ -378,6 +380,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createDeploymentStrategyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeploymentStrategy");
@@ -443,6 +446,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new CreateEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEnvironment");
@@ -511,6 +515,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createHostedConfigurationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHostedConfigurationVersion");
@@ -571,6 +576,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
@@ -633,6 +639,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteConfigurationProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationProfile");
@@ -694,6 +701,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteDeploymentStrategyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeploymentStrategy");
@@ -756,6 +764,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEnvironment");
@@ -817,6 +826,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteHostedConfigurationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHostedConfigurationVersion");
@@ -877,6 +887,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new GetApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplication");
@@ -950,6 +961,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new GetConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfiguration");
@@ -1010,6 +1022,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getConfigurationProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationProfile");
@@ -1070,6 +1083,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new GetDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeployment");
@@ -1132,6 +1146,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new GetDeploymentStrategyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeploymentStrategyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeploymentStrategy");
@@ -1195,6 +1210,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new GetEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEnvironment");
@@ -1255,6 +1271,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(getHostedConfigurationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHostedConfigurationVersion");
@@ -1313,6 +1330,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
@@ -1373,6 +1391,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listConfigurationProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationProfiles");
@@ -1432,6 +1451,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listDeploymentStrategiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentStrategies");
@@ -1492,6 +1512,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new ListDeploymentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeploymentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeployments");
@@ -1551,6 +1572,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new ListEnvironmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEnvironmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEnvironments");
@@ -1612,6 +1634,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listHostedConfigurationVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHostedConfigurationVersions");
@@ -1672,6 +1695,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1733,6 +1757,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new StartDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeployment");
@@ -1793,6 +1818,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new StopDeploymentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopDeploymentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDeployment");
@@ -1854,6 +1880,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1913,6 +1940,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1972,6 +2000,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
@@ -2032,6 +2061,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateConfigurationProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationProfile");
@@ -2093,6 +2123,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateDeploymentStrategyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeploymentStrategy");
@@ -2153,6 +2184,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateEnvironmentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEnvironmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEnvironment");
@@ -2212,6 +2244,7 @@ public class AmazonAppConfigClient extends AmazonWebServiceClient implements Ama
                 request = new ValidateConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(validateConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "AppConfig");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateConfiguration");

@@ -216,6 +216,7 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                 request = new CompleteSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(completeSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CompleteSnapshot");
@@ -281,6 +282,7 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                 request = new GetSnapshotBlockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSnapshotBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSnapshotBlock");
@@ -349,6 +351,7 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                 request = new ListChangedBlocksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChangedBlocksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChangedBlocks");
@@ -414,6 +417,7 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                 request = new ListSnapshotBlocksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSnapshotBlocksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSnapshotBlocks");
@@ -483,10 +487,12 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                 request = new PutSnapshotBlockRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSnapshotBlockRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSnapshotBlock");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
                 request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
 
             } finally {
@@ -561,6 +567,7 @@ public class AmazonEBSClient extends AmazonWebServiceClient implements AmazonEBS
                 request = new StartSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EBS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSnapshot");

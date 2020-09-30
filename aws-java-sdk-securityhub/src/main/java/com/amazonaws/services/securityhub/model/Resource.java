@@ -57,6 +57,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String region;
+    /** <p/> */
+    private String resourceRole;
     /**
      * <p>
      * A list of AWS tags associated with a resource at the time the finding was processed.
@@ -278,6 +280,38 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p/>
+     * 
+     * @param resourceRole
+     */
+
+    public void setResourceRole(String resourceRole) {
+        this.resourceRole = resourceRole;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public String getResourceRole() {
+        return this.resourceRole;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param resourceRole
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withResourceRole(String resourceRole) {
+        setResourceRole(resourceRole);
+        return this;
+    }
+
+    /**
      * <p>
      * A list of AWS tags associated with a resource at the time the finding was processed.
      * </p>
@@ -405,6 +439,8 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Partition: ").append(getPartition()).append(",");
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
+        if (getResourceRole() != null)
+            sb.append("ResourceRole: ").append(getResourceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDetails() != null)
@@ -439,6 +475,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
+        if (other.getResourceRole() == null ^ this.getResourceRole() == null)
+            return false;
+        if (other.getResourceRole() != null && other.getResourceRole().equals(this.getResourceRole()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -459,6 +499,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getPartition() == null) ? 0 : getPartition().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getResourceRole() == null) ? 0 : getResourceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;

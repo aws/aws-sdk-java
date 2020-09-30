@@ -191,6 +191,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new BatchDeleteWorldsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteWorldsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteWorlds");
@@ -254,6 +255,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(batchDescribeSimulationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDescribeSimulationJob");
@@ -317,6 +319,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CancelDeploymentJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelDeploymentJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDeploymentJob");
@@ -379,6 +382,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CancelSimulationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSimulationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSimulationJob");
@@ -443,6 +447,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(cancelSimulationJobBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSimulationJobBatch");
@@ -506,6 +511,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CancelWorldExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelWorldExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelWorldExportJob");
@@ -569,6 +575,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(cancelWorldGenerationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelWorldGenerationJob");
@@ -651,6 +658,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateDeploymentJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeploymentJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeploymentJob");
@@ -714,6 +722,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFleet");
@@ -779,6 +788,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateRobotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRobotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRobot");
@@ -847,6 +857,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateRobotApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRobotApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRobotApplication");
@@ -915,6 +926,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(createRobotApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRobotApplicationVersion");
@@ -985,6 +997,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(createSimulationApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSimulationApplication");
@@ -1054,6 +1067,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(createSimulationApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSimulationApplicationVersion");
@@ -1130,6 +1144,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateSimulationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSimulationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSimulationJob");
@@ -1197,6 +1212,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateWorldExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorldExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorldExportJob");
@@ -1268,6 +1284,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(createWorldGenerationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorldGenerationJob");
@@ -1336,6 +1353,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new CreateWorldTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorldTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorldTemplate");
@@ -1396,6 +1414,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DeleteFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFleet");
@@ -1456,6 +1475,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DeleteRobotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRobotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRobot");
@@ -1516,6 +1536,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DeleteRobotApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRobotApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRobotApplication");
@@ -1578,6 +1599,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(deleteSimulationApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSimulationApplication");
@@ -1641,6 +1663,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DeleteWorldTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorldTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorldTemplate");
@@ -1703,6 +1726,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DeregisterRobotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterRobotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterRobot");
@@ -1765,6 +1789,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeDeploymentJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeploymentJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeploymentJob");
@@ -1828,6 +1853,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeFleetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFleetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFleet");
@@ -1890,6 +1916,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeRobotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRobotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRobot");
@@ -1953,6 +1980,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(describeRobotApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRobotApplication");
@@ -2017,6 +2045,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(describeSimulationApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSimulationApplication");
@@ -2080,6 +2109,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeSimulationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSimulationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSimulationJob");
@@ -2142,6 +2172,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(describeSimulationJobBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSimulationJobBatch");
@@ -2205,6 +2236,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeWorldRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorldRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorld");
@@ -2267,6 +2299,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeWorldExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorldExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorldExportJob");
@@ -2331,6 +2364,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(describeWorldGenerationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorldGenerationJob");
@@ -2394,6 +2428,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new DescribeWorldTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorldTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorldTemplate");
@@ -2457,6 +2492,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new GetWorldTemplateBodyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWorldTemplateBodyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorldTemplateBody");
@@ -2520,6 +2556,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListDeploymentJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeploymentJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeploymentJobs");
@@ -2582,6 +2619,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListFleetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFleetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFleets");
@@ -2642,6 +2680,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListRobotApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRobotApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRobotApplications");
@@ -2705,6 +2744,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListRobotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRobotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRobots");
@@ -2767,6 +2807,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(listSimulationApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSimulationApplications");
@@ -2828,6 +2869,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(listSimulationJobBatchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSimulationJobBatches");
@@ -2889,6 +2931,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListSimulationJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSimulationJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSimulationJobs");
@@ -2951,6 +2994,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3011,6 +3055,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListWorldExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorldExportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorldExportJobs");
@@ -3072,6 +3117,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(listWorldGenerationJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorldGenerationJobs");
@@ -3133,6 +3179,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListWorldTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorldTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorldTemplates");
@@ -3193,6 +3240,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new ListWorldsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorldsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorlds");
@@ -3258,6 +3306,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new RegisterRobotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerRobotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterRobot");
@@ -3323,6 +3372,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new RestartSimulationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restartSimulationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestartSimulationJob");
@@ -3391,6 +3441,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(startSimulationJobBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSimulationJobBatch");
@@ -3462,6 +3513,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new SyncDeploymentJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(syncDeploymentJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SyncDeploymentJob");
@@ -3533,6 +3585,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3599,6 +3652,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3664,6 +3718,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new UpdateRobotApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRobotApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRobotApplication");
@@ -3731,6 +3786,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                         .beforeMarshalling(updateSimulationApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSimulationApplication");
@@ -3794,6 +3850,7 @@ public class AWSRoboMakerClient extends AmazonWebServiceClient implements AWSRob
                 request = new UpdateWorldTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorldTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RoboMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorldTemplate");

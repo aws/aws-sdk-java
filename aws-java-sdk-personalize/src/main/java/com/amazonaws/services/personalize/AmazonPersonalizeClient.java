@@ -187,6 +187,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(createBatchInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBatchInferenceJob");
@@ -320,6 +321,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCampaign");
@@ -451,6 +453,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataset");
@@ -602,6 +605,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetGroup");
@@ -712,6 +716,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateDatasetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetImportJob");
@@ -835,6 +840,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateEventTrackerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEventTrackerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventTracker");
@@ -897,6 +903,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFilter");
@@ -981,6 +988,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSchema");
@@ -1119,6 +1127,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateSolutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSolutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSolution");
@@ -1240,6 +1249,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new CreateSolutionVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSolutionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSolutionVersion");
@@ -1303,6 +1313,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCampaign");
@@ -1364,6 +1375,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
@@ -1440,6 +1452,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetGroup");
@@ -1500,6 +1513,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteEventTrackerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEventTrackerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventTracker");
@@ -1559,6 +1573,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFilter");
@@ -1619,6 +1634,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchema");
@@ -1682,6 +1698,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DeleteSolutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSolutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSolution");
@@ -1739,6 +1756,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeAlgorithmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAlgorithmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlgorithm");
@@ -1798,6 +1816,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeBatchInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBatchInferenceJob");
@@ -1878,6 +1897,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCampaign");
@@ -1935,6 +1955,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
@@ -1992,6 +2013,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetGroup");
@@ -2050,6 +2072,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetImportJob");
@@ -2109,6 +2132,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeEventTrackerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEventTrackerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventTracker");
@@ -2167,6 +2191,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeFeatureTransformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFeatureTransformation");
@@ -2225,6 +2250,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFilter");
@@ -2309,6 +2335,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeRecipeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRecipeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecipe");
@@ -2366,6 +2393,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSchema");
@@ -2423,6 +2451,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new DescribeSolutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSolutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSolution");
@@ -2481,6 +2510,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                         .beforeMarshalling(describeSolutionVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSolutionVersion");
@@ -2541,6 +2571,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new GetSolutionMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSolutionMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSolutionMetrics");
@@ -2598,6 +2629,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListBatchInferenceJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBatchInferenceJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBatchInferenceJobs");
@@ -2658,6 +2690,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListCampaignsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCampaignsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCampaigns");
@@ -2714,6 +2747,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListDatasetGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetGroups");
@@ -2774,6 +2808,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListDatasetImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetImportJobs");
@@ -2833,6 +2868,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListDatasetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
@@ -2892,6 +2928,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListEventTrackersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventTrackersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventTrackers");
@@ -2949,6 +2986,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListFiltersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFilters");
@@ -3005,6 +3043,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListRecipesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecipesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecipes");
@@ -3061,6 +3100,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListSchemasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSchemas");
@@ -3122,6 +3162,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListSolutionVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSolutionVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSolutionVersions");
@@ -3181,6 +3222,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new ListSolutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSolutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSolutions");
@@ -3254,6 +3296,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                 request = new UpdateCampaignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCampaign");

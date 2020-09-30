@@ -27,24 +27,24 @@ public class DeleteJobTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID associated with the Amazon S3 Batch Operations job.
+     * The AWS account ID associated with the S3 Batch Operations job.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     * The ID for the S3 Batch Operations job whose tags you want to delete.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The AWS account ID associated with the Amazon S3 Batch Operations job.
+     * The AWS account ID associated with the S3 Batch Operations job.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID associated with the Amazon S3 Batch Operations job.
+     *        The AWS account ID associated with the S3 Batch Operations job.
      */
 
     public void setAccountId(String accountId) {
@@ -53,10 +53,10 @@ public class DeleteJobTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID associated with the Amazon S3 Batch Operations job.
+     * The AWS account ID associated with the S3 Batch Operations job.
      * </p>
      * 
-     * @return The AWS account ID associated with the Amazon S3 Batch Operations job.
+     * @return The AWS account ID associated with the S3 Batch Operations job.
      */
 
     public String getAccountId() {
@@ -65,11 +65,11 @@ public class DeleteJobTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS account ID associated with the Amazon S3 Batch Operations job.
+     * The AWS account ID associated with the S3 Batch Operations job.
      * </p>
      * 
      * @param accountId
-     *        The AWS account ID associated with the Amazon S3 Batch Operations job.
+     *        The AWS account ID associated with the S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteJobTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     * The ID for the S3 Batch Operations job whose tags you want to delete.
      * </p>
      * 
      * @param jobId
-     *        The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     *        The ID for the S3 Batch Operations job whose tags you want to delete.
      */
 
     public void setJobId(String jobId) {
@@ -93,10 +93,10 @@ public class DeleteJobTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     * The ID for the S3 Batch Operations job whose tags you want to delete.
      * </p>
      * 
-     * @return The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     * @return The ID for the S3 Batch Operations job whose tags you want to delete.
      */
 
     public String getJobId() {
@@ -105,11 +105,11 @@ public class DeleteJobTaggingRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     * The ID for the S3 Batch Operations job whose tags you want to delete.
      * </p>
      * 
      * @param jobId
-     *        The ID for the Amazon S3 Batch Operations job whose tags you want to delete.
+     *        The ID for the S3 Batch Operations job whose tags you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -45,10 +45,12 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
      * </p>
      */
     private Boolean cloudWatchMetricsEnabled;
+
+    private Boolean eventTaggingEnabled;
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application. To override these limits and define
-     * custom limits for a specific campaign or journey, use the <link
+     * The default sending limits for campaigns in the application. To override these limits and define custom limits
+     * for a specific campaign or journey, use the <link
      * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
@@ -56,8 +58,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     private CampaignLimits limits;
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -214,16 +216,50 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
     }
 
     /**
+     * @param eventTaggingEnabled
+     */
+
+    public void setEventTaggingEnabled(Boolean eventTaggingEnabled) {
+        this.eventTaggingEnabled = eventTaggingEnabled;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getEventTaggingEnabled() {
+        return this.eventTaggingEnabled;
+    }
+
+    /**
+     * @param eventTaggingEnabled
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WriteApplicationSettingsRequest withEventTaggingEnabled(Boolean eventTaggingEnabled) {
+        setEventTaggingEnabled(eventTaggingEnabled);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isEventTaggingEnabled() {
+        return this.eventTaggingEnabled;
+    }
+
+    /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application. To override these limits and define
-     * custom limits for a specific campaign or journey, use the <link
+     * The default sending limits for campaigns in the application. To override these limits and define custom limits
+     * for a specific campaign or journey, use the <link
      * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns and journeys in the application. To override these limits and
-     *        define custom limits for a specific campaign or journey, use the <link
+     *        The default sending limits for campaigns in the application. To override these limits and define custom
+     *        limits for a specific campaign or journey, use the <link
      *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      *        linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      */
@@ -234,14 +270,14 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application. To override these limits and define
-     * custom limits for a specific campaign or journey, use the <link
+     * The default sending limits for campaigns in the application. To override these limits and define custom limits
+     * for a specific campaign or journey, use the <link
      * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      * 
-     * @return The default sending limits for campaigns and journeys in the application. To override these limits and
-     *         define custom limits for a specific campaign or journey, use the <link
+     * @return The default sending limits for campaigns in the application. To override these limits and define custom
+     *         limits for a specific campaign or journey, use the <link
      *         linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      *         linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      */
@@ -252,15 +288,15 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application. To override these limits and define
-     * custom limits for a specific campaign or journey, use the <link
+     * The default sending limits for campaigns in the application. To override these limits and define custom limits
+     * for a specific campaign or journey, use the <link
      * linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      * linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns and journeys in the application. To override these limits and
-     *        define custom limits for a specific campaign or journey, use the <link
+     *        The default sending limits for campaigns in the application. To override these limits and define custom
+     *        limits for a specific campaign or journey, use the <link
      *        linkend="apps-application-id-campaigns-campaign-id">Campaign</link> resource or the <link
      *        linkend="apps-application-id-journeys-journey-id">Journey</link> resource, respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -273,8 +309,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -307,8 +343,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
      * </p>
      * 
      * @param quietTime
-     *        The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range
-     *        when messages aren't sent to endpoints, if all the following conditions are met:</p>
+     *        The default quiet time for campaigns in the application. Quiet time is a specific time range when messages
+     *        aren't sent to endpoints, if all the following conditions are met:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -346,8 +382,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -379,8 +415,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
      * campaign or journey.
      * </p>
      * 
-     * @return The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range
-     *         when messages aren't sent to endpoints, if all the following conditions are met:</p>
+     * @return The default quiet time for campaigns in the application. Quiet time is a specific time range when
+     *         messages aren't sent to endpoints, if all the following conditions are met:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -419,8 +455,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -453,8 +489,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
      * </p>
      * 
      * @param quietTime
-     *        The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range
-     *        when messages aren't sent to endpoints, if all the following conditions are met:</p>
+     *        The default quiet time for campaigns in the application. Quiet time is a specific time range when messages
+     *        aren't sent to endpoints, if all the following conditions are met:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -508,6 +544,8 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
             sb.append("CampaignHook: ").append(getCampaignHook()).append(",");
         if (getCloudWatchMetricsEnabled() != null)
             sb.append("CloudWatchMetricsEnabled: ").append(getCloudWatchMetricsEnabled()).append(",");
+        if (getEventTaggingEnabled() != null)
+            sb.append("EventTaggingEnabled: ").append(getEventTaggingEnabled()).append(",");
         if (getLimits() != null)
             sb.append("Limits: ").append(getLimits()).append(",");
         if (getQuietTime() != null)
@@ -534,6 +572,10 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
             return false;
         if (other.getCloudWatchMetricsEnabled() != null && other.getCloudWatchMetricsEnabled().equals(this.getCloudWatchMetricsEnabled()) == false)
             return false;
+        if (other.getEventTaggingEnabled() == null ^ this.getEventTaggingEnabled() == null)
+            return false;
+        if (other.getEventTaggingEnabled() != null && other.getEventTaggingEnabled().equals(this.getEventTaggingEnabled()) == false)
+            return false;
         if (other.getLimits() == null ^ this.getLimits() == null)
             return false;
         if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false)
@@ -552,6 +594,7 @@ public class WriteApplicationSettingsRequest implements Serializable, Cloneable,
 
         hashCode = prime * hashCode + ((getCampaignHook() == null) ? 0 : getCampaignHook().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchMetricsEnabled() == null) ? 0 : getCloudWatchMetricsEnabled().hashCode());
+        hashCode = prime * hashCode + ((getEventTaggingEnabled() == null) ? 0 : getEventTaggingEnabled().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
         hashCode = prime * hashCode + ((getQuietTime() == null) ? 0 : getQuietTime().hashCode());
         return hashCode;

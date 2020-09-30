@@ -198,6 +198,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new CancelSigningProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelSigningProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelSigningProfile");
@@ -258,6 +259,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new DescribeSigningJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSigningJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSigningJob");
@@ -317,6 +319,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new GetSigningPlatformRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSigningPlatformRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningPlatform");
@@ -378,6 +381,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new GetSigningProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSigningProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningProfile");
@@ -444,6 +448,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new ListSigningJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSigningJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningJobs");
@@ -509,6 +514,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new ListSigningPlatformsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSigningPlatformsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningPlatforms");
@@ -573,6 +579,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new ListSigningProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSigningProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSigningProfiles");
@@ -633,6 +640,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -699,6 +707,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new PutSigningProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSigningProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSigningProfile");
@@ -801,6 +810,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new StartSigningJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSigningJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSigningJob");
@@ -863,6 +873,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -923,6 +934,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "signer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");

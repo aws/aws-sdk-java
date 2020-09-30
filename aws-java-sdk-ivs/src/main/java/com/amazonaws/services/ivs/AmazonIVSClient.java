@@ -465,6 +465,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new BatchGetChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetChannel");
@@ -518,6 +519,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new BatchGetStreamKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetStreamKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetStreamKey");
@@ -575,6 +577,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new CreateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
@@ -638,6 +641,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new CreateStreamKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createStreamKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStreamKey");
@@ -696,6 +700,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new DeleteChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
@@ -754,6 +759,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new DeletePlaybackKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePlaybackKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlaybackKeyPair");
@@ -812,6 +818,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new DeleteStreamKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStreamKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStreamKey");
@@ -868,6 +875,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new GetChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChannel");
@@ -926,6 +934,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new GetPlaybackKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPlaybackKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlaybackKeyPair");
@@ -983,6 +992,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new GetStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStream");
@@ -1039,6 +1049,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new GetStreamKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStreamKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamKey");
@@ -1099,6 +1110,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new ImportPlaybackKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importPlaybackKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportPlaybackKeyPair");
@@ -1156,6 +1168,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new ListChannelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
@@ -1211,6 +1224,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new ListPlaybackKeyPairsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPlaybackKeyPairsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlaybackKeyPairs");
@@ -1267,6 +1281,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new ListStreamKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreamKeys");
@@ -1322,6 +1337,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new ListStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreams");
@@ -1378,6 +1394,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1437,6 +1454,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new PutMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetadata");
@@ -1502,6 +1520,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new StopStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStream");
@@ -1558,6 +1577,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1614,6 +1634,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1673,6 +1694,7 @@ public class AmazonIVSClient extends AmazonWebServiceClient implements AmazonIVS
                 request = new UpdateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");

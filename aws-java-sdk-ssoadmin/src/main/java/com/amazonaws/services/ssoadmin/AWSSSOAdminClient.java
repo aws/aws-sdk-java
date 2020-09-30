@@ -201,6 +201,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(attachManagedPolicyToPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachManagedPolicyToPermissionSet");
@@ -286,6 +287,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(createAccountAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccountAssignment");
@@ -362,6 +364,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new CreatePermissionSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePermissionSet");
@@ -431,6 +434,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(deleteAccountAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountAssignment");
@@ -502,6 +506,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(deleteInlinePolicyFromPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInlinePolicyFromPermissionSet");
@@ -571,6 +576,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new DeletePermissionSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionSet");
@@ -638,6 +644,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(describeAccountAssignmentCreationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAssignmentCreationStatus");
@@ -706,6 +713,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(describeAccountAssignmentDeletionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAssignmentDeletionStatus");
@@ -771,6 +779,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new DescribePermissionSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePermissionSet");
@@ -839,6 +848,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(describePermissionSetProvisioningStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePermissionSetProvisioningStatus");
@@ -910,6 +920,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(detachManagedPolicyFromPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachManagedPolicyFromPermissionSet");
@@ -977,6 +988,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(getInlinePolicyForPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInlinePolicyForPermissionSet");
@@ -1044,6 +1056,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(listAccountAssignmentCreationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountAssignmentCreationStatus");
@@ -1111,6 +1124,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(listAccountAssignmentDeletionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountAssignmentDeletionStatus");
@@ -1176,6 +1190,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new ListAccountAssignmentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountAssignmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountAssignments");
@@ -1244,6 +1259,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(listAccountsForProvisionedPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountsForProvisionedPermissionSet");
@@ -1307,6 +1323,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new ListInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInstances");
@@ -1373,6 +1390,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(listManagedPoliciesInPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListManagedPoliciesInPermissionSet");
@@ -1440,6 +1458,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(listPermissionSetProvisioningStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissionSetProvisioningStatus");
@@ -1505,6 +1524,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new ListPermissionSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPermissionSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissionSets");
@@ -1571,6 +1591,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(listPermissionSetsProvisionedToAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissionSetsProvisionedToAccount");
@@ -1636,6 +1657,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1704,6 +1726,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new ProvisionPermissionSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvisionPermissionSet");
@@ -1783,6 +1806,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                         .beforeMarshalling(putInlinePolicyToPermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInlinePolicyToPermissionSet");
@@ -1854,6 +1878,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1922,6 +1947,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1990,6 +2016,7 @@ public class AWSSSOAdminClient extends AmazonWebServiceClient implements AWSSSOA
                 request = new UpdatePermissionSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePermissionSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSO Admin");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePermissionSet");

@@ -185,6 +185,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                 request = new BatchPutMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchPutMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutMessage");
@@ -247,6 +248,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                 request = new BatchUpdateDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateDetector");
@@ -310,6 +312,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                 request = new DescribeDetectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDetector");
@@ -373,6 +376,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                 request = new ListDetectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDetectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Events Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDetectors");

@@ -64,6 +64,12 @@ public class DescribeLocationS3ResultJsonUnmarshaller implements Unmarshaller<De
                     context.nextToken();
                     describeLocationS3Result.setS3Config(S3ConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("AgentArns", targetDepth)) {
+                    context.nextToken();
+                    describeLocationS3Result.setAgentArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();
                     describeLocationS3Result.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

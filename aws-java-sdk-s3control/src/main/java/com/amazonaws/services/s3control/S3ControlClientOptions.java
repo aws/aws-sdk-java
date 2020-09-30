@@ -31,4 +31,6 @@ public final class S3ControlClientOptions {
      */
     public static final AdvancedConfig.Key<Boolean> FIPS_ENABLED = new AdvancedConfig.Key<Boolean>();
 
+    public static final AdvancedConfig.Key<Boolean> USE_ARN_REGION_ENABLED = new AdvancedConfig.Key<Boolean>();
+
 }

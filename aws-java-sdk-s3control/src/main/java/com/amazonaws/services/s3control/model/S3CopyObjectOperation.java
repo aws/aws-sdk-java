@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value
- * through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a
+ * Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes each value through
+ * to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>.
  * </p>
  * 
@@ -56,19 +56,19 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     private String targetKeyPrefix;
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      */
     private String objectLockLegalHoldStatus;
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      */
     private String objectLockMode;
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      */
     private java.util.Date objectLockRetainUntilDate;
@@ -603,11 +603,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockLegalHoldStatus
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The legal hold status to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockLegalHoldStatus
      */
 
@@ -617,10 +617,10 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * @return The legal hold status to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockLegalHoldStatus
      */
 
@@ -630,11 +630,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockLegalHoldStatus
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The legal hold status to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockLegalHoldStatus
      */
@@ -646,11 +646,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockLegalHoldStatus
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The legal hold status to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockLegalHoldStatus
      */
@@ -662,11 +662,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockMode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The retention mode to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockMode
      */
 
@@ -676,10 +676,10 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The Retention mode to be applied to all objects in the Batch Operations job.
+     * @return The retention mode to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockMode
      */
 
@@ -689,11 +689,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockMode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The retention mode to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockMode
      */
@@ -705,11 +705,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockMode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The retention mode to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockMode
      */
@@ -721,12 +721,12 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockRetainUntilDate
-     *        The date when the applied Object Retention configuration will expire on all objects in the Batch
-     *        Operations job.
+     *        The date when the applied object retention configuration expires on all objects in the Batch Operations
+     *        job.
      */
 
     public void setObjectLockRetainUntilDate(java.util.Date objectLockRetainUntilDate) {
@@ -735,11 +735,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The date when the applied Object Retention configuration will expire on all objects in the Batch
-     *         Operations job.
+     * @return The date when the applied object retention configuration expires on all objects in the Batch Operations
+     *         job.
      */
 
     public java.util.Date getObjectLockRetainUntilDate() {
@@ -748,12 +748,12 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockRetainUntilDate
-     *        The date when the applied Object Retention configuration will expire on all objects in the Batch
-     *        Operations job.
+     *        The date when the applied object retention configuration expires on all objects in the Batch Operations
+     *        job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

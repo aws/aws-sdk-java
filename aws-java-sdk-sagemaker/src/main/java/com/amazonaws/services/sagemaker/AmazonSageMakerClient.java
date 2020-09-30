@@ -205,6 +205,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new AddTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
@@ -265,6 +266,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(associateTrialComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateTrialComponent");
@@ -319,6 +321,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateAlgorithmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAlgorithmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlgorithm");
@@ -379,6 +382,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApp");
@@ -447,6 +451,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateAutoMLJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAutoMLJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAutoMLJob");
@@ -508,6 +513,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateCodeRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCodeRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCodeRepository");
@@ -607,6 +613,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateCompilationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCompilationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCompilationJob");
@@ -684,6 +691,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
@@ -790,6 +798,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpoint");
@@ -882,6 +891,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateEndpointConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEndpointConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpointConfig");
@@ -963,6 +973,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateExperimentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createExperimentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateExperiment");
@@ -1021,6 +1032,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateFlowDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFlowDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFlowDefinition");
@@ -1080,6 +1092,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateHumanTaskUiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createHumanTaskUiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHumanTaskUi");
@@ -1142,6 +1155,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createHyperParameterTuningJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHyperParameterTuningJob");
@@ -1240,6 +1254,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateLabelingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLabelingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLabelingJob");
@@ -1325,6 +1340,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModel");
@@ -1385,6 +1401,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateModelPackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelPackageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelPackage");
@@ -1445,6 +1462,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createMonitoringScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMonitoringSchedule");
@@ -1551,6 +1569,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateNotebookInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotebookInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotebookInstance");
@@ -1632,6 +1651,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createNotebookInstanceLifecycleConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotebookInstanceLifecycleConfig");
@@ -1692,6 +1712,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createPresignedDomainUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePresignedDomainUrl");
@@ -1771,6 +1792,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(createPresignedNotebookInstanceUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePresignedNotebookInstanceUrl");
@@ -1832,6 +1854,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateProcessingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProcessingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProcessingJob");
@@ -1960,6 +1983,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateTrainingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrainingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrainingJob");
@@ -2063,6 +2087,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateTransformJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTransformJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTransformJob");
@@ -2134,6 +2159,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateTrialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrial");
@@ -2209,6 +2235,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateTrialComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTrialComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrialComponent");
@@ -2271,6 +2298,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserProfile");
@@ -2343,6 +2371,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateWorkforceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkforceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkforce");
@@ -2405,6 +2434,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new CreateWorkteamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkteamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkteam");
@@ -2458,6 +2488,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteAlgorithmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAlgorithmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlgorithm");
@@ -2515,6 +2546,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApp");
@@ -2568,6 +2600,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteCodeRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCodeRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCodeRepository");
@@ -2627,6 +2660,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
@@ -2685,6 +2719,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpoint");
@@ -2746,6 +2781,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteEndpointConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpointConfig");
@@ -2802,6 +2838,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteExperimentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteExperimentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteExperiment");
@@ -2859,6 +2896,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteFlowDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFlowDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFlowDefinition");
@@ -2918,6 +2956,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteHumanTaskUiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteHumanTaskUiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHumanTaskUi");
@@ -2973,6 +3012,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModel");
@@ -3030,6 +3070,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteModelPackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelPackageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelPackage");
@@ -3087,6 +3128,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteMonitoringScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMonitoringSchedule");
@@ -3148,6 +3190,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteNotebookInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotebookInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotebookInstance");
@@ -3204,6 +3247,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(deleteNotebookInstanceLifecycleConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotebookInstanceLifecycleConfig");
@@ -3267,6 +3311,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -3323,6 +3368,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteTrialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrial");
@@ -3380,6 +3426,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteTrialComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTrialComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrialComponent");
@@ -3438,6 +3485,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserProfile");
@@ -3502,6 +3550,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteWorkforceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkforceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkforce");
@@ -3558,6 +3607,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteWorkteamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkteamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkteam");
@@ -3611,6 +3661,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeAlgorithmRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAlgorithmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlgorithm");
@@ -3666,6 +3717,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeAppRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApp");
@@ -3721,6 +3773,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeAutoMLJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAutoMLJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAutoMLJob");
@@ -3774,6 +3827,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeCodeRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCodeRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeRepository");
@@ -3834,6 +3888,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeCompilationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCompilationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCompilationJob");
@@ -3890,6 +3945,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomain");
@@ -3943,6 +3999,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoint");
@@ -3996,6 +4053,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeEndpointConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpointConfig");
@@ -4052,6 +4110,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeExperimentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExperimentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExperiment");
@@ -4107,6 +4166,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeFlowDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFlowDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFlowDefinition");
@@ -4163,6 +4223,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeHumanTaskUiRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHumanTaskUiRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHumanTaskUi");
@@ -4220,6 +4281,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeHyperParameterTuningJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHyperParameterTuningJob");
@@ -4276,6 +4338,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeLabelingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLabelingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLabelingJob");
@@ -4329,6 +4392,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModel");
@@ -4386,6 +4450,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeModelPackageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeModelPackageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelPackage");
@@ -4442,6 +4507,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeMonitoringScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMonitoringSchedule");
@@ -4497,6 +4563,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeNotebookInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotebookInstance");
@@ -4559,6 +4626,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeNotebookInstanceLifecycleConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotebookInstanceLifecycleConfig");
@@ -4615,6 +4683,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeProcessingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProcessingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProcessingJob");
@@ -4671,6 +4740,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeSubscribedWorkteamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscribedWorkteam");
@@ -4727,6 +4797,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeTrainingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrainingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrainingJob");
@@ -4782,6 +4853,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeTransformJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTransformJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTransformJob");
@@ -4837,6 +4909,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeTrialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrial");
@@ -4892,6 +4965,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeTrialComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTrialComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrialComponent");
@@ -4948,6 +5022,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserProfile");
@@ -5009,6 +5084,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeWorkforceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkforceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkforce");
@@ -5063,6 +5139,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new DescribeWorkteamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeWorkteamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkteam");
@@ -5126,6 +5203,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(disassociateTrialComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateTrialComponent");
@@ -5182,6 +5260,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new GetSearchSuggestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSearchSuggestionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSearchSuggestions");
@@ -5235,6 +5314,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListAlgorithmsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAlgorithmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAlgorithms");
@@ -5288,6 +5368,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListAppsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApps");
@@ -5341,6 +5422,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListAutoMLJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAutoMLJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAutoMLJobs");
@@ -5397,6 +5479,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listCandidatesForAutoMLJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCandidatesForAutoMLJob");
@@ -5451,6 +5534,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListCodeRepositoriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCodeRepositoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodeRepositories");
@@ -5508,6 +5592,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListCompilationJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCompilationJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCompilationJobs");
@@ -5561,6 +5646,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListDomainsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
@@ -5614,6 +5700,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListEndpointConfigsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEndpointConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointConfigs");
@@ -5667,6 +5754,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpoints");
@@ -5721,6 +5809,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListExperimentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExperimentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExperiments");
@@ -5774,6 +5863,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListFlowDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFlowDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFlowDefinitions");
@@ -5827,6 +5917,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListHumanTaskUisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHumanTaskUisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHumanTaskUis");
@@ -5882,6 +5973,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listHyperParameterTuningJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHyperParameterTuningJobs");
@@ -5936,6 +6028,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListLabelingJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLabelingJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLabelingJobs");
@@ -5992,6 +6085,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listLabelingJobsForWorkteamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLabelingJobsForWorkteam");
@@ -6046,6 +6140,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListModelPackagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listModelPackagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelPackages");
@@ -6099,6 +6194,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModels");
@@ -6153,6 +6249,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listMonitoringExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitoringExecutions");
@@ -6208,6 +6305,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listMonitoringSchedulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitoringSchedules");
@@ -6265,6 +6363,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listNotebookInstanceLifecycleConfigsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookInstanceLifecycleConfigs");
@@ -6319,6 +6418,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListNotebookInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNotebookInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotebookInstances");
@@ -6373,6 +6473,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListProcessingJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProcessingJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProcessingJobs");
@@ -6428,6 +6529,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listSubscribedWorkteamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscribedWorkteams");
@@ -6482,6 +6584,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
@@ -6535,6 +6638,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListTrainingJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTrainingJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrainingJobs");
@@ -6594,6 +6698,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listTrainingJobsForHyperParameterTuningJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrainingJobsForHyperParameterTuningJob");
@@ -6648,6 +6753,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListTransformJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTransformJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTransformJobs");
@@ -6722,6 +6828,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListTrialComponentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTrialComponentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrialComponents");
@@ -6780,6 +6887,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListTrialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTrialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrials");
@@ -6833,6 +6941,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListUserProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserProfiles");
@@ -6887,6 +6996,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListWorkforcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkforcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkforces");
@@ -6941,6 +7051,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new ListWorkteamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkteamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkteams");
@@ -6996,6 +7107,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new RenderUiTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(renderUiTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RenderUiTemplate");
@@ -7054,6 +7166,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new SearchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Search");
@@ -7115,6 +7228,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(startMonitoringScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMonitoringSchedule");
@@ -7175,6 +7289,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StartNotebookInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startNotebookInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartNotebookInstance");
@@ -7231,6 +7346,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopAutoMLJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAutoMLJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopAutoMLJob");
@@ -7295,6 +7411,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopCompilationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopCompilationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopCompilationJob");
@@ -7356,6 +7473,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(stopHyperParameterTuningJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopHyperParameterTuningJob");
@@ -7413,6 +7531,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopLabelingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopLabelingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopLabelingJob");
@@ -7468,6 +7587,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopMonitoringScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopMonitoringScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMonitoringSchedule");
@@ -7529,6 +7649,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopNotebookInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopNotebookInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopNotebookInstance");
@@ -7584,6 +7705,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopProcessingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopProcessingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopProcessingJob");
@@ -7645,6 +7767,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopTrainingJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTrainingJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTrainingJob");
@@ -7705,6 +7828,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new StopTransformJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTransformJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTransformJob");
@@ -7758,6 +7882,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateCodeRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCodeRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCodeRepository");
@@ -7818,6 +7943,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomain");
@@ -7893,6 +8019,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpoint");
@@ -7954,6 +8081,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateEndpointWeightsAndCapacitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpointWeightsAndCapacities");
@@ -8012,6 +8140,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateExperimentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateExperimentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateExperiment");
@@ -8071,6 +8200,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateMonitoringScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMonitoringSchedule");
@@ -8129,6 +8259,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateNotebookInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotebookInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotebookInstance");
@@ -8189,6 +8320,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(updateNotebookInstanceLifecycleConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotebookInstanceLifecycleConfig");
@@ -8247,6 +8379,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateTrialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrial");
@@ -8304,6 +8437,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateTrialComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTrialComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrialComponent");
@@ -8364,6 +8498,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateUserProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserProfile");
@@ -8445,6 +8580,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateWorkforceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorkforceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkforce");
@@ -8501,6 +8637,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                 request = new UpdateWorkteamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorkteamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkteam");

@@ -31,6 +31,8 @@ public class WriteApplicationSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CampaignHook").build();
     private static final MarshallingInfo<Boolean> CLOUDWATCHMETRICSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchMetricsEnabled").build();
+    private static final MarshallingInfo<Boolean> EVENTTAGGINGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventTaggingEnabled").build();
     private static final MarshallingInfo<StructuredPojo> LIMITS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Limits").build();
     private static final MarshallingInfo<StructuredPojo> QUIETTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class WriteApplicationSettingsRequestMarshaller {
         try {
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getCampaignHook(), CAMPAIGNHOOK_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getCloudWatchMetricsEnabled(), CLOUDWATCHMETRICSENABLED_BINDING);
+            protocolMarshaller.marshall(writeApplicationSettingsRequest.getEventTaggingEnabled(), EVENTTAGGINGENABLED_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getLimits(), LIMITS_BINDING);
             protocolMarshaller.marshall(writeApplicationSettingsRequest.getQuietTime(), QUIETTIME_BINDING);
         } catch (Exception e) {

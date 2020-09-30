@@ -184,6 +184,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new CreateAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAsset");
@@ -249,6 +250,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(createPackagingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackagingConfiguration");
@@ -314,6 +316,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new CreatePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackagingGroup");
@@ -377,6 +380,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DeleteAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAsset");
@@ -441,6 +445,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(deletePackagingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackagingConfiguration");
@@ -505,6 +510,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DeletePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackagingGroup");
@@ -568,6 +574,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DescribeAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAsset");
@@ -632,6 +639,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(describePackagingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackagingConfiguration");
@@ -696,6 +704,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DescribePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackagingGroup");
@@ -760,6 +769,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new ListAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssets");
@@ -824,6 +834,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(listPackagingConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagingConfigurations");
@@ -888,6 +899,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new ListPackagingGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPackagingGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagingGroups");
@@ -939,6 +951,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -990,6 +1003,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1041,6 +1055,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1105,6 +1120,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new UpdatePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePackagingGroup");

@@ -163,6 +163,7 @@ public class AmazonWorkMailMessageFlowClient extends AmazonWebServiceClient impl
                 request = new GetRawMessageContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRawMessageContentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMailMessageFlow");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRawMessageContent");

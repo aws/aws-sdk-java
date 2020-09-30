@@ -334,6 +334,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new AdvertiseByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(advertiseByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdvertiseByoipCidr");
@@ -405,6 +406,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new CreateAcceleratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAcceleratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccelerator");
@@ -473,6 +475,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new CreateEndpointGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEndpointGroup");
@@ -538,6 +541,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new CreateListenerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateListener");
@@ -621,6 +625,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DeleteAcceleratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAcceleratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccelerator");
@@ -680,6 +685,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DeleteEndpointGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpointGroup");
@@ -742,6 +748,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DeleteListenerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteListener");
@@ -818,6 +825,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DeprovisionByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deprovisionByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeprovisionByoipCidr");
@@ -877,6 +885,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DescribeAcceleratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAcceleratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccelerator");
@@ -938,6 +947,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(describeAcceleratorAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAcceleratorAttributes");
@@ -999,6 +1009,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DescribeEndpointGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpointGroup");
@@ -1059,6 +1070,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new DescribeListenerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeListener");
@@ -1119,6 +1131,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new ListAcceleratorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAcceleratorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccelerators");
@@ -1185,6 +1198,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new ListByoipCidrsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listByoipCidrsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListByoipCidrs");
@@ -1247,6 +1261,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new ListEndpointGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEndpointGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointGroups");
@@ -1309,6 +1324,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new ListListenersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listListenersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListListeners");
@@ -1374,6 +1390,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1449,6 +1466,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new ProvisionByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(provisionByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ProvisionByoipCidr");
@@ -1514,6 +1532,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1581,6 +1600,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1645,6 +1665,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new UpdateAcceleratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAcceleratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccelerator");
@@ -1708,6 +1729,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(updateAcceleratorAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAcceleratorAttributes");
@@ -1772,6 +1794,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new UpdateEndpointGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEndpointGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEndpointGroup");
@@ -1835,6 +1858,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new UpdateListenerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateListenerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateListener");
@@ -1910,6 +1934,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                 request = new WithdrawByoipCidrRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(withdrawByoipCidrRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "WithdrawByoipCidr");

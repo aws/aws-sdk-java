@@ -54,6 +54,12 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      */
     private String bucket;
+    /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     */
+    private String accessPointArn;
 
     /**
      * <p>
@@ -267,6 +273,46 @@ public class AccessPoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        The ARN for the access point.
+     */
+
+    public void setAccessPointArn(String accessPointArn) {
+        this.accessPointArn = accessPointArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     * 
+     * @return The ARN for the access point.
+     */
+
+    public String getAccessPointArn() {
+        return this.accessPointArn;
+    }
+
+    /**
+     * <p>
+     * The ARN for the access point.
+     * </p>
+     * 
+     * @param accessPointArn
+     *        The ARN for the access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPoint withAccessPointArn(String accessPointArn) {
+        setAccessPointArn(accessPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,7 +331,9 @@ public class AccessPoint implements Serializable, Cloneable {
         if (getVpcConfiguration() != null)
             sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getBucket() != null)
-            sb.append("Bucket: ").append(getBucket());
+            sb.append("Bucket: ").append(getBucket()).append(",");
+        if (getAccessPointArn() != null)
+            sb.append("AccessPointArn: ").append(getAccessPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +364,10 @@ public class AccessPoint implements Serializable, Cloneable {
             return false;
         if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false)
             return false;
+        if (other.getAccessPointArn() == null ^ this.getAccessPointArn() == null)
+            return false;
+        if (other.getAccessPointArn() != null && other.getAccessPointArn().equals(this.getAccessPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class AccessPoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkOrigin() == null) ? 0 : getNetworkOrigin().hashCode());
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
+        hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
         return hashCode;
     }
 

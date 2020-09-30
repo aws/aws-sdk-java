@@ -176,6 +176,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request = new DeleteObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteObject");
@@ -235,6 +236,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request = new DescribeObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeObject");
@@ -297,6 +299,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request = new GetObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetObject");
@@ -356,6 +359,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request = new ListItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListItems");
@@ -414,10 +418,12 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                 request = new PutObjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putObjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutObject");
                 request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
                 request.addHandlerContext(HandlerContextKey.HAS_STREAMING_INPUT, Boolean.TRUE);
 
             } finally {

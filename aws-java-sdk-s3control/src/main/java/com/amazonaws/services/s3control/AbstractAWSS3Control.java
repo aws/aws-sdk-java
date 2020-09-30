@@ -33,6 +33,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public CreateBucketResult createBucket(CreateBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateJobResult createJob(CreateJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +49,26 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public DeleteAccessPointPolicyResult deleteAccessPointPolicy(DeleteAccessPointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBucketResult deleteBucket(DeleteBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBucketLifecycleConfigurationResult deleteBucketLifecycleConfiguration(DeleteBucketLifecycleConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBucketPolicyResult deleteBucketPolicy(DeleteBucketPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteBucketTaggingResult deleteBucketTagging(DeleteBucketTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,6 +103,26 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetBucketResult getBucket(GetBucketRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketLifecycleConfigurationResult getBucketLifecycleConfiguration(GetBucketLifecycleConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketPolicyResult getBucketPolicy(GetBucketPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetBucketTaggingResult getBucketTagging(GetBucketTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetJobTaggingResult getJobTagging(GetJobTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -98,7 +143,27 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public ListRegionalBucketsResult listRegionalBuckets(ListRegionalBucketsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAccessPointPolicyResult putAccessPointPolicy(PutAccessPointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBucketLifecycleConfigurationResult putBucketLifecycleConfiguration(PutBucketLifecycleConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBucketPolicyResult putBucketPolicy(PutBucketPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutBucketTaggingResult putBucketTagging(PutBucketTaggingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

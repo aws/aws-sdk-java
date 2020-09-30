@@ -28,4 +28,10 @@ public interface S3Resource extends AwsResource {
      * @return the string name of the S3 resource type.
      */
     String getType();
+
+    /**
+     * Gets the optional parent resource.
+     * @return the parent resource if exists otherwise null
+     */
+    S3Resource getParentS3Resource();
 }

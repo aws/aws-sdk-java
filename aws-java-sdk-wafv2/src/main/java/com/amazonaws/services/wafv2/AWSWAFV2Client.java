@@ -322,6 +322,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new AssociateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebACL");
@@ -431,6 +432,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CheckCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckCapacity");
@@ -539,6 +541,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIPSet");
@@ -646,6 +649,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexPatternSet");
@@ -764,6 +768,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRuleGroup");
@@ -886,6 +891,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebACL");
@@ -980,6 +986,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(deleteFirewallManagerRuleGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFirewallManagerRuleGroups");
@@ -1084,6 +1091,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIPSet");
@@ -1181,6 +1189,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(deleteLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggingConfiguration");
@@ -1268,6 +1277,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeletePermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePermissionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionPolicy");
@@ -1372,6 +1382,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexPatternSet");
@@ -1476,6 +1487,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRuleGroup");
@@ -1582,6 +1594,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebACL");
@@ -1678,6 +1691,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(describeManagedRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeManagedRuleGroup");
@@ -1778,6 +1792,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DisassociateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebACL");
@@ -1870,6 +1885,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIPSet");
@@ -1963,6 +1979,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(getLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingConfiguration");
@@ -2050,6 +2067,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPermissionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionPolicy");
@@ -2146,6 +2164,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(getRateBasedStatementManagedKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedStatementManagedKeys");
@@ -2239,6 +2258,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexPatternSet");
@@ -2331,6 +2351,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRuleGroup");
@@ -2429,6 +2450,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetSampledRequestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSampledRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSampledRequests");
@@ -2521,6 +2543,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACL");
@@ -2615,6 +2638,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetWebACLForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebACLForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACLForResource");
@@ -2707,6 +2731,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(listAvailableManagedRuleGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableManagedRuleGroups");
@@ -2798,6 +2823,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListIPSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIPSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIPSets");
@@ -2889,6 +2915,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(listLoggingConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggingConfigurations");
@@ -2980,6 +3007,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListRegexPatternSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRegexPatternSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexPatternSets");
@@ -3074,6 +3102,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListResourcesForWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourcesForWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourcesForWebACL");
@@ -3165,6 +3194,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListRuleGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleGroups");
@@ -3268,6 +3298,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3358,6 +3389,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListWebACLsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebACLsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebACLs");
@@ -3502,6 +3534,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(putLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingConfiguration");
@@ -3647,6 +3680,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new PutPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermissionPolicy");
@@ -3755,6 +3789,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3853,6 +3888,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3957,6 +3993,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIPSet");
@@ -4061,6 +4098,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexPatternSet");
@@ -4175,6 +4213,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuleGroup");
@@ -4293,6 +4332,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebACL");

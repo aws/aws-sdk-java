@@ -272,6 +272,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new AnalyzeDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(analyzeDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AnalyzeDocument");
@@ -370,6 +371,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new DetectDocumentTextRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectDocumentTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectDocumentText");
@@ -497,6 +499,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new GetDocumentAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentAnalysis");
@@ -603,6 +606,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(getDocumentTextDetectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentTextDetection");
@@ -712,6 +716,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new StartDocumentAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDocumentAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentAnalysis");
@@ -822,6 +827,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(startDocumentTextDetectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentTextDetection");

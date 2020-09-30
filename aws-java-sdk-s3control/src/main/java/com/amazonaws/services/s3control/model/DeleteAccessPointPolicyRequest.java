@@ -35,6 +35,14 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      */
     private String name;
 
@@ -82,9 +90,24 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      * 
      * @param name
-     *        The name of the access point whose policy you want to delete.
+     *        The name of the access point whose policy you want to delete.</p>
+     *        <p>
+     *        For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
+     *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The
+     *        value must be URL encoded.
      */
 
     public void setName(String name) {
@@ -95,8 +118,23 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      * 
-     * @return The name of the access point whose policy you want to delete.
+     * @return The name of the access point whose policy you want to delete.</p>
+     *         <p>
+     *         For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     *         . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
+     *         owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *         <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The
+     *         value must be URL encoded.
      */
 
     public String getName() {
@@ -107,9 +145,24 @@ public class DeleteAccessPointPolicyRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The name of the access point whose policy you want to delete.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     * . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code> owned
+     * by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The value must
+     * be URL encoded.
+     * </p>
      * 
      * @param name
-     *        The name of the access point whose policy you want to delete.
+     *        The name of the access point whose policy you want to delete.</p>
+     *        <p>
+     *        For Amazon S3 on Outposts specify the ARN of the access point accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>
+     *        . For example, to access the access point <code>reports-ap</code> through outpost <code>my-outpost</code>
+     *        owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>. The
+     *        value must be URL encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

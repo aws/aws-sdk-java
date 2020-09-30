@@ -1,3 +1,52 @@
+# __1.11.873__ __2020-09-30__
+## __AWS DataSync__
+  - ### Features
+    - This release enables customers to create s3 location for S3 bucket's located on an AWS Outpost.
+
+## __AWS Direct Connect__
+  - ### Features
+    - Documentation updates for AWS Direct Connect.
+
+## __AWS IoT__
+  - ### Features
+    - AWS IoT Rules Engine adds Timestream action. The Timestream rule action lets you stream time-series data from IoT sensors and applications to Amazon Timestream databases for time series analysis.
+
+## __AWS MediaConnect__
+  - ### Features
+    - MediaConnect now supports reservations to provide a discounted rate for a specific outbound bandwidth over a period of time.
+
+## __AWS S3 Control__
+  - ### Features
+    - Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+
+## __AWS SecurityHub__
+  - ### Features
+    - Added several new resource details objects. Added additional details for CloudFront distributions, IAM roles, and IAM access keys. Added a new ResourceRole attribute for resources.
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Amazon EMR customers can now use EC2 placement group to influence the placement of master nodes in a high-availability (HA) cluster across distinct underlying hardware to improve cluster availability.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - Amazon Pinpoint - Features - Customers can start a journey based on an event being triggered by an endpoint or user.
+
+## __Amazon S3 on Outposts__
+  - ### Features
+    - Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+
+## __Amazon Simple Storage Service__
+  - ### Features
+    - Amazon S3 on Outposts expands object storage to on-premises AWS Outposts environments, enabling you to store and retrieve objects using S3 APIs and features.
+
+## __Application Auto Scaling__
+  - ### Features
+    - This release extends Auto Scaling support for cluster storage of Managed Streaming for Kafka. Auto Scaling monitors and automatically expands storage capacity when a critical usage threshold is met.
+
+## __EC2 Image Builder__
+  - ### Features
+    - EC2 Image Builder adds support for copying AMIs created by Image Builder to accounts specific to each Region.
+
 # __1.11.872__ __2020-09-29__
 ## __Amazon Connect Service__
   - ### Features

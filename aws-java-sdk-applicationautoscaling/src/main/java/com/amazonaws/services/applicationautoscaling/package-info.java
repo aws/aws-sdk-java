@@ -71,6 +71,11 @@
  * Amazon Keyspaces (for Apache Cassandra) tables
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Managed Streaming for Apache Kafka cluster storage
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>API Summary</b>

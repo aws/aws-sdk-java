@@ -281,6 +281,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(abortDocumentVersionUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AbortDocumentVersionUpload");
@@ -346,6 +347,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new ActivateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(activateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ActivateUser");
@@ -409,6 +411,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new AddResourcePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addResourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddResourcePermissions");
@@ -481,6 +484,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComment");
@@ -549,6 +553,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateCustomMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCustomMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomMetadata");
@@ -621,6 +626,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFolderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFolder");
@@ -687,6 +693,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLabelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLabels");
@@ -753,6 +760,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createNotificationSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotificationSubscription");
@@ -819,6 +827,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
@@ -883,6 +892,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeactivateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deactivateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeactivateUser");
@@ -952,6 +962,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteCommentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCommentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComment");
@@ -1018,6 +1029,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteCustomMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCustomMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomMetadata");
@@ -1088,6 +1100,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDocument");
@@ -1158,6 +1171,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFolderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolder");
@@ -1226,6 +1240,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteFolderContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFolderContentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFolderContents");
@@ -1290,6 +1305,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteLabelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLabelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLabels");
@@ -1352,6 +1368,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteNotificationSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationSubscription");
@@ -1417,6 +1434,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -1481,6 +1499,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeActivitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivities");
@@ -1547,6 +1566,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeCommentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCommentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComments");
@@ -1619,6 +1639,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeDocumentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentVersions");
@@ -1691,6 +1712,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeFolderContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFolderContentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFolderContents");
@@ -1754,6 +1776,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroups");
@@ -1815,6 +1838,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeNotificationSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationSubscriptions");
@@ -1879,6 +1903,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeResourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourcePermissions");
@@ -1952,6 +1977,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeRootFoldersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRootFoldersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRootFolders");
@@ -2026,6 +2052,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUsers");
@@ -2097,6 +2124,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetCurrentUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCurrentUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCurrentUser");
@@ -2165,6 +2193,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocument");
@@ -2234,6 +2263,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetDocumentPathRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentPathRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentPath");
@@ -2302,6 +2332,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetDocumentVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentVersion");
@@ -2370,6 +2401,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFolderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolder");
@@ -2439,6 +2471,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetFolderPathRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFolderPathRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFolderPath");
@@ -2504,6 +2537,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new GetResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResources");
@@ -2590,6 +2624,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(initiateDocumentVersionUploadRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateDocumentVersionUpload");
@@ -2654,6 +2689,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(removeAllResourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAllResourcePermissions");
@@ -2718,6 +2754,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(removeResourcePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveResourcePermission");
@@ -2794,6 +2831,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocument");
@@ -2868,6 +2906,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateDocumentVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocumentVersion");
@@ -2944,6 +2983,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateFolderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFolderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFolder");
@@ -3015,6 +3055,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkDocs");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");

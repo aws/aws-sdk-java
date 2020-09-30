@@ -533,6 +533,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new CancelKeyDeletionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelKeyDeletion");
@@ -713,6 +714,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ConnectCustomKeyStoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(connectCustomKeyStoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConnectCustomKeyStore");
@@ -872,6 +874,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
@@ -1029,6 +1032,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new CreateCustomKeyStoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCustomKeyStoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomKeyStore");
@@ -1166,6 +1170,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new CreateGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGrant");
@@ -1398,6 +1403,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new CreateKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateKey");
@@ -1572,6 +1578,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new DecryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(decryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Decrypt");
@@ -1647,6 +1654,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
@@ -1770,6 +1778,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new DeleteCustomKeyStoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCustomKeyStoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomKeyStore");
@@ -1858,6 +1867,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                         .beforeMarshalling(deleteImportedKeyMaterialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteImportedKeyMaterial");
@@ -1949,6 +1959,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                         .beforeMarshalling(describeCustomKeyStoresRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCustomKeyStores");
@@ -2061,6 +2072,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new DescribeKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeKey");
@@ -2140,6 +2152,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new DisableKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableKey");
@@ -2223,6 +2236,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new DisableKeyRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableKeyRotation");
@@ -2336,6 +2350,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                         .beforeMarshalling(disconnectCustomKeyStoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisconnectCustomKeyStore");
@@ -2415,6 +2430,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new EnableKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableKey");
@@ -2498,6 +2514,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new EnableKeyRotationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableKeyRotationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableKeyRotation");
@@ -2723,6 +2740,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new EncryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(encryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Encrypt");
@@ -2897,6 +2915,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GenerateDataKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataKey");
@@ -3033,6 +3052,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GenerateDataKeyPairRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateDataKeyPairRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataKeyPair");
@@ -3163,6 +3183,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                         .beforeMarshalling(generateDataKeyPairWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataKeyPairWithoutPlaintext");
@@ -3304,6 +3325,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                         .beforeMarshalling(generateDataKeyWithoutPlaintextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateDataKeyWithoutPlaintext");
@@ -3404,6 +3426,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GenerateRandomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(generateRandomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GenerateRandom");
@@ -3477,6 +3500,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GetKeyPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyPolicy");
@@ -3577,6 +3601,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GetKeyRotationStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getKeyRotationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetKeyRotationStatus");
@@ -3671,6 +3696,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GetParametersForImportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersForImportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetParametersForImport");
@@ -3829,6 +3855,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new GetPublicKeyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPublicKeyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPublicKey");
@@ -3981,6 +4008,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ImportKeyMaterialRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importKeyMaterialRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportKeyMaterial");
@@ -4062,6 +4090,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
@@ -4150,6 +4179,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ListGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGrants");
@@ -4219,6 +4249,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ListKeyPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeyPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeyPolicies");
@@ -4279,6 +4310,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ListKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListKeys");
@@ -4349,6 +4381,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ListResourceTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceTags");
@@ -4416,6 +4449,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ListRetirableGrantsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRetirableGrantsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRetirableGrants");
@@ -4498,6 +4532,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new PutKeyPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putKeyPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutKeyPolicy");
@@ -4687,6 +4722,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ReEncryptRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reEncryptRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReEncrypt");
@@ -4781,6 +4817,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new RetireGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retireGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetireGrant");
@@ -4860,6 +4897,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new RevokeGrantRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeGrantRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeGrant");
@@ -4959,6 +4997,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new ScheduleKeyDeletionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scheduleKeyDeletionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ScheduleKeyDeletion");
@@ -5106,6 +5145,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new SignRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(signRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Sign");
@@ -5196,6 +5236,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -5272,6 +5313,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -5363,6 +5405,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new UpdateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAlias");
@@ -5566,6 +5609,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new UpdateCustomKeyStoreRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateCustomKeyStoreRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCustomKeyStore");
@@ -5641,6 +5685,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new UpdateKeyDescriptionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateKeyDescriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateKeyDescription");
@@ -5771,6 +5816,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                 request = new VerifyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "KMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Verify");

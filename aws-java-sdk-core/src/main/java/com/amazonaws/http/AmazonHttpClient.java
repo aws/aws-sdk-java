@@ -1301,6 +1301,9 @@ public class AmazonHttpClient {
                         // adjusted when execution reaches here.
                         request.setTimeOffset(timeOffset);
                     }
+
+                    overrideSigningNameIfNeeded(execOneParams);
+
                     execOneParams.signer.sign(request, credentials);
                 } finally {
                     awsRequestMetrics.endEvent(Field.RequestSigningTime);
@@ -1369,6 +1372,20 @@ public class AmazonHttpClient {
             }
 
             return handleServiceErrorResponse(execOneParams, localRequestContext, statusCode);
+        }
+
+        private void overrideSigningNameIfNeeded(ExecOneRequestParams execOneParams) {
+            String signingName = request.getHandlerContext(HandlerContextKey.SIGNING_NAME);
+            if (signingName != null && execOneParams.signer instanceof AWS4Signer && !isSignerOverridden()) {
+                ((AWS4Signer)(execOneParams.signer)).setServiceName(signingName);
+            }
+        }
+
+        /**
+         * Has signer been explicitly overridden in the configuration?
+         */
+        private boolean isSignerOverridden() {
+            return config != null && config.getSignerOverride() != null;
         }
 
         /**

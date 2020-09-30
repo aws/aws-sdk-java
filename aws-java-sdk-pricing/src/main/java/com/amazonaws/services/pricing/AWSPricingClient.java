@@ -216,6 +216,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request = new DescribeServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
@@ -284,6 +285,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request = new GetAttributeValuesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAttributeValuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributeValues");
@@ -347,6 +349,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                 request = new GetProductsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pricing");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProducts");

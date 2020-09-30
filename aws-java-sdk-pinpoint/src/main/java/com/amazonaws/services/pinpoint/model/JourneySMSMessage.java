@@ -40,8 +40,8 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region. For more information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
-     * Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and
+     * Regions</a> in the Amazon Pinpoint User Guide.
      * </p>
      */
     private String senderId;
@@ -125,15 +125,15 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region. For more information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
-     * Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and
+     * Regions</a> in the Amazon Pinpoint User Guide.
      * </p>
      * 
      * @param senderId
      *        The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs
      *        varies by country or region. For more information, see <a
-     *        href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html"
-     *        >Supported Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     *        Countries and Regions</a> in the Amazon Pinpoint User Guide.
      */
 
     public void setSenderId(String senderId) {
@@ -144,14 +144,14 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region. For more information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
-     * Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and
+     * Regions</a> in the Amazon Pinpoint User Guide.
      * </p>
      * 
      * @return The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs
      *         varies by country or region. For more information, see <a
-     *         href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html"
-     *         >Supported Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     *         href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     *         Countries and Regions</a> in the Amazon Pinpoint User Guide.
      */
 
     public String getSenderId() {
@@ -162,15 +162,15 @@ public class JourneySMSMessage implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs varies by
      * country or region. For more information, see <a
-     * href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
-     * Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     * href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported Countries and
+     * Regions</a> in the Amazon Pinpoint User Guide.
      * </p>
      * 
      * @param senderId
      *        The sender ID to display as the sender of the message on a recipient's device. Support for sender IDs
      *        varies by country or region. For more information, see <a
-     *        href="https://docs.aws.amazon.com.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html"
-     *        >Supported Countries and Regions</a> in the Amazon Pinpoint User Guide.
+     *        href="https://docs.aws.amazon.com/pinpoint/latest/userguide/channels-sms-countries.html">Supported
+     *        Countries and Regions</a> in the Amazon Pinpoint User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,8 @@ public enum ServiceNamespace {
     CustomResource("custom-resource"),
     Comprehend("comprehend"),
     Lambda("lambda"),
-    Cassandra("cassandra");
+    Cassandra("cassandra"),
+    Kafka("kafka");
 
     private String value;
 

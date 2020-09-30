@@ -196,6 +196,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new AddFlowOutputsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addFlowOutputsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddFlowOutputs");
@@ -260,6 +261,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new AddFlowSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addFlowSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddFlowSources");
@@ -324,6 +326,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new AddFlowVpcInterfacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addFlowVpcInterfacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddFlowVpcInterfaces");
@@ -391,6 +394,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new CreateFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFlow");
@@ -454,6 +458,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFlow");
@@ -518,6 +523,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new DescribeFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFlow");
@@ -529,6 +535,133 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeFlowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeFlowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Displays the details of an offering. The response includes the offering description, duration, outbound
+     * bandwidth, price, and Amazon Resource Name (ARN).
+     * 
+     * @param describeOfferingRequest
+     * @return Result of the DescribeOffering operation returned by the service.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.DescribeOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeOfferingResult describeOffering(DescribeOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOffering(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOfferingResult executeDescribeOffering(DescribeOfferingRequest describeOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOfferingRequest> request = null;
+        Response<DescribeOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOffering");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOfferingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeOfferingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Displays the details of a reservation. The response includes the reservation name, state, start date and time,
+     * and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound
+     * bandwidth).
+     * 
+     * @param describeReservationRequest
+     * @return Result of the DescribeReservation operation returned by the service.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.DescribeReservation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeReservation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReservationResult describeReservation(DescribeReservationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservation(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservationResult executeDescribeReservation(DescribeReservationRequest describeReservationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservationRequest> request = null;
+        Response<DescribeReservationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReservationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeReservationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -585,6 +718,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new GrantFlowEntitlementsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(grantFlowEntitlementsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GrantFlowEntitlements");
@@ -646,6 +780,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new ListEntitlementsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEntitlementsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntitlements");
@@ -705,6 +840,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new ListFlowsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFlowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFlows");
@@ -716,6 +852,129 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListFlowsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListFlowsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an
+     * active reservation (which means you've purchased an offering that has already started and hasn't expired yet),
+     * your account isn't eligible for other offerings.
+     * 
+     * @param listOfferingsRequest
+     * @return Result of the ListOfferings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.ListOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListOfferings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOfferings(request);
+    }
+
+    @SdkInternalApi
+    final ListOfferingsResult executeListOfferings(ListOfferingsRequest listOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOfferingsRequest> request = null;
+        Response<ListOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOfferingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOfferingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list
+     * includes all reservations in all states (such as active and expired).
+     * 
+     * @param listReservationsRequest
+     * @return Result of the ListReservations operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @sample AWSMediaConnect.ListReservations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListReservations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListReservationsResult listReservations(ListReservationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListReservations(request);
+    }
+
+    @SdkInternalApi
+    final ListReservationsResult executeListReservations(ListReservationsRequest listReservationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listReservationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListReservationsRequest> request = null;
+        Response<ListReservationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListReservationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReservationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReservations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListReservationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListReservationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -762,6 +1021,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -773,6 +1033,72 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Submits a request to purchase an offering. If you already have an active reservation, you can't purchase another
+     * offering.
+     * 
+     * @param purchaseOfferingRequest
+     *        A request to purchase a offering.
+     * @return Result of the PurchaseOffering operation returned by the service.
+     * @throws BadRequestException
+     *         The request that you submitted is not valid.
+     * @throws InternalServerErrorException
+     *         AWS Elemental MediaConnect can't fulfill your request because it encountered an unexpected condition.
+     * @throws ForbiddenException
+     *         You don't have the required permissions to perform this operation.
+     * @throws NotFoundException
+     *         AWS Elemental MediaConnect did not find the resource that you specified in the request.
+     * @throws ServiceUnavailableException
+     *         AWS Elemental MediaConnect is currently unavailable. Try again later.
+     * @throws TooManyRequestsException
+     *         You have exceeded the service request rate limit for your AWS Elemental MediaConnect account.
+     * @sample AWSMediaConnect.PurchaseOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/PurchaseOffering" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseOffering(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseOfferingResult executePurchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(purchaseOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseOfferingRequest> request = null;
+        Response<PurchaseOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purchaseOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PurchaseOfferingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PurchaseOfferingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -827,6 +1153,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new RemoveFlowOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeFlowOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFlowOutput");
@@ -891,6 +1218,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new RemoveFlowSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeFlowSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFlowSource");
@@ -956,6 +1284,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new RemoveFlowVpcInterfaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeFlowVpcInterfaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFlowVpcInterface");
@@ -1021,6 +1350,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new RevokeFlowEntitlementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeFlowEntitlementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeFlowEntitlement");
@@ -1085,6 +1415,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new StartFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartFlow");
@@ -1148,6 +1479,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new StopFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopFlow");
@@ -1209,6 +1541,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1266,6 +1599,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1330,6 +1664,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateFlowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFlowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFlow");
@@ -1395,6 +1730,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateFlowEntitlementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFlowEntitlementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFlowEntitlement");
@@ -1460,6 +1796,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateFlowOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFlowOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFlowOutput");
@@ -1524,6 +1861,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                 request = new UpdateFlowSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFlowSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaConnect");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFlowSource");

@@ -236,6 +236,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new CreateConfigurationSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSet");
@@ -309,6 +310,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(createConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetEventDestination");
@@ -384,6 +386,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(createCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomVerificationEmailTemplate");
@@ -451,6 +454,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new CreateDedicatedIpPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDedicatedIpPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDedicatedIpPool");
@@ -535,6 +539,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(createDeliverabilityTestReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliverabilityTestReport");
@@ -621,6 +626,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new CreateEmailIdentityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEmailIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEmailIdentity");
@@ -704,6 +710,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(createEmailIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEmailIdentityPolicy");
@@ -775,6 +782,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new CreateEmailTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEmailTemplate");
@@ -835,6 +843,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new CreateImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateImportJob");
@@ -902,6 +911,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new DeleteConfigurationSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSet");
@@ -971,6 +981,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(deleteConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetEventDestination");
@@ -1042,6 +1053,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(deleteCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomVerificationEmailTemplate");
@@ -1105,6 +1117,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new DeleteDedicatedIpPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDedicatedIpPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDedicatedIpPool");
@@ -1170,6 +1183,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new DeleteEmailIdentityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEmailIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEmailIdentity");
@@ -1250,6 +1264,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(deleteEmailIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEmailIdentityPolicy");
@@ -1316,6 +1331,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new DeleteEmailTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEmailTemplate");
@@ -1377,6 +1393,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(deleteSuppressedDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSuppressedDestination");
@@ -1437,6 +1454,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccount");
@@ -1497,6 +1515,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetBlacklistReportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlacklistReportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlacklistReports");
@@ -1563,6 +1582,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetConfigurationSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSet");
@@ -1631,6 +1651,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getConfigurationSetEventDestinationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfigurationSetEventDestinations");
@@ -1702,6 +1723,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCustomVerificationEmailTemplate");
@@ -1764,6 +1786,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetDedicatedIpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDedicatedIpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDedicatedIp");
@@ -1824,6 +1847,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetDedicatedIpsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDedicatedIpsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDedicatedIps");
@@ -1900,6 +1924,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getDeliverabilityDashboardOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityDashboardOptions");
@@ -1962,6 +1987,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getDeliverabilityTestReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityTestReport");
@@ -2028,6 +2054,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getDomainDeliverabilityCampaignRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainDeliverabilityCampaign");
@@ -2090,6 +2117,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getDomainStatisticsReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainStatisticsReport");
@@ -2152,6 +2180,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetEmailIdentityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEmailIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEmailIdentity");
@@ -2229,6 +2258,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getEmailIdentityPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEmailIdentityPolicies");
@@ -2295,6 +2325,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetEmailTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEmailTemplate");
@@ -2355,6 +2386,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new GetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetImportJob");
@@ -2416,6 +2448,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(getSuppressedDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSuppressedDestination");
@@ -2480,6 +2513,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new ListConfigurationSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listConfigurationSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationSets");
@@ -2549,6 +2583,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(listCustomVerificationEmailTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCustomVerificationEmailTemplates");
@@ -2608,6 +2643,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new ListDedicatedIpPoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDedicatedIpPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDedicatedIpPools");
@@ -2671,6 +2707,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(listDeliverabilityTestReportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliverabilityTestReports");
@@ -2737,6 +2774,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(listDomainDeliverabilityCampaignsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainDeliverabilityCampaigns");
@@ -2800,6 +2838,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new ListEmailIdentitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEmailIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEmailIdentities");
@@ -2864,6 +2903,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new ListEmailTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEmailTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEmailTemplates");
@@ -2923,6 +2963,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new ListImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImportJobs");
@@ -2984,6 +3025,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(listSuppressedDestinationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSuppressedDestinations");
@@ -3047,6 +3089,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3107,6 +3150,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putAccountDedicatedIpWarmupAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountDedicatedIpWarmupAttributes");
@@ -3168,6 +3212,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new PutAccountDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAccountDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountDetails");
@@ -3227,6 +3272,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putAccountSendingAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSendingAttributes");
@@ -3288,6 +3334,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putAccountSuppressionAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSuppressionAttributes");
@@ -3352,6 +3399,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putConfigurationSetDeliveryOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetDeliveryOptions");
@@ -3416,6 +3464,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putConfigurationSetReputationOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetReputationOptions");
@@ -3480,6 +3529,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putConfigurationSetSendingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetSendingOptions");
@@ -3543,6 +3593,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putConfigurationSetSuppressionOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetSuppressionOptions");
@@ -3606,6 +3657,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetTrackingOptions");
@@ -3676,6 +3728,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new PutDedicatedIpInPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDedicatedIpInPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpInPool");
@@ -3736,6 +3789,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putDedicatedIpWarmupAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDedicatedIpWarmupAttributes");
@@ -3817,6 +3871,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putDeliverabilityDashboardOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliverabilityDashboardOption");
@@ -3879,6 +3934,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putEmailIdentityDkimAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityDkimAttributes");
@@ -3970,6 +4026,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putEmailIdentityDkimSigningAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityDkimSigningAttributes");
@@ -4044,6 +4101,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putEmailIdentityFeedbackAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityFeedbackAttributes");
@@ -4107,6 +4165,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putEmailIdentityMailFromAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEmailIdentityMailFromAttributes");
@@ -4167,6 +4226,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(putSuppressedDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSuppressedDestination");
@@ -4241,6 +4301,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new SendBulkEmailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendBulkEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendBulkEmail");
@@ -4321,6 +4382,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(sendCustomVerificationEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCustomVerificationEmail");
@@ -4415,6 +4477,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new SendEmailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendEmail");
@@ -4483,6 +4546,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -4548,6 +4612,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(testRenderEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRenderEmailTemplate");
@@ -4610,6 +4675,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4678,6 +4744,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetEventDestination");
@@ -4749,6 +4816,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCustomVerificationEmailTemplate");
@@ -4830,6 +4898,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateEmailIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEmailIdentityPolicy");
@@ -4899,6 +4968,7 @@ public class AmazonSimpleEmailServiceV2Client extends AmazonWebServiceClient imp
                 request = new UpdateEmailTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SESv2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEmailTemplate");

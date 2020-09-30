@@ -416,6 +416,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new CreateCapacityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCapacityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCapacityProvider");
@@ -490,6 +491,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new CreateClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCluster");
@@ -683,6 +685,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new CreateServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateService");
@@ -764,6 +767,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new CreateTaskSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTaskSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTaskSet");
@@ -825,6 +829,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DeleteAccountSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccountSettingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountSetting");
@@ -886,6 +891,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DeleteAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttributes");
@@ -963,6 +969,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DeleteCapacityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCapacityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCapacityProvider");
@@ -1050,6 +1057,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DeleteClusterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCluster");
@@ -1136,6 +1144,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DeleteServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteService");
@@ -1216,6 +1225,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DeleteTaskSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTaskSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTaskSet");
@@ -1299,6 +1309,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(deregisterContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterContainerInstance");
@@ -1377,6 +1388,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(deregisterTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTaskDefinition");
@@ -1440,6 +1452,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(describeCapacityProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCapacityProviders");
@@ -1502,6 +1515,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DescribeClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClusters");
@@ -1573,6 +1587,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(describeContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContainerInstances");
@@ -1638,6 +1653,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DescribeServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServices");
@@ -1706,6 +1722,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DescribeTaskDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTaskDefinition");
@@ -1784,6 +1801,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DescribeTaskSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTaskSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTaskSets");
@@ -1848,6 +1866,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DescribeTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTasks");
@@ -1912,6 +1931,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new DiscoverPollEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverPollEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverPollEndpoint");
@@ -1978,6 +1998,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountSettings");
@@ -2040,6 +2061,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttributes");
@@ -2101,6 +2123,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListClustersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClusters");
@@ -2174,6 +2197,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListContainerInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listContainerInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContainerInstances");
@@ -2244,6 +2268,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListServices");
@@ -2313,6 +2338,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2381,6 +2407,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(listTaskDefinitionFamiliesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTaskDefinitionFamilies");
@@ -2449,6 +2476,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListTaskDefinitionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTaskDefinitionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTaskDefinitions");
@@ -2527,6 +2555,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new ListTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTasks");
@@ -2623,6 +2652,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new PutAccountSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAccountSettingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSetting");
@@ -2686,6 +2716,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(putAccountSettingDefaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccountSettingDefault");
@@ -2755,6 +2786,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new PutAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAttributes");
@@ -2841,6 +2873,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(putClusterCapacityProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutClusterCapacityProviders");
@@ -2909,6 +2942,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(registerContainerInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterContainerInstance");
@@ -2992,6 +3026,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new RegisterTaskDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerTaskDefinitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTaskDefinition");
@@ -3104,6 +3139,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new RunTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(runTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RunTask");
@@ -3173,6 +3209,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new StartTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTask");
@@ -3252,6 +3289,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new StopTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTask");
@@ -3321,6 +3359,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(submitAttachmentStateChangesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitAttachmentStateChanges");
@@ -3389,6 +3428,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(submitContainerStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitContainerStateChange");
@@ -3463,6 +3503,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new SubmitTaskStateChangeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitTaskStateChangeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitTaskStateChange");
@@ -3532,6 +3573,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3598,6 +3640,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3662,6 +3705,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new UpdateClusterSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateClusterSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClusterSettings");
@@ -3751,6 +3795,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new UpdateContainerAgentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContainerAgentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContainerAgent");
@@ -3873,6 +3918,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(updateContainerInstancesStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContainerInstancesState");
@@ -4077,6 +4123,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new UpdateServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateService");
@@ -4159,6 +4206,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                         .beforeMarshalling(updateServicePrimaryTaskSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServicePrimaryTaskSet");
@@ -4240,6 +4288,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                 request = new UpdateTaskSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTaskSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ECS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTaskSet");

@@ -217,6 +217,7 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(createHomeRegionControlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHomeRegionControl");
@@ -283,6 +284,7 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(describeHomeRegionControlsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHomeRegionControls");
@@ -351,6 +353,7 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
                 request = new GetHomeRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHomeRegionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHomeRegion");

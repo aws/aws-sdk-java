@@ -249,6 +249,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(acceptResourceShareInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptResourceShareInvitation");
@@ -328,6 +329,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new AssociateResourceShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateResourceShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateResourceShare");
@@ -398,6 +400,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(associateResourceSharePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateResourceSharePermission");
@@ -475,6 +478,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new CreateResourceShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceShare");
@@ -547,6 +551,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new DeleteResourceShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceShare");
@@ -622,6 +627,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(disassociateResourceShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateResourceShare");
@@ -692,6 +698,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(disassociateResourceSharePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateResourceSharePermission");
@@ -757,6 +764,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(enableSharingWithAwsOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSharingWithAwsOrganization");
@@ -823,6 +831,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new GetPermissionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermission");
@@ -888,6 +897,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new GetResourcePoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicies");
@@ -956,6 +966,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(getResourceShareAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceShareAssociations");
@@ -1027,6 +1038,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(getResourceShareInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceShareInvitations");
@@ -1093,6 +1105,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new GetResourceSharesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceSharesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceShares");
@@ -1165,6 +1178,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(listPendingInvitationResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPendingInvitationResources");
@@ -1229,6 +1243,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new ListPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissions");
@@ -1294,6 +1309,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new ListPrincipalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPrincipalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPrincipals");
@@ -1362,6 +1378,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(listResourceSharePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceSharePermissions");
@@ -1424,6 +1441,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new ListResourceTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceTypes");
@@ -1491,6 +1509,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new ListResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
@@ -1576,6 +1595,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(promoteResourceShareCreatedFromPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PromoteResourceShareCreatedFromPolicy");
@@ -1652,6 +1672,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                         .beforeMarshalling(rejectResourceShareInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectResourceShareInvitation");
@@ -1720,6 +1741,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1779,6 +1801,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1851,6 +1874,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                 request = new UpdateResourceShareRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceShareRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RAM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceShare");

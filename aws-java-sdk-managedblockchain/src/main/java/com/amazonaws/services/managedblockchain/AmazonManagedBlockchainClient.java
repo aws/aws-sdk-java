@@ -207,6 +207,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMember");
@@ -275,6 +276,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetwork");
@@ -347,6 +349,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNode");
@@ -415,6 +418,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateProposalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProposal");
@@ -487,6 +491,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new DeleteMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMember");
@@ -555,6 +560,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new DeleteNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNode");
@@ -620,6 +626,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMember");
@@ -685,6 +692,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetwork");
@@ -750,6 +758,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNode");
@@ -815,6 +824,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetProposalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProposal");
@@ -883,6 +893,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
@@ -946,6 +957,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
@@ -1009,6 +1021,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListNetworksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNetworksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworks");
@@ -1072,6 +1085,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNodesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNodes");
@@ -1136,6 +1150,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListProposalVotesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProposalVotesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProposalVotes");
@@ -1201,6 +1216,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListProposalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProposalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProposals");
@@ -1268,6 +1284,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new RejectInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInvitation");
@@ -1333,6 +1350,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new UpdateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMember");
@@ -1398,6 +1416,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new UpdateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNode");
@@ -1465,6 +1484,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new VoteOnProposalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(voteOnProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VoteOnProposal");

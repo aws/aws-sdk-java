@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the
- * default limits for messages that campaigns and journeys in the application can send.
+ * default limits for messages that campaigns in the application can send.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CampaignLimits" target="_top">AWS API
@@ -47,8 +47,8 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of messages that a campaign can send each second. For an application, this value specifies the
-     * default limit for the number of messages that campaigns and journeys can send each second. The minimum value is
-     * 50. The maximum value is 20,000.
+     * default limit for the number of messages that campaigns can send each second. The minimum value is 50. The
+     * maximum value is 20,000.
      * </p>
      */
     private Integer messagesPerSecond;
@@ -161,14 +161,14 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of messages that a campaign can send each second. For an application, this value specifies the
-     * default limit for the number of messages that campaigns and journeys can send each second. The minimum value is
-     * 50. The maximum value is 20,000.
+     * default limit for the number of messages that campaigns can send each second. The minimum value is 50. The
+     * maximum value is 20,000.
      * </p>
      * 
      * @param messagesPerSecond
      *        The maximum number of messages that a campaign can send each second. For an application, this value
-     *        specifies the default limit for the number of messages that campaigns and journeys can send each second.
-     *        The minimum value is 50. The maximum value is 20,000.
+     *        specifies the default limit for the number of messages that campaigns can send each second. The minimum
+     *        value is 50. The maximum value is 20,000.
      */
 
     public void setMessagesPerSecond(Integer messagesPerSecond) {
@@ -178,13 +178,13 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of messages that a campaign can send each second. For an application, this value specifies the
-     * default limit for the number of messages that campaigns and journeys can send each second. The minimum value is
-     * 50. The maximum value is 20,000.
+     * default limit for the number of messages that campaigns can send each second. The minimum value is 50. The
+     * maximum value is 20,000.
      * </p>
      * 
      * @return The maximum number of messages that a campaign can send each second. For an application, this value
-     *         specifies the default limit for the number of messages that campaigns and journeys can send each second.
-     *         The minimum value is 50. The maximum value is 20,000.
+     *         specifies the default limit for the number of messages that campaigns can send each second. The minimum
+     *         value is 50. The maximum value is 20,000.
      */
 
     public Integer getMessagesPerSecond() {
@@ -194,14 +194,14 @@ public class CampaignLimits implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The maximum number of messages that a campaign can send each second. For an application, this value specifies the
-     * default limit for the number of messages that campaigns and journeys can send each second. The minimum value is
-     * 50. The maximum value is 20,000.
+     * default limit for the number of messages that campaigns can send each second. The minimum value is 50. The
+     * maximum value is 20,000.
      * </p>
      * 
      * @param messagesPerSecond
      *        The maximum number of messages that a campaign can send each second. For an application, this value
-     *        specifies the default limit for the number of messages that campaigns and journeys can send each second.
-     *        The minimum value is 50. The maximum value is 20,000.
+     *        specifies the default limit for the number of messages that campaigns can send each second. The minimum
+     *        value is 50. The maximum value is 20,000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

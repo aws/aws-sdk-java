@@ -185,6 +185,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                 request = new CreateOutpostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOutpostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOutpost");
@@ -246,6 +247,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                 request = new DeleteOutpostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOutpostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOutpost");
@@ -307,6 +309,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                 request = new DeleteSiteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSiteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSite");
@@ -368,6 +371,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                 request = new GetOutpostRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOutpostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOutpost");
@@ -430,6 +434,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                         .beforeMarshalling(getOutpostInstanceTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOutpostInstanceTypes");
@@ -490,6 +495,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                 request = new ListOutpostsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOutpostsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOutposts");
@@ -549,6 +555,7 @@ public class AWSOutpostsClient extends AmazonWebServiceClient implements AWSOutp
                 request = new ListSitesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSitesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Outposts");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSites");

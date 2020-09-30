@@ -37,7 +37,7 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private String connectionsBandwidth;
     /**
      * <p>
-     * The number of physical connections bundled by the LAG, up to a maximum of 10.
+     * The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      * </p>
      */
     private Integer numberOfConnections;
@@ -117,7 +117,8 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
     private String region;
     /**
      * <p>
-     * The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     * The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     * operational.
      * </p>
      */
     private Integer minimumLinks;
@@ -218,11 +219,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of physical connections bundled by the LAG, up to a maximum of 10.
+     * The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical connections bundled by the LAG, up to a maximum of 10.
+     *        The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      */
 
     public void setNumberOfConnections(Integer numberOfConnections) {
@@ -231,10 +232,10 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of physical connections bundled by the LAG, up to a maximum of 10.
+     * The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      * </p>
      * 
-     * @return The number of physical connections bundled by the LAG, up to a maximum of 10.
+     * @return The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      */
 
     public Integer getNumberOfConnections() {
@@ -243,11 +244,11 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of physical connections bundled by the LAG, up to a maximum of 10.
+     * The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      * </p>
      * 
      * @param numberOfConnections
-     *        The number of physical connections bundled by the LAG, up to a maximum of 10.
+     *        The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -906,11 +907,13 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     * The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     * operational.
      * </p>
      * 
      * @param minimumLinks
-     *        The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     *        The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     *        operational.
      */
 
     public void setMinimumLinks(Integer minimumLinks) {
@@ -919,10 +922,12 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     * The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     * operational.
      * </p>
      * 
-     * @return The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     * @return The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     *         operational.
      */
 
     public Integer getMinimumLinks() {
@@ -931,11 +936,13 @@ public class Lag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     * The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     * operational.
      * </p>
      * 
      * @param minimumLinks
-     *        The minimum number of physical connections that must be operational for the LAG itself to be operational.
+     *        The minimum number of physical dedicated connections that must be operational for the LAG itself to be
+     *        operational.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

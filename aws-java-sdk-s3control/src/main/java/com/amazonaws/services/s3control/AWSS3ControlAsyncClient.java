@@ -107,6 +107,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<CreateBucketResult> createBucketAsync(CreateBucketRequest request) {
+
+        return createBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateBucketResult> createBucketAsync(final CreateBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateBucketRequest, CreateBucketResult> asyncHandler) {
+        final CreateBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateBucketResult>() {
+            @Override
+            public CreateBucketResult call() throws Exception {
+                CreateBucketResult result = null;
+
+                try {
+                    result = executeCreateBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateJobResult> createJobAsync(CreateJobRequest request) {
 
         return createJobAsync(request, null);
@@ -190,6 +223,140 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executeDeleteAccessPointPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketResult> deleteBucketAsync(DeleteBucketRequest request) {
+
+        return deleteBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketResult> deleteBucketAsync(final DeleteBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBucketRequest, DeleteBucketResult> asyncHandler) {
+        final DeleteBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBucketResult>() {
+            @Override
+            public DeleteBucketResult call() throws Exception {
+                DeleteBucketResult result = null;
+
+                try {
+                    result = executeDeleteBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketLifecycleConfigurationResult> deleteBucketLifecycleConfigurationAsync(
+            DeleteBucketLifecycleConfigurationRequest request) {
+
+        return deleteBucketLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketLifecycleConfigurationResult> deleteBucketLifecycleConfigurationAsync(
+            final DeleteBucketLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBucketLifecycleConfigurationRequest, DeleteBucketLifecycleConfigurationResult> asyncHandler) {
+        final DeleteBucketLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBucketLifecycleConfigurationResult>() {
+            @Override
+            public DeleteBucketLifecycleConfigurationResult call() throws Exception {
+                DeleteBucketLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteBucketLifecycleConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketPolicyResult> deleteBucketPolicyAsync(DeleteBucketPolicyRequest request) {
+
+        return deleteBucketPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketPolicyResult> deleteBucketPolicyAsync(final DeleteBucketPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBucketPolicyRequest, DeleteBucketPolicyResult> asyncHandler) {
+        final DeleteBucketPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBucketPolicyResult>() {
+            @Override
+            public DeleteBucketPolicyResult call() throws Exception {
+                DeleteBucketPolicyResult result = null;
+
+                try {
+                    result = executeDeleteBucketPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketTaggingResult> deleteBucketTaggingAsync(DeleteBucketTaggingRequest request) {
+
+        return deleteBucketTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteBucketTaggingResult> deleteBucketTaggingAsync(final DeleteBucketTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteBucketTaggingRequest, DeleteBucketTaggingResult> asyncHandler) {
+        final DeleteBucketTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteBucketTaggingResult>() {
+            @Override
+            public DeleteBucketTaggingResult call() throws Exception {
+                DeleteBucketTaggingResult result = null;
+
+                try {
+                    result = executeDeleteBucketTagging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -404,6 +571,140 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<GetBucketResult> getBucketAsync(GetBucketRequest request) {
+
+        return getBucketAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketResult> getBucketAsync(final GetBucketRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketRequest, GetBucketResult> asyncHandler) {
+        final GetBucketRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketResult>() {
+            @Override
+            public GetBucketResult call() throws Exception {
+                GetBucketResult result = null;
+
+                try {
+                    result = executeGetBucket(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketLifecycleConfigurationResult> getBucketLifecycleConfigurationAsync(
+            GetBucketLifecycleConfigurationRequest request) {
+
+        return getBucketLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketLifecycleConfigurationResult> getBucketLifecycleConfigurationAsync(
+            final GetBucketLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketLifecycleConfigurationRequest, GetBucketLifecycleConfigurationResult> asyncHandler) {
+        final GetBucketLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketLifecycleConfigurationResult>() {
+            @Override
+            public GetBucketLifecycleConfigurationResult call() throws Exception {
+                GetBucketLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executeGetBucketLifecycleConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketPolicyResult> getBucketPolicyAsync(GetBucketPolicyRequest request) {
+
+        return getBucketPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketPolicyResult> getBucketPolicyAsync(final GetBucketPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketPolicyRequest, GetBucketPolicyResult> asyncHandler) {
+        final GetBucketPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketPolicyResult>() {
+            @Override
+            public GetBucketPolicyResult call() throws Exception {
+                GetBucketPolicyResult result = null;
+
+                try {
+                    result = executeGetBucketPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketTaggingResult> getBucketTaggingAsync(GetBucketTaggingRequest request) {
+
+        return getBucketTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBucketTaggingResult> getBucketTaggingAsync(final GetBucketTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBucketTaggingRequest, GetBucketTaggingResult> asyncHandler) {
+        final GetBucketTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBucketTaggingResult>() {
+            @Override
+            public GetBucketTaggingResult call() throws Exception {
+                GetBucketTaggingResult result = null;
+
+                try {
+                    result = executeGetBucketTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetJobTaggingResult> getJobTaggingAsync(GetJobTaggingRequest request) {
 
         return getJobTaggingAsync(request, null);
@@ -536,6 +837,39 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<ListRegionalBucketsResult> listRegionalBucketsAsync(ListRegionalBucketsRequest request) {
+
+        return listRegionalBucketsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRegionalBucketsResult> listRegionalBucketsAsync(final ListRegionalBucketsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRegionalBucketsRequest, ListRegionalBucketsResult> asyncHandler) {
+        final ListRegionalBucketsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRegionalBucketsResult>() {
+            @Override
+            public ListRegionalBucketsResult call() throws Exception {
+                ListRegionalBucketsResult result = null;
+
+                try {
+                    result = executeListRegionalBuckets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAccessPointPolicyResult> putAccessPointPolicyAsync(PutAccessPointPolicyRequest request) {
 
         return putAccessPointPolicyAsync(request, null);
@@ -553,6 +887,107 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executePutAccessPointPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketLifecycleConfigurationResult> putBucketLifecycleConfigurationAsync(
+            PutBucketLifecycleConfigurationRequest request) {
+
+        return putBucketLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketLifecycleConfigurationResult> putBucketLifecycleConfigurationAsync(
+            final PutBucketLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBucketLifecycleConfigurationRequest, PutBucketLifecycleConfigurationResult> asyncHandler) {
+        final PutBucketLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBucketLifecycleConfigurationResult>() {
+            @Override
+            public PutBucketLifecycleConfigurationResult call() throws Exception {
+                PutBucketLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executePutBucketLifecycleConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketPolicyResult> putBucketPolicyAsync(PutBucketPolicyRequest request) {
+
+        return putBucketPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketPolicyResult> putBucketPolicyAsync(final PutBucketPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBucketPolicyRequest, PutBucketPolicyResult> asyncHandler) {
+        final PutBucketPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBucketPolicyResult>() {
+            @Override
+            public PutBucketPolicyResult call() throws Exception {
+                PutBucketPolicyResult result = null;
+
+                try {
+                    result = executePutBucketPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketTaggingResult> putBucketTaggingAsync(PutBucketTaggingRequest request) {
+
+        return putBucketTaggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBucketTaggingResult> putBucketTaggingAsync(final PutBucketTaggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBucketTaggingRequest, PutBucketTaggingResult> asyncHandler) {
+        final PutBucketTaggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBucketTaggingResult>() {
+            @Override
+            public PutBucketTaggingResult call() throws Exception {
+                PutBucketTaggingResult result = null;
+
+                try {
+                    result = executePutBucketTagging(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

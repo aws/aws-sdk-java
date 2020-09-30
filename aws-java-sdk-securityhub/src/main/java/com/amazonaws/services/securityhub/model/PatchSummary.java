@@ -67,7 +67,8 @@ public class PatchSummary implements Serializable, Cloneable, StructuredPojo {
     private Integer installedRejectedCount;
     /**
      * <p>
-     * The number of patches that were installed since the last time the instance was rebooted.
+     * The number of patches that were applied, but that require the instance to be rebooted in order to be marked as
+     * installed.
      * </p>
      */
     private Integer installedPendingReboot;
@@ -355,11 +356,13 @@ public class PatchSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of patches that were installed since the last time the instance was rebooted.
+     * The number of patches that were applied, but that require the instance to be rebooted in order to be marked as
+     * installed.
      * </p>
      * 
      * @param installedPendingReboot
-     *        The number of patches that were installed since the last time the instance was rebooted.
+     *        The number of patches that were applied, but that require the instance to be rebooted in order to be
+     *        marked as installed.
      */
 
     public void setInstalledPendingReboot(Integer installedPendingReboot) {
@@ -368,10 +371,12 @@ public class PatchSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of patches that were installed since the last time the instance was rebooted.
+     * The number of patches that were applied, but that require the instance to be rebooted in order to be marked as
+     * installed.
      * </p>
      * 
-     * @return The number of patches that were installed since the last time the instance was rebooted.
+     * @return The number of patches that were applied, but that require the instance to be rebooted in order to be
+     *         marked as installed.
      */
 
     public Integer getInstalledPendingReboot() {
@@ -380,11 +385,13 @@ public class PatchSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of patches that were installed since the last time the instance was rebooted.
+     * The number of patches that were applied, but that require the instance to be rebooted in order to be marked as
+     * installed.
      * </p>
      * 
      * @param installedPendingReboot
-     *        The number of patches that were installed since the last time the instance was rebooted.
+     *        The number of patches that were applied, but that require the instance to be rebooted in order to be
+     *        marked as installed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

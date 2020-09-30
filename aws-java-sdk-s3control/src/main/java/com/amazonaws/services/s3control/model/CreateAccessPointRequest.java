@@ -41,6 +41,14 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the bucket that you want to associate this access point with.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      */
     private String bucket;
     /**
@@ -48,6 +56,11 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
      * private cloud (VPC).
      * </p>
+     * <note>
+     * <p>
+     * This is required for creating an access point for Amazon S3 on Outposts buckets.
+     * </p>
+     * </note>
      */
     private VpcConfiguration vpcConfiguration;
 
@@ -137,9 +150,24 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the bucket that you want to associate this access point with.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      * 
      * @param bucket
-     *        The name of the bucket that you want to associate this access point with.
+     *        The name of the bucket that you want to associate this access point with.</p>
+     *        <p>
+     *        For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
+     *        be URL encoded.
      */
 
     public void setBucket(String bucket) {
@@ -150,8 +178,23 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the bucket that you want to associate this access point with.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      * 
-     * @return The name of the bucket that you want to associate this access point with.
+     * @return The name of the bucket that you want to associate this access point with.</p>
+     *         <p>
+     *         For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     *         . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *         account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *         <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
+     *         be URL encoded.
      */
 
     public String getBucket() {
@@ -162,9 +205,24 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The name of the bucket that you want to associate this access point with.
      * </p>
+     * <p>
+     * For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      * 
      * @param bucket
-     *        The name of the bucket that you want to associate this access point with.
+     *        The name of the bucket that you want to associate this access point with.</p>
+     *        <p>
+     *        For Amazon S3 on Outposts specify the ARN of the bucket accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
+     *        be URL encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,10 +236,18 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
      * private cloud (VPC).
      * </p>
+     * <note>
+     * <p>
+     * This is required for creating an access point for Amazon S3 on Outposts buckets.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
      *        If you include this field, Amazon S3 restricts access to this access point to requests from the specified
-     *        virtual private cloud (VPC).
+     *        virtual private cloud (VPC).</p> <note>
+     *        <p>
+     *        This is required for creating an access point for Amazon S3 on Outposts buckets.
+     *        </p>
      */
 
     public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
@@ -193,9 +259,17 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
      * private cloud (VPC).
      * </p>
+     * <note>
+     * <p>
+     * This is required for creating an access point for Amazon S3 on Outposts buckets.
+     * </p>
+     * </note>
      * 
      * @return If you include this field, Amazon S3 restricts access to this access point to requests from the specified
-     *         virtual private cloud (VPC).
+     *         virtual private cloud (VPC).</p> <note>
+     *         <p>
+     *         This is required for creating an access point for Amazon S3 on Outposts buckets.
+     *         </p>
      */
 
     public VpcConfiguration getVpcConfiguration() {
@@ -207,10 +281,18 @@ public class CreateAccessPointRequest extends com.amazonaws.AmazonWebServiceRequ
      * If you include this field, Amazon S3 restricts access to this access point to requests from the specified virtual
      * private cloud (VPC).
      * </p>
+     * <note>
+     * <p>
+     * This is required for creating an access point for Amazon S3 on Outposts buckets.
+     * </p>
+     * </note>
      * 
      * @param vpcConfiguration
      *        If you include this field, Amazon S3 restricts access to this access point to requests from the specified
-     *        virtual private cloud (VPC).
+     *        virtual private cloud (VPC).</p> <note>
+     *        <p>
+     *        This is required for creating an access point for Amazon S3 on Outposts buckets.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

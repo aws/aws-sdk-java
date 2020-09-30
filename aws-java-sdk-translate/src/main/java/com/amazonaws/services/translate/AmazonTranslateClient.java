@@ -200,6 +200,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteTerminologyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTerminologyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTerminology");
@@ -263,6 +264,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(describeTextTranslationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTextTranslationJob");
@@ -328,6 +330,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new GetTerminologyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTerminologyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTerminology");
@@ -400,6 +403,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new ImportTerminologyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importTerminologyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportTerminology");
@@ -461,6 +465,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new ListTerminologiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTerminologiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTerminologies");
@@ -525,6 +530,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(listTextTranslationJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTextTranslationJobs");
@@ -604,6 +610,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                         .beforeMarshalling(startTextTranslationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartTextTranslationJob");
@@ -676,6 +683,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new StopTextTranslationJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopTextTranslationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopTextTranslationJob");
@@ -756,6 +764,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                 request = new TranslateTextRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(translateTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Translate");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TranslateText");

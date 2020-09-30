@@ -179,6 +179,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new BatchGrantPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGrantPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGrantPermissions");
@@ -237,6 +238,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new BatchRevokePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchRevokePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchRevokePermissions");
@@ -303,6 +305,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new DeregisterResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterResource");
@@ -364,6 +367,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new DescribeResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResource");
@@ -423,6 +427,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new GetDataLakeSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataLakeSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataLakeSettings");
@@ -486,6 +491,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getEffectivePermissionsForPathRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEffectivePermissionsForPath");
@@ -552,6 +558,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new GrantPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(grantPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GrantPermissions");
@@ -620,6 +627,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new ListPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissions");
@@ -679,6 +687,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new ListResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
@@ -743,6 +752,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new PutDataLakeSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDataLakeSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDataLakeSettings");
@@ -824,6 +834,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new RegisterResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterResource");
@@ -884,6 +895,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new RevokePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokePermissions");
@@ -945,6 +957,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new UpdateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResource");

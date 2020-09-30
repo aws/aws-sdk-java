@@ -508,6 +508,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(batchGetAggregateResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetAggregateResourceConfig");
@@ -584,6 +585,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new BatchGetResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetResourceConfig");
@@ -641,6 +643,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteAggregationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAggregationAuthorization");
@@ -750,6 +753,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigRule");
@@ -806,6 +810,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteConfigurationAggregatorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationAggregator");
@@ -874,6 +879,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationRecorder");
@@ -979,6 +985,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConformancePack");
@@ -1043,6 +1050,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeliveryChannel");
@@ -1147,6 +1155,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteEvaluationResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEvaluationResults");
@@ -1263,6 +1272,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteOrganizationConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationConfigRule");
@@ -1384,6 +1394,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteOrganizationConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationConformancePack");
@@ -1442,6 +1453,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deletePendingAggregationRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePendingAggregationRequest");
@@ -1541,6 +1553,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteRemediationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemediationConfiguration");
@@ -1604,6 +1617,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteRemediationExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemediationExceptions");
@@ -1664,6 +1678,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceConfig");
@@ -1722,6 +1737,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteRetentionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetentionConfiguration");
@@ -1803,6 +1819,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeliverConfigSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeliverConfigSnapshot");
@@ -1875,6 +1892,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeAggregateComplianceByConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregateComplianceByConfigRules");
@@ -1938,6 +1956,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeAggregationAuthorizationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregationAuthorizations");
@@ -2033,6 +2052,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeComplianceByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComplianceByConfigRule");
@@ -2130,6 +2150,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeComplianceByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComplianceByResource");
@@ -2201,6 +2222,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigRuleEvaluationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigRuleEvaluationStatus");
@@ -2266,6 +2288,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DescribeConfigRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigRules");
@@ -2339,6 +2362,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationAggregatorSourcesStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationAggregatorSourcesStatus");
@@ -2405,6 +2429,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationAggregatorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationAggregators");
@@ -2470,6 +2495,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRecorderStatus");
@@ -2539,6 +2565,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRecorders");
@@ -2616,6 +2643,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConformancePackComplianceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePackCompliance");
@@ -2683,6 +2711,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConformancePackStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePackStatus");
@@ -2747,6 +2776,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConformancePacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePacks");
@@ -2811,6 +2841,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryChannelStatus");
@@ -2880,6 +2911,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryChannels");
@@ -2969,6 +3001,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConfigRuleStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfigRuleStatuses");
@@ -3049,6 +3082,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfigRules");
@@ -3139,6 +3173,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConformancePackStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConformancePackStatuses");
@@ -3225,6 +3260,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConformancePacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConformancePacks");
@@ -3288,6 +3324,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describePendingAggregationRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingAggregationRequests");
@@ -3344,6 +3381,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRemediationConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationConfigurations");
@@ -3419,6 +3457,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRemediationExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationExceptions");
@@ -3482,6 +3521,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRemediationExecutionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationExecutionStatus");
@@ -3551,6 +3591,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRetentionConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRetentionConfigurations");
@@ -3624,6 +3665,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateComplianceDetailsByConfigRule");
@@ -3695,6 +3737,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateConfigRuleComplianceSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateConfigRuleComplianceSummary");
@@ -3766,6 +3809,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateDiscoveredResourceCountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateDiscoveredResourceCounts");
@@ -3829,6 +3873,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateResourceConfig");
@@ -3894,6 +3939,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetailsByConfigRule");
@@ -3952,6 +3998,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceDetailsByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetailsByResource");
@@ -4008,6 +4055,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceSummaryByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummaryByConfigRule");
@@ -4072,6 +4120,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceSummaryByResourceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummaryByResourceType");
@@ -4144,6 +4193,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getConformancePackComplianceDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConformancePackComplianceDetails");
@@ -4208,6 +4258,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getConformancePackComplianceSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConformancePackComplianceSummary");
@@ -4338,6 +4389,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getDiscoveredResourceCountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiscoveredResourceCounts");
@@ -4411,6 +4463,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getOrganizationConfigRuleDetailedStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationConfigRuleDetailedStatus");
@@ -4490,6 +4543,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getOrganizationConformancePackDetailedStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationConformancePackDetailedStatus");
@@ -4576,6 +4630,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceConfigHistory");
@@ -4649,6 +4704,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listAggregateDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAggregateDiscoveredResources");
@@ -4727,6 +4783,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDiscoveredResources");
@@ -4790,6 +4847,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -4846,6 +4904,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putAggregationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAggregationAuthorization");
@@ -5033,6 +5092,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigRule");
@@ -5118,6 +5178,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putConfigurationAggregatorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationAggregator");
@@ -5196,6 +5257,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationRecorder");
@@ -5352,6 +5414,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConformancePack");
@@ -5436,6 +5499,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliveryChannel");
@@ -5497,6 +5561,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutEvaluationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvaluations");
@@ -5686,6 +5751,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putOrganizationConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutOrganizationConfigRule");
@@ -5871,6 +5937,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putOrganizationConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutOrganizationConformancePack");
@@ -5976,6 +6043,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putRemediationConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRemediationConfigurations");
@@ -6079,6 +6147,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putRemediationExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRemediationExceptions");
@@ -6194,6 +6263,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourceConfig");
@@ -6261,6 +6331,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putRetentionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionConfiguration");
@@ -6332,6 +6403,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(selectAggregateResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SelectAggregateResourceConfig");
@@ -6399,6 +6471,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new SelectResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(selectResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SelectResourceConfig");
@@ -6557,6 +6630,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startConfigRulesEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartConfigRulesEvaluation");
@@ -6620,6 +6694,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartConfigurationRecorder");
@@ -6724,6 +6799,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startRemediationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRemediationExecution");
@@ -6782,6 +6858,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopConfigurationRecorder");
@@ -6844,6 +6921,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -6901,6 +6979,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");

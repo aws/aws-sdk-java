@@ -26,17 +26,17 @@ public class GetJobTaggingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The set of tags associated with the Amazon S3 Batch Operations job.
+     * The set of tags associated with the S3 Batch Operations job.
      * </p>
      */
     private java.util.List<S3Tag> tags;
 
     /**
      * <p>
-     * The set of tags associated with the Amazon S3 Batch Operations job.
+     * The set of tags associated with the S3 Batch Operations job.
      * </p>
      * 
-     * @return The set of tags associated with the Amazon S3 Batch Operations job.
+     * @return The set of tags associated with the S3 Batch Operations job.
      */
 
     public java.util.List<S3Tag> getTags() {
@@ -45,11 +45,11 @@ public class GetJobTaggingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The set of tags associated with the Amazon S3 Batch Operations job.
+     * The set of tags associated with the S3 Batch Operations job.
      * </p>
      * 
      * @param tags
-     *        The set of tags associated with the Amazon S3 Batch Operations job.
+     *        The set of tags associated with the S3 Batch Operations job.
      */
 
     public void setTags(java.util.Collection<S3Tag> tags) {
@@ -63,7 +63,7 @@ public class GetJobTaggingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The set of tags associated with the Amazon S3 Batch Operations job.
+     * The set of tags associated with the S3 Batch Operations job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +72,7 @@ public class GetJobTaggingResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param tags
-     *        The set of tags associated with the Amazon S3 Batch Operations job.
+     *        The set of tags associated with the S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +88,11 @@ public class GetJobTaggingResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The set of tags associated with the Amazon S3 Batch Operations job.
+     * The set of tags associated with the S3 Batch Operations job.
      * </p>
      * 
      * @param tags
-     *        The set of tags associated with the Amazon S3 Batch Operations job.
+     *        The set of tags associated with the S3 Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

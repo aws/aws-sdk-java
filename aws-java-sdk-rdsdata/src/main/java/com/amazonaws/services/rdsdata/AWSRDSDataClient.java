@@ -211,6 +211,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new BatchExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchExecuteStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchExecuteStatement");
@@ -280,6 +281,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new BeginTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(beginTransactionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BeginTransaction");
@@ -346,6 +348,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new CommitTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(commitTransactionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CommitTransaction");
@@ -415,6 +418,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new ExecuteSqlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeSqlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteSql");
@@ -488,6 +492,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new ExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteStatement");
@@ -554,6 +559,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new RollbackTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rollbackTransactionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RollbackTransaction");

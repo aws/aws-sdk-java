@@ -233,6 +233,7 @@ public class AmazonQLDBSessionClient extends AmazonWebServiceClient implements A
                 request = new SendCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QLDB Session");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCommand");

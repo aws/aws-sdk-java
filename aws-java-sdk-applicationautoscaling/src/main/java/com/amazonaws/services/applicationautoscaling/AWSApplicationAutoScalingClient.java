@@ -109,6 +109,11 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * Amazon Keyspaces (for Apache Cassandra) tables
  * </p>
  * </li>
+ * <li>
+ * <p>
+ * Amazon Managed Streaming for Apache Kafka cluster storage
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * <b>API Summary</b>
@@ -448,6 +453,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new DeleteScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPolicy");
@@ -518,6 +524,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new DeleteScheduledActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScheduledActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScheduledAction");
@@ -594,6 +601,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(deregisterScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterScalableTarget");
@@ -661,6 +669,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScalableTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalableTargets");
@@ -730,6 +739,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScalingActivitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingActivities");
@@ -811,6 +821,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScalingPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPolicies");
@@ -884,6 +895,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeScheduledActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScheduledActions");
@@ -994,6 +1006,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new PutScalingPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScalingPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScalingPolicy");
@@ -1087,6 +1100,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new PutScheduledActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putScheduledActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutScheduledAction");
@@ -1175,6 +1189,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                 request = new RegisterScalableTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerScalableTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Auto Scaling");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterScalableTarget");

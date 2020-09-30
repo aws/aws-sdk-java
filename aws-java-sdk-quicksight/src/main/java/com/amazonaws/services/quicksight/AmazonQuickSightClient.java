@@ -226,6 +226,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CancelIngestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelIngestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelIngestion");
@@ -313,6 +314,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(createAccountCustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccountCustomization");
@@ -383,6 +385,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnalysis");
@@ -458,6 +461,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDashboard");
@@ -534,6 +538,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSet");
@@ -606,6 +611,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSource");
@@ -689,6 +695,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -759,6 +766,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupMembership");
@@ -834,6 +842,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(createIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIAMPolicyAssignment");
@@ -911,6 +920,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateIngestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIngestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIngestion");
@@ -994,6 +1004,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateNamespaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNamespaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNamespace");
@@ -1077,6 +1088,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplate");
@@ -1148,6 +1160,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplateAlias");
@@ -1228,6 +1241,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTheme");
@@ -1299,6 +1313,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThemeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThemeAlias");
@@ -1369,6 +1384,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteAccountCustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountCustomization");
@@ -1449,6 +1465,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnalysis");
@@ -1516,6 +1533,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDashboard");
@@ -1582,6 +1600,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSet");
@@ -1649,6 +1668,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
@@ -1719,6 +1739,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -1789,6 +1810,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroupMembership");
@@ -1862,6 +1884,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIAMPolicyAssignment");
@@ -1935,6 +1958,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteNamespaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNamespaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNamespace");
@@ -2004,6 +2028,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplate");
@@ -2070,6 +2095,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplateAlias");
@@ -2142,6 +2168,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTheme");
@@ -2210,6 +2237,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThemeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThemeAlias");
@@ -2281,6 +2309,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -2352,6 +2381,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteUserByPrincipalIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserByPrincipalId");
@@ -2486,6 +2516,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeAccountCustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountCustomization");
@@ -2556,6 +2587,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountSettings");
@@ -2627,6 +2659,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAnalysis");
@@ -2693,6 +2726,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeAnalysisPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAnalysisPermissions");
@@ -2764,6 +2798,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDashboard");
@@ -2830,6 +2865,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeDashboardPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDashboardPermissions");
@@ -2897,6 +2933,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSet");
@@ -2967,6 +3004,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeDataSetPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSetPermissions");
@@ -3034,6 +3072,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSource");
@@ -3101,6 +3140,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeDataSourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSourcePermissions");
@@ -3172,6 +3212,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroup");
@@ -3241,6 +3282,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIAMPolicyAssignment");
@@ -3310,6 +3352,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeIngestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIngestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIngestion");
@@ -3378,6 +3421,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeNamespaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNamespaceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNamespace");
@@ -3452,6 +3496,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTemplate");
@@ -3515,6 +3560,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTemplateAlias");
@@ -3584,6 +3630,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeTemplatePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTemplatePermissions");
@@ -3657,6 +3704,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTheme");
@@ -3724,6 +3772,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThemeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThemeAlias");
@@ -3795,6 +3844,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeThemePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThemePermissions");
@@ -3866,6 +3916,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
@@ -3984,6 +4035,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new GetDashboardEmbedUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDashboardEmbedUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDashboardEmbedUrl");
@@ -4084,6 +4136,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new GetSessionEmbedUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSessionEmbedUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSessionEmbedUrl");
@@ -4147,6 +4200,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListAnalysesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnalysesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAnalyses");
@@ -4214,6 +4268,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDashboardVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDashboardVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboardVersions");
@@ -4278,6 +4333,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDashboardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboards");
@@ -4347,6 +4403,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDataSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSets");
@@ -4413,6 +4470,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDataSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSources");
@@ -4485,6 +4543,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListGroupMembershipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupMembershipsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupMemberships");
@@ -4557,6 +4616,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -4626,6 +4686,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listIAMPolicyAssignmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIAMPolicyAssignments");
@@ -4701,6 +4762,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listIAMPolicyAssignmentsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIAMPolicyAssignmentsForUser");
@@ -4772,6 +4834,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListIngestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIngestionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIngestions");
@@ -4844,6 +4907,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListNamespacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNamespacesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamespaces");
@@ -4910,6 +4974,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -4975,6 +5040,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTemplateAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplateAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplateAliases");
@@ -5042,6 +5108,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTemplateVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplateVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplateVersions");
@@ -5109,6 +5176,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplates");
@@ -5178,6 +5246,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListThemeAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemeAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemeAliases");
@@ -5250,6 +5319,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListThemeVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemeVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemeVersions");
@@ -5322,6 +5392,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListThemesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemes");
@@ -5392,6 +5463,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListUserGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserGroups");
@@ -5464,6 +5536,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -5539,6 +5612,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new RegisterUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterUser");
@@ -5606,6 +5680,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new RestoreAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreAnalysis");
@@ -5673,6 +5748,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new SearchAnalysesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchAnalysesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchAnalyses");
@@ -5740,6 +5816,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new SearchDashboardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchDashboards");
@@ -5836,6 +5913,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -5902,6 +5980,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -5977,6 +6056,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateAccountCustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountCustomization");
@@ -6046,6 +6126,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSettings");
@@ -6116,6 +6197,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnalysis");
@@ -6184,6 +6266,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateAnalysisPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnalysisPermissions");
@@ -6254,6 +6337,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboard");
@@ -6322,6 +6406,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDashboardPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboardPermissions");
@@ -6392,6 +6477,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDashboardPublishedVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboardPublishedVersion");
@@ -6467,6 +6553,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSet");
@@ -6539,6 +6626,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDataSetPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSetPermissions");
@@ -6608,6 +6696,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
@@ -6677,6 +6766,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDataSourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSourcePermissions");
@@ -6748,6 +6838,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
@@ -6821,6 +6912,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIAMPolicyAssignment");
@@ -6893,6 +6985,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplate");
@@ -6960,6 +7053,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplateAlias");
@@ -7028,6 +7122,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateTemplatePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplatePermissions");
@@ -7103,6 +7198,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTheme");
@@ -7172,6 +7268,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemeAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThemeAlias");
@@ -7343,6 +7440,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateThemePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThemePermissions");
@@ -7414,6 +7512,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");

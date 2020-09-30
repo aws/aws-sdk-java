@@ -173,6 +173,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new CancelStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelStatement");
@@ -234,6 +235,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new DescribeStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStatement");
@@ -307,6 +309,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new DescribeTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTable");
@@ -380,6 +383,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new ExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteStatement");
@@ -440,6 +444,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new GetStatementResultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStatementResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStatementResult");
@@ -512,6 +517,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new ListDatabasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatabasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatabases");
@@ -584,6 +590,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new ListSchemasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSchemas");
@@ -642,6 +649,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new ListStatementsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStatementsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStatements");
@@ -715,6 +723,7 @@ public class AWSRedshiftDataAPIClient extends AmazonWebServiceClient implements 
                 request = new ListTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTables");

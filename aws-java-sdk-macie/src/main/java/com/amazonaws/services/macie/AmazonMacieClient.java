@@ -186,6 +186,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request = new AssociateMemberAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateMemberAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMemberAccount");
@@ -252,6 +253,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request = new AssociateS3ResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateS3ResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateS3Resources");
@@ -310,6 +312,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                         .beforeMarshalling(disassociateMemberAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMemberAccount");
@@ -373,6 +376,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                         .beforeMarshalling(disassociateS3ResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateS3Resources");
@@ -431,6 +435,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request = new ListMemberAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMemberAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMemberAccounts");
@@ -493,6 +498,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request = new ListS3ResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listS3ResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListS3Resources");
@@ -555,6 +561,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                 request = new UpdateS3ResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateS3ResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateS3Resources");

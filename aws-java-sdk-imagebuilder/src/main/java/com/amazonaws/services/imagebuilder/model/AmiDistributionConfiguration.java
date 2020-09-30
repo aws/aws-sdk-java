@@ -42,6 +42,12 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
     private String description;
     /**
      * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     */
+    private java.util.List<String> targetAccountIds;
+    /**
+     * <p>
      * The tags to apply to AMIs distributed to this Region.
      * </p>
      */
@@ -136,6 +142,76 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     public AmiDistributionConfiguration withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * 
+     * @return The ID of an account to which you want to distribute an image.
+     */
+
+    public java.util.List<String> getTargetAccountIds() {
+        return targetAccountIds;
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * 
+     * @param targetAccountIds
+     *        The ID of an account to which you want to distribute an image.
+     */
+
+    public void setTargetAccountIds(java.util.Collection<String> targetAccountIds) {
+        if (targetAccountIds == null) {
+            this.targetAccountIds = null;
+            return;
+        }
+
+        this.targetAccountIds = new java.util.ArrayList<String>(targetAccountIds);
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetAccountIds(java.util.Collection)} or {@link #withTargetAccountIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param targetAccountIds
+     *        The ID of an account to which you want to distribute an image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmiDistributionConfiguration withTargetAccountIds(String... targetAccountIds) {
+        if (this.targetAccountIds == null) {
+            setTargetAccountIds(new java.util.ArrayList<String>(targetAccountIds.length));
+        }
+        for (String ele : targetAccountIds) {
+            this.targetAccountIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * 
+     * @param targetAccountIds
+     *        The ID of an account to which you want to distribute an image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmiDistributionConfiguration withTargetAccountIds(java.util.Collection<String> targetAccountIds) {
+        setTargetAccountIds(targetAccountIds);
         return this;
     }
 
@@ -303,6 +379,8 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getTargetAccountIds() != null)
+            sb.append("TargetAccountIds: ").append(getTargetAccountIds()).append(",");
         if (getAmiTags() != null)
             sb.append("AmiTags: ").append(getAmiTags()).append(",");
         if (getKmsKeyId() != null)
@@ -331,6 +409,10 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTargetAccountIds() == null ^ this.getTargetAccountIds() == null)
+            return false;
+        if (other.getTargetAccountIds() != null && other.getTargetAccountIds().equals(this.getTargetAccountIds()) == false)
+            return false;
         if (other.getAmiTags() == null ^ this.getAmiTags() == null)
             return false;
         if (other.getAmiTags() != null && other.getAmiTags().equals(this.getAmiTags()) == false)
@@ -353,6 +435,7 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTargetAccountIds() == null) ? 0 : getTargetAccountIds().hashCode());
         hashCode = prime * hashCode + ((getAmiTags() == null) ? 0 : getAmiTags().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLaunchPermission() == null) ? 0 : getLaunchPermission().hashCode());

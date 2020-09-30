@@ -242,9 +242,17 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
     private String logLevel;
     /**
      * <p>
-     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
-     * modification time between source and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.
+     * A value that determines whether DataSync transfers only the data and metadata that differ between the source and
+     * the destination location, or whether DataSync transfers all the content from the source, without comparing to the
+     * destination location.
+     * </p>
+     * <p>
+     * CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the
+     * destination location.
+     * </p>
+     * <p>
+     * ALL: DataSync copies all source location content to the destination, without comparing to existing content on the
+     * destination.
      * </p>
      */
     private String transferMode;
@@ -1974,15 +1982,30 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
-     * modification time between source and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.
+     * A value that determines whether DataSync transfers only the data and metadata that differ between the source and
+     * the destination location, or whether DataSync transfers all the content from the source, without comparing to the
+     * destination location.
+     * </p>
+     * <p>
+     * CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the
+     * destination location.
+     * </p>
+     * <p>
+     * ALL: DataSync copies all source location content to the destination, without comparing to existing content on the
+     * destination.
      * </p>
      * 
      * @param transferMode
-     *        TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
-     *        compares file modification time between source and destination to determine which files need to be
-     *        transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     *        A value that determines whether DataSync transfers only the data and metadata that differ between the
+     *        source and the destination location, or whether DataSync transfers all the content from the source,
+     *        without comparing to the destination location. </p>
+     *        <p>
+     *        CHANGED: DataSync copies only data or metadata that is new or different content from the source location
+     *        to the destination location.
+     *        </p>
+     *        <p>
+     *        ALL: DataSync copies all source location content to the destination, without comparing to existing content
+     *        on the destination.
      * @see TransferMode
      */
 
@@ -1992,14 +2015,29 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
-     * modification time between source and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.
+     * A value that determines whether DataSync transfers only the data and metadata that differ between the source and
+     * the destination location, or whether DataSync transfers all the content from the source, without comparing to the
+     * destination location.
+     * </p>
+     * <p>
+     * CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the
+     * destination location.
+     * </p>
+     * <p>
+     * ALL: DataSync copies all source location content to the destination, without comparing to existing content on the
+     * destination.
      * </p>
      * 
-     * @return TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
-     *         compares file modification time between source and destination to determine which files need to be
-     *         transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     * @return A value that determines whether DataSync transfers only the data and metadata that differ between the
+     *         source and the destination location, or whether DataSync transfers all the content from the source,
+     *         without comparing to the destination location. </p>
+     *         <p>
+     *         CHANGED: DataSync copies only data or metadata that is new or different content from the source location
+     *         to the destination location.
+     *         </p>
+     *         <p>
+     *         ALL: DataSync copies all source location content to the destination, without comparing to existing
+     *         content on the destination.
      * @see TransferMode
      */
 
@@ -2009,15 +2047,30 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
-     * modification time between source and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.
+     * A value that determines whether DataSync transfers only the data and metadata that differ between the source and
+     * the destination location, or whether DataSync transfers all the content from the source, without comparing to the
+     * destination location.
+     * </p>
+     * <p>
+     * CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the
+     * destination location.
+     * </p>
+     * <p>
+     * ALL: DataSync copies all source location content to the destination, without comparing to existing content on the
+     * destination.
      * </p>
      * 
      * @param transferMode
-     *        TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
-     *        compares file modification time between source and destination to determine which files need to be
-     *        transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     *        A value that determines whether DataSync transfers only the data and metadata that differ between the
+     *        source and the destination location, or whether DataSync transfers all the content from the source,
+     *        without comparing to the destination location. </p>
+     *        <p>
+     *        CHANGED: DataSync copies only data or metadata that is new or different content from the source location
+     *        to the destination location.
+     *        </p>
+     *        <p>
+     *        ALL: DataSync copies all source location content to the destination, without comparing to existing content
+     *        on the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransferMode
      */
@@ -2029,15 +2082,30 @@ public class Options implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it compares file
-     * modification time between source and destination to determine which files need to be transferred. ALL skips
-     * destination inventory and transfers all files discovered on the source.
+     * A value that determines whether DataSync transfers only the data and metadata that differ between the source and
+     * the destination location, or whether DataSync transfers all the content from the source, without comparing to the
+     * destination location.
+     * </p>
+     * <p>
+     * CHANGED: DataSync copies only data or metadata that is new or different content from the source location to the
+     * destination location.
+     * </p>
+     * <p>
+     * ALL: DataSync copies all source location content to the destination, without comparing to existing content on the
+     * destination.
      * </p>
      * 
      * @param transferMode
-     *        TransferMode has two values: CHANGED and ALL. CHANGED performs an "incremental" or "delta sync", it
-     *        compares file modification time between source and destination to determine which files need to be
-     *        transferred. ALL skips destination inventory and transfers all files discovered on the source.
+     *        A value that determines whether DataSync transfers only the data and metadata that differ between the
+     *        source and the destination location, or whether DataSync transfers all the content from the source,
+     *        without comparing to the destination location. </p>
+     *        <p>
+     *        CHANGED: DataSync copies only data or metadata that is new or different content from the source location
+     *        to the destination location.
+     *        </p>
+     *        <p>
+     *        ALL: DataSync copies all source location content to the destination, without comparing to existing content
+     *        on the destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransferMode
      */

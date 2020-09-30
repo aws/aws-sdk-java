@@ -28,7 +28,7 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      * </p>
      */
     private String locationArn;
@@ -52,6 +52,14 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
     private S3Config s3Config;
     /**
      * <p>
+     * If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
+     * your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.
+     * </p>
+     */
+    private java.util.List<String> agentArns;
+    /**
+     * <p>
      * The time that the Amazon S3 bucket location was created.
      * </p>
      */
@@ -59,11 +67,11 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      */
 
     public void setLocationArn(String locationArn) {
@@ -72,10 +80,10 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     * @return The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      */
 
     public String getLocationArn() {
@@ -84,11 +92,11 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     * The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket location.
+     *        The Amazon Resource Name (ARN) of the Amazon S3 bucket or access point.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -256,6 +264,92 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
+     * If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
+     * your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.
+     * </p>
+     * 
+     * @return If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents
+     *         deployed on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost,
+     *         see <a>outposts-agent</a>.
+     */
+
+    public java.util.List<String> getAgentArns() {
+        return agentArns;
+    }
+
+    /**
+     * <p>
+     * If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
+     * your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.
+     * </p>
+     * 
+     * @param agentArns
+     *        If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed
+     *        on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     *        <a>outposts-agent</a>.
+     */
+
+    public void setAgentArns(java.util.Collection<String> agentArns) {
+        if (agentArns == null) {
+            this.agentArns = null;
+            return;
+        }
+
+        this.agentArns = new java.util.ArrayList<String>(agentArns);
+    }
+
+    /**
+     * <p>
+     * If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
+     * your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAgentArns(java.util.Collection)} or {@link #withAgentArns(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param agentArns
+     *        If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed
+     *        on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     *        <a>outposts-agent</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLocationS3Result withAgentArns(String... agentArns) {
+        if (this.agentArns == null) {
+            setAgentArns(new java.util.ArrayList<String>(agentArns.length));
+        }
+        for (String ele : agentArns) {
+            this.agentArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed on
+     * your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     * <a>outposts-agent</a>.
+     * </p>
+     * 
+     * @param agentArns
+     *        If you are using DataSync on an Amazon Outpost, the Amazon Resource Name (ARNs) of the EC2 agents deployed
+     *        on your AWS Outpost. For more information about launching a DataSync agent on an Amazon Outpost, see
+     *        <a>outposts-agent</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLocationS3Result withAgentArns(java.util.Collection<String> agentArns) {
+        setAgentArns(agentArns);
+        return this;
+    }
+
+    /**
+     * <p>
      * The time that the Amazon S3 bucket location was created.
      * </p>
      * 
@@ -314,6 +408,8 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
             sb.append("S3StorageClass: ").append(getS3StorageClass()).append(",");
         if (getS3Config() != null)
             sb.append("S3Config: ").append(getS3Config()).append(",");
+        if (getAgentArns() != null)
+            sb.append("AgentArns: ").append(getAgentArns()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime());
         sb.append("}");
@@ -346,6 +442,10 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getS3Config() != null && other.getS3Config().equals(this.getS3Config()) == false)
             return false;
+        if (other.getAgentArns() == null ^ this.getAgentArns() == null)
+            return false;
+        if (other.getAgentArns() != null && other.getAgentArns().equals(this.getAgentArns()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -362,6 +462,7 @@ public class DescribeLocationS3Result extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getLocationUri() == null) ? 0 : getLocationUri().hashCode());
         hashCode = prime * hashCode + ((getS3StorageClass() == null) ? 0 : getS3StorageClass().hashCode());
         hashCode = prime * hashCode + ((getS3Config() == null) ? 0 : getS3Config().hashCode());
+        hashCode = prime * hashCode + ((getAgentArns() == null) ? 0 : getAgentArns().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         return hashCode;
     }
