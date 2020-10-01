@@ -69,11 +69,12 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * </note>
  * <p>
  * AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon
- * CloudFront, an Amazon API Gateway API, or an Application Load Balancer. AWS WAF also lets you control access to your
- * content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of
- * query strings, API Gateway, CloudFront, or the Application Load Balancer responds to requests either with the
- * requested content or with an HTTP 403 status code (Forbidden). You also can configure CloudFront to return a custom
- * error page when a request is blocked.
+ * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API. AWS WAF also
+ * lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests
+ * originate from or the values of query strings, the API Gateway REST API, CloudFront distribution, the Application
+ * Load Balancer, or the AWS AppSync GraphQL API responds to requests either with the requested content or with an HTTP
+ * 403 status code (Forbidden). You also can configure CloudFront to return a custom error page when a request is
+ * blocked.
  * </p>
  * <p>
  * This API guide is for developers who need detailed information about AWS WAF API actions, data types, and errors. For
@@ -88,7 +89,7 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * <li>
  * <p>
  * For regional applications, you can use any of the endpoints in the list. A regional application can be an Application
- * Load Balancer (ALB) or an API Gateway stage.
+ * Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
  * </p>
  * </li>
  * <li>
@@ -251,7 +252,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </note>
      * <p>
      * Associates a Web ACL with a regional application resource, to protect the resource. A regional application can be
-     * an Application Load Balancer (ALB) or an API Gateway stage.
+     * an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a
@@ -807,7 +808,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway
-     * API, or an Application Load Balancer.
+     * REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
      * </p>
      * 
      * @param createWebACLRequest
@@ -1724,7 +1725,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </note>
      * <p>
      * Disassociates a Web ACL from a regional application resource. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate
@@ -4252,7 +4253,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway
-     * API, or an Application Load Balancer.
+     * REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
      * </p>
      * 
      * @param updateWebACLRequest

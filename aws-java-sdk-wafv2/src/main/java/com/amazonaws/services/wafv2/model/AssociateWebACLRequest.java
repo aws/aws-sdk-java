@@ -47,8 +47,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an Amazon API Gateway stage:
+     * For an API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -111,8 +117,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an Amazon API Gateway stage:
+     * For an API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -131,8 +143,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        For an Amazon API Gateway stage:
+     *        For an API Gateway REST API:
      *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AppSync GraphQL API:
+     *        <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      *        </p>
      *        </li>
      */
@@ -157,8 +175,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an Amazon API Gateway stage:
+     * For an API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -176,8 +200,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         <li>
      *         <p>
-     *         For an Amazon API Gateway stage:
+     *         For an API Gateway REST API:
      *         <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an AppSync GraphQL API:
+     *         <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      *         </p>
      *         </li>
      */
@@ -202,8 +232,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * <li>
      * <p>
-     * For an Amazon API Gateway stage:
+     * For an API Gateway REST API:
      * <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an AppSync GraphQL API:
+     * <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      * </p>
      * </li>
      * </ul>
@@ -222,8 +258,14 @@ public class AssociateWebACLRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        <li>
      *        <p>
-     *        For an Amazon API Gateway stage:
+     *        For an API Gateway REST API:
      *        <code>arn:aws:apigateway:<i>region</i>::/restapis/<i>api-id</i>/stages/<i>stage-name</i> </code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an AppSync GraphQL API:
+     *        <code>arn:aws:appsync:<i>region</i>:<i>account-id</i>:apis/<i>GraphQLApiId</i> </code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

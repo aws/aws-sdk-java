@@ -242,7 +242,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer stepConcurrencyLevel;
-
+    /**
+     * <p>
+     * Placement group configured for an Amazon EMR cluster.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<PlacementGroupConfig> placementGroups;
 
     /**
@@ -1974,7 +1978,11 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Placement group configured for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @return Placement group configured for an Amazon EMR cluster.
      */
 
     public java.util.List<PlacementGroupConfig> getPlacementGroups() {
@@ -1985,7 +1993,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Placement group configured for an Amazon EMR cluster.
+     * </p>
+     * 
      * @param placementGroups
+     *        Placement group configured for an Amazon EMR cluster.
      */
 
     public void setPlacementGroups(java.util.Collection<PlacementGroupConfig> placementGroups) {
@@ -1999,12 +2012,16 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Placement group configured for an Amazon EMR cluster.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPlacementGroups(java.util.Collection)} or {@link #withPlacementGroups(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param placementGroups
+     *        Placement group configured for an Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2019,7 +2036,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Placement group configured for an Amazon EMR cluster.
+     * </p>
+     * 
      * @param placementGroups
+     *        Placement group configured for an Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

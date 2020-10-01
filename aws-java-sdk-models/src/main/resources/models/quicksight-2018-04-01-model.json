@@ -4148,7 +4148,8 @@
         "SPARK",
         "SQLSERVER",
         "TERADATA",
-        "TWITTER"
+        "TWITTER",
+        "TIMESTREAM"
       ]
     },
     "Database":{

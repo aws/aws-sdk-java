@@ -40,7 +40,8 @@ public enum DataSourceType {
     SPARK("SPARK"),
     SQLSERVER("SQLSERVER"),
     TERADATA("TERADATA"),
-    TWITTER("TWITTER");
+    TWITTER("TWITTER"),
+    TIMESTREAM("TIMESTREAM");
 
     private String value;
 

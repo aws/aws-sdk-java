@@ -18,6 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Placement group configuration for an Amazon EMR cluster. The configuration specifies the placement strategy that can
+ * be applied to instance roles during cluster creation.
+ * </p>
+ * <p>
+ * To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy to the EMR
+ * role.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PlacementGroupConfig"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +33,38 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PlacementGroupConfig implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Role of the instance in the cluster.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+     * </p>
+     */
     private String instanceRole;
-
+    /**
+     * <p>
+     * EC2 Placement Group strategy associated with instance role.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the
+     * <code>MASTER</code> instance role.
+     * </p>
+     */
     private String placementStrategy;
 
     /**
+     * <p>
+     * Role of the instance in the cluster.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+     * </p>
+     * 
      * @param instanceRole
+     *        Role of the instance in the cluster.</p>
+     *        <p>
+     *        Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
      * @see InstanceRoleType
      */
 
@@ -39,7 +73,16 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * Role of the instance in the cluster.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+     * </p>
+     * 
+     * @return Role of the instance in the cluster.</p>
+     *         <p>
+     *         Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
      * @see InstanceRoleType
      */
 
@@ -48,7 +91,17 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Role of the instance in the cluster.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+     * </p>
+     * 
      * @param instanceRole
+     *        Role of the instance in the cluster.</p>
+     *        <p>
+     *        Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceRoleType
      */
@@ -59,7 +112,17 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Role of the instance in the cluster.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+     * </p>
+     * 
      * @param instanceRole
+     *        Role of the instance in the cluster.</p>
+     *        <p>
+     *        Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceRoleType
      */
@@ -70,7 +133,19 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * EC2 Placement Group strategy associated with instance role.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the
+     * <code>MASTER</code> instance role.
+     * </p>
+     * 
      * @param placementStrategy
+     *        EC2 Placement Group strategy associated with instance role.</p>
+     *        <p>
+     *        Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for
+     *        the <code>MASTER</code> instance role.
      * @see PlacementGroupStrategy
      */
 
@@ -79,7 +154,18 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * EC2 Placement Group strategy associated with instance role.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the
+     * <code>MASTER</code> instance role.
+     * </p>
+     * 
+     * @return EC2 Placement Group strategy associated with instance role.</p>
+     *         <p>
+     *         Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for
+     *         the <code>MASTER</code> instance role.
      * @see PlacementGroupStrategy
      */
 
@@ -88,7 +174,19 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * EC2 Placement Group strategy associated with instance role.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the
+     * <code>MASTER</code> instance role.
+     * </p>
+     * 
      * @param placementStrategy
+     *        EC2 Placement Group strategy associated with instance role.</p>
+     *        <p>
+     *        Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for
+     *        the <code>MASTER</code> instance role.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementGroupStrategy
      */
@@ -99,7 +197,19 @@ public class PlacementGroupConfig implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * EC2 Placement Group strategy associated with instance role.
+     * </p>
+     * <p>
+     * Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for the
+     * <code>MASTER</code> instance role.
+     * </p>
+     * 
      * @param placementStrategy
+     *        EC2 Placement Group strategy associated with instance role.</p>
+     *        <p>
+     *        Starting with Amazon EMR version 5.23.0, the only supported placement strategy is <code>SPREAD</code> for
+     *        the <code>MASTER</code> instance role.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementGroupStrategy
      */

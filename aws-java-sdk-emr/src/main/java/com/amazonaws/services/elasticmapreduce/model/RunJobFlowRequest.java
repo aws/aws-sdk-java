@@ -300,7 +300,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private ManagedScalingPolicy managedScalingPolicy;
-
+    /**
+     * <p>
+     * The specified placement group configuration for an Amazon EMR cluster.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<PlacementGroupConfig> placementGroupConfigs;
 
     /**
@@ -2584,7 +2588,11 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * @return
+     * <p>
+     * The specified placement group configuration for an Amazon EMR cluster.
+     * </p>
+     * 
+     * @return The specified placement group configuration for an Amazon EMR cluster.
      */
 
     public java.util.List<PlacementGroupConfig> getPlacementGroupConfigs() {
@@ -2595,7 +2603,12 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The specified placement group configuration for an Amazon EMR cluster.
+     * </p>
+     * 
      * @param placementGroupConfigs
+     *        The specified placement group configuration for an Amazon EMR cluster.
      */
 
     public void setPlacementGroupConfigs(java.util.Collection<PlacementGroupConfig> placementGroupConfigs) {
@@ -2609,12 +2622,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The specified placement group configuration for an Amazon EMR cluster.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPlacementGroupConfigs(java.util.Collection)} or
      * {@link #withPlacementGroupConfigs(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param placementGroupConfigs
+     *        The specified placement group configuration for an Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2629,7 +2646,12 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The specified placement group configuration for an Amazon EMR cluster.
+     * </p>
+     * 
      * @param placementGroupConfigs
+     *        The specified placement group configuration for an Amazon EMR cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

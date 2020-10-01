@@ -97,6 +97,10 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                     context.nextToken();
                     graphqlApi.setXrayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("wafWebAclArn", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setWafWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

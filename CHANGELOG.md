@@ -1,3 +1,28 @@
+# __1.11.874__ __2020-10-01__
+## __AWS AppSync__
+  - ### Features
+    - Exposes the wafWebAclArn field on GraphQL api records. The wafWebAclArn field contains the amazon resource name of a WAF Web ACL if the AWS AppSync API is associated with one.
+
+## __AWS Glue__
+  - ### Features
+    - Adding additional optional map parameter to get-plan api
+
+## __AWS WAFV2__
+  - ### Features
+    - AWS WAF is now available for AWS AppSync GraphQL APIs. AWS WAF protects against malicious attacks with AWS Managed Rules or your own custom rules. For more information see the AWS WAF Developer Guide.
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Documentation updates for elasticmapreduce
+
+## __Amazon QuickSight__
+  - ### Features
+    - QuickSight now supports connecting to AWS Timestream data source
+
+## __Managed Streaming for Kafka__
+  - ### Features
+    - Added support for Enabling Zookeeper Encryption in Transit for AWS MSK.
+
 # __1.11.873__ __2020-09-30__
 ## __AWS DataSync__
   - ### Features

@@ -54,6 +54,12 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private String language;
+    /**
+     * <p>
+     * A map to hold additional optional key-value parameters.
+     * </p>
+     */
+    private java.util.Map<String, String> additionalPlanOptionsMap;
 
     /**
      * <p>
@@ -335,6 +341,74 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * A map to hold additional optional key-value parameters.
+     * </p>
+     * 
+     * @return A map to hold additional optional key-value parameters.
+     */
+
+    public java.util.Map<String, String> getAdditionalPlanOptionsMap() {
+        return additionalPlanOptionsMap;
+    }
+
+    /**
+     * <p>
+     * A map to hold additional optional key-value parameters.
+     * </p>
+     * 
+     * @param additionalPlanOptionsMap
+     *        A map to hold additional optional key-value parameters.
+     */
+
+    public void setAdditionalPlanOptionsMap(java.util.Map<String, String> additionalPlanOptionsMap) {
+        this.additionalPlanOptionsMap = additionalPlanOptionsMap;
+    }
+
+    /**
+     * <p>
+     * A map to hold additional optional key-value parameters.
+     * </p>
+     * 
+     * @param additionalPlanOptionsMap
+     *        A map to hold additional optional key-value parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlanRequest withAdditionalPlanOptionsMap(java.util.Map<String, String> additionalPlanOptionsMap) {
+        setAdditionalPlanOptionsMap(additionalPlanOptionsMap);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalPlanOptionsMap entry
+     *
+     * @see GetPlanRequest#withAdditionalPlanOptionsMap
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlanRequest addAdditionalPlanOptionsMapEntry(String key, String value) {
+        if (null == this.additionalPlanOptionsMap) {
+            this.additionalPlanOptionsMap = new java.util.HashMap<String, String>();
+        }
+        if (this.additionalPlanOptionsMap.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalPlanOptionsMap.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalPlanOptionsMap.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPlanRequest clearAdditionalPlanOptionsMapEntries() {
+        this.additionalPlanOptionsMap = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -355,7 +429,9 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
         if (getLanguage() != null)
-            sb.append("Language: ").append(getLanguage());
+            sb.append("Language: ").append(getLanguage()).append(",");
+        if (getAdditionalPlanOptionsMap() != null)
+            sb.append("AdditionalPlanOptionsMap: ").append(getAdditionalPlanOptionsMap());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +466,10 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getLanguage() != null && other.getLanguage().equals(this.getLanguage()) == false)
             return false;
+        if (other.getAdditionalPlanOptionsMap() == null ^ this.getAdditionalPlanOptionsMap() == null)
+            return false;
+        if (other.getAdditionalPlanOptionsMap() != null && other.getAdditionalPlanOptionsMap().equals(this.getAdditionalPlanOptionsMap()) == false)
+            return false;
         return true;
     }
 
@@ -403,6 +483,7 @@ public class GetPlanRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getSinks() == null) ? 0 : getSinks().hashCode());
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalPlanOptionsMap() == null) ? 0 : getAdditionalPlanOptionsMap().hashCode());
         return hashCode;
     }
 

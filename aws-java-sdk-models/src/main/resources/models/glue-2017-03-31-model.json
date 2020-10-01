@@ -2262,6 +2262,11 @@
       "type":"list",
       "member":{"shape":"Action"}
     },
+    "AdditionalPlanOptionsMap":{
+      "type":"map",
+      "key":{"shape":"GenericString"},
+      "value":{"shape":"GenericString"}
+    },
     "AlreadyExistsException":{
       "type":"structure",
       "members":{
@@ -6591,6 +6596,10 @@
         "Language":{
           "shape":"Language",
           "documentation":"<p>The programming language of the code to perform the mapping.</p>"
+        },
+        "AdditionalPlanOptionsMap":{
+          "shape":"AdditionalPlanOptionsMap",
+          "documentation":"<p>A map to hold additional optional key-value parameters.</p>"
         }
       }
     },

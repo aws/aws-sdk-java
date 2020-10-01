@@ -125,6 +125,12 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String zookeeperConnectString;
+    /**
+     * <p>
+     * The connection string to use to connect to zookeeper cluster on Tls port.
+     * </p>
+     */
+    private String zookeeperConnectStringTls;
 
     /**
      * <p>
@@ -959,6 +965,52 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The connection string to use to connect to zookeeper cluster on Tls port.
+     * </p>
+     * 
+     * @param zookeeperConnectStringTls
+     *        <p>
+     *        The connection string to use to connect to zookeeper cluster on Tls port.
+     *        </p>
+     */
+
+    public void setZookeeperConnectStringTls(String zookeeperConnectStringTls) {
+        this.zookeeperConnectStringTls = zookeeperConnectStringTls;
+    }
+
+    /**
+     * <p>
+     * The connection string to use to connect to zookeeper cluster on Tls port.
+     * </p>
+     * 
+     * @return <p>
+     *         The connection string to use to connect to zookeeper cluster on Tls port.
+     *         </p>
+     */
+
+    public String getZookeeperConnectStringTls() {
+        return this.zookeeperConnectStringTls;
+    }
+
+    /**
+     * <p>
+     * The connection string to use to connect to zookeeper cluster on Tls port.
+     * </p>
+     * 
+     * @param zookeeperConnectStringTls
+     *        <p>
+     *        The connection string to use to connect to zookeeper cluster on Tls port.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterInfo withZookeeperConnectStringTls(String zookeeperConnectStringTls) {
+        setZookeeperConnectStringTls(zookeeperConnectStringTls);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1003,7 +1055,9 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getZookeeperConnectString() != null)
-            sb.append("ZookeeperConnectString: ").append(getZookeeperConnectString());
+            sb.append("ZookeeperConnectString: ").append(getZookeeperConnectString()).append(",");
+        if (getZookeeperConnectStringTls() != null)
+            sb.append("ZookeeperConnectStringTls: ").append(getZookeeperConnectStringTls());
         sb.append("}");
         return sb.toString();
     }
@@ -1086,6 +1140,10 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getZookeeperConnectString() != null && other.getZookeeperConnectString().equals(this.getZookeeperConnectString()) == false)
             return false;
+        if (other.getZookeeperConnectStringTls() == null ^ this.getZookeeperConnectStringTls() == null)
+            return false;
+        if (other.getZookeeperConnectStringTls() != null && other.getZookeeperConnectStringTls().equals(this.getZookeeperConnectStringTls()) == false)
+            return false;
         return true;
     }
 
@@ -1111,6 +1169,7 @@ public class ClusterInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStateInfo() == null) ? 0 : getStateInfo().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getZookeeperConnectString() == null) ? 0 : getZookeeperConnectString().hashCode());
+        hashCode = prime * hashCode + ((getZookeeperConnectStringTls() == null) ? 0 : getZookeeperConnectStringTls().hashCode());
         return hashCode;
     }
 

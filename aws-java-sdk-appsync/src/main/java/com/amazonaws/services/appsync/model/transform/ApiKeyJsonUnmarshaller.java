@@ -60,6 +60,10 @@ public class ApiKeyJsonUnmarshaller implements Unmarshaller<ApiKey, JsonUnmarsha
                     context.nextToken();
                     apiKey.setExpires(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
+                if (context.testExpression("deletes", targetDepth)) {
+                    context.nextToken();
+                    apiKey.setDeletes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

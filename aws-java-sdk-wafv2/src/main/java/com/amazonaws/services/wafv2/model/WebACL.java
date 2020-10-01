@@ -30,8 +30,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default
  * action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a
  * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one
- * or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway API, or an
- * Application Load Balancer.
+ * or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
+ * Application Load Balancer, or an AWS AppSync GraphQL API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL" target="_top">AWS API Documentation</a>

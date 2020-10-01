@@ -34,7 +34,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -104,7 +104,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -124,7 +124,8 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -150,7 +151,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -169,7 +170,8 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </ul>
      * 
      * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
+     *         API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -195,7 +197,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -215,7 +217,8 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -243,7 +246,7 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -263,7 +266,8 @@ public class GetIPSetRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>

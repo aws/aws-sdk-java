@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ResourceType {
 
     APPLICATION_LOAD_BALANCER("APPLICATION_LOAD_BALANCER"),
-    API_GATEWAY("API_GATEWAY");
+    API_GATEWAY("API_GATEWAY"),
+    APPSYNC("APPSYNC");
 
     private String value;
 
